@@ -1,0 +1,72 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "seq_1",
+        general {
+          db "BankIt",
+          tag str "1765449/LAP520"
+        }
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Micropsalliota geesterani"
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 24,
+        strand ds,
+        seq-data iupacna "AACTGTCCTGGGACAACTTTGAAC"
+      }
+    },
+    seq {
+      id {
+        local str "seq_2",
+        general {
+          db "BankIt",
+          tag str "1765674/LAP520"
+        }
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Micropsalliota geesterani",
+            orgname {
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "LAP520"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 31,
+        strand ds,
+        seq-data iupacna "GGACCGTATACAAGTCTCCTGGGATGGAGCT"
+      }
+    }
+  }
+}

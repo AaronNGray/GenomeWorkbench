@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_feature_edit.app.txt 599933 2020-01-09 16:53:18Z foleyjp $
+#############################################################################
+
+NCBI_begin_app(unit_test_feature_edit)
+  NCBI_sources(unit_test_feature_edit)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xobjutil test_boost)
+  NCBI_project_watchers(foleyjp)
+  NCBI_add_test()
+NCBI_end_app()
+

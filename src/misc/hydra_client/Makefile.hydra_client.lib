@@ -1,0 +1,10 @@
+# $Id: Makefile.hydra_client.lib 529709 2017-03-07 13:09:43Z choi $
+
+LIB = hydra_client
+SRC = hydra_client
+
+DLL_LIB = xmlwrapp
+
+WATCHERS = grichenk choi
+
+USES_LIBRARIES = xconnect xmlwrapp

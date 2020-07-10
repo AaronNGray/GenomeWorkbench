@@ -1,0 +1,9 @@
+# $Id: Makefile.in 41896 2018-11-07 16:08:25Z asztalos $
+#
+# Makefile.in for unit_test
+
+APP_PROJ = unit_test_field_resolver unit_test_macro_util unit_test_uncultured_taxlookup
+PROJ_TAG = test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

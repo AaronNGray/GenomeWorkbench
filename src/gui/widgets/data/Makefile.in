@@ -1,0 +1,8 @@
+# $Id: Makefile.in 25709 2012-04-25 15:35:30Z voronov $
+
+LIB_PROJ = w_data
+#SUB_PROJ = demo
+#Temporary fix for linux
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

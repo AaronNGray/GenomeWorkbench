@@ -1,0 +1,394 @@
+Seq-entry ::= set {
+  class pop-set,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          origin natural,
+          org {
+            taxname "Nyssomyia umbratilis",
+            db {
+              {
+                db "taxon",
+                tag id 182988
+              }
+            },
+            syn {
+              "Lutzomyia (Nyssomyia) umbratilis",
+              "Lutzomyia umbratilis"
+            },
+            orgname {
+              name binomial {
+                genus "Nyssomyia",
+                species "umbratilis"
+              },
+              mod {
+                {
+                  subtype old-name,
+                  subname "Lutzomyia umbratilis"
+                }
+              },
+              lineage "Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda;
+ Insecta; Pterygota; Neoptera; Endopterygota; Diptera; Nematocera;
+ Psychodoidea; Psychodidae; Nyssomyia",
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "FMAN01",
+            general {
+              db "NCBIFILE",
+              tag str "submission sequence.sqn/FMAN01"
+            },
+            general {
+              db "TMSMART",
+              tag id 58028517
+            },
+            genbank {
+              accession "KT722623"
+            }
+          },
+          descr {
+            molinfo {
+              tech standard,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 484,
+            strand ds,
+            seq-data ncbi2na 'C48FDFBD30E9A733C47601E0EB527FBC35BAD8A41E8BFBCF
+A334D8B9C62B00340F1E007C492021F0C6CF8FF2B5350D742FFE49C6BC3492FD58213CD2E39420
+034A008FF39F9F1A252ED028CF8C4B82490BF5008E5F93E937FCE805F8E8E0B076178DF09C87C5
+D28048BC10CDE2223D6E39EAE03375914E3C71'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "testing mRNAproduct"
+                  },
+                  partial TRUE,
+                  location mix {
+                    int {
+                      from 0,
+                      to 117,
+                      strand plus,
+                      id genbank {
+                        accession "KT722623"
+                      },
+                      fuzz-from lim lt
+                    },
+                    int {
+                      from 176,
+                      to 483,
+                      strand plus,
+                      id genbank {
+                        accession "KT722623"
+                      },
+                      fuzz-to lim gt
+                    }
+                  }
+                },
+                {
+                  data gene {
+                    locus "TESTING COMMENT1"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 483,
+                    strand plus,
+                    id genbank {
+                      accession "KT722623"
+                    },
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "FMAN01_1",
+            general {
+              db "NCBIFILE",
+              tag str "submission sequence.sqn/FMAN01_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 58028518
+            }
+          },
+          descr {
+            title "Per gene product, partial [Nyssomyia umbratilis]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans-a,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 142,
+            seq-data ncbieaa "YRFLVHNGGYITLETEWSSFVNPWSRQLEFVIGYHRVLRGPSNPQVFA
+ATVNQQFPEDIISDAKKNQEKILCLLTEPVSKDIDTVKQQVSKRCLALASFMETLMDEVTRPDLKLDLPQETELTISE
+RDSVMLGEISPHHDYY"
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "FMAN01_1",
+              location mix {
+                int {
+                  from 0,
+                  to 117,
+                  strand plus,
+                  id genbank {
+                    accession "KT722623"
+                  },
+                  fuzz-from lim lt
+                },
+                int {
+                  from 176,
+                  to 483,
+                  strand plus,
+                  id genbank {
+                    accession "KT722623"
+                  },
+                  fuzz-to lim gt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Nyssomyia umbratilis",
+            db {
+              {
+                db "taxon",
+                tag id 182988
+              }
+            },
+            syn {
+              "Lutzomyia (Nyssomyia) umbratilis",
+              "Lutzomyia umbratilis"
+            },
+            orgname {
+              name binomial {
+                genus "Nyssomyia",
+                species "umbratilis"
+              },
+              mod {
+                {
+                  subtype old-name,
+                  subname "Lutzomyia umbratilis"
+                }
+              },
+              lineage "Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda;
+ Insecta; Pterygota; Neoptera; Endopterygota; Diptera; Nematocera;
+ Psychodoidea; Psychodidae; Nyssomyia",
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "FMAN02",
+            general {
+              db "NCBIFILE",
+              tag str "submission sequence.sqn/FMAN02"
+            },
+            general {
+              db "TMSMART",
+              tag id 58028519
+            },
+            genbank {
+              accession "KT722624"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 484,
+            seq-data ncbi2na 'C48FDFBD30E9A733C47601E0EB527FBC35BAD8A41E8BFBCF
+A334D8B9C62B00340F1E007C492021F0C6CF4FF2B5350D742FFE49C6BC3492FD58213CD2E39420
+034A008FF39F9F1A252ED028CF8C4B82490BF5008E5F93E937FCE805F8E8E0B0761785F09C87C5
+D28048BC10FDE2223D6E39EAE03375914E3C71'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "SOME DESCR"
+                  },
+                  partial TRUE,
+                  location mix {
+                    int {
+                      from 0,
+                      to 117,
+                      strand plus,
+                      id local str "FMAN02",
+                      fuzz-from lim lt
+                    },
+                    int {
+                      from 176,
+                      to 483,
+                      strand plus,
+                      id local str "FMAN02",
+                      fuzz-to lim gt
+                    }
+                  }
+                },
+                {
+                  data gene {
+                    locus "gene locus2",
+                    desc "some descr"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 483,
+                    strand plus,
+                    id genbank {
+                      accession "KT722624"
+                    },
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "FMAN02_1",
+            general {
+              db "NCBIFILE",
+              tag str "submission sequence.sqn/FMAN02_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 58028520
+            }
+          },
+          descr {
+            title "Per gene product, partial [Nyssomyia umbratilis]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans-a,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 142,
+            seq-data ncbieaa "YRFLVHNGGYITLETEWSSFVNPWSRQLEFVIGYHRVLRGPSNPQVFA
+ATVNQQFPEDIISDAKKNQEKILCLLTEPVSKDIDTVKQQVSKRCLALASFMETLMDEVTRPDLKLDLPQETELTISE
+RDSVMLGEISPHHDYY"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "SOME DESCR"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 141,
+                    id local str "FMAN02_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "FMAN02_1",
+              location mix {
+                int {
+                  from 0,
+                  to 117,
+                  strand plus,
+                  id genbank {
+                    accession "KT722624"
+                  },
+                  fuzz-from lim lt
+                },
+                int {
+                  from 176,
+                  to 483,
+                  strand plus,
+                  id genbank {
+                    accession "KT722624"
+                  },
+                  fuzz-to lim gt
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

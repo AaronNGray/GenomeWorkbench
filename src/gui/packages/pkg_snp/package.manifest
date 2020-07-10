@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GuiPkgManifest>
+  <Name>SNP</Name>
+  <Description>SNP Related Plugins</Description>
+  <Version>01.00.0000</Version>
+  <MainDll>pkg_snp</MainDll>
+  <GuiPkgDependency>
+    <GuiDependentPkg>
+      <Name>GBench</Name>
+      <Version>03.00.0000</Version>
+    </GuiDependentPkg>
+  </GuiPkgDependency>
+</GuiPkgManifest>

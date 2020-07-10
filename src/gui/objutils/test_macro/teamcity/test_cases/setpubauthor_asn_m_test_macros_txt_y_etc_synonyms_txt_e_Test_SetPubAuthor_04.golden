@@ -1,0 +1,148 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Felis catus",
+            common "domestic cat",
+            db {
+              {
+                db "taxon",
+                tag id 9685
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+ Tetrapoda; Amniota; Mammalia; Theria; Eutheria; Boreoeutheria;
+ Laurasiatheria; Carnivora; Feliformia; Felidae; Felinae; Felis",
+              gcode 1,
+              mgcode 2,
+              div "MAM"
+            }
+          }
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Reetz",
+                      first "Ana",
+                      initials "A.A."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Hoffmann",
+                      first "Kathrin",
+                      initials "K."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Kern",
+                      first "Tobias",
+                      initials "T.T."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Rother",
+                      first "Michael",
+                      initials "M.K.L."
+                    }
+                  }
+                }
+              },
+              title "Isolation of the lytic archeophage Drs3 infecting
+ Methanobacterium formicicum"
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Uj",
+                      first "Alex",
+                      initials "A."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Technische Universitat Dresden",
+                  div "Biology / Institute of Microbiology",
+                  city "Dresden",
+                  sub "Saxony",
+                  country "Germany",
+                  street "Zellescher Weg 20b",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 248,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAGACCTACACGGCATAATCAAAGAAACAGAACC
+CGTAATCCCTGCCTCTGAAGCCCTAAAAACCCTAAGACAAGGGGACACCATAGACCCCAACACATGGGTGGACTTAAA
+CCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+      }
+    }
+  }
+}

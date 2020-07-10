@@ -1,0 +1,122 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  seq-set {
+    seq {
+      id {
+        local str "Seq_extend5"
+      },
+      inst {
+        repr raw,
+        mol na,
+        length 95,
+        seq-data ncbi2na 'AAAAA55A00002AAAAA646FFF444AAE4B6269246A89F9D5E8'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "import gene locusA"
+              },
+              partial TRUE,
+              location int {
+                from 39,
+                to 64,
+                strand plus,
+                id local str "Seq_extend5",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            },
+            {
+              data imp {
+                key "misc_feature"
+              },
+              location int {
+                from 70,
+                to 89,
+                strand plus,
+                id local str "Seq_extend5"
+              },
+              qual {
+                {
+                  qual "number",
+                  val "1"
+                },
+                {
+                  qual "product",
+                  val "feat_product"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "Seq_extend5_1"
+      },
+      descr {
+        title "import gene locusA gene product",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq_extend5_1"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 18,
+        seq-data ncbieaa "MCEKTCAPPPFFFPGPPP"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "GR_protein name"
+                }
+              },
+              location int {
+                from 0,
+                to 17,
+                id local str "Seq_extend5_1"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            code {
+              id 1
+            }
+          },
+          product whole local str "Seq_extend5_1",
+          location int {
+            from 2,
+            to 54,
+            strand minus,
+            id local str "Seq_extend5"
+          }
+        }
+      }
+    }
+  }
+}

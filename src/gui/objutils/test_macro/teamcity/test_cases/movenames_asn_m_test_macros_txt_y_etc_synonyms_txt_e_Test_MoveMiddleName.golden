@@ -1,0 +1,107 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "Li",
+          first "Xiang"
+        },
+        affil std {
+          affil "Nanyang Technological University",
+          div "School of Chemical and Biomedical Engineering",
+          country "Singapore"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Li",
+              first "Xiang Gabriel",
+              initials "X.G."
+            }
+          },
+          {
+            name name {
+              last "Chen",
+              first "Wei Ning",
+              initials "W.N."
+            }
+          }
+        },
+        affil std {
+          affil "Nanyang Technological University",
+          city "Singapore"
+        }
+      },
+      medium email,
+      date std {
+        year 2013,
+        month 4,
+        day 18,
+        hour 2,
+        minute 2,
+        second 48
+      }
+    },
+    tool "BankIt 4.0",
+    comment "bankit1622809"
+  },
+  data entrys {
+    set {
+      class genbank,
+      seq-set {
+        seq {
+          id {
+            local str "Seq1"
+          },
+          descr {
+            title "synthesized hydroperoxide lyase gene codon optimized for
+ expression in Saccharomyces cerevisiae, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "synthetic construct"
+              }
+            },
+            pub {
+              pub {
+                gen {
+                  cit "Unpublished",
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Li",
+                          first "Xiang",
+                          initials "X.T."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Chen",
+                          first "Wei Ning",
+                          initials "W.N."
+                        }
+                      }
+                    }
+                  },
+                  title "Metabolic Engineering Yeast Cells for Medium Chain
+ Biofuel Precursor Synthesis"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 41,
+            seq-data ncbi2na '3B72F75F42DFE1C29F5E00'H
+          }
+        }
+      }
+    }
+  }
+}

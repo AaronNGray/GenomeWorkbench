@@ -1,0 +1,62 @@
+# $Id: Makefile.w_seq_graphic.lib 44658 2020-02-18 16:04:29Z shkeda $
+
+# Graphic Sequence Widget lib
+
+ASN_DEP = seq seqset
+
+#SRC = feat_decorate_conf  \
+#      wx_annot_config_dlg wx_settings_dlg \
+#      seqmarker_set_dlg  seqgraphic_conf_med
+
+SRC = seqgraphic_conf gene_model_config \
+      layout_track_proxy feature_conf histogram_conf config_utils feature_filter \
+      seqgraphic_widget seqgraphic_pane seqgraphic_render selection_manager \
+      track_config_manager layout_track_handler rendering_ctx seqgraphic_utils \
+      layout_policy simple_layout_policy layered_layout_policy compact_layout_policy \
+      column_layout_policy alnvec_graphic_ds sparsealn_graphic_ds denseg_graphic_ds \
+      denseg_ci simple_graphic_ds \
+      seqgraphic_alignment_ds seqgraphic_ds_manager seqgraphic_data_source \
+      seqgraphic_genbank_ds feature_panel_ds segment_map_ds feature_ds \
+      seqgraphic_graph_ds seqgraphic_job alignment_job align_statistics_glyph \
+      histogram_glyph layout_track_impl mate_pair_glyph graph_glyph translation_glyph \
+      alignment_glyph seq_glyph segment_glyph segment_smear_glyph feature_glyph \
+      cds_glyph switch_point_glyph alignment_smear_glyph comment_glyph \
+      restriction_sites_glyph \
+      clone_placement_glyph vis_range_glyph  layout_group gene_model_group \
+      ruler_panel feature_panel glyph_container_track track_container_track data_track \
+      sequence_track gene_model_track feature_track segment_map_track \
+      scaffold_track component_track \
+      six_frames_trans_track epigenomics_track dbvar_track seqtable_graph_track \
+      alignment_track graph_track external_layout_track all_other_features_track \
+      wx_hairline_dlg wx_histogram_config_dlg wx_seqmarker_set_dlg  wx_marker_name_dlg \
+      wx_track_name_dlg wx_track_settings_dlg wx_aln_stat_dlg wx_marker_info_dlg \
+      wx_marker_info_panel wx_export_vector_image_dlg named_group \
+      clone_feature_sorter dbvar_feature_sorter alignment_sorter alignment_sorter_factory \
+      alignment_other_score alignment_cigar_score alignment_quality_score \
+      unaligned_region_dlg graph_overlay legend_item_glyph graphic_panel \
+      configure_tracks_dlg track_list_ctrl trace_graph_ds trace_graph_track trace_glyph \
+      graph_utils aggregate_feature_track url_tooltip_handler sparse_graph bed_coverage_graph wig_graph \
+      search_utils vcf_heatmap
+
+
+LIB = w_seq_graphic
+
+DLL_LIB = splines w_loaders w_wx w_gl w_data w_aln_score gui_opengl gui_print gui_graph gui_config \
+          trackmgr hgvs xregexp entrez2cli entrez2 \
+          w_seq ncbi_xloader_genbank gui_objects gui_utils objcoords genesbyloc \
+	  ncbi_xcache_netcache xconnserv xthrserv xconnect $(PCRE_LIB) \
+          ncbi_xloader_bam bamread xobjreadex $(COMPRESS_LIBS) $(OBJREAD_LIBS) xobjutil \
+          ncbi_xloader_csra $(SRAREAD_LIBS) $(SOBJMGR_LIBS)
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE) \
+           $(PCRE_INCLUDE) -D_WCHAR_H_CPLUSPLUS_98_CONFORMANCE_ \
+#           -DDEBUG_INFO_ON_SCREEN
+
+
+LIBS = $(CMPRS_LIBS) $(VDB_LIBS) $(WXWIDGETS_LIBS) $(PCRE_LIBS) $(GLEW_LIBS) \
+       $(BLAST_THIRD_PARTY_LIBS) $(NETWORK_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+REQUIRES = OpenGL wxWidgets objects Boost.Spirit
+
+WATCHERS = dicuccio

@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_agp_seq_entry.app.txt 593577 2019-09-20 12:22:42Z gouriano $
+#############################################################################
+
+NCBI_begin_app(unit_test_agp_seq_entry)
+  NCBI_sources(unit_test_agp_seq_entry)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xobjread)
+  NCBI_project_watchers(ucko kornbluh)
+  NCBI_set_test_assets( agp_seq_entry_test_cases )
+  NCBI_add_test()
+NCBI_end_app()
+

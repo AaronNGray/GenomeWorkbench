@@ -1,0 +1,15 @@
+# $Id: Makefile.ncbi_algo_structure.dll 108294 2007-08-06 17:29:58Z Gouriano $
+
+DLL = ncbi_algo_structure
+
+HOSTED_LIBS    = xbma_refiner \
+                      xcd_utils \
+                      xstruct_dp \
+                      xstruct_util \
+                      xstruct_thread
+
+DEPENDENCIES   = ncbi_core ncbi_algo ncbi_seq ncbi_general \
+                ncbi_pub ncbi_seqext ncbi_mmdb ncbi_xobjsimple
+
+CPPFLAGS = -DNCBI_ALGOSTRUCTURE_EXPORTS
+

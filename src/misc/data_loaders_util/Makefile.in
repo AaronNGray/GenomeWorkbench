@@ -1,0 +1,9 @@
+# $Id: Makefile.in 501753 2016-05-18 17:18:33Z gouriano $
+##################################
+
+LIB_PROJ = data_loaders_util
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+
+REQUIRES = 

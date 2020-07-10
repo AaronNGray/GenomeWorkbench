@@ -1,0 +1,38 @@
+#############################################################################
+# $Id: CMakeLists.gui_objects.asn.txt 44795 2020-03-17 19:22:19Z evgeniev $
+#############################################################################
+
+if(XCODE)
+  set_source_files_properties(
+    ${NCBI_CURRENT_SOURCE_DIR}/gbench_version.cpp
+    PROPERTIES XCODE_EXPLICIT_FILE_TYPE sourcecode.cpp.objcpp
+  )
+endif()
+
+
+NCBI_begin_lib( gui_objects)
+  NCBI_dataspecs( gui_objects.asn )
+  NCBI_sources(gbench_svc_cli assembly_info tms_utils gbench_version)
+  NCBI_generated_sources(gbench_svc_cli_.cpp)
+  NCBI_uses_toolkit_libraries( gui_objutils)
+NCBI_end_lib()
+
+if(OFF)
+set(MODULE gui_objects)
+set(MODULE_IMPORT objects/seq/seq objects/seqloc/seqloc objects/seqset/seqset objects/general/general objects/submit/submit objects/seqalign/seqalign objects/seq/seq objects/gbproj/gbproj)
+set(MODULE_PATH gui/objects)
+
+set(MODULE_EXT "asn")
+add_library(gui_objects ${MODULE}__ ${MODULE}___ gbench_svc_cli gbench_svc_cli_ assembly_info tms_utils gbench_version)
+target_link_libraries(gui_objects
+    gui_objutils
+)
+#add_dependencies(gui_objects
+    #seq submit entrezgene gbproj
+#)
+
+
+RunDatatool("${MODULE}" "${MODULE_IMPORT}")
+SET_SOURCE_FILES_PROPERTIES(${CMAKE_CURRENT_SOURCE_DIR}/${MODULE}__.cpp ${CMAKE_CURRENT_SOURCE_DIR}/${MODULE}___.cpp PROPERTIES GENERATED 1)
+SET_SOURCE_FILES_PROPERTIES(${CMAKE_CURRENT_SOURCE_DIR}/gbench_svc_cli.cpp ${CMAKE_CURRENT_SOURCE_DIR}/gbench_svc_cli_.cpp PROPERTIES GENERATED 1)
+endif()

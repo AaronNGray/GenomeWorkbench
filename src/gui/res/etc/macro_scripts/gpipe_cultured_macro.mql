@@ -1,0 +1,145 @@
+MACRO Composite_CulturedTaxTool_01 "Perform cultured taxname lookup steps 1 - 10"
+FOR EACH BioSource
+Do
+    DoCulturedTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_02 "Edit taxname replace ' strain' and ' ' with ''"
+VAR
+    find_text_a = " strain"
+    find_text_b = " "
+    repl_text = ""
+    location = "at the end"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text_a, repl_text, location, case_sensitive);
+    EditStringQual ("org.taxname", find_text_b, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_03 "Edit taxname replace 'bacteria' (case insensitive) with 'bacterium' where source taxname equals 'bacteria' (ignore spaces, ignore punctuation)"
+VAR
+    find_text = "bacteria"
+    repl_text = "bacterium"
+    location = "anywhere"
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+FOR EACH BioSource
+WHERE EQUALS("org.taxname", find_text, case_sensitive, ignore_spaces, ignore_punctuation)
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_04 "Edit taxname replace 'archaea' (case insensitive) with 'archaeon' where source taxname equals 'archaea' (ignore spaces, ignore punctuation)"
+VAR
+    find_text = "archaea"
+    repl_text = "archaeon"
+    location = "anywhere"
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+FOR EACH BioSource
+WHERE EQUALS("org.taxname", find_text, case_sensitive, ignore_spaces, ignore_punctuation)
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_05 "Edit taxname replace ' 16S ribosomal RNA gene, partial sequence' with '' where source taxname contains '16S ribosomal RNA gene, partial sequence' (ignore spaces, ignore punctuation), allow '16S ribosomal RNA gene, partial sequence' to be replaced by 'strain 16S ribosomal RNA gene, partial sequence', 'gene for 16S rRNA, partial sequence ', '16S ribosomal RNA, partial sequence', '16S rRNA gene, partial sequence ', '16S ribosomal RNA gene ', '16S rRNA gene ', '16S ribosomal RNA', and '16S rRNA '"
+VAR
+    find_text = " 16S ribosomal RNA gene, partial sequence"
+    repl_text = ""
+    location = "anywhere"
+    case_sensitive = true
+    match = "16S ribosomal RNA gene, partial sequence"
+    case_sensitive_match = false
+    ignore_spaces = true
+    ignore_punctuation = true
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", match, case_sensitive_match, ignore_spaces, ignore_punctuation, "synonyms.txt", match)
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_06 "Apply bacterium to taxname (append separated by space) where source taxname ends with 'aceae' (case-sensitive), allow 'aceae' to be replaced by 'ales'"
+VAR
+    new_value = "bacterium"
+    existing_text = "eAppend"
+    delimiter = " "
+    match = "aceae"
+    case_sensitive = true
+FOR EACH BioSource
+WHERE ENDS("org.taxname", match, case_sensitive, "synonyms.txt", match)
+DO
+    SetStringQual ("org.taxname", new_value, existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_07 "Apply . to taxname (append (no separator)) where source taxname ends with ' sp' (case-sensitive)"
+VAR
+    new_value = "."
+    existing_text = "eAppend"
+    match = " sp"
+    case_sensitive = true
+FOR EACH BioSource
+WHERE ENDS("org.taxname", match, case_sensitive)
+DO
+    SetStringQual ("org.taxname", new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_08 "Apply sp. to taxname (append separated by space) where source taxname does not end with ' sp.' (case-sensitive), allow 'sp.' to be replaced by 'sp' and where source taxname does not contain ' ' (case-sensitive) and where source taxname does not equal 'Bacterium', allow 'Bacterium' to be replaced by 'Archaeon' and where source taxname does not end with 'bacterium' (ignore spaces, ignore punctuation), allow 'bacterium' to be replaced by 'archaeon'"
+VAR
+    new_value = "sp."
+    field_name = "org.taxname"
+    existing_text = "eAppend"
+    delimiter = " "
+    match1 = " sp."
+    match2 = " "
+    match3 = "Bacterium"
+    match4 = "bacterium"
+    case_sensitive = true
+    case_sensitive_match = false
+    ignore_spaces = true
+    ignore_punctuation = true
+FOR EACH BioSource
+WHERE NOT ENDS(field_name, match1, case_sensitive, "synonyms.txt", "sp.") AND
+      NOT CONTAINS(field_name, match2, case_sensitive) AND
+      NOT EQUALS(field_name, match3, "synonyms.txt", match3) AND
+      NOT ENDS(field_name, match4, case_sensitive_match, ignore_spaces, ignore_punctuation, "synonyms.txt", match4)
+DO
+    SetStringQual (field_name, new_value, existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_09 "Edit strain replace 'sp. ' and 'sp ' (case insensitive) with ''"
+VAR
+    find_text_a = "sp. "
+    find_text_b = "sp "
+    repl_text = ""
+    location = "at the beginning"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") WHERE obj.subtype = "strain";
+    EditStringQual ("obj.subname", find_text_a, repl_text, location, case_sensitive);
+    EditStringQual ("obj.subname", find_text_b, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_10 "Perform taxonomy lookup and extended cleanup and correct genetic codes"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO Composite_CulturedTaxTool_11 "Remove nomenclature where lineage is not present"
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.lineage")
+DO
+    obj_bsrc = Resolve("org.orgname.mod") WHERE obj_bsrc.subtype = "nomenclature";
+    RemoveModifier(obj_bsrc);
+DONE
+---------------------------------------------------
+MACRO Composite_CulturedTaxTool_12 "Generate unique deflines"
+FOR EACH TSEntry
+DO
+    AutodefId();
+DONE
+------------------------------------------------------------------------------

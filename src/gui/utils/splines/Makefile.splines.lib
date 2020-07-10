@@ -1,0 +1,17 @@
+SRC = Splines SplineCubicBase SplineHermite SplinePchip
+
+LIB = splines
+
+# We need to link some of these statically on Darwin to work around
+# issues with its dynamic linker.  Note that replacing the last four
+# lines with $(OBJMGR_LIBS:%=%$(STATIC_darwin)) breaks DLL+static
+# builds.
+STATIC_$(OSTYPE) = $(STATIC)
+ST=$(STATIC_darwin)
+
+# LIBS = $(ORIG_LIBS)
+
+# CPPFLAGS = $(ORIG_CPPFLAGS)
+# LDFLAGS = $(FAST_LDFLAGS)
+
+LIB_OR_DLL = lib

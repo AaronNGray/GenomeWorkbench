@@ -1,0 +1,1602 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome mitochondrion,
+      org {
+        taxname "Parnassius bremeri",
+        db {
+          {
+            db "taxon",
+            tag id 213924
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Parnassius",
+            species "bremeri"
+          },
+          mod {
+            {
+              subtype common,
+              subname "red-spotted apollo butterfly"
+            },
+            {
+              subtype gb-synonym,
+              subname "Parnassius phoebus bremeri"
+            }
+          },
+          lineage "Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda;
+ Insecta; Pterygota; Neoptera; Endopterygota; Lepidoptera; Glossata; Ditrysia;
+ Papilionoidea; Papilionidae; Parnassiinae; Parnassini; Parnassius; Parnassius",
+          gcode 1,
+          mgcode 5,
+          div "INV"
+        }
+      }
+    },
+    pub {
+      pub {
+        article {
+          title {
+            name "Complete nucleotide sequence and organization of the
+ mitogenome of the red-spotted apollo butterfly, Parnassius bremeri
+ (Lepidoptera: Papilionidae) and comparison with other lepidopteran insects."
+          },
+          authors {
+            names std {
+              {
+                name name {
+                  last "Kim",
+                  first "M",
+                  initials "M.I."
+                }
+              },
+              {
+                name name {
+                  last "Baek",
+                  first "J",
+                  initials "J.Y."
+                }
+              },
+              {
+                name name {
+                  last "Kim",
+                  first "M",
+                  initials "M.J."
+                }
+              },
+              {
+                name name {
+                  last "Jeong",
+                  first "H",
+                  initials "H.C."
+                }
+              },
+              {
+                name name {
+                  last "Kim",
+                  first "K",
+                  initials "K.G."
+                }
+              },
+              {
+                name name {
+                  last "Bae",
+                  first "C",
+                  initials "C.H."
+                }
+              },
+              {
+                name name {
+                  last "Han",
+                  first "Y",
+                  initials "Y.S."
+                }
+              },
+              {
+                name name {
+                  last "Jin",
+                  first "B",
+                  initials "B.R."
+                }
+              },
+              {
+                name name {
+                  last "Kim",
+                  first "I",
+                  initials "I."
+                }
+              }
+            },
+            affil str "College of Agriculture and Life Sciences, Chonnam
+ National University, Gwangju 500-757, Korea."
+          },
+          from journal {
+            title {
+              iso-jta "Mol. Cells"
+            },
+            imp {
+              date std {
+                year 2009,
+                month 10,
+                day 31
+              },
+              volume "28",
+              issue "4",
+              pages "347-363",
+              pubstatus ppublish
+            }
+          },
+          ids {
+            doi "10.1007/s10059-009-0129-5",
+            pubmed 19823774
+          }
+        },
+        pmid 19823774
+      }
+    },
+    update-date std {
+      year 2014,
+      month 3,
+      day 27
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        other {
+          accession "NC_014053",
+          version 1
+        },
+        general {
+          db "NCBI_GENOMES",
+          tag id 26024
+        },
+        gi 295065608
+      },
+      descr {
+        title "Parnassius bremeri mitochondrion, complete genome",
+        molinfo {
+          biomol genomic,
+          completeness complete
+        },
+        create-date std {
+          year 2010,
+          month 4,
+          day 23
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 15389,
+        topology circular,
+        seq-data ncbi2na 'F00309C0FC27FEAF4C55033028055FFFF00302E5E3C0ABCF78CA
+303C2C8FDC5FCF33FCC83C073170CB340073EE4DF11C0333F3E0FC0C100705573FC8FFFF0FC0F4
+0C033FFF3FCF7FFFC817C3F7BF49C3DF8F28EF83E8F20343F3C23F35570FD43DC00DFF34D20925
+F00CFDF074343E7DCF0FFF3FD0FF3C00C3ECF000FF80F0C3F0FDCFF0F0F5D4CF0C00CA34155FD3
+FF8FD70CF3E0AFCDF8FC3EFF3FC304E1000FD5430FF3CDF3CCC0730FFF0C3CF30FFC3BCFB2810C
+A2B3C3404D3C600F0CD3FD373C30FCAF833C924F0C304803F383FFCFC30CCF4FFC3C83CCEFFFFF
+0CC3033F3CCF0D0F3D3CC0CC03FD3C00CFFCF0F0FFF34F28A3C555FFCA3DFD70383CF3C3FDF3CC
+0C0F3F34F23F3FF3CC308F0F33CFFFCCF60F333D373CCFC3CFC00C038FC00FF3000F3F3CF0F303
+1FC20C3F7F3CACC3CF205FCCFCCC0AFF0BCCC070C37D00F30002C3F7F097CB3F30FC75F00FE43F
+CCD3CF873087CFC30088DFDDBC303F10FCD9F31D253FCF2600E1FCF41034C28CFA04F33FCFFEB3
+F892832CA07DFC23CF0F6C783CAC35E8DFC3E88E340DCC31CFB049D39FF3CC3FFFCCBCC50F30FA
+28FE80F8F2F57C31CA27523327F5560C0C3308FF873C557D3C15C70FD0820FB600E89281E8E04B
+F3557F34DC33E74E8A0BD2F8FC9CFFF7F13F27A0FD373FCAA73C3FCF1073CF0CC60F0C3334FE34
+0C5DFFEFE24B283C79FC7FCF3CDFC5EFF27AE73C431FF068580DF0C5D3DFE35E4A2BA235CFF334
+13F3FE3FFE84D482FCCFF0FF17A3FA0C3F74CF3F44202E8000807FEAEFCA0C3739CC3243EBF1CA
+3F3EFE274D333F1ECA0C8CF8C7627CFD1F790730F3E7B1412B3C03FF2F8FA413C4E8DD03C3CC85
+373FCE08F28FEFFFCF44B28A3C128B0FF270F7D4F86C13C4E31F3CEFB274FF4F3BFCDCCA27B3F9
+0F32BA3F3D3E335FCF44A3CD3C0C3C7CF003D0FFCDCCFCFA2C0FC1FFF57413FFCAFCD2B317618C
+F78F35E30FF1F4E033CDD74FEBDF33F7F3CD0C30C30C30D3F883730F0D06CC3FCFF7F03337D743
+E0E3C403F175F4813DF30E0F173FC201F70CE9230CEC3A3F0154FCC0A2CD7FFF203941F8DC3FC3
+7D00CB9F45FC32040F3FFFD38D31FC3CFF0F30F1CFF2CAF3F0CFCFF3DFC303F3C363FF3C82840C
+3E0F0FE073CD5E43C4F0FFCF95C5F4F1BF3CCFCF2381F0C353C3C7F00DCFA13438CF82F3833D23
+FC30CF83F874CCC3D0CC30031D7803FDBF3C8EF8C360F3FC5CC04340F60F32C1E71E1B0F4F4E07
+354DFCA2C02C8E70D7AD870340723FF4F0DB5283FFFEB43BD203FBA270D32FF3173CC3E020FDCF
+003FCF0F83C30F3D34F23878090B1EB77C053F0CB03C9071F70E020F2F033304C0CED03F03CF13
+CB0CF7FCC5D030C5CD0F8F3CD7FFFFFCF30FFCFF3F0CF303CF33FF0CF0C3F4003CFF3F4300007F
+003301E00E30B0FCFF43FF8D71040FCF43F34F03E0F207F4FA3C33D354CF7FF8F0D5C3613C4F73
+80FF3C70C07D30E0FC033CF2B3C323F0E8D07FCFFCFD3CFC7FCFF3F0C3FFCA3CF57CCFFC72042D
+3F073F4F343F4F35F383C8FCCF33A383C30F141333F3D330F5D0A075073DC314FCCB3C3E01CF2C
+33CF617A07F27B5BF079C330F9284FCF3C17CF082072F70FCD3FFCCF3F3FC3FFB103FC7FC3FC83
+69EF9CF3D0DF3B0FDCF7C81DFCF7220B03C3843034C1454CD3F2C8F3214E14F07A273E8B0C1FCB
+C7ACC3C0E3D4C1FC3F0170C3ECA733CF3CFF04333438E188CFEDB8281FC42B0131CFF2FD00A3C6
+38A0C3DFFCF3F782CFFFFFCDFFFF89FFFD320BF355C33E03E890CE1753C0CF1D4FC353F40F5FCF
+031CF3FC348D28B04B07E244D393C3200C34F440711023CFCF1CF33CA0FCFF1CF7D0933833FE09
+17FC73E78CB3F3AF417FFCC904A3F4E8F13B0F3E810FF7C304EFF3DB4FC0C34FDD030134FFA3F8
+24924E33E13FEF8ECB38F3D7F33773F3E38A03C3F3F330CCFCB33F8FD43400BF0F0FFC33030F3F
+CF3C1CCD0FF0F3CF3F70CD30C33CD4C3FCD00034FCC8D8800EF753F839A3F854037D2460F53FD3
+C4FFFFC3C4B0FFFC3FF8CF80F9DF7FF50F3CCD3F0DCBC3FCF33C3003C8FFFFFC3CFF3CF28F314E
+0E0340331F0F81C3C28F32FC0C013F8FE4F40033E3F343F37C0C2090C0F93F0FD87C020E2F3D07
+5F3F3C3E0140C8ACCD1EF0E33CF83C433D43C05E0333C03C279C1F0F4CB8F00D3C33F7CDFDDF77
+FFD7F5FF3FD7FCFCCCBF008013C4FF4FB0030003FFF3033F023C0C375F0CDF433CE773333309CF
+C0FF03C30CC03000F3CF4C03037030303FC03CFCFE33030C003E0C3FF0C33C0CC5F85DCCC3DCF4
+1733433FF4F03FE1CC3F004C00F08533BE303FACC0D33C08C003F740F30BCF003F3F0E0C0FFCCF
+1C3C0C173030153C3704C0C1CD3FD33C0EB0303CCC28C3C00F3D33C00DF52C1407CC0C30C004C7
+FF0CC130D74D3303CC0C80303CC34F0F3C0CCF0C060FB300CFB405EC800C3300000F0CCFC0FDD3
+DF1CFDC03C0D7C8300D79C00283D44C09C0F2033F313020BCCA0CCC070F51733060CDF8F34FCF3
+3830F1549133030C097C0CC938BC30380009C3DEB0D53DF00F7CF3C05C3EDF02C8C390C3FFFC0D
+01D30F248275273033EF0D48C30C30C3F000033343C30CCF0360F0C0C07524BC70EC820E070278
+04AECA279CC924AC3420700A0FE277FCBCC92430F1C03D430FFCF830D3CFCC03F03000CC3F4DF5
+30FCF3D080F14F00F304D143D8F23024BC331493CC23F0CFF8C303C7010C201C05C35374170003
+DC3CCF2870C3C300F3E00040C30C700C30363F03F3748DF3337FF730C0C1E08E03CF0040CF3030
+C08CF43700C3E330433F3E0F0080C3F74770030C703FD4C300C0F300000FCF3DC0000C00000DC3
+0040F830FFC30FC038F1D33FF875103433FF3C0F3F03C0340F3008F43FF00D0CEFC0AC343B00F0
+CF033D1880452CC037303DF03CCFF53BE2CCE0CC0CC37315A77000233C03C330F3E30D08D07C50
+DCF0F01C3F75CF0BF320AE89E733C8A33C300345301F3E2ACC03F3CC5FCFCC0C371873B01BD30F
+0CFE70100CC5238130D4E143CD30CC205C0C17430FCFBCC35550F1C37CCE2412383090F023FCCD
+C7E10010FC370CCC05570C370C30F40C03F3FF31433FE0020F00F6C30D4CD5543FC330F5E700F3
+E05231689F41389FCAC34C0EC403332B3FF1C002700F3E33330C0CC0FCCF0007F300C0CBC0C3F0
+30D0030000F5CF0CFAC08240C3B300C30333149F831BD2BE315D05043C33C0BE83CB755D000C0C
+0330303F0C7703BC0CC330F0C030C33F0C0000F0CC00F3DF33023DDF9CC1CF0CC40F40F7C300F0
+140203C0D1054F3337C0F1003CF0CFC07C0FCC00C0CC3C33C33CFE050D00CCFFF3004C0A0F3003
+033CF003FCD3CC303C0DFF00C34F14EEC60F3E01C03230D70E7574404B030C000F3C33333F4CF4
+330FC0C0F3CF0000C77C310C0F70DF0C010F0C0EFCEFF88400F33D51000330C0043034CCFC03CD
+3FBFF32FC0D004FADFB0340042CCF1FC007D0200203DFCD0C37500F3CFFF301CF7F80DF0033FF3
+7F3C3CC33DDCF30CFFFFC14D5F37328F3C3FC7D017C70FEFCF37A0CF0F0C4CF8FF4CCFF3FF2CF7
+CA28F3CB3CFCFCEED083E5DC380CFF304BFFF200307F0FFCFFF4F3433CF0BCCCC4CCC3F03E3C0F
+F1C30F380C3C3FC00FCFCFFFF0C380300D0FCDC0F33043CC747C30C30CF0D3F3F3F3C7F2C92C3C
+33C40CFFFFA57F1B734070F3C3F0C70E30303FF17F180074D4F3F00F3C3A34F0F8FC5F75370CFD
+3CE380FFA34F3C93CEFC34F40FF07A1CFFC14CCF31E70CF83C9FFC48B03CCFED80EF073A38F0F6
+07F11943AA7D3FFFF3FB3F3F133E86283F3CE0D3F0FC0331F832CA2F3CFF3F3FC327124FCCA33B
+3C5F8A10334FF8A2712F3C70DFF379CF5F3F2810CF2C0F83F8A2AFE7BE30E71FC1D8FF3D3F4FDF
+3D53F3CFF0CF0730F4DCF3DF13404AF70C35FCA0F0C80FC8C03D7FD353FFC7FC085C3E8FCF35CF
+04F3C3CCF04F070D7CDFF288D78C3FCF5270D7F2C1D43D33D05E0E33FFCFE7CE43FC6373D70C0F
+28A2F3E7F2F3373FC3FC3CF7D7F07FC30003D0A0F43FCD73C340CF3FE3732CDCF3CFF3C1F83E89
+DB5ED8215F33CF1EB43C7C73FCC7FDF3FFC3C35CF3C300FE230FC3FD0F0C3C389FBC093FBFE007
+CE020C3FCF73C3F31C03C30707C00CFFC35C40030C0C3F02032B0337FF4230333C3F34CD8C18AC
+3BD460740C0C00E0300343FC0C000C08CCF315570330C01030CF7CC0C03DF833D270003C09015D
+77DCCF433C0D78070F77775F7900D00A2F63CBF49C37E080F41F3DF02B0CF00000340F035E3030
+00FF34CF00DCC3C330F7E30CC3C09C37C7D3380FBF89049DB0D5543020C3C83F8234D7905304B3
+01D53DFB104C00030075C0F0370F33C030C283C33531CF02300C01C30CA20030C20330F20CCCA0
+01FBDFCB030FC324D2002BEC03D7331507F3CA17FD83F83305C01FC6F70C3B080241543C315700
+F00F0CF5C03CF3CF337FC334FC71333050BCCCFCE3F700D3C4FFF794032D33F0033F1CF3C03DF7
+030073FC0CFE35FDB1C033FCF0DC08C80505E9F116BF81D234EC23FC38D8123400FF01FF93F03F
+CDF0D41362B6407FFF7CFE0700000F19EF3570AC3FCDF30DB03C68D3F3D3F3C3B00F30002F3FC3
+FF734550C033F3303E03FC0DF3000FF0FCCC0CC01DCCAB7DDB7FC0C0FF27FF07000F03FCC0D002
+212CCCFD340D7D310B450F08870E3CE717FB12D00C79257F0CCF34BA923C87F03CF0D00213BFF8
+C042E0CC0FFE583D7FCF03CD030C0F13F373F331C3FCD3CCDC0FC2F3C0033FFC3000F0303FE03F
+C3C0F00F3F3000F30FCC043303FC00FF0F3CF007CF3003F3FC09F357C033F0FF00310FF0F0F00F
+B3FDFF00FC03C0FFFDC00072333F0018F04DD3F50F0F3C00C3CC413C3FC30F0F377FC0F6200FFC
+0000F3CF0C0778C442310C0F03F1FF0303F3FD0CCFD03F7FC431C3FDCC0FFFCFFF73C0CC7F0554
+F00CFF0CF003FFF3CFCC7F3C3F355740F0F30CC337FD0EC0E031FF342770FEF7F72011FD4B1771
+FEF187CF50FCF0E0261A90CEC4CFF0CCC34FF0C0F0F00F13F03517D033F3C0033CF4FC0FCFCFB0
+D4F33DF0F30DE4DF8DE0F0FF33003FF033CFFCF000CFFFC10633100C303C2C0FCF6E8F343CF012
+3D770381C0316503CFC2FD0C0F3CDC73FCB3CC0FC3FF0C32ACDC35CBFFCC03F0C0D300F0CC0FF0
+F03C03F47C30FC33F0FC0C03CF3F3CCC58C03F03CFFFB3059079E9100FEF0C3C033D7037C3F7C0
+FFC3DC3C79033C30F3CF00C3C00F04700FC4EC0103F03C0FF3034C00FCFCCCEC3FDF3323FFFFFF
+FFCCF0CCFCF030CC0CC0D40334FFF31C33C330331303333333330FCC0CCF0CCC34CECCF033F0CC
+C20030B3300CFC3343CF013E0C3F777FFFFD30CF03C0C5C0F9CFC0FFCC3D0303CCF03C330F0C3C
+CC2CCFC333C3330FF0CCF033F0CCCCCCCCC73340F08C3FD3F0FFF3C053FF0FFFD33300C0000000
+'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 77,
+                  anticodon int {
+                    from 32,
+                    to 34,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 0,
+                to 68,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 73,
+                  anticodon int {
+                    from 98,
+                    to 100,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 69,
+                to 132,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 81,
+                  anticodon int {
+                    from 166,
+                    to 168,
+                    strand minus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 130,
+                to 198,
+                strand minus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 89,
+                  anticodon int {
+                    from 1411,
+                    to 1413,
+                    strand minus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 1380,
+                to 1443,
+                strand minus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 75,
+                  anticodon int {
+                    from 3756,
+                    to 3758,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 3726,
+                to 3796,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 68,
+                  anticodon int {
+                    from 3827,
+                    to 3829,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 3796,
+                to 3862,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 71,
+                  anticodon int {
+                    from 5520,
+                    to 5522,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 5490,
+                to 5556,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 65,
+                  anticodon int {
+                    from 5940,
+                    to 5942,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 5910,
+                to 5975,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 82,
+                  anticodon int {
+                    from 6004,
+                    to 6006,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 5975,
+                to 6040,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 83,
+                  anticodon int {
+                    from 6132,
+                    to 6134,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 6111,
+                to 6171,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 70,
+                  anticodon int {
+                    from 6310,
+                    to 6312,
+                    strand minus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 6279,
+                to 6348,
+                strand minus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 72,
+                  anticodon int {
+                    from 8115,
+                    to 8117,
+                    strand minus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 8084,
+                to 8147,
+                strand minus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 84,
+                  anticodon int {
+                    from 9811,
+                    to 9813,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 9780,
+                to 9845,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 83,
+                  anticodon int {
+                    from 11640,
+                    to 11642,
+                    strand plus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 11611,
+                to 11677,
+                strand plus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 76,
+                  anticodon int {
+                    from 12670,
+                    to 12672,
+                    strand minus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 12634,
+                to 12702,
+                strand minus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type rRNA,
+                ext name "l-rRNA"
+              },
+              comment "16SrRNA; 16S ribosomal RNA",
+              location int {
+                from 12703,
+                to 14046,
+                strand minus,
+                id gi 295065608
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 86,
+                  anticodon int {
+                    from 14079,
+                    to 14081,
+                    strand minus,
+                    id gi 295065608
+                  }
+                }
+              },
+              location int {
+                from 14047,
+                to 14111,
+                strand minus,
+                id gi 295065608
+              }
+            },
+            {
+              data imp {
+                key "D-loop"
+              },
+              comment "A+T rich region; contains origin of replication",
+              location int {
+                from 14885,
+                to 15388,
+                strand minus,
+                id gi 295065608
+              }
+            },
+            {
+              data gene {
+                locus "COX1"
+              },
+              partial TRUE,
+              location int {
+                from 1446,
+                to 2976,
+                strand plus,
+                id gi 295065608,
+                fuzz-from lim lt
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072888
+                }
+              }
+            },
+            {
+              data gene {
+                locus "COX2"
+              },
+              location int {
+                from 3044,
+                to 3725,
+                strand plus,
+                id gi 295065608
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072889
+                }
+              }
+            },
+            {
+              data gene {
+                locus "COX3"
+              },
+              location int {
+                from 4698,
+                to 5486,
+                strand plus,
+                id gi 295065608
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072892
+                }
+              }
+            },
+            {
+              data gene {
+                locus "ND3"
+              },
+              location int {
+                from 5557,
+                to 5908,
+                strand plus,
+                id gi 295065608
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072893
+                }
+              }
+            },
+            {
+              data gene {
+                locus "ND5"
+              },
+              location int {
+                from 6350,
+                to 8083,
+                strand minus,
+                id gi 295065608
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072894
+                }
+              }
+            },
+            {
+              data gene {
+                locus "ND4"
+              },
+              location int {
+                from 8148,
+                to 9487,
+                strand minus,
+                id gi 295065608
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072895
+                }
+              }
+            },
+            {
+              data gene {
+                locus "ND4L"
+              },
+              location int {
+                from 9487,
+                to 9777,
+                strand minus,
+                id gi 295065608
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072896
+                }
+              }
+            },
+            {
+              data gene {
+                locus "ND6"
+              },
+              location int {
+                from 9913,
+                to 10443,
+                strand plus,
+                id gi 295065608
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072897
+                }
+              }
+            },
+            {
+              data gene {
+                locus "CYTB"
+              },
+              location int {
+                from 10461,
+                to 11609,
+                strand plus,
+                id gi 295065608
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072898
+                }
+              }
+            },
+            {
+              data gene {
+                locus "ND1"
+              },
+              location int {
+                from 11694,
+                to 12632,
+                strand minus,
+                id gi 295065608
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 9072899
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        other {
+          accession "YP_003587409",
+          version 1
+        },
+        gi 295065610
+      },
+      descr {
+        title "cytochrome c oxidase subunit I, partial (mitochondrion)
+ [Parnassius bremeri]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans,
+          completeness no-left
+        },
+        user {
+          type str "RefGeneTracking",
+          data {
+            {
+              label str "IdenticalTo",
+              data fields {
+                {
+                  label id 0,
+                  data fields {
+                    {
+                      label str "accession",
+                      data str "ACO83373"
+                    },
+                    {
+                      label str "gi",
+                      data int 226838342
+                    }
+                  }
+                }
+              }
+            },
+            {
+              label str "Status",
+              data str "PROVISIONAL"
+            }
+          }
+        },
+        create-date std {
+          year 2010,
+          month 4,
+          day 23
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 510,
+        seq-data ncbieaa "RKWLYSTNHKDIGTLYFIFGIWAGMVGTSLSLLIRTELGNPGSLIGDDQIYN
+TIVTAHAFIMIFFMVMPIMIGGFGNWLVPLMLGAPDMAFPRMNNMSFWLLPPSLTLLISSSIVENGAGTGWTVYPPLS
+SNIAHGGSSVDLAIFSLHLAGISSILGAINFITTIINMRINNMSFDQMPLFVWAVGITALLLLLSLPVLAGAITMLLT
+DRNLNTSFFDPAGGGDPILYQHLFWFFGHPEVYILILPGFGMISHIISQESGKKETFGCLGMIYAMMAIGLLGFIVWA
+HHMFTVGMDIDTRAYFTSATMIIAVPTGIKIFSWLATLHGSQINYSPSILWSLGFVFLFTVGGLTGVILANSSIDVTL
+HDTYYVVAHFHYVLSMGAVFAIMGGFIHWYPLFTGLSLNNYLLKIQFLSMFIGVNLTFFPQHFLGLSGMPRRYSDYPD
+NFTSWNIISSFGSYISLLSMMMMMMIIWESMINQRMILFSLNMSSSIEWLQNLPPSEHSYNELPILSN"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "cytochrome c oxidase subunit I"
+                }
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 509,
+                id gi 295065610,
+                fuzz-from lim lt
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        other {
+          accession "YP_003587410",
+          version 1
+        },
+        gi 295065611
+      },
+      descr {
+        title "cytochrome c oxidase subunit II (mitochondrion) [Parnassius
+ bremeri]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        user {
+          type str "RefGeneTracking",
+          data {
+            {
+              label str "IdenticalTo",
+              data fields {
+                {
+                  label id 0,
+                  data fields {
+                    {
+                      label str "accession",
+                      data str "ACO83374"
+                    },
+                    {
+                      label str "gi",
+                      data int 226838343
+                    }
+                  }
+                }
+              }
+            },
+            {
+              label str "Status",
+              data str "PROVISIONAL"
+            }
+          }
+        },
+        create-date std {
+          year 2010,
+          month 4,
+          day 23
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 227,
+        seq-data ncbieaa "MPTWSNFNLQNSASPLMEQIIFFHDHTLIILIMITILVGYLMFILFFNKFIN
+RFLLEGQMIELIWTIIPAITLIFIALPSLRLLYLLDELNNPLITLKSIGHQWYWSYEYSDFNNIEFDSYMIQYNKNTP
+ENFRLLDVDNRIILPMNNQIRIMVTATDVIHSWTIPSLGVKVDANPGRLNQTSFFINRPGIFFGQCSEICGANHSFMP
+IMIESISIKNFINWINNYS"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "cytochrome c oxidase subunit II"
+                }
+              },
+              location int {
+                from 0,
+                to 226,
+                id gi 295065611
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        other {
+          accession "YP_003587413",
+          version 1
+        },
+        gi 295065614
+      },
+      descr {
+        title "cytochrome c oxidase subunit III (mitochondrion) [Parnassius
+ bremeri]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        user {
+          type str "RefGeneTracking",
+          data {
+            {
+              label str "IdenticalTo",
+              data fields {
+                {
+                  label id 0,
+                  data fields {
+                    {
+                      label str "accession",
+                      data str "ACO83377"
+                    },
+                    {
+                      label str "gi",
+                      data int 226838346
+                    }
+                  }
+                }
+              }
+            },
+            {
+              label str "Status",
+              data str "PROVISIONAL"
+            }
+          }
+        },
+        create-date std {
+          year 2010,
+          month 4,
+          day 23
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 262,
+        seq-data ncbieaa "MTMNHNHPYHLVDYSPWPLTGAIGVMTLVTGMIKWFHNFNLNLMIVGYIIII
+LTMYQWWRDICREGTLQGKHTILVSKGLRWGMILFIISEVFFFLSFFWAFFHSSLSPNIEIGAMWPPLNITPFNPFQI
+PLLNTIILISSGVTVTWAHHALMENNHSQTTQSLFITIMLGIYFTILQAYEYFEAPFTIADSIYGSTFFMATGFHGLH
+VIIGTIFLMTCFIRHLNNHFSNKHHFGFEAAAWYWHFVDVVWLFLYISIYWWGN"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "cytochrome c oxidase subunit III"
+                }
+              },
+              location int {
+                from 0,
+                to 261,
+                id gi 295065614
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        other {
+          accession "YP_003587414",
+          version 2
+        },
+        gi 295639489
+      },
+      descr {
+        title "NADH dehydrogenase subunit 3 (mitochondrion) [Parnassius
+ bremeri]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        user {
+          type str "RefGeneTracking",
+          data {
+            {
+              label str "IdenticalTo",
+              data fields {
+                {
+                  label id 0,
+                  data fields {
+                    {
+                      label str "accession",
+                      data str "ACO83378"
+                    },
+                    {
+                      label str "gi",
+                      data int 226838347
+                    }
+                  }
+                }
+              }
+            },
+            {
+              label str "Status",
+              data str "PROVISIONAL"
+            }
+          }
+        },
+        create-date std {
+          year 2010,
+          month 4,
+          day 23
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 117,
+        seq-data ncbieaa "MILLLTMSILIIIISNIMMMLSMILSKKSFMDREKCSPFECGFDPKSSARIP
+FSLHFFLITVIFLIFDIEIALLFPIIMSFNLVNFIMLMKISFFFLIILLLGLYHEWNQNMLNWTN",
+        hist {
+          replaces {
+            date std {
+              year 2010,
+              month 5,
+              day 3
+            },
+            ids {
+              gi 295065615
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "NADH dehydrogenase subunit 3"
+                }
+              },
+              location int {
+                from 0,
+                to 116,
+                id gi 295639489
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        other {
+          accession "YP_003587416",
+          version 1
+        },
+        gi 295065617
+      },
+      descr {
+        title "NADH dehydrogenase subunit 4 (mitochondrion) [Parnassius
+ bremeri]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        user {
+          type str "RefGeneTracking",
+          data {
+            {
+              label str "IdenticalTo",
+              data fields {
+                {
+                  label id 0,
+                  data fields {
+                    {
+                      label str "accession",
+                      data str "ACO83380"
+                    },
+                    {
+                      label str "gi",
+                      data int 226838349
+                    }
+                  }
+                }
+              }
+            },
+            {
+              label str "Status",
+              data str "PROVISIONAL"
+            }
+          }
+        },
+        create-date std {
+          year 2010,
+          month 4,
+          day 23
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 446,
+        seq-data ncbieaa "MMKFLMMFIFMIPLCFMKNMFWLVQMMLMLIMFIFMNLSLNINNFCNLSYMM
+GCDLISFGLILLSIWICMLMVMASESLYKNNFYINFFLLNIIILLIMLYLTFSVLNLFMFYLFFEGSLIPTLMLIVGW
+GYQPERIQAGMYLLFYTLFASLPMLMGIFFIFDYLNYLTIYFMKFFNMNLYLLYMSMILAFLVKMPMYFVHLWLPKAH
+VEAPVSGSMILAGIMLKLGGYGLLRILILFQNIGMKMNFIWIIISLLGGLYISLNCFCQVDMKSLIAYSSVAHMSLVI
+GGIMTMNYWGYLGSYIMMIGHGLCSSGMFCLANINYERLHSRSLFMNKGMMNFMPSMSLWWFLLMSSNMAAPPSMNLM
+GEISLINSLVSWSWLSMIMLILMSFFSAGYSLYLYSYTQHGKYNLSIYSFYTGVSREYLMLILHWLPLNMLILKIESF
+MIWF"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "NADH dehydrogenase subunit 4"
+                }
+              },
+              location int {
+                from 0,
+                to 445,
+                id gi 295065617
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        other {
+          accession "YP_003587418",
+          version 1
+        },
+        gi 295065619
+      },
+      descr {
+        title "NADH dehydrogenase subunit 6 (mitochondrion) [Parnassius
+ bremeri]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        user {
+          type str "RefGeneTracking",
+          data {
+            {
+              label str "IdenticalTo",
+              data fields {
+                {
+                  label id 0,
+                  data fields {
+                    {
+                      label str "accession",
+                      data str "ACO83382"
+                    },
+                    {
+                      label str "gi",
+                      data int 226838351
+                    }
+                  }
+                }
+              }
+            },
+            {
+              label str "Status",
+              data str "PROVISIONAL"
+            }
+          }
+        },
+        create-date std {
+          year 2010,
+          month 4,
+          day 23
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 176,
+        seq-data ncbieaa "MLKMFLSLLIMMFSIMMFFFNHPLSMGLLILLQTLLICLLSGMLINTYWFSY
+ILFLVFLGGLLVLFIYVSSIASNEMFYNSFFSKMTLIFIFSLSMLLSYMYMYNLNWLNFTNNYEMINFKNLFIFFNNE
+NKINLSKLYNNYTHLMMMMLIIYLFITLVAVINITNIFFGPLRLSN"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "NADH dehydrogenase subunit 6"
+                }
+              },
+              location int {
+                from 0,
+                to 175,
+                id gi 295065619
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        other {
+          accession "YP_003587419",
+          version 1
+        },
+        gi 295065620
+      },
+      descr {
+        title "cytochrome b (mitochondrion) [Parnassius bremeri]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        user {
+          type str "RefGeneTracking",
+          data {
+            {
+              label str "IdenticalTo",
+              data fields {
+                {
+                  label id 0,
+                  data fields {
+                    {
+                      label str "accession",
+                      data str "ACO83383"
+                    },
+                    {
+                      label str "gi",
+                      data int 226838352
+                    }
+                  }
+                }
+              }
+            },
+            {
+              label str "Status",
+              data str "PROVISIONAL"
+            }
+          }
+        },
+        create-date std {
+          year 2010,
+          month 4,
+          day 23
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 382,
+        seq-data ncbieaa "MMNKFLPLRKTHPLFKIINGSLIDLPSPSNISLWWNFGSLLALCLIIQILTG
+LFLTMYYTANIELAFYSVNYICRNVNYGWLIRTLHANGASFFFICIYLHIGRGIYYESFNLKYTWMVGVIILFILMAT
+AFMGYVLPWGQMSFWGATVITNLLSAIPYLGTMLVNWIWGGFAVDNATLTRFYSFHFLFPFIILMLTMIHLLFLHQTG
+SNNPLGINSNLDKIPFHPFFTFKDLIGFIILLTLLIMLTLTNPYLLGDPDNFIPANPLVTPIHIQPEWYFLFAYAILR
+SIPNKLGGVIALVMSILILIILPLTFNKKIQGIQFYPINQMLFWSMVSIIILLTWIGARPVEDPYIITGQLLTILYFS
+YFLINPIINKIWDNLIFN"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "cytochrome b"
+                }
+              },
+              location int {
+                from 0,
+                to 381,
+                id gi 295065620
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        other {
+          accession "YP_003587420",
+          version 1
+        },
+        gi 295065621
+      },
+      descr {
+        title "NADH dehydrogenase subunit 1 (mitochondrion) [Parnassius
+ bremeri]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        user {
+          type str "RefGeneTracking",
+          data {
+            {
+              label str "IdenticalTo",
+              data fields {
+                {
+                  label id 0,
+                  data fields {
+                    {
+                      label str "accession",
+                      data str "ACO83384"
+                    },
+                    {
+                      label str "gi",
+                      data int 226838353
+                    }
+                  }
+                }
+              }
+            },
+            {
+              label str "Status",
+              data str "PROVISIONAL"
+            }
+          }
+        },
+        create-date std {
+          year 2010,
+          month 4,
+          day 23
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 312,
+        seq-data ncbieaa "MMLKDMMMMILGMLILILGVLIGVAFLTLLERKVLGYIQIRKGPNKVGYMGI
+LQPFSDAIKLFTKEQVFPMYSNYISYYFSPIISFILSLMVWMLIPYYFNMISFNLGVLFFLCCTSMGVYTVMVAGWSS
+NSNYSLLGGLRAVAQTISYEVSLALIMLSSIMLIMDFNMMKFFIYQDLIWFFFLMLPLSMSWISSSLAETNRTPFDFA
+EGESELVSGFNIEYSSGGFALIFLAEYSSILFMSMLFVLLYLGGYNMSLFFYLKLIFISFLFIWVRGTLPRYRYDKLM
+YLSWKSYLPISLNYLLFFVGLKMFLS"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "NADH dehydrogenase subunit 1"
+                }
+              },
+              location int {
+                from 0,
+                to 311,
+                id gi 295065621
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame one,
+            code {
+              id 5
+            },
+            code-break {
+              {
+                loc int {
+                  from 2976,
+                  to 2976,
+                  strand plus,
+                  id gi 295065608
+                },
+                aa ncbieaa 42
+              }
+            }
+          },
+          partial TRUE,
+          comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA",
+          product whole gi 295065610,
+          location int {
+            from 1446,
+            to 2976,
+            strand plus,
+            id gi 295065608,
+            fuzz-from lim lt
+          }
+        },
+        {
+          data cdregion {
+            code {
+              id 5
+            },
+            code-break {
+              {
+                loc int {
+                  from 3725,
+                  to 3725,
+                  strand plus,
+                  id gi 295065608
+                },
+                aa ncbieaa 42
+              }
+            }
+          },
+          comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA",
+          product whole gi 295065611,
+          location int {
+            from 3044,
+            to 3725,
+            strand plus,
+            id gi 295065608
+          }
+        },
+        {
+          data cdregion {
+            code {
+              id 5
+            }
+          },
+          product whole gi 295065614,
+          location int {
+            from 4698,
+            to 5486,
+            strand plus,
+            id gi 295065608
+          }
+        },
+        {
+          data cdregion {
+            code {
+              id 5
+            },
+            code-break {
+              {
+                loc int {
+                  from 5908,
+                  to 5908,
+                  strand plus,
+                  id gi 295065608
+                },
+                aa ncbieaa 42
+              }
+            }
+          },
+          comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA",
+          product whole gi 295639489,
+          location int {
+            from 5557,
+            to 5908,
+            strand plus,
+            id gi 295065608
+          }
+        },
+        {
+          data cdregion {
+            code {
+              id 5
+            },
+            code-break {
+              {
+                loc int {
+                  from 8148,
+                  to 8149,
+                  strand minus,
+                  id gi 295065608
+                },
+                aa ncbieaa 42
+              }
+            }
+          },
+          comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA",
+          product whole gi 295065617,
+          location int {
+            from 8148,
+            to 9487,
+            strand minus,
+            id gi 295065608
+          }
+        },
+        {
+          data cdregion {
+            code {
+              id 5
+            }
+          },
+          product whole gi 295065619,
+          location int {
+            from 9913,
+            to 10443,
+            strand plus,
+            id gi 295065608
+          }
+        },
+        {
+          data cdregion {
+            code {
+              id 5
+            }
+          },
+          product whole gi 295065620,
+          location int {
+            from 10461,
+            to 11609,
+            strand plus,
+            id gi 295065608
+          }
+        },
+        {
+          data cdregion {
+            code {
+              id 5
+            }
+          },
+          product whole gi 295065621,
+          location int {
+            from 11694,
+            to 12632,
+            strand minus,
+            id gi 295065608
+          }
+        }
+      }
+    }
+  }
+}

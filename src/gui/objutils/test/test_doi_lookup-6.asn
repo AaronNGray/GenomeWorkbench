@@ -1,0 +1,120 @@
+Pubdesc ::= {
+  pub {
+    article {
+      title {
+        name "A dispensable paralog of succinate dehydrogenase subunit C
+ mediates standing resistance towards a subclass of SDHI fungicides in
+ Zymoseptoria tritici"
+      },
+      authors {
+        names std {
+          {
+            name name {
+              last "Steinhauer",
+              first "Diana"
+            }
+          },
+          {
+            name name {
+              last "Salat",
+              first "Marie"
+            }
+          },
+          {
+            name name {
+              last "Frey",
+              first "Regula"
+            }
+          },
+          {
+            name name {
+              last "Mosbach",
+              first "Andreas"
+            }
+          },
+          {
+            name name {
+              last "Luksch",
+              first "Torsten"
+            }
+          },
+          {
+            name name {
+              last "Balmer",
+              first "Dirk"
+            }
+          },
+          {
+            name name {
+              last "Hansen",
+              first "Rasmus"
+            }
+          },
+          {
+            name name {
+              last "Widdison",
+              first "Stephanie"
+            }
+          },
+          {
+            name name {
+              last "Logan",
+              first "Grace"
+            }
+          },
+          {
+            name name {
+              last "Dietrich",
+              first "Robert A"
+            }
+          },
+          {
+            name name {
+              last "Kema",
+              first "Gert HJ"
+            }
+          },
+          {
+            name name {
+              last "Bieri",
+              first "Stephane"
+            }
+          },
+          {
+            name name {
+              last "Sierotzki",
+              first "Helge"
+            }
+          },
+          {
+            name name {
+              last "Torriani",
+              first "Stefano FF"
+            }
+          },
+          {
+            name name {
+              last "Scalliet",
+              first "Gabriel"
+            }
+          }
+        }
+      },
+      from journal {
+        title {
+          iso-jta "bioRxivorg"
+        },
+        imp {
+          date std {
+            year 2019,
+            month 4,
+            day 23
+          }
+        }
+      },
+      ids {
+        doi "10.1101/616904"
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+# $Id: Makefile.in 44927 2020-04-21 16:21:58Z asztalos $
+# Author:  Mike DiCuccio
+
+# Meta-makefile for libgui_utils
+#################################
+
+APP_PROJ = unit_test_cmd_del_bioseq test_cmd_change_seqentry test_cmd_change_seqentry-2 \
+           test_doi_lookup test_cmd_propagate_feat unit_test_cmd_change_desc \
+           test_adjustcds_splicesite test_convert_raw_to_delta test_cmd_change_seqfeat
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

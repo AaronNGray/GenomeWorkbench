@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.cserial.lib.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(xcser)
+  NCBI_sources(asntypes serialasn)
+  NCBI_optional_components(NCBI_C)
+  NCBI_uses_toolkit_libraries(xser)
+  NCBI_project_watchers(vasilche)
+NCBI_end_lib()
+
+

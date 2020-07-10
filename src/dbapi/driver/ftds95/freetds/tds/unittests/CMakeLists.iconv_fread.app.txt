@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.iconv_fread.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(tds95_iconv_fread)
+  NCBI_sources(iconv_fread)
+  NCBI_add_test()
+NCBI_end_app()
+

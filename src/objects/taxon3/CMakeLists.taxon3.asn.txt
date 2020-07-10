@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.taxon3.asn.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+
+NCBI_begin_lib(taxon3)
+  NCBI_dataspecs(taxon3.asn)
+  NCBI_sources(taxon3)
+  NCBI_uses_toolkit_libraries(seq xconnect)
+  NCBI_project_watchers(bollin holmesbr)
+NCBI_end_lib()
+

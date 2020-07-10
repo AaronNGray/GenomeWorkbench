@@ -1,0 +1,12 @@
+# $Id: Makefile.in 24585 2011-10-21 15:22:06Z vakatov $
+# Author:  Josh Cherry
+
+# Meta-makefile for package_test
+######################################
+
+APP_PROJ = package_test
+
+PROJ_TAG = test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

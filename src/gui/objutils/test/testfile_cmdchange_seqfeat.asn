@@ -1,0 +1,175 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq1"
+            },
+            {
+              label str "General",
+              data str "gnl|BankIt|1657039/Seq1"
+            },
+            {
+              label str "General",
+              data str "gnl|TMSMART|39787263"
+            },
+            {
+              label str "GenBank",
+              data str "gb|KF591393|"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "Drs3"
+                },
+                {
+                  subtype nat-host,
+                  subname "Methanobacterium formicicum, strain Dresden Khl10"
+                }
+              },
+              gcode 1
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Germany"
+            },
+            {
+              subtype isolation-source,
+              name "Anaerobic digester"
+            },
+            {
+              subtype other,
+              name "[cultured bacterial source]"
+            }
+          },
+          pcr-primers {
+            {
+              forward {
+                {
+                  seq "5'aggcaactgtgctatccgagggag",
+                  name "nbam24"
+                }
+              },
+              reverse {
+                {
+                  seq "5-aggcaactgtgctatccgagggag3'",
+                  name "nbam24"
+                }
+              }
+            }
+          }
+        },
+        user {
+          class "SMART_V1.0",
+          type id 1,
+          data {
+            {
+              label id 1,
+              num 1,
+              data int 8039485
+            }
+          }
+        },
+        user {
+          type str "NcbiCleanup",
+          data {
+            {
+              label str "method",
+              data str "SequinCleanup"
+            },
+            {
+              label str "version",
+              data int 7
+            },
+            {
+              label str "month",
+              data int 12
+            },
+            {
+              label str "day",
+              data int 2
+            },
+            {
+              label str "year",
+              data int 2013
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 1172,
+        strand ds,
+        seq-data ncbi2na '000581F8A53E332F80B8D203F80B16A8A775B03E3E06C23C03C3
+4C57DE8C2AA26EC6A3CE3F8205FAA39FE00B9D28EFBC01274A98A69C73470038D322E82AFA3037
+3FC0578FC3929E2363CE77C0F8F8270A0D5BC0002002AA411915753FF7F5FFFE0FCF3003392E3F
+14E0C94693DCA3C959E8BB1E34382A93A015681FE1BBC34F83E743CE7798A00BCB00CF3CA2F5C9
+293AC02C478C25807F9F7C7D73547D5A18C134CF352F125041E94B8BFA5A42E02130D04ECE945F
+D16C43B80F248E12C090105BFC13D0014C43A5A39F2ECAA49E82CF728FE896BF3D34C8E15CD009
+B2782780B027F10200F0883A32AA049C0158720018001ABC5D730E32C3274087D13C385C46930D
+02012056C35797782570015C210AA114C855044EAE87C05D56737B8015601E171C'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "Putative terminase large subunit gene",
+                desc "terminase large subunit gene"
+              },
+              partial TRUE,
+              location int {
+                from 419,
+                to 1171,
+                strand plus,
+                id local str "Seq1",
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

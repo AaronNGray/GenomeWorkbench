@@ -1,0 +1,17 @@
+# $Id: Makefile.cddalignview.lib 427429 2014-02-20 13:41:40Z gouriano $
+
+WATCHERS = thiessen
+
+ASN_DEP = seq cdd ncbimime
+
+SRC = \
+	cav_alignset \
+	cav_alndisplay \
+	cav_function \
+	cav_seqset
+
+LIB = xcddalignview
+
+
+USES_LIBRARIES =  \
+    ncbimime

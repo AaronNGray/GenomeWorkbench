@@ -1,0 +1,14 @@
+# $Id: Makefile.in 34496 2016-01-15 17:05:08Z asztalos $
+# Author:  Mike DiCuccio
+
+# Meta-makefile for libgui_objutils
+
+LIB_PROJ = gui_objutils
+
+EXPENDABLE_SUB_PROJ = test test_macro \
+#                     obj_conv_profile
+
+REQUIRES = algo OpenGL
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

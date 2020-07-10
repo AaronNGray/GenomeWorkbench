@@ -1,0 +1,205 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Habropoda laboriosa",
+            db {
+              {
+                db "taxon",
+                tag id 597456
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Protostomia; Ecdysozoa; Panarthropoda; Arthropoda;
+ Mandibulata; Pancrustacea; Hexapoda; Insecta; Dicondylia; Pterygota;
+ Neoptera; Endopterygota; Hymenoptera; Apocrita; Aculeata; Apoidea; Apidae;
+ Anthophorinae; Anthophorini; Habropoda",
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq1"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787263
+            },
+            genbank {
+              accession "KF591393"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            },
+            user {
+              type str "Unverified",
+              data {
+                {
+                  label str "Type",
+                  data str "Misassembled"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 189,
+            strand ds,
+            seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAAT
+TTGAAAGTACCGGGGAGGCAACCCGTAATCCCTGCCTCTGAAGCCCTAAAAACCCTAAGACAAGGGGACACCATAGAC
+CCCAACACATGGGTGGACTTAAACCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+          }
+        },
+        seq {
+          id {
+            local str "KF591393_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 63,
+            seq-data ncbieaa "-KPNLRPLI*LKVIRNLKVPGRQPVIPASEALKTLRQGDTIDPNTWVD
+LNLPAICENPETDLL"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "new protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 62,
+                    id local str "KF591393_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "KF591393_1",
+              location int {
+                from 0,
+                to 188,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787265
+        },
+        genbank {
+          accession "KF591394"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Jatropha curcas",
+            db {
+              {
+                db "taxon",
+                tag id 180498
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Viridiplantae;
+ Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta;
+ Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae;
+ Pentapetalae; rosids; fabids; Malpighiales; Euphorbiaceae; Crotonoideae;
+ Jatropheae; Jatropha",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        },
+        user {
+          type str "Unverified",
+          data {
+            {
+              label str "Type",
+              data str "Misassembled"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 320,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATTCAGTGGAAATATCACGTTCACTGAGTTCATGAGT
+GAGATGTGGGTGGCTTTTCAGCAACTAATCGGTGAAGTCATAGGTGCCATTTTAAGTGGTATTGGGGAGTTTGTGTAT
+AAAATGGTAGATTCTGCAATCCAAGCCGTCACAGGATGGGTAAATGCTTTCCTATCATTTTTACCACAGATCCCCGGT
+ATGATTGCCTTTTATTTAGGCTTTGCAATTGGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGAT
+CTTGGAGTGCAACTGATAACATGGGTCATTAACA"
+      }
+    }
+  }
+}

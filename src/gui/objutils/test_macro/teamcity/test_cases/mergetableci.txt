@@ -1,0 +1,6 @@
+bankIt/filename	Seq ID	Identifier
+1522075	Seq1	IB-10
+1522097	Seq1	IB-05
+1522285	Seq1	IB-06
+1522292	Seq1	IB-01
+

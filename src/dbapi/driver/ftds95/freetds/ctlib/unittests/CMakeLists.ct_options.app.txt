@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.ct_options.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(ct95_ct_options)
+  NCBI_sources(ct_options common)
+  NCBI_add_test(test-ct95 ct95_ct_options)
+NCBI_end_app()
+

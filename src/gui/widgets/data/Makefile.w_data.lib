@@ -1,0 +1,21 @@
+# $Id: Makefile.w_data.lib 44359 2019-12-04 21:16:16Z katargir $
+
+ASN_DEP = seq seqset
+
+SRC = \
+	data_commands object_contrib \
+	query_parse_panel cmd_table_change_cell cmd_table_assign_column cmd_table_copy_column \
+    report_dialog macro_error_dlg
+
+LIB = w_data
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(WXWIDGETS_INCLUDE)
+
+DLL_LIB = w_wx w_feedback gui_opengl gui_print gui_utils \
+          gui_objutils gui_objects xalnmgr ximage submit tables \
+          $(COMPRESS_LIBS) $(SOBJMGR_LIBS)
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(CMPRS_LIBS) $(DL_LIBS) \
+       $(ORIG_LIBS)
+
+REQUIRES = OpenGL wxWidgets objects

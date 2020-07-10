@@ -1,0 +1,7 @@
+MACRO RemoveIdentifiedBy "Remove identified-by"
+FOR EACH BioSource
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "identified-by"; 
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------

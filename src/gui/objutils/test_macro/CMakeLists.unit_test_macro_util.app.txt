@@ -1,0 +1,22 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_macro_util.app.txt 42463 2019-03-04 19:50:43Z ucko $
+#############################################################################
+
+NCBI_begin_app( unit_test_macro_util)
+  NCBI_sources( unit_test_macro_util )
+  NCBI_uses_toolkit_libraries( gui_objutils )
+  NCBI_requires(Boost.Test.Included)
+NCBI_end_app()
+
+if(OFF)
+add_executable(unit_test_macro_util-app
+    unit_test_macro_util
+)
+
+set_target_properties(unit_test_macro_util-app PROPERTIES OUTPUT_NAME unit_test_macro_util)
+
+
+target_link_libraries(unit_test_macro_util-app
+    gui_objutils test_boost
+)
+endif()

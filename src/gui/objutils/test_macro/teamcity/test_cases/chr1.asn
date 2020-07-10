@@ -1,0 +1,241 @@
+Seq-entry ::= seq {
+  id {
+    general {
+      db "ASM:GCF_000001305",
+      tag str "1"
+    },
+    other {
+      accession "NC_000001",
+      version 11
+    },
+    gpipe {
+      accession "GPC_000001293",
+      version 1
+    },
+    general {
+      db "NCBI_GENOMES",
+      tag id 1
+    },
+    gi 568815597
+  },
+  descr {
+    title "Homo sapiens chromosome 1, GRCh38.p13 Primary Assembly",
+    source {
+      genome chromosome,
+      org {
+        taxname "Homo sapiens",
+        common "human",
+        db {
+          {
+            db "taxon",
+            tag id 9606
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Homo",
+            species "sapiens"
+          },
+          attrib "specified",
+          lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+ Catarrhini; Hominidae; Homo",
+          gcode 1,
+          mgcode 2,
+          div "PRI"
+        }
+      },
+      subtype {
+        {
+          subtype chromosome,
+          name "1"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic
+    }
+  },
+  inst {
+    repr delta,
+    mol dna,
+    length 248956422,
+    ext delta {
+      literal {
+        length 10000,
+        seq-data gap {
+          type telomere,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 197665,
+        strand plus,
+        id gi 568815364
+      },
+      literal {
+        length 50000,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 40301,
+        strand plus,
+        id gi 568815363
+      },
+      literal {
+        length 50000,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 188019,
+        strand plus,
+        id gi 568815362
+      },
+      literal {
+        length 50000,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 121390470,
+        strand plus,
+        id gi 568815361
+      },
+      literal {
+        length 50000,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 198075,
+        strand plus,
+        id gi 568815360
+      },
+      literal {
+        length 100,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 278511,
+        strand plus,
+        id gi 568815359
+      },
+      literal {
+        length 100,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 2282184,
+        strand plus,
+        id gi 568815358
+      },
+      literal {
+        length 100,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 63596,
+        strand plus,
+        id gi 568815357
+      },
+      literal {
+        length 100,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 83494,
+        strand plus,
+        id gi 568815356
+      },
+      literal {
+        length 100,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 251762,
+        strand plus,
+        id gi 568815355
+      },
+      literal {
+        length 18000000,
+        seq-data gap {
+          type heterochromatin,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 80374347,
+        strand plus,
+        id gi 568815354
+      },
+      literal {
+        length 50000,
+        seq-data gap {
+          type contig,
+          linkage unlinked
+        }
+      },
+      loc int {
+        from 0,
+        to 25337486,
+        strand plus,
+        id gi 568815353
+      },
+      literal {
+        length 10000,
+        seq-data gap {
+          type telomere,
+          linkage unlinked
+        }
+      }
+    },
+    hist {
+      replaces {
+        date std {
+          year 2014,
+          month 2,
+          day 3
+        },
+        ids {
+          gi 224589800
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# $Id: Makefile.in 487456 2015-12-17 18:55:21Z ucko $
+
+APP_PROJ = ctl_sp_databases ctl_sp_databases_ftds \
+           dbapi_driver_test_ftds_ctlib dbapi_driver_test_ctlib
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

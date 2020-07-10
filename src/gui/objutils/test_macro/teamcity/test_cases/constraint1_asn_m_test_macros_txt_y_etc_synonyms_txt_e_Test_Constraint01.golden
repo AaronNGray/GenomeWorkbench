@@ -1,0 +1,83 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Homo sapiens",
+            syn {
+              "Festuca elatior",
+              "Lolium arundinaceum",
+              "Schedonorus phoenix",
+              "tall fescue"
+            },
+            orgname {
+              name binomial {
+                genus "Festuca",
+                species "arundinacea"
+              },
+              mod {
+                {
+                  subtype isolate,
+                  subname "Drs3"
+                },
+                {
+                  subtype nat-host,
+                  subname "cat"
+                },
+                {
+                  subtype gb-synonym,
+                  subname "Schedonorus arundinaceus"
+                }
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Poales; Poaceae; BOP
+ clade; Pooideae; Poodae; Poeae; Poeae Chloroplast Group 2 (Poeae type);
+ Loliinae; Festuca",
+              gcode 1,
+              mgcode 1,
+              div "PLN",
+              pgcode 11
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 127,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAATTAATCATACCCTTCTGGATAAGGGGGA"
+      }
+    }
+  }
+}

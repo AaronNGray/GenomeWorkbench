@@ -1,0 +1,200 @@
+#!/opt/python-all/bin/python3
+
+import sys, struct, math, gzip, urllib.request, io
+
+debug = False
+textout = False
+
+def readTabix(buffer, chrom, chr_len, outf):
+    global debug
+    global textout
+    if chrom and chrom.find('chr') == 0:
+        chrom = chrom[3:]
+    offset = 0
+    # read header
+    signature = buffer[offset:4]
+    offset += 4
+    if signature != b'TBI\x01':
+        return 2
+    n_ref = struct.unpack_from('<i', buffer, offset)[0]
+    offset += 4
+    f_format = struct.unpack_from('<i', buffer, offset)[0]
+    offset += 4
+    col_seq = struct.unpack_from('<i', buffer, offset)[0]
+    offset += 4
+    col_beg = struct.unpack_from('<i', buffer, offset)[0]
+    offset += 4
+    col_end = struct.unpack_from('<i', buffer, offset)[0]
+    offset += 4
+    meta = struct.unpack_from('<i', buffer, offset)[0]
+    offset += 4
+    n_skip = struct.unpack_from('<i', buffer, offset)[0]
+    offset += 4
+    l_nm = struct.unpack_from('<i', buffer, offset)[0]
+    offset += 4
+    chr_names = []
+    name = []
+    for a in buffer[offset:offset+l_nm]:
+        if a == 0 and len(name):
+            nn = ''.join(name)
+            if nn.find('chr') == 0:
+                nn = nn[3:]
+            chr_names.append(nn)
+            name = []
+        else:
+            name.append(chr(a))
+    offset += l_nm
+    if debug:
+        print("Index has %d sequences" % n_ref)
+        print("names", ", ".join(chr_names))
+    # read indices
+#    print("indices length", len(buffer)-offset, file=sys.stderr)
+
+#    print('track name="Gaps"')
+    if textout:
+        print('track name="Tabix Map"')
+    lptr_prev = 0
+    for i in range(n_ref):
+        if chrom:
+            chr_name = chrom
+        else:
+            chr_name = chr_names[i]
+        # 16k ranges - level 5 bin
+        ranges = set()
+        # read bin index
+        bins = []
+        n_bin = struct.unpack_from('<i', buffer, offset)[0]
+#        print("bins", n_bin, "at offset", offset, file=sys.stderr)
+        offset += 4
+        for j in range(n_bin):
+            bin_code = struct.unpack_from('<I', buffer, offset)[0]
+            offset += 4
+            n_chunk = struct.unpack_from('<i', buffer, offset)[0]
+            offset += 4
+            lvl = math.floor(math.log2(7*bin_code+1)/3)
+            lvl_size = 1 << (29 - 3*lvl)
+            lvl_rel_size = lvl_size >> 14 # size in lowest level bins (16k)
+            lvl_offset = ((1 << 3*lvl) - 1) // 7
+#            print("lvl", lvl, "lvl_size", lvl_size, "lvl_offset", lvl_offset)
+            bin_pos = (bin_code - lvl_offset) * lvl_size
+            bin_rel_pos = bin_pos >> 14
+#            if debug and (not chrom or chr_name == chrom):
+#                print("bin", bin_code, "of level", lvl, "size", lvl_size, "pos", bin_pos)
+            chunks = []
+            for k in range(n_chunk):
+                cnk_beg = struct.unpack_from('<Q', buffer, offset)[0]
+                offset += 8
+                cnk_end = struct.unpack_from('<Q', buffer, offset)[0]
+                offset += 8
+                chunks.append((cnk_beg, cnk_end))
+#                print("  ", cnk_beg >> 16, ":", cnk_beg & 0xffff, "-", cnk_end >> 16, ":", cnk_end & 0xffff)
+            if lvl in [4, 5]:
+                for k in range(bin_rel_pos, bin_rel_pos+lvl_rel_size):
+                    ranges.add(k)
+            bins.append((bin_pos, lvl_size, bin_code, chunks))
+        # read linear index
+        n_intv = struct.unpack_from('<i', buffer, offset)[0]
+        offset += 4
+        intv = []
+#        ranges = set()
+        for n in range(n_intv):
+            lptr = struct.unpack_from('<Q', buffer, offset)[0]
+            offset += 8
+            intv.append((n, lptr))
+            if lptr != lptr_prev:
+                lptr_prev = lptr
+                ranges.add(n)
+
+        if chrom != chr_names[i]:
+            continue
+
+
+        # process coverage
+        coverage = list(ranges)
+        coverage.sort()
+#        print("Chromosome coverage by bin index from", coverage[0] << 14, "to", coverage[-1] << 14, file=sys.stderr)
+        show_gaps = False
+        if debug:
+            if not chrom or chr_name == chrom:
+                print('Chromosome', chr_name)
+                print('bin')
+                bins.sort()
+                for pos, lvl_size, bin_code, chunks in bins:
+                    print(pos, lvl_size, bin_code, chunks[0][0], chunks[0][1])
+                print('linear')
+                for n, block_off in intv:
+                    print(n << 14, block_off)
+        else:
+            if show_gaps:
+                # gaps
+                prev = -1
+                for j in coverage:
+                    if j != prev + 1:
+                        print(chr_name, (prev+1) << 14, j << 14)
+                    prev = j
+            elif not chrom or chr_len > 0:
+                # coverage
+                run_beg = 0
+                run_end = -1
+                for j in coverage:
+                    if j == run_end + 1:
+                        run_end = j
+                    else:
+                        if run_end >= 0:
+                            seq_beg = run_beg << 14
+                            seq_end = (run_end+1) << 14
+                            seq_end = min(chr_len, seq_end) if chr_len else seq_end
+                            if chrom and not textout:
+                                outf.write(struct.pack('<I', seq_beg))
+                                outf.write(struct.pack('<I', seq_end))
+                            else:
+                                print('chr'+chr_name, seq_beg, seq_end)
+                        run_beg = run_end = j
+                if run_end >= 0:
+                    seq_beg = run_beg << 14
+                    seq_end = (run_end+1) << 14
+                    seq_end = min(chr_len, seq_end) if chr_len else seq_end
+                    if chrom and not textout:
+                        outf.write(struct.pack('<I', seq_beg))
+                        outf.write(struct.pack('<I', seq_end))
+                    else:
+                        print('chr'+chr_name, seq_beg, seq_end)
+    if textout: sys.stdout.flush()    
+#        print(bins)
+    return 0
+
+def main(args):
+    global debug
+    global textout
+    if len(args) < 1:
+        print("Usage: rmt_tabixparse features.gz chrom chrom_length [outfile]", file=sys.stderr)
+        return 1
+    try:
+        debug_idx = args.index('-d')
+        debug = True
+        args.pop(debug_idx)
+    except ValueError: pass
+    try:
+        textout_idx = args.index('-t')
+        textout = True
+        args.pop(textout_idx)
+    except ValueError: pass
+    chr_name = args[1] if len(args) > 1 else None
+    chr_len = int(args[2]) if len(args) > 2 else 0
+    out_fname = args[3] if len(args) > 3 else None
+    name = args[0] + ".tbi"
+    if name.find('http') == 0 or name.find('ftp') == 0:
+        with urllib.request.urlopen(name) as response:
+            buffer = response.read()
+        with gzip.GzipFile(fileobj=io.BytesIO(buffer)) as f:
+            buffer = f.read()        
+    else:
+        with gzip.open(name, "rb") as f:
+            buffer = f.read()
+    with open(out_fname, "wb") if out_fname else sys.stdout.buffer as outf:
+        res = readTabix(buffer, chr_name, chr_len, outf)
+        outf.flush()
+    return res
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

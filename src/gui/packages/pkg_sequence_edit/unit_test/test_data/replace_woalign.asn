@@ -1,0 +1,469 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class phy-set,
+      seq-set {
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome mitochondrion,
+              org {
+                taxname "Eryx tataricus",
+                db {
+                  {
+                    db "taxon",
+                    tag id 51873
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Eryx",
+                    species "tataricus"
+                  },
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "ERP_792_Sabzevar"
+                    }
+                  },
+                  lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Lepidosauria; Squamata; Bifurcata; Unidentata; Episquamata;
+ Toxicofera; Serpentes; Henophidia; Boidae; Erycinae; Eryx",
+                  gcode 1,
+                  mgcode 2,
+                  div "VRT"
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                genbank {
+                  accession "KJ841043",
+                  version 1
+                },
+                gi 816004912
+              },
+              descr {
+                title "Eryx tataricus isolate ERP_792_Sabzevar cytochrome b
+ gene, partial cds; mitochondrial.",
+                molinfo {
+                  biomol genomic,
+                  completeness partial
+                },
+                create-date std {
+                  year 2015,
+                  month 4,
+                  day 29
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 912,
+                strand ds,
+                seq-data ncbi2na '07FA4939E7A6E4924E4AE785A7FFDE9AE4F316604F05
+E9BF2493EE4CF15B8EE5B3A7A38E48179398FA6624EFFF3F93F33D33E66E97B3CE927378100017
+A789A4515E78F39E3A6166FFFA73B9E5BAA52389FFA9A616E3C505E78598F5B37A914538517A7B
+AA69FE63C18D615E15BFFF99E4FF3DE5BFA4F3C978925E4CF39E793823A4924159EA450498CF8C
+03D6FD35B34C5CC08DE78E78978E3DE39E78E16E27F7968CFFC18D6801FC90260567AE1564933C
+14898CF2732563A6FF38D22521417A0993E96E92CD27BFCDE4894DE4C54DE5898D6CC98D227304
+9CC9813493252793812592'H
+              }
+            },
+            seq {
+              id {
+                genbank {
+                  accession "AKE78798",
+                  version 1
+                },
+                gi 816004913
+              },
+              descr {
+                title "cytochrome b, partial (mitochondrion) [Eryx tataricus]",
+                molinfo {
+                  biomol peptide,
+                  tech concept-trans,
+                  completeness no-ends
+                },
+                create-date std {
+                  year 2015,
+                  month 4,
+                  day 29
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 77,
+                seq-data ncbieaa "NFGSMLLACSSMQVLTGFFLAVHYTANINLAFSSIVHITRDVPY
+GWMMQNLHAIGASMFFICIYIHIARGLYYGSYL"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "cytochrome b"
+                        },
+                        desc "Cytb"
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 76,
+                        id genbank {
+                          accession "AKE78798",
+                          version 1
+                        },
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    frame one,
+                    code {
+                      id 2
+                    }
+                  },
+                  partial TRUE,
+                  product whole gi 816004913,
+                  location int {
+                    from 0,
+                    to 230,
+                    strand plus,
+                    id gi 816004912,
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome mitochondrion,
+              org {
+                taxname "Eryx miliaris",
+                db {
+                  {
+                    db "taxon",
+                    tag id 51871
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Eryx",
+                    species "miliaris"
+                  },
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "ERP_806_Sabzevar"
+                    }
+                  },
+                  lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Lepidosauria; Squamata; Bifurcata; Unidentata; Episquamata;
+ Toxicofera; Serpentes; Henophidia; Boidae; Erycinae; Eryx",
+                  gcode 1,
+                  mgcode 2,
+                  div "VRT"
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                genbank {
+                  accession "KJ841044",
+                  version 1
+                },
+                gi 816004914
+              },
+              descr {
+                title "Eryx miliaris isolate ERP_806_Sabzevar cytochrome b
+ gene, partial cds; mitochondrial.",
+                molinfo {
+                  biomol genomic,
+                  completeness partial
+                },
+                create-date std {
+                  year 2015,
+                  month 4,
+                  day 29
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 912,
+                strand ds,
+                seq-data ncbi2na '07FA4939E7A6E4924E4AE785A7FFDE9AE4F316604F05
+E9BF2493EE4CF15B8EE5B3A7A38E48179398FA6624EFFF3F93F33D33E66E97B3CE927378100017
+A789A4515E78F39E3A6166FFFA73B9E5BAA52389FFA9A616E3C505E78598F5B33A914538517A7B
+AA69FE63C18D615E15BFFF99E4FF3DE5BFA4F3C978925E4CF39E793823A4924159EA450498CF8C
+03D6FD35B34C5CC08DE78E78978E3DE39E78E16E27F7968CFFC18D6801FC90260567AE1564933C
+14898CF2732563A6FF38D22521417A0993E96E92CD27BFCDE4894DE4C54D25898D6CC98D227304
+9CC9813493252793812592'H
+              }
+            },
+            seq {
+              id {
+                genbank {
+                  accession "AKE78799",
+                  version 1
+                },
+                gi 816004915
+              },
+              descr {
+                title "cytochrome b, partial (mitochondrion) [Eryx miliaris]",
+                molinfo {
+                  biomol peptide,
+                  tech concept-trans,
+                  completeness no-ends
+                },
+                create-date std {
+                  year 2015,
+                  month 4,
+                  day 29
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 304,
+                seq-data ncbieaa "NFGSMLLACSSMQVLTGFFLAVHYTANINLAFSSIVHITRDVPY
+GWMMQNLHAIGASMFFICIYIHIARGLYYGSYLNKKTWLSGTTLLIMLMATAFFGYVLPWGQMSFWAATVITNLLTAI
+PYMGTTMTTWLWGGFAINDPTLTRFFALHFILPFGIISLSSLHIMLLHEDGSSNPLGTNSDIDKIPFHPYHTYKDLLM
+LSLMILMLLMTVSFLPDIFNDPENFSKANPLVTPQHINQSDISYSPMAFYDQSQTNLEAHWPWQYQLFYLQSHLHTHQ
+PSDPYSDQSYNSYSEHQHSQLHEQPQ"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "cytochrome b"
+                        },
+                        desc "Cytb"
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 303,
+                        id gi 816004915,
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    frame one,
+                    code {
+                      id 2
+                    }
+                  },
+                  partial TRUE,
+                  product whole gi 816004915,
+                  location int {
+                    from 0,
+                    to 911,
+                    strand plus,
+                    id gi 816004914,
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome mitochondrion,
+              org {
+                taxname "Eryx tataricus",
+                db {
+                  {
+                    db "taxon",
+                    tag id 51873
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Eryx",
+                    species "tataricus"
+                  },
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "ERP_875_Parvand"
+                    }
+                  },
+                  lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Lepidosauria; Squamata; Bifurcata; Unidentata; Episquamata;
+ Toxicofera; Serpentes; Henophidia; Boidae; Erycinae; Eryx",
+                  gcode 1,
+                  mgcode 2,
+                  div "VRT"
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                genbank {
+                  accession "KJ841045",
+                  version 1
+                },
+                gi 816004916
+              },
+              descr {
+                title "Eryx tataricus isolate ERP_875_Parvand cytochrome b
+ gene, partial cds; mitochondrial.",
+                molinfo {
+                  biomol genomic,
+                  completeness partial
+                },
+                create-date std {
+                  year 2015,
+                  month 4,
+                  day 29
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 912,
+                strand ds,
+                seq-data ncbi2na '07FA4939E7A6E4924E4AE785A7FFDE9AE4F316604F05
+E9BF2493EE4CF15B8EE5B3A7A38E48179398FA6624EFFF3F93F33D33E66E97B3CE927378100017
+A789A4515E78F39E3A6166FFFA73B9E5BAA52389FFA9A616E3C505E78598F5B37A914538517A7B
+AA69FE63C18D615E15BFFF99E4FF3DE5BFA4F3C978925E4CF39E793823A4924159EA450498CF8C
+03D6FD35B34C5CC08DE78E78978E3DE39E78E16E27F7968CFFC18D6801FC90260567AE1564933C
+14898CF2732563A6FF38D22521417A0993E96E92CD27BFCDE4894DE4C54DE5968D6CC98D227304
+9CC9813493252793812592'H
+              }
+            },
+            seq {
+              id {
+                genbank {
+                  accession "AKE78800",
+                  version 1
+                },
+                gi 816004917
+              },
+              descr {
+                title "cytochrome b, partial (mitochondrion) [Eryx tataricus]",
+                molinfo {
+                  biomol peptide,
+                  tech concept-trans,
+                  completeness no-ends
+                },
+                create-date std {
+                  year 2015,
+                  month 4,
+                  day 29
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 185,
+                seq-data ncbieaa "NFGSMLLACSSMQVLTGFFLAVHYTANINLAFSMFCRLALLAWA
+ACMLCCCMKMAAATRWAPTAMLMKFRFIRIMPMKICWCWAWWFWCCWWPWAFCRMFLTIRKTLAKRTRWWPRSMLT*A
+MLAMARWRFMI*A*PTWKRIGRGSISCFIC*AICMPICRRIRMAI*AMTAMANISMASCMNSR"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "cytochrome b"
+                        },
+                        desc "Cytb"
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 184,
+                        id genbank {
+                          accession "AKE78800",
+                          version 1
+                        },
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    frame one,
+                    code {
+                      id 2
+                    }
+                  },
+                  partial TRUE,
+                  product whole gi 816004917,
+                  location packed-int {
+                    {
+                      from 0,
+                      to 99,
+                      strand plus,
+                      id gi 816004916,
+                      fuzz-from lim lt
+                    },
+                    {
+                      from 455,
+                      to 911,
+                      strand plus,
+                      id gi 816004916,
+                      fuzz-to lim gt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

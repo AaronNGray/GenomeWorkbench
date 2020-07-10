@@ -1,0 +1,11 @@
+# $Id: Makefile.in 559035 2018-03-06 13:44:17Z ivanov $
+# Author:  Mike DiCuccio
+
+# Meta-makefile for libximage
+#################################
+
+LIB_PROJ = image
+SUB_PROJ = test demo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

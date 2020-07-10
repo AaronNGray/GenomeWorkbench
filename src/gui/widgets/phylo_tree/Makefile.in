@@ -1,0 +1,9 @@
+# $Id: Makefile.in 29641 2014-01-22 19:46:39Z falkrb $
+
+LIB_PROJ = w_phylo_tree
+EXPENDABLE_SUB_PROJ = demo
+
+REQUIRES = algo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

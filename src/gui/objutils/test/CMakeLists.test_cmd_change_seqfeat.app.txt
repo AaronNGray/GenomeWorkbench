@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.test_cmd_change_seqfeat.app.txt 44927 2020-04-21 16:21:58Z asztalos $
+#############################################################################
+
+NCBI_begin_app( test_cmd_change_seqentry-2)
+  NCBI_sources(test_cmd_change_seqentry-2)
+  NCBI_uses_toolkit_libraries(gui_core)
+  NCBI_requires(Boost.Test.Included)
+NCBI_end_app()

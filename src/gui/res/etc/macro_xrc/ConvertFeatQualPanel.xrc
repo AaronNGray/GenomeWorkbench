@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxPanel" name="ConvertStringFeatureQual">
+        <style>wxTAB_TRAVERSAL</style>
+        <title>Convert Feature Qual Panel</title>
+        <centered>1</centered>
+        <object class="wxBoxSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <object class="wxFlexGridSizer">
+                    <cols>3</cols>
+                    <rows>0</rows>
+                    <vgap>0</vgap>
+                    <hgap>0</hgap>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>Feature Type</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>From</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>To</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxListBox" name="feature_field">
+                            <size>-1,109</size>
+                            <style>wxLB_SINGLE</style>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxListBox" name="from_field">
+                            <size>175,109</size>
+                            <style>wxLB_SINGLE</style>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxListBox" name="to_field">
+                            <size>175,109</size>
+                            <style>wxLB_SINGLE</style>
+                        </object>
+                    </object>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxCheckBox" name="update_mrna">
+                    <enabled>0</enabled>
+                    <label>Make mRNA product match CDS protein name</label>
+                    <checked>0</checked>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxCheckBox" name="leave_original">
+                    <label>Leave on original</label>
+                    <checked>0</checked>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <object class="wxStaticBoxSizer" name="wxID_ANY">
+                    <orient>wxVERTICAL</orient>
+                    <label>Capitalization</label>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxTOP|wxBOTTOM</flag>
+                        <border>5</border>
+                        <object class="wxFlexGridSizer">
+                            <cols>4</cols>
+                            <rows>0</rows>
+                            <vgap>0</vgap>
+                            <hgap>0</hgap>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                <border>0</border>
+                                <object class="wxRadioButton" name="no_change">
+                                    <style>wxRB_GROUP</style>
+                                    <label>No change</label>
+                                    <value>1</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                <border>0</border>
+                                <object class="wxRadioButton" name="to_upper">
+                                    <label>To upper</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                <border>0</border>
+                                <object class="wxRadioButton" name="fcap_nochange">
+                                    <label>First cap, rest no change</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                <border>0</border>
+                                <object class="wxRadioButton" name="cap_atspaces">
+                                    <label>Cap words, start at spaces</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxRIGHT|wxTOP|wxBOTTOM</flag>
+                                <border>5</border>
+                                <object class="wxRadioButton" name="to_lower">
+                                    <label>To lower</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                <border>0</border>
+                                <object class="wxRadioButton" name="fcap_lower">
+                                    <label>First cap, rest lower</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                <border>0</border>
+                                <object class="wxRadioButton" name="flower_nochange">
+                                    <label>First lower, rest no change</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                <border>0</border>
+                                <object class="wxRadioButton" name="cap_atspaces_punct">
+                                    <label>Cap words, start at spaces or punct.</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                        </object>
+                    </object>
+                </object>
+            </object>
+            <object class="spacer">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <option>1</option>
+                <size>5,0</size>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <object class="wxBoxSizer">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxRadioBox" name="existing_text">
+                            <style>wxRA_SPECIFY_ROWS</style>
+                            <label>Ways to add new value</label>
+                            <dimension>0</dimension>
+                            <selection>0</selection>
+                            <content>
+                                <item>&amp;Overwrite</item>
+                                <item>&amp;Append</item>
+                                <item>&amp;Prefix</item>
+                                <item>&amp;Ignore new value</item>
+                            </content>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALL|wxRESERVE_SPACE_EVEN_IF_HIDDEN</flag>
+                        <border>5</border>
+                        <object class="wxRadioBox" name="delimiter">
+                            <style>wxRA_SPECIFY_ROWS</style>
+                            <enabled>0</enabled>
+                            <label>Delimiters</label>
+                            <dimension>0</dimension>
+                            <selection>0</selection>
+                            <content>
+                                <item>&amp;Semicolon</item>
+                                <item>&amp;Space</item>
+                                <item>&amp;Colon</item>
+                                <item>&amp;Comma</item>
+                                <item>&amp;No separation</item>
+                            </content>
+                        </object>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>

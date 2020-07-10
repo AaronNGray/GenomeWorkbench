@@ -1,0 +1,28 @@
+# $Id: Makefile.xobjwrite.lib 596103 2019-11-01 16:10:06Z ludwigf $
+
+ASN_DEP = seqset
+
+LIB = xobjwrite
+SRC = agp_write \
+      write_util \
+      gff_base_record gff_feature_record \
+      gff_writer gff2_write_data \
+      gff3_writer gff3_write_data gff3_alignment_data gff3_idgen \
+      gff3flybase_writer \
+      gtf_writer gtf_write_data \
+      gvf_writer gvf_write_data \
+      wiggle_writer \
+      bed_writer bedgraph_writer bed_track_record bed_feature_record bed_graph_record \
+      vcf_writer \
+      ucsc_writer \
+      src_writer \
+      fasta_writer \
+      aln_writer \
+	  psl_record psl_formatter psl_writer
+
+DLL_LIB = variation_utils $(XFORMAT_LIBS) $(OBJEDIT_LIBS)
+
+WATCHERS = ludwigf boukn gotvyans foleyjp
+
+USES_LIBRARIES =  \
+    $(OBJREAD_LIBS) $(OBJEDIT_LIBS) variation_utils xalnmgr xformat

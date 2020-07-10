@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.scoremat.asn.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(scoremat)
+  NCBI_dataspecs(scoremat.asn)
+  NCBI_uses_toolkit_libraries(seqset)
+NCBI_end_lib()
+

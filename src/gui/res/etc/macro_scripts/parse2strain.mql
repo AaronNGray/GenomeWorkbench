@@ -1,0 +1,54 @@
+MACRO Parse2Strain_01 "Parse text just after 'strain' from taxname to strain(ignore new text when existing text is present)"
+VAR
+    include_left = false
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+    rmv_from_parsed = true
+    rmv_left = true
+    cap_change = "none"
+    existing_text = "eReplace"
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "strain")
+DO
+    text = ParsedText("org.taxname", "strain", include_left, "", include_right, case_sens_parse, whole_word, rmv_from_parsed, rmv_left);
+    AddParsedText(text, "strain", cap_change, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Parse2Strain_02 "Parse text just after 'sp.' from taxname to strain(ignore new text when existing text is present)"
+VAR
+    include_left = false
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+    cap_change = "none"
+    existing_text = "eReplace"
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "strain")
+DO
+    text = ParsedText("org.taxname", "sp.", include_left, "", include_right, case_sens_parse, whole_word);
+    AddParsedText(text, "strain", cap_change, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Parse2Strain_03 "Parse text just after 'bacterium' from taxname to strain(ignore new text when existing text is present)"
+VAR
+    include_left = false
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+    cap_change = "none"
+    existing_text = "eReplace"
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "strain")
+DO
+    text = ParsedText("org.taxname", "bacterium", include_left, "", include_right, case_sens_parse, whole_word);
+    AddParsedText(text, "strain", cap_change, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO TaxLookup "Perform tax lookup"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+------------------------------------------------------------------------------
+

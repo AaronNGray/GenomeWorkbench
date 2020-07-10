@@ -1,0 +1,6 @@
+accession	locus_tag	old gene	new gene	old product	new product	old note	new note
+CM003141.1	UMAG_00837		afu2	hypothetical protein	arabinofuranosidase 2	related to Alpha-L-arabinofuranosidase I precursor	new comment
+CM003142.1	UMAG_01829		afu1	hypothetical protein	arabinofuranosidase 1	related to alpha-L-arabinofuranosidase I precursor	new comment
+CM003143.1	UMAG_06332		egl1	endoglucanase 1 precursor (egl1)	endoglucanase 1		
+CM003144.1	UMAG_02387		opt4	hypothetical protein	oligopeptide transporter 4	related to oligopeptide transporter	new comment
+CM003145.1	UMAG_02523		egl2	hypothetical protein	endoglucanase 2	related to Endoglucanase 1 precursor	new comment

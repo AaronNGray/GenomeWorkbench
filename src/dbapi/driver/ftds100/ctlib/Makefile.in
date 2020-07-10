@@ -1,0 +1,9 @@
+# $Id: Makefile.in 554130 2017-12-28 17:20:38Z ucko $
+
+LIB_PROJ = ncbi_xdbapi_ftds100
+SUB_PROJ = samples
+
+REQUIRES = FreeTDS
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

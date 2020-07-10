@@ -1,0 +1,19 @@
+#############################################################################
+# $Id: CMakeLists.gui_framework.lib.txt 44679 2020-02-20 17:31:36Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(gui_framework)
+  NCBI_dataspecs(gui_framework.dtd)
+  NCBI_sources(
+    app_task_service app_task_impl app_job_task app_options_dlg
+    diag_panel diag_console_list app_packages_dlg
+    event_log_service_impl event_record_details_dlg event_view
+    item_selection_panel menu_service_impl
+    status_bar_service_impl task_view view_manager_service_impl
+    window_manager_service_impl workbench_frame workbench_impl
+    pkg_manager status_message_slot_panel task_details_dlg job_ui_task
+    app_export_task pager_message_dlg
+  )
+  NCBI_uses_toolkit_libraries(w_data)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

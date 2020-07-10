@@ -1,0 +1,241 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Chaetomella raphigera",
+        db {
+          {
+            db "taxon",
+            tag id 241714
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Chaetomella",
+            species "raphigera"
+          },
+          lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Leotiomycetes; Helotiales; mitosporic Helotiales; Chaetomella",
+          gcode 1,
+          mgcode 4,
+          div "PLN"
+        }
+      }
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 2851,
+        topology not-set,
+        strand ds,
+        seq-data ncbi2na '5EB8EB8FA9269F30009C59E776403E2411610252CFBC7A6EAFA8
+02AD7E6FA831E792C9343E87D489FE73423A1572ACA79EBCFECB7481E1AE024D6FDB500EC124FD
+712B3D21E7D46EA13CBF8DC4B62BF27F2B0B50B19ED08FE0F08B3CAD28A40A47E9343B5276B52F
+9EB54FAC03D48AEEFC9E857B02DF9878CDB1296B641EA0A7FDD48D4C5E0EB7243B50ECEE187DF5
+5CA00A4F8FACC853C5A0E4239E9B129FB90247F2C2FAF8692AD3908DE21DF4BE80624201836631
+0E27504D8E3687F538ACAE31D9010231FE9E31232FB177A5FD92394D0A506F93530EE74C410BD0
+E21319FB88107DF841EC2F70A76E4D0F7DA0D93C1B7D23DD0A989F87F429F6DB49AC7EBF5CD79E
+F80C24489C193AE67087A9E74931C73E82E40E7ADFB1BE101398F4C314FB23763549381E11BFD0
+A3BE6397AE10FFA61073CDCEA92437DE9A63750B0BD7AF640E97E1BE78DDEE5F532691EF950DD9
+7E384EB4764D7A7D3AC7FBEB4A1429CD49EE17AD77E83AE8FA8AD50EE4A78D3092B64665365623
+A4FB5C74604004095E55E0825672FC90D3EB42394D8435E4A4D076E75859AFB8C6AD1FA73ABEA9
+DA912487F53176F99676394D115F274A54A81027ECFB618584B1F79679CB9E596592212436DF4D
+1E58F4A22A31347B8BF7A4D8B9E25DC4FD70D2D1912BE1A50FAB8D90747E753A0C3A479DDBD09A
+C949949003B4FB6E3412EDA54F8F76284F7677F526E0243EDEA7A6DDA9420DA90E87E78CF7F1AF
+4B3754BA80754C44365012949873A0494FB95AE18C1FD5828FBFB21CDB4FD85090135259BFE0FE
+9CE977B0B5456666F5FD5518E38C288EE33B8222D85F749679CCBC8670406D04973185FD0C7649
+F1640B1D631F59292751DD957A68542A9ECE33EF906B04902B84049A45B4BA6782D9127313EBF9
+6A76997937515092719A7F840349742529034A46B86FC179960285D271EA31E5DA74BABC458526
+98BDD5ECEFAE727622330AF12AB7F80E76A50ACF680AE84C'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "Chaetomella raphigera beta-glucosidase"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 2850,
+                strand plus,
+                id local str "seq1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "seq1_prot_1",
+        general {
+          db "TMSMART",
+          tag id 46037500
+        }
+      },
+      descr {
+        title "beta-glucosidase, partial [Chaetomella raphigera]",
+        molinfo {
+          biomol peptide,
+          completeness no-ends
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 722,
+        topology not-set,
+        seq-data ncbieaa "PGDGDWAAAYKKATAALAKLSNTDKASIVTGVGWEKGPCVGNTAAVASIGLP
+ELCYQDGPLGIRFVQNVTAFPTGIQTASTWDISLIYSRGLALGQEAKALGINVQLGPVAGPIGKIPEAGRNWEGFSPD
+PYLNGLAMSNTITGMQDAGVQACAKHFIGNEQETNRDTMSSNIDDRTFHELYLWPFADAIKANVASIMCSYNKFNETY
+ACENNFLTTILKGELDFQGFVVSDWAAQHTTIGSANAGLDVAMPGDNFGDNYYLWGSNLLAAISNGTVAQSRLDDMVT
+RILASWYFVGQDQGYPAVTWSSWNGGLGGPNVQADHKQVARAIARDGIVLLTNKNKALPLKKPASLAIIGQDAIDNPA
+GINSCSDRGCDTGHLAMGWGSGTADFPYLVAPLDAITPLAQAQGTKLVLSTTDSTSAAASAAAAAETAIVFITADSGE
+GYITVDGQLGDRNSLAPWNNGTALVQAVASASKNVIVVINSVGPLILEDILALSSVKAIVWAGVSGQESGNGLADILY
+GSVSPSGKLPYTIAKQASDYGTAIVPGDDNFPEGLFVDYRHFDQANIQPRFEFGYGLSYTTFQYSQLTAKYSDTSAGS
+STLAPGGPKGLYDIVATVTAKVTNSGTVSGAEVAQLYIGLPGSAPASPPKQLRGFDKISLKPGKSGTVTFNLRRKDLS
+YWDTASAQWVTPTSGEFSLYVGASSRDIRLQGSLKCSGQGIRKGGH"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "beta-glucosidase"
+                },
+                desc "Glycosyl hydrolase family 3",
+                ec {
+                  "3.2.1.21"
+                }
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 721,
+                id local str "seq1_prot_1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame one,
+            code {
+              id 1
+            }
+          },
+          partial TRUE,
+          product whole local str "seq1_prot_1",
+          location mix {
+            int {
+              from 0,
+              to 184,
+              strand plus,
+              id local str "seq1",
+              fuzz-from lim lt
+            },
+            int {
+              from 228,
+              to 327,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 371,
+              to 443,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 491,
+              to 552,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 599,
+              to 650,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 697,
+              to 764,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 810,
+              to 920,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 974,
+              to 1016,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 1077,
+              to 1122,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 1196,
+              to 1273,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 1330,
+              to 1851,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 1908,
+              to 2299,
+              strand plus,
+              id local str "seq1"
+            },
+            int {
+              from 2417,
+              to 2850,
+              strand plus,
+              id local str "seq1",
+              fuzz-to lim gt
+            }
+          }
+        }
+      }
+    }
+  }
+}

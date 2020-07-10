@@ -1,0 +1,203 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza A virus",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "some_clone"
+            },
+            {
+              subtype country,
+              name "Germany"
+            }
+          }
+        },
+        title "Influenza A virus clone some_clone from Germany sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "NoncodingProductFeat"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 2,
+                  data strs {
+                    "clone",
+                    "country"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 135,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAATTAATCATACCCTTCTGGATAAGGGGTGACC
+TACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787265
+        },
+        genbank {
+          accession "KF591394"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza A virus",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "Drs3"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        },
+        title "Influenza A virus clone Drs3 sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "NoncodingProductFeat"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 2,
+                  data strs {
+                    "clone",
+                    "country"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 134,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGATTGCCTTTTATTTAGGCTTTGCAATT
+GGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATAACATGGGTCATT
+AACA"
+      }
+    }
+  }
+}

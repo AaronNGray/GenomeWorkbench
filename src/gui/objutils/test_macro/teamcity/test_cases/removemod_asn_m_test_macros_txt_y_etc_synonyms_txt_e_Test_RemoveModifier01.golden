@@ -1,0 +1,110 @@
+Seq-entry ::= seq {
+  id {
+    local str "MU"
+  },
+  descr {
+    title "E.faecalis EF123 bcrABDR,partial cds",
+    molinfo {
+      biomol genomic
+    },
+    user {
+      type str "StructuredComment",
+      data {
+        {
+          label str "StructuredCommentPrefix",
+          data str "##Assembly-Data-START##"
+        },
+        {
+          label str "Sequencing Technology",
+          data str "PAcific Biosciences"
+        },
+        {
+          label str "StructuredCommentSuffix",
+          data str "##Assembly-Data-END##"
+        }
+      }
+    },
+    source {
+      genome genomic,
+      org {
+        taxname "Enterococcus faecalis",
+        orgname {
+          name binomial {
+            genus "Enterococcus",
+            species "faecalis"
+          },
+          mod {
+            {
+              subtype isolate,
+              subname "Enterococcus faecalis"
+            },
+            {
+              subtype nat-host,
+              subname "chicken"
+            }
+          },
+          gcode 11
+        }
+      }
+    },
+    pub {
+      pub {
+        gen {
+          cit "Unpublished",
+          authors {
+            names std {
+              {
+                name name {
+                  last "Chen",
+                  first "Muya",
+                  initials "M."
+                }
+              }
+            }
+          },
+          title "none"
+        }
+      }
+    },
+    pub {
+      pub {
+        sub {
+          authors {
+            names std {
+              {
+                name name {
+                  last "Chen",
+                  first "Muya",
+                  initials "M."
+                }
+              }
+            },
+            affil std {
+              div "Agricultural University",
+              city "Chisinau",
+              country "Moldova, Republic of"
+            }
+          },
+          medium email,
+          date std {
+            year 2015,
+            month 9,
+            day 21
+          }
+        }
+      }
+    },
+    update-date std {
+      year 2015,
+      month 9,
+      day 21
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 20,
+    strand ds,
+    seq-data iupacna "ATGACAGAATCCCTGCTTAA"
+  }
+}

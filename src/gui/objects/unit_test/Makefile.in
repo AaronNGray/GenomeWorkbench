@@ -1,0 +1,6 @@
+
+APP_PROJ = unit_test_assembly_info
+PROJ_TAG = test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

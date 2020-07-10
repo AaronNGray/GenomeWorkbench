@@ -1,0 +1,3664 @@
+MACRO Remove_five_qualifiers "Remove isolate, strain, note-subsource, culture-collection, specimen-voucher"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") WHERE
+          obj.subtype = "isolate" OR
+          obj.subtype = "strain"  OR
+          obj.subtype = "culture-collection" OR
+          obj.subtype = "specimen-voucher";
+    RemoveModifier(obj);
+    subsrc = Resolve("subtype") WHERE subsrc.subtype = "other";
+    RemoveModifier(subsrc);
+DONE
+------------------------------------------------------------------------------
+MACRO Add_Pub_Submission "Adding a new publication to the sequence"
+FOR EACH SeqNa
+DO
+   SetPub_Sub("authors.names.std.name.consortium", "NCBI RefSeq Targeted Loci Project");
+DONE
+------------------------------------------------------------------------------
+MACRO Add_Date_to_Submission "Set date and affiliation in a submission"
+FOR EACH Pubdesc
+WHERE PUB_AUTHORS("std.name.consortium") = "NCBI RefSeq Targeted Loci Project"
+DO
+   SetPub_Date(2015, 3, 4);
+   SetPub_Affil("affil", "National Center for Biotechnology Information, NIH");
+   SetPub_Affil("city", "Bethesda");
+   SetPub_Affil("sub", "MD");
+   SetPub_Affil("country", "USA");
+   SetPub_Affil("postal-code", "20894");
+DONE
+------------------------------------------------------------------------------
+
+MACRO Seq_Feat_MoveGeneLocusToNote "Use known abbreviation for note instead of locus"
+VAR
+    OldLocusValue = %Putative terminase large subunit gene%
+    NewLocusValue = %NEW LOCUS VALUE%
+    Taxname = %Methanobacterium formicicum phage%
+FOR EACH SeqFeat 
+WHERE CHOICETYPE("data") = "gene" AND 
+      data.gene.locus = OldLocusValue AND 
+      BIOSOURCE_FOR_SEQFEAT("org.taxname") = Taxname 
+DO   
+    SetStringQual("data.gene.locus", NewLocusValue, "eReplace");
+    SetStringQual("comment", OldLocusValue, "eReplace");
+DONE
+------------------------------------------------------------------------------
+MACRO Seq_Feat_SetProteinName "Set cytochrome oxidase protein name"
+VAR
+    Locus = %COX1%
+    ProteinName = %cytochrome oxidase 1%
+FOR EACH SeqFeat
+WHERE CHOICETYPE("data") = "cdregion" AND
+      RELATED_FEATURE("gene", "data.gene.locus") = Locus
+DO
+    SetStringQual("comment", ProteinName, "eReplace");
+DONE
+------------------------------------------------------------------------------
+MACRO BioSource_Apply_String_Value "Macro applies string value to biosource qualifier"
+Var
+    Qualifier = %org.taxname%
+    Value_To_Apply = %uncultured%
+    Handle_existing_text = choice { "eReplace",
+                                    "ePrepend", 
+                                    "eAppend", 
+                                    "eLeaveOld"}
+    Delimiter = %;%
+For each BioSource
+Do
+    SetStringQual(Qualifier, Value_To_Apply, Handle_existing_text, Delimiter);
+Done
+------------------------------------------------------------------------------
+MACRO BioSource_Remove_Qualifier "Macro removes a qualifier from a biosource"
+Var
+    Qualifier = %org.taxname%
+For each BioSource
+Do
+    RemoveQual(Qualifier);
+Done
+------------------------------------------------------------------------------
+MACRO BioSource_Copy_Qualifier "Macro copies org.taxname value to org.common"
+Var
+    Qual_src = %org.taxname%
+    Qual_dst = %org.common%
+    Handle_existing_text = choice { "eReplace",
+                                    "ePrepend", 
+                                    "eAppend", 
+                                    "eLeaveOld" } 
+For each BioSource
+Do
+    CopyStringQual(Qual_src, Qual_dst, Handle_existing_text);
+Done
+------------------------------------------------------------------------------
+MACRO BioSource_Convert_Taxname_To_Common "Macro converts org.taxname to org.common"
+Var
+    Qual_src = %org.taxname%
+    Qual_dst = %org.common%
+    Handle_existing_text = choice { "eReplace",
+                                    "ePrepend", 
+                                    "eAppend", 
+                                    "eLeaveOld" } 
+    Delimiter = %,%
+For each BioSource
+Do
+    CopyStringQual(Qual_src, Qual_dst, Handle_existing_text, Delimiter);
+    RemoveQual(Qual_src);
+Done
+------------------------------------------------------------------------------
+MACRO BioSource_Swap_Qualifiers_Example1 "Macro swaps two string qualifiers. Both are uniquely idetifiable by their field names."
+Var
+    Qual_1_Name = %org.taxname%
+    Qual_2_Name = %org.common%
+For each BioSource
+Do
+    SwapQual(Qual_1_Name, Qual_2_Name);
+Done
+------------------------------------------------------------------------------
+MACRO BioSource_Edit_Qualifier "Replace a text in org.taxname"
+VAR
+    qual_name = %org.orgname.mod.subname%
+    find_text = %um%
+    repl_text = %UM%
+    location = choice {"at the beginning", 
+                       "at the end",
+                       "anywhere"
+                      }
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    EditStringQual (qual_name, find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Seq_Feat_Remove_Qualifier "Macro removes Seq-Feat qualifier"
+Var
+    qual_name = %data.gene.locus%
+For each Gene
+Where ISUPPER(qual_name)
+Do
+    RemoveQual(qual_name);
+Done
+------------------------------------------------------------------------------
+MACRO Apply_String_Value_wConstraint "Macro applies string value to biosource qualifier"
+Var
+    Qualifier = %org.taxname%
+    Value_To_Apply = "Homo sapiens"
+    Handle_existing_text ="ePrepend"
+    Delimiter = ":"
+    Case_sensitive = false
+    Ignore_space = true
+    Ignore_punctuation = true
+For each BioSource
+Where EQUALS("org.common", Value_To_Apply, Case_sensitive, Ignore_space, Ignore_punctuation, "synonyms.txt",  Value_To_Apply )
+Do
+    SetStringQual(Qualifier, Value_To_Apply, Handle_existing_text, Delimiter);
+Done
+------------------------------------------------------------------------------
+MACRO PGAPFixes_WGS_001 "Edit misc_feature note replace 'DnaX frameshifting elelment' with 'DnaX frameshifting element '"
+VAR
+    find_text = "DnaX frameshifting elelment"
+    repl_text = "DnaX frameshifting element "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH MiscFeat
+DO
+    EditStringQual("comment", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO PGAPFixes_WGS_002 "Edit misc_feature note replace 'represssion of heat shock gene expression (ROSE) element' with 'repression of heat shock gene expression (ROSE) element'"
+VAR
+    find_text = "represssion of heat shock gene expression (ROSE) element"
+    repl_text = "repression of heat shock gene expression (ROSE) element"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH MiscFeat
+DO
+    EditStringQual("comment", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO PGAPFixes_WGS_003 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'CBS' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "CBS"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_004 "Apply CBS domain-containing protein to protein name (overwrite existing text) where protein name equals 'CBS' (case-sensitive)"
+VAR
+    new_value = "CBS domain-containing protein"
+    existing_text = "eReplace"
+    match = "CBS"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_005 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'ACR' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "ACR"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_006 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'ACR' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "ACR"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_007 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'SM20' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "SM20"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_008 "Apply SM-20 protein to protein name (overwrite existing text) where protein name equals 'SM20' (case-sensitive)"
+VAR
+    new_value = "SM-20 protein"
+    existing_text = "eReplace"
+    match = "SM20"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_009 "Convert protein name to protein description (prefix separated by semicolon) where CDS-gene-prot text equals 'membrane protein PD_1892' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "membrane protein PD_1892"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_010 "Apply membrane protein to protein name (overwrite existing text) where protein name equals 'membrane protein PD_1892' (case-sensitive)"
+VAR
+    new_value = "membrane protein"
+    existing_text = "eReplace"
+    match = "membrane protein PD_1892"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_011 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleoid-associated protein AFE_1920' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleoid-associated protein AFE_1920"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_012 "Apply nucleoid-associated protein to protein name (overwrite existing text) where protein name equals 'nucleoid-associated protein AFE_1920' (case-sensitive)"
+VAR
+    new_value = "nucleoid-associated protein"
+    existing_text = "eReplace"
+    match = "nucleoid-associated protein AFE_1920"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_013 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'membrane protein PA0567' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "membrane protein PA0567"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_014 "Apply membrane protein to protein name (overwrite existing text) where protein name equals 'membrane protein PA0567' (case-sensitive)"
+VAR
+    new_value = "membrane protein"
+    existing_text = "eReplace"
+    match = "membrane protein PA0567"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_015 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'TPR repeat-containing protein PA4667' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "TPR repeat-containing protein PA4667"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_016 "Apply TPR repeat-containing protein to protein name (overwrite existing text) where protein name equals 'TPR repeat-containing protein PA4667' (case-sensitive)"
+VAR
+    new_value = "TPR repeat-containing protein"
+    existing_text = "eReplace"
+    match = "TPR repeat-containing protein PA4667"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_017 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'YcgL domain-containing protein Avin_32960' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "YcgL domain-containing protein Avin_32960"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_018 "Apply YcgL domain-containing protein to protein name (overwrite existing text) where protein name equals 'YcgL domain-containing protein Avin_32960' (case-sensitive)"
+VAR
+    new_value = "YcgL domain-containing protein"
+    existing_text = "eReplace"
+    match = "YcgL domain-containing protein Avin_32960"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_019 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'TPR repeat-containing protein PA0015' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "TPR repeat-containing protein PA0015"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_020 "Apply TPR repeat-containing protein to protein name (overwrite existing text) where protein name equals 'TPR repeat-containing protein PA0015' (case-sensitive)"
+VAR
+    new_value = "TPR repeat-containing protein"
+    existing_text = "eReplace"
+    match = "TPR repeat-containing protein PA0015"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_021 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleoid-associated protein ABC0038' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleoid-associated protein ABC0038"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_022 "Apply nucleoid-associated protein to protein name (overwrite existing text) where protein name equals 'nucleoid-associated protein ABC0038' (case-sensitive)"
+VAR
+    new_value = "nucleoid-associated protein"
+    existing_text = "eReplace"
+    match = "nucleoid-associated protein ABC0038"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_023 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein MW1315' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein MW1315"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_024 "Apply DegV domain-containing protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein MW1315' (case-sensitive)"
+VAR
+    new_value = "DegV domain-containing protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein MW1315"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_025 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'ACT domain-containing protein ABC1543' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "ACT domain-containing protein ABC1543"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_026 "Apply ACT domain-containing protein to protein name (overwrite existing text) where protein name equals 'ACT domain-containing protein ABC1543' (case-sensitive)"
+VAR
+    new_value = "ACT domain-containing protein"
+    existing_text = "eReplace"
+    match = "ACT domain-containing protein ABC1543"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_027 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein BH3627' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein BH3627"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_028 "Apply DegV domain-containing protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein BH3627' (case-sensitive)"
+VAR
+    new_value = "DegV domain-containing protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein BH3627"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_029 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'TPR repeat-containing protein VC_2164' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "TPR repeat-containing protein VC_2164"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_030 "Apply TPR repeat-containing protein to protein name (overwrite existing text) where protein name equals 'TPR repeat-containing protein VC_2164' (case-sensitive)"
+VAR
+    new_value = "TPR repeat-containing protein"
+    existing_text = "eReplace"
+    match = "TPR repeat-containing protein VC_2164"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_031 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'phi X174 lysis protein' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "phi X174 lysis protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_032 "Apply lysis protein to protein name (overwrite existing text) where protein name equals 'phi X174 lysis protein' (case-sensitive)"
+VAR
+    new_value = "lysis protein"
+    existing_text = "eReplace"
+    match = "phi X174 lysis protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_033 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'frataxin; iron chaperone' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "frataxin; iron chaperone"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_034 "Apply iron chaperone to protein name (overwrite existing text) where protein name equals 'frataxin; iron chaperone' (case-sensitive)"
+VAR
+    new_value = "iron chaperone"
+    existing_text = "eReplace"
+    match = "frataxin; iron chaperone"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_035 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'Uncharacterized protein, similar to the N-terminal domain of Lon protease' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "Uncharacterized protein similar to the N-terminal domain of Lon protease"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_036 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'Uncharacterized protein, similar to the N-terminal domain of Lon protease' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "Uncharacterized protein similar to the N-terminal domain of Lon protease"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_037 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'hypothetical protein related to DNA replication/repair' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "hypothetical protein related to DNA replication/repair"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_038 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'hypothetical protein related to DNA replication/repair' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "hypothetical protein related to DNA replication/repair"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_039 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'y4eB-like' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "y4eB-like"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_040 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'y4eB-like' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "y4eB-like"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_041 "Apply yzbB-like protein to protein name (overwrite existing text) where protein name equals 'yzbB-like' (case-sensitive)"
+VAR
+    new_value = "yzbB-like protein"
+    existing_text = "eReplace"
+    match = "yzbB-like"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_042 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'Conserved hypothetical protein potentially related to ribose or hydroxymethylpyrimidine metabolism' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "Conserved hypothetical protein potentially related to ribose or hydroxymethylpyrimidine metabolism"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_043 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'Conserved hypothetical protein potentially related to ribose or hydroxymethylpyrimidine metabolism' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "Conserved hypothetical protein potentially related to ribose or hydroxymethylpyrimidine metabolism"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_044 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein M6_Spy0690' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein M6_Spy0690"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_045 "Apply DegV domain protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein M6_Spy0690' (case-sensitive)"
+VAR
+    new_value = "DegV domain protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein M6_Spy0690"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_046 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein M6_Spy1658' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein M6_Spy1658"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_047 "Apply DegV domain protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein M6_Spy1658' (case-sensitive)"
+VAR
+    new_value = "DegV domain protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein M6_Spy1658"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_048 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleoid-associated protein LACR_0106' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleoid-associated protein LACR_0106"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_049 "Apply nucleoid-associated protein to protein name (overwrite existing text) where protein name equals 'nucleoid-associated protein LACR_0106' (case-sensitive)"
+VAR
+    new_value = "nucleoid-associated protein"
+    existing_text = "eReplace"
+    match = "nucleoid-associated protein LACR_0106"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_050 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein M6_Spy1246' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein M6_Spy1246"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_051 "Apply DegV domain protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein M6_Spy1246' (case-sensitive)"
+VAR
+    new_value = "DegV domain protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein M6_Spy1246"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_052 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleoid-associated protein ABO_1774' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleoid-associated protein ABO_1774"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_053 "Apply nucleoid-associated protein to protein name (overwrite existing text) where protein name equals 'nucleoid-associated protein ABO_1774' (case-sensitive)"
+VAR
+    new_value = "nucleoid-associated protein"
+    existing_text = "eReplace"
+    match = "nucleoid-associated protein ABO_1774"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_054 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'transcriptional regulatory protein LPC_0711' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "transcriptional regulatory protein LPC_0711"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_055 "Apply transcriptional regulator to protein name (overwrite existing text) where protein name equals 'transcriptional regulatory protein LPC_0711' (case-sensitive)"
+VAR
+    new_value = "transcriptional regulator"
+    existing_text = "eReplace"
+    match = "transcriptional regulatory protein LPC_0711"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_056 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein XAC3508' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein XAC3508"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_057 "Apply DegV domain-containing protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein XAC3508' (case-sensitive)"
+VAR
+    new_value = "DegV domain-containing protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein XAC3508"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_058 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'macro domain-containing protein XAC3343' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "macro domain-containing protein XAC3343"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_059 "Apply macro domain-containing protein to protein name (overwrite existing text) where protein name equals 'macro domain-containing protein XAC3343' (case-sensitive)"
+VAR
+    new_value = "macro domain-containing protein"
+    existing_text = "eReplace"
+    match = "macro domain-containing protein XAC3343"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_060 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'HIT-like protein CPn_0488/CP_0266/CPj0488/CpB0508' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "HIT-like protein CPn_0488/CP_0266/CPj0488/CpB0508"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_061 "Apply HIT-like protein to protein name (overwrite existing text) where protein name equals 'HIT-like protein CPn_0488/CP_0266/CPj0488/CpB0508' (case-sensitive)"
+VAR
+    new_value = "HIT-like protein"
+    existing_text = "eReplace"
+    match = "HIT-like protein CPn_0488/CP_0266/CPj0488/CpB0508"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_062 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein CPE0026' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein CPE0026"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_063 "Apply DegV domain-containing protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein CPE0026' (case-sensitive)"
+VAR
+    new_value = "DegV domain-containing protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein CPE0026"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_064 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleoid-associated protein Amet_4780' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleoid-associated protein Amet_4780"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_065 "Apply nucleoid-associated protein to protein name (overwrite existing text) where protein name equals 'nucleoid-associated protein Amet_4780' (case-sensitive)"
+VAR
+    new_value = "nucleoid-associated protein"
+    existing_text = "eReplace"
+    match = "nucleoid-associated protein Amet_4780"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_066 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'COGs COG0226' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "COGs COG0226"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_067 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'COGs COG0226' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "COGs COG0226"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_068 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'S-adenosyl-L-methionine-binding protein PYRAB06630' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "S-adenosyl-L-methionine-binding protein PYRAB06630"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_069 "Apply S-adenosyl-L-methionine-binding protein to protein name (overwrite existing text) where protein name equals 'S-adenosyl-L-methionine-binding protein PYRAB06630' (case-sensitive)"
+VAR
+    new_value = "S-adenosyl-L-methionine-binding protein"
+    existing_text = "eReplace"
+    match = "S-adenosyl-L-methionine-binding protein PYRAB06630"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_070 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleoid-associated protein DP1429' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleoid-associated protein DP1429"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_071 "Apply nucleoid-associated protein to protein name (overwrite existing text) where protein name equals 'nucleoid-associated protein DP1429' (case-sensitive)"
+VAR
+    new_value = "nucleoid-associated protein"
+    existing_text = "eReplace"
+    match = "nucleoid-associated protein DP1429"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_072 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein CA_C0701' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein CA_C0701"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_073 "Apply DegV domain-containing protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein CA_C0701' (case-sensitive)"
+VAR
+    new_value = "DegV domain-containing protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein CA_C0701"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_074 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'COG2827: endonuclease containing a URI domain protein' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "COG2827: endonuclease containing a URI domain protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_075 "Apply endonuclease to protein name (overwrite existing text) where protein name equals 'COG2827: endonuclease containing a URI domain protein' (case-sensitive)"
+VAR
+    new_value = "endonuclease"
+    existing_text = "eReplace"
+    match = "COG2827: endonuclease containing a URI domain protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_076 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'siphovirus Gp157 protein' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "siphovirus Gp157 protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_077 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'siphovirus Gp157 protein' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "siphovirus Gp157 protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_078 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'frataxin; iron chaperone' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "frataxin; iron chaperone"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_079 "Apply iron chaperone to protein name (overwrite existing text) where protein name equals 'frataxin; iron chaperone' (case-sensitive)"
+VAR
+    new_value = "iron chaperone"
+    existing_text = "eReplace"
+    match = "frataxin; iron chaperone"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_080 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'macro domain-containing protein LA_4133' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "macro domain-containing protein LA_4133"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_081 "Apply macro domain-containing protein to protein name (overwrite existing text) where protein name equals 'macro domain-containing protein LA_4133' (case-sensitive)"
+VAR
+    new_value = "macro domain-containing protein"
+    existing_text = "eReplace"
+    match = "macro domain-containing protein LA_4133"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_082 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein CA_C0948' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein CA_C0948"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_083 "Apply DegV domain-containing protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein CA_C0948' (case-sensitive)"
+VAR
+    new_value = "DegV domain-containing protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein CA_C0948"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_084 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'peptide permease BMEII0860' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "peptide permease BMEII0860"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_085 "Apply peptide permease to protein name (overwrite existing text) where protein name equals 'peptide permease BMEII0860' (case-sensitive)"
+VAR
+    new_value = "peptide permease"
+    existing_text = "eReplace"
+    match = "peptide permease BMEII0860"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_086 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein lin1977' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein lin1977"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_087 "Apply DegV domain-containing protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein lin1977' (case-sensitive)"
+VAR
+    new_value = "DegV domain-containing protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein lin1977"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_088 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'F-box/FBD/LRR-repeat protein At5g22660' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "F-box/FBD/LRR-repeat protein At5g22660"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_089 "Apply F-box/FBD/LRR-repeat protein to protein name (overwrite existing text) where protein name equals 'F-box/FBD/LRR-repeat protein At5g22660' (case-sensitive)"
+VAR
+    new_value = "F-box/FBD/LRR-repeat protein"
+    existing_text = "eReplace"
+    match = "F-box/FBD/LRR-repeat protein At5g22660"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_090 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'putative membrane protein LMHCC_1856' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "putative membrane protein LMHCC_1856"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_091 "Apply putative membrane protein to protein name (overwrite existing text) where protein name equals 'putative membrane protein LMHCC_1856' (case-sensitive)"
+VAR
+    new_value = "putative membrane protein"
+    existing_text = "eReplace"
+    match = "putative membrane protein LMHCC_1856"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_092 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'macro domain-containing protein LMOf2365_2748' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "macro domain-containing protein LMOf2365_2748"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_093 "Apply macro domain-containing protein to protein name (overwrite existing text) where protein name equals 'macro domain-containing protein LMOf2365_2748' (case-sensitive)"
+VAR
+    new_value = "macro domain-containing protein"
+    existing_text = "eReplace"
+    match = "macro domain-containing protein LMOf2365_2748"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_094 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein lin2658' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein lin2658"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_095 "Apply DegV domain-containing protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein lin2658' (case-sensitive)"
+VAR
+    new_value = "DegV domain-containing protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein lin2658"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_096 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'YcgL domain-containing protein ESA_01460' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "YcgL domain-containing protein ESA_01460"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_097 "Apply YcgL domain-containing protein to protein name (overwrite existing text) where protein name equals 'YcgL domain-containing protein ESA_01460' (case-sensitive)"
+VAR
+    new_value = "YcgL domain-containing protein"
+    existing_text = "eReplace"
+    match = "YcgL domain-containing protein ESA_01460"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_098 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'lipoprotein NMB1124/NMB1162' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "lipoprotein NMB1124/NMB1162"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_099 "Apply lipoprotein to protein name (overwrite existing text) where protein name equals 'lipoprotein NMB1124/NMB1162' (case-sensitive)"
+VAR
+    new_value = "lipoprotein"
+    existing_text = "eReplace"
+    match = "lipoprotein NMB1124/NMB1162"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_100 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'M' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "M"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_101 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'M' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "M"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_102 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'universal stress protein SERP1273' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "universal stress protein SERP1273"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_103 "Apply universal stress protein to protein name (overwrite existing text) where protein name equals 'universal stress protein SERP1273' (case-sensitive)"
+VAR
+    new_value = "universal stress protein"
+    existing_text = "eReplace"
+    match = "universal stress protein SERP1273"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_104 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'COG3645: Uncharacterized phage-encoded protein' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "COG3645: Uncharacterized phage-encoded protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_105 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'COG3645: Uncharacterized phage-encoded protein' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "COG3645: Uncharacterized phage-encoded protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_106 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'thiamin biosynthesis proteinsulfur carrier) ThiS' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "thiamin biosynthesis proteinsulfur carrier) ThiS"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_107 "Apply sulfur carrier protein ThiS to protein name (overwrite existing text) where protein name equals 'thiamin biosynthesis proteinsulfur carrier) ThiS' (case-sensitive)"
+VAR
+    new_value = "sulfur carrier protein ThiS"
+    existing_text = "eReplace"
+    match = "thiamin biosynthesis proteinsulfur carrier) ThiS"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_108 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'SM-20' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "SM-20"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_109 "Apply SM-20 protein to protein name (overwrite existing text) where protein name equals 'SM-20' (case-sensitive)"
+VAR
+    new_value = "SM-20 protein"
+    existing_text = "eReplace"
+    match = "SM-20"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_110 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'RNA-binding protein HI_1333' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "RNA-binding protein HI_1333"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_111 "Apply RNA-binding protein to protein name (overwrite existing text) where protein name equals 'RNA-binding protein HI_1333' (case-sensitive)"
+VAR
+    new_value = "RNA-binding protein"
+    existing_text = "eReplace"
+    match = "RNA-binding protein HI_1333"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_112 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'ribosomal oxygenase HI_0396' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "ribosomal oxygenase HI_0396"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_113 "Apply ribosomal oxygenase to protein name (overwrite existing text) where protein name equals 'ribosomal oxygenase HI_0396' (case-sensitive)"
+VAR
+    new_value = "ribosomal oxygenase"
+    existing_text = "eReplace"
+    match = "ribosomal oxygenase HI_0396"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_114 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'IMPACT family member HI_0722' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "IMPACT family member HI_0722"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_115 "Apply IMPACT family protein to protein name (overwrite existing text) where protein name equals 'IMPACT family member HI_0722' (case-sensitive)"
+VAR
+    new_value = "IMPACT family protein"
+    existing_text = "eReplace"
+    match = "IMPACT family member HI_0722"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_116 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'NTP pyrophosphohydrolase including oxidativedamage repair enzymes' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "NTP pyrophosphohydrolase including oxidativedamage repair enzymes"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_117 "Edit protein description replace 'NTP pyrophosphohydrolase including oxidativedamage repair enzymes' with 'oxidative damage repair enzyme' where protein name equals 'NTP pyrophosphohydrolase including oxidativedamage repair enzymes' (case-sensitive)"
+VAR
+    find_text = "NTP pyrophosphohydrolase including oxidativedamage repair enzymes"
+    repl_text = "oxidative damage repair enzyme"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+WHERE EQUALS("data.prot.name", find_text, case_sensitive)
+DO
+    EditStringQual("data.prot.desc", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_118 "Edit protein name replace 'NTP pyrophosphohydrolase including oxidativedamage repair enzymes' with 'NTP pyrophosphohydrolase' where protein name equals 'NTP pyrophosphohydrolase including oxidativedamage repair enzymes' (case-sensitive)"
+VAR
+    find_text = "NTP pyrophosphohydrolase including oxidativedamage repair enzymes"
+    repl_text = "NTP pyrophosphohydrolase"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS("data.prot.name", find_text, case_sensitive);
+    EditStringQual("data.prot.desc", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_119 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleoid-associated protein EF_2780' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleoid-associated protein EF_2780"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_120 "Apply nucleoid-associated protein to protein name (overwrite existing text) where protein name equals 'nucleoid-associated protein EF_2780' (case-sensitive)"
+VAR
+    new_value = "nucleoid-associated protein"
+    existing_text = "eReplace"
+    match = "nucleoid-associated protein EF_2780"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_121 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'transposon Tn552 DNA-invertase bin3' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "transposon Tn552 DNA-invertase bin3"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_122 "Apply transposon DNA-invertase to protein name (overwrite existing text) where protein name equals 'transposon Tn552 DNA-invertase bin3' (case-sensitive)"
+VAR
+    new_value = "transposon DNA-invertase"
+    existing_text = "eReplace"
+    match = "transposon Tn552 DNA-invertase bin3"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_123 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'transposon Tn917 resolvase' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "transposon Tn917 resolvase"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_124 "Apply transposon resolvase to protein name (overwrite existing text) where protein name equals 'transposon Tn917 resolvase' (case-sensitive)"
+VAR
+    new_value = "transposon resolvase"
+    existing_text = "eReplace"
+    match = "transposon Tn917 resolvase"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_125 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'LAAC' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "LAAC"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_126 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'LAAC' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "LAAC"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_127 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'e14 prophage (fragment)' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "e14 prophage (fragment)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_128 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'e14 prophage (fragment)' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "e14 prophage (fragment)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_129 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'esterase HI_1161' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "esterase HI_1161"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_130 "Apply esterase to protein name (overwrite existing text) where protein name equals 'esterase HI_1161' (case-sensitive)"
+VAR
+    new_value = "esterase"
+    existing_text = "eReplace"
+    match = "esterase HI_1161"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_131 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleotide-binding protein MCCL_0516' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleotide-binding protein MCCL_0516"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_132 "Apply nucleotide-binding protein to protein name (overwrite existing text) where protein name equals 'nucleotide-binding protein MCCL_0516' (case-sensitive)"
+VAR
+    new_value = "nucleotide-binding protein"
+    existing_text = "eReplace"
+    match = "nucleotide-binding protein MCCL_0516"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_133 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'PAAR' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "PAAR"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_134 "Apply PAAR repeat-containing protein to protein name (overwrite existing text) where protein name equals 'PAAR' (case-sensitive)"
+VAR
+    new_value = "PAAR repeat-containing protein"
+    existing_text = "eReplace"
+    match = "PAAR"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_135 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'Keratin type II cytoskeletal 75;cytokeratin-75;CK-75;Keratin-75;K75;Type II keratin-18;Type II keratin-K6hf;Keratin-6 hair follicle;hK6hf' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "Keratin type II cytoskeletal 75;cytokeratin-75;CK-75;Keratin-75;K75;Type II keratin-18;Type II keratin-K6hf;Keratin-6 hair follicle;hK6hf"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_136 "Apply keratin to protein name (overwrite existing text) where protein name equals 'Keratin type II cytoskeletal 75;cytokeratin-75;CK-75;Keratin-75;K75;Type II keratin-18;Type II keratin-K6hf;Keratin-6 hair follicle;hK6hf' (case-sensitive)"
+VAR
+    new_value = "keratin"
+    existing_text = "eReplace"
+    match = "Keratin type II cytoskeletal 75;cytokeratin-75;CK-75;Keratin-75;K75;Type II keratin-18;Type II keratin-K6hf;Keratin-6 hair follicle;hK6hf"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_137 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'host specificity protein J, internal deletion' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "host specificity protein J internal deletion"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_138 "Apply host specificity protein J to protein name (overwrite existing text) where protein name equals 'host specificity protein J, internal deletion' (case-sensitive)"
+VAR
+    new_value = "host specificity protein J"
+    existing_text = "eReplace"
+    match = "host specificity protein J internal deletion"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_139 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'zinc metalloprotease Lin1355' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "zinc metalloprotease Lin1355"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_140 "Apply zinc metalloprotease to protein name (overwrite existing text) where protein name equals 'zinc metalloprotease Lin1355' (case-sensitive)"
+VAR
+    new_value = "zinc metalloprotease"
+    existing_text = "eReplace"
+    match = "zinc metalloprotease Lin1355"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_141 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'SMI1 / KNR4' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "SMI1 / KNR4"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_142 "Apply SMI1/KNR4 family protein to protein name (overwrite existing text) where protein name equals 'SMI1 / KNR4' (case-sensitive)"
+VAR
+    new_value = "SMI1/KNR4 family protein"
+    existing_text = "eReplace"
+    match = "SMI1 / KNR4"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_143 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'FIG111678: IS, phage, Tn; transposon-related functions' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "FIG111678: IS phage Tn; transposon-related functions"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_144 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'FIG111678: IS, phage, Tn; transposon-related functions' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "FIG111678: IS phage Tn; transposon-related functions"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_145 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'COG1357: Uncharacterized low-complexity proteins' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "COG1357: Uncharacterized low-complexity proteins"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_146 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'COG1357: Uncharacterized low-complexity proteins' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "COG1357: Uncharacterized low-complexity proteins"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_147 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'MDO' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "MDO"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_148 "Apply MDO protein to protein name (overwrite existing text) where protein name equals 'MDO' (case-sensitive)"
+VAR
+    new_value = "MDO protein"
+    existing_text = "eReplace"
+    match = "MDO"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_149 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'transcriptional regulator (fragment)' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "transcriptional regulator (fragment)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_150 "Apply transcriptional regulator to protein name (overwrite existing text) where protein name equals 'transcriptional regulator (fragment)' (case-sensitive)"
+VAR
+    new_value = "transcriptional regulator"
+    existing_text = "eReplace"
+    match = "transcriptional regulator (fragment)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_151 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleoid-associated protein A1C_06705' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleoid-associated protein A1C_06705"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_152 "Apply nucleoid-associated protein to protein name (overwrite existing text) where protein name equals 'nucleoid-associated protein A1C_06705' (case-sensitive)"
+VAR
+    new_value = "nucleoid-associated protein"
+    existing_text = "eReplace"
+    match = "nucleoid-associated protein A1C_06705"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_153 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'ABC-type bacteriocin/lantibiotic exporters, containing an N-terminal double-glycine peptidase domain protein' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "ABC-type bacteriocin/lantibiotic exporters, containing an N-terminal double-glycine peptidase domain protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_154 "Apply bacteriocin/lantibiotic ABC transporter to protein name (overwrite existing text) where protein name equals 'ABC-type bacteriocin/lantibiotic exporters, containing an N-terminal double-glycine peptidase domain protein' (case-sensitive)"
+VAR
+    new_value = "bacteriocin/lantibiotic ABC transporter"
+    existing_text = "eReplace"
+    match = "ABC-type bacteriocin/lantibiotic exporters, containing an N-terminal double-glycine peptidase domain protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_155 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'lipoprotein YPO0703' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "lipoprotein YPO0703"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_156 "Apply lipoprotein to protein name (overwrite existing text) where protein name equals 'lipoprotein YPO0703' (case-sensitive)"
+VAR
+    new_value = "lipoprotein"
+    existing_text = "eReplace"
+    match = "lipoprotein YPO0703"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_157 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'CRO' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "CRO"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_158 "Apply Cro protein to protein name (overwrite existing text) where protein name equals 'CRO' (case-sensitive)"
+VAR
+    new_value = "Cro protein"
+    existing_text = "eReplace"
+    match = "CRO"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_159 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'LOG family protein PA4923' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "LOG family protein PA4923"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_160 "Apply LOG family protein to protein name (overwrite existing text) where protein name equals 'LOG family protein PA4923' (case-sensitive)"
+VAR
+    new_value = "LOG family protein"
+    existing_text = "eReplace"
+    match = "LOG family protein PA4923"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_161 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'BRAMP' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "BRAMP"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_162 "Apply BRAMP protein to protein name (overwrite existing text) where protein name equals 'BRAMP' (case-sensitive)"
+VAR
+    new_value = "BRAMP protein"
+    existing_text = "eReplace"
+    match = "BRAMP"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_163 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'YcgL domain-containing protein MADE_1012200' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "YcgL domain-containing protein MADE_1012200"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_164 "Apply YcgL domain-containing protein to protein name (overwrite existing text) where protein name equals 'YcgL domain-containing protein MADE_1012200' (case-sensitive)"
+VAR
+    new_value = "YcgL domain-containing protein"
+    existing_text = "eReplace"
+    match = "YcgL domain-containing protein MADE_1012200"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_165 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'TUS' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "TUS"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_166 "Apply DNA-binding protein to protein name (overwrite existing text) where protein name equals 'TUS' (case-sensitive)"
+VAR
+    new_value = "DNA-binding protein"
+    existing_text = "eReplace"
+    match = "TUS"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_167 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'SECDF' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "SECDF"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_168 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'SECDF' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "SECDF"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_169 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'MRFJ' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "MRFJ"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_170 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'MRFJ' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "MRFJ"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_171 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'PSPC' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "PSPC"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_172 "Apply transcriptional regulator to protein name (overwrite existing text) where protein name equals 'PSPC' (case-sensitive)"
+VAR
+    new_value = "transcriptional regulator"
+    existing_text = "eReplace"
+    match = "PSPC"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_173 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'XAXA' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "XAXA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_174 "Apply XaxA to protein name (overwrite existing text) where protein name equals 'XAXA' (case-sensitive)"
+VAR
+    new_value = "XaxA"
+    existing_text = "eReplace"
+    match = "XAXA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_175 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'XAXB' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "XAXB"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_176 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'XAXB' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "XAXB"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_177 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DEDD' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DEDD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_178 "Apply DedD to protein name (overwrite existing text) where protein name equals 'DEDD' (case-sensitive)"
+VAR
+    new_value = "DedD"
+    existing_text = "eReplace"
+    match = "DEDD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_179 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'RECA' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "RECA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_180 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'RECA' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "RECA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_181 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'MRKD' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "MRKD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_182 "Apply putative fimbrial protein to protein name (overwrite existing text) where protein name equals 'MRKD' (case-sensitive)"
+VAR
+    new_value = "putative fimbrial protein"
+    existing_text = "eReplace"
+    match = "MRKD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_183 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'UMOD' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "UMOD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_184 "Apply UmoD to protein name (overwrite existing text) where protein name equals 'UMOD' (case-sensitive)"
+VAR
+    new_value = "UmoD"
+    existing_text = "eReplace"
+    match = "UMOD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_185 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'GMK' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "GMK"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_186 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'GMK' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "GMK"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_187 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'CYSG' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "CYSG"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_188 "Apply siroheme synthase to protein name (overwrite existing text) where protein name equals 'CYSG' (case-sensitive)"
+VAR
+    new_value = "siroheme synthase"
+    existing_text = "eReplace"
+    match = "CYSG"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_189 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'MCHI' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "MCHI"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_190 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'MCHI' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "MCHI"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_191 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'transposon Tn552 DNA-invertase BinR' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "transposon Tn552 DNA-invertase BinR"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_192 "Apply transposon DNA-invertase to protein name (overwrite existing text) where protein name equals 'transposon Tn552 DNA-invertase BinR' (case-sensitive)"
+VAR
+    new_value = "transposon DNA-invertase"
+    existing_text = "eReplace"
+    match = "transposon Tn552 DNA-invertase BinR"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_193 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'FIG085450: fimbrial protein' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "FIG085450: fimbrial protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_194 "Apply fimbrial protein to protein name (overwrite existing text) where protein name equals 'FIG085450: fimbrial protein' (case-sensitive)"
+VAR
+    new_value = "fimbrial protein"
+    existing_text = "eReplace"
+    match = "FIG085450: fimbrial protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_195 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'COGs COG3146' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "COGs COG3146"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_196 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'COGs COG3146' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "COGs COG3146"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_197 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'cAMP-binding proteins-catabolite gene activator and regulatory subunit of cAMP-dependent protein kinase' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "cAMP-binding proteins-catabolite gene activator and regulatory subunit of cAMP-dependent protein kinase"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_198 "Apply cAMP-binding protein to protein name (overwrite existing text) where protein name equals 'cAMP-binding proteins-catabolite gene activator and regulatory subunit of cAMP-dependent protein kinase' (case-sensitive)"
+VAR
+    new_value = "cAMP-binding protein"
+    existing_text = "eReplace"
+    match = "cAMP-binding proteins-catabolite gene activator and regulatory subunit of cAMP-dependent protein kinase"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_199 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'PF12977 structural domain protein' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "PF12977 structural domain protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_200 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'PF12977 structural domain protein' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "PF12977 structural domain protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_201 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'IS, phage, Tn; transposon-related functions' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "IS phage Tn; transposon-related functions"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_202 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'IS, phage, Tn; transposon-related functions' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "IS phage Tn; transposon-related functions"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_203 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'orf; Other or unknown (phage or prophage Related)' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "orf; Other or unknown (phage or prophage Related)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_204 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'orf; Other or unknown (phage or prophage Related)' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "orf; Other or unknown (phage or prophage Related)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_205 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'hypotheticla protein' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "hypotheticla protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_206 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'hypotheticla protein' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "hypotheticla protein"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_207 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'structure; structural component (phage or prophage Related)' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "structure; structural component (phage or prophage Related)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_208 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'structure; structural component (phage or prophage Related)' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "structure; structural component (phage or prophage Related)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_209 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'ssrAB activated gene' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "ssrAB activated gene"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_210 "Apply ssrAB activated protein to protein name (overwrite existing text) where protein name equals 'ssrAB activated gene' (case-sensitive)"
+VAR
+    new_value = "ssrAB activated protein"
+    existing_text = "eReplace"
+    match = "ssrAB activated gene"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_211 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'phage gene' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "phage gene"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_212 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'phage gene' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "phage gene"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_213 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'dopa decarboxylase remnant' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "dopa decarboxylase remnant"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_214 "Apply dopa decarboxylase to protein name (overwrite existing text) where protein name equals 'dopa decarboxylase remnant' (case-sensitive)"
+VAR
+    new_value = "dopa decarboxylase"
+    existing_text = "eReplace"
+    match = "dopa decarboxylase remnant"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_215 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DMSD' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DMSD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_216 "Apply DmsD to protein name (overwrite existing text) where protein name equals 'DMSD' (case-sensitive)"
+VAR
+    new_value = "DmsD"
+    existing_text = "eReplace"
+    match = "DMSD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_217 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'FEPE' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "FEPE"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_218 "Apply FepE to protein name (overwrite existing text) where protein name equals 'FEPE' (case-sensitive)"
+VAR
+    new_value = "FepE"
+    existing_text = "eReplace"
+    match = "FEPE"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_219 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'IPAB' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "IPAB"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_220 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'IPAB' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "IPAB"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_221 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'BSAV' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "BSAV"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_222 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'BSAV' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "BSAV"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_223 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'CCM' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "CCM"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_224 "Apply internal membrane protein to protein name (overwrite existing text) where protein name equals 'CCM' (case-sensitive)"
+VAR
+    new_value = "internal membrane protein"
+    existing_text = "eReplace"
+    match = "CCM"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_225 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'UMOA' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "UMOA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_226 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'UMOA' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "UMOA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_227 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'FUCK' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "FUCK"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_228 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'FUCK' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "FUCK"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_229 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'PPDA' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "PPDA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_230 "Apply peptidase to protein name (overwrite existing text) where protein name equals 'PPDA' (case-sensitive)"
+VAR
+    new_value = "peptidase"
+    existing_text = "eReplace"
+    match = "PPDA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_231 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'PPDB' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "PPDB"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_232 "Apply peptidase to protein name (overwrite existing text) where protein name equals 'PPDB' (case-sensitive)"
+VAR
+    new_value = "peptidase"
+    existing_text = "eReplace"
+    match = "PPDB"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_233 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'ZAPD' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "ZAPD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_234 "Apply outer membrane protein to protein name (overwrite existing text) where protein name equals 'ZAPD' (case-sensitive)"
+VAR
+    new_value = "outer membrane protein"
+    existing_text = "eReplace"
+    match = "ZAPD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_235 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'REPC' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "REPC"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_236 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'REPC' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "REPC"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_237 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'TRXA' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "TRXA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_238 "Apply thioredoxin to protein name (overwrite existing text) where protein name equals 'TRXA' (case-sensitive)"
+VAR
+    new_value = "thioredoxin"
+    existing_text = "eReplace"
+    match = "TRXA"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_239 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'MDAB' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "MDAB"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_240 "Apply NADPH quinone reductase to protein name (overwrite existing text) where protein name equals 'MDAB' (case-sensitive)"
+VAR
+    new_value = "NADPH quinone reductase"
+    existing_text = "eReplace"
+    match = "MDAB"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_241 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'FLGD' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "FLGD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_242 "Apply flagellar basal-body rod modification protein to protein name (overwrite existing text) where protein name equals 'FLGD' (case-sensitive)"
+VAR
+    new_value = "flagellar basal-body rod modification protein"
+    existing_text = "eReplace"
+    match = "FLGD"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_243 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'NINH' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "NINH"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_244 "Apply NinH to protein name (overwrite existing text) where protein name equals 'NINH' (case-sensitive)"
+VAR
+    new_value = "NinH"
+    existing_text = "eReplace"
+    match = "NINH"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_245 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'phosphoserine phosphatase (Fragment)' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "phosphoserine phosphatase (Fragment)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_246 "Apply phosphoserine phosphatase to protein name (overwrite existing text) where protein name equals 'phosphoserine phosphatase (Fragment)' (case-sensitive)"
+VAR
+    new_value = "phosphoserine phosphatase"
+    existing_text = "eReplace"
+    match = "phosphoserine phosphatase (Fragment)"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_247 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'DegV domain-containing protein CA_C3284' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "DegV domain-containing protein CA_C3284"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_248 "Apply DegV domain-containing protein to protein name (overwrite existing text) where protein name equals 'DegV domain-containing protein CA_C3284' (case-sensitive)"
+VAR
+    new_value = "DegV domain-containing protein"
+    existing_text = "eReplace"
+    match = "DegV domain-containing protein CA_C3284"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_249 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'PILF' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "PILF"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_250 "Apply hypothetical protein to protein name (overwrite existing text) where protein name equals 'PILF' (case-sensitive)"
+VAR
+    new_value = "hypothetical protein"
+    existing_text = "eReplace"
+    match = "PILF"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_251 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'COG0439: biotin carboxylase' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "COG0439: biotin carboxylase"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_252 "Apply biotin carboxylase to protein name (overwrite existing text) where protein name equals 'COG0439: biotin carboxylase' (case-sensitive)"
+VAR
+    new_value = "biotin carboxylase"
+    existing_text = "eReplace"
+    match = "COG0439: biotin carboxylase"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_253 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'macro domain-containing protein MA_1614' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "macro domain-containing protein MA_1614"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_254 "Apply macro domain-containing protein to protein name (overwrite existing text) where protein name equals 'macro domain-containing protein MA_1614' (case-sensitive)"
+VAR
+    new_value = "macro domain-containing protein"
+    existing_text = "eReplace"
+    match = "macro domain-containing protein MA_1614"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_255 "Convert protein name to protein description (prefix separated by semicolon) where protein name equals 'nucleoid-associated protein LBA0378' (case-sensitive)"
+VAR
+    dest = "data.prot.desc"
+    cap_change = "none"
+    strip_name = false
+    existing_text = "ePrepend"
+    delimiter = ";"
+    match = "nucleoid-associated protein LBA0378"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, case_sensitive);
+    ConvertStringQual(src, dest, cap_change, strip_name, existing_text, delimiter);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_256 "Apply nucleoid-associated protein to protein name (overwrite existing text) where protein name equals 'nucleoid-associated protein LBA0378' (case-sensitive)"
+VAR
+    new_value = "nucleoid-associated protein"
+    existing_text = "eReplace"
+    match = "nucleoid-associated protein LBA0378"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive);
+    SetStringQual(o, new_value, existing_text);
+DONE
+--------------------------------------------------------------
+MACRO PGAPFixes_WGS_257 "Remove Definition Line where sequence type is protein"
+FOR EACH Seqdesc
+WHERE CHOICETYPE() = "title" AND SEQUENCE_FOR_SEQDESC("inst.mol") = "aa"
+Do
+    RemoveDescriptor();
+Done
+--------------------------------------------------------------
+MACRO TaxLookup "Perform tax lookup"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO CorrectGeneticCodes "Correct genetic codes"
+FOR EACH Cdregion
+Do
+    CorrectGeneticCode();
+Done
+------------------------------------------------------------------------------
+MACRO Convert_Protein100_01 "Copy protein name to CDS comment(append separated by semicolon) where protein name is longer than 100 characters"
+VAR
+    cap_change = "none"
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH Cdregion
+DO
+     o = RELATED_FEATURE("protein", "data.prot.name") WHERE STRLENGTH(o) > 100;
+     ParseStringQual(o, "comment", cap_change, existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------
+MACRO Convert_Protein100_02 "Parse text just after ',' from protein name to protein name (overwrite existing text) where protein name is longer than 100 characters"
+VAR
+    include_left = false
+    include_right = false
+    case_sensitive = false
+    whole_word = false
+    rmv_from_parsed = true
+    rmv_left = true
+    cap_change = "none"
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH Protein
+WHERE STRLENGTH("data.prot.name") > 100
+DO
+     o = Resolve("data.prot.name") WHERE STRLENGTH(o) > 100;
+     text = ParsedText(o, ",", include_left, "", include_right, case_sensitive, whole_word, rmv_from_parsed, rmv_left);
+     UpdatemRNAProduct();
+DONE
+------------------------------------------------------------------------------
+MACRO ClearCDS3primePartial_ifGoodStopCodon_01 "Clear 3' partial when coding region has stop codon for CDS features"
+FOR EACH Cdregion
+DO
+    ClearPartialStop("good-end", false, false);
+DONE
+------------------------------------------------------------------------------
+MACRO ClearCDS3primePartial_ifGoodStopCodon_02 "Synchronize coding region partials"
+FOR EACH Cdregion
+DO
+    SynchronizeCDSPartials();
+DONE
+------------------------------------------------------------------------------

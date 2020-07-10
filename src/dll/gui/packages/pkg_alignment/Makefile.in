@@ -1,0 +1,8 @@
+#################################
+# $Id: Makefile.in 18592 2009-01-07 14:58:06Z dicuccio $
+#################################
+
+DLL_PROJ = gui_view_align pkg_alignment
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

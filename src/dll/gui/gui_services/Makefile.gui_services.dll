@@ -1,0 +1,12 @@
+# $Id: Makefile.gui_services.dll 42821 2019-04-18 19:32:56Z joukovv $
+
+DLL = gui_services
+
+HOSTED_LIBS    = gui_services
+
+DEPENDENCIES   = gui_objects gui_core gui_config gui_utils gui_widgets_seq \
+                 gui_widgets_misc gui_widgets \
+                 ncbi_core ncbi_general ncbi_misc ncbi_seq ncbi_seqext
+
+CPPFLAGS = -DNCBI_GUISERVICES_EXPORTS
+

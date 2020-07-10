@@ -1,0 +1,118 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "seq_1",
+        general {
+          db "BankIt",
+          tag str "1765449/LAP520"
+        }
+      },
+      descr {
+        title "Micropsalliota geesterani some protein gene, complete cds.",
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "seq_1"
+            },
+            {
+              label str "General",
+              data str "gnl|BankIt|1765449/LAP520"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "seq_",
+            orgname {
+              name binomial {
+                genus "Micropsalliota",
+                species "geesterani"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype strain,
+                  subname "CBS tobe_removed_text"
+                }
+              },
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 24,
+        strand ds,
+        seq-data iupacna "AACTGTCCTGGGACAACTTTGAAC"
+      }
+    },
+    seq {
+      id {
+        local str "seq_2",
+        general {
+          db "BankIt",
+          tag str "1765674/LAP520"
+        }
+      },
+      descr {
+        title "Micropsalliota geesterani some gene descr (some gene locus)
+ gene, complete sequence.",
+        source {
+          genome genomic,
+          org {
+            taxname "LAP",
+            orgname {
+              name binomial {
+                genus "Micropsalliota",
+                species "geesterani"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype strain,
+                  subname "flu"
+                }
+              },
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "LAP520"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 31,
+        strand ds,
+        seq-data iupacna "GGACCGTATACAAGTCTCCTGGGATGGAGCT"
+      }
+    }
+  }
+}

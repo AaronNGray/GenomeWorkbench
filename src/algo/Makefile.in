@@ -1,0 +1,12 @@
+# $Id: Makefile.in 42821 2019-04-18 19:32:56Z joukovv $
+
+# Meta-makefile("ALGO" project)
+#################################
+
+SUB_PROJ = dustmask sequence winmask blast align structure ms gnomon tree \
+           phy_tree seqqa cobalt text volume_merge id_mapper
+
+REQUIRES = objects algo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

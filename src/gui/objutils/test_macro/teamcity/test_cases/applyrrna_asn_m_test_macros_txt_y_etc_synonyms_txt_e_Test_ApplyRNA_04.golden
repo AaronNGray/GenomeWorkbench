@@ -1,0 +1,152 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Helicoverpa assulta",
+            orgname {
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 210,
+        strand ds,
+        seq-data ncbi2na '000581ABC5D730E32C3274087D13C385C46930D02012056C3579
+7782570015C210AA114C855044EAE87C05D56737B8015601E171C0'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type rRNA,
+                ext name "18S ribosomal RNA"
+              },
+              location int {
+                from 3,
+                to 55,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            },
+            {
+              data rna {
+                type ncRNA,
+                ext gen {
+                  class "guide_RNA",
+                  product "ncRNA name"
+                }
+              },
+              location int {
+                from 9,
+                to 59,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Falco cherrug",
+            common "Saker falcon",
+            orgname {
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2",
+            genbank {
+              accession "KF591394"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 285,
+            strand ds,
+            seq-data ncbi2na '5AAACF84E7CFD00BE0E8B0DB9C0D01B94FF0BACFAA2FEECC
+03AC8F790D425B44A3AB039FD734FFC512355ACE3E5FF3F29FE43EA43D34BF493B575C75D3318D
+FA2E41E304EAD3C100'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Hypothetical protein gene",
+                    desc "Hypothetical protein gene"
+                  },
+                  location int {
+                    from 24,
+                    to 42,
+                    strand plus,
+                    id local str "Seq2"
+                  }
+                },
+                {
+                  data rna {
+                    type ncRNA,
+                    ext gen {
+                      class "guide_RNA",
+                      product "ncRNA name"
+                    }
+                  },
+                  location int {
+                    from 9,
+                    to 59,
+                    strand plus,
+                    id genbank {
+                      accession "KF591394"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

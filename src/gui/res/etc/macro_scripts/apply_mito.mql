@@ -1,0 +1,29 @@
+MACRO ApplyMito_01 "Change to molecule genomic, class DNA, technique, completeness and topology to unknown, remove strand, where sequence type is nucleotide"
+FOR EACH SeqNa
+DO
+    SetQual("descr..molinfo.biomol", "genomic");
+    SetQual("descr..molinfo.completeness", "unknown");
+    SetQual("descr..molinfo.tech", "unknown");
+    SetQual("inst.mol", "dna");
+    SetQual("inst.topology", "not-set");
+    RemoveQual("inst.strand");
+DONE
+------------------------------------------------------------------------------
+MACRO ApplyMito_02 "Synchronize coding region partials"
+FOR EACH Cdregion
+DO
+    SynchronizeCDSPartials();
+DONE
+------------------------------------------------------------------------------
+MACRO ApplyMito_03 "Apply location mitochondrion (overwrite existing text)"
+FOR EACH BioSource
+DO
+    SetQual("genome", "mitochondrion");
+DONE
+------------------------------------------------------------------------------
+MACRO ApplyMito_04 "Perform taxonomy lookup and extended cleanup and correct genetic codes"
+FOR EACH TSEntry
+DO
+    DoTaxLookup();
+DONE
+------------------------------------------------------------------------------

@@ -1,0 +1,84 @@
+Seq-entry ::= seq {
+  id {
+    other {
+      accession "NR_134356",
+      version 1
+    },
+    gi 966624310
+  },
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Trichoderma lacuwombatense",
+        db {
+          {
+            db "taxon",
+            tag id 1490993
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Trichoderma",
+            species "lacuwombatense"
+          },
+          attrib "specified",
+          mod {
+            {
+              subtype type-material,
+              subname "culture from holotype of Trichoderma lacuwombatense",
+              attrib "(2)strain=GJS 99-198"
+            }
+          },
+          lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Hypocreomycetidae; Hypocreales; Hypocreaceae; Trichoderma",
+          gcode 1,
+          mgcode 4,
+          div "PLN"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic,
+      completeness no-ends
+    },
+    pub {
+      pub {
+        gen {
+          cit "Unpublished",
+          authors {
+            names std {
+              {
+                name name {
+                  last "Samuels",
+                  first "Gary",
+                  initials "G.J."
+                }
+              }
+            },
+            affil std {
+              affil "USDA, Agricultural Research Service",
+              div "Systematic Botany and Mycology Laboratory",
+              city "Beltsville",
+              sub "Maryland",
+              country "USA",
+              street "10300 Baltimore Avenue, Building 011A",
+              postal-code "20705"
+            }
+          },
+          title "Changes in taxonomy, occurrence of the sexual stage and
+ ecology of Trichoderma sp.."
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 288,
+    seq-data iupacna "CTCGGAGGGATCATTACCGAGTTTACAACTCCCAAACCCCTATGTGAACGTTACCA
+AAAACCCCCTGTCCGAGCGTCATTTCAACCCTCGAACCCCTCCGGGGGTCCGGCGTTGGGGATCGGCCCTTTACCGGC
+CGGCCCCGAAATACAGTGGCGGTCTCGCCGCAGCCTCTCCTGCGCAGTAGTTTGCACACTCGCACCGGGAGCGCGGCG
+CGTCCACGTCCGTAAAACACCCAACTTCTGAAAGGTTGACCTCGGATCAGGTAGGAATACCCGCTGAACTTAAGCA"
+  }
+}

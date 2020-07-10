@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.done_handling.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db95_done_handling)
+  NCBI_sources(done_handling common)
+  NCBI_set_test_assets(done_handling.sql)
+  NCBI_add_test(test-db95 --no-auto db95_done_handling)
+NCBI_end_app()
+

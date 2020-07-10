@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.srsearch.app.txt 593585 2019-09-20 13:57:47Z gouriano $
+#############################################################################
+
+NCBI_begin_app(srsearch)
+  NCBI_sources(main srsearch_app)
+  NCBI_uses_toolkit_libraries(xalgoblastdbindex xalgoblastdbindex_search)
+  NCBI_project_watchers(morgulis)
+NCBI_end_app()
+

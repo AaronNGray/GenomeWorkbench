@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.biblio.asn.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(biblio)
+  NCBI_sources(citation_base)
+  NCBI_dataspecs(biblio.asn)
+  NCBI_uses_toolkit_libraries(general)
+NCBI_end_lib()
+

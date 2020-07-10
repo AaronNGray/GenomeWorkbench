@@ -1,0 +1,7 @@
+[AddToProject]
+ResourceFiles=gbench.rc
+
+[Linker]
+OutputFile          = $(OutDir)/gbench/bin/gbench.exe
+ProgramDatabaseFile = $(OutDir)/gbench/bin/gbench.pdb
+AdditionalOptions = /STACK:0x800000

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxPanel" name="ClearPartialStop">
+        <style>wxTAB_TRAVERSAL</style>
+        <title>Clear Partial Stop Panel</title>
+        <centered>1</centered>
+        <object class="wxBoxSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxFlexGridSizer">
+                    <cols>2</cols>
+                    <rows>0</rows>
+                    <vgap>0</vgap>
+                    <hgap>0</hgap>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_RIGHT|wxALIGN_TOP|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>Feature</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALIGN_TOP|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxListBox" name="feature_field">
+                            <size>-1,140</size>
+                            <style>wxLB_SINGLE</style>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_RIGHT|wxALIGN_TOP|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>Clear</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALIGN_TOP|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxListBox" name="partial_option">
+                            <style>wxLB_SINGLE</style>
+                            <content>
+                                <item>All</item>
+                                <item>If not at 3' end</item>
+                                <item>If good stop codon</item>
+                            </content>
+                        </object>
+                    </object>
+                    <object class="spacer">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <size>5,5</size>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_TOP|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxCheckBox" name="retranslate">
+                            <label>Retranslate coding regions</label>
+                            <checked>0</checked>
+                        </object>
+                    </object>
+                    <object class="spacer">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <size>5,5</size>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_TOP|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxCheckBox" name="adjustgene">
+                            <label>Adjust gene location</label>
+                            <checked>0</checked>
+                        </object>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>

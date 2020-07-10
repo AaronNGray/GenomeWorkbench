@@ -1,0 +1,14 @@
+# $Id: Makefile.gui_print.lib 43836 2019-09-09 20:29:51Z evgeniev $
+
+SRC = page_buffers page_handler panel_grid pdf pdf_font_handler \
+      pdf_element pdf_object pdf_object_writer print_buffer \
+      print_media print_options vector_printer glrenderpdf \
+      svg_renderer
+
+LIB = gui_print
+
+DLL_LIB = gui_utils gui_opengl  $(COMPRESS_LIBS) xutil xncbi
+
+LIBS = $(CMPRS_LIBS) $(ORIG_LIBS) $(OPENGL_LIBS) $(GLEW_LIBS)
+
+CPPFLAGS = -DNCBI_BYPASS_FL_GL $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(CMPRS_INCLUDE) $(ORIG_CPPFLAGS)

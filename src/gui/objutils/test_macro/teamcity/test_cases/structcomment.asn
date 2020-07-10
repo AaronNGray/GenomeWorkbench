@@ -1,0 +1,114 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "seq_1",
+        general {
+          db "BankIt",
+          tag str "1765449/LAP520"
+        }
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Micropsalliota geesterani"
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "seq_1"
+            }
+          }
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data##"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "v 3.4.5"
+            },
+            {
+              label str "Coverage",
+              data str "n/a"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data##"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 24,
+        strand ds,
+        seq-data iupacna "AACTGTCCTGGGACAACTTTGAAC"
+      }
+    },
+    seq {
+      id {
+        local str "seq_2",
+        general {
+          db "BankIt",
+          tag str "1765674/LAP520"
+        }
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Micropsalliota geesterani",
+            orgname {
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data##"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "v 3.4.5"
+            },
+            {
+              label str "Coverage",
+              data str "100%"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data##"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 31,
+        strand ds,
+        seq-data iupacna "GGACCGTATACAAGTCTCCTGGGATGGAGCT"
+      }
+    }
+  }
+}

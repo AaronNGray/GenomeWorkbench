@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbi_trigger.app.txt 593499 2019-09-19 15:56:50Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbi_trigger)
+  NCBI_sources(test_ncbi_trigger)
+  NCBI_uses_toolkit_libraries(xconnect)
+  NCBI_project_watchers(lavr)
+  NCBI_add_test(test_ncbi_trigger.sh)
+NCBI_end_app()
+

@@ -1,0 +1,160 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Vibrio cholerae",
+            db {
+              {
+                db "taxon",
+                tag id 666
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Bacteria; Proteobacteria;
+ Gammaproteobacteria; Vibrionales; Vibrionaceae; Vibrio",
+              gcode 11,
+              mgcode 0,
+              div "BCT"
+            }
+          }
+        },
+        pub {
+          pub {
+            pmid 235689
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Technische Universitat Dresden",
+                  div "Biology / Institute of Microbiology",
+                  city "Dresden",
+                  sub "Saxony",
+                  country "Germany",
+                  street "Zellescher Weg 20b",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 159,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAATTAATCATACCCTTCTGGATAAGGGGGACTA
+TCTGTGAAAACCCCGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2"
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Falco cherrug",
+            common "Saker falcon",
+            db {
+              {
+                db "taxon",
+                tag id 345164
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+ Tetrapoda; Amniota; Sauropsida; Sauria; Archelosauria; Archosauria;
+ Dinosauria; Saurischia; Theropoda; Coelurosauria; Aves; Neognathae;
+ Falconiformes; Falconidae; Falco",
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        },
+        pub {
+          pub {
+            pmid 142688,
+			pmid 142688
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Technische Universitat Dresden",
+                  div "Biology / Institute of Microbiology",
+                  city "Dresden",
+                  sub "Saxony",
+                  country "Germany",
+                  street "Zellescher Weg 20b",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 287,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGAATTC
+CAAGTCATAGGTGCCATTTTAAGTGGTATTGGGGAGTTTGTGTATAAAATGGTAGATTCTGCAATCCAAGCCGTCACA
+GGATGGGTAAATGCTTTCCTATCATTTTTACCACAGATCCCCGGTATGATTGCCTTTTATTTAGGCTTTGCAATTGGG
+CAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATAACATGGGTCATTAACA"
+      }
+    }
+  }
+}

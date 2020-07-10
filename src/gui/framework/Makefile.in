@@ -1,0 +1,12 @@
+# $Id: Makefile.in 21388 2010-05-14 01:24:08Z dicuccio $
+
+# GUI Framework
+
+DTD_PROJ = gui_framework
+
+EXPENDABLE_SUB_PROJ = demo demo_task_manager
+
+REQUIRES = wxWidgets OpenGL algo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

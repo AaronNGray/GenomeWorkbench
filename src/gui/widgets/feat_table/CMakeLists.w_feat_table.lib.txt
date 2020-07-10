@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.w_feat_table.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_feat_table)
+  NCBI_sources(feat_table feat_table_ds feature_filter_dlg)
+  NCBI_uses_toolkit_libraries(w_wx)
+  NCBI_requires(wxWidgets)
+NCBI_end_lib()

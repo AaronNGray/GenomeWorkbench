@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.seqset.asn.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(seqset)
+  NCBI_dataspecs(seqset.asn)
+  NCBI_sources(gb_release_file)
+  NCBI_uses_toolkit_libraries(seq)
+NCBI_end_lib()
+

@@ -1,0 +1,11 @@
+# $Id: Makefile.in 506813 2016-07-12 14:24:36Z asztalos $
+
+# Meta-makefile ("query parser test" project)
+#################################
+
+
+APP_PROJ = test_qparse unit_test_parse_utils
+PROJ_TAG = test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,816 @@
+Seq-entry ::= set {
+  class phy-set,
+  descr {
+    update-date std {
+      year 2015,
+      month 4,
+      day 4,
+      hour 18,
+      minute 13,
+      second 7
+    },
+    title "Bacteria sequence."
+  },
+  seq-set {
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1811524/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 53810056
+        },
+        genbank {
+          accession "KR133486"
+        }
+      },
+      descr {
+        title "Escherichia coli sequence.",
+        source {
+          genome genomic,
+          org {
+            taxname "Escherichia coli",
+            db {
+              {
+                db "taxon",
+                tag id 562
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Escherichia",
+                species "coli"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype isolate,
+                  subname "IQDC-2"
+                },
+                {
+                  subtype nat-host,
+                  subname "Domestic chicken"
+                },
+                {
+                  subtype old-name,
+                  subname "Eschericia coli"
+                }
+              },
+              lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Enterobacterales; Enterobacteriaceae; Escherichia",
+              gcode 11,
+              div "BCT"
+            }
+          },
+          subtype {
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype collection-date,
+              name "02-Dec-2014"
+            },
+            {
+              subtype other,
+              name "amplified with species-specific primers"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 88,
+        strand ds,
+        seq-data iupacna "GGAATATTGCGCAATGGGGGAAACCCGAGCACTCTAAATAGACTGCCTTCGT
+AAGGAGGAGGAAGGTGTGGACGACGTCAAGTCATCA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq3",
+        general {
+          db "BankIt",
+          tag str "1811524/Seq3"
+        },
+        general {
+          db "TMSMART",
+          tag id 53810057
+        },
+        genbank {
+          accession "KR133487"
+        }
+      },
+      descr {
+        title "Uncultured Anaplasma sp. clone IQDC-3 sequence.",
+        source {
+          genome genomic,
+          org {
+            taxname "uncultured Anaplasma sp.",
+            db {
+              {
+                db "taxon",
+                tag id 319051
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "uncultured Anaplasma sp."
+                }
+              },
+              attrib "uncultured",
+              lineage "Bacteria; Proteobacteria; Alphaproteobacteria;
+ Rickettsiales; Anaplasmataceae; Anaplasma; environmental samples",
+              gcode 11,
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "IQDC-3"
+            },
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype other,
+              name "some note"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 123,
+        strand ds,
+        seq-data iupacna "CGGTAATACGGAGGGTGCAAGCGTTCAAAGGAATAGACGGGGACCCGCACAA
+GCGGTGGAGCATGTGGTTTAATTCGAAGATACGCGAAGAACCTTACCTGGGCTTGATATCCTAAGTGAAGC"
+      }
+    },
+    seq {
+      id {
+        local str "Seq4",
+        general {
+          db "BankIt",
+          tag str "1811524/Seq4"
+        },
+        general {
+          db "TMSMART",
+          tag id 53810058
+        },
+        genbank {
+          accession "KR133488"
+        }
+      },
+      descr {
+        title "Uncultured Anaplasma sp. sequence.",
+        source {
+          genome genomic,
+          org {
+            taxname "uncultured Anaplasma sp.",
+            db {
+              {
+                db "taxon",
+                tag id 319051
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "uncultured Anaplasma sp."
+                }
+              },
+              attrib "uncultured",
+              lineage "Bacteria; Proteobacteria; Alphaproteobacteria;
+ Rickettsiales; Anaplasmataceae; Anaplasma; environmental samples",
+              gcode 11,
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype environmental-sample,
+              name ""
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 176,
+        strand ds,
+        seq-data iupacna "TGAGGGAGAGGCAGATGGAATTGGTTGAAGCCGGAATCGCTAGTAATCGTAG
+ATCAGCCATGCTACGGTGAATACGTTCCCGGGTCTTGTACTCACCGCCCGTCACACCATGGGAGTTGATTTCACTCGA
+AGCCGGAATACTAAACTAGTTACCGTCCACAGTGGAATCAGCGACT"
+      }
+    },
+    seq {
+      id {
+        local str "Seq5",
+        general {
+          db "BankIt",
+          tag str "1811524/Seq5"
+        },
+        general {
+          db "TMSMART",
+          tag id 53810059
+        },
+        genbank {
+          accession "KR133489"
+        }
+      },
+      descr {
+        title "Uncultured Campylobacter sp. sequence.",
+        source {
+          genome genomic,
+          org {
+            taxname "uncultured Campylobacter sp.",
+            db {
+              {
+                db "taxon",
+                tag id 218934
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "uncultured Campylobacter sp."
+                }
+              },
+              attrib "uncultured",
+              mod {
+                {
+                  subtype isolate,
+                  subname "DGGE gel band G7"
+                },
+                {
+                  subtype nat-host,
+                  subname "Pigeon"
+                }
+              },
+              lineage "Bacteria; Proteobacteria; Epsilonproteobacteria;
+ Campylobacterales; Campylobacteraceae; Campylobacter; environmental samples",
+              gcode 11,
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Iraq"
+            },
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype isolation-source,
+              name "feces"
+            },
+            {
+              subtype collection-date,
+              name "05-Dec-2013"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 162,
+        strand ds,
+        seq-data iupacna "CTCGGAATCACTGGGCGTAAAGGGCGCGTAGGCGGATTATCAAGTCTCTTGT
+GAAATCTAATGGCTTAACCATAAAATATGTCCCAGTTCGGATTGTTCTCTGCAACTCGAGAGCATGAAGCCGGAATCG
+CTAGTAATCGTAGATCAGCCATGCTACGGTGA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq6",
+        general {
+          db "BankIt",
+          tag str "1811524/Seq6"
+        },
+        general {
+          db "TMSMART",
+          tag id 53810060
+        },
+        genbank {
+          accession "KR133490"
+        }
+      },
+      descr {
+        title "Uncultured Chlamydiales bacterium clone test_clone sequence.",
+        source {
+          genome genomic,
+          org {
+            taxname "uncultured Chlamydiales bacterium",
+            db {
+              {
+                db "taxon",
+                tag id 174324
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "uncultured Chlamydiales bacterium"
+                }
+              },
+              attrib "uncultured",
+              mod {
+                {
+                  subtype nat-host,
+                  subname "chicken"
+                }
+              },
+              lineage "Bacteria; Chlamydiae; Chlamydiales; environmental
+ samples",
+              gcode 11,
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "test_clone"
+            },
+            {
+              subtype environmental-sample,
+              name ""
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 198,
+        strand ds,
+        seq-data iupacna "TGAGGGAGAGGCAGATGGAAGCGGTGGAGCATGTGGTTTAATTCGAAGATAC
+GCGAAGAACCTTACCTGGGCTTGATATCCTAAGAACCTTATAGAGATATGAGGGTGCTAGCTTGCTAGAACTTCACAC
+CATGGGAGTTGATTTCACTCGAAGCCGGAATACTAAACTAGTTACCGTCCACAGTGGAATCAGCGACT"
+      }
+    },
+    seq {
+      id {
+        local str "Seq7",
+        general {
+          db "BankIt",
+          tag str "1811524/Seq7"
+        },
+        general {
+          db "TMSMART",
+          tag id 53810061
+        },
+        genbank {
+          accession "KR133491"
+        }
+      },
+      descr {
+        title "Uncultured SomeNewName hormoides var. subarcticum sequence.",
+        source {
+          genome genomic,
+          org {
+            taxname "uncultured SomeNewName hormoides var. subarcticum",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype other,
+              name "[amplified with species-specific primers]; [uncultured;
+ wizard]"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 185,
+        strand ds,
+        seq-data iupacna "CTCGGAATCACTGGGCGTAAAGGGCGCGTAGGCGGATTATCAAGTCTCTTGT
+GAAATCTAATGGCTTAACCATTAAACTGCTTGGGAAACTGATAGTCTAGAGTGAGGGAGAGGCAGATGGAATTGCAAC
+TCGAGAGCATGAAGCCGGAATCGCTAGTAATCGTAGATCAGCCATGCTACGGTGA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq8",
+        general {
+          db "BankIt",
+          tag str "1811524/Seq8"
+        },
+        general {
+          db "TMSMART",
+          tag id 53810062
+        },
+        genbank {
+          accession "KR133492"
+        }
+      },
+      descr {
+        title "Uncultured SomeNewName hormoides var. subarcticum sequence.",
+        source {
+          genome genomic,
+          org {
+            taxname "uncultured SomeNewName hormoides var. subarcticum",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype other,
+              name "[uncultured (using universal primers)]"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 163,
+        strand ds,
+        seq-data iupacna "GGAATATTGCGCAATGGGGGAAACCCTGACGCAGCAACGCCGCGTGGAGGAT
+GACACTTTTCGGAGCGTAAACTCCTTTTCTTAGGGAAGAATTCTGACGGCTAAATAGACTGCCTTCGTAAGGAGGAGG
+AAGGTGTGGACGACGTCAAGTCATCATGGCCCT"
+      }
+    }
+  }
+}

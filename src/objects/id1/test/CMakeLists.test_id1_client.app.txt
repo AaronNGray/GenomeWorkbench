@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.test_id1_client.app.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_id1_client)
+  NCBI_sources(test_id1_client)
+  NCBI_uses_toolkit_libraries(id1cli)
+  NCBI_project_watchers(ucko)
+NCBI_end_app()
+

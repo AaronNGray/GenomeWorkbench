@@ -1,0 +1,12 @@
+# $Id: Makefile.dbapi_sample_base.lib 553128 2017-12-13 16:54:04Z satskyse $
+
+SRC = dbapi_sample_base
+LIB = dbapi_sample_base
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(SYBASE_INCLUDE)
+
+WATCHERS = ucko satskyse
+
+
+USES_LIBRARIES =  \
+    $(XCONNEXT) dbapi_driver xconnect xutil

@@ -1,0 +1,25 @@
+# $Id: Makefile.ncbi_xloader_bam.lib 495176 2016-03-15 16:07:37Z vasilche $
+
+# Build library "ncbi_xloader_bam"
+###############################
+
+LIB = ncbi_xloader_bam
+SRC = bamloader bamloader_impl
+
+REQUIRES = objects
+
+ASN_DEP = seqset seq
+
+LIB_OR_DLL = both
+
+DLL_LIB = xobjreadex xobjread $(SOBJMGR_LIBS) bamread$(STATIC) $(BAM_LIBS) $(CMPRS_LIB)
+LIBS = $(SRA_SDK_SYSLIBS) $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+CPPFLAGS = $(SRA_INCLUDE) -DNCBI_XLOADER_BAM_EXPORTS $(ORIG_CPPFLAGS)
+
+WATCHERS = vasilche
+
+
+USES_LIBRARIES =  \
+    bamread xobjreadex

@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.cobalt.lib.txt 594157 2019-09-30 18:28:48Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(cobalt)
+  NCBI_sources(
+    blast cobalt dist hit hitlist phi prog resfreq rps seg seq seqalign
+    traceback tree kmercounts clusterer patterns options links
+  )
+  NCBI_uses_toolkit_libraries(xalgoalignnw xalgophytree xblast)
+  NCBI_project_watchers(boratyng dicuccio )
+NCBI_end_lib()
+

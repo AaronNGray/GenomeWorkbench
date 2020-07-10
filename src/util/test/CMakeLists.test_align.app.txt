@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.test_align.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_align)
+  NCBI_sources(test_align)
+  NCBI_headers(test_align.hpp)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_project_watchers(todorov)
+  NCBI_add_test()
+NCBI_end_app()
+

@@ -1,0 +1,326 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Streptomyces pactum",
+        db {
+          {
+            db "taxon",
+            tag id 68249
+          }
+        },
+        syn {
+          "Streptomyces pactum var. pactum",
+          "Streptomyces pactum Bhuyan et al. 1962",
+          """Streptomyces pactum var. pactum"" Bhuyan et al. 1962"
+        },
+        orgname {
+          name binomial {
+            genus "Streptomyces",
+            species "pactum"
+          },
+          mod {
+            {
+              subtype strain,
+              subname "A2"
+            }
+          },
+          lineage "Bacteria; Actinobacteria; Streptomycetales;
+ Streptomycetaceae; Streptomyces",
+          gcode 11,
+          div "BCT"
+        }
+      },
+      subtype {
+        {
+          subtype country,
+          name "India"
+        },
+        {
+          subtype collected-by,
+          name "Lakshmi Narasu"
+        }
+      }
+    },
+    pub {
+      pub {
+        gen {
+          cit "Unpublished",
+          authors {
+            names std {
+              {
+                name name {
+                  last "Reddy",
+                  first "Jyotheeswara",
+                  initials "J.E."
+                }
+              },
+              {
+                name name {
+                  last "Narasu",
+                  first "Lakshmi",
+                  initials "L.M."
+                }
+              }
+            }
+          },
+          title "Research to further enhance the production of a novel enzyme
+ responsible for biotransformation of anti-malarial drug artemisinin from its
+ precursor arteannuin B"
+        }
+      }
+    },
+    pub {
+      pub {
+        sub {
+          authors {
+            names std {
+              {
+                name name {
+                  last "Reddy",
+                  first "Jyotheeswara",
+                  initials "J.E."
+                }
+              },
+              {
+                name name {
+                  last "Narasu",
+                  first "Lakshmi",
+                  initials "L.M."
+                }
+              }
+            },
+            affil std {
+              affil "Jawaharlal Nehru Technological University Hyderabad",
+              div "Centre for Biotechnology",
+              city "Hyderabad",
+              sub "Telangana",
+              country "India",
+              street "KPHB",
+              postal-code "500081"
+            }
+          },
+          medium email,
+          date std {
+            year 2015,
+            month 3,
+            day 16
+          }
+        }
+      }
+    },
+    user {
+      type str "Submission",
+      data {
+        {
+          label str "SmartComment",
+          data str "ALT EMAIL:eedula_reddy@yahoo.co.in"
+        },
+        {
+          label str "AdditionalComment",
+          data str "BankIt1788601"
+        }
+      }
+    },
+    user {
+      type str "Submission",
+      data {
+        {
+          label str "SmartComment",
+          data str "TOTAL # OF SEQS:1"
+        }
+      }
+    },
+    user {
+      type str "NcbiAutofix",
+      data {
+      }
+    },
+    user {
+      type str "NcbiCleanup",
+      data {
+        {
+          label str "method",
+          data str "ExtendedSeqEntryCleanup"
+        },
+        {
+          label str "version",
+          data int 1
+        },
+        {
+          label str "month",
+          data int 9
+        },
+        {
+          label str "day",
+          data int 8
+        },
+        {
+          label str "year",
+          data int 2015
+        }
+      }
+    },
+    update-date std {
+      year 2015,
+      month 8,
+      day 28
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "mtcc3664",
+        general {
+          db "BankIt",
+          tag str "1788601/mtcc3664"
+        },
+        general {
+          db "TMSMART",
+          tag id 53531656
+        },
+        genbank {
+          accession "KR002586"
+        }
+      },
+      descr {
+        title "Streptomyces pactum strain A2 dioxygenase gene, partial cds.",
+        molinfo {
+          biomol genomic
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            }
+          }
+        },
+        user {
+          type str "Submission",
+          data {
+            {
+              label str "AdditionalComment",
+              data str "LocalID:mtcc3664"
+            }
+          }
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "mtcc3664"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 1185,
+        strand ds,
+        seq-data ncbi2na '3A606194916FF6172E35DA6BA49AEBC659A5799A2649FA5E86D9
+5E3620A10ADA691797910AAE4D5450A579E466A62365852959889892F69B42985F62A4D86D565B
+520B10A186E376A5EC42A5D4A978D975642B86C4D8A98A969ED75546DAE8ED06A49A362A5946D7
+9E985A75B960B6796A5D48D86985A34DD7585195DB5E859B950B598D35DA69AED369B62F66D66E
+82D7DAA586D16D362A5E0917AE5AD8A1881D7509E7A2666F59099A4D0BD25EA45F7D882962C454
+A1AED0AD15D961A428BD8A58AD75DB65B696695ADD5205DAF18A24A9B41361669C6D7AD862C4E6
+4506E58537696DAE176D58575276546DA7D962A4D7AD96269E96B74216D58D871869B566EE1B1E
+515A2B69F658A935EB6589A7A5ADD085B56361C61A6D59BB86C794568AD975B693458A5080'H
+      }
+    },
+    seq {
+      id {
+        local str "mtcc3664_prot_1",
+        general {
+          db "TMSMART",
+          tag id 53531657
+        }
+      },
+      descr {
+        title "dioxygenase, partial [Streptomyces pactum]",
+        molinfo {
+          biomol peptide,
+          completeness no-right
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "mtcc3664_prot_1"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 395,
+        seq-data ncbieaa "MANDASTVFDLVILGGGSGGYAAALRGAQLGLDVALIEKDKVGGTCLHKGCI
+PTKALLHAGEIADQARESEQFGVKATFEGIDVPAVQKYKDDVISGLYKGLQGLIASRKVTYIEGEGRLSSPTSVDVNG
+QRIEGRHVLLATGSVPKSLPGLQIDGDRIISSDHALVLDRVPKSAIILGGGVIGVEFASAWKSFGADVTVIEGLKHLV
+PVEDENSSKLLERAFRKRGIKFSLGTFFEKAEYTQDGVKVTLADGKEFEAEVLLVAVGRGPVSQNLGYEEQGVNIDRG
+YVLVDEYMRTNVPTISAVGDLVPTLQLAHVGFAEGILVAERLAGLKTVPIDYDGVPRVTYCHPEVGFAEGILVAERLA
+GLKTVPIDYDGVPRVTYCHPEVASVGITEAK"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "dioxygenase"
+                }
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 394,
+                id local str "mtcc3664_prot_1",
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame one,
+            code {
+              id 11
+            }
+          },
+          partial TRUE,
+          product whole local str "mtcc3664_prot_1",
+          location int {
+            from 0,
+            to 1184,
+            strand plus,
+            id genbank {
+              accession "KR002586"
+            },
+            fuzz-to lim gt
+          }
+        }
+      }
+    }
+  }
+}

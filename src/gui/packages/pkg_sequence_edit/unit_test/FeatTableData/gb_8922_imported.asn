@@ -1,0 +1,324 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Hepacivirus F",
+            orgname {
+              attrib "specified"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            genbank {
+              accession "MA444777"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 4902,
+            topology not-set,
+            seq-data ncbi2na '6544A1B42F56AE9AD236FAE8BF1FBE5992A95C8FABB99986
+2821F589AD905D9A086D25CD54291B6958A9285EA7495AB15FA5DDC690E2A79ABA9A8E9D7B755B
+AF769727AA5512155A6CAD990FEAC2B4D8C57C6E69F6585D3AAC4C59DB699577EAA6794895E993
+A6D6AF7A0869B81CE412A0DF5EBE77F7737D75E97E7F7E5E16E5E7D25C50B19075DAA7F14ED143
+8F95C1D8B3EEC621A58E535C4455AAEED5F9B598A9045DCAEFABA6385546BA514A8E901D544192
+7DA6D136379FB6A2651DDEF69DFC6EAA37B9AB7B7F7EFA527BD17DD5729847A1864A1E43EF73B3
+56B4CC1AB45B3A4EA338E381EB75441A47AC3A749E75A35442537E84E367AE747AA6D726A4C9B3
+F753AEA81EA60AD7ACB9E79CF65A6D86688546D168927967645BB42FD94377D13CAF50D208F89D
+341143A4BE913C128695E0790E125D045A7A724A9FF7345103D077DA9ED58883A527B6157E787F
+952A7AA553EAC650EA2695614D9571E7A4715D4217EEB3EE564411B7BA56BB3EFD1D5255BA4BA8
+1858421A991717107AAA20E31A1B7D35F04114A5167A90FAF6BE45E8E0741E8FED026E689975FB
+B4DA2ABA906117E479547879F590935A2944C776BBA75AD7E8F115239FAD8F157121FE91CD7E47
+B41C4933F02D28EC6EA2AB6244A7A0965E41E846A981BEE37348CA84AD6274959E79ED45112E92
+B5F5BBDBD185F9497ED45A5D35175148136E86E4B17B1AAEAB424D9B5EA5340EA3C6FBDD7BD75E
+7E686466DE75E7EE8E3BC74CD50BA2927FA20DDB2C741924D7E96A193ADF975F5DBBDF79FE6EB3
+782ACAEAE5689A5C65771A8EE9775D79D77E9BE5506A6C667A19A2BA59B4EE9A6FB5FB6AFAE99E
+1FED16CF1091CCD25AE7EEBA7D2C7D78722482641E46EEAF555741B5AAAA66196D37C74EEE7B11
+585FACFE134501E79E96F76855FE8F75094BF9F0AC571FEE66F4297DD68DE67F2E6823A5A294F1
+B903AF94D09CAA6747A45C4DCE145D1D574A87A9D10697988DE96E9EE894B6DF7548E88509D344
+EAA921165939A6134D269F95B779592A962231E7685A58E83ADD42ABA2BE7A654D124CE5492108
+A5D7AAE4C34525E1696A300142E8A982D48FBB41E79521FFFA4139343AACE7A1EDC53AA7A86285
+366D950A95EF3D03B1143B214A17ECA7A527552A656F4784579179A75DA17F17AD18A4E586D355
+B9969AAE324AA4979FD95695377C5E029D76AAB59EFB9566A1196CA4CF4A964BBB15BA2E9C09AE
+87F355BA225C88414E2B55AEF47841D7751692E55227D4AE9517939D516926B089142B569E4C64
+9D2A710AE72E741577BE79047A9FEB9F13B50A54683E35C134A1EAB8810F147A4954D1B1D45C69
+0BD7E586BAB9D2AA67CE130C37B862E53D468E513537EA4DA47B5F850922166AA621EBEE7651E5
+1555A9D4D1EC5535C13E28AD9DED4516888D5FFCE90A73557E2B0D0AAA884DD37DED1D02082EE1
+89D96409EBE47A9B4396E971C59ADF86ED6D3D6149AE3BEDB6E9078E774E169FC5A63F61DAE321
+E411BBB45484B63F497E15C5F453E210519D5528E7B756C749B629205A4AA0252B37123FBA45AA
+819575A4EF61DF7B5DEE2E73864AFB9FAC6274656588512F29C626C4E0455AA7D5BB94A14DF83F
+EA2A6DFC6A5D153323951F5CD52100489AA005F5F17AC9B142516EE672A74255D7534EA148EE82
+EFE3D9742545753A9411579CC487AB9EC48180D15E11152D142C4F384E4EDA70'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 3,
+                  data gene {
+                    locus "kilo"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 4901,
+                    strand plus,
+                    id genbank {
+                      accession "MA444777"
+                    },
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "MA444777_2"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness no-left
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 144,
+            seq-data iupacaa "AHRTSSSRVAVRSLVEFTCCRAGALDWVCARRGRLPSGRNLAEDVSLS
+PRHVGPRAGPGLSPGTLGLSTAMRAAGGRDGSCLPVVLGLAGAPQTPGVGRAIWVRSSIPLRAASPTSWGTYRSSAPL
+LGALPEPWRMASGFWKTA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 4,
+                  data prot {
+                    name {
+                      "protein A"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 143,
+                    id local str "MA444777_2",
+                    fuzz-from lim lt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "MA444777_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 1634,
+            seq-data iupacaa "RPQDVKFPGGGQIVGGVYLLPRRGPRLGVRATRKTSERSQPRGRRQPI
+PKARRPEGRTWAQPGYPWPLYGNEGCGWAGWLLSPRGSRPSWGPTDPRRRSRNLGKVIDTLTCGFADLMGYIPLVGAP
+LGGAARALAHGVRVLEDGVNYATGNLPGCSFSIFLLALLSCLTVPASAYQVRNSSGLYHVTNDCPNSSIVYETADAIL
+HTPGCVPCVREGNTSRCWVAMTPTVATRDGKLPTTQLRRHIDLLVGSATLCSALYVGDLCGSVFLVGQLFTFSPRRHW
+TTQDCNCSMYPGHITGHRMAWDMMMNWSPTTALVMAQLLRIPQAILDMIAGAHWGVLAGIAYFSMVGNWAKVLVVLLL
+FAGVDAETHVTGAAAARTVSSFANLFTLGSNQKIELINTNGSWHINRTALNCNDSLNTGWLAGLFYHHKFNSSGCPER
+MASCRPLADFAQGWGPIGYANGSGPDHRPYCWHYPPRPCGIVPAQHVCGPVYCFTPSPVAVGTTDKTGAPTYNWGEND
+TDVFILNNTRPPLGNWFGCTWMNSTGFVKACGAPPCVIGGVGNDTLHCPTDCFRKHPEATYSRCGSGPWITPRCLVDY
+PYRLWHYPCTVNYSIFKVRMYVGGVEHRLEAACNWTRGERCDLSDRDRSELSPLLLSTTQWQVLPCSFTTLPALSTGL
+IHLHQNIVDVQYLYGVGSSIASWAIKWDYVVLLFLLLADARVCSCLWMMLLISQVEAALENLVVLNAASLAGTHGLAS
+FLVFFCFAWYLKGRWVPGAAYALYGMWPLLLLLLALPQRAYALDAEVAASCGGVVLVGLVALTLSPYYKHYISRCLWW
+LQYFLTRAEAQLHVWVPPLNVRGGRDAVILLMCAVHPTLVFDITKLLLAVLGPLWILQASLLKVPYFVRVQGLLRICA
+LVRKMAGGHYVQMVAIKLGALTGTYIYDHLTPLRDWAHNGLRDLAVAVEPVVFSQMETKLITWGADTAACGDIISGLP
+VSARRGREILLGPADGMVSKGWRLLAPITAYAQQTRGLLGCIITSLTGRDKNQVEGEVQIVSTAAQTFLATCINGVCW
+TVYHGAGTRTIASPKGPVIQMYTNVDQDLVGWPAPQGARSLTPCTCGSSDLYLVTRHADVIPVRRRGDSRGSLLSPRP
+ISYLKGSSGGPLLCPAGHAVGIFRAAVCTRGVAKAVDFIPVESLETTMRSPVFTDNSSPPAVPQSFQVAHLHAPTGSG
+KSTKVPAAYAAQGYKVLVLNPSVAATLGFGAYMSKAHGIDPNIRTGVRTITTGSPITYSTYGKFLADGGCSGGAYDII
+ICDECHSTDATSILGIGTVLDQAETAGARLVVLATATPPGSITVPHPNIEEVALSTTGEIPFYGKAIPLEVIKGGRHL
+IFCHSKKKCDELAAKLVALGVNAVAYYRGLDVSVIPTSGDVVVVATDALMTGFTGDFDSVIDCNTCVTQTVDFSLDPT
+FTIETTTLPQDAVSRTQRRGRTGRGKPGIYRFVAPGERPSGMFDSSVLCECYDAGCAWYELTPAETTVRLRAYMNTPG
+LPVCQDHLEFWEGVFTGLTHIDAHFLSQTKQSGENLPYLVAYQATVCARAQAPPPSWDQMWKCLIRLKPTLHGPTPLL
+YRLGAVQNEITLTHPVTKYIMTCMSA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 5,
+                  data prot {
+                    name {
+                      "polyprotein"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1633,
+                    id local str "MA444777_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  id local id 6,
+                  data prot {
+                    name {
+                      "core protein"
+                    },
+                    processed mature
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 173,
+                    id local str "MA444777_1",
+                    fuzz-from lim lt
+                  }
+                },
+                {
+                  id local id 7,
+                  data prot {
+                    name {
+                      "envelope protein E1"
+                    },
+                    processed mature
+                  },
+                  location int {
+                    from 174,
+                    to 365,
+                    id local str "MA444777_1"
+                  }
+                },
+                {
+                  id local id 8,
+                  data prot {
+                    name {
+                      "envelope protein E2"
+                    },
+                    processed mature
+                  },
+                  location int {
+                    from 366,
+                    to 728,
+                    id local str "MA444777_1"
+                  }
+                },
+                {
+                  id local id 9,
+                  data prot {
+                    name {
+                      "protein p7"
+                    },
+                    processed mature
+                  },
+                  location int {
+                    from 729,
+                    to 791,
+                    id local str "MA444777_1"
+                  }
+                },
+                {
+                  id local id 10,
+                  data prot {
+                    name {
+                      "nonstructural protein"
+                    },
+                    processed mature
+                  },
+                  location int {
+                    from 792,
+                    to 1008,
+                    id local str "MA444777_1"
+                  }
+                },
+                {
+                  id local id 11,
+                  data prot {
+                    name {
+                      "protease"
+                    },
+                    processed mature
+                  },
+                  partial TRUE,
+                  location int {
+                    from 1009,
+                    to 1633,
+                    id local str "MA444777_1",
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              id local id 1,
+              data cdregion {
+                frame two
+              },
+              partial TRUE,
+              product whole local str "MA444777_2",
+              location int {
+                from 0,
+                to 435,
+                strand plus,
+                id genbank {
+                  accession "MA444777"
+                },
+                fuzz-from lim lt
+              }
+            },
+            {
+              id local id 2,
+              data cdregion {
+                frame one
+              },
+              partial TRUE,
+              product whole local str "MA444777_1",
+              location int {
+                from 0,
+                to 4901,
+                strand plus,
+                id genbank {
+                  accession "MA444777"
+                },
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

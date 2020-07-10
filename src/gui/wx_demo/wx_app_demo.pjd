@@ -1,0 +1,2121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<anthemion-project version="1.0.0.0" xmlns="http://www.anthemion.co.uk">
+  <header>
+    <long name="name_counter">0</long>
+    <string name="html_path">""</string>
+    <string name="title">""</string>
+    <string name="author">""</string>
+    <string name="description">""</string>
+    <string name="xrc_filename">""</string>
+    <long name="image_mode">0</long>
+    <bool name="inline_images">0</bool>
+    <bool name="generate_cpp_for_xrc">0</bool>
+    <long name="working_mode">1</long>
+    <bool name="use_help_text_for_tooltips">1</bool>
+    <bool name="translate_strings">1</bool>
+    <bool name="make_unicode_strings">1</bool>
+    <bool name="extract_strings">0</bool>
+    <string name="user_name">""</string>
+    <string name="copyright_string">""</string>
+    <string name="resource_prefix">""</string>
+    <bool name="use_two_step_construction">0</bool>
+    <bool name="use_enums">0</bool>
+    <bool name="generate_for_xrced">0</bool>
+    <bool name="generate_virtual_eventhandlers">0</bool>
+    <string name="current_platform">"&lt;All platforms&gt;"</string>
+    <string name="target_wx_version">"2.8.4"</string>
+    <string name="app_kind">"Standard"</string>
+    <string name="cpp_header_comment">"/*  $Id: wx_app_demo.pjd 25633 2012-04-13 20:51:47Z katargir $
+ * ===========================================================================
+ *
+ *                            PUBLIC DOMAIN NOTICE
+ *               National Center for Biotechnology Information
+ *
+ *  This software/database is a &quot;United States Government Work&quot; under the
+ *  terms of the United States Copyright Act.  It was written as part of
+ *  the author's official duties as a United States Government employee and
+ *  thus cannot be copyrighted.  This software/database is freely available
+ *  to the public for use. The National Library of Medicine and the U.S.
+ *  Government have not placed any restriction on its use or reproduction.
+ *
+ *  Although all reasonable efforts have been taken to ensure the accuracy
+ *  and reliability of the software and data, the NLM and the U.S.
+ *  Government do not and cannot warrant the performance or results that
+ *  may be obtained by using this software or data. The NLM and the U.S.
+ *  Government disclaim all warranties, express or implied, including
+ *  warranties of performance, merchantability or fitness for any particular
+ *  purpose.
+ *
+ *  Please cite the author in any work or product based on this material.
+ *
+ * ===========================================================================
+ *
+ * Authors:  
+ *
+ * File Description:
+ *
+ */
+
+"</string>
+    <string name="cpp_implementation_comment">"/*  $Id: wx_app_demo.pjd 25633 2012-04-13 20:51:47Z katargir $
+ * ===========================================================================
+ *
+ *                            PUBLIC DOMAIN NOTICE
+ *               National Center for Biotechnology Information
+ *
+ *  This software/database is a &quot;United States Government Work&quot; under the
+ *  terms of the United States Copyright Act.  It was written as part of
+ *  the author's official duties as a United States Government employee and
+ *  thus cannot be copyrighted.  This software/database is freely available
+ *  to the public for use. The National Library of Medicine and the U.S.
+ *  Government have not placed any restriction on its use or reproduction.
+ *
+ *  Although all reasonable efforts have been taken to ensure the accuracy
+ *  and reliability of the software and data, the NLM and the U.S.
+ *  Government do not and cannot warrant the performance or results that
+ *  may be obtained by using this software or data. The NLM and the U.S.
+ *  Government disclaim all warranties, express or implied, including
+ *  warranties of performance, merchantability or fitness for any particular
+ *  purpose.
+ *
+ *  Please cite the author in any work or product based on this material.
+ *
+ * ===========================================================================
+ *
+ * Authors:  Andrey Yazhuk
+ *
+ * File Description:
+ *
+ */
+"</string>
+    <string name="cpp_symbols_file_comment">"/////////////////////////////////////////////////////////////////////////////
+// Name:        %SYMBOLS-FILENAME%
+// Purpose:     Symbols file
+// Author:      %AUTHOR%
+// Modified by: 
+// Created:     %DATE%
+// RCS-ID:      
+// Copyright:   %COPYRIGHT%
+// Licence:     
+/////////////////////////////////////////////////////////////////////////////
+
+"</string>
+    <string name="cpp_header_preamble">"#if defined(__GNUG__) &amp;&amp; !defined(NO_GCC_PRAGMA)
+#pragma interface &quot;%HEADER-FILENAME%&quot;
+#endif
+
+"</string>
+    <string name="cpp_implementation_preamble">"#if defined(__GNUG__) &amp;&amp; !defined(NO_GCC_PRAGMA)
+#pragma implementation &quot;%HEADER-FILENAME%&quot;
+#endif
+
+// For compilers that support precompilation, includes &quot;wx/wx.h&quot;.
+#include &quot;wx/wxprec.h&quot;
+
+#ifdef __BORLANDC__
+#pragma hdrstop
+#endif
+
+#ifndef WX_PRECOMP
+#include &quot;wx/wx.h&quot;
+#endif
+
+"</string>
+    <string name="cpp_function_declaration_comment">"	/// %BODY%
+"</string>
+    <string name="cpp_function_implementation_comment">"
+/*!
+ * %BODY%
+ */
+
+"</string>
+    <string name="resource_file_header">"app_resources.h"</string>
+    <string name="resource_file_implementation">"app_resources.cpp"</string>
+    <string name="resource_class_name">"AppResources"</string>
+    <string name="app_file_header">"app.h"</string>
+    <string name="app_file_implementation">"app.cpp"</string>
+    <string name="app_class_name">"Application"</string>
+    <bool name="generate_app_class">0</bool>
+    <string name="external_symbol_filenames">""</string>
+    <string name="configuration">"VC++ Debug"</string>
+    <string name="source_encoding">"iso-8859-1"</string>
+    <string name="xrc_encoding">"utf-8"</string>
+    <string name="project_encoding">"utf-8"</string>
+    <string name="resource_archive">""</string>
+    <long name="text_file_type">0</long>
+    <bool name="use_tabs">0</bool>
+    <long name="indent_size">4</long>
+    <string name="whitespace_after_return_type">" "</string>
+    <string name="resource_xrc_cpp">""</string>
+    <bool name="use_resource_archive">0</bool>
+    <bool name="use_generated_xrc_cpp">0</bool>
+    <bool name="always_generate_xrc">1</bool>
+    <bool name="use_id_name_for_name">0</bool>
+    <bool name="archive_xrc_files">1</bool>
+    <bool name="archive_image_files">1</bool>
+    <bool name="archive_all_image_files">0</bool>
+    <bool name="xrc_retain_relative_paths">1</bool>
+    <bool name="xrc_generate_id_tags">0</bool>
+    <bool name="xrc_use_name_property">0</bool>
+  </header>
+  <data>
+    <document>
+      <string name="title">""</string>
+      <string name="type">"data-document"</string>
+      <string name="filename">""</string>
+      <string name="icon-name">""</string>
+      <long name="is-transient">0</long>
+      <long name="owns-file">1</long>
+      <long name="title-mode">0</long>
+      <long name="locked">0</long>
+      <document>
+        <string name="title">"Configurations"</string>
+        <string name="type">"config-data-document"</string>
+        <string name="filename">""</string>
+        <string name="icon-name">""</string>
+        <long name="is-transient">0</long>
+        <long name="owns-file">1</long>
+        <long name="title-mode">0</long>
+        <long name="locked">0</long>
+        <string name="template-name">""</string>
+        <bool name="dirty">1</bool>
+        <long name="makefile-last-written">-8519680</long>
+        <string name="Compiler name">""</string>
+        <string name="Build mode">"Debug"</string>
+        <string name="Unicode mode">"ANSI"</string>
+        <string name="Shared mode">"Static"</string>
+        <string name="Modularity">"Modular"</string>
+        <string name="GUI mode">"GUI"</string>
+        <string name="Toolkit">"wxMSW"</string>
+        <string name="Processor type">"Default"</string>
+        <string name="Runtime linking">"Dynamic"</string>
+        <string name="Use exceptions">"Yes"</string>
+        <string name="Use ODBC">"No"</string>
+        <string name="Use XRC">"Yes"</string>
+        <string name="Use OpenGL">"No"</string>
+        <string name="Use wxMediaCtrl">"No"</string>
+        <string name="Use wxRichTextCtrl">"Yes"</string>
+        <string name="Use wxHTML">"Yes"</string>
+        <string name="Use wxPropertyGrid">"Yes"</string>
+        <string name="Use wxAUI">"Yes"</string>
+        <string name="Use wxSTC">"Yes"</string>
+        <string name="Use wxRegEx">"builtin"</string>
+        <string name="Use wxRibbonControl">"Yes"</string>
+        <string name="Executable name">"%EXECUTABLE%"</string>
+        <string name="Program arguments">""</string>
+        <string name="Working path">"%AUTO%"</string>
+        <string name="Output path">"%AUTO%"</string>
+        <string name="Objects path">"%AUTO%"</string>
+        <string name="Project makefile">"%AUTO%"</string>
+        <string name="wxWidgets version">"%WXVERSION%"</string>
+        <string name="wxWidgets makefile">"%AUTO%"</string>
+        <string name="wxWidgets location">"%AUTO%"</string>
+        <string name="wxWidgets build path">"%AUTO%"</string>
+        <string name="wxWidgets build command">"%AUTO%"</string>
+        <string name="wxWidgets clean command">"%AUTO%"</string>
+        <string name="CFG">""</string>
+        <string name="Compiler location">"%AUTO%"</string>
+        <string name="Compiler bin path">"%AUTO%"</string>
+        <string name="Compiler include path">"%AUTO%"</string>
+        <string name="Compiler lib path">"%AUTO%"</string>
+        <string name="PATH variable">"%AUTO%"</string>
+        <string name="C++ command">"%AUTO%"</string>
+        <string name="C command">"%AUTO%"</string>
+        <string name="Linker command">"%AUTO%"</string>
+        <string name="Resource compiler">"%AUTO%"</string>
+        <string name="Make command">"%AUTO%"</string>
+        <string name="Preprocessor flags">"%AUTO%"</string>
+        <string name="Optimizations">"%AUTO%"</string>
+        <string name="Warnings">"%AUTO%"</string>
+        <string name="Debug flags">"%AUTO%"</string>
+        <string name="Extra compile flags">"%AUTO%"</string>
+        <string name="Libraries">"%AUTO%"</string>
+        <string name="Library path">"%AUTO%"</string>
+        <string name="Linker flags">"%AUTO%"</string>
+        <string name="Include path">"%AUTO%"</string>
+        <string name="Resource flags">"%AUTO%"</string>
+        <string name="Resource path">"%AUTO%"</string>
+        <bool name="Suppress source rules">0</bool>
+        <bool name="Enable makefile generation">1</bool>
+        <document>
+          <string name="title">"VC++ Debug"</string>
+          <string name="type">"vc-config-data-document"</string>
+          <string name="filename">""</string>
+          <string name="icon-name">""</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">1</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="template-name">"VC++"</string>
+          <bool name="dirty">1</bool>
+          <long name="makefile-last-written">-8519680</long>
+          <string name="Compiler name">"VC++"</string>
+          <string name="Build mode">"Debug"</string>
+          <string name="Unicode mode">"ANSI"</string>
+          <string name="Shared mode">"Static"</string>
+          <string name="Modularity">"Modular"</string>
+          <string name="GUI mode">"GUI"</string>
+          <string name="Toolkit">"wxMSW"</string>
+          <string name="Processor type">"Default"</string>
+          <string name="Runtime linking">"Dynamic"</string>
+          <string name="Use exceptions">"Yes"</string>
+          <string name="Use ODBC">"No"</string>
+          <string name="Use XRC">"Yes"</string>
+          <string name="Use OpenGL">"Yes"</string>
+          <string name="Use wxMediaCtrl">"No"</string>
+          <string name="Use wxRichTextCtrl">"Yes"</string>
+          <string name="Use wxHTML">"Yes"</string>
+          <string name="Use wxPropertyGrid">"Yes"</string>
+          <string name="Use wxAUI">"Yes"</string>
+          <string name="Use wxSTC">"Yes"</string>
+          <string name="Use wxRegEx">"builtin"</string>
+          <string name="Use wxRibbonControl">"Yes"</string>
+          <string name="Executable name">"%EXECUTABLE%"</string>
+          <string name="Program arguments">""</string>
+          <string name="Working path">"%AUTO%"</string>
+          <string name="Output path">"%AUTO%"</string>
+          <string name="Objects path">"%AUTO%"</string>
+          <string name="Project makefile">"%AUTO%"</string>
+          <string name="wxWidgets version">"%WXVERSION%"</string>
+          <string name="wxWidgets makefile">"%AUTO%"</string>
+          <string name="wxWidgets location">"%AUTO%"</string>
+          <string name="wxWidgets build path">"%AUTO%"</string>
+          <string name="wxWidgets build command">"%AUTO%"</string>
+          <string name="wxWidgets clean command">"%AUTO%"</string>
+          <string name="CFG">""</string>
+          <string name="Compiler location">"%AUTO%"</string>
+          <string name="Compiler bin path">"%AUTO%"</string>
+          <string name="Compiler include path">"%AUTO%"</string>
+          <string name="Compiler lib path">"%AUTO%"</string>
+          <string name="PATH variable">"%AUTO%"</string>
+          <string name="C++ command">"%AUTO%"</string>
+          <string name="C command">"%AUTO%"</string>
+          <string name="Linker command">"%AUTO%"</string>
+          <string name="Resource compiler">"%AUTO%"</string>
+          <string name="Make command">"%AUTO%"</string>
+          <string name="Preprocessor flags">"%AUTO%"</string>
+          <string name="Optimizations">"%AUTO%"</string>
+          <string name="Warnings">"%AUTO%"</string>
+          <string name="Debug flags">"%AUTO%"</string>
+          <string name="Extra compile flags">"%AUTO%"</string>
+          <string name="Libraries">"%AUTO%"</string>
+          <string name="Library path">"%AUTO%"</string>
+          <string name="Linker flags">"%AUTO%"</string>
+          <string name="Include path">"%AUTO%"</string>
+          <string name="Resource flags">"%AUTO%"</string>
+          <string name="Resource path">"%AUTO%"</string>
+          <bool name="Suppress source rules">0</bool>
+          <bool name="Enable makefile generation">1</bool>
+          <string name="Ignore libraries">"%AUTO%"</string>
+        </document>
+      </document>
+    </document>
+  </data>
+
+  <documents>
+    <document>
+      <string name="title">"Projects"</string>
+      <string name="type">"root-document"</string>
+      <string name="filename">""</string>
+      <string name="icon-name">"project"</string>
+      <long name="is-transient">1</long>
+      <long name="owns-file">1</long>
+      <long name="title-mode">0</long>
+      <long name="locked">1</long>
+      <document>
+        <string name="title">"Windows"</string>
+        <string name="type">"html-document"</string>
+        <string name="filename">""</string>
+        <string name="icon-name">"dialogsfolder"</string>
+        <long name="is-transient">1</long>
+        <long name="owns-file">1</long>
+        <long name="title-mode">0</long>
+        <long name="locked">1</long>
+        <document>
+          <string name="title">"Untitled"</string>
+          <string name="type">"dialog-document"</string>
+          <string name="filename">""</string>
+          <string name="icon-name">"frame"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">1</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <string name="proxy-type">"wbFrameProxy"</string>
+          <long name="base-id">10000</long>
+          <bool name="use-id-prefix">0</bool>
+          <string name="id-prefix">""</string>
+          <bool name="use-id-suffix">0</bool>
+          <string name="id-suffix">""</string>
+          <string name="app-kind">"Standard"</string>
+          <long name="use-xrc">0</long>
+          <long name="working-mode">0</long>
+          <string name="variable-0">"m_CreateMode|int|CreateMode||3|0|"</string>
+          <string name="variable-1">"m_DiagnosticsTesting|bool|DiagnosticsTesting|false|2|0|"</string>
+          <string name="variable-2">"m_GroupMapWidget|CGroupMapWidget*||NULL|3|0|"</string>
+          <string name="variable-3">"m_MapControl|CMapControl*|||3|0|"</string>
+          <string name="variable-4">"m_TableControl|CwxTableListCtrl*|||3|0|"</string>
+          <string name="event-handler-0">"wxEVT_CLOSE_WINDOW|OnCloseWindow|NONE||"</string>
+          <string name="proxy-Id name">"ID_CWXMAINFRAME"</string>
+          <long name="proxy-Id value">10000</long>
+          <string name="proxy-Class">"CwxMainFrame"</string>
+          <string name="proxy-Base class">"wxFrame"</string>
+          <string name="proxy-Implementation filename">"wx_main_frame.cpp"</string>
+          <string name="proxy-Header filename">"../../../include/gui/wx_demo/wx_main_frame.hpp"</string>
+          <string name="proxy-XRC filename">""</string>
+          <string name="proxy-Title">"wx Demo App"</string>
+          <bool name="proxy-Centre">1</bool>
+          <string name="proxy-Icon">""</string>
+          <bool name="proxy-Dialog units">0</bool>
+          <string name="proxy-Help text">""</string>
+          <string name="proxy-Tooltip text">""</string>
+          <string name="proxy-Background colour">""</string>
+          <string name="proxy-Foreground colour">""</string>
+          <string name="proxy-Font">""</string>
+          <bool name="proxy-Hidden">0</bool>
+          <bool name="proxy-Enabled">1</bool>
+          <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+          <string name="proxy-Data source">""</string>
+          <string name="proxy-Data class name">""</string>
+          <string name="proxy-Data class implementation filename">""</string>
+          <string name="proxy-Data class header filename">""</string>
+          <string name="proxy-Data class manager window">""</string>
+          <bool name="proxy-wxDEFAULT_FRAME_STYLE">0</bool>
+          <bool name="proxy-wxCAPTION">1</bool>
+          <bool name="proxy-wxRESIZE_BORDER">1</bool>
+          <bool name="proxy-wxSYSTEM_MENU">1</bool>
+          <bool name="proxy-wxMINIMIZE">0</bool>
+          <bool name="proxy-wxMAXIMIZE">0</bool>
+          <bool name="proxy-wxMINIMIZE_BOX">1</bool>
+          <bool name="proxy-wxMAXIMIZE_BOX">1</bool>
+          <bool name="proxy-wxCLOSE_BOX">1</bool>
+          <bool name="proxy-wxFRAME_TOOL_WINDOW">0</bool>
+          <bool name="proxy-wxFRAME_FLOAT_ON_PARENT">0</bool>
+          <bool name="proxy-wxFRAME_NO_TASKBAR">0</bool>
+          <bool name="proxy-wxSTAY_ON_TOP">0</bool>
+          <bool name="proxy-wxNO_BORDER">0</bool>
+          <bool name="proxy-wxSIMPLE_BORDER">0</bool>
+          <bool name="proxy-wxDOUBLE_BORDER">0</bool>
+          <bool name="proxy-wxBORDER_THEME">0</bool>
+          <bool name="proxy-wxSUNKEN_BORDER">0</bool>
+          <bool name="proxy-wxRAISED_BORDER">0</bool>
+          <bool name="proxy-wxSTATIC_BORDER">0</bool>
+          <bool name="proxy-wxWANTS_CHARS">0</bool>
+          <bool name="proxy-wxNO_FULL_REPAINT_ON_RESIZE">0</bool>
+          <bool name="proxy-wxFULL_REPAINT_ON_RESIZE">0</bool>
+          <bool name="proxy-wxCLIP_CHILDREN">0</bool>
+          <bool name="proxy-wxTAB_TRAVERSAL">0</bool>
+          <bool name="proxy-wxWS_EX_VALIDATE_RECURSIVELY">0</bool>
+          <bool name="proxy-wxWS_EX_BLOCK_EVENTS">0</bool>
+          <bool name="proxy-wxWS_EX_TRANSIENT">0</bool>
+          <string name="proxy-Custom styles">""</string>
+          <bool name="proxy-wxFRAME_EX_CONTEXTHELP">0</bool>
+          <bool name="proxy-Fit to content">0</bool>
+          <long name="proxy-X">-1</long>
+          <long name="proxy-Y">-1</long>
+          <long name="proxy-Width">800</long>
+          <long name="proxy-Height">600</long>
+          <bool name="proxy-AUI manager">0</bool>
+          <string name="proxy-Event sources">""</string>
+          <document>
+            <string name="title">"wxMenuBar: ID_MENUBAR1"</string>
+            <string name="type">"dialog-control-document"</string>
+            <string name="filename">""</string>
+            <string name="icon-name">"menubar"</string>
+            <long name="is-transient">0</long>
+            <long name="owns-file">1</long>
+            <long name="title-mode">0</long>
+            <long name="locked">0</long>
+            <string name="created">"23/4/2007"</string>
+            <string name="proxy-type">"wbMenuBarProxy"</string>
+            <string name="proxy-Id name">"ID_MENUBAR1"</string>
+            <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+            <document>
+              <string name="title">"File"</string>
+              <string name="type">"dialog-control-document"</string>
+              <string name="filename">""</string>
+              <string name="icon-name">"menu"</string>
+              <long name="is-transient">0</long>
+              <long name="owns-file">1</long>
+              <long name="title-mode">0</long>
+              <long name="locked">0</long>
+              <string name="created">"23/4/2007"</string>
+              <string name="proxy-type">"wbMenuProxy"</string>
+              <string name="proxy-Label">"File"</string>
+              <bool name="proxy-Enabled">1</bool>
+              <string name="proxy-Member variable name">""</string>
+              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              <document>
+                <string name="title">"------------"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"23/4/2007"</string>
+                <string name="proxy-type">"wbMenuSeparatorProxy"</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"E&amp;xit\tAlt+X: wxID_EXIT"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"23/4/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_MENU_SELECTED|OnEXITClick|NONE||"</string>
+                <string name="proxy-Id name">"wxID_EXIT"</string>
+                <long name="proxy-Id value">5006</long>
+                <string name="proxy-Label">"E&amp;xit\tAlt+X"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+            </document>
+            <document>
+              <string name="title">"Edit"</string>
+              <string name="type">"dialog-control-document"</string>
+              <string name="filename">""</string>
+              <string name="icon-name">"menu"</string>
+              <long name="is-transient">0</long>
+              <long name="owns-file">1</long>
+              <long name="title-mode">0</long>
+              <long name="locked">0</long>
+              <string name="created">"23/4/2007"</string>
+              <string name="proxy-type">"wbMenuProxy"</string>
+              <string name="proxy-Label">"Edit"</string>
+              <bool name="proxy-Enabled">1</bool>
+              <string name="proxy-Member variable name">""</string>
+              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              <document>
+                <string name="title">"Cu&amp;t: wxID_CUT"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"23/4/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="proxy-Id name">"wxID_CUT"</string>
+                <long name="proxy-Id value">5030</long>
+                <string name="proxy-Label">"Cu&amp;t"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">1</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"&amp;Copy: wxID_COPY"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"23/4/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="proxy-Id name">"wxID_COPY"</string>
+                <long name="proxy-Id value">5031</long>
+                <string name="proxy-Label">"&amp;Copy"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">1</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"&amp;Paste: wxID_PASTE"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"23/4/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="proxy-Id name">"wxID_PASTE"</string>
+                <long name="proxy-Id value">5032</long>
+                <string name="proxy-Label">"&amp;Paste"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">1</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"------------"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"16/5/2007"</string>
+                <string name="proxy-type">"wbMenuSeparatorProxy"</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"Select All: wxID_SELECTALL"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"16/5/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="proxy-Id name">"wxID_SELECTALL"</string>
+                <long name="proxy-Id value">5036</long>
+                <string name="proxy-Label">"Select All"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">1</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+            </document>
+            <document>
+              <string name="title">"Test"</string>
+              <string name="type">"dialog-control-document"</string>
+              <string name="filename">""</string>
+              <string name="icon-name">"menu"</string>
+              <long name="is-transient">0</long>
+              <long name="owns-file">1</long>
+              <long name="title-mode">0</long>
+              <long name="locked">0</long>
+              <string name="created">"15/5/2007"</string>
+              <string name="proxy-type">"wbMenuProxy"</string>
+              <string name="proxy-Label">"Test"</string>
+              <bool name="proxy-Enabled">1</bool>
+              <string name="proxy-Member variable name">""</string>
+              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              <document>
+                <string name="title">"Message Boxes: ID_TEST_MSG_BOXES"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"15/5/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_MENU_SELECTED|OnTestMsgBoxesClick|NONE||"</string>
+                <string name="proxy-Id name">"ID_TEST_MSG_BOXES"</string>
+                <long name="proxy-Id value">10007</long>
+                <string name="proxy-Label">"Message Boxes"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"Post Events: ID_POST_EVENTS"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"15/5/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_MENU_SELECTED|OnPostEventsClick|NONE||"</string>
+                <string name="proxy-Id name">"ID_POST_EVENTS"</string>
+                <long name="proxy-Id value">10013</long>
+                <string name="proxy-Label">"Post Events"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"Go to sequence: ID_MENUITEM1"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"27/6/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_MENU_SELECTED|OnGoToSequence|NONE||"</string>
+                <string name="proxy-Id name">"ID_MENUITEM1"</string>
+                <long name="proxy-Id value">10027</long>
+                <string name="proxy-Label">"Go to sequence"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"Test Diagnostics Console: ID_TEST_DIAG_PANEL"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"9/7/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_MENU_SELECTED|OnTestDiagPanelClick|NONE||"</string>
+                <string name="event-handler-1">"wxEVT_UPDATE_UI|OnTestDiagPanelUpdate|NONE||"</string>
+                <string name="proxy-Id name">"ID_TEST_DIAG_PANEL"</string>
+                <long name="proxy-Id value">10038</long>
+                <string name="proxy-Label">"Test Diagnostics Console"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+            </document>
+            <document>
+              <string name="title">"Test Controls"</string>
+              <string name="type">"dialog-control-document"</string>
+              <string name="filename">""</string>
+              <string name="icon-name">"menu"</string>
+              <long name="is-transient">0</long>
+              <long name="owns-file">1</long>
+              <long name="title-mode">0</long>
+              <long name="locked">0</long>
+              <string name="created">"19/9/2007"</string>
+              <string name="proxy-type">"wbMenuProxy"</string>
+              <string name="proxy-Label">"Test Controls"</string>
+              <bool name="proxy-Enabled">1</bool>
+              <string name="proxy-Member variable name">""</string>
+              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              <document>
+                <string name="title">"Create Map Control\tF1: ID_CREATE_MAP_CONTROL"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"20/9/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_MENU_SELECTED|OnCreateMapControlClick|NONE||"</string>
+                <string name="proxy-Id name">"ID_CREATE_MAP_CONTROL"</string>
+                <long name="proxy-Id value">10002</long>
+                <string name="proxy-Label">"Create Map Control\tF1"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">1</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"Create Group Map Widget\tF2: ID_CREATE_GROUP_MAP_WIDGET"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"19/9/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_MENU_SELECTED|OnCreateGroupMapWidgetClick|NONE||"</string>
+                <string name="proxy-Id name">"ID_CREATE_GROUP_MAP_WIDGET"</string>
+                <long name="proxy-Id value">10001</long>
+                <string name="proxy-Label">"Create Group Map Widget\tF2"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">1</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+              <document>
+                <string name="title">"Create Table Control\tF3: ID_CREATE_TABLE_CONTROL"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_MENU_SELECTED|OnCreateTableControlClick|NONE||CwxMainFrame"</string>
+                <string name="proxy-Id name">"ID_CREATE_TABLE_CONTROL"</string>
+                <long name="proxy-Id value">10003</long>
+                <string name="proxy-Label">"Create Table Control\tF3"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">1</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">""</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+            </document>
+            <document>
+              <string name="title">"Help"</string>
+              <string name="type">"dialog-control-document"</string>
+              <string name="filename">""</string>
+              <string name="icon-name">"menu"</string>
+              <long name="is-transient">0</long>
+              <long name="owns-file">1</long>
+              <long name="title-mode">0</long>
+              <long name="locked">0</long>
+              <string name="created">"23/4/2007"</string>
+              <string name="proxy-type">"wbMenuProxy"</string>
+              <string name="proxy-Label">"Help"</string>
+              <bool name="proxy-Enabled">1</bool>
+              <string name="proxy-Member variable name">""</string>
+              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              <document>
+                <string name="title">"About: wxID_ABOUT"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"menuitem"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">0</long>
+                <string name="created">"23/4/2007"</string>
+                <string name="proxy-type">"wbMenuItemProxy"</string>
+                <string name="event-handler-0">"wxEVT_COMMAND_MENU_SELECTED|OnABOUTClick|NONE||"</string>
+                <string name="proxy-Id name">"wxID_ABOUT"</string>
+                <long name="proxy-Id value">5013</long>
+                <string name="proxy-Label">"About"</string>
+                <string name="proxy-Kind">"Normal"</string>
+                <bool name="proxy-Checked">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Bitmap">"menu::about"</string>
+                <string name="proxy-Bitmap unchecked">""</string>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              </document>
+            </document>
+          </document>
+          <document>
+            <string name="title">"CStatusBar: ID_STATUSBAR1"</string>
+            <string name="type">"dialog-control-document"</string>
+            <string name="filename">""</string>
+            <string name="icon-name">"statusbar"</string>
+            <long name="is-transient">0</long>
+            <long name="owns-file">1</long>
+            <long name="title-mode">0</long>
+            <long name="locked">0</long>
+            <string name="created">"23/4/2007"</string>
+            <string name="proxy-type">"wbStatusBarProxy"</string>
+            <string name="proxy-Id name">"ID_STATUSBAR1"</string>
+            <long name="proxy-Id value">10004</long>
+            <string name="proxy-Name">""</string>
+            <string name="proxy-Class">"CStatusBar"</string>
+            <string name="proxy-Base class">"wxStatusBar"</string>
+            <bool name="proxy-External implementation">1</bool>
+            <bool name="proxy-Separate files">0</bool>
+            <string name="proxy-Implementation filename">""</string>
+            <string name="proxy-Header filename">""</string>
+            <string name="proxy-Member variable name">""</string>
+            <string name="proxy-Help text">""</string>
+            <string name="proxy-Tooltip text">""</string>
+            <string name="proxy-Background colour">""</string>
+            <string name="proxy-Foreground colour">""</string>
+            <string name="proxy-Font">""</string>
+            <bool name="proxy-Hidden">0</bool>
+            <bool name="proxy-Enabled">1</bool>
+            <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+            <long name="proxy-Field count">5</long>
+            <string name="proxy-Field text">""</string>
+            <string name="proxy-Field widths">""</string>
+            <bool name="proxy-wxST_SIZEGRIP">1</bool>
+            <bool name="proxy-wxNO_BORDER">1</bool>
+            <bool name="proxy-wxSIMPLE_BORDER">0</bool>
+            <bool name="proxy-wxDOUBLE_BORDER">0</bool>
+            <bool name="proxy-wxBORDER_THEME">0</bool>
+            <bool name="proxy-wxSUNKEN_BORDER">0</bool>
+            <bool name="proxy-wxRAISED_BORDER">0</bool>
+            <bool name="proxy-wxSTATIC_BORDER">0</bool>
+            <bool name="proxy-wxWANTS_CHARS">0</bool>
+            <bool name="proxy-wxNO_FULL_REPAINT_ON_RESIZE">0</bool>
+            <bool name="proxy-wxFULL_REPAINT_ON_RESIZE">0</bool>
+            <bool name="proxy-wxCLIP_CHILDREN">0</bool>
+            <string name="proxy-Custom styles">""</string>
+            <long name="proxy-X">-1</long>
+            <long name="proxy-Y">-1</long>
+            <long name="proxy-Width">-1</long>
+            <long name="proxy-Height">-1</long>
+            <string name="proxy-AlignH">"Centre"</string>
+            <string name="proxy-AlignV">"Centre"</string>
+            <long name="proxy-Stretch factor">0</long>
+            <long name="proxy-Border">5</long>
+            <bool name="proxy-wxLEFT">1</bool>
+            <bool name="proxy-wxRIGHT">1</bool>
+            <bool name="proxy-wxTOP">1</bool>
+            <bool name="proxy-wxBOTTOM">1</bool>
+            <bool name="proxy-wxSHAPED">0</bool>
+            <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+            <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+            <string name="proxy-Custom arguments">""</string>
+            <string name="proxy-Custom ctor arguments">""</string>
+            <string name="proxy-Event sources">""</string>
+          </document>
+        </document>
+        <document>
+          <string name="title">"About"</string>
+          <string name="type">"dialog-document"</string>
+          <string name="filename">""</string>
+          <string name="icon-name">"dialog"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">1</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <string name="proxy-type">"wbDialogProxy"</string>
+          <long name="base-id">10000</long>
+          <bool name="use-id-prefix">0</bool>
+          <string name="id-prefix">""</string>
+          <bool name="use-id-suffix">0</bool>
+          <string name="id-suffix">""</string>
+          <string name="app-kind">"Standard"</string>
+          <long name="use-xrc">0</long>
+          <long name="working-mode">0</long>
+          <string name="proxy-Id name">"ID_CWXABOUTDLG"</string>
+          <long name="proxy-Id value">10006</long>
+          <string name="proxy-Class">"CwxAboutDlg"</string>
+          <string name="proxy-Base class">"wxDialog"</string>
+          <string name="proxy-Window kind">"wxDialog"</string>
+          <string name="proxy-Implementation filename">"about_dlg.cpp"</string>
+          <string name="proxy-Header filename">"..\..\..\include\gui\wx_demo\about_dlg.hpp"</string>
+          <string name="proxy-XRC filename">""</string>
+          <string name="proxy-Title">"About"</string>
+          <bool name="proxy-Centre">1</bool>
+          <string name="proxy-Icon">""</string>
+          <bool name="proxy-Dialog units">0</bool>
+          <string name="proxy-Help text">""</string>
+          <string name="proxy-Tooltip text">""</string>
+          <string name="proxy-Background colour">""</string>
+          <string name="proxy-Foreground colour">""</string>
+          <string name="proxy-Font">""</string>
+          <bool name="proxy-Hidden">0</bool>
+          <bool name="proxy-Enabled">1</bool>
+          <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+          <string name="proxy-Data source">""</string>
+          <string name="proxy-Data class name">""</string>
+          <string name="proxy-Data class implementation filename">""</string>
+          <string name="proxy-Data class header filename">""</string>
+          <string name="proxy-Data class manager window">""</string>
+          <string name="proxy-Texture">""</string>
+          <string name="proxy-Texture style">"Tiled"</string>
+          <bool name="proxy-wxDEFAULT_DIALOG_STYLE">0</bool>
+          <bool name="proxy-wxCAPTION">1</bool>
+          <bool name="proxy-wxRESIZE_BORDER">1</bool>
+          <bool name="proxy-wxSYSTEM_MENU">1</bool>
+          <bool name="proxy-wxSTAY_ON_TOP">0</bool>
+          <bool name="proxy-wxDIALOG_NO_PARENT">0</bool>
+          <bool name="proxy-wxCLOSE_BOX">1</bool>
+          <bool name="proxy-wxMAXIMIZE_BOX">0</bool>
+          <bool name="proxy-wxMINIMIZE_BOX">0</bool>
+          <bool name="proxy-wxDIALOG_MODAL">1</bool>
+          <bool name="proxy-wxNO_BORDER">0</bool>
+          <bool name="proxy-wxSIMPLE_BORDER">0</bool>
+          <bool name="proxy-wxDOUBLE_BORDER">0</bool>
+          <bool name="proxy-wxBORDER_THEME">0</bool>
+          <bool name="proxy-wxSUNKEN_BORDER">0</bool>
+          <bool name="proxy-wxRAISED_BORDER">0</bool>
+          <bool name="proxy-wxSTATIC_BORDER">0</bool>
+          <bool name="proxy-wxWANTS_CHARS">0</bool>
+          <bool name="proxy-wxNO_FULL_REPAINT_ON_RESIZE">0</bool>
+          <bool name="proxy-wxFULL_REPAINT_ON_RESIZE">0</bool>
+          <bool name="proxy-wxCLIP_CHILDREN">0</bool>
+          <bool name="proxy-wxTAB_TRAVERSAL">0</bool>
+          <bool name="proxy-wxWS_EX_VALIDATE_RECURSIVELY">0</bool>
+          <bool name="proxy-wxWS_EX_BLOCK_EVENTS">1</bool>
+          <bool name="proxy-wxWS_EX_TRANSIENT">0</bool>
+          <string name="proxy-Custom styles">""</string>
+          <bool name="proxy-wxDIALOG_EX_CONTEXTHELP">0</bool>
+          <bool name="proxy-Fit to content">1</bool>
+          <long name="proxy-X">-1</long>
+          <long name="proxy-Y">-1</long>
+          <long name="proxy-Width">400</long>
+          <long name="proxy-Height">300</long>
+          <bool name="proxy-AUI manager">0</bool>
+          <string name="proxy-Event sources">""</string>
+          <document>
+            <string name="title">"wxBoxSizer V"</string>
+            <string name="type">"dialog-control-document"</string>
+            <string name="filename">""</string>
+            <string name="icon-name">"sizer"</string>
+            <long name="is-transient">0</long>
+            <long name="owns-file">1</long>
+            <long name="title-mode">0</long>
+            <long name="locked">0</long>
+            <string name="proxy-type">"wbBoxSizerProxy"</string>
+            <string name="proxy-Orientation">"Vertical"</string>
+            <string name="proxy-Member variable name">""</string>
+            <bool name="proxy-wxSHAPED">0</bool>
+            <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+            <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+            <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+            <document>
+              <string name="title">"wxHtmlWindow: ID_HTMLWINDOW1"</string>
+              <string name="type">"dialog-control-document"</string>
+              <string name="filename">""</string>
+              <string name="icon-name">"htmlwindow"</string>
+              <long name="is-transient">0</long>
+              <long name="owns-file">1</long>
+              <long name="title-mode">0</long>
+              <long name="locked">0</long>
+              <string name="created">"23/4/2007"</string>
+              <string name="proxy-type">"wbHtmlWindowProxy"</string>
+              <string name="proxy-Id name">"ID_HTMLWINDOW1"</string>
+              <long name="proxy-Id value">10007</long>
+              <string name="proxy-Name">""</string>
+              <string name="proxy-Class">"wxHtmlWindow"</string>
+              <string name="proxy-Base class">"wxHtmlWindow"</string>
+              <bool name="proxy-External implementation">1</bool>
+              <bool name="proxy-Separate files">0</bool>
+              <string name="proxy-Implementation filename">""</string>
+              <string name="proxy-Header filename">""</string>
+              <string name="proxy-Member variable name">"m_HTML"</string>
+              <string name="proxy-URL">""</string>
+              <string name="proxy-HTML code">""</string>
+              <string name="proxy-Help text">""</string>
+              <string name="proxy-Tooltip text">""</string>
+              <string name="proxy-Background colour">""</string>
+              <string name="proxy-Foreground colour">""</string>
+              <string name="proxy-Font">""</string>
+              <bool name="proxy-Hidden">0</bool>
+              <bool name="proxy-Enabled">1</bool>
+              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              <string name="proxy-Data variable">""</string>
+              <string name="proxy-Data validator">""</string>
+              <string name="proxy-Data source">""</string>
+              <string name="proxy-Data class name">""</string>
+              <string name="proxy-Data class implementation filename">""</string>
+              <string name="proxy-Data class header filename">""</string>
+              <string name="proxy-Data class manager window">""</string>
+              <bool name="proxy-wxHW_SCROLLBAR_NEVER">0</bool>
+              <bool name="proxy-wxHW_SCROLLBAR_AUTO">1</bool>
+              <bool name="proxy-wxHW_NO_SELECTION">0</bool>
+              <bool name="proxy-wxNO_BORDER">0</bool>
+              <bool name="proxy-wxSIMPLE_BORDER">0</bool>
+              <bool name="proxy-wxDOUBLE_BORDER">0</bool>
+              <bool name="proxy-wxBORDER_THEME">0</bool>
+              <bool name="proxy-wxSUNKEN_BORDER">1</bool>
+              <bool name="proxy-wxRAISED_BORDER">0</bool>
+              <bool name="proxy-wxSTATIC_BORDER">0</bool>
+              <bool name="proxy-wxWANTS_CHARS">0</bool>
+              <bool name="proxy-wxNO_FULL_REPAINT_ON_RESIZE">0</bool>
+              <bool name="proxy-wxFULL_REPAINT_ON_RESIZE">0</bool>
+              <bool name="proxy-wxCLIP_CHILDREN">0</bool>
+              <bool name="proxy-wxHSCROLL">1</bool>
+              <bool name="proxy-wxVSCROLL">1</bool>
+              <bool name="proxy-wxALWAYS_SHOW_SB">0</bool>
+              <bool name="proxy-wxWS_EX_VALIDATE_RECURSIVELY">0</bool>
+              <string name="proxy-Custom styles">""</string>
+              <long name="proxy-X">-1</long>
+              <long name="proxy-Y">-1</long>
+              <long name="proxy-Width">300</long>
+              <long name="proxy-Height">180</long>
+              <string name="proxy-AlignH">"Centre"</string>
+              <string name="proxy-AlignV">"Centre"</string>
+              <long name="proxy-Stretch factor">0</long>
+              <long name="proxy-Border">5</long>
+              <bool name="proxy-wxLEFT">1</bool>
+              <bool name="proxy-wxRIGHT">1</bool>
+              <bool name="proxy-wxTOP">1</bool>
+              <bool name="proxy-wxBOTTOM">1</bool>
+              <bool name="proxy-wxSHAPED">0</bool>
+              <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+              <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+              <string name="proxy-Custom arguments">""</string>
+              <string name="proxy-Custom ctor arguments">""</string>
+              <string name="proxy-Event sources">""</string>
+            </document>
+            <document>
+              <string name="title">"wxStaticLine: ID_STATICLINE"</string>
+              <string name="type">"dialog-control-document"</string>
+              <string name="filename">""</string>
+              <string name="icon-name">"staticline"</string>
+              <long name="is-transient">0</long>
+              <long name="owns-file">1</long>
+              <long name="title-mode">0</long>
+              <long name="locked">0</long>
+              <string name="created">"23/4/2007"</string>
+              <string name="proxy-type">"wbStaticLineProxy"</string>
+              <string name="proxy-Id name">"ID_STATICLINE"</string>
+              <long name="proxy-Id value">10008</long>
+              <string name="proxy-Name">""</string>
+              <string name="proxy-Class">"wxStaticLine"</string>
+              <string name="proxy-Base class">"wxStaticLine"</string>
+              <bool name="proxy-External implementation">1</bool>
+              <bool name="proxy-Separate files">0</bool>
+              <string name="proxy-Implementation filename">""</string>
+              <string name="proxy-Header filename">""</string>
+              <string name="proxy-Member variable name">""</string>
+              <string name="proxy-Background colour">""</string>
+              <string name="proxy-Foreground colour">""</string>
+              <string name="proxy-Font">""</string>
+              <bool name="proxy-Hidden">0</bool>
+              <bool name="proxy-Enabled">1</bool>
+              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              <bool name="proxy-wxLI_HORIZONTAL">1</bool>
+              <bool name="proxy-wxLI_VERTICAL">0</bool>
+              <bool name="proxy-wxNO_BORDER">0</bool>
+              <bool name="proxy-wxSIMPLE_BORDER">0</bool>
+              <bool name="proxy-wxDOUBLE_BORDER">0</bool>
+              <bool name="proxy-wxBORDER_THEME">0</bool>
+              <bool name="proxy-wxSUNKEN_BORDER">0</bool>
+              <bool name="proxy-wxRAISED_BORDER">0</bool>
+              <bool name="proxy-wxSTATIC_BORDER">0</bool>
+              <bool name="proxy-wxWANTS_CHARS">0</bool>
+              <bool name="proxy-wxNO_FULL_REPAINT_ON_RESIZE">0</bool>
+              <bool name="proxy-wxFULL_REPAINT_ON_RESIZE">0</bool>
+              <string name="proxy-Custom styles">""</string>
+              <long name="proxy-X">-1</long>
+              <long name="proxy-Y">-1</long>
+              <long name="proxy-Width">-1</long>
+              <long name="proxy-Height">-1</long>
+              <string name="proxy-AlignH">"Expand"</string>
+              <string name="proxy-AlignV">"Centre"</string>
+              <long name="proxy-Stretch factor">0</long>
+              <long name="proxy-Border">5</long>
+              <bool name="proxy-wxLEFT">1</bool>
+              <bool name="proxy-wxRIGHT">1</bool>
+              <bool name="proxy-wxTOP">1</bool>
+              <bool name="proxy-wxBOTTOM">1</bool>
+              <bool name="proxy-wxSHAPED">0</bool>
+              <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+              <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+            </document>
+            <document>
+              <string name="title">"wxStdDialogButtonSizer"</string>
+              <string name="type">"dialog-control-document"</string>
+              <string name="filename">""</string>
+              <string name="icon-name">"sizer"</string>
+              <long name="is-transient">0</long>
+              <long name="owns-file">1</long>
+              <long name="title-mode">0</long>
+              <long name="locked">0</long>
+              <string name="created">"23/4/2007"</string>
+              <string name="proxy-type">"wbStdDialogButtonSizerProxy"</string>
+              <bool name="proxy-wxID_OK">1</bool>
+              <bool name="proxy-wxID_CANCEL">0</bool>
+              <bool name="proxy-wxID_YES">0</bool>
+              <bool name="proxy-wxID_NO">0</bool>
+              <bool name="proxy-wxID_HELP">0</bool>
+              <bool name="proxy-wxID_APPLY">0</bool>
+              <bool name="proxy-wxID_SAVE">0</bool>
+              <bool name="proxy-wxID_CONTEXT_HELP">0</bool>
+              <string name="proxy-Member variable name">""</string>
+              <string name="proxy-AlignH">"Centre"</string>
+              <string name="proxy-AlignV">"Centre"</string>
+              <long name="proxy-Stretch factor">0</long>
+              <long name="proxy-Border">5</long>
+              <bool name="proxy-wxLEFT">1</bool>
+              <bool name="proxy-wxRIGHT">1</bool>
+              <bool name="proxy-wxTOP">1</bool>
+              <bool name="proxy-wxBOTTOM">1</bool>
+              <bool name="proxy-wxSHAPED">0</bool>
+              <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+              <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+              <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+              <document>
+                <string name="title">"wxButton: wxID_OK"</string>
+                <string name="type">"dialog-control-document"</string>
+                <string name="filename">""</string>
+                <string name="icon-name">"dialogcontrol"</string>
+                <long name="is-transient">0</long>
+                <long name="owns-file">1</long>
+                <long name="title-mode">0</long>
+                <long name="locked">1</long>
+                <string name="created">"23/4/2007"</string>
+                <string name="proxy-type">"wbButtonProxy"</string>
+                <string name="proxy-Id name">"wxID_OK"</string>
+                <long name="proxy-Id value">5100</long>
+                <string name="proxy-Name">""</string>
+                <string name="proxy-Class">"wxButton"</string>
+                <string name="proxy-Base class">"wxButton"</string>
+                <bool name="proxy-External implementation">1</bool>
+                <bool name="proxy-Separate files">0</bool>
+                <string name="proxy-Implementation filename">""</string>
+                <string name="proxy-Header filename">""</string>
+                <string name="proxy-Member variable name">""</string>
+                <string name="proxy-Label">"&amp;OK"</string>
+                <bool name="proxy-Default">0</bool>
+                <string name="proxy-Help text">""</string>
+                <string name="proxy-Tooltip text">""</string>
+                <string name="proxy-Data variable">""</string>
+                <string name="proxy-Data validator">""</string>
+                <string name="proxy-Data source">""</string>
+                <string name="proxy-Data class name">""</string>
+                <string name="proxy-Data class implementation filename">""</string>
+                <string name="proxy-Data class header filename">""</string>
+                <string name="proxy-Data class manager window">""</string>
+                <string name="proxy-Background colour">""</string>
+                <string name="proxy-Foreground colour">""</string>
+                <string name="proxy-Font">""</string>
+                <bool name="proxy-Hidden">0</bool>
+                <bool name="proxy-Enabled">1</bool>
+                <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+                <bool name="proxy-wxBU_LEFT">0</bool>
+                <bool name="proxy-wxBU_RIGHT">0</bool>
+                <bool name="proxy-wxBU_TOP">0</bool>
+                <bool name="proxy-wxBU_BOTTOM">0</bool>
+                <bool name="proxy-wxBU_EXACTFIT">0</bool>
+                <bool name="proxy-wxNO_BORDER">0</bool>
+                <bool name="proxy-wxWANTS_CHARS">0</bool>
+                <bool name="proxy-wxNO_FULL_REPAINT_ON_RESIZE">0</bool>
+                <bool name="proxy-wxFULL_REPAINT_ON_RESIZE">0</bool>
+                <string name="proxy-Custom styles">""</string>
+                <long name="proxy-X">-1</long>
+                <long name="proxy-Y">-1</long>
+                <long name="proxy-Width">-1</long>
+                <long name="proxy-Height">-1</long>
+                <string name="proxy-AlignH">"Centre"</string>
+                <string name="proxy-AlignV">"Centre"</string>
+                <long name="proxy-Stretch factor">0</long>
+                <long name="proxy-Border">5</long>
+                <bool name="proxy-wxLEFT">1</bool>
+                <bool name="proxy-wxRIGHT">1</bool>
+                <bool name="proxy-wxTOP">1</bool>
+                <bool name="proxy-wxBOTTOM">1</bool>
+                <bool name="proxy-wxSHAPED">0</bool>
+                <bool name="proxy-wxADJUST_MINSIZE">0</bool>
+                <bool name="proxy-wxFIXED_MINSIZE">0</bool>
+                <string name="proxy-Custom arguments">""</string>
+                <string name="proxy-Custom ctor arguments">""</string>
+              </document>
+            </document>
+          </document>
+        </document>
+        <document>
+          <string name="title">"wxMenu: ID_TEXT_EDIT_POPUP"</string>
+          <string name="type">"dialog-document"</string>
+          <string name="filename">""</string>
+          <string name="icon-name">"menu"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">1</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="proxy-type">"wbStandaloneMenuProxy"</string>
+          <long name="base-id">10000</long>
+          <bool name="use-id-prefix">0</bool>
+          <string name="id-prefix">""</string>
+          <bool name="use-id-suffix">0</bool>
+          <string name="id-suffix">""</string>
+          <string name="app-kind">"Standard"</string>
+          <long name="use-xrc">0</long>
+          <long name="working-mode">0</long>
+          <string name="proxy-Id name">"ID_TEXT_EDIT_POPUP"</string>
+          <string name="proxy-Resource function">"CreateMenuMenu"</string>
+          <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+          <document>
+            <string name="title">"Copy: wxID_COPY"</string>
+            <string name="type">"dialog-control-document"</string>
+            <string name="filename">""</string>
+            <string name="icon-name">"menuitem"</string>
+            <long name="is-transient">0</long>
+            <long name="owns-file">1</long>
+            <long name="title-mode">0</long>
+            <long name="locked">0</long>
+            <string name="created">"27/4/2007"</string>
+            <string name="proxy-type">"wbMenuItemProxy"</string>
+            <string name="proxy-Id name">"wxID_COPY"</string>
+            <long name="proxy-Id value">5031</long>
+            <string name="proxy-Label">"Copy"</string>
+            <string name="proxy-Kind">"Normal"</string>
+            <bool name="proxy-Checked">1</bool>
+            <bool name="proxy-Enabled">1</bool>
+            <string name="proxy-Help text">""</string>
+            <string name="proxy-Bitmap">""</string>
+            <string name="proxy-Bitmap unchecked">""</string>
+            <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+          </document>
+          <document>
+            <string name="title">"Paste: wxID_PASTE"</string>
+            <string name="type">"dialog-control-document"</string>
+            <string name="filename">""</string>
+            <string name="icon-name">"menuitem"</string>
+            <long name="is-transient">0</long>
+            <long name="owns-file">1</long>
+            <long name="title-mode">0</long>
+            <long name="locked">0</long>
+            <string name="created">"27/4/2007"</string>
+            <string name="proxy-type">"wbMenuItemProxy"</string>
+            <string name="proxy-Id name">"wxID_PASTE"</string>
+            <long name="proxy-Id value">5032</long>
+            <string name="proxy-Label">"Paste"</string>
+            <string name="proxy-Kind">"Normal"</string>
+            <bool name="proxy-Checked">1</bool>
+            <bool name="proxy-Enabled">1</bool>
+            <string name="proxy-Help text">""</string>
+            <string name="proxy-Bitmap">""</string>
+            <string name="proxy-Bitmap unchecked">""</string>
+            <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+          </document>
+          <document>
+            <string name="title">"Cut: wxID_CUT"</string>
+            <string name="type">"dialog-control-document"</string>
+            <string name="filename">""</string>
+            <string name="icon-name">"menuitem"</string>
+            <long name="is-transient">0</long>
+            <long name="owns-file">1</long>
+            <long name="title-mode">0</long>
+            <long name="locked">0</long>
+            <string name="created">"27/4/2007"</string>
+            <string name="proxy-type">"wbMenuItemProxy"</string>
+            <string name="proxy-Id name">"wxID_CUT"</string>
+            <long name="proxy-Id value">5030</long>
+            <string name="proxy-Label">"Cut"</string>
+            <string name="proxy-Kind">"Normal"</string>
+            <bool name="proxy-Checked">1</bool>
+            <bool name="proxy-Enabled">1</bool>
+            <string name="proxy-Help text">""</string>
+            <string name="proxy-Bitmap">""</string>
+            <string name="proxy-Bitmap unchecked">""</string>
+            <string name="proxy-Platform">"&lt;Any platform&gt;"</string>
+          </document>
+        </document>
+      </document>
+      <document>
+        <string name="title">"Sources"</string>
+        <string name="type">"html-document"</string>
+        <string name="filename">""</string>
+        <string name="icon-name">"sourcesfolder"</string>
+        <long name="is-transient">1</long>
+        <long name="owns-file">1</long>
+        <long name="title-mode">0</long>
+        <long name="locked">1</long>
+        <document>
+          <string name="title">"makefile.vc"</string>
+          <string name="type">"source-editor-document"</string>
+          <string name="filename">"makefile.vc"</string>
+          <string name="icon-name">"source-editor"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">1</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <string name="language">""</string>
+        </document>
+        <document>
+          <string name="title">"wx_app_demo.rc"</string>
+          <string name="type">"source-editor-document"</string>
+          <string name="filename">"wx_app_demo.rc"</string>
+          <string name="icon-name">"source-editor"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">1</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <string name="language">""</string>
+        </document>
+      </document>
+      <document>
+        <string name="title">"Images"</string>
+        <string name="type">"html-document"</string>
+        <string name="filename">""</string>
+        <string name="icon-name">"bitmapsfolder"</string>
+        <long name="is-transient">1</long>
+        <long name="owns-file">1</long>
+        <long name="title-mode">0</long>
+        <long name="locked">1</long>
+        <document>
+          <string name="title">"alignment_set_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/alignment_set_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"annot_folder.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/annot_folder.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"annot_graphs_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/annot_graphs_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"annot_ids_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/annot_ids_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"annot_item.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/annot_item.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"folder_closed.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/folder_closed.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"folder_open.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/folder_open.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"forward.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/forward.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"gbench_about.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/gbench_about.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"graphical_view.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/graphical_view.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"help.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/help.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"history_folder.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/history_folder.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"home.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/home.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"import.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/import.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"insp_brief_text_mode.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/insp_brief_text_mode.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"insp_table_mode.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/insp_table_mode.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"insp_text_mode.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/insp_text_mode.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"mouse_mode_def.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/mouse_mode_def.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"mouse_mode_pan.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/mouse_mode_pan.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"mouse_mode_zoom_in.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/mouse_mode_zoom_in.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"mouse_mode_zoom_out.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/mouse_mode_zoom_out.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"mouse_mode_zoom_rect.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/mouse_mode_zoom_rect.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"multi_align_view.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/multi_align_view.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"phylo_tree_view.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/phylo_tree_view.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"project_item.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/project_item.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"prot_cluster_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/prot_cluster_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"radio.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/radio.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"search.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/search.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"sequence_dna_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/sequence_dna_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"sequence_id_dna_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/sequence_id_dna_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"sequence_id_protein_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/sequence_id_protein_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"sequence_id_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/sequence_id_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"sequence_protein_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/sequence_protein_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"sequence_set_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/sequence_set_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"sequence_symbol.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/sequence_symbol.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"sequence_text_view.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/sequence_text_view.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"splash-old.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/splash-old.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"splash.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/splash.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"splash_real.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/splash_real.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"splitter_2x2.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/splitter_2x2.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"splitter_horz.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/splitter_horz.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"splitter_vert.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/splitter_vert.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"tab_control.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/tab_control.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"text_view.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/text_view.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"tool.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/tool.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"viewer_item.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/viewer_item.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"view_item.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/view_item.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"wm_close.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/wm_close.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"wm_maximize.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/wm_maximize.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"wm_menu.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/wm_menu.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"wm_minimize.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/wm_minimize.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"wm_restore.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/wm_restore.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"workspace_item.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/workspace_item.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"zoom_all.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/zoom_all.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"zoom_in.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/zoom_in.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"zoom_out.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/zoom_out.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"zoom_sel.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/zoom_sel.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"zoom_seq.png"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/zoom_seq.png"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"23/4/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"error16x16.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/error16x16.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"10/7/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"info16x16.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/info16x16.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"10/7/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"question16x16.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/question16x16.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"10/7/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"htmpage16x16.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/htmpage16x16.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"10/7/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+        <document>
+          <string name="title">"warning16x16.xpm"</string>
+          <string name="type">"image-document"</string>
+          <string name="filename">"../res/share/gbench/warning16x16.xpm"</string>
+          <string name="icon-name">"image"</string>
+          <long name="is-transient">0</long>
+          <long name="owns-file">0</long>
+          <long name="title-mode">0</long>
+          <long name="locked">0</long>
+          <string name="created">"10/7/2007"</string>
+          <long name="zoom-level">100</long>
+        </document>
+      </document>
+    </document>
+  </documents>
+
+</anthemion-project>

@@ -1,0 +1,10 @@
+# $Id: Makefile.in 9624 2005-06-16 16:12:07Z yazhuk $
+# Author:  Andrey Yazhuk
+
+# Meta-makefile for utils/unit_test projects
+###########################################
+
+APP_PROJ = events_unit_test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

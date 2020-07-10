@@ -1,0 +1,11 @@
+# $Id: Makefile.sdbapi.lib 565385 2018-06-11 17:58:09Z ucko $
+
+SRC = sdbapi
+LIB = sdbapi
+
+WATCHERS = ucko satskyse
+
+
+
+USES_LIBRARIES = ncbi_xdbapi_ftds ncbi_xdbapi_ftds95 ncbi_xdbapi_ftds100 \
+                 dbapi $(XCONNEXT) xconnect

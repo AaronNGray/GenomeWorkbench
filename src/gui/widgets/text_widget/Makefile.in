@@ -1,0 +1,6 @@
+# $Id: Makefile.in 17139 2008-06-18 20:55:06Z katargir $
+
+LIB_PROJ = w_text_widget
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

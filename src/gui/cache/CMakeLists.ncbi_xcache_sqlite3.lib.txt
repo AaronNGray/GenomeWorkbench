@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_xcache_sqlite3.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(ncbi_xcache_sqlite3)
+  NCBI_sources(sqlite_cache sqlite_cache_factory)
+  NCBI_add_definitions(NCBI_SHOW_FUNCTION_NAME)
+  NCBI_uses_toolkit_libraries(xutil)
+  NCBI_requires(SQLITE3)
+NCBI_end_lib()

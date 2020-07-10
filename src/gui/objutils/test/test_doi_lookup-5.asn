@@ -1,0 +1,70 @@
+Pubdesc ::= {
+  pub {
+    article {
+      title {
+        name "Molecular evidence and additional morphological characters to
+ distinguish Ornithodoros brodyi and Ornithodoros yumatensis (Ixodida:
+ Argasidae) in their different developmental stages"
+      },
+      authors {
+        names std {
+          {
+            name name {
+              last "Guzman-Cornejo",
+              first "Carmen"
+            }
+          },
+          {
+            name name {
+              last "Garcia-Prieto",
+              first "Luis"
+            }
+          },
+          {
+            name name {
+              last "Rebollo-Hernandez",
+              first "Andrea"
+            }
+          },
+          {
+            name name {
+              last "Venzal",
+              first "Jose",
+              initials "M"
+            }
+          },
+          {
+            name name {
+              last "Nava",
+              first "Santiago"
+            }
+          },
+          {
+            name name {
+              last "Sanchez-Montes",
+              first "Sokani"
+            }
+          }
+        }
+      },
+      from journal {
+        title {
+          iso-jta "Acta Parasitol."
+        },
+        imp {
+          date std {
+            year 2017,
+            month 1,
+            day 1
+          },
+          volume "62",
+          issue "2",
+          pubstatus ppublish
+        }
+      },
+      ids {
+        doi "10.1515/ap-2017-0051"
+      }
+    }
+  }
+}

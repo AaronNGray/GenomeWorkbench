@@ -1,0 +1,74 @@
+# False positive: CXX-10523
+race:^ncbi::ncbi_namespace_mutex_mt::SSystemMutex::Lock(
+race:^ncbi::CSafeStatic<ncbi::CParam
+
+
+################################################################
+# grichenk CXX-10544
+
+# false positive
+race:^ncbi::CSafeStatic<ncbi::CTls
+race:^ncbi::CTlsBase::x_SetValue
+
+# error, just not important - ignore (whole test)
+race:corelib/test/test_ncbidiag_mt.cpp
+
+# This one is actually a race, the only possible consequence is 
+# an additional message about temporary suspending log output. 
+# So suppress this and leave the code as-is.
+
+race:^ncbi::CDiagContext::ApproveMessage(ncbi::SDiagMessage&,
+
+
+################################################################
+# ivanov
+
+# It is unsafe to use CTime::AsString() in exit print handler,
+# because it allocates memory, that is not signal-safe.
+# NOTE: ThreadSanitizer doesn't work with test_ncbi_system,
+#       that have limits tests that incompatible with sanitizer. 
+signal:corelib/test/test_ncbi_system.cpp
+
+
+################################################################
+# vasilche CXX-10546
+
+# error, just not important - ignore (whole test)
+race:corelib/test/test_tls_object.cpp
+
+
+
+################################################################
+# lavr CXX-11285
+
+# test_ncbi_trigger -- confirmed false-positive by Anton (emails)
+race:^TRIGGER_Reset
+
+# thread leak in test_ncbi_trigger, probably can be rewritten
+thread:test_ncbi_trigger
+
+# Setting the shutdown flag doesn't need to be protected (by vakatov)
+race:^ncbi::CTestServer::ShutdownRequested()
+
+# This is for statistics purposes only. /connect/ncbi_socket.c
+race:^s_Create$
+
+# Debugging aid. For lock check consistency /connect/ncbi_socket.c
+race:^g_NCBI_CoreCheckLock$
+
+# Pre-check followed by lock-and-check-and-modify. /connect/ncbi_socket.c
+race:^ncbi::CConnIniter::CConnIniter()
+race:^s_InitAPI_$
+
+# This is a debugging aid, code sanity check. /connect/ncbi_core.c
+race:^MT_LOCK_AddRef$
+
+
+
+################################################################
+# ucko CXX-11303
+
+# the race is real, but AFAICT harmless in this context
+race:^tds_socket_write$
+race:^tds_socket_read$
+

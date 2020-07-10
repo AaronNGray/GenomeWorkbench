@@ -1,0 +1,550 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Canis_adustus__22",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_adustus"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305088
+        },
+        genbank {
+          accession "KT448271"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome mitochondrion,
+          org {
+            taxname "bacteria",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "[BankIt_cultured16S_wizard]"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_adustus__22"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 121,
+        strand ds,
+        seq-data iupacna "CAAGGCACTGTAAATACCTCCTTAATATTCTTCTCTGACTCTCTATCAGCAC
+CGCTACTAACACTTACAACATGACTTCTCCCTCTTATACTTATAGCAAGTCAGTCCCATCTATCAAAAG"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_aureus_Kenya_1",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_aureus_Kenya_1"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305089
+        },
+        genbank {
+          accession "KT448272"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          org {
+            taxname "archaea",
+            orgname {
+              mod {
+                {
+                  subtype other,
+                  subname "[BankIt_cultured16S_wizard]"
+                }
+              }
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_aureus_Kenya_1"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 55,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAAGATCAAGGTGCTATTCAGTCAATGGTTTCAGGACATA
+TAG"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_aureus_Kenya_2",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_aureus_Kenya_2"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305090
+        },
+        genbank {
+          accession "KT448273"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Azotobactor sp",
+            orgname {
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_aureus_Kenya_2"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 28,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTACAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_aureus_Israel_1",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_aureus_Israel_1"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305091
+        },
+        genbank {
+          accession "KT448274"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Trichococcus Spp",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "[cultured; wizard]"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_aureus_Israel_1"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 22,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTACAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_latrans_3169",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_latrans_3169"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305092
+        },
+        genbank {
+          accession "KT448275"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Legionella_species",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "[BankIt_cultured16S_wizard]; [universal primers]"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_latrans_3169"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 39,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAATTAATAAAGCAAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_latrans_B16",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_latrans_B16"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305094
+        },
+        genbank {
+          accession "KT448277"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Novel Bacillus",
+            orgname {
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_latrans_B16"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 69,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAATTATCATATTTACTATGTATTTTATTTATTACGCACA
+CTACAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_lupus_423",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_lupus_423"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305095
+        },
+        genbank {
+          accession "KT448278"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Actinomycetales",
+            orgname {
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_lupus_423"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 77,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAACTAATCCCCTCTCATATTTACTATGTATTTTATTTAT
+TACGCACACTACAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_lupus_302M",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_lupus_302M"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305096
+        },
+        genbank {
+          accession "KT448279"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Peptostreptococcaceae",
+            orgname {
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_lupus_302M"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 34,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAACTAATAAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_mesomelas__22",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_mesomelas"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305097
+        },
+        genbank {
+          accession "KT448280"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome mitochondrion,
+          org {
+            taxname "unclassified holophagales",
+            orgname {
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_mesomelas__22"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 42,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAATTCAGTCAATGGTTTCAGGACATATAG"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_simensis__22",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_simensis"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305098
+        },
+        genbank {
+          accession "KT448281"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Methanosaeta 16S ribosomal RNA gene, partial sequence HA
+ strain",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "sp. HA"
+                }
+              }
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_simensis__22"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 74,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTCATTTATCAACTCACGCATAAAATCAAGGTGCTATTCAG
+TCAATGGTTTCAGGACATATAG"
+      }
+    }
+  }
+}

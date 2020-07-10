@@ -1,0 +1,91 @@
+MACRO RubellaSourceSH_01 "Apply '[' to strain (append (no separator))"
+VAR
+    new_value = %[%
+    existing_text = "eAppend"
+    delimiter = ""
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") WHERE obj.subtype = "strain";
+    SetModifier(obj, "org.orgname.mod", "strain", new_value, existing_text, delimiter);
+DONE
+---------------------------------------------------
+MACRO RubellaSourceSH_02 "Convert genotype to strain (append (no separator))"
+VAR
+    cap_change = "none"
+    strip_name = false
+existing_text = "eAppend"
+delimiter = ""
+FOR EACH BioSource
+DO
+src = Resolve("subtype") WHERE src.subtype = "genotype";
+ConvertStringQual("src.name", "strain", cap_change, strip_name, existing_text, delimiter);
+DONE
+---------------------------------------------------
+MACRO RubellaSourceSH_03 "Apply ']' to strain (append (no separator))"
+VAR
+new_value = %]%
+existing_text = "eAppend"
+delimiter = ""
+FOR EACH BioSource
+DO
+obj = Resolve("org.orgname.mod") WHERE obj.subtype = "strain";
+SetModifier(obj, "org.orgname.mod", "strain", new_value, existing_text, delimiter);
+DONE
+---------------------------------------------------
+MACRO RubellaSourceSH_04 "Apply 'genotype' to taxname (append separated by space)"
+VAR
+new_value = %genotype%
+existing_text = "eAppend"
+delimiter = " "
+FOR EACH BioSource
+DO
+SetStringQual("org.taxname", new_value, existing_text, delimiter);
+DONE
+---------------------------------------------------
+MACRO RubellaSourceSH_05 "Convert genotype to taxname (append separated by space)"
+VAR
+cap_change = "none"
+strip_name = false
+existing_text = "eAppend"
+delimiter = " "
+FOR EACH BioSource
+DO
+src = Resolve("subtype") WHERE src.subtype = "genotype";
+ConvertStringQual("src.name", "org.taxname", cap_change, strip_name, existing_text, delimiter);
+DONE
+---------------------------------------------------
+MACRO RubellaSourceSH_06 "Edit strain replace ' ' (case sensitive)  with ''"
+VAR
+find_text = % %
+repl_text = %%
+location = "anywhere"
+case_sensitive = true
+FOR EACH BioSource
+DO
+obj = Resolve("org.orgname.mod") WHERE obj.subtype = "strain";
+EditStringQual("obj.subname", find_text, repl_text, location, case_sensitive);
+DONE
+---------------------------------------------------
+MACRO RubellaSourceSH_07 "Set 3' partial when coding region has no stop codon for Gene features and retranslate affected coding regions and adjust overlapping gene"
+VAR
+extend = %false%
+retranslate = %true%
+adjustgene = %true%
+FOR EACH Gene
+DO
+SetPartialStop("bad-end", extend, retranslate, adjustgene);
+DONE
+---------------------------------------------------
+MACRO RubellaSourceSH_08 "Apply Gene"
+VAR
+    partial5 = false
+    partial3 = false
+    strand = "plus"
+    add_redundant = true
+For Each SeqNa
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyFeature("data.gene.locus", "SH", location, add_redundant);
+DONE
+---------------------------------------------------
+

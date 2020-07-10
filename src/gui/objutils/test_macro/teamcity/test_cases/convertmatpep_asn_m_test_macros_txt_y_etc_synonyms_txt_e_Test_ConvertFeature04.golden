@@ -1,0 +1,192 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class pop-set,
+      seq-set {
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Hepatitis D virus",
+                orgname {
+                  attrib "specified"
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "BD-HBV01",
+                general {
+                  db "BankIt",
+                  tag str "2042031/BD-HBV01"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 85680429
+                },
+                genbank {
+                  accession "MF925358"
+                }
+              },
+              descr {
+                molinfo {
+                  biomol genomic,
+                  completeness complete
+                },
+                user {
+                  type str "OriginalID",
+                  data {
+                    {
+                      label str "LocalId",
+                      data str "BD-HBV01"
+                    },
+                    {
+                      label str "General",
+                      data str "gnl|BankIt|2042031/BD-HBV01"
+                    },
+                    {
+                      label str "General",
+                      data str "gnl|TMSMART|85680429"
+                    },
+                    {
+                      label str "GenBank",
+                      data str "gb|MF925358|"
+                    }
+                  }
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 313,
+                topology circular,
+                strand ds,
+                seq-data iupacna "GCAATCCTCTGGGATTCTTTCCCGACCACCAGTTGGATCCAGCC
+TTCAGAGCAAACACAGCAAATCCAGATTGGGACTTCAATCCCAACAAGGACACCTGGCCAGACGCCAACAAGGTAGGA
+GCTGGAGCATTCGGGCTGGGATTCACCCCACCGCACGGAGGCCTTTTGGGGTGGAGCCCTCAGGCTCAGGGCATAATA
+CAAACCTTGCCAGCAAATCCGCCTCCTGCATCTACCAATCGTCAGTCAGGAAGGCAGCCTACCCCGCTGTCTCCACCT
+TTGAGAAACACTCATCCTCAGGCCATGCAGTGGAA"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data gene {
+                        locus "P"
+                      },
+                      location int {
+                        from 0,
+                        to 312,
+                        strand plus,
+                        id local str "BD-HBV01"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            seq {
+              id {
+                local str "BD-HBV01_prot_1",
+                general {
+                  db "TMSMART",
+                  tag id 85680430
+                }
+              },
+              descr {
+                title "polymerase [Hepatitis B virus]",
+                molinfo {
+                  biomol peptide
+                },
+                user {
+                  type str "OriginalID",
+                  data {
+                    {
+                      label str "LocalId",
+                      data str "BD-HBV01_prot_1"
+                    },
+                    {
+                      label str "General",
+                      data str "gnl|TMSMART|85680430"
+                    }
+                  }
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 104,
+                seq-data ncbieaa "-ILWDSFPTTSWIQPSEQTQQIQIGTSIPTRTPGQTPTR*ELEH
+SGWDSPHRTEAFWGGALRLRA*YKPCQQIRLLHLPIVSQEGSLPRCLHL*ETLILRPCSG"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "polymerase"
+                        }
+                      },
+                      location int {
+                        from 0,
+                        to 103,
+                        id local str "BD-HBV01_prot_1"
+                      }
+                    },
+                    {
+                      data prot {
+                        name {
+                          "unnamed"
+                        },
+                        processed mature
+                      },
+                      location int {
+                        from 40,
+                        to 103,
+                        id local str "BD-HBV01_prot_1"
+                      }
+                    },
+                    {
+                      data region "unnamed",
+                      location int {
+                        from 40,
+                        to 103,
+                        id local str "BD-HBV01_prot_1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    code {
+                      id 1
+                    }
+                  },
+                  product whole local str "BD-HBV01_prot_1",
+                  location int {
+                    from 0,
+                    to 312,
+                    strand plus,
+                    id local str "BD-HBV01"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

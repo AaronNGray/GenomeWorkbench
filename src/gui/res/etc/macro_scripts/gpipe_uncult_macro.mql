@@ -1,0 +1,375 @@
+MACRO Composite_UncultTaxTool_01 "Edit taxname replace '_' with ' '"
+VAR
+    find_text = "_"
+    repl_text = " "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_02 "Edit isolate replace 'GGE band' (case insensitive) with 'GGE gel band'"
+VAR
+    find_text = "GGE band"
+    repl_text = "GGE gel band"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "isolate";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_03 "Apply TGGE gel band to isolate (prefix separated by space) where source isolate does not contain 'GGE gel band' (ignore spaces, ignore punctuation) and where source note-subsrc contains 'TGGE'"
+VAR
+    qual_name = "org.orgname.mod"
+    modifier = "isolate"
+    new_value = "TGGE gel band"
+    existing_text = "ePrepend"
+    delimiter = " "
+    match_text = "GGE gel band"
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match_subsrc = "TGGE"
+FOR EACH BioSource
+WHERE CONTAINS("subtype","other", match_subsrc)
+    AND NOT CONTAINS("org.orgname.mod", "isolate", match_text, case_sensitive, ignore_spaces, ignore_punctuation)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier 
+              AND NOT CONTAINS("obj.subname", match_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    SetModifier(obj, qual_name, modifier, new_value, existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_04 "Apply DGGE gel band to isolate (prefix separated by space) where source isolate does not contain 'GGE gel band' (ignore spaces, ignore punctuation) and where source note-subsrc contains 'DGGE'"
+VAR
+    qual_name = "org.orgname.mod"
+    modifier = "isolate"
+    new_value = "DGGE gel band"
+    existing_text = "ePrepend"
+    delimiter = " "
+    match_text = "GGE gel band"
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match_subsrc = "DGGE"
+FOR EACH BioSource
+WHERE CONTAINS("subtype","other", match_subsrc)
+     AND NOT CONTAINS("org.orgname.mod", "isolate", match_text, case_sensitive, ignore_spaces, ignore_punctuation)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier 
+              AND NOT CONTAINS("obj.subname", match_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    SetModifier(obj, qual_name, modifier, new_value, existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_05 "Edit isolate replace 'Gel Band' (case insensitive) with 'gel band'"
+VAR
+    find_text = "Gel Band"
+    repl_text = "gel band"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "isolate";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_06 "Edit note-subsrc replace '[species-specific primers]' (case insensitive) with '[species_specific primers]'"
+VAR
+    find_text = "[species-specific primers]"
+    repl_text = "[species_specific primers]"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    o = Resolve("subtype") WHERE o.subtype = "other";
+    EditStringQual ("o.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_07 "Edit taxname replace ' clone' (case insensitive) with ''"
+VAR
+    find_text = " clone"
+    repl_text = ""
+    location = "at the end"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_08 "Perform taxonomy lookup and extended cleanup and correct genetic codes"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_09 "Edit taxname replace 'sp. (in: Bacteria)' (case sensitive)  with 'sp.'"
+VAR
+    find_text = %sp. (in: Bacteria)%
+    repl_text = %sp.%
+    location = "at the end"
+    case_sensitive = %true%
+FOR EACH BioSource
+DO
+    EditStringQual("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_10 "Perform uncultured taxname lookup"
+FOR EACH BioSource
+Do
+    DoUnculturedTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_11 "Perform taxonomy lookup and extended cleanup and correct genetic codes"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_12 "Remove subsource note where subsource note contains '[uncultured (using universal primers)]', '[uncultured (using universal primers)]' to be replaced by '[BankIt_uncultured16S_wizard]; [universal primers]; [tgge]', '[BankIt_uncultured16S_wizard]; [universal primers]; [dgge]', '[BankIt_uncultured16S_wizard]; [universal primers]', '[universal primers]; [uncultured; wizard]', '[uncultured (using universal primers) bacterial source]' and '[uncultured]; [universal primers]', where source dbxref starts with 'taxon:' (case sensitive) and taxname starts with 'uncultured'"
+VAR
+    match_text = "[uncultured (using universal primers)]"
+    case_sensitiveA = true
+    case_sensitiveB = false
+FOR EACH BioSource
+WHERE STARTS("org.taxname", "uncultured") AND STARTS("org.db.db", "taxon", case_sensitiveA)
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "other" 
+                             AND CONTAINS("obj.name", match_text, case_sensitiveB, "synonyms.txt", match_text);
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_13 "Convert isolate to clone (ignore new text when existing text is present) where source taxname contains 'uncultured' (case-sensitive) and where source isolate does not contain 'DGGE', allow 'DGGE' to be replaced by 'TGGE' and where source note-orgmod does not contain 'amplified with species-specific primers' (ignore spaces) and where source note-subsrc does not contain 'amplified with species-specific primers' (ignore spaces)"
+VAR
+    cap_change = "none"
+    strip_name = false
+    existing_text = "eReplace"
+    case_sensitiveA = true
+    match_note = "amplified with species-specific primers"
+    case_sensitiveB = false
+    ignore_spaces = false
+FOR EACH BioSource
+WHERE NOT ISPRESENT("subtype", "clone") AND 
+      CONTAINS("org.taxname", "uncultured", case_sensitiveA) AND
+      NOT CONTAINS("org.orgname.mod", "other", match_note, case_sensitiveB, ignore_spaces) AND
+      NOT CONTAINS("subtype", "other", match_note, case_sensitiveB, ignore_spaces)
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "isolate"
+          AND NOT CONTAINS("src.subname", "DGGE")
+          AND NOT CONTAINS("src.subname", "TGGE");
+    ConvertStringQual("src.subname", "clone", cap_change, strip_name, existing_text);
+    RemoveModifier(src);
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_14 "Remove nomenclature where lineage is not present"
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.lineage")
+DO
+    obj_bsrc = Resolve("org.orgname.mod") WHERE obj_bsrc.subtype = "nomenclature";
+    RemoveModifier(obj_bsrc);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_15 "Generate unique deflines"
+FOR EACH TSEntry
+DO
+    AutodefId();
+DONE
+------------------------------------------------------------------------------
+MACRO Composite_UncultTaxTool_16 "Edit note-orgmod replace '[BankIt_uncultured16S_wizard]; [species_specific primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured16S_wizard]; [species_specific primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other";
+EditStringQual("obj.subname", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_17 "Edit note-orgmod replace '[BankIt_uncultured16S-23SIGS_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured16S-23SIGS_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other";
+EditStringQual("obj.subname", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_18 "Edit note-orgmod replace '[BankIt_uncultured23S_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured23S_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other";
+EditStringQual("obj.subname", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_19 "Edit note-orgmod replace '[BankIt_uncultured16S_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured16S_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other";
+EditStringQual("obj.subname", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_20 "Edit note-orgmod replace '[BankIt_uncultured16S-23SIGS_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured16S-23SIGS_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other";
+EditStringQual("obj.subname", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_21 "Edit note-orgmod replace '[BankIt_uncultured23S_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured23S_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other";
+EditStringQual("obj.subname", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_22 "Edit note-subsource replace '[BankIt_uncultured16S_wizard]; [species_specific primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured16S_wizard]; [species_specific primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("subtype") WHERE obj.subtype = "other";
+EditStringQual("obj.name", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_23 "Edit note-subsource replace '[BankIt_uncultured16S-23SIGS_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured16S-23SIGS_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("subtype") WHERE obj.subtype = "other";
+EditStringQual("obj.name", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_24 "Edit note-subsource replace '[BankIt_uncultured23S_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured23S_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("subtype") WHERE obj.subtype = "other";
+EditStringQual("obj.name", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_25 "Edit note-subsource replace '[BankIt_uncultured16S_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured16S_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("subtype") WHERE obj.subtype = "other";
+EditStringQual("obj.name", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_26 "Edit note-subsource replace '[BankIt_uncultured16S-23SIGS_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured16S-23SIGS_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("subtype") WHERE obj.subtype = "other";
+EditStringQual("obj.name", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_27 "Edit note-subsource replace '[BankIt_uncultured23S_wizard]; [universal primers]' (case sensitive)  with '' where dbxref contains 'taxon' (case-sensitive)"
+VAR
+find_text = %[BankIt_uncultured23S_wizard]; [universal primers]%
+repl_text = %%
+location = "anywhere"
+case_sensitive = %true%
+is_regex = %false%
+contains1 = %taxon%
+FOR EACH BioSource
+WHERE CONTAINS("org.db.db",contains1,true,false,false,false,false)
+DO
+obj = Resolve("subtype") WHERE obj.subtype = "other";
+EditStringQual("obj.name", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_28 "Remove note-orgmod where note-orgmod is empty"
+FOR EACH BioSource
+DO
+    obj_bsrc = Resolve("org.orgname.mod") WHERE obj_bsrc.subtype = "other" AND obj_bsrc.subname = "";
+    RemoveModifier(obj_bsrc);
+DONE
+---------------------------------------------------
+MACRO Composite_UncultTaxTool_29 "Remove note-subsource where note-subsource is empty"
+FOR EACH BioSource
+DO
+    obj_bsrc = Resolve("subtype") WHERE obj_bsrc.subtype = "other" AND obj_bsrc.name = "";
+    RemoveModifier(obj_bsrc);
+DONE
+---------------------------------------------------
+
+
+

@@ -1,0 +1,6 @@
+# Makefile.in
+
+LIB_PROJ = w_snp_ld
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

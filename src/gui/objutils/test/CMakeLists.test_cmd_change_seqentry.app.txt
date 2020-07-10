@@ -1,0 +1,8 @@
+#############################################################################
+# $Id: CMakeLists.test_cmd_change_seqentry.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app( test_cmd_change_seqentry)
+  NCBI_sources(test_cmd_change_seqentry)
+  NCBI_uses_toolkit_libraries(gui_objutils)
+NCBI_end_app()

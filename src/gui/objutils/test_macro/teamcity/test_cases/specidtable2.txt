@@ -1,0 +1,7 @@
+sequence	specimen-voucher-specid	specimen-voucher-inst
+KY569556	75C238	WABG
+KY569557		LYON
+KY569558	Morden1196	HAW
+KY569559	75C238	
+KY569560		
+KY569561	Morden1196	HAW

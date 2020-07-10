@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbithr_native.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbithr_native)
+  NCBI_sources(test_ncbithr_native)
+  NCBI_requires(MT)
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_add_test(test_ncbithr_native)
+  NCBI_add_test(test_ncbithr_native -favorwriters)
+  NCBI_project_watchers(grichenk)
+NCBI_end_app()
+

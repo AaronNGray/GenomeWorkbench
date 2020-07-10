@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.rowset.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(odbc95_rowset)
+  NCBI_sources(rowset common)
+  NCBI_add_test(test-odbc95 odbc95_rowset)
+NCBI_end_app()
+

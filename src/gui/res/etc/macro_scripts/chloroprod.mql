@@ -1,0 +1,209 @@
+MACRO chloroprod_001 "Edit protein name replace 'rps' with 'ribosomal protein S'"
+VAR
+    find_text = "rps"
+    repl_text = "ribosomal protein S"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_002 "Edit protein name replace 'rpl' with 'ribosomal protein L'"
+VAR
+    find_text = "rpl"
+    repl_text = "ribosomal protein L"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_003 "Edit protein name replace 'psb' with 'Psb'"
+VAR
+    find_text = "psb"
+    repl_text = "Psb"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_004 "Edit protein name replace 'psa' with 'Psa'"
+VAR
+    find_text = "psa"
+    repl_text = "Psa"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_005 "Edit protein name replace 'atp' with 'Atp'"
+VAR
+    find_text = "atp"
+    repl_text = "Atp"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_006 "Edit protein name replace 'cem' with 'Cem'"
+VAR
+    find_text = "cem"
+    repl_text = "Cem"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_007 "Edit protein name replace 'inf' with 'Inf'"
+VAR
+    find_text = "inf"
+    repl_text = "Inf"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_008 "Edit protein name replace 'ndh' with 'Ndh'"
+VAR
+    find_text = "ndh"
+    repl_text = "Ndh"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_009 "Edit protein name replace 'matK' with 'maturase K'"
+VAR
+    find_text = "matK"
+    repl_text = "maturase K"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_010 "Edit protein name replace 'pet' with 'Pet'"
+VAR
+    find_text = "pet"
+    repl_text = "Pet"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_011 "Edit protein name replace 'clp' with 'Clp'"
+VAR
+    find_text = "clp"
+    repl_text = "Clp"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_012 "Edit protein name replace 'ycf' with 'Ycf'"
+VAR
+    find_text = "ycf"
+    repl_text = "Ycf"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_013 "Edit protein name replace 'rpo' with 'Rpo'"
+VAR
+    find_text = "rpo"
+    repl_text = "Rpo"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_014 "Edit rRNA product replace 'rrn16' with '16S rRNA'"
+VAR
+    find_text = "rrn16"
+    repl_text = "16S rRNA"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_015 "Edit rRNA product replace 'rrn23' with '23S rRNA'"
+VAR
+    find_text = "rrn23"
+    repl_text = "23S rRNA"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_016 "Edit rRNA product replace 'rrn4.5' with '4.5S rRNA'"
+VAR
+    find_text = "rrn4.5"
+    repl_text = "4.5S rRNA"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_017 "Edit protein name replace 'accD' with 'AccD'"
+VAR
+    find_text = "accD"
+    repl_text = "AccD"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_018 "Edit protein name replace 'ccsA' with 'CcsA'"
+VAR
+    find_text = "ccsA"
+    repl_text = "CcsA"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO chloroprod_019 "Edit protein name replace 'cob' with 'cytochrome b'"
+VAR
+    find_text = "cob"
+    repl_text = "cytochrome b"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------

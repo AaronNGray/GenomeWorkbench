@@ -1,0 +1,10 @@
+# $Id: Makefile.in 571326 2018-09-25 13:20:50Z ludwigf $
+
+# Meta-makefile (object utilities)
+##################################
+
+LIB_PROJ = xobjimport
+SUB_PROJ = unit_test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

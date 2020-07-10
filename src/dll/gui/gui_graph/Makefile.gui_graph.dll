@@ -1,0 +1,11 @@
+# $Id: Makefile.gui_graph.dll 42821 2019-04-18 19:32:56Z joukovv $
+
+DLL = gui_graph
+
+HOSTED_LIBS    = gui_graph
+
+DEPENDENCIES   = gui_utils \
+                 ncbi_core
+
+CPPFLAGS = -DNCBI_GUIGRAPH_EXPORTS
+

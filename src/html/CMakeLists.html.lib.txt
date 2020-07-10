@@ -1,0 +1,14 @@
+#############################################################################
+# $Id: CMakeLists.html.lib.txt 593496 2019-09-19 15:43:28Z gouriano $
+#############################################################################
+
+
+NCBI_begin_lib(xhtml)
+  NCBI_sources(
+    node html htmlhelper page pager selection components commentdiag
+    indentstream html_exception writer_htmlenc
+  )
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_project_watchers(ivanov)
+NCBI_end_lib()
+

@@ -1,0 +1,8 @@
+#############################################################################
+# $Id: CMakeLists.w_snp_utils.lib.txt 43831 2019-09-07 02:33:30Z vakatov $
+#############################################################################
+
+NCBI_begin_lib(w_snp_utils)
+  NCBI_sources(utils)
+  NCBI_uses_toolkit_libraries(xncbi seqset)
+NCBI_end_lib()

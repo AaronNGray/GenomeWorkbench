@@ -1,0 +1,10 @@
+# $Id: Makefile.ncbi_validator.dll 421311 2013-12-11 14:05:59Z bollin $
+
+DLL = ncbi_validator
+
+HOSTED_LIBS    = xvalidate
+
+DEPENDENCIES   = ncbi_core ncbi_general ncbi_pub ncbi_seq ncbi_seqext
+
+CPPFLAGS = -DNCBI_VALIDATOR_EXPORTS
+

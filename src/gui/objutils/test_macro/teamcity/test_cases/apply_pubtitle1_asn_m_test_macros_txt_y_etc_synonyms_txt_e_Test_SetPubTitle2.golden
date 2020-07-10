@@ -1,0 +1,167 @@
+Seq-entry ::= seq {
+  id {
+    other {
+      accession "NR_137304",
+      version 1
+    },
+    gi 1035684594
+  },
+  descr {
+    title "Trichoderma afroharzianum CBS 124620 ITS region; from TYPE material.",
+    source {
+      genome genomic,
+      org {
+        taxname "Trichoderma afroharzianum",
+        db {
+          {
+            db "taxon",
+            tag id 1567482
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Trichoderma",
+            species "afroharzianum"
+          },
+          attrib "specified",
+          lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Hypocreomycetidae; Hypocreales; Hypocreaceae; Trichoderma",
+          gcode 1,
+          mgcode 4,
+          div "PLN"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic
+    },
+    pub {
+      pub {
+        pmid 234567,
+        article {
+          title {
+            name "Neuropharmacologic control of neuroendocrine function",
+            abr "abbreviated title, new title"
+          },
+          authors {
+            names std {
+              {
+                name name {
+                  last "Frohman",
+                  first "L",
+                  initials "L.A."
+                }
+              },
+              {
+                name name {
+                  last "Stachura",
+                  first "M",
+                  initials "M.E."
+                }
+              }
+            }
+          },
+          from journal {
+            title {
+              iso-jta "Metab. Clin. Exp.",
+              ml-jta "Metabolism",
+              issn "0026-0495",
+              name "Metabolism: clinical and experimental"
+            },
+            imp {
+              date std {
+                year 1975,
+                month 2
+              },
+              volume "24",
+              issue "2",
+              pages "211-234",
+              language "eng",
+              pubstatus ppublish,
+              history {
+                {
+                  pubstatus pubmed,
+                  date std {
+                    year 1975,
+                    month 2,
+                    day 1
+                  }
+                },
+                {
+                  pubstatus medline,
+                  date std {
+                    year 1975,
+                    month 2,
+                    day 1,
+                    hour 0,
+                    minute 1
+                  }
+                },
+                {
+                  pubstatus other,
+                  date std {
+                    year 1975,
+                    month 2,
+                    day 1,
+                    hour 0,
+                    minute 0
+                  }
+                }
+              }
+            }
+          },
+          ids {
+            pubmed 234567,
+            pii "0026-0495(75)90023-2"
+          }
+        }
+      }
+    },
+    pub {
+      pub {
+        gen {
+          cit "Unpublished",
+          authors {
+            names std {
+              {
+                name name {
+                  last "Kalmar",
+                  first "Zoltan",
+                  initials "Z."
+                }
+              },
+              {
+                name name {
+                  last "Balogh",
+                  first "Abel",
+                  initials "A."
+                }
+              }
+            }
+          },
+          title "Some tentative title"
+        }
+      }
+    },
+    create-date std {
+      year 2016,
+      month 6,
+      day 10
+    },
+    update-date std {
+      year 2016,
+      month 12,
+      day 27
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 589,
+    seq-data ncbi2na '9A2A34F162FC41D50150EE06F1407BE5DA6A377956AE6D9255A14299
+5968A141401DF3ECC55766AFFFCC37897DDA65DDB29BF600E0D007F41068DDFAF7A4D8E0819260
+398C2C3B83E483D2E0D360DFE0644F99594B3DE9A9397B589B4FD0576055D6AAB69BEA8DA5797E
+9AE96DD60312E9ADD9649775E64B2FE44764DA899A66D4496F011507DE03BE1768D2B283159E07
+C24CC0'H
+  }
+}

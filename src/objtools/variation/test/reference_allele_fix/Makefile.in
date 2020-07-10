@@ -1,0 +1,10 @@
+# $Id: Makefile.in 454750 2014-12-17 19:36:57Z holmesbr $
+# Meta-makefile("objtools" project)
+#################################
+    
+REQUIRES = objects
+ 
+EXPENDABLE_APP_PROJ = test-reference_allele_fix
+   
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

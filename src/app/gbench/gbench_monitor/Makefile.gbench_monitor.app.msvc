@@ -1,0 +1,5 @@
+[Linker]
+subSystem 			= 2
+OutputFile          = $(OutDir)/gbench/bin/gbench_monitor.exe
+ProgramDatabaseFile = $(OutDir)/gbench/bin/gbench_monitor.pdb
+

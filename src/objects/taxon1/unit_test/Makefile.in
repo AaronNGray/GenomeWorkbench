@@ -1,0 +1,6 @@
+# $Id: Makefile.in 537868 2017-06-05 17:56:55Z vakatov $
+
+APP_PROJ = taxon1_unit_test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

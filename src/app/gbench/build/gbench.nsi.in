@@ -1,0 +1,764 @@
+; $Id: gbench.nsi.in 39836 2017-11-09 19:13:37Z evgeniev $
+;--------------------------------
+;Include Modern UI
+!include "MUI.nsh"
+
+; Next Includes commented out - no more needed
+; All necessary replacements are done at building step
+;!include strrep.nsh
+;!include replaceinfile.nsh
+
+
+;--------------------------------
+;Debugging on/off
+;!define DEBUG_MODE
+
+;--------------------------------
+;Definitions
+!define GBENCH_NAME	    "Genome Workbench"
+!define GBENCH_PATH     "@INPUT_PATH@"
+!define VER_MAJOR		@VERSION_MAJOR@
+!define VER_MINOR		@VERSION_MINOR@
+!define VER_REVISION	@VERSION_REVISION@
+!define VER_BUILT		@VERSION_BUILD_DATE@
+!define VER_ARCH        @VERSION_ARCH@
+
+!define DOTNET_VERSION  "3.5.0"
+;!define DOTNET_URL "http://www.microsoft.com/downloads/info.aspx?na=90&p=&SrcDisplayLang=en&SrcCategoryId=&SrcFamilyId=0856eacb-4362-4b0d-8edd-aab15c5e04f5&u=http%3a%2f%2fdownload.microsoft.com%2fdownload%2f5%2f6%2f7%2f567758a3-759e-473e-bf8f-52154438565a%2fdotnetfx.exe"
+!define DOTNET_URL "http://download.microsoft.com/download/7/0/3/703455ee-a747-4cc8-bd3e-98a615c3aedb/dotNetFx35setup.exe"
+
+!if "${VER_ARCH}" == "64"
+    !define GBENCH_DIRNAME "${GBENCH_NAME} x64"
+    !define PROGFILES $PROGRAMFILES64
+    !define PLATFFIX "x64"
+!else
+    !define GBENCH_DIRNAME "${GBENCH_NAME}"
+    !define PROGFILES $PROGRAMFILES
+    !define PLATFFIX "win32"
+!endif
+
+!if "${VER_ARCH}" == "64"
+    !define CACHE_FOLDER	"$APPDATA\GenomeWorkbench2\cache64"
+!else
+    !define CACHE_FOLDER	"$APPDATA\GenomeWorkbench2\cache"
+!endif
+
+!define INSTALL_ADMIN "${PROGFILES}\${GBENCH_DIRNAME}"
+!define INSTALL_USER_DIR "${GBENCH_DIRNAME}"
+
+!define GBENCH_BIN  	"bin"
+!define GBENCH_ETC  	"etc"
+!define GBENCH_PACKAGES "packages"
+!define GBENCH_SHARE    "share"
+!define GBENCH_RADAR    "pkg_radar"
+!define GBENCH_PROTEUS  "pkg_proteus"
+
+!define VER_FILE		"${VER_MAJOR}${VER_MINOR}${VER_REVISION}"
+!define VER_DISPLAY		"${VER_MAJOR}.${VER_MINOR}.${VER_REVISION}"
+
+!define GBENCH_INI      "$APPDATA\GenomeWorkbench2\gbench.ini"
+
+!define GBENCH_ASN      "$APPDATA\GenomeWorkbench2\gbench.asn"
+
+!define MNFT_FILE       "Microsoft.VC80.CRT.manifest"
+
+
+; different-version maintenance page
+!define RC_MAINTENANCE_NE "gbench-res1.ini"
+
+; same-version maintenance page with network configurator option
+!define RC_MAINTENANCE_EQ "gbench-res2.ini"
+
+; reqest user exec level
+RequestExecutionLevel user
+
+;--------------------------------
+!ifdef DEBUG_MODE
+    !define DEBUG_SKIP_FILES
+!endif
+;--------------------------------
+;General
+  ;Name and file
+  Name "${GBENCH_NAME}"
+  OutFile "gbench-${PLATFFIX}-${VER_MAJOR}.${VER_MINOR}.${VER_REVISION}.exe"
+
+  ;Default installation folder
+  InstallDir "${INSTALL_ADMIN}"
+
+  ;Get installation folder from registry if available
+  InstallDirRegKey HKCU "Software\NCBI\${GBENCH_NAME}" ""
+
+;--------------------------------
+;Interface Settings
+
+  !define MUI_ABORTWARNING
+  !define MUI_COMPONENTSPAGE_SMALLDESC
+  !define MUI_WELCOMEPAGE_TITLE "Welcome to the ${GBENCH_NAME} Setup Wizard"
+
+;--------------------------------
+;Pages
+
+  !insertmacro MUI_PAGE_WELCOME
+  !insertmacro MUI_PAGE_LICENSE "license.txt"
+
+  ; custom install / uninstall
+  Page custom PageReinstall PageLeaveReinstall
+
+  !insertmacro MUI_PAGE_COMPONENTS
+
+  !define MUI_PAGE_CUSTOMFUNCTION_PRE DirectoryPre
+  !insertmacro MUI_PAGE_DIRECTORY
+
+  !insertmacro MUI_PAGE_INSTFILES
+
+  !define MUI_FINISHPAGE_RUN "$INSTDIR\${GBENCH_BIN}\gbench.exe"
+  !define MUI_FINISHPAGE_NOREBOOTSUPPORT
+  !insertmacro MUI_PAGE_FINISH
+
+  !insertmacro MUI_UNPAGE_CONFIRM
+  !insertmacro MUI_UNPAGE_INSTFILES
+
+;--------------------------------
+;Languages
+  !insertmacro MUI_LANGUAGE "English"
+
+;--------------------------------
+;Reserve Files
+  ;These files should be inserted before other files in the data block
+  ReserveFile ${RC_MAINTENANCE_NE}
+  ReserveFile ${RC_MAINTENANCE_EQ}
+  !insertmacro MUI_RESERVEFILE_INSTALLOPTIONS
+
+# DotNET version checking macro.
+# Written by AnarkiNet(AnarkiNet@gmail.com) originally, modified by eyal0 (for use in http://www.sourceforge.net/projects/itwister), hacked up by PSIMS APS MEDILINK 20090703 for dotnet 3.5
+# Downloads and runs the Microsoft .NET Framework version 2.0 Redistributable and runs it if the user does not have the correct version.
+# To use, call the macro with a string:
+# 'CheckDotNET3Point5'
+# All register variables are saved and restored by CheckDotNet
+# No output
+ 
+!macro CheckDotNET3Point5
+  DetailPrint "Checking your .NET Framework version..."
+  ;callee register save
+  Push $0
+  Push $1
+  Push $2
+  Push $3
+  Push $4
+  Push $5
+  Push $6 ;backup of intsalled ver
+  Push $7 ;backup of DoNetReqVer
+  Push $8
+ 
+  StrCpy $7 ${DOTNET_VERSION}
+ 
+  loop:
+  EnumRegKey $1 HKLM "SOFTWARE\Microsoft\NET Framework Setup\NDP" $8
+  StrCmp $1 "" done ;jump to end if no more registry keys
+  IntOp $8 $8 + 1
+  StrCpy $0 $1
+  goto loop
+  done:
+ 
+  ${If} $0 == 0
+    DetailPrint ".NET Framework not found, download is required for program to run."
+    Goto NoDotNET
+  ${EndIf}
+ 
+  StrCpy $1 $0 1 1
+ 
+  ${If} $1 > 3
+    Goto NewDotNET
+  ${EndIf}
+ 
+  StrCpy $2 $0 1 3
+ 
+  ${If} $1 == 3
+    ${If} $2 > 4
+      Goto NewDotNET
+    ${EndIf}
+  ${EndIf}
+ 
+  StrCpy $3 $0 "" 5
+ 
+  ${If} $3 == ""
+    StrCpy $3 "0"
+  ${EndIf}
+ 
+  StrCpy $6 "$1.$2.$3"
+ 
+  Goto OldDotNET
+ 
+ 
+  ${If} $0 < 0
+    DetailPrint ".NET Framework Version found: $6, but is older than the required version: $7"
+    Goto OldDotNET
+  ${Else}
+    DetailPrint ".NET Framework Version found: $6, equal or newer to required version: $7."
+    Goto NewDotNET
+  ${EndIf}
+ 
+NoDotNET:
+    MessageBox MB_YESNOCANCEL|MB_ICONEXCLAMATION \
+    ".NET Framework not installed.$\nRequired Version: $7 or greater.$\nDownload .NET Framework version from www.microsoft.com?" \
+    /SD IDYES IDYES DownloadDotNET IDNO NewDotNET
+    goto GiveUpDotNET ;IDCANCEL
+OldDotNET:
+    MessageBox MB_YESNOCANCEL|MB_ICONEXCLAMATION \
+    "Your .NET Framework version: $6.$\nRequired Version: $7 or greater.$\nDownload .NET Framework version from www.microsoft.com?" \
+    /SD IDYES IDYES DownloadDotNET IDNO NewDotNET
+    goto GiveUpDotNET ;IDCANCEL
+ 
+DownloadDotNET:
+  DetailPrint "Beginning download of latest .NET Framework version."
+  NSISDL::download ${DOTNET_URL} "$TEMP\dotNetFx35setup.exe"
+  DetailPrint "Completed download."
+  Pop $0
+  ${If} $0 == "cancel"
+    MessageBox MB_YESNO|MB_ICONEXCLAMATION \
+    "Download cancelled.  Continue Installation?" \
+    IDYES NewDotNET IDNO GiveUpDotNET
+  ${ElseIf} $0 != "success"
+    MessageBox MB_YESNO|MB_ICONEXCLAMATION \
+    "Download failed:$\n$0$\n$\nContinue Installation?" \
+    IDYES NewDotNET IDNO GiveUpDotNET
+  ${EndIf}
+  DetailPrint "Pausing installation while downloaded .NET Framework installer runs."
+  ExecWait "$TEMP\dotNetFx35setup.exe /qb"
+  DetailPrint "Completed .NET Framework install/update. Removing .NET Framework installer."
+  Delete "$TEMP\dotNetFx35setup.exe"
+  DetailPrint ".NET Framework installer removed."
+  goto NewDotNet
+ 
+GiveUpDotNET:
+  Abort "Installation cancelled by user."
+ 
+NewDotNET:
+  DetailPrint "Proceeding with remainder of installation."
+ 
+  ; register re-load, should be popped in reverse order
+  Pop $8
+  Pop $7 ;backup of DoNetReqVer
+  Pop $6 ;backup of intsalled ver
+  Pop $5
+  Pop $4
+  Pop $3
+  Pop $2
+  Pop $1
+  Pop $0
+ 
+!macroend
+
+
+;--------------------------------
+;Installer Sections
+;
+Section "${GBENCH_NAME} application (required)" SecGbench
+  SetDetailsPrint textonly
+  DetailPrint "Installing Core Files..."
+  SetDetailsPrint listonly
+  SectionIn 1 2 3 RO
+  SetOutPath "$INSTDIR"
+  SetOverwrite on
+  
+  ; dotnet check
+  SectionIn RO
+  !insertmacro CheckDotNET3Point5
+  
+  ; bin
+  SetDetailsPrint textonly
+  DetailPrint "Installing main application..."
+  SetDetailsPrint listonly
+  SetOutPath $INSTDIR\${GBENCH_BIN}
+  !ifndef DEBUG_SKIP_FILES
+    File ${GBENCH_PATH}\${GBENCH_BIN}\*.exe
+    File ${GBENCH_PATH}\${GBENCH_BIN}\*.dll
+    File ${GBENCH_PATH}\${GBENCH_BIN}\*.manifest
+  !endif
+
+  ; etc
+  SetDetailsPrint textonly
+  DetailPrint "Installing configuration files..."
+  SetDetailsPrint listonly
+  SetOutPath $INSTDIR\${GBENCH_ETC}
+  !ifndef DEBUG_SKIP_FILES
+    File /r ${GBENCH_PATH}\${GBENCH_ETC}\*.*
+  !endif
+  
+  ;IfFileExists ${GBENCH_ASN} 0 +2
+  ;  CopyFiles "$INSTDIR\${GBENCH_ETC}\gbench.asn" ${GBENCH_ASN} 
+
+  ; plugins
+  SetDetailsPrint textonly
+  DetailPrint "Installing default packages..."
+  SetDetailsPrint listonly
+  
+  !ifndef DEBUG_SKIP_FILES
+	SetOutPath $INSTDIR\${GBENCH_PACKAGES}\alignment
+    File ${GBENCH_PATH}\${GBENCH_PACKAGES}\alignment\*.*
+    
+    SetOutPath $INSTDIR\${GBENCH_PACKAGES}\sequence
+    File ${GBENCH_PATH}\${GBENCH_PACKAGES}\sequence\*.*
+       
+    SetOutPath $INSTDIR\${GBENCH_PACKAGES}\sequence_edit
+    File ${GBENCH_PATH}\${GBENCH_PACKAGES}\sequence_edit\*.*
+    
+    SetOutPath $INSTDIR\${GBENCH_PACKAGES}\snp
+    File ${GBENCH_PATH}\${GBENCH_PACKAGES}\snp\*.*
+   
+  !endif
+  
+  ; adjusting access rights for manifest files
+  SetDetailsPrint textonly
+  DetailPrint "Setting access rights for manifests..."
+  SetDetailsPrint listonly
+
+  AccessControl::GrantOnFile $INSTDIR\${GBENCH_BIN}\${MNFT_FILE} "(BU)" "GenericRead + GenericWrite"
+  
+  AccessControl::GrantOnFile $INSTDIR\${GBENCH_PACKAGES}\alignment\${MNFT_FILE} "(BU)" "GenericRead + GenericWrite"
+  AccessControl::GrantOnFile $INSTDIR\${GBENCH_PACKAGES}\sequence\${MNFT_FILE} "(BU)" "GenericRead + GenericWrite"
+  AccessControl::GrantOnFile $INSTDIR\${GBENCH_PACKAGES}\sequence_edit\${MNFT_FILE} "(BU)" "GenericRead + GenericWrite"
+  AccessControl::GrantOnFile $INSTDIR\${GBENCH_PACKAGES}\snp\${MNFT_FILE} "(BU)" "GenericRead + GenericWrite"
+  
+  ; shared resources
+  SetDetailsPrint textonly
+  DetailPrint "Installing shared files..."
+  SetDetailsPrint listonly
+  SetOutPath $INSTDIR\${GBENCH_SHARE}
+  !ifndef DEBUG_SKIP_FILES
+    File /r ${GBENCH_PATH}\${GBENCH_SHARE}\*.*
+  !endif
+
+  SetDetailsPrint both
+SectionEnd
+
+!ifdef INTERNAL_INSTALL
+
+SectionGroup /e "Optional Plugins" SecPlugins
+
+Section "Proteus" SecProteus	
+	SetDetailsPrint textonly
+	DetailPrint "Installing Proteus..."
+	SetDetailsPrint listonly	
+	SetOutPath "$INSTDIR"
+	SetOverwrite on
+	SetOutPath $INSTDIR\${GBENCH_PACKAGES}\${GBENCH_PROTEUS}
+    File /nonfatal /r ${GBENCH_PATH}\${GBENCH_PACKAGES}\${GBENCH_PROTEUS}\*.*
+    SetDetailsPrint both
+SectionEnd
+
+Section "Radar" SecRadar	
+	SetDetailsPrint textonly
+	DetailPrint "Installing Radar..."
+	SetDetailsPrint listonly	
+	SetOutPath "$INSTDIR"
+	SetOverwrite on
+	SetOutPath $INSTDIR\${GBENCH_PACKAGES}\${GBENCH_RADAR}
+    File /nonfatal /r ${GBENCH_PATH}\${GBENCH_PACKAGES}\${GBENCH_RADAR}\*.*
+    SetDetailsPrint both
+SectionEnd
+SectionGroupEnd
+
+!endif
+
+Section -post
+	SetDetailsPrint textonly
+	DetailPrint "Registering plugins..."
+	SetDetailsPrint listonly
+	Call DoCleanCache
+
+	SetDetailsPrint textonly
+	DetailPrint "Creating Registry Keys..."
+	SetDetailsPrint listonly	
+	SetOutPath $INSTDIR
+	WriteRegStr HKCU "Software\NCBI\${GBENCH_NAME}" "" $INSTDIR
+	WriteRegDword HKCU "Software\NCBI\${GBENCH_NAME}" "VersionMajor" "${VER_MAJOR}"
+	WriteRegDword HKCU "Software\NCBI\${GBENCH_NAME}" "VersionMinor" "${VER_MINOR}"
+	WriteRegDword HKCU "Software\NCBI\${GBENCH_NAME}" "VersionRevision" "${VER_REVISION}"
+	WriteRegDword HKCU "Software\NCBI\${GBENCH_NAME}" "VersionBuild" "${VER_BUILT}"
+	WriteRegExpandStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "UninstallString" '"$INSTDIR\uninst-gbench.exe"'
+	WriteRegExpandStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "InstallLocation" "$INSTDIR"
+	WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "DisplayName" "${GBENCH_NAME}"
+	WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "DisplayIcon" "$INSTDIR\${GBENCH_BIN}\gbench.exe,0"
+	WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "DisplayVersion" "${VER_DISPLAY}"
+	WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "VersionMajor" "${VER_MAJOR}"
+	WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "VersionMinor" "${VER_MINOR}.${VER_REVISION}"
+	WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "URLInfoAbout" "http://www.ncbi.nlm.nih.gov/"
+	WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "NoModify" "1"
+	WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "NoRepair" "1"
+
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-project" "Extension" ".gbp"
+    WriteRegStr HKCU "Software\CLASSES\gbench.project" "" "Genome Workbench project file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.project\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.project\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.project\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbp" "" "gbench.project"
+    WriteRegStr HKCU "Software\CLASSES\.gbp" "Content Type" "application/x-gbench-project"
+    WriteRegStr HKCU "Software\CLASSES\.gbp\gbench.project" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbp\gbench.project\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-workspace" "Extension" ".gbw"
+    WriteRegStr HKCU "Software\CLASSES\gbench.workspace" "" "Genome Workbench workspace file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.workspace\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.workspace\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.workspace\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbw" "" "gbench.workspace"
+    WriteRegStr HKCU "Software\CLASSES\.gbw" "Content Type" "application/x-gbench-workspace"
+    WriteRegStr HKCU "Software\CLASSES\.gbw\gbench.workspace" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbw\gbench.workspace\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-plugin-message" "Extension" ".gbm"
+    WriteRegStr HKCU "Software\CLASSES\gbench.plugin" "" "Genome Workbench plugin message"
+    WriteRegStr HKCU "Software\CLASSES\gbench.plugin\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.plugin\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.plugin\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbm" "" "gbench.plugin"
+    WriteRegStr HKCU "Software\CLASSES\.gbm" "Content Type" "application/x-gbench-plugin-message"
+    WriteRegStr HKCU "Software\CLASSES\.gbm\gbench.plugin" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbm\gbench.plugin\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench" "Extension" ".gbench"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto" "" "Genome Workbench input file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbench" "" "gbench.auto"
+    WriteRegStr HKCU "Software\CLASSES\.gbench" "Content Type" "application/x-gbench"
+    WriteRegStr HKCU "Software\CLASSES\.gbench\gbench.auto" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbench\gbench.auto\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench" "Extension" ".gbench"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto" "" "Genome Workbench input file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbench" "" "gbench.auto"
+    WriteRegStr HKCU "Software\CLASSES\.gbench" "Content Type" "application/x-gbench"
+    WriteRegStr HKCU "Software\CLASSES\.gbench\gbench.auto" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbench\gbench.auto\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-asntext" "Extension" ".gbasntx"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asntext" "" "Genome Workbench ASN.1 text"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asntext\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asntext\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asntext\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbasntx" "" "gbench.asntext"
+    WriteRegStr HKCU "Software\CLASSES\.gbasntx" "Content Type" "application/x-gbench-asntext"
+    WriteRegStr HKCU "Software\CLASSES\.gbasntx\gbench.asntext" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbasntx\gbench.asntext\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-asnbin" "Extension" ".gbasnbn"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asnbin" "" "Genome Workbench ASN.1 binary"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asnbin\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asnbin\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asnbin\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbasnbn" "" "gbench.asnbin"
+    WriteRegStr HKCU "Software\CLASSES\.gbasnbn" "Content Type" "application/x-gbench-asnbin"
+    WriteRegStr HKCU "Software\CLASSES\.gbasnbn\gbench.asnbin" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbasnbn\gbench.asnbin\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-xml" "Extension" ".gbxml"
+    WriteRegStr HKCU "Software\CLASSES\gbench.xml" "" "Genome Workbench XML"
+    WriteRegStr HKCU "Software\CLASSES\gbench.xml\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.xml\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.xml\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbxml" "" "gbench.xml"
+    WriteRegStr HKCU "Software\CLASSES\.gbxml" "Content Type" "application/x-gbench-xml"
+    WriteRegStr HKCU "Software\CLASSES\.gbxml\gbench.xml" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbxml\gbench.xml\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-fasta" "Extension" ".gbfasta"
+    WriteRegStr HKCU "Software\CLASSES\gbench.fasta" "" "Genome Workbench FASTA format file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.fasta\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.fasta\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.fasta\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbfasta" "" "gbench.fasta"
+    WriteRegStr HKCU "Software\CLASSES\.gbfasta" "Content Type" "application/x-gbench-fasta"
+    WriteRegStr HKCU "Software\CLASSES\.gbfasta\gbench.fasta" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbfasta\gbench.fasta\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-newick" "Extension" ".gbnewic"
+    WriteRegStr HKCU "Software\CLASSES\gbench.newick" "" "Genome Workbench Newick format tree file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.newick\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.newick\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.newick\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbnewic" "" "gbench.newick"
+    WriteRegStr HKCU "Software\CLASSES\.gbnewic" "Content Type" "application/x-gbench-newick"
+    WriteRegStr HKCU "Software\CLASSES\.gbnewic\gbench.newick" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbnewic\gbench.newick\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-textalign" "Extension" ".gbtxaln"
+    WriteRegStr HKCU "Software\CLASSES\gbench.textalign" "" "Genome Workbench text format sequence alignment"
+    WriteRegStr HKCU "Software\CLASSES\gbench.textalign\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.textalign\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.textalign\shell\open\command" "" "$INSTDIR\${GBENCH_BIN}\gbench.exe $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbtxaln" "" "gbench.textalign"
+    WriteRegStr HKCU "Software\CLASSES\.gbtxaln" "Content Type" "application/x-gbench-textalign"
+    WriteRegStr HKCU "Software\CLASSES\.gbtxaln\gbench.textalign" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbtxaln\gbench.textalign\ShellNew" "" ""
+
+
+	;Create uninstaller
+	SetDetailsPrint textonly
+	DetailPrint "Creating Uninstaller..."
+	SetDetailsPrint listonly
+	WriteUninstaller "$INSTDIR\uninst-gbench.exe"
+	SetDetailsPrint both
+SectionEnd
+
+;-------------------------------------------------------
+; Shortcuts
+!ifndef NO_STARTMENUSHORTCUTS
+Section "Start Menu and Desktop Shortcuts" SecShortcuts
+  SetDetailsPrint textonly
+  DetailPrint "Installing Start Menu and Desktop Shortcuts..."
+  SetDetailsPrint listonly
+!else
+Section "Desktop Shortcut" SecShortcuts
+  SetDetailsPrint textonly
+  DetailPrint "Installing Desktop Shortcut..."
+  SetDetailsPrint listonly
+!endif
+  SectionIn 1 2 3
+  SetOutPath $INSTDIR
+!ifndef NO_STARTMENUSHORTCUTS
+  CreateDirectory "$SMPROGRAMS\${GBENCH_NAME}"
+  CreateShortCut "$SMPROGRAMS\${GBENCH_NAME}\${GBENCH_NAME}.lnk" "$INSTDIR\${GBENCH_BIN}\gbench.exe" ""
+;  CreateShortCut "$SMPROGRAMS\${GBENCH_NAME}\${GBENCH_NAME}-edit.lnk" "$INSTDIR\${GBENCH_BIN}\gbench.exe" "-edit"
+  CreateShortCut "$SMPROGRAMS\${GBENCH_NAME}\Uninstall ${GBENCH_NAME}.lnk" "$INSTDIR\uninst-gbench.exe"
+!endif
+  CreateShortCut "$DESKTOP\${GBENCH_NAME}.lnk" "$INSTDIR\${GBENCH_BIN}\gbench.exe"
+;  CreateShortCut "$DESKTOP\${GBENCH_NAME}-edit.lnk" "$INSTDIR\${GBENCH_BIN}\gbench.exe" "-edit" "" "" \
+;    SW_SHOWNORMAL "" "Sequence Submission Mode" 
+  SetDetailsPrint both
+SectionEnd
+
+
+
+;--------------------------------
+;Descriptions
+
+  ;Language strings
+  LangString DESC_SecGbench  ${LANG_ENGLISH} "${GBENCH_NAME} main application. This component is requered."
+  !ifdef INTERNAL_INSTALL
+    LangString DESC_SecPlugins ${LANG_ENGLISH} "Optional plugins."
+    LangString DESC_SecProteus ${LANG_ENGLISH} "Proteus."
+    LangString DESC_SecRadar   ${LANG_ENGLISH} "Radar."
+  !endif
+
+  ;Assign language strings to sections
+  !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
+  !insertmacro MUI_DESCRIPTION_TEXT ${SecGbench}  $(DESC_SecGbench)
+  !ifdef INTERNAL_INSTALL
+    !insertmacro MUI_DESCRIPTION_TEXT ${SecPlugins} $(DESC_SecPlugins)
+    !insertmacro MUI_DESCRIPTION_TEXT ${SecProteus} $(DESC_SecProteus)
+    !insertmacro MUI_DESCRIPTION_TEXT ${SecRadar}   $(DESC_SecRadar)
+  !endif
+  !insertmacro MUI_FUNCTION_DESCRIPTION_END
+
+;--------------------------------
+;Functions
+;
+Function .onInit
+	!insertmacro MUI_INSTALLOPTIONS_EXTRACT ${RC_MAINTENANCE_NE}
+	!insertmacro MUI_INSTALLOPTIONS_EXTRACT ${RC_MAINTENANCE_EQ}
+	
+	
+	
+FunctionEnd
+
+Function DirectoryPre
+    Push $R0
+    Push $R1
+
+    StrCmp $INSTDIR "${INSTALL_ADMIN}"  "" DirReady
+
+    ; Check first whether I am Administrator (some magic here)
+    ; look at http://forums.winamp.com/showthread.php?threadid=195020
+    System::Call "kernel32::GetModuleHandle(t 'shell32.dll') i .s"
+    System::Call "kernel32::GetProcAddress(i s, i 680) i .r0"
+    System::Call "::$0() i .r0"
+
+    IntCmp $0 0 "" "" DirReady
+
+    ; Check NCBI setup first
+    StrCpy $R1 "C:\Apps\User_Installs"
+
+    GetTempFileName $R0 $R1
+    IfFileExists $R0 0 +2
+        GoTo DirFound
+
+    StrCpy $R1 "C:\"
+
+    GetTempFileName $R0 $R1
+    IfFileExists $R0 0 +3
+        StrCpy $R1 "C:"
+        GoTo DirFound
+
+    StrCpy $R1 $LOCALAPPDATA
+
+    GetTempFileName $R0 $R1
+    IfFileExists $R0 0 +2
+        GoTo DirFound
+
+    StrCpy $R1 $PROFILE
+
+    GetTempFileName $R0 $R1
+    IfFileExists $R0 0 +2
+        GoTo DirFound
+
+    System::Call "kernel32::GetCurrentDirectory(i ${NSIS_MAX_STRLEN}, t .R1)"
+
+    GetTempFileName $R0 $R1
+    IfFileExists $R0 0 +2
+        GoTo DirFound
+
+    StrCpy $INSTDIR ""
+    GoTo DirReady
+
+    DirFound:
+    StrCpy $INSTDIR "$R1\${INSTALL_USER_DIR}"
+    Delete $R0
+
+    DirReady:
+    Pop $R1
+    Pop $R0
+
+    ClearErrors
+FunctionEnd
+
+Function DoCleanCache
+	IfFileExists ${CACHE_FOLDER}\*.* "" +2
+	RMDir /r ${CACHE_FOLDER}
+FunctionEnd
+
+Function PageReinstall
+	ReadRegStr $R0 HKCU "Software\NCBI\${GBENCH_NAME}" ""
+
+	StrCmp $R0 "" 0 +2
+	Abort
+
+	;Detect version
+	ReadRegDWORD $R0 HKCU "Software\NCBI\${GBENCH_NAME}" "VersionMajor"
+	IntCmp $R0 ${VER_MAJOR} minor_check new_version older_version
+	minor_check:
+	ReadRegDWORD $R0 HKCU "Software\NCBI\${GBENCH_NAME}" "VersionMinor"
+	IntCmp $R0 ${VER_MINOR} revision_check new_version older_version
+	revision_check:
+	ReadRegDWORD $R0 HKCU "Software\NCBI\${GBENCH_NAME}" "VersionRevision"
+	IntCmp $R0 ${VER_REVISION} build_check new_version older_version
+	build_check:
+	ReadRegDWORD $R0 HKCU "Software\NCBI\${GBENCH_NAME}" "VersionBuild"
+	IntCmp $R0 ${VER_BUILT} same_version new_version older_version
+
+	new_version:
+		!insertmacro MUI_INSTALLOPTIONS_WRITE ${RC_MAINTENANCE_NE} "Field 1" "Text" "An older version of ${GBENCH_NAME} is installed on your system. We recommended that you uninstall the current version before installing. Select the operation you want to perform and click Next to continue."
+		!insertmacro MUI_INSTALLOPTIONS_WRITE ${RC_MAINTENANCE_NE} "Field 2" "Text" "Uninstall before installing"
+		!insertmacro MUI_INSTALLOPTIONS_WRITE ${RC_MAINTENANCE_NE} "Field 3" "Text" "Do not uninstall ${GBENCH_NAME}"
+		!insertmacro MUI_HEADER_TEXT "Already Installed" "Choose how you want to install ${GBENCH_NAME}."
+		StrCpy $R0 "1"
+		
+		!insertmacro MUI_INSTALLOPTIONS_DISPLAY ${RC_MAINTENANCE_NE}
+		
+		Abort
+		
+	older_version:
+		!insertmacro MUI_INSTALLOPTIONS_WRITE ${RC_MAINTENANCE_NE} "Field 1" "Text" "A newer version of ${GBENCH_NAME} is already installed. We do not recommended that you install an older version. If you really want to install this older version, we recommend that you uninstall the current version first. Select the operation you want to perform and click Next to continue."
+		!insertmacro MUI_INSTALLOPTIONS_WRITE ${RC_MAINTENANCE_NE} "Field 2" "Text" "Uninstall before installing"
+		!insertmacro MUI_INSTALLOPTIONS_WRITE ${RC_MAINTENANCE_NE} "Field 3" "Text" "Do not uninstall ${GBENCH_NAME}"
+		!insertmacro MUI_HEADER_TEXT "Already Installed" "Choose how you want to install ${GBENCH_NAME}."
+		StrCpy $R0 "1"
+		
+		!insertmacro MUI_INSTALLOPTIONS_DISPLAY ${RC_MAINTENANCE_NE}
+		
+		Abort
+
+	same_version:
+		!insertmacro MUI_INSTALLOPTIONS_WRITE ${RC_MAINTENANCE_EQ} "Field 1" "Text" "${GBENCH_NAME} ${VER_DISPLAY} is already installed. Select the operation you want to perform and click Next to continue."
+		!insertmacro MUI_INSTALLOPTIONS_WRITE ${RC_MAINTENANCE_EQ} "Field 2" "Text" "Add/Reinstall components"
+		!insertmacro MUI_INSTALLOPTIONS_WRITE ${RC_MAINTENANCE_EQ} "Field 3" "Text" "Uninstall ${GBENCH_NAME}"
+		!insertmacro MUI_HEADER_TEXT "Already Installed" "Choose the maintenance option to perform."
+		StrCpy $R0 "2"
+		
+		!insertmacro MUI_INSTALLOPTIONS_DISPLAY ${RC_MAINTENANCE_EQ}	
+		
+		Abort
+FunctionEnd
+
+Function PageLeaveReinstall
+  StrCmp $R0 "2" 0 +3
+    !insertmacro MUI_INSTALLOPTIONS_READ $R1 ${RC_MAINTENANCE_EQ} "Field 2" "State"
+    Goto +2
+    !insertmacro MUI_INSTALLOPTIONS_READ $R1 ${RC_MAINTENANCE_NE} "Field 2" "State"
+
+  StrCmp $R0 "1" 0 +2
+    StrCmp $R1 "1" reinst_uninstall reinst_done
+
+  StrCmp $R0 "2" 0 +3
+    StrCmp $R1 "1" reinst_done reinst_uninstall
+
+  reinst_uninstall:
+  ReadRegStr $R1 HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "UninstallString"
+
+  ;Run uninstaller
+  HideWindow
+    ClearErrors
+    ExecWait '$R1 _?=$INSTDIR'
+
+    IfErrors no_remove_uninstaller
+    IfFileExists "$INSTDIR\${GBENCH_BIN}\gbench.exe" no_remove_uninstaller
+
+      Delete $R1
+      RMDir $INSTDIR
+
+    no_remove_uninstaller:
+
+  StrCmp $R0 "2" 0 +2
+    Quit
+
+  BringToFront
+
+  reinst_done:
+FunctionEnd
+
+
+;--------------------------------
+;Uninstaller Section
+;
+Section "Uninstall"
+  RMDir /r "$SMPROGRAMS\${GBENCH_NAME}"
+  Delete "$DESKTOP\${GBENCH_NAME}.lnk"
+
+  SetDetailsPrint textonly
+  DetailPrint "Uninstalling main application..."
+  SetDetailsPrint listonly
+  RMDir /r $INSTDIR\${GBENCH_BIN}
+
+  SetDetailsPrint textonly
+  DetailPrint "Uninstalling configuration files..."
+  SetDetailsPrint listonly
+  RMDir /r $INSTDIR\${GBENCH_ETC}
+
+  SetDetailsPrint textonly
+  DetailPrint "Uninstalling plugins..."
+  SetDetailsPrint listonly
+  RMDir /r $INSTDIR\${GBENCH_PACKAGES}
+
+  SetDetailsPrint textonly
+  DetailPrint "Uninstalling shared files..."
+  SetDetailsPrint listonly
+  RMDir /r $INSTDIR\${GBENCH_SHARE}
+
+  SetDetailsPrint textonly
+  DetailPrint "Uninstalling extra packages..."
+  SetDetailsPrint listonly
+  IfFileExists $INSTDIR\${GBENCH_PACKAGES}\${GBENCH_RADAR}\*.* "" +2
+  RMDir /r $INSTDIR\${GBENCH_PACKAGES}\${GBENCH_RADAR}
+  IfFileExists $INSTDIR\${GBENCH_PACKAGES}\${GBENCH_PROTEUS}\*.* "" +2
+  RMDir /r $INSTDIR\${GBENCH_PACKAGES}\${GBENCH_PROTEUS}
+
+  IfFileExists ${CACHE_FOLDER}\*.* "" +2
+  RMDir /r ${CACHE_FOLDER}
+
+  Delete "$INSTDIR\uninst-gbench.exe"
+  RMDir "$INSTDIR"
+
+  SetDetailsPrint textonly
+  DetailPrint "Removing registry keys..."
+  SetDetailsPrint listonly
+  DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}"
+  DeleteRegKey HKCU "Software\NCBI\${GBENCH_NAME}"
+
+  SetDetailsPrint both
+SectionEnd
+

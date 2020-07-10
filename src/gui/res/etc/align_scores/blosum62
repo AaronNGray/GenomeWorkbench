@@ -1,0 +1,18 @@
+[Info]
+Name = BLOSUM62
+Description =     Matrix made by matblas from blosum62.iij\
+    BLOSUM Clustered Scoring Matrix in 1/2 Bit Units\
+    Blocks Database = /data/blocks_5.0/blocks.dat\
+    Cluster Percentage: >= 62\
+    Entropy =   0.6979, Expected =  -0.5209
+Method = MatrixScore
+Type = Protein
+[Table]
+UseConsensus = false
+ConsensusMinimumValue = -3.29
+ConsensusMaximumValue = 1
+NonConsensusMinimumValue = -4
+NonConsensusMaximumValue = 11
+MinimumColor = yellow3
+MaximumColor = royal blue
+Builtin = blosum62

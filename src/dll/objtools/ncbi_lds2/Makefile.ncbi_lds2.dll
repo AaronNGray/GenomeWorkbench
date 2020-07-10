@@ -1,0 +1,10 @@
+# $Id: Makefile.ncbi_lds2.dll 197195 2010-07-14 16:15:14Z grichenk $
+
+DLL = ncbi_lds2
+
+HOSTED_LIBS    = lds2
+
+DEPENDENCIES   = ncbi_core ncbi_general ncbi_seq ncbi_seqext sqlitewrapp
+
+CPPFLAGS = -DNCBI_LDS2_EXPORTS
+

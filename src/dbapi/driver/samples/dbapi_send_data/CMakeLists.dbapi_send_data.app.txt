@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.dbapi_send_data.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(dbapi_send_data)
+  NCBI_sources(dbapi_send_data)
+  NCBI_uses_toolkit_libraries(dbapi_sample_base)
+NCBI_end_app()
+

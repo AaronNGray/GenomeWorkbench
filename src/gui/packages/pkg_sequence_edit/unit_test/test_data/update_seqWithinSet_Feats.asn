@@ -1,0 +1,124 @@
+Seq-entry ::= seq {
+  id {
+    local str "KU145678"
+  },
+  descr {
+    user {
+      type str "CFastaReader",
+      data {
+        {
+          label str "DefLine",
+          data str ">KU145678"
+        }
+      }
+    },
+    user {
+      type str "OriginalID",
+      data {
+        {
+          label str "LocalId",
+          data str "KU145678"
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol na,
+    length 1387,
+    seq-data iupacna "CTTAACACATGCAAGTCGAGCGCCCCGCAAGGGGAGCGGCAGACGGGTGAGTAACG
+CGTGGGAATCTACCCTTTTCTACGGAATAACGCAGGGAAACTTGTGCTAATACCGTATAAGCCCTTCGGGGGAAAGAT
+TTATCGGGAAAGGATGAGCCCGCGTTGGATTAGCTAGTTGGTGGGGTAAAGGCCTACCAAGGCGACGATCCATAGCTG
+GTCTGAGAGGATGATCAGCCACATTGGGACTGAGACACGGCCCAAACTCCTACGGGAGGCAGCAGTGGGGAATATTGG
+GACAATGGGCGCAAGCCTGATCCAGCCATGCCGCGTGAGTGATGAAGGCCCTAGGGTTGTAAAGCTCTTTCACCGGTG
+AAGATAATGACGGTAACCGGAGAAGAAGCCCCGGCTAACTTCGTGCCAGCAGCCGCGGTAATACGAAGGGGGCTAGCG
+TTGTTCGGAATTACTGGGCGTAAAGCGCACGTAGGCGGATTGTTAAGTGAGGGGTGAAATCCCAGGGCTCAACCCTGG
+AACTGCCTTTCATACTGGCAATCTAGAGTCCAGAAGAGGTGAGTGGAATTCCGAGTGTAGAGGTGAAATTCGTAGATA
+TTCGGAGGAACACCAGTGGCGAAGGCGGCTCACTGGTCTGGTACTGACGCTGAGGTGCGAAAGCGTGGGGAGCAAACA
+GGATTAGATACCCTGGTAGTCCACGCCGTAAACGATGAATGTTAGCCGTCGGGCAGTTTACTGTTCGGTGGCGCAGCT
+AACGCATTAAACATTCCGCCTGGGGAGTACAGGTCGCAAGATTAAAACTCAAAGGAATTGACGGGGGCCCGCACAAGC
+GGTGGAGCATGTGGTTTAATTCGAAGCAACGCGCAGAACCTTACCAGCCCTTGACATCCCGATCGCGGATAGGAGAGA
+TCCTATCCTTCAGTTCGGCTGGATCGGAGACAGGTGCTGCATGGCTGTCGTCAGCTCGTGTCGTGAGATGTTGGGTTA
+AGTCCCGCAACGAGCGCAACCCTCGCCCTTAGTTGCCAGCATTCAGTTGGGCACTCTAAGGGGACTGCCGGTGATAAG
+CCGAGAGGAAGGTGGGGATGACTCAAGTCCTCATGGCCCTTACGGGCTGGGCTACACACGTGCTACAATGGTGGTGAC
+AGTGGGCAGCGAGACCGCGAGGTCGAGCTAATCTCCAAAAGCCATCTCAGTTCGGATTGCACTCTGCAACTCGAGTGC
+ATGAAGTTGGAATCGCTAGTAATCGCAGATCAGCATGCTGCGGTGAAATACGTTCCCGGGCCTTGTACACACCGCCCG
+TCACACCATGGGAGTTGGTTCTACCCGAAGGTAGTGCGCTAACCGCAAGGAGGCAGCTAACCAGGGGGGGGGGGGGGG
+GGGGG"
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data rna {
+            type rRNA,
+            ext name "12S ribosomal RNA"
+          },
+          location int {
+            from 0,
+            to 1386,
+            strand plus,
+            id local str "KU145678"
+          }
+        },
+        {
+          data rna {
+            type tRNA,
+            ext tRNA {
+              aa ncbieaa 70
+            }
+          },
+          location packed-int {
+            {
+              from 0,
+              to 25,
+              strand plus,
+              id local str "KU145678"
+            },
+            {
+              from 29,
+              to 79,
+              strand plus,
+              id local str "KU145678"
+            }
+          }
+        },
+        {
+          data imp {
+            key "misc_feature"
+          },
+          partial TRUE,
+          location int {
+            from 1309,
+            to 1379,
+            strand plus,
+            id local str "KU145678",
+            fuzz-to lim gt
+          }
+        },
+        {
+          data imp {
+            key "misc_feature"
+          },
+          location int {
+            from 299,
+            to 799,
+            strand minus,
+            id local str "KU145678"
+          }
+        },
+        {
+          data imp {
+            key "misc_feature"
+          },
+          location int {
+            from 1339,
+            to 1384,
+            strand minus,
+            id local str "KU145678"
+          }
+        }
+      }
+    }
+  }
+}

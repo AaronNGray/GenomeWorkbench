@@ -1,0 +1,15 @@
+#############################################################################
+# $Id: CMakeLists.w_seq_text.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_seq_text)
+  NCBI_sources(
+    seq_graph seq_text_conf seqtextviewoptions
+    seq_text_ds seq_text_pane_conf
+    seq_text_job seq_text_pane seq_text_widget
+    seq_tick_graph text_sel_handler variation_graph
+    seq_text_panel
+  )
+  NCBI_uses_toolkit_libraries(gui_config w_gl)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

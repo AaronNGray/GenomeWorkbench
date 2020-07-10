@@ -1,0 +1,36 @@
+# $Id $
+
+# Alignment Score lib
+
+# ASN_DEP = seq seqset
+
+SRC = \
+	init_w_aln_score scoring_method aln_scoring \
+	simple_methods quality_methods template_methods \
+	scoring_methods_dlg properties_panel_dlg \
+	gradient_color_panel
+
+LIB = w_aln_score
+
+DLL_LIB = w_wx gui_utils gui_opengl gui_print w_gl \
+          xalnmgr ximage tables $(SOBJMGR_LIBS)
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+LIBS = $(WXWIDGETS_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+
+REQUIRES = OpenGL wxWidgets objects
+
+
+
+
+
+
+
+
+
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(GLEW_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+

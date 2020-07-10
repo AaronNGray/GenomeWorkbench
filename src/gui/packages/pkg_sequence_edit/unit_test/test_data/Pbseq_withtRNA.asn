@@ -1,0 +1,420 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "the",
+        general {
+          db "NCBIFILE",
+          tag str "the Parnassius nomion mitochondrion/the"
+        },
+        general {
+          db "TMSMART",
+          tag id 48458499
+        },
+        genbank {
+          accession "KM658166"
+        }
+      },
+      descr {
+        title "the Parnassius nomion mitochondrion",
+        source {
+          genome genomic,
+          org {
+            taxname "Parnassius nomion",
+            db {
+              {
+                db "taxon",
+                tag id 213955
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Parnassius",
+                species "nomion"
+              },
+              lineage "Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda;
+ Insecta; Pterygota; Neoptera; Endopterygota; Lepidoptera; Glossata; Ditrysia;
+ Papilionoidea; Papilionidae; Parnassiinae; Parnassini; Parnassius; Parnassius",
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          tech standard,
+          completeness partial
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Dong",
+                      first "wanwei",
+                      initials "w."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Feng",
+                      first "xiaojing",
+                      initials "x."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Jiang",
+                      first "guofang",
+                      initials "g."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Nanjing Normal University",
+                  div "Department of Life Sciences",
+                  city "Nanjing",
+                  sub "Jiangsu",
+                  country "Chian",
+                  street "wenyuan road",
+                  postal-code "210046"
+                }
+              },
+              title "the Parnassius nomion mitochondrion"
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Dong",
+                      first "wanwei",
+                      initials "w."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Feng",
+                      first "xiaojing",
+                      initials "x."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Jiang",
+                      first "guofang",
+                      initials "g."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Nanjing Normal University",
+                  div "Department of Life Sciences",
+                  city "Nanjing",
+                  sub "Jiangsu",
+                  country "Chian",
+                  street "wenyuan road",
+                  postal-code "210046"
+                }
+              },
+              date std {
+                year 2014,
+                month 9,
+                day 26
+              }
+            }
+          }
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            }
+          }
+        },
+        user {
+          class "SMART_V1.0",
+          type id 1,
+          data {
+            {
+              label id 1,
+              num 1,
+              data int 8994297
+            }
+          }
+        },
+        user {
+          type str "NcbiAutofix",
+          data {
+          }
+        },
+        user {
+          type str "NcbiCleanup",
+          data {
+            {
+              label str "method",
+              data str "SequinCleanup"
+            },
+            {
+              label str "version",
+              data int 7
+            },
+            {
+              label str "month",
+              data int 2
+            },
+            {
+              label str "day",
+              data int 18
+            },
+            {
+              label str "year",
+              data int 2015
+            }
+          }
+        },
+        create-date std {
+          year 2014,
+          month 5,
+          day 22
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "the"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 14547,
+        topology circular,
+        seq-data ncbi2na 'F02309C0FC27FEAF4C55033028055FFFF000C0B978F028F3DE32
+0C0F0B21F717F3CCFF320F01CCDC30CD001CFB937C4700CC0C0F83F30C401C155CFF23FFFC3F03
+D0300CFFFCFF3DFFFF205F0FDCFD270F7E3CA3BE0FA3C80D0FCF08FCD55C3F50F70037FCD34827
+97C033FDF1D0D0F9373C3FFCFF43FCF0030FF3C003FE03030FCFF73FC3C3D7533C300328D0557F
+47FE3F5C33CF82BF37E3F0FBFCFF0C1F84003F550C3FCFB4CF33030C3FFC33F3CC3FF0EF3ECA08
+32AA0F0D0134F1803C334FF4DCF0C3F28E0CF2493C30C1200FCE0FFF3F0C333D3FF0F20F33BFDC
+FC333C0CFCF33C343CFCF303300FF7F0033573C3C3FFCDFCAA8F155FDF28F7D5C0E0F3CF0FF7CF
+30303CFCF3C8FCFFCF30C23C3CCF3FFF33D83CCCF4D4F33F0F3F00300E3F003FCC0034FCF3C3CC
+0CFFC830FDFCF2B30F3C817F3333302BFC2F3301C30DF403CC00080FDFC25F2CF330FC55F00FE4
+3FCCD3CF8710A7FF30C0223FF76F0C0FC43F167CC7494FF3C980383F1D040D30233E813CCFF3FF
+ACFE24ACC328177F08F3C3DB1E0F2B0D7A37F0FA238D03F30C73EC1274E7FCF30FFFF32F3143CC
+3E8A3FA03E3C3D4F0CF289548CC9FD5D83030CC23FE1CF155F4F05F3C3F520836C803AA4A07A38
+10FCD55DCD770CF953AE8234BE3F2737FDFC4FC9E83F4DCFF289CF0FF3C41CF3C33183C34CCD3F
+8D03157FDB3892CA0F1E7F1FF3CF37F17B7C92B9CF1CC7DF1216036C1274E7FCF4D28AFFCF32FC
+C50CCC3E8A3FA03D60BF33D43FC1E8FE830DDD33CFD1080BA000201FFA3BF2830FCE7CC90FAFCF
+2AFCFBF89D34CCFC4B2A3233E31D89F3FC7DE41CC3CF9EC504A0C00FFCFE3C904F13A3740F3F02
+D4DCFF3823CA3FBFFF3F12CA28F04A2C3FC9CFDF73E3304F138C7CF3B2C9D3FD3CEFF3732892CF
+E43CCA28FCF4F8CD7F3F128F30F03431F3C00F43FF3433F3E8B03F07FFF5D04FFF2BF34ACC5D86
+31DE3C54803FC7D380CF3F5D3FAF4CCFDFCF3430C30C30C3CFE20D0CF0341B30FF3FDFC0CCD77D
+0D838F100FC5D7320477C0383C5CFF0807DC33A48E33B0E8FC0D53F3028F35FFFC80E507E370FC
+0DF4032E7D17F0C8103CDFFF4E14C7F0F3FC3CC3C73FCB28CFC33F37CFFF0C0FCF0D8FFCF20A10
+30F83C3F81CF35790F13C3FF3E7F17DFC6FCF33F3C8E07C30D770F1FC0373E84D0E33E0BCE0CF4
+8FF0C33E0FE3D3330F4330400C55E00FF6FCF23BE30D83CFF173030503D83CCB079C78EC3D3D38
+1CF534F28B00B239C35EB63C0D01C8FFF3C3614A0FFFFAD0EF480FEE89C34CBFCC5CFB0F8083F7
+3C00FF3C3E0F0C3CF4D3C8E1E0242CFADDF014FC32C0F243C7DC38083CBC033304C0CED03F03CF
+13CB0CF7FCD5D030C5CF0F8F3CDFFF3FFCF307F4FF3F0CF303CF33FF04F3C1FC003CDF3FC30003
+C00CC078038C2C3F3FD0FFE3544103F3F0FC53C0F83C81FF3E8F0CFCD5F3DFFE3F3570D84F33DF
+E03FCF1C301F4C383F00CF3C20F0C8FC3A341FF3FF3F4F3DDFF37CFC30FFF2A73F5F33FF1CB10B
+4FC1CF1FCD0FD3CDFCE0F23F30CCE8E0F0C3CD04CCFCF4CC3D44281D40CFF0C53F32FF0F8073CB
+0CF3D95281DC9EC6FC1E70CC3E4A11F3CF07F3C208103DC3734FFF33CFCFF0FFCC40FF1FF0FF20
+DE7BE73CF437CEC3F73DF2077F3DC882C0F0E30C0530D15334FCB23CC85385FC1289CFA04307F2
+F1EB30F038F530FF0CC07C30FF28CFC34F3CC1CCCD0E386233FB620207310AC04C73FCBF4028F1
+8E2B30FF3F3CCD20B3FFFFF37FFFE27FFF4C82FCD570CF80FA2F3385D4F033CFD3F054FD03D7F3
+C0C734FF0F234AEC16C1F89134E4F0C8030D3D501C44C8F3F3C730CF283F3FC73DF40CCE0CFF82
+45FF1CF9E320FCE8D07FFF324128FD3A1C46C3CFA043FF70C13BFFF6D3F03051FF70C04D3FE8FE
+0924938CF84FFBE3B2CE3CF5FCCFDCFCF8E280F0FCFCCC333F2CCFE3F50D002FC3F3FFC33030D3
+FCF3C3CCD0FF0F3CF3F40CF30CF3CD0C3FCD00034FCC858800E7553D83BABF8D40EF49183D4FF7
+F13FFFF0F12C3FFF0FFE33E03E77DFF543CF334FC3F2F0FF3CCF0C00F23FFFFF0F3FC30CA3CCD2
+8380D00CC7C3E070F0A3CCBF00C013F8FE4F40033E37343F37C0C2090C0F93F0FD87C020A2F330
+75F3F13C3E0140C8ACCD1EF0E33CF830CCF50F03F80CCF30F09E707C3F32E3C034F0CFDFFFFCFC
+CCBF01004F13FD3EC00C03F3FFFFCC0CFC08F330DD7C337D0CF31DCCC273F037C0F00D300C003C
+F3D300C0DC0C0C0FF30F3F3F8CC0C3000F830FFC30CF03317E177330F53505CCD0CFFF0C05F853
+0FC0000C3F014C2C8C0FEB3034CF023000FDF03CC0F3C00FCFC28303DF33C7070315CC0C050F0D
+F1303073CFFC0F03AC0C0F330A30F003CF4CF0037D410F01F3030C300331DFC330CC37D34CC0F3
+01200C0F30D3C3CF0333C30183ECC0332F017B20030CC00003C333F03F7CF7473F700F035F20C0
+3527000A0D51302703C80CFCC4C082F3E83330DC3155CC018335E3CD3D3CCE0C3C55204CC0C302
+7F03324A2F0C0E000250F78C35CF7C03DF3CF0D70FB7C0BE302430FFFF0340F4C3C9003549CC2C
+FBC15230C30C00FF0000CCD0F0C333C0D83C30301D492F1C2B200381C09E0128BE89E732492B0D
+081C0283F89DFF2F32790C3C700C70C3FF3E0C34F1D300FC0C00330FD07D4C3F3CF4203C73C03C
+C13750F63C8C092F0CC524F308FC33FE30C0F1C04308070D70D4DD05C000F70F33CA1C10F0C03C
+F8001030CF1C030C0D8F40FC3D207CCCDFFDCC303C7823A0F3C31013CC0C30233D0FC030C8CC10
+CFCC83C02038FFD5FC00C03C4FF570C0303CC00003F3C3F0000300000370C0103E0C3FF0C3F00E
+3F74CFFE3D440D0CFF3303CFC0CF00D03CC033D0FFC03C333F02B0D0EC03C33C0CF46201D4B300
+DCC0F7C0F33F14EF8B338330B30DCC559DC0008CF30F0CF1CF8C342341F1C373C3C370FD173C0F
+CC828AA79CCF208CF0C00D34C074C82B300FCF315F3F3030DF61CEC06F4C3C33F1C04033D48E04
+C353B50F3CC330817030550C3F32D30F51C3C70DF3389048E0C243C08FF3371F840043F0DC3330
+155CF0DC30C3D0300F4FFCF70CFF80083C03D82C35335570FF0CC3149C03CF8158C4A27D04E27F
+290D303B000C4CACFF470009CC34F8CCCC303303F33C003FCC03032D030FC043400C0003D73C33
+EB02090302CC030C0CCF525E0F6F4A78CD741430F04F02DA0F0DC5F40030300CC0C0FC13DC0EF0
+330CF3CF00C30CFC300001F33003CFFCCC38F77E730F3C33103D03DF0C03C050080F0344173CCC
+DF03C400F3C33F01F03F30030330F0CF0CF3F814340333FFCC0130283CC00C3CF3C00FF34FCC30
+3C0DFFC0C34F54EEC60F3201C03230D70E5574404B030C000F3C33333F4CF4330FC0C0F3CF3C00
+C77C310C0F70DF0C010F0C0EECEFF80C00F33FD44400CC3003CC0D333F00F34FEBFF32FC00F004
+FADFB03400C2CCF1FC007D0200201DFCD0C37500F3CFFF301CF7F80FF0033FF37F7C3CC31FDCF3
+0CFFFF43457F35328F0C3FCFD01FCF07EFCF34ACCF0F0C4CF8FF7CCFF3FF2CF7CAA8F3CBFCFCFC
+ECD08365DC380CFF30C3FFF30030FF0FFC7FCCF343FCF0BCCCCCCCC1F03E3C0FF3C30F380C0C3F
+C007CFCFFFF0C380300F0FCD00F330C3CC54FF30C30CF0D3F3F3F3C5F0D9ECB033C70CFFFFA977
+1BF340C0C3F0C70E30303FF17F10007454F0F00C3C30F4F0F8FC5F75370CFD3CE380FFA34F3C93
+CEFC3CF40FF04A3CFFC10CCF31670CF83C9FFCCBB03CCFED80EF0F3A38F0F605F139C3AE5D3FFF
+F3FB3F1F133E86283F1CE0D3F0FC0331F832CACF3CFF3F3FC327124FCCA33BFC5F8AD0334FF8AA
+412F3C70DFF379CF5F3F2810CF2C0F83F8AE8FE7BE30E717C1DBFF3D3F4FFF3F53F3CFF0CF0730
+F4DCF3FF13404AF70C35FCA0F0C80FC8C0354FD353FFC7FC08FC3E8FCF30CF0CF3C3CCF04F070D
+7CFC7A88D78C3FCF5E70D7F2C1543D33D0560E33F7CFE7CE43FC6373D40C0F28A2F3E4F0C3373F
+C3FC34F7D5F07FC30003D0A0F43FCD43C340CF3FE3B32CDCF3CFF3C1383EA9DB5EF8035F33CF1E
+840C7C73FCCFFDF3FCF3C35CF3C303FE230FC3FF0F0C3C389FBC093FBFE007C2020C0FCF73C3F3
+1C03CF0703C00CFFC25C00030C0C3F02032B0337FF4230333C3F34CD8C1AAC3B1760740C0C0020
+3001C3F00C000C08CCF305573333C03030CF7CC0403DF833D270003C09015577DCCF433C0D7807
+0F77F5577900D00A2F63CBF49C10E080F4133DF02B0CF00000140F037E303030FF3CCF00DCC3C0
+30F7E304C3C09437C7D3080FBF89C49DB0D45C3020C3C83F8234D4907304B31557BDC3104C0003
+00C5C0F0370F33C030C283C33D01CF02300C0DC3C6A00000C00330FA000CA003FBDFC0830FC324
+DE002BEC03D7330507F3FA15FD83F83315C01FC6770C2B080241543C015700F00F0CD5433CF3C3
+337FFF34FC713330FC3CCCFCE1F700D3C4FFF7B4032713F03E3CF3CF3C03DF04CC03CFF033F0D7
+F6C700CFF343F028C80515E9C15ABF81D434A823FC38D8123400FF01FF93F03FCDF0D41362B640
+77FF7CF207000003C67BCD5C2B0FFF7CC36C0F1A34FCF4FCF0EC03CC000BCFF0FFFCD154100CFC
+4CCCF00C303FC4003FC330FC0CC01DCCAB7DDB7FC0C0FF27FF07000F03DC40F002012CCCDD3C0D
+FD310B450F00870E3CE717FB12D00C79257F0CCF34AA903C07F03CF0F40084EFFE3010B8330BFF
+960F5FF3C0F340C303CFFCFC3CCC70FF34F31703F03CF000CFFF0C003C0C0FF03FC0F0F00F3F30
+00F30FCC0433037C00FF0F3C33C0FCF3003F3FC09F357C031F0FF00330FF0F0F00F33FDC03F00F
+03FFF70001C8CCFC0063C13F4FD03C3CFC030F3104F07F0C1C3CDDFF03D8803FF03000CF3C3015
+E3110AC4303C0FC7F04C0FCFF4F33F40FDFF10C70FF7303FFCF3FFDCF0031FC1553C2F3FC33C00
+FFFCF3F31FCF0FCD55D03C3CC330FDFF43B0380C7F042770FEF7F72011FD4B1771FEF187CF50FC
+F0E0261A90CEC4CFF0CCC34FF0C0F0F00F13F03517D033F7C0033CD4FC0FCFCFB0D4F33DF0F30D
+E4DF8DE0F0FF03003FC033CFFCF000CFFFC10633100C303C2C0FCF6E8F343CF0123D770381C031
+6503C7C2FD0C0C3CDC73FCB3CC0FC3FF0C32ACDC35CBF0'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 77,
+                  anticodon int {
+                    from 32,
+                    to 34,
+                    strand plus,
+                    id genbank {
+                      accession "KM658166"
+                    }
+                  }
+                }
+              },
+              comment "Old Feature 1",
+              location int {
+                from 0,
+                to 68,
+                strand plus,
+                id genbank {
+                  accession "KM658166"
+                }
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 73,
+                  anticodon int {
+                    from 99,
+                    to 101,
+                    strand plus,
+                    id genbank {
+                      accession "KM658166"
+                    }
+                  }
+                }
+              },
+              comment "Old Feature 2",
+              location int {
+                from 69,
+                to 133,
+                strand plus,
+                id genbank {
+                  accession "KM658166"
+                }
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 70,
+                  anticodon int {
+                    from 6281,
+                    to 6283,
+                    strand minus,
+                    id genbank {
+                      accession "KM658166"
+                    }
+                  }
+                }
+              },
+              comment "Old Feature 3",
+              location int {
+                from 6250,
+                to 6313,
+                strand minus,
+                id genbank {
+                  accession "KM658166"
+                }
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 73,
+                  anticodon int {
+                    from 14056,
+                    to 14058,
+                    strand minus,
+                    id genbank {
+                      accession "KM658166"
+                    }
+                  }
+                }
+              },
+              partial TRUE,
+              comment "Old Feature 4",
+              location int {
+                from 14024,
+                to 14087,
+                strand minus,
+                id genbank {
+                  accession "KM658166"
+                },
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

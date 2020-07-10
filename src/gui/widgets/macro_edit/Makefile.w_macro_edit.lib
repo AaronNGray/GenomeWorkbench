@@ -1,0 +1,11 @@
+# $Id: Makefile.w_macro_edit.lib 44338 2019-12-03 15:36:51Z asztalos $
+
+SRC = edit_macro_dlg var_resolver_dlg
+
+LIB = w_macro_edit
+
+DLL_LIB = w_wx w_feedback gui_objutils
+
+CPPFLAGS = $(WXWIDGETS_INCLUDE) $(ORIG_CPPFLAGS)
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) $(ORIG_LIBS)

@@ -1,0 +1,7 @@
+#
+# Makefile.in for splines
+
+LIB_PROJ = splines
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

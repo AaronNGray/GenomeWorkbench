@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.xobjmanip.lib.txt 593577 2019-09-20 12:22:42Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(xobjmanip)
+  NCBI_sources(sage_manip)
+  NCBI_uses_toolkit_libraries(general)
+  NCBI_project_watchers(dicuccio)
+NCBI_end_lib()
+

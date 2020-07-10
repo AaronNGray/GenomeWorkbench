@@ -1,0 +1,12 @@
+# $Id: Makefile.in 21388 2010-05-14 01:24:08Z dicuccio $
+# Author:  Mike DiCuccio
+
+# Meta-makefile for libgui_config
+#################################
+
+LIB_PROJ = gui_config
+
+REQUIRES = algo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,4 @@
+; $Id: Makefile.dblib100.lib.msvc 554130 2017-12-28 17:20:38Z ucko $
+
+[AddToProject]
+; SourceFiles = winmain

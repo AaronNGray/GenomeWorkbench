@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.demo_seqtest.app.txt 593585 2019-09-20 13:57:47Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_seqtest)
+  NCBI_sources(demo_seqtest)
+  NCBI_requires(-Cygwin)
+  NCBI_uses_toolkit_libraries(ncbi_xloader_genbank xalgoseqqa seq)
+  NCBI_project_watchers(jcherry)
+NCBI_end_app()
+

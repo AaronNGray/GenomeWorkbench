@@ -1,0 +1,21 @@
+# $Id: Makefile.w_gl.lib 42127 2018-12-26 18:46:09Z katargir $
+
+# GL widgets lib
+
+ASN_DEP = seqset
+
+SRC = gl_widget_base graph_container html_active_area \
+      histogram_graph linear_sel_handler minimap_handler \
+      mouse_zoom_handler progress_panel renderable ruler seqmark_handler \
+      tooltip_handler tooltip_wnd attrib_menu
+	
+LIB = w_gl
+
+DLL_LIB = w_wx gui_utils gui_opengl gui_print
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+LIBS = $(WXWIDGETS_GL_LIBS) $(GLEW_LIBS) $(WXWIDGETS_LIBS) \
+       $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+
+REQUIRES = OpenGL wxWidgets

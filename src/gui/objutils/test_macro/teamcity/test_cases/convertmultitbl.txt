@@ -1,0 +1,3 @@
+taxname     isolation-source     sequence_id
+Bacillus subtilis    soil around roots    Seq1
+Pseudomonas aerignosa    dirt under rock near stream    Seq2

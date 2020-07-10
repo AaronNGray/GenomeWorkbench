@@ -1,0 +1,6 @@
+# $Id: Makefile.in 593072 2019-09-11 18:46:59Z saprykin $
+
+APP_PROJ = test_psg_cache psg_cache_unit
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

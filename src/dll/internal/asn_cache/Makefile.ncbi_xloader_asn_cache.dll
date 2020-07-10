@@ -1,0 +1,12 @@
+# $Id: Makefile.ncbi_xloader_asn_cache.dll 42821 2019-04-18 19:32:56Z joukovv $
+
+DLL = ncbi_xloader_asn_cache
+
+HOSTED_LIBS    = ncbi_xloader_asn_cache
+
+DEPENDENCIES   = \
+                 ncbi_core ncbi_general ncbi_misc \
+                 ncbi_seq ncbi_seqext
+
+CPPFLAGS = -DNCBI_ASN_CACHE_EXPORTS
+

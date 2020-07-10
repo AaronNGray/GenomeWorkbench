@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_feature_select.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_feature_select GUI)
+  NCBI_sources(featureselect_demo_app)
+  NCBI_uses_toolkit_libraries(w_seq w_data)
+  NCBI_requires(wxWidgets)
+NCBI_end_app()

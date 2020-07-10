@@ -1,0 +1,128 @@
+#############################################################################
+# $Id: CMakeLists.gui_objutils.lib.txt 45061 2020-05-19 19:07:38Z asztalos $
+#############################################################################
+
+NCBI_begin_lib( gui_objutils)
+  NCBI_sources(
+      alignment_smear
+      basic_converters convert_graph gi_cache
+      attached_handles entrez_conversion
+      filter label
+      object_list obj_convert obj_event
+      obj_fingerprint interface_registry object_index
+      reg_file reg_view
+      registry relation seqfetch_queue seqid_dictionary
+      init user_type
+      utils na_utils object_manager_engine visible_range
+      biotree_attr_reader taxon_cache
+      gui_object_info_default gui_object_info_seq_id
+      gui_object_info_seq_align gui_object_info_seq_annot
+      gui_object_info_seq_loc gui_object_info_bioseq gui_object_info_seq_entry
+      gui_object_info_seq_feat gui_object_info_biotreecontainer
+      gui_object_info_distancematrix gui_object_info_entrezgene
+      gui_object_info_validerror
+      gui_object_info_seq_align_set gui_object_info_bioseq_set
+      gui_object_info_gcassembly
+	  gui_object_info_component
+      gui_seq_info_default gui_seq_info_seq_id
+      table_data_base
+      table_data_seq_table table_data_biotreecontainer table_data_sorter 
+      table_data_gcassembly
+      table_data_aln_summary td_query_data_source query_func_promote query_node_value
+      table_query_exec
+      seqdesc_title_change table_data_seq_annot table_data_ftable
+      cmd_composite cmd_dynamic cmd_change_seq_feat cmd_change_bioseq_inst
+      cmd_del_desc cmd_del_seq_feat cmd_create_desc cmd_create_feat
+      cmd_change_bioseq_set cmd_insert_bioseq_set cmd_add_seqentry
+      cmd_change_set_class descriptor_change
+      cmd_promote_cds
+      ui_data_source_notif
+      sparse_alignment sparse_iterator sparse_functions
+      cmd_factory tooltip cmd_del_seq_annot cmd_del_bioseq cmd_del_seq_align
+      cmd_change_align cmd_del_bioseq_set
+      util_cmds cmd_change_graph
+      cmd_propagate_feat snp_gui
+      macro_cmd_composite macro_exec macro_parse macro_rep macro_field_resolve
+      macro_biodata_iter macro_engine macro_engine_parallel macro_lib macro_biodata macro_util macro_edit_fn_base
+      macro_fn_do macro_fn_aecr macro_fn_entry macro_fn_feature macro_fn_where macro_fn_lookup
+      macro_fn_loc_constr macro_fn_seq_constr macro_fn_string_constr macro_fn_pubfields
+      macro_query_exec adjust_consensus_splicesite
+      cmd_del_seq_graph execute_lock_guard cmd_change_seq_entry
+      cgi_version_info cmd_add_seq_annot string_matching cmd_add_cds
+      biotree_selection blast_databases cmd_create_align
+      convert_feat project_item_extra cmd_change_bioseq_id cmd_del_bioseq_id
+      gencoll_svc link_utils gui_http_session_request report_trim
+      fasta_utils seq_fasta_reader text_aln_reader cmd_enable_hup_id
+      doi_lookup usage_report_job gui_eutils_client convert_raw_to_delta id_mapper_num_assembly
+  )
+  NCBI_uses_toolkit_libraries(
+    biotree entrezgene eutils_client
+    gbproj gencoll_client gui_utils
+    snputil searchbyrsid xalgoalignutil xhtml xcgi
+    xdiscrepancy xobjreadex xobjwrite
+    xvalidate dbsnp_tooltip_service xid_mapper
+  )
+NCBI_end_lib()
+
+if(OFF)
+add_library(gui_objutils
+    alignment_smear
+    basic_converters convert_graph gi_cache
+    attached_handles entrez_conversion
+    filter label
+    object_list obj_convert obj_event
+    obj_fingerprint interface_registry object_index
+    reg_file reg_view
+    registry relation seqfetch_queue seqid_dictionary
+    init user_type
+    utils na_utils object_manager_engine visible_range
+    biotree_attr_reader taxon_cache
+    gui_object_info_default gui_object_info_seq_id
+    gui_object_info_seq_align gui_object_info_seq_annot
+    gui_object_info_seq_loc gui_object_info_bioseq gui_object_info_seq_entry
+    gui_object_info_seq_feat gui_object_info_biotreecontainer
+    gui_object_info_distancematrix gui_object_info_entrezgene
+    gui_object_info_validerror
+    gui_object_info_seq_align_set gui_object_info_bioseq_set
+    gui_object_info_gcassembly
+    gui_seq_info_default gui_seq_info_seq_id
+    table_data_base
+    table_data_seq_table table_data_biotreecontainer table_data_sorter 
+    table_data_gcassembly
+    table_data_aln_summary td_query_data_source query_func_promote query_node_value
+    table_query_exec
+    seqdesc_title_change table_data_seq_annot table_data_ftable
+    cmd_composite cmd_dynamic cmd_change_seq_feat cmd_change_bioseq_inst
+    cmd_del_desc cmd_del_seq_feat cmd_create_desc cmd_create_feat
+    cmd_change_bioseq_set cmd_insert_bioseq_set cmd_add_seqentry
+    cmd_change_set_class
+    cmd_promote_cds
+    ui_data_source_notif
+    sparse_alignment sparse_iterator sparse_functions
+    cmd_factory tooltip cmd_del_seq_annot cmd_del_bioseq cmd_del_seq_align
+    cmd_change_align cmd_del_bioseq_set
+    util_cmds cmd_change_graph
+    cmd_propagate_feat snp_gui
+    macro_cmd_composite macro_exec macro_parse macro_rep macro_field_resolve
+    macro_biodata_iter macro_engine macro_lib macro_biodata macro_util
+    macro_edit_fn_base macro_fn_do macro_fn_aecr macro_fn_entry macro_fn_feature macro_fn_where
+    macro_fn_loc_constr macro_fn_seq_constr macro_fn_string_constr macro_fn_pubfields
+    macro_query_exec
+    cmd_del_seq_graph execute_lock_guard cmd_change_seq_entry
+    cgi_version_info cmd_add_seq_annot string_matching cmd_add_cds
+    biotree_selection blast_databases cmd_create_align
+    convert_feat project_item_extra cmd_change_bioseq_id cmd_del_bioseq_id
+    gencoll_svc link_utils gui_http_session_request report_trim
+    fasta_utils seq_fasta_reader text_aln_reader cmd_enable_hup_id protein_utils
+    doi_lookup
+)
+
+target_link_libraries(gui_objutils
+    biotree entrezgene eutils_client
+    gbproj gencoll_client gui_utils
+    snputil searchbyrsid xalgoalignutil xhtml xcgi
+    xdiscrepancy xobjreadex xobjwrite
+    xvalidate xid_mapper
+)
+
+endif()

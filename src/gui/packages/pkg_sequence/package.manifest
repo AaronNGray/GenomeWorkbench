@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GuiPkgManifest>
+  <Name>Sequence</Name>
+  <Description>GenBank Data Source, Sequence view, basic sequence analysis tools</Description>
+  <Version>01.00.0000</Version>
+  <MainDll>pkg_sequence</MainDll>
+  <GuiPkgDependency>
+    <GuiDependentPkg>
+      <Name>GBench</Name>
+      <Version>03.00.0000</Version>
+    </GuiDependentPkg>
+  </GuiPkgDependency>
+</GuiPkgManifest>

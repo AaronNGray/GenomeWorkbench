@@ -1,0 +1,432 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Norrisia norrisii",
+            orgname {
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1"
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              tech barcode
+            },
+            genbank {
+              keywords {
+                "BARCODE"
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 105,
+            seq-data iupacna "TCATAAAGATATTGGTACACTTTGACCGAAATTTTAATACTTCTTTTT
+TTGATCCTGCAGGAGGAGGAGACCCCATTTTATATCAACATTTGTTCTGATTTTTTG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "COI"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 104,
+                    strand plus,
+                    id local str "Seq1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "BLMS039-13.COI-5P_1"
+          },
+          descr {
+            title "cytochrome oxidase subunit 1, partial (mitochondrion)
+ [Norrisia norrisii]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "BLMS039-13.COI-5P_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 34,
+            seq-data iupacaa "HKDIGTL*PKF*YFFF*SCRRRRPHFISTFVLIF"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "cytochrome oxidase subunit 1"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 33,
+                    id local str "BLMS039-13.COI-5P_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "BLMS039-13.COI-5P_1",
+              location int {
+                from 0,
+                to 104,
+                strand plus,
+                id local str "Seq1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Homo sapiens",
+            common "human",
+            db {
+              {
+                db "taxon",
+                tag id 9606
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 2,
+              div "PRI"
+            }
+          },
+          subtype {
+            {
+              subtype collection-date,
+              name "02-Apr-2013"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2"
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              tech barcode
+            },
+            genbank {
+              keywords {
+                "BARCODE"
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 59,
+            seq-data iupacna "TCTTATCTCTGCAGGAGGTGGAGACCCTATTCTCTATCAACACCTATT
+CTGATTTTTTG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "COI"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 58,
+                    strand plus,
+                    id local str "Seq2",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "BLMS028-13.COI-5P_1"
+          },
+          descr {
+            title "cytochrome oxidase subunit 1, partial (mitochondrion)
+ [Neobernaya spadicea]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "BLMS028-13.COI-5P_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 218,
+            seq-data ncbieaa "LFGMWSGLVGTALSLLIRAELGQPGALLGDDQLYNVIVTAHAFVMIFF
+LVMPMMIGGFGNWLVPLMLGAPDMAFPRLNNMSFWLLPPALLLLLSSAAVESGVGTGWTVYPPLAGNLAHAGGSVDLA
+IFSLHLAGVSSILGAVNFITTIINMRWRGMQFERLPLFVWSVKITAVLLLLSLPVLAGAITMLLTDRNFNTAFFDPAG
+GGDPILYQHLFWFF"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "cytochrome oxidase subunit 1"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 217,
+                    id local str "BLMS028-13.COI-5P_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame three,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "BLMS028-13.COI-5P_1",
+              location int {
+                from 0,
+                to 58,
+                strand plus,
+                id local str "Seq2",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Bathyarchaeota archaeon BA1",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype lat-lon,
+              name "34.0052 N 119.385 W"
+            }
+          }
+        },
+        create-date std {
+          year 2013,
+          month 6,
+          day 19
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq3"
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              tech barcode
+            },
+            genbank {
+              keywords {
+                "BARCODE"
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 133,
+            seq-data iupacna "ACAAATCATAAAGATATTGGTACTCTATATATCTTATTTGGTATATGA
+TCAGGCTTAGTTGGAACGGCTCTTAGTTTATTAATTCGAGCGGAGCTGGGGCAACCGGGAGCCCTCTTGGGAGATGAG
+AAGTTTA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "COI"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 132,
+                    strand plus,
+                    id local str "Seq3",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "BLMS026-13.COI-5P_1"
+          },
+          descr {
+            title "cytochrome oxidase subunit 1, partial (mitochondrion)
+ [Neobernaya spadicea]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "BLMS026-13.COI-5P_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 44,
+            seq-data iupacaa "TNHNDIGTLYILFGMWSGLVGTALSLLIRAELGQPGALLGDEKF"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "cytochrome oxidase subunit 1"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 43,
+                    id local str "BLMS026-13.COI-5P_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 21
+                }
+              },
+              partial TRUE,
+              product whole local str "BLMS026-13.COI-5P_1",
+              location int {
+                from 0,
+                to 132,
+                strand plus,
+                id local str "Seq3",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

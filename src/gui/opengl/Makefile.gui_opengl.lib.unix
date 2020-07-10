@@ -1,0 +1,5 @@
+# $Id: Makefile.gui_opengl.lib.unix 35283 2016-04-20 12:04:34Z falkrb $
+#
+# Avoid buggy optimization of bitmap font code.
+glbitmapfont.o: CXXFLAGS = $(ORIG_CXXFLAGS:-O%=) -O0
+

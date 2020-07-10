@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.test_doi_lookup.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app( test_doi_lookup)
+  NCBI_sources(test_doi_lookup)
+  NCBI_uses_toolkit_libraries(gui_objutils)
+  NCBI_requires(Boost.Test.Included)
+NCBI_end_app()

@@ -1,0 +1,198 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "Test",
+          first "Test",
+          initials "T."
+        },
+        affil std {
+          affil "Testing",
+          sub "MD",
+          country "Testing",
+          postal-code "12345"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Test",
+              first "Test",
+              initials "T."
+            }
+          }
+        },
+        affil std {
+          affil "Testing",
+          sub "MD",
+          country "Testing",
+          postal-code "12345"
+        }
+      },
+      date std {
+        year 2015,
+        month 9,
+        day 18
+      }
+    },
+    subtype new,
+    tool "Sequin 14.00 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Dicentra cucullaria",
+            db {
+              {
+                db "taxon",
+                tag id 417911
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Dicentra",
+                species "cucullaria"
+              },
+              mod {
+                {
+                  subtype isolate,
+                  subname "ISQDC-1"
+                }
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons; Ranunculales;
+ Papaveraceae; Fumarioideae; Dicentra",
+              gcode 1,
+              mgcode 1,
+              div "PLN",
+              pgcode 11
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "some source comment"
+            }
+          }
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "LastN",
+                      first "FirstN",
+                      initials "F."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Testing",
+                  sub "MD",
+                  country "Testing",
+                  postal-code "12345"
+                }
+              },
+              title "testing Remove single Item set"
+            }
+          }
+        },
+        create-date std {
+          year 2015,
+          month 9,
+          day 18
+        },
+        title "Common title at the phy-set level"
+      },
+      seq-set {
+        seq {
+          id {
+            local str "seq1"
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            title "Title descriptor at the sequence level"
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 216,
+            seq-data iupacna "AAAGATCAAGAAAGAGATACTCATAAGAAGAAATGGAAGTTGTTGAAG
+TTCTTCACATGAATGGAGGAAATGGAGACAGTAGCTATGCAAACAATTCTTTGGTTCAGCAAAAGGTGATTCTCATGA
+CAAAGCCAATAACTGAGCAAGCCATGATTGATCTCTTATTTAAATGGATAAGTTACTGCCTTGATTTTAAAAAAAAAA
+AAAAAAAAAAAA"
+          }
+        },
+        seq {
+          id {
+            local str "seq1_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 13,
+            seq-data iupacaa "SYANNSLVQQKVI"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "new protein name"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 12,
+                    id local str "seq1_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "seq1_1",
+              location int {
+                from 79,
+                to 119,
+                strand plus,
+                id local str "seq1"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

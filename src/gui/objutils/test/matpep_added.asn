@@ -1,0 +1,146 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza A virus (A/swine/Minnesota/A01469329/2014(H3N2))",
+            db {
+              {
+                db "taxon",
+                tag id 1603334
+              }
+            },
+            orgname {
+              name virus "Influenza A virus
+ (A/swine/Minnesota/A01469329/2014(H3N2))",
+              lineage "Viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; Influenzavirus A",
+              gcode 1,
+              div "VRL"
+            }
+          }
+        },
+        create-date std {
+          year 2015,
+          month 1,
+          day 16
+        },
+        update-date std {
+          year 2015,
+          month 1,
+          day 20
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "SD14-23060-3.4",
+            general {
+              db "NCBIFILE",
+              tag str "SD1-16-15/SD14-23060-3.4"
+            },
+            general {
+              db "TMSMART",
+              tag id 51747129
+            },
+            genbank {
+              accession "KP662589"
+            }
+          },
+          descr {
+            title "Influenza A virus (A/swine/Minnesota/A01469329/2014(H3N2))
+ segment 4 cRNA sequence",
+            molinfo {
+              biomol cRNA
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 1701,
+            seq-data ncbi2na '3821CD3E7FC9E4F73B78FFE74007D520B84124E9067B97A8
+45392E501A04F2E0043468E140F82E1C39C789EB522F5D04AC833904B5D140D7E3A8007911E323
+9DCFAA8574FB8E1F5004203A85FFEF818244971241EF15F3CEE523CE515F2B470F974DE905E83F
+150809F43E87A2F9D0868D09CE5E482A9DEF04BF7F2C8F83EBECC1F83C42CD481206C1CE5010E1
+03F840FB13FAAAF4515AB1A10A140505CCED424D2A22F32DDC5008250407B0D58336ADC857AB0A
+AEDD4930C24DCFA18CB005A884C7FE3C1244A8370F9576ABC7D00C40BA8027430E2348E444F8E0
+E43DE0E4F1D40E824F5438405FF403B0108D133A25ED5233BC240115E0BE904A0E683B14882407
+22933FA643E4AFD3200EBEA2A0EB21AFAC6BF4A4D20F78290284249237C024742690D050345A80
+70322C34200606203D4D0360020F7482C82A20F4A1722031BE084700C8DDEB7C439E27DFBE57A2
+0504C43E3F0487488E2407BD80810829079A8039E284EA43AF9FC0331440EE3065E4CA343480E8
+1F38538CCC4806293C0436BD48D02BBD2702D28C408FA35CE8FD7F94CD39FFE7FBBEF79EABD3CE
+EA5E5002904F2B904FE4FE00'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "HA"
+                  },
+                  location int {
+                    from 0,
+                    to 1700,
+                    strand plus,
+                    id genbank {
+                      accession "KP662589"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "KP662589_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 566,
+            seq-data iupacaa "MKTIIAFSCILCLIFAQKLPRSDNSMATLCLGHHAVPNGTLVKTITDD
+QIEVTNATELVQSSSTGRICNSPHQILDGKNCTLIDALLGDPHCDDFQNKKWDLFVERSTAYSNCYPYYVPDYATLRS
+LIASSGNLEFTQESFNWTGVAQDGSSYACRRGSVNSFFSRLNWLYNLNYKYPEQNVTMPNNDKFDKLYIWGVHHPGTD
+KDQTNLYVQASGRVIVSTKRSQQTVIPNIGSRPWVRGVSSIISIYWTIVKPGDILLINSTGNLIAPRGYFKIQSGKSS
+IMRSDAHIDECNSECITPNGSIPNDKPFQNVNKITYGACPRYVKQNTLKLATGMRNVPEKQTRGIFGAIAGFIENGWE
+GMVDGWYGFRHQNSEGKGQAADLKSTQAAINQITGKLNRVIKKTNEKFHQIEKEFSEVEGRIQDLEKYVEDTKIDLWS
+YNAELLVALENQHTIDLTDSEMSKLFERTRRQLRENAEDMGNGCFKIYHKCDNACIGSIRNGTYDHDIYRNEALNNRF
+QIKGVQLKSGYKDWILWISFAISCFLLCVVLLGFIMWACQKGNIRCNICI"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "hemagglutinin"
+                    },
+                    activity {
+                      "receptor binding and fusion protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 565,
+                    id local str "KP662589_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

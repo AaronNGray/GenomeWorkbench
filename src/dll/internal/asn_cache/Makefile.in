@@ -1,0 +1,8 @@
+#################################
+# $Id: Makefile.in 42821 2019-04-18 19:32:56Z joukovv $
+#################################
+
+DLL_PROJ = ncbi_xloader_asn_cache
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,130 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Gadus morhua",
+            common "Atlantic cod",
+            db {
+              {
+                db "taxon",
+                tag id 8049
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Gadus",
+                species "morhua"
+              },
+              lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Actinopterygii; Neopterygii; Teleostei; Neoteleostei;
+ Acanthomorphata; Zeiogadaria; Gadariae; Gadiformes; Gadoidei; Gadidae; Gadus",
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq1"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787263
+            },
+            genbank {
+              accession "KF591393"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 58,
+            strand ds,
+            seq-data iupacna "ATGAATAGCCACGGCATTCTAGGATTAGCCCGCTGGAGTGTACTGATC
+AATGAAGGGG"
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_1",
+            general {
+              db "TMSMART",
+              tag id 39787264
+            }
+          },
+          descr {
+            title "Protein name [Gadus morhua]",
+            molinfo {
+              biomol peptide
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 14,
+            seq-data iupacaa "MNSHGILGLARWSV"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Protein name"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 13,
+                    id local str "Seq1_prot_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              comment "[intronless gene]",
+              product whole local str "Seq1_prot_1",
+              location int {
+                from 0,
+                to 40,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

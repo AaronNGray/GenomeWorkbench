@@ -1,0 +1,452 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "q",
+          first "q",
+          initials "q.Q."
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Benites",
+              first "Adam",
+              initials "A.Am."
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2013,
+        month 6,
+        day 4
+      }
+    },
+    hup FALSE,
+    subtype new,
+    tool "Sequin 12.60 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class phy-set,
+      descr {
+        create-date std {
+          year 2013,
+          month 6,
+          day 4
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "seq_1"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Influenza A virus",
+                db {
+                  {
+                    db "taxon",
+                    tag id 11320
+                  }
+                },
+                orgname {
+                  lineage "Viruses; ssRNA viruses; ssRNA negative-strand
+ viruses; Negarnaviricota; Polyploviricotina; Insthoviricetes;
+ Articulavirales; Orthomyxoviridae; Alphainfluenzavirus",
+                  gcode 1,
+                  mgcode 0,
+                  div "VRL"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_1"
+                }
+              }
+            },
+            user {
+              type str "StructuredComment",
+              data {
+                {
+                  label str "StructuredCommentPrefix",
+                  data str "##Genome-Assembly-Data-START##"
+                },
+                {
+                  label str "Assembly Method",
+                  data str "some method"
+                },
+                {
+                  label str "Coverage",
+                  data str "4x"
+                },
+                {
+                  label str "StructuredCommentSuffix",
+                  data str "##Genome-Assembly-Data-END##"
+                }
+              }
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioSample",
+                  num 1,
+                  data strs {
+                    "SAMN12634029"
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 678,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATGTCTTCCTGCTTCTTTGATGGTTGGAGAGCAT
+GTTGGGATATTTTTAAGGGGCTTTCTCATCTYCAACTCCTCTATCTAAATAAAAACTACCTGAATTTCCTTCCACCAA
+GAGTATTTCATCATCTGACTGCACTGAGGGGACTCAGCCTCAAAGACAACAGGCTGACTGTTCTTTTTCCTGGCGACT
+TACCTGCTAACTTAGAGAAGATTGTCTGTCTCGTGAGCAGACACTTCCTTAGAGACGGGTGGTGCCTCGAAGCCTTCA
+GTTATGCCCAGAGCAGGTGCTTAGCTGACCTCAATGGCGCCCTCATCATGGTGGTGGTGGGGTCCCTGTCCCAGTTCC
+ATCTGATGAGGCATCAGTCCATCAGAGGGTTCGTCCAGAAACGGCAGTACTTGAGGTGGCCTGAGGATCTCCAGGATG
+TTGACTGGTTTCTCAATAAACTCTCTCAATGCATTCTAAAGAAAGAAAAGGAAAGGAAGAAAGACAGTRCTATTCAGC
+TGCAAAATGTAACCACCATCTCCTAGGCAAAGGAGCAGTTTCCACTTATCGCAAGCCACAGATAACTCTGTACCTTTT
+ATTTCC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_2"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus hemionus",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "JEW01"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_2"
+                }
+              }
+            },
+            user {
+              type str "StructuredComment",
+              data {
+                {
+                  label str "StructuredCommentPrefix",
+                  data str "##Genome-Assembly-Data-START##"
+                },
+                {
+                  label str "Assembly Method",
+                  data str "some method"
+                },
+                {
+                  label str "",
+                  data str "4x"
+                },
+                {
+                  label str "StructuredCommentSuffix",
+                  data str "##Genome-Assembly-Data-END##"
+                }
+              }
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioSample",
+                  num 2,
+                  data strs {
+                    "SAMN12634030",
+                    "SAMN1253677"
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 331,
+            seq-data iupacna "TGTCYTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCARTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGAGCCG
+TCTATCTTTCCTGCAACCTCACCCAAAAAATCGCTTTTCCTTTTGTCACCAAAACCATAAACTCTCTCAATGCATTCT
+AAAGGAAGAAAAGGAAAGGAAGAAAGACAGTGCTATTCAGCTGCAAAGTGTAACCACCATCTCCTAGTCAAAGGAGCA
+GTTTCCACTTATTAGAAGCCACAGATAACTTTGTACCTTTTATTTCCGC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_2jelzett"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Influenza B virus",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "JEW01"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_2jelzett"
+                }
+              }
+            },
+            user {
+              type str "StructuredComment",
+              data {
+                {
+                  label str "StructuredCommentPrefix",
+                  data str "##Genome-Assembly-Data-START##"
+                },
+                {
+                  label str "Assembly Method",
+                  data str "some method"
+                },
+                {
+                  label str "StructuredCommentSuffix",
+                  data str "##Genome-Assembly-Data-END##"
+                }
+              }
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioSample",
+                  num 2,
+                  data strs {
+                    "PRJA8976",
+                    "SAMN12634031"
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 328,
+            seq-data iupacna "TGTCYTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCARTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGAGCCG
+TCTATCTCATTTTAAATCAAAATCGCTTTTCCTTTTGTCACCAAAACCATGCCATAAACTCTCTCAATGCATTCTAAA
+GGAAGAAAAGGAAAGGAAGAAAGACAGTGCTATTCAGCTGCAAAGTGTAACCACCATCTCCTAGTCAAAGGAGCAGTT
+TCCACTTATTAGAAGCCACAGATAACTTTGTACCTTTTATTTCCGC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_3"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus virginianus",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "JEW21"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_3"
+                }
+              }
+            },
+            user {
+              type str "StructuredComment",
+              data {
+                {
+                  label str "StructuredCommentPrefix",
+                  data str "##Genome-Assembly-Data-START##"
+                },
+                {
+                  label str "Assembly Method",
+                  data str "some method"
+                },
+                {
+                  label str "Coverage",
+                  data str "4x"
+                },
+                {
+                  label str "StructuredCommentSuffix",
+                  data str "##Genome-Assembly-Data-END##"
+                }
+              }
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioSample",
+                  num 1,
+                  data strs {
+                    "SAMN12634032"
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 669,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGATTTA
+AATCAAAATCGCTTTTCCTTTTGTCACCAAAACCATGCCCCTTCAGAGAATCCCAGCCTAGAAAAGCTTTTCCTTGGA
+GAAAATATGTTGCAACTTGCCTGGGAAGCCGGGTCATGTTGGGATGTTTTTAAGGGGCTTTCCCATCTCCAAATCCTC
+TATCTGAATAAAAACTACCTGAATTTCCTTCCACCAGGAGTATTTCATCATCTGACTGCACTGAGGGGACTCAGCCTC
+AAAGACAATAGACTGACTGTTCTTTCTCCTGGCGATTTACCTGCTAACTTAGAGATCCTGGTCCCAGTTCCATCTGAT
+GAAGCATCAGCCCATCAGAGGGTTCGTCCAGAAACAGCAATACTTGAGGTGGCCTGAGGATCTCCAGGATGTCGACTG
+GTTTCTCAATAAACTCTCTCAATGCATTCTAAAGGAAGAAAAGGAAAGGAAGAAAGACAGTGCTATTCAGCTGCAAAG
+CGTAACCACCATCTCCTAGTCAAAGGAGCAGTTTCCACTTATTAGAAGCCACAGATAACTTTGTACCTTTTATTT"
+          }
+        },
+        seq {
+          id {
+            local str "seq_4"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Giraffa camelopardalis",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "KB3332"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_4"
+                }
+              }
+            },
+            user {
+              type str "StructuredComment",
+              data {
+                {
+                  label str "StructuredCommentPrefix",
+                  data str "##Genome-Assembly-Data-START##"
+                },
+                {
+                  label str "Assembly Method",
+                  data str "some method"
+                },
+                {
+                  label str "Coverage",
+                  data str "4x"
+                },
+                {
+                  label str "StructuredCommentSuffix",
+                  data str "##Genome-Assembly-Data-END##"
+                }
+              }
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioSample",
+                  num 1,
+                  data strs {
+                    "SAMN12634033"
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 315,
+            seq-data iupacna "TGTCTTCACTCTCTCTTCTTCTCCATAGGATCATGAGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAGTTTCTTCCTGCTTCTTTGAGGCAATAAGCTGGT
+GACTTTGCCAAACATCCCACTTAGAGCCAATTTCATCCACTTATCATTCTAAAGAAAGAAAAGGAAAGGAAGAAAGAC
+AGTGCTGTTCAGCTGCAAAATGTAACCACAATCTCCTAGTCCAAGGAGCAGTTTCCACTTATCACAAGCTACAGATAA
+CTCTGTACCTTTTATTTCCGCCAGTTTACCCAA"
+          }
+        }
+      }
+    }
+  }
+}

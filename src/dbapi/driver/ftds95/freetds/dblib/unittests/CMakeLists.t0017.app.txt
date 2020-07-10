@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.t0017.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db95_t0017)
+  NCBI_sources(t0017 common)
+  NCBI_set_test_assets(t0017.sql t0017.in t0017.in.be)
+  NCBI_add_test(test-db95 db95_t0017)
+NCBI_end_app()
+

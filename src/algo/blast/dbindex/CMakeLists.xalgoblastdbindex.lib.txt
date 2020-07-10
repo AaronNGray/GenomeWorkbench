@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.xalgoblastdbindex.lib.txt 594157 2019-09-30 18:28:48Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(xalgoblastdbindex)
+  NCBI_sources(
+    sequence_istream_fasta sequence_istream_bdb dbindex dbindex_factory
+    dbindex_search
+  )
+  NCBI_uses_toolkit_libraries(blast seqdb xobjread xobjutil)
+  NCBI_project_watchers(morgulis)
+NCBI_end_lib()
+

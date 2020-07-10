@@ -1,0 +1,7 @@
+# $Id: Makefile.in 554130 2017-12-28 17:20:38Z ucko $
+#################################
+
+APP_PROJ = condition mutex1 strings passarg strtok_r
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

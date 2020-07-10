@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.bam2graph.app.txt 593524 2019-09-19 18:47:29Z gouriano $
+#############################################################################
+
+NCBI_begin_app(bam2graph)
+  NCBI_sources(bam2graph)
+  NCBI_uses_toolkit_libraries(bamread)
+  NCBI_project_watchers(vasilche ucko)
+NCBI_end_app()
+

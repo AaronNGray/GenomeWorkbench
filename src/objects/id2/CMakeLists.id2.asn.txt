@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.id2.asn.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(id2)
+  NCBI_dataspecs(id2.asn)
+  NCBI_uses_toolkit_libraries(seqsplit)
+  NCBI_project_watchers(vasilche)
+NCBI_end_lib()
+

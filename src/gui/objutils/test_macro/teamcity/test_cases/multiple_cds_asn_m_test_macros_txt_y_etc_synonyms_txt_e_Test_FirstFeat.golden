@@ -1,0 +1,544 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Microbotryum violaceum",
+            db {
+              {
+                db "taxon",
+                tag id 5272
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Microbotryum",
+                species "violaceum"
+              },
+              lineage "Eukaryota; Fungi; Dikarya; Pucciniomycotina;
+ Microbotryomycetes; Microbotryales; Microbotryaceae; Microbotryum",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Germany"
+            },
+            {
+              subtype isolation-source,
+              name "Anaerobic digester"
+            },
+            {
+              subtype other,
+              name "[cultured bacterial source]"
+            }
+          },
+          pcr-primers {
+            {
+              forward {
+                {
+                  seq "5'aggcaactgtgctatccgagggag",
+                  name "nbam24"
+                }
+              },
+              reverse {
+                {
+                  seq "5-aggcaactgtgctatccgagggag3'",
+                  name "nbam24"
+                },
+                {
+                  seq "5'aaaaaaaggggg3'",
+                  name "nbam33"
+                }
+              }
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq1"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787263
+            },
+            genbank {
+              accession "KF591393"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness complete
+            },
+            user {
+              type str "Submission",
+              data {
+                {
+                  label str "AdditionalComment",
+                  data str "LocalID:Seq1"
+                }
+              }
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 358,
+            strand ds,
+            seq-data iupacna "AAAAAACCGAACTTCTTTCCTTTTTTTGAATTTATTATAAAAATATGC
+AGTGATTTACCATGAATAGCCACGGCATTCTAGGATTAGCCCGCTGGAGTGTACTGATCAATGAAGGGGCATGGAAAC
+CCCGGAACTTTGACGTGTTAATCATTGAATTGCTCAATTATGCTCTGCGAGGAAAATAATAGCTCAAAGACTTCACAT
+TAATGACCTACACGGCATAATCAAAGAAACAGAACCCGTAATCCCTGCCTCTGAAGCCCTAAAAACCCTAAGACAAGG
+GGACACCATAGACCCCAACACATGGGTGGACTTAAACCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Putative terminase large subunit gene",
+                    desc "terminase large subunit gene"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 9,
+                    to 39,
+                    strand plus,
+                    id genbank {
+                      accession "KF591393"
+                    },
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_1",
+            general {
+              db "TMSMART",
+              tag id 39787264
+            }
+          },
+          descr {
+            title "Putative terminase large subunit, partial [Methanobacterium
+ formicicum phage]",
+            molinfo {
+              biomol peptide
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq1_prot_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 9,
+            seq-data ncbieaa "TSFLFLNLL"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Putative terminase large subunit"
+                    },
+                    desc "terminase large subunit"
+                  },
+                  location int {
+                    from 0,
+                    to 8,
+                    id local str "Seq1_prot_1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "KF591393_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 30,
+            seq-data iupacaa "MNSHGILGLARWSVLINEGAWKPRNFDVLI"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "some other protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 29,
+                    id local str "KF591393_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              comment "[intronless gene]",
+              product whole local str "Seq1_prot_1",
+              location int {
+                from 9,
+                to 39,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            },
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "KF591393_1",
+              location int {
+                from 59,
+                to 149,
+                strand plus,
+                id local str "Seq1"
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "Drs3"
+                },
+                {
+                  subtype nat-host,
+                  subname "Methanobacterium formicicum, strain Dresden Khl10"
+                }
+              },
+              gcode 1
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Germany"
+            },
+            {
+              subtype isolation-source,
+              name "Anaerobic digester"
+            },
+            {
+              subtype other,
+              name "[cultured bacterial source]"
+            }
+          },
+          pcr-primers {
+            {
+              forward {
+                {
+                  seq "aggcaactgtgctatccgagggag",
+                  name "nbam24"
+                }
+              },
+              reverse {
+                {
+                  seq "aggcaactgtgctatccgagggag",
+                  name "nbam24"
+                }
+              }
+            }
+          }
+        },
+        user {
+          class "SMART_V1.0",
+          type id 1,
+          data {
+            {
+              label id 1,
+              num 1,
+              data int 8039486
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq2"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787265
+            },
+            genbank {
+              accession "KF591394"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 780,
+            topology not-set,
+            seq-data iupacna "CCGGGGGGTATCCCCTAAGTGGGGATTAAGTAGTTATAAATTAAAGTT
+TAGGGTTAAATAATAAAAAAAAGATGGGTGCTAAATCAAAAGTGGAAGCCCTTAACGAGAAATTAGGCACTATGGGGC
+AGGTCATAACTAGTGCTGTCGGTGCAATAGGAATGGGGGGTATTTATGACCTCACCTGGAACGCTGCCCTAGCTGCTA
+ACCCTATCGGGATAGTGGTAGTGGCCATAATAGCCCTCATAGCCGTACTAGCTTACTTATATAATAGTAATGAGACTG
+TTAGGAATGCAATAAACTGGTTATGGAACGGGTTAAAACAATTAGGGGGGTACATTTATGGGGGACTTATTGCAGCAT
+GGAACGCCCTGAGCGGAGCACTTGGCTGGGTTTGGAATATCCTAGTTCAAGTGGGAGGGTTCATCGTAGGAACTCTTA
+TAGGAGCTTGGAATTCCTTTGCAAATGCAGTGAGCCCCATAACCCAGGCTTTAGGTTTATTATGGAATGCTTTACAAC
+AGGTTTTCGGTGACTGGTTCACAGCTAAGGCCAGTGAAGCTAATGGAGTTATGCAGGCTCTAGGAGAGGTTTTTAGTG
+CCATAGCGGGAGCAATCCAAGCCGTCACAGGATGGGTAAATGCTTTCCTATCATTTTTACCACAGATCCCCGGTATGA
+TTGCCTTTTATTTAGGCTTTGCAATTGGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTG
+GAGTGCAACTGATAACATGGGTCATTAACA"
+          }
+        },
+        seq {
+          id {
+            local str "KF591394_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 19,
+            seq-data ncbieaa "RGVSPKWGLSSYKLKFRVK"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "some other protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 18,
+                    id local str "KF591394_1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "KF591394_2"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 51,
+            seq-data ncbieaa "GAIGMGGIYDLTWNAALAANPIGIVVVAIIALIAVLAYLYNSNETVRN
+AIN"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "new protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 50,
+                    id local str "KF591394_2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "KF591394_3"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 58,
+            seq-data ncbieaa "CSMERPERSTWLGLEYPSSSGRVHRRNSYRSLEFLCKCSEPHNPGFRF
+IMECFTTGFR"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "some other protein2"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 57,
+                    id local str "KF591394_3"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "KF591394_1",
+              location int {
+                from 0,
+                to 60,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            },
+            {
+              data cdregion {
+                frame three,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "KF591394_2",
+              location int {
+                from 144,
+                to 299,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            },
+            {
+              data cdregion {
+                frame three,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "KF591394_3",
+              location int {
+                from 350,
+                to 528,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

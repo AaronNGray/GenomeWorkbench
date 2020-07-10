@@ -1,0 +1,77 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class pop-set,
+      seq-set {
+        seq {
+          id {
+            local str "AE10_1",
+            general {
+              db "BankIt",
+              tag str "1877929/AE10_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 60653269
+            },
+            genbank {
+              accession "KU297038"
+            }
+          },
+          descr {
+            title "Chloroplast, tabF-tabC, partial",
+            source {
+              genome chloroplast,
+              org {
+                taxname "Astragalus edulis",
+                db {
+                  {
+                    db "taxon",
+                    tag id 90176
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Astragalus",
+                    species "edulis"
+                  },
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "AE10_1"
+                    }
+                  },
+                  lineage "Eukaryota; Viridiplantae; Streptophyta;
+ Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons;
+ Gunneridae; Pentapetalae; rosids; fabids; Fabales; Fabaceae; Papilionoideae;
+ Galegeae; Astragalus",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 722,
+            strand ds,
+            seq-data ncbi2na '69E2735614F7E191CD74FF080F2F8B73B41C0C0000228CCA
+3000F220C32A9FFAA322A1F815D18FDC0B61A3FD77C7003F4FAEDACF84EC83A87737F3DDB78F0D
+3F7D008D4D21CEFA2E1E3F8F0E0CF13FFDF42FA0F4FE3D137FEE36036003F50330BFB0FF4F0D07
+80CB3F4B03333013333BF35F8D7F720FF8C828F4FD71D60280EFB41D4FEF2049F53E2DDE45CD7F
+FEFC3F81FDE07FCFFFEFF680928FE9D28F953EE0F52AFDDE0FE02FF47EB0BF531429D0D43C2D6C
+90'H
+          }
+        }
+      }
+    }
+  }
+}

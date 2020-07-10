@@ -1,0 +1,167 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Felis catus",
+            common "domestic cat",
+            db {
+              {
+                db "taxon",
+                tag id 9685
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Felis",
+                species "catus"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype isolate,
+                  subname "Drs3"
+                },
+                {
+                  subtype old-name,
+                  subname "house cat"
+                }
+              },
+              gcode 1,
+              mgcode 2,
+              div "MAM"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 50,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTCCCGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787265
+        },
+        genbank {
+          accession "KF591394"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Gadus morhua",
+            common "Atlantic cod",
+            db {
+              {
+                db "taxon",
+                tag id 8049
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Gadus",
+                species "morhua"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype nat-host,
+                  subname "Methanobacterium formicicum, strain Dresden Khl10"
+                }
+              },
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 229,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGCGCTATTTCCCAGGTTGC
+CAGCGTGCTTGGAGAGATGTTAGCTCCGTATGTTCAAAAGGTGTTACTTACCACAGATCCCCGGTATGATTGCCTTTT
+ATTTAGGCTTTGCAATTGGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAAC
+TGATAACATGGGTCATTAACA"
+      }
+    },
+    seq {
+      id {
+        local str "replace"
+      },
+      descr {
+        user {
+          type str "CFastaReader",
+          data {
+            {
+              label str "DefLine",
+              data str ">replace"
+            }
+          }
+        },
+        source {
+          org {
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "new taxname"
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 443,
+        seq-data iupacna "GAGGCACGGGGAGCTTGCTCCCTGGTGGCGAGCGGCGGACGGGTGAGTAATG
+TAGGAATCTGCCCGGTAGTGGGGGATAACGTGGGGAAATGAAATGTTGGGTTAAGTCCCGTAACGAGCGCAACCCTTT
+GTCCTTATTTGCCAGCACGTAATGGTGGGAACTCTAAGGAGACTGCCGGTGACAAACCGGAGGAAGGTGGGGACGACG
+TCGGCCCTTACGGGTAGGGCTACACACGTGCTACAATGGCCGGTACAAAGGGTTGCGAGACCGCGAGGTGGAGCGAAT
+CCCAGAAAGCCGGCCTCAGTCCGGATCGGAGTCTGCAACTCGACTCCGTGAAGTCGGAAAGTAATCGTGAATCAGAAT
+GTCACGGTGAATACGTTCCCGGGCCTTGTACACACCGCCCGTCACACCATGGGAGTGGACTGCACCAGAAGTGGTTAGC"
+      }
+    }
+  }
+}

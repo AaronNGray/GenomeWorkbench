@@ -1,0 +1,10 @@
+# $Id: Makefile.in 8121 2005-02-03 14:07:56Z dicuccio $
+# Author:
+
+# Meta-makefile for gltest
+#################################
+
+APP_PROJ = demo_multialign.cgi
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

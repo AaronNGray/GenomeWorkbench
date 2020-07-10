@@ -1,0 +1,40 @@
+#############################################################################
+# $Id: CMakeLists.pkg_alignment.lib.txt 44689 2020-02-21 13:42:15Z gouriano $
+#############################################################################
+
+NCBI_begin_lib( pkg_alignment)
+  NCBI_sources(
+    blast_db_dialog blast_jobs blast_search_options_panel
+    blast_search_params blast_search_params_panel blast_search_task
+    blast_tool_manager blast_seq_tool_job cleanup_alignments_params_panel
+    cleanup_alignments_tool_manager create_gene_model_params_panel
+    create_gene_model_tool_manager dll_register find_overlap_panel
+    find_overlap_params find_overlap_tool group_alignments_params_panel
+    group_alignments_tool_manager merge_alignments_params_panel
+    merge_alignments_tool_manager net_blast_dm_search_form_panel
+    net_blast_dm_search_tool net_blast_job_descr net_blast_load_option_panel
+    net_blast_ui_data_source net_blast_ui_load_manager splign_panel
+    splign_params splign_tool
+    rm_load_manager phy_loader
+    tree_builder_params tree_builder_panel tree_builder_tool
+    create_needleman_wunsch_panel create_needleman_wunsch_tool_manager
+    needlemanwunsch_tool_params msa_tool_job
+    kalign_tool kalign_tool_panel kalign_tool_params kalign_tool_job
+    mafft_tool mafft_tool_panel mafft_tool_params mafft_tool_job
+    muscle_tool muscle_tool_panel muscle_tool_params muscle_tool_job
+    clustal_omega_tool clustal_omega_tool_panel clustal_omega_tool_params clustal_omega_tool_job
+    clustalw_tool clustalw_tool_panel clustalw_tool_params clustalw_tool_job
+    taxtree_tool taxtree_tool_panel taxtree_tool_params taxtree_tool_job
+    ngalign_tool ngalign_panel ngalign_blast_panel ngalign_params ngalign_job
+    text_align_load_manager aln_summary_view
+    align_tab_exporter align_tab_export_params align_tab_export_job
+    align_tab_export_page align_tab_export_page2
+    align_project_item_extension lblast_ui_data_source
+    prosplign_params prosplign_panel prosplign_tool
+    fasta_align_exporter fasta_align_export_page fasta_align_export_params fasta_align_export_job 
+    advanced_cleanup_params advanced_cleanup_params_panel advanced_cleanup_tool
+    psl_load_manager
+  )
+  NCBI_uses_toolkit_libraries(gui_view_align xngalign xalgoalignsplign xalgoalignnw prosplign w_wx xaligncleanup)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

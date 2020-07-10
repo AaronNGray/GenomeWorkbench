@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.unit_test.app.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_app(unit_test)
+  NCBI_sources(defline_unit_test)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(blastdb)
+  NCBI_add_test()
+NCBI_end_app()
+

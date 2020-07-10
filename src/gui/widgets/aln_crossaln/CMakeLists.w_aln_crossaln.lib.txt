@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.w_aln_crossaln.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_aln_crossaln)
+  NCBI_sources(layout cross_aln_ds cross_aln_pane cross_aln_render cross_aln_widget cross_panel_ir)
+  NCBI_uses_toolkit_libraries(w_hit_matrix)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

@@ -1,0 +1,28 @@
+We provide Genome Workbench deb packages for Ubuntu 10.04 and 12.04, rpm packages for Fedora 18.
+If user have problems installing/running a binary on particular Linux flavour/version
+power users can build a new binary from sources.
+
+Unfortunately standard approach make/install won't work for GBench.
+Instead you can use build-linux-distro.sh script, just run it from GBench root source tree.
+You don't have to run it with root priveleges. It will create binary tarball.
+To create DEB package add parameter --build-deb, for RPM add --build-rpm.
+To run the script you have to ability to access Internet (to download wxwidgets).
+
+There are two script for Ubuntu
+
+ubuntu9_install_dev_pkgs.sh
+ubuntu10_install_dev_pkgs.sh
+
+And for Fedora 18
+
+fedora18_install_dev_pkgs.sh
+
+which install developers packages needed to build GBench
+they are not current, but you can look insude before running build-linux-distro.sh
+
+Some additional information can be found at
+http://www.ncbi.nlm.nih.gov/tools/gbench/install/
+
+Also to ask questions you can e-mail as at gbench-bugs@ncbi.nlm.nih.gov
+
+

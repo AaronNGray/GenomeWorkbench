@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbi_url.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbi_url)
+  NCBI_sources(test_ncbi_url)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_add_test()
+  NCBI_project_watchers(grichenk)
+NCBI_end_app()
+

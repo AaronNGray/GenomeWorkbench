@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.wgs_test.app.txt 593524 2019-09-19 18:47:29Z gouriano $
+#############################################################################
+
+NCBI_begin_app(wgs_test)
+  NCBI_sources(wgs_test)
+  NCBI_uses_toolkit_libraries(sraread)
+  NCBI_project_watchers(vasilche ucko)
+  NCBI_add_test(wgs_test.sh)
+NCBI_end_app()
+

@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.makeprofiledb.app.txt 593591 2019-09-20 14:53:34Z gouriano $
+#############################################################################
+
+NCBI_begin_app(makeprofiledb)
+  NCBI_sources(makeprofiledb)
+  NCBI_uses_toolkit_libraries(blastinput writedb)
+  NCBI_add_definitions(NCBI_MODULE=BLASTDB)
+  NCBI_project_watchers(fongah2)
+  NCBI_requires(-Cygwin)
+NCBI_end_app()
+

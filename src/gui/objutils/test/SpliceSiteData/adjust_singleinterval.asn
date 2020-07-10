@@ -1,0 +1,149 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Homo sapiens",
+            common "human",
+            db {
+              {
+                db "taxon",
+                tag id 9606
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Homo",
+                species "sapiens"
+              },
+              attrib "specified",
+              lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+ Catarrhini; Hominidae; Homo",
+              gcode 1,
+              mgcode 2,
+              div "PRI"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "PAI-1"
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "PAI-1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 276,
+            strand ds,
+            seq-data ncbi2na 'A2794948AA1569F8925DF9E73792BDD5E88782D85D28255C
+8817A838584EF484BF4A787D12DFD2B0821FD7F93FDD154BA1E6AA55C22800A05DD7E2269278DC
+35ECD44DEFD2'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "plasminogen activator inhibitor-1"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 57,
+                    to 155,
+                    strand plus,
+                    id local str "PAI-1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "PAI-1_prot_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 33,
+            seq-data ncbieaa "FSLETEVDLRKPLENLGMTDMFRQFQADFTVFQ"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "some protein"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 32,
+                    id local str "PAI-1_prot_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "PAI-1_prot_1",
+              location int {
+                from 57,
+                to 155,
+                strand plus,
+                id local str "PAI-1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

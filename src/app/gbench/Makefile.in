@@ -1,0 +1,16 @@
+# $Id: Makefile.in 39448 2017-09-25 18:31:35Z filippov $
+
+# GUI Projects
+
+SUB_PROJ = gbench gbench_monitor gbench_feedback_agent gbench_package_test \
+		   gbench_macro macroflow_editor gbench_install
+
+REQUIRES = DLL MT OpenGL gbench
+
+PROJ_TAG = gbench
+
+WATCHERS = dicuccio kuznets
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+

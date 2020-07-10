@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.gui_view_align.lib.txt 42625 2019-03-27 14:35:09Z gouriano $
+#############################################################################
+
+NCBI_begin_lib( gui_view_align)
+  NCBI_sources(
+    align_span_view cross_align_view dot_matrix_view mp_cross_align_view
+    phy_export_params phy_export_job phy_exporter phy_export_page
+    multi_align_view phy_tree_view annot_compare_view export_tree_dlg
+  )
+  NCBI_uses_toolkit_libraries(gui_core w_aln_crossaln w_hit_matrix w_data w_aln_table w_phylo_tree w_aln_multi)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

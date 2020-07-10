@@ -1,0 +1,191 @@
+Seq-entry ::= set {
+  class phy-set,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Diaporthe sp.",
+            db {
+              {
+                db "taxon",
+                tag id 1756133
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Diaporthe",
+                species "sp."
+              },
+              mod {
+                {
+                  subtype strain,
+                  subname "CFCC 53103"
+                }
+              },
+              lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Sordariomycetidae; Diaporthales; Diaporthaceae; Diaporthe",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            genbank {
+              accession "MK578043"
+            }
+          },
+          descr {
+            title "Diaporthe sp. strain CFCC 53103, beta-tubulin (tub2) gene,
+ partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 671,
+            strand ds,
+            seq-data ncbi2na '9539E7F64D779578978971545366164546B6A5D001345011
+5EA0091503B5F80066D23E706E17FF761C4AF45F485A50E6C2F9D7B41161A17CD36515B27846FD
+52AC140DAE79FDEB9B514598676199841385D894DBC785D8774A405377A62469761243A6ECE45D
+73F5E5F48DDB5D5E5A7E91E10D112F10691F589D49D899381B71F418AC2D04946DBE34DE4918FF
+796D96A97E7066F3654A5D69042CED5D996D76D8DD895AC53A196C'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "tub2"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 670,
+                    strand plus,
+                    id local str "Seq1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_1",
+            general {
+              db "TMSMART",
+              tag id 101841638
+            }
+          },
+          descr {
+            title "beta-tubulin, partial [Diaporthe sp.]",
+            molinfo {
+              biomol peptide,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 67,
+            seq-data ncbieaa "VHLQTGQCGNQIGAAFWQTISGEHGLDSNGVYNGTSELQLERMNVYFN
+EASGNKYVPRAVLVDLEPG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "beta-tubulin"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 66,
+                    id local str "Seq1_prot_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "Seq1_prot_1",
+              location packed-int {
+                {
+                  from 166,
+                  to 190,
+                  strand plus,
+                  id genbank {
+                    accession "MK578043"
+                  },
+                  fuzz-from lim lt
+                },
+                {
+                  from 256,
+                  to 281,
+                  strand plus,
+                  id genbank {
+                    accession "MK578043"
+                  }
+                },
+                {
+                  from 355,
+                  to 396,
+                  strand plus,
+                  id genbank {
+                    accession "MK578043"
+                  }
+                },
+                {
+                  from 466,
+                  to 520,
+                  strand plus,
+                  id genbank {
+                    accession "MK578043"
+                  }
+                },
+                {
+                  from 603,
+                  to 655,
+                  strand plus,
+                  id genbank {
+                    accession "MK578043"
+                  },
+                  fuzz-to lim gt
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

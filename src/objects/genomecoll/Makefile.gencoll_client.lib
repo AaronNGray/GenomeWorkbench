@@ -1,0 +1,21 @@
+# $Id: Makefile.gencoll_client.lib 589933 2019-07-19 00:57:27Z ucko $
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(SQLITE3_INCLUDE)
+
+ASN = gencoll_client
+
+# SRC = $(ASN:%=%__) $(ASN:%=%___)
+
+SRC = gencoll_client__ gencoll_client___ genomic_collections_cli genomic_collections_cli_ cached_assembly
+
+LIB = gencoll_client
+
+LIB_OR_DLL = lib
+
+REQUIRES = SQLITE3
+
+WATCHERS = smithrg dicuccio zherikov
+
+
+USES_LIBRARIES =  \
+    genome_collection sqlitewrapp xconnect $(COMPRESS_LIBS)

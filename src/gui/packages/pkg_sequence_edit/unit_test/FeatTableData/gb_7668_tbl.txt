@@ -1,0 +1,44 @@
+Seq-annot ::= {
+  data ftable {
+    {
+      data gene {
+        locus "newGene",
+        desc "testing new gene"
+      },
+      location int {
+        from 44,
+        to 139,
+        strand plus,
+        id genbank {
+          accession "CP019649",
+          version 1
+        }
+      }
+    },
+    {
+      data rna {
+        type tRNA,
+        ext tRNA {
+          aa ncbieaa 68,
+          anticodon int {
+            from 55,
+            to 57,
+            id genbank {
+              accession "CP019649",
+              version 1
+            }
+          }
+        }
+      },
+      location int {
+        from 44,
+        to 139,
+        strand plus,
+        id genbank {
+          accession "CP019649",
+          version 1
+        }
+      }
+    }
+  }
+}

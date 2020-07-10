@@ -1,0 +1,6 @@
+# $Id: Makefile.in 516797 2016-10-18 14:23:58Z boratyng $
+
+APP_PROJ = blastsrainput_unit_test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

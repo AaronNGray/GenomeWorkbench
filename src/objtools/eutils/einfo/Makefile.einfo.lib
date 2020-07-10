@@ -1,0 +1,10 @@
+# $Id: Makefile.einfo.lib 427429 2014-02-20 13:41:40Z gouriano $
+
+LIB = einfo
+SRC = einfo__ einfo___
+
+WATCHERS = grichenk
+
+
+USES_LIBRARIES =  \
+    xser

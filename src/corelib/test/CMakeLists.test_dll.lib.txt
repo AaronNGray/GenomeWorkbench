@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.test_dll.lib.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(test_dll SHARED)
+  NCBI_sources(test_dll)
+  NCBI_project_watchers(ivanov)
+NCBI_end_lib()
+

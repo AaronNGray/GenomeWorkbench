@@ -1,0 +1,7 @@
+# $Id: Makefile.in 21814 2010-07-22 16:38:19Z dicuccio $
+
+LIB_PROJ = w_hit_matrix
+SUB_PROJ = demo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

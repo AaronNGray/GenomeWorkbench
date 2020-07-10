@@ -1,0 +1,249 @@
+# $Id: Makefile.gbench_install.in 44553 2020-01-21 18:36:24Z katargir $
+
+include $(builddir)/Makefile.mk
+
+install_dir = $(bindir)/gbench
+loadable_ext = @loadable_ext@
+
+APP_DEP = ini2reg
+
+REQUIRES = objects algo BerkeleyDB $(APP_OR_NULL:app=gui)
+
+#
+# binaries
+#
+BINS = \
+        gbench-bin \
+        gbench_feedback_agent \
+        gbench_monitor \
+        windowmasker \
+        blastn blastp blastx tblastn tblastx \
+        gbenchmacro macroflow \
+        demo_widgets_gl_wx
+
+
+#
+# Core Libraries
+#
+CORELIBS = \
+		   *$(loadable_ext)
+
+#
+# Plugins
+#
+PLUGINS = 
+#PLUGINS = \
+#		  algo_align
+
+#
+# Packages
+#
+PACKAGES = \
+		  sequence \
+		  alignment \
+		  sequence_edit \
+		  snp
+
+#
+# Resource files
+#
+RESOURCES = \
+			share/gbench/*.png                  \
+			share/gbench/*.gif                  \
+			share/gbench/*.xpm                  \
+			share/gbench/*.ico                  \
+			share/gbench/*.svg                  \
+			share/gbench/fonts/*.ttf            \
+			\
+			etc/algo_urls                       \
+			etc/gbench-objmgr.ini               \
+			etc/gbench.ini                      \
+			etc/gbenchmacro.ini                 \
+			etc/macroflow.ini                   \
+			etc/news.ini                        \
+			etc/web_pages.ini                   \
+			etc/def_window_layout.asn           \
+			etc/align_scores/aa-rasmol-colors   \
+			etc/align_scores/aa-shapely-colors  \
+			etc/align_scores/blosum45           \
+			etc/align_scores/blosum62           \
+			etc/align_scores/blosum80           \
+			etc/align_scores/hydropathy         \
+			etc/align_scores/membrane           \
+			etc/align_scores/na-colors          \
+			etc/align_scores/signal             \
+			etc/align_scores/size				\
+			\
+			etc/blastdb-spec/blast-db-tree.asn	\
+			\
+			etc/patterns/kozak.ini       \
+			etc/taxlist.txt              \
+			etc/macro_scripts/list_of_macros.mql       \
+			etc/macro_scripts/autofix_gb.mql           \
+			etc/macro_scripts/autofix_tsa.mql          \
+			etc/macro_scripts/autofix_wgs.mql          \
+			etc/macro_scripts/add16S.mql               \
+			etc/macro_scripts/altitude_fix.mql         \
+			etc/macro_scripts/apply_gdna.mql           \
+			etc/macro_scripts/apply_genbank_to_wgs_set.mql \
+			etc/macro_scripts/apply_mito.mql           \
+			etc/macro_scripts/chloroprod.mql           \
+			etc/macro_scripts/comcirc.mql              \
+			etc/macro_scripts/complete_phage.mql       \
+			etc/macro_scripts/cytb_macro.mql           \
+			etc/macro_scripts/default_library.mql      \
+			etc/macro_scripts/extendCDSgene_nearEnds.mql \
+			etc/macro_scripts/fix_allauthors_affil.mql \
+			etc/macro_scripts/fixRNAITSpartials.mql    \
+			etc/macro_scripts/fixsource_underscores.mql \
+			etc/macro_scripts/flip_host.mql            \
+			etc/macro_scripts/flu_macro.mql            \
+			etc/macro_scripts/gbmito_macro.mql         \
+			etc/macro_scripts/gpipe_cultured_macro.mql \
+			etc/macro_scripts/gpipe_ITS_macro.mql      \
+			etc/macro_scripts/gpipe_uncult_macro.mql   \
+			etc/macro_scripts/isolate_to_strain.mql    \
+			etc/macro_scripts/join_short_trna.mql      \
+			etc/macro_scripts/localid_to_clone.mql     \
+			etc/macro_scripts/localid_to_isolate.mql   \
+			etc/macro_scripts/localid_to_strain.mql    \
+			etc/macro_scripts/lowercase_isolationsrc.mql \
+			etc/macro_scripts/measles_sourceH.mql      \
+			etc/macro_scripts/measles_sourceN.mql      \
+			etc/macro_scripts/parse_ATCC.mql           \
+			etc/macro_scripts/parse_bla_allele.mql     \
+			etc/macro_scripts/parse2strain.mql         \
+			etc/macro_scripts/PB1_genexref.mql         \
+			etc/macro_scripts/personal_Susan.mql       \
+			etc/macro_scripts/remove_all_add16S.mql    \
+			etc/macro_scripts/remove_assembly_name.mql \
+			etc/macro_scripts/remove_fulllength.mql    \
+			etc/macro_scripts/remove_gene.mql          \
+			etc/macro_scripts/remove_identifiedby.mql  \
+			etc/macro_scripts/remove_intronlessgene.mql  \
+			etc/macro_scripts/remove_location.mql      \
+			etc/macro_scripts/remove_location_wotaxlookup.mql  \
+			etc/macro_scripts/remove_molcomplete.mql   \
+			etc/macro_scripts/remove_xtrageneinfo.mql  \
+			etc/macro_scripts/rmvorg_from_strain.mql   \
+			etc/macro_scripts/rmvorg_from_isolate.mql  \
+			etc/macro_scripts/rRNA_macro.mql           \
+			etc/macro_scripts/rubella_sourceSH.mql     \
+			etc/macro_scripts/set_gene_partial.mql     \
+			etc/macro_scripts/set_partial_extend.mql   \
+			etc/macro_scripts/trimgenelocus2.mql       \
+			etc/macro_scripts/trimgenelocus4.mql       \
+			etc/macro_scripts/tRNA_codon.mql           \
+			etc/macro_scripts/tRNA_macro.mql           \
+			etc/macro_scripts/TSAnote.mql              \
+			etc/macro_scripts/uncultured_taxtool.mql   \
+			etc/macro_scripts/Updates/add16S.mql       \
+			etc/macro_scripts/Updates/remove_all_add16S.mql \
+			etc/synonyms.txt             \
+			etc/remote-only.kfg          \
+			etc/certs.kfg
+
+						
+#
+# Registry files
+#
+REGISTRIES = \
+			etc/gbench			\
+			etc/plugin_config
+
+#
+# Extra executables
+#
+
+INSTALL = $(abs_top_srcdir)/src/gui/scripts/install.sh --link
+
+
+# #############################################################################
+#
+# Build Targets
+#
+# #############################################################################
+
+all_r : all
+
+all : install
+
+purge_r : purge
+
+purge : clean
+
+clean_r : clean
+
+clean :
+	$(RMDIR) $(install_dir)
+
+install :
+	@echo "Installation directory: $(install_dir)"
+	@for f in $(BINS) ; do \
+		echo "Installing binary:  bin/$$f" ; \
+		$(INSTALL) $(bindir)/$$f $(install_dir)/bin/$$f || exit 1 ; \
+	done
+	@sed "s,@install_dir@,$(install_dir),g" $(abs_top_srcdir)/src/app/gbench/gbench_install/run-gbench.sh > $(install_dir)/bin/gbench
+	@chmod 755 $(install_dir)/bin/gbench
+	@plugins='$(PLUGINS)' ; for f in $$plugins ; do \
+		echo "Installing package: plugins/libgui_$$f$(loadable_ext)" ; \
+		$(INSTALL) $(libdir)/libgui_"$$f"$(loadable_ext)$(install_dir)/plugins/libgui_"$$f"$(loadable_ext); \
+	done
+	@for f in $(PACKAGES) ; do \
+		echo "Installing package: $$f" ; \
+		$(INSTALL) $(libdir)/libpkg_"$$f"$(loadable_ext) $(install_dir)/packages/"$$f"/libpkg_"$$f"$(loadable_ext); \
+		$(INSTALL) $(abs_top_srcdir)/src/gui/packages/pkg_"$$f"/package.manifest $(install_dir)/packages/"$$f"/package.manifest ; \
+	done
+	@for f in $(CORELIBS) ; do \
+		if [ ! -z "`echo $$f | grep \*`" ] ; then \
+			for ff in $(libdir)/$$f ; do \
+				echo "Installing library: `basename $$ff`" ; \
+				$(INSTALL) $$ff $(install_dir)/lib/`basename $$ff` ; \
+			done ; \
+		else \
+			echo "Installing resource: $$f" ; \
+			$(INSTALL) $(libdir)/$$f $(install_dir)/lib/$$f ; \
+		fi ; \
+	done
+	@for f in $(RESOURCES) ; do \
+		if [ ! -z "`echo $$f | grep \*`" ] ; then \
+			for ff in $(abs_top_srcdir)/src/gui/res/$$f ; do \
+				res=`echo $$ff | sed "s,$(abs_top_srcdir)/src/gui/res/,,"` ; \
+				echo "Installing resource: $$res" ; \
+				$(INSTALL) $(abs_top_srcdir)/src/gui/res/$$res $(install_dir)/$$res ; \
+			done ; \
+		else \
+			echo "Installing resource: $$f" ; \
+			$(INSTALL) $(abs_top_srcdir)/src/gui/res/$$f $(install_dir)/$$f ; \
+		fi ; \
+	done
+	@for f in $(REGISTRIES) ; do \
+		echo "Generating registry: $$f" ; \
+		LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):$(libdir) $(bindir)/ini2reg -ini $(abs_top_srcdir)/src/gui/res/"$$f".asn.ini  -reg $(install_dir)/"$$f".asn ; \
+	done
+	@echo "Installing resource: etc/accguide.txt"
+	@$(INSTALL) $(abs_top_srcdir)/src/objects/seqloc/accguide.txt \
+	    $(install_dir)/etc/accguide.txt
+	@if [ `uname -s` = Darwin ] ; then \
+		if [ -e $(libdir)/shaders.metallib ]; then \
+			echo "Installing default.metallib" ; \
+			$(INSTALL) $(libdir)/shaders.metallib $(install_dir)/bin/default.metallib || exit 1 ; \
+		fi ; \
+		$(abs_top_srcdir)/src/app/gbench/gbench_install/create_mac_app.sh \
+		  $(abs_top_srcdir) $(bindir) $(libdir) "Genome Workbench" ; \
+	fi
+	@echo "Checking package dependencies"
+	@for f in $(PACKAGES) ; do \
+		echo "    Package: $$f" ; \
+		${bindir}/package_test ${install_dir}/packages/"$$f"/libpkg_"$$f"$(loadable_ext); \
+		if [ $$? -ne 0 ]; then break; fi;\
+	done
+	@echo "Copying macro editor's XRC files..."
+	@if [ ! -d $(install_dir)/etc/macro_xrc ]; then \
+		mkdir $(install_dir)/etc/macro_xrc ; \
+	fi
+	@cp $(abs_top_srcdir)/src/gui/res/etc/macro_xrc/*.xrc $(install_dir)/etc/macro_xrc/
+
+# Requirements checking
+requirements: $(REQUIRES:%=$(status_dir)/%.enabled)
+

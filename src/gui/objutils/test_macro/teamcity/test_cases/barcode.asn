@@ -1,0 +1,150 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome mitochondrion,
+      org {
+        taxname "Macara argentea",
+        orgname {
+          name binomial {
+            genus "Macara",
+            species "argentea"
+          },
+          gcode 1,
+          mgcode 5
+        }
+      }
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "Seq_1",
+	   general {
+          db "uoguelph",
+          tag str "BLPBD685-07.COI-5P"
+        }
+      },
+      descr {
+        title "Macara argentea cytochrome oxidase subunit 1 (COI) gene,
+ partial cds; mitochondrial.",
+        molinfo {
+          biomol genomic,
+          tech barcode
+        },
+        create-date std {
+          year 2012,
+          month 2,
+          day 13
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 658,
+        seq-data ncbi2na '04F33FCFFE83F8D2931CA04DDC20CF0F60783CAC35CBD3C3E88E
+140FCC11CFB479D39FF34E3FFFCCBCC50F30FA28FE80F8F2C5FC33CA255E3327F5560C0C3708FF
+8F3C555DCF3FCF0FD2A2CFB200E89281E8E06B315557F4DC33E74CBA08DEC8FC10DFF5713F24AC
+FD343FCA243C1FCF1C73CF0CC6170D3334FE340C5FCFEFE24B283C49FC71F7FCDFC5EEF27A273C
+73BCF048D807C0C5D3FFE35E7A2BA2350DF33413F3D0'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "COI"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 657,
+                strand plus,
+                id local str "Seq_1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        genbank {
+          accession "AFA05701",
+          version 1
+        },
+        gi 374943270
+      },
+      descr {
+        title "cytochrome oxidase subunit 1, partial (mitochondrion) [Macara
+ argentea]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans,
+          completeness no-ends
+        },
+        create-date std {
+          year 2012,
+          month 2,
+          day 13
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 219,
+        seq-data ncbieaa "TLYFIFGIWSGMLGTSLSMLIRTELGNPSSLIGDDQIYNTIVTAHAFIMIFF
+MVMPIMIGGFGNWLVPLMLGAPDMAFPRMNNLSFWLLPPSIILLISGSIVENGAGTGWTVYPPLSSNIAHSGSSVDLT
+IFSLHLAGISSILGAINFITTIINMRPNHMSFDQMPLFVWAVGITALLLLLSLPVLAGAITMLLTDRNLNTSFFDPAG
+GGDPILYQHLF"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "cytochrome oxidase subunit 1"
+                }
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 218,
+                id gi 374943270,
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame two,
+            code {
+              id 5
+            }
+          },
+          partial TRUE,
+          product whole gi 374943270,
+          location int {
+            from 0,
+            to 657,
+            strand plus,
+            id local str "Seq_1",
+            fuzz-from lim lt,
+            fuzz-to lim gt
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+#################################
+# $Id: Makefile.in 16711 2008-04-23 19:34:00Z katargir $
+# Author:  Mike DiCuccio
+#################################
+
+# Meta-makefile for the basic views
+#################################
+
+LIB_PROJ = pkg_sequence
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

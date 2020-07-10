@@ -1,0 +1,101 @@
+# $Id: Makefile.pkg_sequence_edit.lib 43899 2019-09-17 12:09:19Z choi $
+
+ASN_DEP = seq
+
+SRC = citem_util src_focus transg_src dblink_quals prefix_authority rm_cdd \
+      dll_register autodef_params edit_job autodef_params_panel autodef_tool_manager \
+      subprepintropanel subprepmainpanel subprepfieldeditor chimera_panel \
+      subprep_panel subprep_util srcedit_panel srcedit_params srcedit_tool srcedit_util molinfoedit_util \
+      srceditdialog seqtechdlg submitblockdlg bulk_molinfo_edit_dlg \
+      seq_table_grid tbl_edit_dlg seqid_fix_dlg \
+      bulk_location_panel bulkcdsaddpanel bulk_rna_add_panel bulk_other_add_panel \
+      virusnoncodingfeaturespanel rnanamepanel igsflankpanel igspanel \
+      editingbtnspanel vectortrimdlg remove_sequences remove_desc_dlg \
+      remove_sequences_from_alignments remove_features_dlg remove_structured_comment \
+      remove_annot remove_genomeprojectdb add_citsubupdate \
+      pubdesc_editor modify_structured_comment remove_bankit_comment remove_structuredcomment_keyword \
+      reorder_sequences_dlg convert_comment modify_feature_id pcr-primers-edit fix_orgmod_institution \
+      append_mod_to_org append_mod_to_org_dlg parse_collectiondate_formats country_fixup \
+      virus_molecule_questions_panel rename_column_dlg bulk_cmd_dlg \
+      pub_field dblink_field \
+      misc_field_panel field_choice_panel \
+      existingtextdlg parse_text_options_dlg \
+      remove_text_outside_string_panel \
+      string_constraint_panel field_constraint_panel \
+      seqtable_util featedit_util mrna_cds miscedit_util molinfo_edit_dlg \
+      autodef_dlg autodef_org_panel autodef_feat_clause_panel autodef_opt_feat_panel autodef_functions\
+      strain_serotype_influenza attrib_table_delimiters_panel attrib_table_column_id_panel \
+      qual_table_load_manager remove_unverified add_deflinedlg \
+      edit_feat_loc_panel convert_feat_dlg \
+      discrepancy_dlg custom_tree \
+      ok_cancel_panel prefix_deflinedlg make_badspecifichost_tbl \
+      correct_rna_strand_dlg apply_rna_its_dlg trim_n \
+      rem_prot_titles add_transl_except_dlg \
+      debug_macro_tool debug_macro_tool_panel debug_macro_tool_params debug_macro_tool_job \
+      edit_table_views cap_change_panel bulk_cds_edit bulk_gene_edit \
+      fix_specifichost label_rna test_dialog_view retranslate_cds \
+      string_constraint_select apply_edit_convert_panel bulk_rna_edit \
+      convert_text_options_panel generalid_panel segregate_sets validator_report_cfg_dlg \
+      macro_worker suc_refresh_cntrl \
+      choose_set_class_dlg revcomp_sequences select_target_dlg withdraw_sequences uncul_tax_tool \
+      apply_indexer_comments correct_genes_dialog remove_srcnotes extend_partial_features \
+      convert_cds_to_misc_feat add_flu_comments lowercase_qualifiers add_sequences \
+      convert_set_type_dlg open_data_source_object_dlg gene_features_from_other_features \
+      latlon_tool sequester_sets seq_grid_table_navigator export_table \
+      raw_seq_to_delta_by_n update_replaced_ec_numbers add_feature_between_dlg \
+      update_seq_panel update_seq_dlg update_seq update_seq_input update_seq_params update_seq_worker\
+      update_multi_seq_input update_multi_seq_dlg \
+      import_feat_table wrong_illegal_quals loadentrez_seq_dlg group_explode remove_text_inside_string_dlg \
+      find_asn1_dlg fuse_features remove_dup_feats_dlg \
+      match_feat_table_dlg remove_xrefs cds_from_gene_mrna_exon cds_to_mat_peptide select_features \
+      remove_set edit_seq_id edit_history exon_from_cds set_global_refgene_status clear_keywords \
+      convert_rpt_unit_range_to_location link_mrna_cds \
+      gene_feats_from_xrefs remove_gene_xrefs \
+      truncate_cds single_choice_panel gene_field_panel fix_product_names apply_gcode \
+      edit_seq_ends_with_align protein_field_panel dbxref_name_panel update_align \
+      resolve_intersecting_feats create_protein_id genus_species_fixup country_conflict \
+      add_secondary growable_list raw_seq_to_delta_by_loc package_features_on_parts \
+      edit_project_item_extension featuretbl_frame sequin_desktop_view \
+      fix_structured_vouchers bulk_feature_add_dlg_std edit_seq_ends create_seq_hist_for_tpa \
+      adjust_features_for_gaps check_unique_ids \
+      indexer_app_mode  indexer_open_view_extension smart_file_text_toolbar editing_actions \
+      editing_action_constraint compare_with_biosample editing_action_features editing_action_biosource \
+      editing_action_desc editing_action_seqid editing_action_misc barcode_tool restore_local_file bulk_edit_feat_dlg_std \
+      aecr_frame parse_text_dlg split_cds_with_too_many_n far_pointer_seq import_alignparams_dlg table_reader \
+      load_struct_comm_from_table csuc_frame edit_cds_frame expand_gaps convert_cds_with_gaps_to_misc_feat \
+      convert_selected_gaps sorted_proteins constraint_panel add_constraint_panel add_linkage_to_gaps \
+      convert_second_prot_name mrna_from_gene_cds_exon adjust_feats_for_introns clear_nomenclature merge_biosources \
+      suppress_genes extend_cds_to_stop recompute_intervals convert_bad_inference global_pubmedid_lookup \
+      remove_unindexed_features correct_interval_order load_secondary_accessions add_global_code_break \
+      convert_desc_to_feat validate_frame validate_panel suspect_product_rule_editor mixedstrands loc_constraint_panel \
+      trna_from_gene remove_unnecessary_exceptions edit_pub_dlg_std add_macro_button_dlg \
+      suspect_product_rules_add_constraint suspect_product_rules_constraint_panel sequpd \
+      restore_rna_edit cmd_place_protein_feats cmd_cleanup \
+      cmd_feat_id_xrefs_from_qualifiers  cmd_convert_to_delayed_gen-prod-set_quals \
+      cmd_assign_feat_local_ids fix_for_trans_splicing common_commands \
+      modify_bsrc_interface submission_wizard subvalidate_panel sub_validate_disc_tab subdiscrepancy_panel \
+      subannotation_panel orginfo_panel locus_tag_euk_dlg
+
+
+LIB = pkg_sequence_edit
+
+DLL_LIB = gui_core \
+          xdiscrepancy xbiosample_util eutils_client xmlwrapp ncbi_xloader_wgs\
+          $(XFORMAT_LIBS) xalnmgr xobjutil tables \
+          macro xregexp $(OBJREAD_LIBS) $(OBJMGR_LIBS) \
+          w_seq w_seq_desktop w_edit w_data w_object_list w_gl w_wx w_macro_edit w_seq_text \
+          w_aln_multi w_seq_graphic xngalign blastinput \
+          gui_objects gui_config gui_opengl snputil gui_objutils gui_utils \
+          xobjedit prosplign taxon3 valerr valid xregexp xvalidate xobjedit gbproj \
+          $(PCRE_LIB) $(COMPRESS_LIBS) $(SOBJMGR_LIBS)  
+
+
+LIBS =  $(SRA_SDK_SYSLIBS) $(LIBXML_INCLUDE) $(LIBXSLT_INCLUDE) \
+        $(WXWIDGETS_LIBS) $(GLEW_LIBS) $(IMAGE_LIBS) $(CMPRS_LIBS) $(DL_LIBS) $(ORIG_LIBS) 
+POST_LINK = $(VDB_POST_LINK)
+CPPFLAGS = $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE) $(ORIG_CPPFLAGS) -DNCBI_GUIPKG_SEQUENCE_EDIT_EXPORTS 
+
+LIB_OR_DLL = dll
+#DLL_TYPE = plugin
+
+REQUIRES = gbench wxWidgets objects

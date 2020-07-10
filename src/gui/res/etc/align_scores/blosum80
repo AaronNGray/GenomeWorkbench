@@ -1,0 +1,18 @@
+[Info]
+Name = BLOSUM80
+Description =     Matrix made by matblas from blosum80.iij\
+    BLOSUM Clustered Scoring Matrix in 1/2 Bit Units\
+    Blocks Database = /data/blocks_5.0/blocks.dat\
+    Cluster Percentage: >= 80\
+    Entropy =   0.9868, Expected =  -0.7442
+Method = MatrixScore
+Type = Protein
+[Table]
+UseConsensus = false
+ConsensusMinimumValue = -5
+ConsensusMaximumValue = 1
+NonConsensusMinimumValue = -6
+NonConsensusMaximumValue = 11
+MinimumColor = yellow3
+MaximumColor = royal blue
+Builtin = blosum80

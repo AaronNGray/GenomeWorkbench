@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.test_html.app.txt 593496 2019-09-19 15:43:28Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_html)
+  NCBI_sources(test_html)
+  NCBI_uses_toolkit_libraries(xhtml)
+  NCBI_project_watchers(ivanov)
+  NCBI_add_test()
+NCBI_end_app()
+

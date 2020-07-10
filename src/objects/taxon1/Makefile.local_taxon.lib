@@ -1,0 +1,10 @@
+# $Id: Makefile.local_taxon.lib 565502 2018-06-12 20:55:39Z vakatov $
+
+ASN_DEP = seq taxon1
+
+LIB = local_taxon
+SRC = local_taxon
+
+CPPFLAGS= $(ORIG_CPPFLAGS) $(SQLITE3_INCLUDE)
+LIBS    = $(SQLITE3_LIBS) $(ORIG_LIBS)
+REQUIRES = SQLITE3

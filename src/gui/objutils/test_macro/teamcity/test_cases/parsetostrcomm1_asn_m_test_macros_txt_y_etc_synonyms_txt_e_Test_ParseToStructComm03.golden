@@ -1,0 +1,220 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Falco cherrug",
+            common "Saker falcon",
+            db {
+              {
+                db "taxon",
+                tag id 345164
+              }
+            },
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "Dr-100"
+                },
+                {
+                  subtype nat-host,
+                  subname "Methanobacterium formicicum, strain Dresden Khl10"
+                }
+              },
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+ Tetrapoda; Amniota; Sauropsida; Sauria; Archelosauria; Archosauria;
+ Dinosauria; Saurischia; Theropoda; Coelurosauria; Aves; Neognathae;
+ Falconiformes; Falconidae; Falco",
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          },
+          subtype {
+            {
+              subtype isolation-source,
+              name "Anaerobic digester"
+            },
+            {
+              subtype other,
+              name "[cultured bacterial source]"
+            }
+          }
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "S3",
+              data str "Sanger dideoxy sequencing"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 48,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGGAAAACCCCGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787265
+        },
+        genbank {
+          accession "KF591394"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "Submission",
+          data {
+            {
+              label str "AdditionalComment",
+              data str "LocalID:Seq2"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "Drs3"
+                },
+                {
+                  subtype nat-host,
+                  subname "Methanobacterium formicicum, strain Dresden Khl10"
+                }
+              },
+              gcode 1
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Germany"
+            },
+            {
+              subtype isolation-source,
+              name "Anaerobic digester"
+            },
+            {
+              subtype other,
+              name "[cultured bacterial source]"
+            }
+          },
+          pcr-primers {
+            {
+              forward {
+                {
+                  seq "aggcaactgtgctatccgagggag",
+                  name "nbam24"
+                }
+              },
+              reverse {
+                {
+                  seq "aggcaactgtgctatccgagggag",
+                  name "nbam24"
+                }
+              }
+            }
+          }
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "Coverage",
+              data str "some coverage"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 128,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATCTTTGCAATTGGGCAA
+TTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATAACATGGGTCATTAACA"
+      }
+    }
+  }
+}

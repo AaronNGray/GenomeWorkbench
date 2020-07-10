@@ -1,0 +1,6 @@
+# $Id: Makefile.in 467460 2015-05-13 18:25:03Z grichenk $
+
+APP_PROJ = test_eutils_client
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

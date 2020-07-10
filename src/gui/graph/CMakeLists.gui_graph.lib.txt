@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.gui_graph.lib.txt 42527 2019-03-19 16:01:16Z katargir $
+#############################################################################
+
+NCBI_begin_lib(gui_graph)
+  NCBI_sources(
+    axis igraph igraph_data legend pie_graph
+    regular_grid scatter_graph graph_panel
+  )
+  NCBI_uses_toolkit_libraries(gui_opengl)
+  NCBI_requires(GLEW)
+NCBI_end_lib()

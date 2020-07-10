@@ -1,0 +1,6 @@
+MACRO RemoveLocation "Remove location"
+FOR EACH BioSource
+DO
+    RemoveQual("genome");
+DONE
+------------------------------------------------------------------------------

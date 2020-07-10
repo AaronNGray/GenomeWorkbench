@@ -1,0 +1,41 @@
+#############################################################################
+# $Id: CMakeLists.w_wx.lib.txt 44679 2020-02-20 17:31:36Z gouriano $
+#############################################################################
+
+if(XCODE)
+  set_source_files_properties(
+    ${NCBI_CURRENT_SOURCE_DIR}/dock_manager.cpp
+    ${NCBI_CURRENT_SOURCE_DIR}/richtextctrl.cpp
+    ${NCBI_CURRENT_SOURCE_DIR}/wx_utils.cpp
+    PROPERTIES XCODE_EXPLICIT_FILE_TYPE sourcecode.cpp.objcpp
+  )
+endif()
+
+NCBI_begin_lib(w_wx)
+  NCBI_sources(
+    advanced_file_input app_status_bar
+    color_picker_validator commands csv_export_dlg
+    dialog_utils dock_container dock_frames dock_hint_frame
+    dock_layout dock_manager
+    dock_notebook dock_panel fileartprov float_text_validator gui_event
+    log_gbench main_frame message_box min_panel_container
+    htmlwin multi_file_input number_validator
+    regexp_validator table_listctrl table_model table_cols_more_dlg
+    test_clients
+    treectrl_ex color_picker ui_command wx_app glcanvas group_map_widget
+    map_control map_item selection_control splitter wx_utils
+    window_manager text_report_dlg dialog richtextctrl windows_dlg
+    string_formatters auto_complete_combo simple_clipboard
+    sticky_tooltip_handler sticky_tooltip_wnd preview_setup_dlg
+    sys_path ui_tool ui_tool_registry async_call
+    preview_setup_widget save_images_setup_dlg image_grabber
+    print_setup_dlg_wx ind_progress_bar nf_bitmap_button
+    spin_ctrl csv_exporter grid_table_export
+    taxon_text_completer rna_name_completer auto_complete_text_ctrl string_history glresetdlg
+    wizard_dlg compressed_file wx_save_pdf_base_dlg file_extensions gui_widget_dlg pdf_grabber svg_grabber
+    checkedlistctrl hyperlink gui_widget_panel save_file_helper wnd_layout_registry
+    mtlcanvas exe_file_validator
+  )
+  NCBI_uses_toolkit_libraries(gui_objutils gui_print)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

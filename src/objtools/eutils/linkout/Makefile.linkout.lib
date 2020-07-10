@@ -1,0 +1,10 @@
+# $Id: Makefile.linkout.lib 427429 2014-02-20 13:41:40Z gouriano $
+
+SRC = linkout__ linkout___
+LIB = linkout
+
+WATCHERS = grichenk
+
+
+USES_LIBRARIES =  \
+    xser

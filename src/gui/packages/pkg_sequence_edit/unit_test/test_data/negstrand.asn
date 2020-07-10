@@ -1,0 +1,177 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class pop-set,
+      descr {
+        update-date std {
+          year 2015,
+          month 12,
+          day 11,
+          hour 6,
+          minute 49,
+          second 43
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "AE10_1_1",
+            general {
+              db "BankIt",
+              tag str "1877929/AE10_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 60653269
+            },
+            genbank {
+              accession "KU297038"
+            }
+          },
+          descr {
+            title "Chloroplast, tabF-tabC, partial",
+            source {
+              genome chloroplast,
+              org {
+                taxname "Astragalus edulis",
+                db {
+                  {
+                    db "taxon",
+                    tag id 90176
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Astragalus",
+                    species "edulis"
+                  },
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "AE10_1"
+                    }
+                  },
+                  lineage "Eukaryota; Viridiplantae; Streptophyta;
+ Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons;
+ Gunneridae; Pentapetalae; rosids; fabids; Fabales; Fabaceae; Papilionoideae;
+ Galegeae; Astragalus",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              completeness partial
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "AE10_1_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 50,
+            strand ds,
+            seq-data ncbi2na '9CD5853DF864735D3FC203CBE0'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "old gene"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 13,
+                    to 19,
+                    strand plus,
+                    id genbank {
+                      accession "KU297038"
+                    },
+                    fuzz-from lim lt
+                  }
+                },
+                {
+                  data imp {
+                    key "misc_feature"
+                  },
+                  partial TRUE,
+                  comment "before the alignment (1..>11)",
+                  location int {
+                    from 0,
+                    to 10,
+                    strand plus,
+                    id genbank {
+                      accession "KU297038"
+                    },
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "misc_feature"
+                  },
+                  partial TRUE,
+                  comment "partially inside the alignment (<5..23)",
+                  location int {
+                    from 4,
+                    to 22,
+                    strand plus,
+                    id genbank {
+                      accession "KU297038"
+                    },
+                    fuzz-from lim lt
+                  }
+                },
+                {
+                  data imp {
+                    key "misc_feature"
+                  },
+                  partial TRUE,
+                  comment "negative strand (<6..>50)",
+                  location int {
+                    from 5,
+                    to 49,
+                    strand minus,
+                    id genbank {
+                      accession "KU297038"
+                    },
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "misc_feature"
+                  },
+                  partial TRUE,
+                  comment "negative strand (1..>7)",
+                  location int {
+                    from 0,
+                    to 6,
+                    strand minus,
+                    id genbank {
+                      accession "KU297038"
+                    },
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

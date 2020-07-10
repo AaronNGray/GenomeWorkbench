@@ -1,0 +1,11 @@
+# $Id: Makefile.ncbi_xobjsimple.dll 108294 2007-08-06 17:29:58Z Gouriano $
+
+DLL = ncbi_xobjsimple
+
+HOSTED_LIBS    = xobjsimple
+
+DEPENDENCIES   = ncbi_core   ncbi_general ncbi_seq \
+                 ncbi_seqext ncbi_xloader_genbank
+
+CPPFLAGS = -DNCBI_XOBJSIMPLE_EXPORTS
+

@@ -1,0 +1,10 @@
+# $Id: Makefile.ncbi_xgrid2cgi.dll 196780 2010-07-08 16:50:11Z kazimird $
+
+DLL = ncbi_xgrid2cgi
+
+HOSTED_LIBS    = xgridcgi
+
+DEPENDENCIES   = ncbi_core ncbi_web
+
+CPPFLAGS = -DNCBI_XGRIDCGI_EXPORTS
+

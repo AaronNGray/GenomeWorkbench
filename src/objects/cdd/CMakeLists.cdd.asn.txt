@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.cdd.asn.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(cdd)
+  NCBI_dataspecs(cdd.asn)
+  NCBI_uses_toolkit_libraries(cn3d scoremat)
+NCBI_end_lib()
+
+

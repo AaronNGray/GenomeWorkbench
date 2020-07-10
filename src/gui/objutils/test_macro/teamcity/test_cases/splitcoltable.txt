@@ -1,0 +1,3 @@
+Seq1 fungal sp.	AB2	AR-2014
+Seq2 fungal sp.	K3T1	AR-2014
+Seq3 fungal sp.	K7T2J2	AR-2014

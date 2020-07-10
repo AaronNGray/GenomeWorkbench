@@ -1,0 +1,268 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class genbank,
+      seq-set {
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Salvelinus curilus",
+                orgname {
+                  gcode 1
+                }
+              }
+            },
+            pub {
+              pub {
+                gen {
+                  cit "Unpublished",
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Brykov",
+                          first "Vladimir",
+                          initials "V.A."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Pankova",
+                          first "Marina",
+                          initials "M.V."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Kukhlevskii",
+                          first "Andrey",
+                          initials "A.D."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "Far Eastern Federal University",
+                      div "Cell Biology and Genetics, School of Natural
+ Sciences",
+                      city "Vladivostok",
+                      country "Russia",
+                      street "Oktober st. 27",
+                      postal-code "690000"
+                    }
+                  },
+                  title "Divergence of paralogous growth hormone genes GH1 and
+ GH2 in charrs of Salvelinus genus"
+                }
+              }
+            },
+            pub {
+              pub {
+                sub {
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Brykov",
+                          first "Vladimir",
+                          initials "V.A."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Pankova",
+                          first "Marina",
+                          initials "M.V."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Kukhlevskii",
+                          first "Andrey",
+                          initials "A.D."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "Far Eastern Federal University",
+                      div "Cell Biology and Genetics, School of Natural
+ Sciences",
+                      city "Vladivostok",
+                      country "Russia",
+                      street "Oktober st. 27",
+                      postal-code "690000"
+                    }
+                  },
+                  date std {
+                    year 2013,
+                    month 10,
+                    day 28
+                  }
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "Scgh1",
+                general {
+                  db "NCBIFILE",
+                  tag str "Scgh1.sqn/Scgh1"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 40528530
+                },
+                genbank {
+                  accession "KF772971"
+                }
+              },
+              descr {
+                title "[gene=type-1 growth hormone gene, complete cds]",
+                molinfo {
+                  biomol genomic
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 3666,
+                seq-data ncbi2na '04C741614591FD0BC2C14D7E90F08B003A842B0979FF
+DEDCFCFFFD6EA0B4BB14FCB10EC1F113F0D1E292AB412A48802E042CF71E738AF30DFF8448147E
+7F0417073B8D4C13F13F8B477CD48987C4E243EABC2E5F9D0A91348CDD172D274A8F8052C17F4B
+C785419DC059CA73EBB1029E00CDF1C3B374130F61F1DBFCC4FDFBFCFC3777FCBBF79EF94B7C7A
+D2FBFDE2D0AA498E80141A77D04D9AD05AB904DD45C3A74803BD0E1FEC2127FE0DF7FE13340CBB
+3438FBDF7DFB212CD77D11057EE9C00377757DFEE3FEE4A0BC57BE5E381921278108CF5E7A1F7B
+07587536E2543610918874822F4B0B05E9E2107193BCE57F0053342EC036E16F51DE73D17C0CE0
+75D4E3938F500C0C12A4DD0FE04343207CB4F2F3E642485143CCC0770FCCCFFFCFF0FBFF05FCFC
+1CA42D2F08103DD3F10E10922924D393A7762E9924B70A471374B948A6D1E4857AF63D487B3C40
+69EE3EF2D532A69110FB5FAF2AFE96ABE73174B97D070ACAC01051334434F90B005347770DAEBF
+B713DD2FFB9FF7B1280527500B3F47434EC0CA937427B10C41F4FF50C37BAFDDE4DF4444AD7827
+9D44DDF16DE3E0D7A8B15C9485F8537504974CB4807505237788274985D02EA4D05E74D1AC080A
+2A2043853FBAED11FEE47B0154293FF0740C7DCB0BE0740B43802D7CF9F00EFFEEB0E9D0070388
+2D134390FFF02F3040F1FFC5493BDC792B233FFA0FBFF0437BBFF93B1204E8B8F8F4DF39C4408C
+CC1313FF413FD1023830BC520FF901507C4A5E3BA5EC0738BF4A51ECF2AC09C45D00C2B7CE230B
+0ECFBCC08BE0F30E30CFE5CA0F47E0A5128780383841053B77B4704CC4B4EAC1F44847D12AE1DC
+CAFE2C387300D1FC2C1E4B48F7B33C2E41ABF5C00BFA2C384913EABF12E1380A8085DCE7F5CBC8
+0932ECA146CE5DF749237F7BC47B8EAB0785D3734D1C32E1CCD2E1144F430783B6953D0A13F393
+BB5FE73BB9FDA02950C060CF8CE444D45514E4DDDDEDD512A894A3A6C7897A3843877492795571
+A81C714817AAA61A01B4A281C62FBE979F420A13910AE6014EF97D0FD3B97D7B3FDC4BBBEFFDEE
+D473E40B3EF2BCFFFF48B0307468472209FC142E0F7D522BDF1449EC3424013F747512D33135C7
+C011D75F7D097C4BF3EB5128270C08AB04A30405FCF1E5FC8837B5D575E1741574DC35123B53EB
+FF7D22053D1F784E152FDFD3F5CD3D3F1CDD1E340BF278F504B37FAB7F054CCF3C7BCFBD3E3421
+EF56202B72E17204744F00EED073054F7DFFF5558AD885C5E16D942E4A0B47A2941E477B20'H
+              }
+            },
+            seq {
+              id {
+                local str "Scgh1_1",
+                general {
+                  db "NCBIFILE",
+                  tag str "Scgh1.sqn/Scgh1_1"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 40528531
+                }
+              },
+              descr {
+                title "growth hormone type-1 [Eukaryota; Metazoa; Chordata;
+ Craniata; Vertebrata; Euteleostomi; Actinopterygii; Neopterygii; Teleostei;
+ Euteleostei; Protacanthopterygii; Salmoniformes; Salmonidae; Salmoninae;
+ Salvelinus; Salvelinus curilus]",
+                molinfo {
+                  biomol peptide,
+                  tech concept-trans-a
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 210,
+                seq-data ncbieaa "MGQVFLLLPVLLVSCFLSQGAAMENQRLFNIAVNRVQHLHLMAQ
+KMFNDFEVTLLPDERRQLNKIFLLDFCNSDSIVSPIDKHETQKSSVLKLLHISYRLIESWEYPSQTLTISNSLIVRNS
+NQISEKLSDLKVGINLLITGSQDGVLSLDDNDSQQLPPYGNYYQNLGGDGNVRRNYELLACFKKDMHKVETYLTVAKC
+RKSLEANCTL"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "growth hormone type-1"
+                        }
+                      },
+                      location int {
+                        from 0,
+                        to 209,
+                        id local str "Scgh1_1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    frame one,
+                    code {
+                      id 1
+                    }
+                  },
+                  product whole local str "Scgh1_1",
+                  location mix {
+                    int {
+                      from 64,
+                      to 73,
+                      strand plus,
+                      id local str "Scgh1"
+                    },
+                    int {
+                      from 529,
+                      to 668,
+                      strand plus,
+                      id local str "Scgh1"
+                    },
+                    int {
+                      from 805,
+                      to 921,
+                      strand plus,
+                      id local str "Scgh1"
+                    },
+                    int {
+                      from 1637,
+                      to 1792,
+                      strand plus,
+                      id local str "Scgh1"
+                    },
+                    int {
+                      from 2836,
+                      to 2982,
+                      strand plus,
+                      id local str "Scgh1"
+                    },
+                    int {
+                      from 3603,
+                      to 3665,
+                      strand plus,
+                      id local str "Scgh1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

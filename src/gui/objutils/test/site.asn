@@ -1,0 +1,92 @@
+User-object ::= {
+  class "NCBI",
+  type str "GUI-App-Registry",
+  data {
+    {
+      label str "first",
+      data fields {
+        {
+          label str "item",
+          data str "val"
+        },
+        {
+          label str "item2",
+          data int 8
+        },
+        {
+          label str "item3",
+          data real { 5, 10, 0 }
+        },
+        {
+          label str "sub1",
+          data fields {
+            {
+              label str "subitem",
+              data str "val"
+            },
+            {
+              label str "subitem2",
+              data int 8
+            },
+            {
+              label str "subitem3",
+              data real { 5, 10, 0 }
+            }
+          }
+        }
+      }
+    },
+    {
+      label str "second",
+      data fields {
+        {
+          label str "item",
+          data str "val"
+        },
+        {
+          label str "item2",
+          data int 8
+        },
+        {
+          label str "item3",
+          data real { 5, 10, 0 }
+        }
+      }
+    },
+    {
+      label str "section",
+      data fields {
+        {
+          label str "data",
+          data fields {
+            {
+              label str "overloaded",
+              data fields {
+                {
+                  label str "key1",
+                  data int 10
+                },
+                {
+                  label str "key2",
+                  data int 20
+                },
+                {
+                  label str "key3",
+                  data int 30
+                },
+                {
+                  label str "key4",
+                  data int 40
+                },
+                {
+                  label str "name",
+                  data str "overloaded"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

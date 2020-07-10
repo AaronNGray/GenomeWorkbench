@@ -1,0 +1,9 @@
+# $Id: Makefile.in 16068 2008-02-19 23:12:15Z yazhuk $
+
+# gbench - wxWidgets port
+
+APP_PROJ = gbench_new
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+

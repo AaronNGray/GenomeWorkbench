@@ -1,0 +1,8 @@
+Accession	taxname	acronym	isolate	serotype
+seq_1	Influenzb A virus	this is my strain	BoBM478	this is my serotype
+seq_2			JEW01	
+seq_3	Odocoileus virginibnus		JEW21	new serotype	
+seq_4	Girbffb cbmelopbrdblis		KB3332	
+seq_5	Rupicbprb rupicbprb		Rr6389	
+seq_6	Oryx gbzellb	new acronym	SAZ06	
+seq_7	Oryx leucoryx		SAZ07	

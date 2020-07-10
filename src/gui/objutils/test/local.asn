@@ -1,0 +1,15 @@
+User-object ::= {
+  class "NCBI",
+  type str "GUI-App-Registry",
+  data {
+    {
+      label str "section",
+      data fields {
+        {
+          label str "local",
+          data str "this is a local key"
+        }
+      }
+    }
+  }
+}

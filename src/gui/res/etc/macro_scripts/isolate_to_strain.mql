@@ -1,0 +1,12 @@
+MACRO IsolateToStrain "Convert isolate to strain (overwrite existing text)"
+VAR
+    cap_change = "none"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH BioSource
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "isolate";
+    ConvertStringQual("src.subname", "strain", cap_change, strip_name, existing_text);
+    RemoveModifier(src);
+DONE
+------------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+# $Id: Makefile.in 15934 2008-02-08 18:42:31Z tereshko $
+# Author:  Roman Katargin
+# Meta-makefile for plugin testapp
+#################################
+
+APP_PROJ = demo_flatfile_widget demo_feature_select
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

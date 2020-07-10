@@ -1,0 +1,9 @@
+# $Id: Makefile.in 15168 2007-10-15 19:11:34Z dicuccio $
+
+# Meta-makefile("ALGO" project)
+#################################
+
+APP_PROJ = test_math test_intersect
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

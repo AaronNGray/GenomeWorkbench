@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.test_table_reader.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_table_reader)
+  NCBI_sources(test_table_reader)
+  NCBI_uses_toolkit_libraries(w_loaders)
+  NCBI_requires(wxWidgets)
+NCBI_end_app()

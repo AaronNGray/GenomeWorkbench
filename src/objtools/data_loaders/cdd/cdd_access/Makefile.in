@@ -1,0 +1,6 @@
+# $Id: Makefile.in 534723 2017-05-01 18:22:26Z grichenk $
+
+ASN_PROJ = cdd_access
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

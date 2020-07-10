@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbi_iprange.app.txt 564453 2018-05-29 13:28:08Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbi_iprange)
+  NCBI_sources(test_ncbi_iprange)
+  NCBI_uses_toolkit_libraries(connect)
+  NCBI_project_watchers(lavr)
+NCBI_end_app()
+

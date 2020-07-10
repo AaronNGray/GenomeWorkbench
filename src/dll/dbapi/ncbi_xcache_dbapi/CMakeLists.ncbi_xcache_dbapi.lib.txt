@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_xcache_dbapi.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_xcache_dbapi SHARED)
+  NCBI_hosts_projects(
+    dbapi/cache/ncbi_xcache_dbapi
+  )
+  NCBI_add_definitions(NCBI_DBAPI_CACHE_EXPORTS)
+NCBI_end_lib()

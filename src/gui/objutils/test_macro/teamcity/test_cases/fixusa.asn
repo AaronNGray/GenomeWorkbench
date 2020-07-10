@@ -1,0 +1,175 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "Morovic",
+          first "Wesley",
+          middle "",
+          initials "W",
+          title ""
+        },
+        affil std {
+          affil "DuPont Nutrition & Health",
+          div "Genomics & Microbiome Science",
+          city "Madison",
+          sub "Wisc",
+          country "United States",
+          street "3329 Agriculture Dr.",
+          email "wesley.morovic@danisco.com",
+          postal-code "53716"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Morovic",
+              first "Wesley",
+              initials "W."
+            }
+          },
+          {
+            name name {
+              last "Mukeriji",
+              first "Pushkor",
+              initials "P."
+            }
+          },
+          {
+            name name {
+              last "Roper",
+              first "Jason",
+              initials "J.M."
+            }
+          },
+          {
+            name name {
+              last "Smith",
+              first "Amy",
+              initials "A.B."
+            }
+          },
+          {
+            name name {
+              last "Stahl",
+              first "Buffy",
+              initials "B."
+            }
+          },
+          {
+            name name {
+              last "Rae",
+              first "Jessica",
+              initials "J.C."
+            }
+          },
+          {
+            name name {
+              last "Ouwehand",
+              first "Arthur",
+              initials "A.C."
+            }
+          }
+        },
+        affil std {
+          affil "DuPont Nutrition & Health",
+          div "Genomics & Microbiome Science",
+          city "Madison",
+          sub "Ohio",
+          country "US",
+          street "3329 Agriculture Dr. ",
+          postal-code "53716"
+        }
+      },
+      date std {
+        year 2017,
+        month 7,
+        day 24
+      }
+    }
+  },
+  data entrys {
+    set {
+      class genbank,
+      descr {
+        pub {
+          pub {
+            sub {
+              authors {
+                names
+                  std {
+                    {
+                      name
+                        name {
+                          last "Wolf" ,
+                          first "Sandro" ,
+                          initials "S." } } } ,
+                affil
+                  std {
+                    affil "DuPont Nutrition & Health" ,
+                    div "Genomics & Microbiome Science" ,
+                    city "Madison" ,
+                    sub "Wisconsin" ,
+                    country "U.S.A." ,
+                    street "Zellescher Weg 20b" ,
+                    postal-code "01217" } } ,
+              medium email ,
+              date
+                std {
+                  year 2013 ,
+                  month 8 ,
+                  day 28 } } } } ,
+        update-date std {
+          year 2017,
+          month 7,
+          day 24
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Lpc37_putative_plasmid_region"
+          },
+          descr {
+            source {
+              org {
+                taxname "Lactobacillus paracasei",
+                db {
+                  {
+                    db "taxon",
+                    tag id 1597
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Lactobacillus",
+                    species "paracasei"
+                  },
+                  lineage "Bacteria; Firmicutes; Bacilli; Lactobacillales;
+ Lactobacillaceae; Lactobacillus",
+                  gcode 11,
+                  div "BCT"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 206,
+            seq-data iupacna "AAATGAATTTAACATTATGCATTTACATTAGAGACTAAGACAAGCAAC
+ACAACACCAATCAATACTCAATACAGTTGCCATAAAGTACCGCCCCCTTTTTCGTTAAGCCTACAATGGTATTAACAC
+AATGTCAATAATTAAATAAATGCCGAAAATCAGTAATTCGCACTATTGTGTTAAATGTATAATGTTATTAACATAGTG
+GT"
+          }
+        }
+      }
+    }
+  }
+}

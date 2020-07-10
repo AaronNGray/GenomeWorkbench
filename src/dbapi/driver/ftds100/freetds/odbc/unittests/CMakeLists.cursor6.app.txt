@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.cursor6.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(odbc100_cursor6)
+  NCBI_sources(cursor6 common)
+  NCBI_add_test(test-odbc100 odbc100_cursor6)
+NCBI_end_app()
+

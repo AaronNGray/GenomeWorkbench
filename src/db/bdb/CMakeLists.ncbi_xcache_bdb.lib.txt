@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_xcache_bdb.lib.txt 593512 2019-09-19 16:43:33Z gouriano $
+#############################################################################
+
+
+NCBI_begin_lib(ncbi_xcache_bdb SHARED)
+  NCBI_sources(bdb_blobcache)
+  NCBI_add_definitions(NCBI_BDB_CACHE_EXPORTS)
+  NCBI_requires(BerkeleyDB)
+  NCBI_uses_toolkit_libraries(bdb)
+  NCBI_project_watchers(kuznets)
+NCBI_end_lib()
+

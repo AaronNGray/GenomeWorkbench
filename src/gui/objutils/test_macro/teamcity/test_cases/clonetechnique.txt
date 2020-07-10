@@ -1,0 +1,9 @@
+OTU_1737   htgs-0
+OTU_1757   est
+OTU_942   est
+OTU_12525   htgs-0
+OTU_346   est
+OTU_823   est
+OTU_2380   genemap
+OTU_2533   est
+OTU_530   est

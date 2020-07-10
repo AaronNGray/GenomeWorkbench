@@ -1,0 +1,701 @@
+/*  $Id: edit_seq_ends.cpp 41956 2018-11-20 18:42:42Z asztalos $
+ * ===========================================================================
+ *
+ *                            PUBLIC DOMAIN NOTICE
+ *               National Center for Biotechnology Information
+ *
+ *  This software/database is a "United States Government Work" under the
+ *  terms of the United States Copyright Act.  It was written as part of
+ *  the author's official duties as a United States Government employee and
+ *  thus cannot be copyrighted.  This software/database is freely available
+ *  to the public for use. The National Library of Medicine and the U.S.
+ *  Government have not placed any restriction on its use or reproduction.
+ *
+ *  Although all reasonable efforts have been taken to ensure the accuracy
+ *  and reliability of the software and data,  the NLM and the U.S.
+ *  Government do not and cannot warrant the performance or results that
+ *  may be obtained by using this software or data. The NLM and the U.S.
+ *  Government disclaim all warranties,  express or implied,  including
+ *  warranties of performance,  merchantability or fitness for any particular
+ *  purpose.
+ *
+ *  Please cite the author in any work or product based on this material.
+ *
+ * ===========================================================================
+ *
+ * Authors:  Igor Filippov
+ */
+
+#include <ncbi_pch.hpp>
+#include <objmgr/scope.hpp>
+#include <objmgr/object_manager.hpp>
+#include <objmgr/feat_ci.hpp>
+#include <objmgr/align_ci.hpp>
+#include <objmgr/bioseq_ci.hpp>
+#include <objmgr/seq_annot_ci.hpp>
+#include <objmgr/graph_ci.hpp>
+#include <objects/general/Dbtag.hpp>
+#include <objects/general/Object_id.hpp>
+#include <objects/seqfeat/Cdregion.hpp>
+#include <objtools/edit/loc_edit.hpp>
+#include <gui/objutils/cmd_change_bioseq_inst.hpp>
+#include <gui/objutils/cmd_change_seq_feat.hpp>
+#include <gui/objutils/cmd_create_desc.hpp>
+#include <gui/objutils/cmd_del_seq_feat.hpp>
+#include <gui/objutils/cmd_del_seq_annot.hpp>
+#include <gui/objutils/cmd_del_seq_graph.hpp>
+#include <gui/objutils/cmd_change_graph.hpp>
+#include <gui/objutils/cmd_del_seq_graph.hpp>
+#include <objmgr/seq_vector.hpp>
+#include <gui/widgets/edit/generic_report_dlg.hpp>  
+#include <gui/widgets/edit/citsub_updater.hpp>
+#include <gui/packages/pkg_sequence_edit/update_seq.hpp>
+#include <gui/packages/pkg_sequence_edit/edit_seq_ends_with_align.hpp>
+
+
+// For compilers that support precompilation, includes "wx/wx.h".
+#include "wx/wxprec.h"
+
+#ifdef __BORLANDC__
+#pragma hdrstop
+#endif
+
+#ifndef WX_PRECOMP
+#include "wx/wx.h"
+#endif
+
+
+#include <gui/packages/pkg_sequence_edit/edit_seq_ends.hpp>
+
+////@begin includes
+////@end includes
+
+BEGIN_NCBI_SCOPE
+USING_SCOPE(objects);
+
+
+////@begin XPM images
+////@end XPM images
+
+
+/*
+ * CEditSequenceEnds type definition
+ */
+
+IMPLEMENT_DYNAMIC_CLASS( CEditSequenceEnds, wxDialog )
+
+
+/*
+ * CEditSequenceEnds event table definition
+ */
+
+BEGIN_EVENT_TABLE( CEditSequenceEnds, wxDialog )
+
+EVT_BUTTON(ID_EDITSEQENDS_BUTTON, CEditSequenceEnds::OnSelectAll)
+EVT_BUTTON(ID_EDITSEQENDS_BUTTON1, CEditSequenceEnds::OnUnselectAll)
+EVT_RADIOBUTTON(ID_EDITSEQENDS_RADIOBUTTON2, CEditSequenceEnds::AddOrTrimEnable)
+EVT_RADIOBUTTON(ID_EDITSEQENDS_RADIOBUTTON3, CEditSequenceEnds::AddOrTrimEnable)
+EVT_RADIOBUTTON(ID_EDITSEQENDS_RADIOBUTTON4, CEditSequenceEnds::AddOrTrimEnable)
+EVT_RADIOBUTTON(ID_EDITSEQENDS_RADIOBUTTON5, CEditSequenceEnds::AddOrTrimEnable)
+////@begin CEditSequenceEnds event table entries
+////@end CEditSequenceEnds event table entries
+
+END_EVENT_TABLE()
+
+
+/*
+ * CEditSequenceEnds constructors
+ */
+
+CEditSequenceEnds::CEditSequenceEnds()
+{
+    Init();
+}
+
+CEditSequenceEnds::CEditSequenceEnds( wxWindow* parent, CSeq_entry_Handle seh, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
+    : m_TopSeqEntry(seh)
+{
+    Init();
+    Create(parent, id, caption, pos, size, style);
+}
+
+
+/*
+ * CEditSequenceEnds creator
+ */
+
+bool CEditSequenceEnds::Create( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
+{
+////@begin CEditSequenceEnds creation
+    SetExtraStyle(wxWS_EX_BLOCK_EVENTS);
+    wxDialog::Create( parent, id, caption, pos, size, style );
+
+    CreateControls();
+    if (GetSizer())
+    {
+        GetSizer()->SetSizeHints(this);
+    }
+    Centre();
+////@end CEditSequenceEnds creation
+    return true;
+}
+
+
+/*
+ * CEditSequenceEnds destructor
+ */
+
+CEditSequenceEnds::~CEditSequenceEnds()
+{
+////@begin CEditSequenceEnds destruction
+////@end CEditSequenceEnds destruction
+}
+
+
+/*
+ * Member initialisation
+ */
+
+void CEditSequenceEnds::Init()
+{
+////@begin CEditSequenceEnds member initialisation
+////@end CEditSequenceEnds member initialisation
+}
+
+
+/*
+ * Control creation for CEditSequenceEnds
+ */
+
+void CEditSequenceEnds::CreateControls()
+{    
+////@begin CEditSequenceEnds content construction
+    // Generated by DialogBlocks, 28/12/2015 13:08:50 (unregistered)
+
+    CEditSequenceEnds* itemDialog1 = this;
+
+    wxBoxSizer* itemBoxSizer2 = new wxBoxSizer(wxVERTICAL);
+    itemDialog1->SetSizer(itemBoxSizer2);
+
+    wxBoxSizer* itemBoxSizer3 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer2->Add(itemBoxSizer3, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxStaticText* itemStaticText4 = new wxStaticText( itemDialog1, wxID_STATIC, _("End"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer3->Add(itemStaticText4, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    m_5Prime = new wxRadioButton(itemDialog1, ID_EDITSEQENDS_RADIOBUTTON, _("5'"), wxDefaultPosition, wxDefaultSize, wxRB_GROUP);
+    m_5Prime->SetValue(true);
+    itemBoxSizer3->Add(m_5Prime, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxRadioButton* itemRadioButton6 = new wxRadioButton(itemDialog1, ID_EDITSEQENDS_RADIOBUTTON1, _("3'"), wxDefaultPosition, wxDefaultSize, 0);
+    itemRadioButton6->SetValue(false);
+    itemBoxSizer3->Add(itemRadioButton6, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxBoxSizer* itemBoxSizer7 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer2->Add(itemBoxSizer7, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    m_Add = new wxRadioButton(itemDialog1, ID_EDITSEQENDS_RADIOBUTTON2, _("Add to end"), wxDefaultPosition, wxDefaultSize, wxRB_GROUP);
+    m_Add->SetValue(true);
+    itemBoxSizer7->Add(m_Add, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxRadioButton* itemRadioButton9 = new wxRadioButton(itemDialog1, ID_EDITSEQENDS_RADIOBUTTON3, _("Trim from end"), wxDefaultPosition, wxDefaultSize, 0);
+    itemRadioButton9->SetValue(false);
+    itemBoxSizer7->Add(itemRadioButton9, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxStaticText* itemStaticText10 = new wxStaticText( itemDialog1, wxID_STATIC, _("Sequence"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer2->Add(itemStaticText10, 0, wxALIGN_LEFT|wxALL, 5);
+
+    m_Seq = new wxTextCtrl(itemDialog1, ID_EDITSEQENDS_TEXTCTRL, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxTE_MULTILINE);
+    itemBoxSizer2->Add(m_Seq, 0, wxGROW|wxALL, 5);
+
+    wxBoxSizer* itemBoxSizer12 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer2->Add(itemBoxSizer12, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxStaticText* itemStaticText13 = new wxStaticText( itemDialog1, wxID_STATIC, _("Optional gene constraint"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer12->Add(itemStaticText13, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    m_GeneConstraint = new wxTextCtrl(itemDialog1, ID_EDITSEQENDS_TEXTCTRL1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0);
+    itemBoxSizer12->Add(m_GeneConstraint, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    m_ExtendFeatures = new wxCheckBox(itemDialog1, ID_EDITSEQENDS_CHECKBOX, _("Extend features"), wxDefaultPosition, wxDefaultSize, 0);
+    m_ExtendFeatures->SetValue(false);
+    itemBoxSizer2->Add(m_ExtendFeatures, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxBoxSizer* itemBoxSizer16 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer2->Add(itemBoxSizer16, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    m_TrimSeq = new wxRadioButton(itemDialog1, ID_EDITSEQENDS_RADIOBUTTON4, _("Trim by sequence"), wxDefaultPosition, wxDefaultSize, wxRB_GROUP);
+    m_TrimSeq->SetValue(true);
+    itemBoxSizer16->Add(m_TrimSeq, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    m_TrimCount = new wxRadioButton(itemDialog1, ID_EDITSEQENDS_RADIOBUTTON5, _("Trim by count"), wxDefaultPosition, wxDefaultSize, 0);
+    m_TrimCount->SetValue(false);
+    itemBoxSizer16->Add(m_TrimCount, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxBoxSizer* itemBoxSizer19 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer2->Add(itemBoxSizer19, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxStaticText* itemStaticText20 = new wxStaticText( itemDialog1, wxID_STATIC, _("Trim count"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer19->Add(itemStaticText20, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    m_Count = new wxTextCtrl(itemDialog1, ID_EDITSEQENDS_TEXTCTRL2, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0);
+    itemBoxSizer19->Add(m_Count, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+    m_Count->SetValidator( wxTextValidator( wxFILTER_NUMERIC ) );
+
+    wxStaticBox* itemStaticBoxSizer22Static = new wxStaticBox(itemDialog1, wxID_ANY, _("Choose Sequences To Edit"));
+    wxStaticBoxSizer* itemStaticBoxSizer22 = new wxStaticBoxSizer(itemStaticBoxSizer22Static, wxVERTICAL);
+    itemBoxSizer2->Add(itemStaticBoxSizer22, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxArrayString itemCheckListBox23Strings;
+    m_CheckListBox = new wxCheckListBox(itemStaticBoxSizer22->GetStaticBox(), ID_EDITSEQENDS_CHECKLISTBOX, wxDefaultPosition, wxDefaultSize, itemCheckListBox23Strings, wxLB_MULTIPLE | wxLB_NEEDED_SB);
+    itemStaticBoxSizer22->Add(m_CheckListBox, 0, wxGROW|wxALL, 5);
+
+    wxBoxSizer* itemBoxSizer24 = new wxBoxSizer(wxHORIZONTAL);
+    itemStaticBoxSizer22->Add(itemBoxSizer24, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxButton* itemButton25 = new wxButton(itemStaticBoxSizer22->GetStaticBox(), ID_EDITSEQENDS_BUTTON, _("Select All"), wxDefaultPosition, wxDefaultSize, 0);
+    itemBoxSizer24->Add(itemButton25, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxButton* itemButton26 = new wxButton(itemStaticBoxSizer22->GetStaticBox(), ID_EDITSEQENDS_BUTTON1, _("Unselect All"), wxDefaultPosition, wxDefaultSize, 0);
+    itemBoxSizer24->Add(itemButton26, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    m_AddCitSub = new wxCheckBox(itemDialog1, ID_EDITSEQENDS_CHECKBOX1, _("Add Cit Subs to edited sequences"), wxDefaultPosition, wxDefaultSize, 0);
+    m_AddCitSub->SetValue(false);
+    itemBoxSizer2->Add(m_AddCitSub, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxBoxSizer* itemBoxSizer28 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer2->Add(itemBoxSizer28, 0, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    wxButton* itemButton29 = new wxButton( itemDialog1, wxID_OK, _("Accept"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer28->Add(itemButton29, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxButton* itemButton30 = new wxButton( itemDialog1, wxID_CANCEL, _("Cancel"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer28->Add(itemButton30, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+////@end CEditSequenceEnds content construction
+    m_TrimSeq->Disable();
+    m_TrimCount->Disable();
+    m_Count->Disable();
+    ReadSequences();
+}
+
+
+/*
+ * Should we show tooltips?
+ */
+
+bool CEditSequenceEnds::ShowToolTips()
+{
+    return true;
+}
+
+/*
+ * Get bitmap resources
+ */
+
+wxBitmap CEditSequenceEnds::GetBitmapResource( const wxString& name )
+{
+    // Bitmap retrieval
+////@begin CEditSequenceEnds bitmap retrieval
+    wxUnusedVar(name);
+    return wxNullBitmap;
+////@end CEditSequenceEnds bitmap retrieval
+}
+
+/*
+ * Get icon resources
+ */
+
+wxIcon CEditSequenceEnds::GetIconResource( const wxString& name )
+{
+    // Icon retrieval
+////@begin CEditSequenceEnds icon retrieval
+    wxUnusedVar(name);
+    return wxNullIcon;
+////@end CEditSequenceEnds icon retrieval
+}
+
+
+void CEditSequenceEnds::CombineLabels(const CSeq_id &id, vector<string> &labels)
+{
+  if (id.IsGenbank() && id.GetGenbank().IsSetAccession())
+      labels[0] = id.GetGenbank().GetAccession();
+  if (id.IsGeneral() && id.GetGeneral().IsSetDb() && id.GetGeneral().GetDb() == "BankIt" && id.GetGeneral().IsSetTag() && id.GetGeneral().GetTag().IsStr())
+      labels[1] = id.GetGeneral().GetTag().GetStr();
+  else if (id.IsGeneral() && id.GetGeneral().IsSetDb() && id.GetGeneral().GetDb() == "NCBIFILE" && id.GetGeneral().IsSetTag() && id.GetGeneral().GetTag().IsStr())
+      labels[1] = id.GetGeneral().GetTag().GetStr();
+  else if (id.IsLocal() && id.GetLocal().IsStr())
+      labels[1] = id.GetLocal().GetStr();
+}
+
+void CEditSequenceEnds::CollectLabels(CBioseq_Handle bsh, list<string> &strs)
+{
+    vector<string> labels(2);
+  
+    if (bsh.IsSetId())
+        for (CBioseq_Handle::TId::const_iterator it = bsh.GetId().begin(); it != bsh.GetId().end(); ++it)
+            CombineLabels(*(it->GetSeqId()),labels);
+
+    for (int i=0; i<labels.size(); i++)
+        if (!labels[i].empty())
+            strs.push_back(labels[i]);
+}
+
+string CEditSequenceEnds::GetLabel(CBioseq_Handle bsh)
+{
+    list<string> strs;   
+    CollectLabels(bsh,strs);
+    string label = NStr::Join(strs," ");
+    return label;  
+}
+
+void CEditSequenceEnds::ReadSequences()
+{
+    for (CBioseq_CI b_iter(m_TopSeqEntry, objects::CSeq_inst::eMol_na); b_iter; ++b_iter)
+    {
+        string label = GetLabel(*b_iter);
+        long index = m_bioseq.size();
+        m_CheckListBox->Append(wxString(label),(void*)index);
+        m_bioseq.push_back(*b_iter);
+    }
+}
+
+void CEditSequenceEnds::OnSelectAll( wxCommandEvent& event )
+{
+    for (size_t i = 0; i < m_CheckListBox->GetCount(); i++)
+        m_CheckListBox->Check(i, true);
+}
+
+void CEditSequenceEnds::OnUnselectAll( wxCommandEvent& event )
+{
+    for (size_t i = 0; i < m_CheckListBox->GetCount(); i++)
+        m_CheckListBox->Check(i, false);
+}
+
+
+CRef<CCmdComposite> CEditSequenceEnds::GetCommand()
+{
+    CRef<CCmdComposite> cmd(new CCmdComposite("Edit Sequence Ends"));
+    if (m_Add->GetValue()) // Add Sequence
+    {
+        SUpdateSeqParams::ESequenceUpdateType update_type = SUpdateSeqParams::eSeqUpdateExtend3;
+        if (m_5Prime->GetValue())
+            update_type = SUpdateSeqParams::eSeqUpdateExtend5;
+
+        string extension = m_Seq->GetValue().ToStdString();
+        if (extension.empty())
+            return cmd;
+
+        wxString msg;
+        for (size_t i = 0; i < m_CheckListBox->GetCount(); i++)
+            if (m_CheckListBox->IsChecked(i))
+            {
+                long index = (long)m_CheckListBox->GetClientData(i);
+                CBioseq_Handle bsh = m_bioseq[index];
+               // if gene constraint is set check that corresponding gene has a locus equal to constraint (no case)
+                string gene_locus = m_GeneConstraint->GetValue().ToStdString();
+                if (!gene_locus.empty())
+                {
+                    bool match = false;
+                    for (CFeat_CI feat_it(bsh, CSeqFeatData::eSubtype_gene); feat_it; ++feat_it) 
+                    {
+                        const CSeq_feat& gene = feat_it->GetOriginalFeature();
+                        if (gene.IsSetData() && gene.GetData().IsGene() && gene.GetData().GetGene().IsSetLocus() &&
+                            NStr::EqualNocase(gene.GetData().GetGene().GetLocus(), gene_locus) )
+                        {
+                            match = true;
+                            break;
+                        }
+                    }
+                    if (!match)
+                        continue;
+                }
+
+                CRef<objects::CSeq_inst> new_inst = CSequenceUpdater::s_ExtendOneEndOfSequence(bsh, extension, update_type);
+                TSeqPos inst_length = 0;
+                if (new_inst)
+                {
+                    CRef<CCmdChangeBioseqInst> change_inst(new CCmdChangeBioseqInst(bsh, *new_inst));
+                    if (change_inst) 
+                        cmd->AddCommand(*change_inst);
+                    if (new_inst->IsSetLength())
+                        inst_length = new_inst->GetLength();
+                }
+
+                if (m_5Prime->GetValue())
+                {
+                    for (CFeat_CI feat_it(bsh); feat_it; ++feat_it) 
+                    {
+                        CRef<CSeq_feat> new_feat = CSequenceUpdater::s_OffsetFeature(feat_it->GetOriginalFeature(), extension.length());
+                        if (new_feat) 
+                        {
+                            if (m_ExtendFeatures->GetValue())
+                            {
+                                Extend5(*new_feat, inst_length);
+                            }
+                            CRef< CCmdChangeSeq_feat > cmd_change_feat(new CCmdChangeSeq_feat(feat_it->GetSeq_feat_Handle(),*new_feat)); 
+                            if (cmd_change_feat) 
+                            {
+                                cmd->AddCommand(*cmd_change_feat);  
+                            }
+                        }
+                        else
+                        {
+                            CRef<CCmdDelSeq_feat> cmd_del(new CCmdDelSeq_feat(feat_it->GetSeq_feat_Handle()));
+                            if (cmd_del)
+                            {
+                                cmd->AddCommand(*cmd_del);
+                            }
+                        }
+                    }
+                }
+                else if (m_ExtendFeatures->GetValue())
+                {
+                    for (CFeat_CI feat_it(bsh); feat_it; ++feat_it) 
+                    {
+                        CRef<CSeq_feat> new_feat(new CSeq_feat);
+                        new_feat->Assign(feat_it->GetOriginalFeature());
+                        Extend3(*new_feat, inst_length);
+                        CRef< CCmdChangeSeq_feat > cmd_change_feat(new CCmdChangeSeq_feat(feat_it->GetSeq_feat_Handle(),*new_feat)); 
+                        if (cmd_change_feat) 
+                        {
+                            cmd->AddCommand(*cmd_change_feat);  
+                        }
+                    }
+                }
+
+                if (m_AddCitSub->GetValue())
+                {
+                    CConstRef<CSeqdesc> changedSeqdesc;
+                    CSeq_entry_Handle seh_for_desc;
+                    string msg;
+                    CRef<CSeqdesc> changedORadded_citsub = CCitSubUpdater::s_GetCitSubForUpdatedSequence(bsh, msg, changedSeqdesc, seh_for_desc);
+                    if (changedORadded_citsub && !NStr::EqualNocase(msg, CCitSubUpdater::sm_ExistingCitSub))
+                    {
+                        CBioseq_set_Handle bssh = bsh.GetParentBioseq_set();
+                        CSeq_entry_Handle seh = bsh.GetSeq_entry_Handle();
+                        if (bssh && bssh.CanGetClass() && bssh.GetClass() ==  CBioseq_set::eClass_nuc_prot)  // if it is a nuc-prot set go a level higher 
+                        {
+                            seh =  bssh.GetParentEntry();
+                        }
+        
+                        CIRef<IEditCommand> cmdAddDesc(new CCmdCreateDesc(seh, *changedORadded_citsub));
+                        cmd->AddCommand(*cmdAddDesc);
+                    }
+                }
+                bool graph_deleted = false;
+                SAnnotSelector graph_sel(CSeq_annot::C_Data::e_Graph);
+                CGraph_CI graph_ci(bsh, graph_sel);
+                for (; graph_ci; ++graph_ci)
+                {
+                    CIRef<IEditCommand> del_graph(new CCmdDelSeq_graph(graph_ci->GetSeq_graph_Handle()));
+                    cmd->AddCommand(*del_graph);
+                    graph_deleted = true;
+                }
+                if (graph_deleted)
+                    msg += _("quality scores cleared for ") + m_CheckListBox->GetString(i) + _("\n");
+                for (CSeq_annot_CI annot_ci(bsh); annot_ci; ++annot_ci)
+                {
+                    if (annot_ci->IsGraph())
+                    {
+                        CIRef<IEditCommand> del_annot(new CCmdDelSeq_annot(*annot_ci));
+                        cmd->AddCommand(*del_annot);
+                    }
+                }
+            }
+
+        if (!msg.IsEmpty())
+        {
+            CGenericReportDlg* report = new CGenericReportDlg(GetParent());
+            report->SetTitle(wxT("Quality Scores Affected"));
+            report->SetText(msg);
+            report->Show(true);
+        }
+    }
+    else // Trim Sequence
+    {
+        CRef<CObjectManager> object_manager = CObjectManager::GetInstance();
+        CRef<CScope> scope_copy(new CScope(*object_manager));
+       
+        for (size_t i = 0; i < m_CheckListBox->GetCount(); i++)
+            if (m_CheckListBox->IsChecked(i))
+            {
+                long index = (long)m_CheckListBox->GetClientData(i);
+                CBioseq_Handle bsh = m_bioseq[index];
+                int before = 0;
+                int after = bsh.GetBioseqLength()-1;
+                if (m_TrimSeq->GetValue())
+                {
+                    CSeqVector seq_vec = bsh.GetSeqVector(CBioseq_Handle::eCoding_Iupac, eNa_strand_plus);
+                    string seq;
+                    seq_vec.GetSeqData(0, bsh.GetBioseqLength(), seq);
+                    string str = m_Seq->GetValue().ToStdString();
+                    if (m_5Prime->GetValue() && NStr::StartsWith(seq,str, NStr::eNocase))
+                    {
+                        before += str.length();
+                    }
+                    else if (!m_5Prime->GetValue() && NStr::EndsWith(seq,str, NStr::eNocase))
+                    {
+                        after -= str.length();
+                    }
+                }
+                else
+                {
+                    if (m_5Prime->GetValue())
+                        before += wxAtoi(m_Count->GetValue());
+                    else
+                        after -= wxAtoi(m_Count->GetValue());
+                }
+
+                CRef<CSeq_entry> copy(new CSeq_entry);
+                copy->Assign(*bsh.GetSeq_entry_Handle().GetCompleteSeq_entry());
+                CSeq_entry_Handle edited_seh = scope_copy->AddTopLevelSeqEntry(*copy);
+                CEditSeqEndsWithAlign::TrimBeforeAfter(edited_seh.GetSeq(), before, after);
+                CRef<CCmdChangeBioseqInst> cmd_bioseq(new CCmdChangeBioseqInst(bsh, edited_seh.GetCompleteSeq_entry()->GetSeq().GetInst()));
+                cmd->AddCommand(*cmd_bioseq);
+                CEditSeqEndsWithAlign::AdjustFeatureLocations(bsh, before, after, cmd);
+                CEditSeqEndsWithAlign::TrimQualityScores(bsh, before, after, cmd);
+            }           
+    }
+    return cmd;
+}
+
+
+void CEditSequenceEnds::Extend5(CSeq_feat& feat, TSeqPos inst_length)
+{
+    if (inst_length > 0) 
+    {
+        size_t start = feat.GetLocation().GetStart(eExtreme_Positional);
+        int diff = 0;
+        if (start > 0) 
+        {
+            CRef<CSeq_loc> new_loc = edit::SeqLocExtend(feat.GetLocation(), 0, &m_TopSeqEntry.GetScope());
+            if (new_loc) 
+            {
+                feat.SetLocation().Assign(*new_loc);
+                diff = start;
+            } 
+        }
+        ENa_strand strand = feat.GetLocation().GetStrand();
+        if (strand == eNa_strand_minus) 
+            return;
+
+        // adjust frame to maintain consistency
+        if (diff % 3 > 0 && feat.GetData().IsCdregion()) 
+        {
+            int orig_frame = 1;
+            if (feat.GetData().GetCdregion().IsSetFrame()) 
+            {
+                if (feat.GetData().GetCdregion().GetFrame() == CCdregion::eFrame_two) 
+                {
+                    orig_frame = 2;
+                } 
+                else if (feat.GetData().GetCdregion().GetFrame() == CCdregion::eFrame_three) 
+                {
+                    orig_frame = 3;
+                }
+            }
+            CCdregion::EFrame new_frame = CCdregion::eFrame_not_set;
+            switch ((orig_frame + diff % 3) % 3) 
+            {
+                case 1:
+                    new_frame = CCdregion::eFrame_not_set;
+                    break;
+                case 2:
+                    new_frame = CCdregion::eFrame_two;
+                    break;
+                case 0:
+                    new_frame = CCdregion::eFrame_three;
+                    break;
+            }
+            feat.SetData().SetCdregion().SetFrame(new_frame);
+        }
+    }
+}
+
+void CEditSequenceEnds::Extend3(CSeq_feat& feat, TSeqPos inst_length)
+{
+    if (inst_length > 0) 
+    {
+        int diff = 0;
+        size_t stop = feat.GetLocation().GetStop(eExtreme_Positional);
+        if (stop < inst_length - 1) 
+        {
+            CRef<CSeq_loc> new_loc = edit::SeqLocExtend(feat.GetLocation(), inst_length - 1, &m_TopSeqEntry.GetScope());
+            if (new_loc) 
+            {
+                feat.SetLocation().Assign(*new_loc);
+                diff = inst_length - 1 - stop;
+            }
+        }
+        ENa_strand strand = feat.GetLocation().GetStrand();
+        if (strand == eNa_strand_minus) 
+        {
+            // adjust frame to maintain consistency
+            if (diff % 3 > 0 && feat.GetData().IsCdregion()) 
+            {
+                int orig_frame = 1;
+                if (feat.GetData().GetCdregion().IsSetFrame()) 
+                {
+                    if (feat.GetData().GetCdregion().GetFrame() == CCdregion::eFrame_two) 
+                    {
+                        orig_frame = 2;
+                    } 
+                    else if (feat.GetData().GetCdregion().GetFrame() == CCdregion::eFrame_three) 
+                    {
+                        orig_frame = 3;
+                    }
+                }
+                CCdregion::EFrame new_frame = CCdregion::eFrame_not_set;
+                switch ((orig_frame + diff % 3) % 3) 
+                {
+                case 1:
+                    new_frame = CCdregion::eFrame_not_set;
+                    break;
+                case 2:
+                    new_frame = CCdregion::eFrame_two;
+                    break;
+                case 0:
+                    new_frame = CCdregion::eFrame_three;
+                    break;
+                }
+                feat.SetData().SetCdregion().SetFrame(new_frame);
+            }
+        }
+    }
+}
+
+
+void CEditSequenceEnds::AddOrTrimEnable(wxCommandEvent& event)
+{
+    if (m_Add->GetValue())
+    {
+        m_Seq->Enable();
+        m_ExtendFeatures->Enable();
+        m_TrimSeq->Disable();
+        m_TrimCount->Disable();
+        m_Count->Disable();
+    }
+    else
+    {
+        if (m_TrimSeq->GetValue())
+        {
+            m_Seq->Enable();
+            m_ExtendFeatures->Disable();
+            m_TrimSeq->Enable();
+            m_TrimCount->Enable();
+            m_Count->Disable();
+        }
+        else
+        {
+            m_Seq->Disable();
+            m_ExtendFeatures->Disable();
+            m_TrimSeq->Enable();
+            m_TrimCount->Enable();
+            m_Count->Enable();
+        }
+    }
+
+}
+
+END_NCBI_SCOPE

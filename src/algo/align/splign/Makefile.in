@@ -1,0 +1,11 @@
+# $Id: Makefile.in 399257 2013-05-13 15:24:30Z kiryutin $
+
+# Meta-makefile (algo/align/splign)
+#################################
+
+SUB_PROJ = unit_test
+
+LIB_PROJ = xalgoalignsplign
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

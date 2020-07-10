@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_web.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_web SHARED)
+  NCBI_hosts_projects(
+    html/html
+    cgi/cgi
+    misc/cgi_redirect/cgi_redirect
+  )
+  NCBI_add_definitions(NCBI_WEB_EXPORTS)
+NCBI_end_lib()

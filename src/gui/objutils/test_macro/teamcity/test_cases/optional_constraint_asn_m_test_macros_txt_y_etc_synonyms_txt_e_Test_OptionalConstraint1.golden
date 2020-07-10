@@ -1,0 +1,123 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "SeqID25"
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Bubalus bubalis",
+            common "water buffalo",
+            db {
+              {
+                db "taxon",
+                tag id 89462
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 2,
+              div "MAM"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        create-date std {
+          year 2015,
+          month 8,
+          day 25
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 300,
+        seq-data ncbi2na 'FEF3F7EE1C5D5EED28FAB0FE665E797D7C8EEB25BF76A75775A0
+D815C3DD6F15B43976B294315C5A63178CAD201F83A449B49509CC675BD3F34E0D3500D948AA2F
+AF783A0000516F5882E6'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type rRNA,
+                ext name "18S ribosomal RNA gene, partial sequence"
+              },
+              location int {
+                from 0,
+                to 299,
+                strand plus,
+                id local str "SeqID25"
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "SeqID58"
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Bubalus bubalis",
+            common "water buffalo",
+            db {
+              {
+                db "taxon",
+                tag id 89462
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 2,
+              div "MAM"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        create-date std {
+          year 2015,
+          month 8,
+          day 25
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 412,
+        seq-data ncbi2na 'E4BEFCF17A335EAC3DC89C313AB521587FE682AFB9F3C847814D
+5A7E56BF62B8F8E30D818364E7DA698E3D3D0BF785CD27D61ACAB3E9716E9FE1AB06883CABF8F5
+A22A25E201A7144DC282924A6640F150D7844A8ACB8420314338A77FEDFB0FA022443D0027BD'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type rRNA,
+                ext name "18S ribosomal RNA gene"
+              },
+              location int {
+                from 0,
+                to 411,
+                strand plus,
+                id local str "SeqID58"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

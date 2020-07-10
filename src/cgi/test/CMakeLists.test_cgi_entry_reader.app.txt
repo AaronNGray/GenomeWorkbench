@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.test_cgi_entry_reader.app.txt 593495 2019-09-19 15:40:36Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_cgi_entry_reader)
+  NCBI_sources(test_cgi_entry_reader)
+  NCBI_uses_toolkit_libraries(xcgi)
+  NCBI_project_watchers(ucko)
+  NCBI_set_test_assets(test_cgi_entry_reader.dat)
+  NCBI_add_test(test_cgi_entry_reader.sh test_cgi_entry_reader.dat)
+NCBI_end_app()
+

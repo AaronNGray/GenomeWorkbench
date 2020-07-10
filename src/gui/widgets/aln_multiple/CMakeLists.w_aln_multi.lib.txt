@@ -1,0 +1,17 @@
+#############################################################################
+# $Id: CMakeLists.w_aln_multi.lib.txt 44954 2020-04-27 17:57:36Z evgeniev $
+#############################################################################
+
+NCBI_begin_lib(w_aln_multi)
+  NCBI_sources(
+    align_mark_handler align_row align_row_graph_cont alnmulti_pane
+    alnmulti_renderer row_display_style trace_data trace_graph
+    alnvec_multi_ds alnmulti_widget alnmulti_model alnmulti_header
+    alnmulti_header_handler wx_aln_properties_dlg
+    aln_vec_iterator sparse_multi_ds alnvec_row_handle sparse_row_handle
+    build_alnvec_job build_sparse_aln_job alnmulti_ds_builder wx_build_options_dlg
+    feature_graph align_ds wx_export_alnmulti_img_dlg
+  )
+  NCBI_uses_toolkit_libraries(w_seq_graphic)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

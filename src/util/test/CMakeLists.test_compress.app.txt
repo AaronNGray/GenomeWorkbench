@@ -1,0 +1,15 @@
+#############################################################################
+# $Id: CMakeLists.test_compress.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_compress)
+  NCBI_sources(test_compress)
+  NCBI_headers(test_compress*.inl)
+  NCBI_uses_toolkit_libraries(xcompress)
+  NCBI_project_watchers(ivanov)
+  NCBI_add_test(test_compress z)
+  NCBI_add_test(test_compress bz2)
+  NCBI_add_test(test_compress lzo)
+NCBI_end_app()
+

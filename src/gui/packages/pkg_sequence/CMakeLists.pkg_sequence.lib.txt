@@ -1,0 +1,32 @@
+#############################################################################
+# $Id: CMakeLists.pkg_sequence.lib.txt 42625 2019-03-27 14:35:09Z gouriano $
+#############################################################################
+
+NCBI_begin_lib( pkg_sequence)
+  NCBI_sources(
+    dll_register text_view seq_text_view view_graphic
+    gb_ui_data_source
+    fasta_format_load_manager gff_load_manager
+    gff_exporter gff_export_page gff_export_params gff_export_job
+    gtf_exporter gtf_export_page gtf_export_params gtf_export_job
+    fasta_exporter fasta_export_page fasta_export_params fasta_export_job
+    agp_exporter agp_export_params agp_export_page agp_export_job
+    flatfile_exporter flatfile_export_params flatfile_export_page
+    flatfile_export_job
+    view_feattable bam_ui_data_source
+    component_search_tool entrez_search_tool feature_search_tool sequence_search_tool
+    cleanup_tool cleanup_params cleanup_panel
+    windowmasker_tool windowmasker_params windowmasker_panel
+    agp_loader
+    orf_search_tool cpg_search_tool
+    wig_load_manager bed_load_manager vcf_load_manager
+    merge_tool merge_panel
+    snp_search_tool
+    5col_exporter 5col_export_params 5col_export_page 5col_export_job
+    5col_load_manager
+    wiggle_export_params wiggle_export_job wiggle_export_page wiggle_exporter
+    text_view_project_item_extension bam_utils
+  )
+  NCBI_uses_toolkit_libraries(gui_core w_seq_graphic w_seq w_seq_text w_feat_table ncbi_xloader_bam ncbi_xloader_csra)
+  NCBI_requires(wxWidgets GLEW VDB)
+NCBI_end_lib()

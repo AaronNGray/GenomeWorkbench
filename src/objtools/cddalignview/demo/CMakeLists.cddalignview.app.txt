@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.cddalignview.app.txt 593577 2019-09-20 12:22:42Z gouriano $
+#############################################################################
+
+NCBI_begin_app(cddalignview)
+  NCBI_sources(cav_main)
+  NCBI_uses_toolkit_libraries(xcddalignview)
+  NCBI_project_watchers(thiessen)
+NCBI_end_app()
+

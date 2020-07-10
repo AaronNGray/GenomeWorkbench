@@ -1,0 +1,169 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq_A"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            },
+		 {
+              label str "Coverage",
+              data str "100x"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Escherichia coli",
+            db {
+              {
+                db "taxon",
+                tag id 562
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Escherichia",
+                species "coli"
+              },
+              gcode 11,
+              mgcode 0,
+              div "BCT"
+            }
+          }
+        },
+        user {
+          type str "Submission",
+          data {
+            {
+              label str "SmartComment",
+              data str "TOTAL # OF SEQS:1"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 4,
+          day 13,
+          hour 6,
+          minute 27,
+          second 4
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 16,
+        strand ds,
+        seq-data iupacna "TCGGACTAAGCCCTAC"
+      }
+    },
+    seq {
+      id {
+        local str "Seq_B"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            },
+            {
+              label str "Coverage",
+              data str "100x"
+            }
+          }
+        },
+        user {
+          type str "Submission",
+          data {
+            {
+              label str "AdditionalComment",
+              data str "Vecscreen Comment:Submitter says Vecscreen match is
+ due to: Vector contains such type of sequences"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Escherichia coli",
+            db {
+              {
+                db "taxon",
+                tag id 562
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Escherichia",
+                species "coli"
+              },
+              gcode 11,
+              mgcode 0,
+              div "BCT"
+            }
+          }
+        },
+        user {
+          class "SMART_V1.0",
+          type id 1,
+          data {
+            {
+              label id 1,
+              num 1,
+              data int 9464735
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 4,
+          day 13,
+          hour 6,
+          minute 56,
+          second 13
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 8,
+        strand ds,
+        seq-data iupacna "TTTCGCTT"
+      }
+    }
+  }
+}

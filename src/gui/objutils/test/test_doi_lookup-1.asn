@@ -1,0 +1,56 @@
+Pubdesc ::= {
+  pub {
+    article {
+      title {
+        name "Trichoderma stromaticum and its overseas relatives"
+      },
+      authors {
+        names std {
+          {
+            name name {
+              last "Samuels",
+              first "Gary",
+              initials "J"
+            }
+          },
+          {
+            name name {
+              last "Ismaiel",
+              first "Adnan"
+            }
+          },
+          {
+            name name {
+              last "de Souza",
+              first "Jorge"
+            }
+          },
+          {
+            name name {
+              last "Chaverri",
+              first "Priscila"
+            }
+          }
+        }
+      },
+      from journal {
+        title {
+          iso-jta "Mycol. Prog."
+        },
+        imp {
+          date std {
+            year 2012,
+            month 2
+          },
+          volume "11",
+          issue "1",
+          pages "215-254",
+          pubstatus ppublish
+        }
+      },
+      ids {
+        doi "10.1007/s11557-011-0743-4"
+      }
+    }
+  }
+}

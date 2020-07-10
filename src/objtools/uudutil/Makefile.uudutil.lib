@@ -1,0 +1,14 @@
+# $Id: Makefile.uudutil.lib 482761 2015-10-26 17:29:09Z sadyrovr $
+
+ASN_DEP = gbproj
+
+SRC = project_storage
+
+LIB = uudutil
+
+CPPFLAGS = $(LZO_INCLUDE) $(ORIG_CPPFLAGS)
+
+WATCHERS = shkeda
+
+USES_LIBRARIES =  \
+    $(COMPRESS_LIBS) gbproj xconnserv

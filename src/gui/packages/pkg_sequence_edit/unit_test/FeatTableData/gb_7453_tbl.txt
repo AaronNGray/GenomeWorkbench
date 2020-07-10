@@ -1,0 +1,211 @@
+Seq-annot ::= {
+  data ftable {
+    {
+      data gene {
+        locus-tag "CKF44_004077"
+      },
+      location int {
+        from 71,
+        to 5644,
+        strand minus,
+        id genbank {
+          accession "CP022321"
+        }
+      }
+    },
+    {
+      data rna {
+        type mRNA,
+        ext name "hypothetical protein"
+      },
+      location mix {
+        int {
+          from 5493,
+          to 5644,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 5321,
+          to 5421,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 3957,
+          to 5262,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 3205,
+          to 3889,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 2845,
+          to 3125,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 2321,
+          to 2781,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 1822,
+          to 2273,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 1555,
+          to 1766,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 71,
+          to 1496,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        }
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "gnl|CKF44|CKF44_04548T0cds"
+        },
+        {
+          qual "transcript_id",
+          val "gnl|CKF44|CKF44_04548T0"
+        }
+      }
+    },
+    {
+      data cdregion {
+        code {
+          id 1
+        }
+      },
+      product whole general {
+        db "CKF44",
+        tag str "CKF44_04548T0cds"
+      },
+      location mix {
+        int {
+          from 5493,
+          to 5644,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 5321,
+          to 5421,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 3957,
+          to 5262,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 3205,
+          to 3889,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 2845,
+          to 3125,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 2321,
+          to 2781,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 1822,
+          to 2273,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 1555,
+          to 1766,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        },
+        int {
+          from 71,
+          to 1496,
+          strand minus,
+          id genbank {
+            accession "CP022321"
+          }
+        }
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "gnl|CKF44|CKF44_04548T0cds"
+        },
+        {
+          qual "transcript_id",
+          val "gnl|CKF44|CKF44_04548T0"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "hypothetical protein"
+            }
+          }
+        }
+      }
+    }
+  }
+}

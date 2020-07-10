@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.makeblastdb.app.txt 593591 2019-09-20 14:53:34Z gouriano $
+#############################################################################
+
+NCBI_begin_app(makeblastdb)
+  NCBI_sources(makeblastdb masked_range_set)
+  NCBI_uses_toolkit_libraries(blastinput writedb)
+  NCBI_add_definitions(NCBI_MODULE=BLASTDB)
+  NCBI_project_watchers(camacho fongah2)
+  NCBI_requires(-Cygwin)
+NCBI_end_app()
+

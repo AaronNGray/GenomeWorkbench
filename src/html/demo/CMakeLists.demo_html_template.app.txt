@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.demo_html_template.app.txt 593496 2019-09-19 15:43:28Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(demo_html_template)
+  NCBI_sources(demo_html_template)
+  NCBI_uses_toolkit_libraries(xhtml)
+  NCBI_project_watchers(ivanov)
+NCBI_end_app()
+

@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.entrez2.asn.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(entrez2)
+  NCBI_dataspecs(entrez2.asn)
+  NCBI_uses_toolkit_libraries(xser)
+  NCBI_project_watchers(lavr)
+NCBI_end_lib()
+

@@ -1,0 +1,10 @@
+#############################################################################
+#  $Id: CMakeLists.blastdb_path.app.txt 594373 2019-10-03 13:30:50Z gouriano $
+#############################################################################
+
+NCBI_begin_app(blastdb_path)
+  NCBI_sources(blastdb_path)
+  NCBI_add_definitions(NCBI_MODULE=BLASTDB)
+  NCBI_uses_toolkit_libraries(blastdb_format blastinput)
+  NCBI_project_watchers(camacho fongah2)
+NCBI_end_app()

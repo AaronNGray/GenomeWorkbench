@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.bamgraph_test.app.txt 593524 2019-09-19 18:47:29Z gouriano $
+#############################################################################
+
+NCBI_begin_app(bamgraph_test)
+  NCBI_sources(bamgraph_test)
+  NCBI_uses_toolkit_libraries(bamread)
+  NCBI_project_watchers(vasilche ucko)
+NCBI_end_app()
+

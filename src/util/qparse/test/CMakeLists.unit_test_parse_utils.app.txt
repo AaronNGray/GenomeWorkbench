@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_parse_utils.app.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_app(unit_test_parse_utils)
+  NCBI_sources(unit_test_parse_utils)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xqueryparse)
+  NCBI_project_watchers(asztalos)
+  NCBI_set_test_timeout(3000)
+  NCBI_add_test()
+NCBI_end_app()
+

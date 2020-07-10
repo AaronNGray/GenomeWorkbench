@@ -1,0 +1,31 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "ID59"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Equine infectious anemia virus",
+            orgname {
+              gcode 1
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 226,
+        seq-data ncbi2na '3DE6B78B57DDC7A9E30A5CBC30330F779D2D7E7441FBFC7FC217
+04BE995812A1F882A64857179E05E9E36CA3572A0922881F120B7DE8AEF5E0'H
+      }
+    }
+  }
+}

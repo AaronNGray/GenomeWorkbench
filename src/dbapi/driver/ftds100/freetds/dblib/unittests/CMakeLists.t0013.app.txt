@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.t0013.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db100_t0013)
+  NCBI_sources(t0013 common)
+  NCBI_set_test_assets(t0013.sql data.bin)
+  NCBI_add_test(test-db100 --ms-ver 7.1 --no-auto db100_t0013)
+NCBI_end_app()
+

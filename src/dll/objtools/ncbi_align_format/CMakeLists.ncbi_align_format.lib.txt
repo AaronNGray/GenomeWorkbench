@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_align_format.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_align_format SHARED)
+  NCBI_hosts_projects(
+    objtools/align_format/align_format
+  )
+  NCBI_add_definitions(NCBI_ALIGN_FORMAT_EXPORTS)
+NCBI_end_lib()

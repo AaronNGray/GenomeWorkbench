@@ -1,0 +1,542 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class eco-set,
+      descr {
+        title "Bacteria 16S ribosomal RNA gene, partial sequence.",
+        update-date std {
+          year 2018,
+          month 6,
+          day 16
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "MH463937",
+              version 1
+            },
+            gi 1399097695
+          },
+          descr {
+            title "Algoriphagus sp. strain ZN16W 16S ribosomal RNA gene,
+ partial sequence.",
+            source {
+              org {
+                taxname "Algoriphagus sp.",
+                db {
+                  {
+                    db "taxon",
+                    tag id 1872435
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Algoriphagus",
+                    species "sp."
+                  },
+                  mod {
+                    {
+                      subtype strain,
+                      subname "ZN16W"
+                    }
+                  },
+                  lineage "Bacteria; Bacteroidetes; Cytophagia; Cytophagales;
+ Cyclobacteriaceae; Algoriphagus",
+                  gcode 11,
+                  div "BCT"
+                }
+              },
+              subtype {
+                {
+                  subtype country,
+                  name "China"
+                },
+                {
+                  subtype isolation-source,
+                  name "low salinity lakes on Tibetan Plateau"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2018,
+              month 6,
+              day 16
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1487,
+            seq-data ncbi2na '22FE35E9D28E0672692970C4E42D89A42D8A2C37085C89A6
+46AE6C19B3905C5D312AA3256880DE8F0C553AC7322693EFF32F023D36B388EA4E6DE3C9CBE9AE
+C1A1450A618D2CAAF788A0AD5511E91E231A94875C6A2924B2A0CFA90E8622DE15253966E4A086
+9BDE6FB01E7FCDEA08029539BA84F96B148E0C245A7075B949259AC31A2AE426FB5A3F3EAFC0AB
+9B29A73F0B4BAE021D69D05A24B94F8C7A327E2EFA2AB13A0F8EBB26B80E4C8C534A0458C98293
+EC7A5041E19E2918093AA2604A3C8C57ACB5396C0638F1D9EF3BE4C3B269426026F0B0D45EA8B1
+96906B80740A0F86AAD64426BA24EEBF0F638C662817C5EA720EE0A0E3F223234B490E178042B9
+E4E9EDB49DB96E2BBEAF0B5641899055CEFCBE524EC3AEA8772121E5E642488A0A2A861B42D34E
+95F1952A6111B9C43A64C49AB671724328E505DC02E6DD2F68FAADE41D8553827A0D9CB0D99349
+4E99AE0C6F5685FB111656D094E82DAB217829AC1662896FCAB205AC1EA9C2DB042B25B0'H
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "MH463946",
+              version 1
+            },
+            gi 1399097704
+          },
+          descr {
+            title "Ciceribacter sp. strain AIY3W 16S ribosomal RNA gene,
+ partial sequence.",
+            source {
+              org {
+                taxname "Ciceribacter sp.",
+                db {
+                  {
+                    db "taxon",
+                    tag id 1880900
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Ciceribacter",
+                    species "sp."
+                  },
+                  mod {
+                    {
+                      subtype strain,
+                      subname "AIY3W"
+                    }
+                  },
+                  lineage "Bacteria; Proteobacteria; Alphaproteobacteria;
+ Rhizobiales; Rhizobiaceae; Ciceribacter",
+                  gcode 11,
+                  div "BCT"
+                }
+              },
+              subtype {
+                {
+                  subtype country,
+                  name "China"
+                },
+                {
+                  subtype isolation-source,
+                  name "low salinity lakes on Tibetan Plateau"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2018,
+              month 6,
+              day 16
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1449,
+            seq-data ncbi2na 'C69C5FBC61F4552D9E15C5BAF27975F9AF264717DAB00507
+54EBB86A6BBB10A56A06CF459A4E78D663C7263D41F4E4762F922E43581E23A7FE88F2761766B7
+67951ED1453EC91BBB25495B0A94E287E1B4D545F5DDA7CD1692D57C8B9507839E9070A98ABE67
+6F9A87C1504DD1846278612539245EDFAB52581E0AF16DD6B0598548ED089EB0AF799BE7D83C05
+139D459FB9A955B43D7F8BFC37E616C75529A0EFC39BC9E651604B41E561A704F4DBF1A6E8714A
+B370D7BF9D5467F645D26D2C3A14B0965F651EBBD758337183F45DC47683D47C5DF531D08C54B3
+40A4BD64BE279A8FD15787C0CD65C6E67F1952C3D60419C955F6CF1669E7A460BC96A9F7DD61C5
+B4F37D36B8089FC435C217D34746693A7A34A7E654FB50CF551E79756CA2FEA5BB74B543BA78D3
+5DD2149CE8DB65FACA5FC55141C9C35066A74D4D563037F5560A9B31ACF2752FD5A2FBD6CABEAC
+8F5466F1D15B794755F9AA6F61F93BBC25E5949BDBDE2528D01DC0'H
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "MH463957",
+              version 1
+            },
+            gi 1399097715
+          },
+          descr {
+            title "Gillisia sp. strain AY10S 16S ribosomal RNA gene, partial
+ sequence.",
+            source {
+              org {
+                taxname "Gillisia sp.",
+                db {
+                  {
+                    db "taxon",
+                    tag id 2018084
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Gillisia",
+                    species "sp."
+                  },
+                  mod {
+                    {
+                      subtype strain,
+                      subname "AY10S"
+                    }
+                  },
+                  lineage "Bacteria; Bacteroidetes; Flavobacteriia;
+ Flavobacteriales; Flavobacteriaceae; Gillisia",
+                  gcode 11,
+                  div "BCT"
+                }
+              },
+              subtype {
+                {
+                  subtype country,
+                  name "China"
+                },
+                {
+                  subtype isolation-source,
+                  name "low salinity lakes on Tibetan Plateau"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2018,
+              month 6,
+              day 16
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1489,
+            seq-data ncbi2na 'C69C5FBC61F2552F149F45729675F9AE1A1F4AE7D49F53A7
+E1A9AEEC4295A81B3D164D3A78CE63C7263D49F468B62F921D63581E232AFCC8F675EB454BA79D
+DED5C53EC91BBBA54A1B0A96E38FE1B4D545F5D12FE47A4B7EF22F5611C767A41C104AAF99DBCC
+A1F05E117469189E18414E4917EC3FB7E60237BF5036B40713F095EB0AF5D9B34D83C05139D459
+FB9A955B43D7F8BF4F7E606C7552BABC7CD1FD9F251D20F9F581272C14DBF1A6C8714AB370D7BD
+9C5C67F6D4D26D0C0F3CB8DE5F6436B3D4EC337393F459C47133DC147D30B3D08104B343A43DCE
+BE25121FD167878FB565C6857F0150E3D68C19FA35D6CF1669E7A468BC9635F3D922C5B42D5846
+DAAEFDF5DEC024BF1054CA96DF5E46693A7A34A77654FB50CF5D1E79756CA2DEB5BB74B14BBAA8
+DD5DD2855CDCDB253AC25BC5F14DC9C32064C74DF325303BF0F3C0C39CF430C73AA4F0D40FDDEA
+73D57730AC8FB319BC6456E65AD94523E42437EE795761F93BBC25E59C9BD35E2528D01DC0'H
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "MH463958",
+              version 1
+            },
+            gi 1399097716
+          },
+          descr {
+            title "Idiomarina sp. strain GZ10W 16S ribosomal RNA gene, partial
+ sequence.",
+            source {
+              org {
+                taxname "Idiomarina sp.",
+                db {
+                  {
+                    db "taxon",
+                    tag id 1874361
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Idiomarina",
+                    species "sp."
+                  },
+                  mod {
+                    {
+                      subtype strain,
+                      subname "GZ10W"
+                    }
+                  },
+                  lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Alteromonadales; Idiomarinaceae; Idiomarina",
+                  gcode 11,
+                  div "BCT"
+                }
+              },
+              subtype {
+                {
+                  subtype country,
+                  name "China"
+                },
+                {
+                  subtype isolation-source,
+                  name "low salinity lakes on Tibetan Plateau"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2018,
+              month 6,
+              day 16
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1500,
+            seq-data ncbi2na 'C69C5FBC61F4552D381445BAC0657560AF09CDC7DEB92547
+54EBB86A6BBB10A56A06CF459A4F78D663C7263D61F468B62F921D635A1C6199FFE2359D1CD9C9
+F9F57FB1994FB246EEC95356C2A538E1F86DB5517D75AFCD1692DD548BD517F1B9E9070A30ABE6
+76F9A87C1504DD1046278612539245EDD2EF560A47DD4DDE803D1E8ED0A8EB0AF7D9BE4D83C051
+39D459FB9A955B43D3F8BFC17E696C75529AD07CB9BC9E6F1D17EFCC2181072F84DBF1A6E8714A
+B370D7BF9D5467F6C5D26D2FFE14AE965F651EB3D7D4337193F459C47A03DC515DF401DC9D14BD
+00E53D52BE256A9FD137E7C38965C6C67F1952C3D63C19F915D6CF1669E7A468BC96B9F7DEE9C1
+B43716673C118C97D7451E02E7F10560A5F7D1119A4E9E4D2AFD553EE433D5479E5D5B28B7A96E
+DD2D52EE9E34D77481272236D97EB897F154507270DD1FA97377A9B8AD608D551FEB5B21B4E6B3
+C94DBF50EBCD55150290BD5093C7456D659DB49158297BC59D87E4EEF29796526F437894A34077
+'H
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "MH463994",
+              version 1
+            },
+            gi 1399097752
+          },
+          descr {
+            title "Seohaeicola sp. strain TQ17W 16S ribosomal RNA gene,
+ partial sequence.",
+            source {
+              org {
+                taxname "Seohaeicola sp.",
+                db {
+                  {
+                    db "taxon",
+                    tag id 2042026
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Seohaeicola",
+                    species "sp."
+                  },
+                  mod {
+                    {
+                      subtype strain,
+                      subname "TQ17W"
+                    }
+                  },
+                  lineage "Bacteria; Proteobacteria; Alphaproteobacteria;
+ Rhodobacterales; Rhodobacteraceae; Seohaeicola",
+                  gcode 11,
+                  div "BCT"
+                }
+              },
+              subtype {
+                {
+                  subtype country,
+                  name "China"
+                },
+                {
+                  subtype isolation-source,
+                  name "high salinity lakes on Tibetan Plateau"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2018,
+              month 6,
+              day 16
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioProject",
+                  num 1,
+                  data strs {
+                    "newvalue"
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1431,
+            seq-data ncbi2na '22FE35E9D206067A69297044E42D89A45F6AEC9A686AF2C1
+9BA81B15FF73A0C976A01E22C314CC65AB05A808FCDA20A36959B78F232FAEAB0E97142DC634B2
+7AFF228E349047A8788469521D71A8A492EA837C843A990978DC94E59B8B8E0A5F2ADB0277F652
+238C384B37AC08055A7075B949259AC31A2AAF26FBDA0F1EA6C0991B29A3480BEAAE0356A9D055
+A069750075EB7E2F6222B8BA0F58BB22B80F6C8CF68A0452E9829A747A7631E19E2B980BBAA240
+4A3C8C57ACB5116C0638394B6DAB2CC79DAE1117068F093D65EA8B1AD908F00740A0F86AA56442
+6BA24EEBF0F6090664817C5057E135FA16522237AFF76C22142E12B9E4E9EDB49DBB6E23BDAF0B
+5A418990544D5CBE524AF09EA4773A01E56E309A8A0AEE8E1B42D74E95F1ABEA7111B9C43A4B84
+3ABC354009EDD2F68FAADE41D855382DA0D9CB0D9B0493866B831BD5A97EC44595B4453A8BEAF4
+560A5B9941490EAA49A146B89D261EAB82DB042B25B0'H
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "MH463995",
+              version 1
+            },
+            gi 1399097753
+          },
+          descr {
+            title "Seohaeicola sp. strain ZN30W 16S ribosomal RNA gene,
+ partial sequence.",
+            source {
+              org {
+                taxname "Seohaeicola sp.",
+                db {
+                  {
+                    db "taxon",
+                    tag id 2042026
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Seohaeicola",
+                    species "sp."
+                  },
+                  mod {
+                    {
+                      subtype strain,
+                      subname "ZN30W"
+                    }
+                  },
+                  lineage "Bacteria; Proteobacteria; Alphaproteobacteria;
+ Rhodobacterales; Rhodobacteraceae; Seohaeicola",
+                  gcode 11,
+                  div "BCT"
+                }
+              },
+              subtype {
+                {
+                  subtype country,
+                  name "China"
+                },
+                {
+                  subtype isolation-source,
+                  name "low salinity lakes on Tibetan Plateau"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2018,
+              month 6,
+              day 16
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1431,
+            seq-data ncbi2na '22FE35E9D206067A69297044E42D89A45F6AEC9A686AF2C1
+9BA81B15FF73A0C976A01E22C314CC65AB05A808FCDA20A36959B78F232FAEAB0E97142DC634B2
+7AFF228E349047A8788469521D71A8A492EA837C843A990978DC94E59B8B8E0A5F2ADB0277F652
+238C384B37AC08055A7075B949259AC31A2AAF26FBDA0F1EA6C0991B29A3480BEAAE0356A9D055
+A069750075EB7E2F6222B8BA0F58BB22B80F6C8CF68A0452E9829A747A7631E19E2B980BBAA240
+4A3C8C57ACB5116C0638394B6DAB2CC79DAE1117068F093D65EA8B1AD908F00740A0F86AA56442
+6BA24EEBF0F6090664817C5057E135FA16522237AFF76C22142E12B9E4E9EDB49DBB6E23BDAF0B
+5A418990544D5CBE524AF09EA4773A01E56E309A8A0AEE8E1B42D74E95F1ABEA7111B9C43A4B84
+3ABC354009EDD2F68FAADE41D855382DA0D9CB0D9B0493866B831BD5A97EC44595B4453A8BEAFC
+560A5B9941490E8A49A146B89D261EAB82DB042B25B0'H
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "MH463996",
+              version 1
+            },
+            gi 1399097754
+          },
+          descr {
+            title "Tabrizicola sp. strain ZN1W 16S ribosomal RNA gene, partial
+ sequence.",
+            source {
+              org {
+                taxname "Tabrizicola sp.",
+                db {
+                  {
+                    db "taxon",
+                    tag id 2005166
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Tabrizicola",
+                    species "sp."
+                  },
+                  mod {
+                    {
+                      subtype strain,
+                      subname "ZN1W"
+                    }
+                  },
+                  lineage "Bacteria; Proteobacteria; Alphaproteobacteria;
+ Rhodobacterales; Rhodobacteraceae; Tabrizicola",
+                  gcode 11,
+                  div "BCT"
+                }
+              },
+              subtype {
+                {
+                  subtype country,
+                  name "China"
+                },
+                {
+                  subtype isolation-source,
+                  name "low salinity lakes on Tibetan Plateau"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2018,
+              month 6,
+              day 16
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1431,
+            seq-data ncbi2na '22FE35E9D20E067A69297044E42D8188DF68DCBA686AE2C1
+9BA81B95FEBDA0C95EA01EA2C3160EE57DAA808FCD940A36959BE8F2B2FAEAB0E9514258635327
+AFE228E349447A8788469521D71A8A492EA837C843AA80578DC94E59B8D8E0A5F2AFB0237F48EA
+08C386B14D208255A7075B949259AC31A2AA726F3DA0F1EA6C0991B29A1E80B48AE0354A9D05FA
+0797F80754B7E2B6222B8BA0F58BB22B80F6C8CF68A0452E9829A747A7631E19E2B9809BAA2404
+A3C8C57ACB5196C0638394B6DAB24E73DAE1117068F093D65EA8B1A590AF00740A0F86AA564426
+BA24EEBF0F6090664817C5057E13AB3668D488E8DFD2F69E8C5112B9E4E9EDB49DBB6E23BDAF0B
+5A41899054477CBE534F4BEA4772881E5AE30968A0AEE8E1B42D74E95F1ABEA7111B9C43AEB843
+ABC3540094DD2F68FAADE41D855382DA0D9CB0D9B0493866B831BD5A97EC44595B4453A83E8DC5
+6186B99417642282496946B2BD2E1EAB82DB042B25B0'H
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,118 @@
+Seq-entry ::= seq {
+  id {
+    other {
+      accession "NR_156261",
+      version 1
+    },
+    gi 1384999986
+  },
+  descr {
+    title "Coniothyrium sidae CBS 135108 ITS region; from TYPE material.",
+    source {
+      genome genomic,
+      org {
+        taxname "Influenza",
+        orgname {
+          attrib "specified"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic
+    },
+    update-date std {
+      year 2018,
+      month 5,
+      day 1
+    },
+    create-date std {
+      year 2018,
+      month 5,
+      day 1
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 520,
+    topology not-set,
+    seq-data ncbi2na 'F5B2B8179A0A34F343CCA692439473115FEDFF9B1ECEFD76BA9D9596
+32847F005FFB0F90D26D2030730CBC41FD041A377EBDE936382064980E600B2EE0F920F4B834D8
+37F81913E655FACF53AA4E5EF626D3FB15D09DE7EBBEAEFEDD96F99921D97C090FA49690097A89
+9244E6F9FD21E7ED89B52425CF3DF9BF85DA34ACA8C56781'H
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data rna {
+            type rRNA,
+            ext name "18S ribosomal RNA"
+          },
+          partial TRUE,
+          location int {
+            from 0,
+            to 30,
+            strand plus,
+            id gi 1384999986,
+            fuzz-from lim lt
+          }
+        },
+        {
+          data rna {
+            type miscRNA,
+            ext gen {
+              product "internal transcribed spacer 1"
+            }
+          },
+          location int {
+            from 31,
+            to 171,
+            strand plus,
+            id gi 1384999986
+          }
+        },
+        {
+          data rna {
+            type rRNA,
+            ext name "5.8S ribosomal RNA"
+          },
+          location int {
+            from 172,
+            to 329,
+            strand plus,
+            id gi 1384999986
+          }
+        },
+        {
+          data rna {
+            type miscRNA,
+            ext gen {
+              product "internal transcribed spacer 2"
+            }
+          },
+          location int {
+            from 330,
+            to 483,
+            strand plus,
+            id gi 1384999986
+          }
+        },
+        {
+          data rna {
+            type rRNA,
+            ext name "28S ribosomal RNA"
+          },
+          partial TRUE,
+          location int {
+            from 484,
+            to 519,
+            strand plus,
+            id gi 1384999986,
+            fuzz-to lim gt
+          }
+        }
+      }
+    }
+  }
+}

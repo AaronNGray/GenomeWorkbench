@@ -1,0 +1,402 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class genbank,
+      seq-set {
+      }
+    },
+    set {
+      class genbank,
+      seq-set {
+        seq {
+          id {
+            local str "TAMBJAH3_1",
+            general {
+              db "NCBIFILE",
+              tag str "TAMBJAH3.sqn/TAMBJAH3_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 52599204
+            },
+            genbank {
+              accession "KP793059"
+            }
+          },
+          descr {
+            title "Tambja mediterranea voucher MNCN15.05/60151H Histone 3 (H3)
+ gene, partial cds.",
+            source {
+              genome genomic,
+              org {
+                taxname "Tambja sp. MP-2015",
+                orgname {
+                  name binomial {
+                    genus "Tambja",
+                    species "sp. MP-2015"
+                  },
+                  gcode 1,
+                  mgcode 5
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 31,
+            seq-data iupacna "CCGTAAATCAACAGGAGGCAAGGCTCCTCGC"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "H3"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 30,
+                    strand plus,
+                    id genbank {
+                      accession "KP793059"
+                    },
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data gene {
+                    locus "H3"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 30,
+                    strand plus,
+                    id local str "TAMBJAH3_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Tambja sp. MP-2015",
+                orgname {
+                  name binomial {
+                    genus "Tambja",
+                    species "sp. MP-2015"
+                  },
+                  gcode 1,
+                  mgcode 5
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "TAMBJAH3_2",
+                general {
+                  db "NCBIFILE",
+                  tag str "TAMBJAH3.sqn/TAMBJAH3_2"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 52599207
+                },
+                genbank {
+                  accession "KP793060"
+                }
+              },
+              descr {
+                title "Tambja mediterranea voucher MNCN15.05/60152 Histone 3
+ (H3) gene, partial cds.",
+                molinfo {
+                  biomol genomic
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 39,
+                seq-data iupacna "CCGTAAATCAACAGGAGGCAAGGCTCCTCGCAAACAACT"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data gene {
+                        locus "H3"
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 38,
+                        strand plus,
+                        id genbank {
+                          accession "KP793060"
+                        },
+                        fuzz-from lim lt
+                      }
+                    },
+                    {
+                      data gene {
+                        locus "H3"
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 38,
+                        strand plus,
+                        id local str "TAMBJAH3_2",
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            seq {
+              id {
+                local str "TAMBJAH3p_2",
+                general {
+                  db "NCBIFILE",
+                  tag str "TAMBJAH3.sqn/TAMBJAH3p_2"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 52599208
+                }
+              },
+              descr {
+                title "Histone 3, partial [Tambja sp. MP-2015]",
+                molinfo {
+                  biomol peptide,
+                  tech concept-trans-a,
+                  completeness no-ends
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 109,
+                seq-data ncbieaa "RKSTGGKAPRKQLATKAARKSAPATGGVKKPHRYRPGTVALREI
+RRYQKSTELLIRKLPFQRLVREIAQDFKTDLRFQSSAVMALQEASEAYLVGLFEDTNLCAIHAKR"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "Histone 3"
+                        }
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 108,
+                        id local str "TAMBJAH3p_2",
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            seq {
+              id {
+                local str "TAMBJAH3_2_1",
+                general {
+                  db "NCBIFILE",
+                  tag str "TAMBJAH3.sqn/TAMBJAH3_2_1"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 52599209
+                }
+              },
+              descr {
+                title "Histone 3, partial [Tambja sp. MP-2015]",
+                molinfo {
+                  biomol peptide,
+                  tech concept-trans,
+                  completeness no-ends
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 109,
+                seq-data ncbieaa "RKSTGGKAPRKQLATKAARKSAPATGGVKKPHRYRPGTVALREI
+RRYQKSTELLIRKLPFQRLVREIAQDFKTDLRFQSSAVMALQEASEAYLVGLFEDTNLCAIHAKR"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "Histone 3"
+                        }
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 108,
+                        id local str "TAMBJAH3_2_1",
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    frame two,
+                    code {
+                      id 1
+                    }
+                  },
+                  partial TRUE,
+                  product whole local str "TAMBJAH3_2_1",
+                  location int {
+                    from 0,
+                    to 38,
+                    strand plus,
+                    id local str "TAMBJAH3_2",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data cdregion {
+                    frame two,
+                    code {
+                      id 1
+                    }
+                  },
+                  partial TRUE,
+                  product whole local str "TAMBJAH3p_2",
+                  location int {
+                    from 0,
+                    to 38,
+                    strand plus,
+                    id genbank {
+                      accession "KP793060"
+                    },
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "TAMBJAH3_3",
+            general {
+              db "NCBIFILE",
+              tag str "TAMBJAH3.sqn/TAMBJAH3_3"
+            },
+            general {
+              db "TMSMART",
+              tag id 52599210
+            },
+            genbank {
+              accession "KP793061"
+            }
+          },
+          descr {
+            title "Tambja mediterranea voucher MNCN15.05/60153 Histone 3 (H3)
+ gene, partial cds.",
+            source {
+              genome genomic,
+              org {
+                taxname "Tambja sp. MP-2015",
+                orgname {
+                  name binomial {
+                    genus "Tambja",
+                    species "sp. MP-2015"
+                  },
+                  gcode 1,
+                  mgcode 5
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 28,
+            seq-data iupacna "CCGTAAATCAACAGGACATGCCAAGCGC"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data rna {
+                    type rRNA,
+                    ext name "H3"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 27,
+                    strand plus,
+                    id genbank {
+                      accession "KP793061"
+                    },
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "misc_feature"
+                  },
+                  partial TRUE,
+                  comment "H3",
+                  location int {
+                    from 0,
+                    to 27,
+                    strand plus,
+                    id local str "TAMBJAH3_3",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

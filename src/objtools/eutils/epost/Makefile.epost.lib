@@ -1,0 +1,10 @@
+# $Id: Makefile.epost.lib 427429 2014-02-20 13:41:40Z gouriano $
+
+LIB = epost
+SRC = epost__ epost___
+
+WATCHERS = grichenk
+
+
+USES_LIBRARIES =  \
+    xser

@@ -1,0 +1,42 @@
+# $Id: Makefile.w_loaders.lib 44439 2019-12-18 19:51:52Z katargir $
+
+SRC = asn_object_loader chain_loader \
+      gb_load_option_panel gb_object_loader gb_load_wizard \
+      assembly_object_loader assembly_load_wizard \
+      assembly_term_completer \
+      assembly_list_panel resolve_id_dlg select_assembly_dialog assembly_sel_panel \
+      map_assembly_params mapping_object_loader report_loader_errors \
+      table_import_data_source table_object_loader \
+      table_column_type_guesser table_annot_data_source table_import_column \
+      table_data_listctrl table_import_listctrl \
+      table_fixed_width_panel table_column_id_panel table_delimeters_panel \
+      table_format_panel table_xform_panel table_import_wizard \
+      fasta_load_params fasta_format_params_panel fasta_object_loader \
+      gff_load_params gff_params_panel gff_object_loader \
+      bed_load_params bed_params_panel bed_object_loader vcf_object_loader \
+      wig_load_params wig_params_panel wig_object_loader \
+      agp_load_params agp_load_page agp_object_loader \
+      5col_object_loader rm_object_loader phy_object_loader \
+      text_align_load_params text_align_params_panel text_align_object_loader \
+      bam_load_option_panel bam_coverage_graph_panel bam_indexing_panel bam_ref_sequences_panel \
+      job_results_dlg open_objects_panel open_objects_dlg \
+      file_load_panel file_load_wizard file_load_mru_list \
+      lblast_object_loader lblast_params_panel lblast_load_params \
+      winmask_files tax_id_helper winmask_files_dlg assembly_cache \
+      psl_object_loader psl_load_params psl_params_panel
+
+LIB = w_loaders
+
+ASN_DEP = submit gbproj
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(WXWIDGETS_INCLUDE) $(SRA_INCLUDE)
+
+DLL_LIB = ncbi_xloader_blastdb w_wx gui_objutils gui_objects hgvs gencoll_client genome_collection xmlwrapp \
+          blast_services xalnmgr xhtml xobjreadex ximage submit xalgophytree fastme biotree tables \
+          bamread $(SRAREAD_LIBS) $(COMPRESS_LIBS) $(SOBJMGR_LIBS)
+
+LIBS = $(SRA_SDK_SYSLIBS) $(LIBXML_LIBS) $(WXWIDGETS_LIBS) $(CMPRS_LIBS) \
+       $(BLAST_THIRD_PARTY_LIBS) $(VDB_LIBS) $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+REQUIRES = OpenGL wxWidgets objects Boost.Spirit

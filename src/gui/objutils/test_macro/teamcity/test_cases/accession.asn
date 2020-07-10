@@ -1,0 +1,362 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome mitochondrion,
+      org {
+        taxname "Homo sapiens",
+        common "human",
+        db {
+          {
+            db "taxon",
+            tag id 9606
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Homo",
+            species "sapiens"
+          },
+          attrib "specified",
+          lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Euarchontoglires; Primates; Haplorrhini;
+ Catarrhini; Hominidae; Homo",
+          gcode 1,
+          mgcode 2,
+          div "PRI"
+        }
+      }
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        other {
+          accession "EU073970",
+          version 1
+        },
+        gi 154705673
+      },
+      descr {
+        title "Homo sapiens haplogroup J1 mitochondrion, complete genome.",
+        molinfo {
+          biomol genomic,
+          completeness complete
+        },
+        create-date std {
+          year 2007,
+          month 8,
+          day 8
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 2209,
+        topology circular,
+        seq-data iupacna "GATCACAGGTCTATCACCCTATTAACCACTCACGGGAGCTCTCCATGCCTCT
+TCTTAACAACATACCCATGGCCAACCTCCTACTCCTCATTGTACCCATTCTAATCGCAATGGCATTCCTAATGCTTAC
+CGAACGAAAAATTCTAGGCTATACACAACTACGCAAAGGCCCCAACGTTGTAGGCCCCTACGGGCTACTACAACCCTT
+CGCTGACGCCATAAAACTCTTCACCAAAGAGCCCCTAAAACCCGCCACATCTACCATCACCCTCTACATCACCGCCCC
+GACCTTAGCTCTCACCATCGCTCTTCTACTATGAACCCCCCTCCCCATACCCAACCCCCTGGTCTACACCTCCTATGA
+AAAAACTTCCTACCACTCACCCTAGCATTACTTATATGACATGTCTCCATACCCATTACAATCTCCAGCATTCCCCCT
+CAAACCTAAGAAATATGTCTGATAAAAATACCCCGAAAATGTTGGTTATACCCTTCCCGTACTAATTAATCCCCTGGC
+CCAACCCGTCATCTACTCTACCATCTTTGCAGGCACACTCATCACAGCGCTAAGCTCGCACTGATTTTTTACCTGAGT
+AGGCCTAGAAATAAACATGCTAGCTTTTATTCCAGTTCTAACCAAAAAAATAAAGCAGTTCTACCGTACAACCCTAAC
+ATAACCATTCTTAATTTAACTATTTATATTATCCTAACTACTACCGCATTCCTACTACTCAACTTAAACTCCAGCACC
+ACGACCCTACTACTATCTCGCACCTGAAACAAGCTAACATGACTAACACCCTTAATTCCATCCACCCTCCTCTCCCTA
+GGAGGCCTGCCCCCGCTAACCGGCTTTTTGCCCAAATGGGCCATTATCGAAGAATTCACAAAAAACAATAGCCTCATC
+ATCCCCACCATCATAGCCACCATCACCCTCCTTAACCTCTACTTCTACCTACGCCTAATCTACTCCACCTCAATCACA
+CTACTCCCCATATCTAACAACGTAAAAATAAAATGACAGTTTGAACATACAAAACCCACCCCATTCCTCCCCACACTC
+ATCGCCCTTACCACGCTACTCCTACCTATCTCCCCTTTTATACTAATAATCTTATAGAAATTTAGGTTAAATACAGAC
+CAAGAGCCTTCAAAGCCCTCAGTAAGTTGCAATACTTAATTTCTGTAACAGCTAAGGACTGCAAAACCCCACTCTGCA
+TCAACTGAACGCAAATCAGCCACTTTAATTAAGCTAAGCCCTTACTAGACCAATGGGACTTAAACCCACAAACACTTA
+GTTAACAGCTAAGCACCCTAATCAACTGGCTTCAATCTACTTCTCCCGCCGCCGGGAAAAAAGGCGGGAGAAGCCCCG
+GCAGGTTTGAAGCTGCTTCTTCGAATTTGCAATTCAATATGAAAATCACCTCGGAGCTGGTAAAAAGAGGCCTAACCC
+CTGTCTTTAGATTTACAGTCCAATGCTTCACTCAGCCATTTTACCTCACCCCCACTGATGTTCGCCGACCGTTGACTA
+TTCTCTACAAACCACAAAGACATTGGAACACTATACCTATTATTCGGCGCATGAGCTGGAGTCCTAGGCACAGCTCTA
+AGCCTCCTTATTCGAGCCGAGCTGGGCCAGCCAGGCAACCTTCTAGGTAACGACCACATCTACAACGTTATCGTCACA
+GCCCATGCATTTGTAATAATCTTCTTCATAGTAATACCCATCATAATCGGAGGCTTTGGCAACTGACTAGTTCCCCTA
+ATAATCGGTGCCCCCGATATGGCGTTTCCCCGCATAAACAACATAAGCTTCTGACTCTTACCTCCCTCTCTCCTACTC
+CTGCTCGCATCTGCTATAGTGGAGGCCGGAGCAGGAACAGGTTGAACAGTCTACCCTCCCTTAGCAGGGAACTACTCC
+CACCCTGGAGCCTCCGTAGACCTAACCATCTTCTCCTTACACCTAGCAGGTGTCTCCTCTATCTTAGGGGCCATCAAT
+TTCATCACAACAATTATCAATATAAAACCACATTCGAAGAACCCGTATACATAAAATCTAGACAAAAAAGGAAGGAAT
+CGAACCCCCCAAAGCTGGTTTCAAGCCAACCCCATGGCCTCCATGACTTTTTCAAAAAGGTATTAGAAAAACCATTTC
+ATAATTATTATCGAAACCATCAGCCTACTCATTCAACCAATAGCCCTGGCC"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "ND1"
+              },
+              location int {
+                from 62,
+                to 147,
+                strand plus,
+                id gi 154705673
+              }
+            },
+            {
+              data gene {
+                locus "ND2"
+              },
+              location int {
+                from 506,
+                to 572,
+                strand plus,
+                id gi 154705673
+              }
+            },
+            {
+              data gene {
+                locus "COX1"
+              },
+              location int {
+                from 1513,
+                to 2055,
+                strand plus,
+                id gi 154705673
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        genbank {
+          accession "ABS84043",
+          version 1
+        },
+        gi 154705674
+      },
+      descr {
+        title "NADH dehydrogenase subunit 1 (mitochondrion) [Homo sapiens]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        create-date std {
+          year 2007,
+          month 8,
+          day 8
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 27,
+        seq-data ncbieaa "THGQPPTPHCTHSNRNGIPNAYRTKNS"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "NADH dehydrogenase subunit 1"
+                }
+              },
+              location int {
+                from 0,
+                to 26,
+                id genbank {
+                  accession "ABS84043",
+                  version 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        genbank {
+          accession "ABS84044",
+          version 1
+        },
+        gi 154705675
+      },
+      descr {
+        title "NADH dehydrogenase subunit 2 (mitochondrion) [Homo sapiens]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        create-date std {
+          year 2007,
+          month 8,
+          day 8
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 21,
+        seq-data ncbieaa "LIPWPNPSSTLPSLQAHSSQR"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "NADH dehydrogenase subunit 2"
+                }
+              },
+              location int {
+                from 0,
+                to 20,
+                id genbank {
+                  accession "ABS84044",
+                  version 1
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        genbank {
+          accession "ABS84045",
+          version 1
+        },
+        gi 154705676
+      },
+      descr {
+        title "cytochrome c oxidase subunit I (mitochondrion) [Homo sapiens]",
+        molinfo {
+          biomol peptide,
+          tech concept-trans
+        },
+        create-date std {
+          year 2007,
+          month 8,
+          day 8
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 180,
+        seq-data ncbieaa "MFADRWLFSTNHKDIGTLYLLFGAWAGVLGTALSLLIRAELGQPGNLLGNDH
+IYNVIVTAHAFVMIFFMVMPIMIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSLLLLLASAMVEAGAGTGWTVYP
+PLAGNYSHPGASVDLTIFSLHLAGVSSILGAINFITTIINMKPHSKNPYT"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "cytochrome c oxidase subunit I"
+                }
+              },
+              location int {
+                from 0,
+                to 179,
+                id genbank {
+                  accession "ABS84045",
+                  version 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame three,
+            code {
+              id 2
+            },
+            code-break {
+              {
+                loc packed-int {
+                  {
+                    from 62,
+                    to 63,
+                    id gi 154705673
+                  }
+                },
+                aa ncbieaa 42
+              }
+            }
+          },
+          comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA",
+          product whole genbank {
+            accession "ABS84043",
+            version 1
+          },
+          location int {
+            from 62,
+            to 147,
+            strand plus,
+            id gi 154705673
+          }
+        },
+        {
+          data cdregion {
+            frame two,
+            code {
+              id 2
+            },
+            code-break {
+              {
+                loc packed-int {
+                  {
+                    from 506,
+                    to 507,
+                    id gi 154705673
+                  }
+                },
+                aa ncbieaa 42
+              }
+            }
+          },
+          comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA",
+          product whole genbank {
+            accession "ABS84044",
+            version 1
+          },
+          location int {
+            from 506,
+            to 572,
+            strand plus,
+            id gi 154705673
+          }
+        },
+        {
+          data cdregion {
+            frame one,
+            code {
+              id 2
+            }
+          },
+          product whole genbank {
+            accession "ABS84045",
+            version 1
+          },
+          location int {
+            from 1513,
+            to 2055,
+            strand plus,
+            id gi 154705673
+          }
+        }
+      }
+    }
+  }
+}

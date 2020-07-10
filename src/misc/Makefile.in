@@ -1,0 +1,6 @@
+# $Id: Makefile.in 38875 2017-06-28 16:00:44Z filippov $
+
+SUB_PROJ = third_party grid_cgi xmlwrapp hgvs discrepancy eutils_client biosample_util hydra_client data_loaders_util pmcidconv_client
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

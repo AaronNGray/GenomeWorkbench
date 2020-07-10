@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.demo4.app.txt 593512 2019-09-19 16:43:33Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(bdb_demo4)
+  NCBI_sources(demo4)
+  NCBI_uses_toolkit_libraries(bdb)
+  NCBI_project_watchers(kuznets)
+NCBI_end_app()

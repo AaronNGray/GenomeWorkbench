@@ -1,0 +1,10 @@
+# $Id: Makefile.in 41721 2018-09-12 18:42:22Z vakatov $
+#
+# Makefile.in for unit_test
+
+APP_PROJ = unit_test_pkg_seqedit unit_test_sequpdate unit_test_import_feattable
+
+REQUIRES = gbench wxWidgets objects
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

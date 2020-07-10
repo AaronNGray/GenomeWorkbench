@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.w_snp_ld.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_snp_ld)
+  NCBI_sources(ld_ds ld_glyph ld_track ld_line ld_filter_dlg ld_filter_params)
+  NCBI_uses_toolkit_libraries(w_seq_graphic)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

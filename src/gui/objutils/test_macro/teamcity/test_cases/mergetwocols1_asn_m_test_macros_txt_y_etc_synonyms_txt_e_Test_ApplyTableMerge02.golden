@@ -1,0 +1,220 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "seq1__1",
+        general {
+          db "BankIt",
+          tag str "1522075/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 28980492
+        },
+        genbank {
+          accession "JQ782744"
+        }
+      },
+      descr {
+        title "[Scenedesmus bajacalifornicus] S.bajacalifornicus ITS-2 partial",
+        source {
+          genome genomic,
+          org {
+            taxname "Scenedesmus bajacalifornicus",
+            db {
+              {
+                db "taxon",
+                tag id 269609
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Scenedesmus",
+                species "bajacalifornicus"
+              },
+              mod {
+                {
+                  subtype strain,
+                  subname "IB-10"
+                }
+              },
+              lineage "Eukaryota; Viridiplantae; Chlorophyta; Chlorophyceae;
+ Sphaeropleales; Scenedesmaceae; Scenedesmus",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          },
+          subtype {
+            {
+              subtype collected-by,
+              name "Radha.S"
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness partial
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 34,
+        seq-data iupacna "AGGAGAATAGCAGGGTAATCGGGCTTGTCCTGAT"
+      }
+    },
+    seq {
+      id {
+        local str "seq1__2",
+        general {
+          db "BankIt",
+          tag str "1522097/seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 28980683
+        },
+        genbank {
+          accession "JQ782745"
+        }
+      },
+      descr {
+        title "[Scenedesmus obliquus] S.obliquus ITS-2 partial",
+        source {
+          genome genomic,
+          org {
+            taxname "Scenedesmus obliquus",
+            db {
+              {
+                db "taxon",
+                tag id 3088
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Scenedesmus",
+                species "obliquus"
+              },
+              mod {
+                {
+                  subtype strain,
+                  subname "some strain"
+                }
+              },
+              lineage "Eukaryota; Viridiplantae; Chlorophyta; Chlorophyceae;
+ Sphaeropleales; Scenedesmaceae; Scenedesmus",
+              gcode 1,
+              mgcode 22,
+              div "PLN"
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness partial
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 186,
+        seq-data iupacna "AGGAGAAGTTCGTAACAAGGTTTGGTGGCGCTCTGGCATGCCCATACACCAG
+TGCTAACCACTGTAAGTTGTGGCTTGTGGACTTTGATAGGAGCCAAGCAGGAAACGTGCTTGCACGTTTTAAACTTTC
+GACCTGAGCTCAGGCAAGGCTACCCGCTGAACTTAAGCATATCAATAAGCGGAGGA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq1__3",
+        general {
+          db "BankIt",
+          tag str "1522285/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 29008354
+        },
+        genbank {
+          accession "JQ782746"
+        }
+      },
+      descr {
+        title "ITS-2 partial",
+        source {
+          genome genomic,
+          org {
+            taxname "Scenedesmus sp.",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "IB-06"
+                }
+              }
+            }
+          },
+          subtype {
+            {
+              subtype collected-by,
+              name "Radha.S"
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness partial
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 51,
+        seq-data iupacna "AGGAGAAGTCGTAACAAGGTTCTATTAACTGGCAATCTTAACCAAAGACAA"
+      }
+    },
+    seq {
+      id {
+        local str "seq1__4",
+        general {
+          db "BankIt",
+          tag str "1522292/seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 29008381
+        },
+        genbank {
+          accession "JQ782747"
+        }
+      },
+      descr {
+        title "ITS-2 partial",
+        source {
+          genome genomic,
+          org {
+            taxname "desmodesmus sp."
+          },
+          subtype {
+            {
+              subtype collected-by,
+              name "Radha.S"
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness partial
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 65,
+        seq-data iupacna "AGGAGAAGTCGTAACAAGGTTTCCGTAGGTGAAGTTTCGGCTGCTGTTAATC
+GGCAGTTTTAACG"
+      }
+    }
+  }
+}

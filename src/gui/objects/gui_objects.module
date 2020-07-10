@@ -1,0 +1,3 @@
+MODULE_ASN = gui_objects.asn
+MODULE_IMPORT = objects/seq/seq objects/seqloc/seqloc objects/seqset/seqset objects/general/general objects/submit/submit objects/seqalign/seqalign objects/seq/seq objects/gbproj/gbproj
+MODULE_PATH = gui/objects

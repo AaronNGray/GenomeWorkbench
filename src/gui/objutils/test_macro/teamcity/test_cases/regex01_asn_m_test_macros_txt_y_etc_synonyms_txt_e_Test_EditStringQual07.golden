@@ -1,0 +1,155 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "Coverage",
+              data str "23.4556f"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 149,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAATTAATCATACCCTCCCCGCTATCTGTGAAAA
+CCCCGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787265
+        },
+        genbank {
+          accession "KF591394"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Falco peregrinus",
+            common "peregrine falcon",
+            db {
+              {
+                db "taxon",
+                tag id 8954
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+ Tetrapoda; Amniota; Sauropsida; Sauria; Archelosauria; Archosauria;
+ Dinosauria; Saurischia; Theropoda; Coelurosauria; Aves; Neognathae;
+ Falconiformes; Falconidae; Falco",
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "Coverage",
+              data str "23.22"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 539,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTGTGGATTGTGGAACGCTATT
+TCCCAGGTTGCCAGCGTGCTTGGAGAGATGTTAGCTCCGTATGTTCAAAAGGTGTTACTAGGATTACAACTTTTATGG
+TCTTTCCTTGGGGGGGCTTTTACCGCAGTATGGCAAACCGTCGGGGGCGTGCTGGAAGCTTTCATTAGCTACATTGCA
+ACTTTCATTACATTGTTAGCGGACCTGATCAGTGGAAATATCACGTTCACTGAGTTCATGAGTGAGATGTGGGTGGCT
+TTTCAGCAACTAATCGGTGAAGTCATAGGTGCCATTTTAAGTGGTATTGGGGAGTTTGTGTATAAAATGGTAGATTCT
+GCAATCCAAGCCGTCACAGGATGGGTAAATGCTTTCCTATCATTTTTACCACAGATCCCCGGTATGATTGCCTTTTAT
+TTAGGCTTTGCAATTGGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACTG
+ATAACATGGGTCATTAACA"
+      }
+    }
+  }
+}

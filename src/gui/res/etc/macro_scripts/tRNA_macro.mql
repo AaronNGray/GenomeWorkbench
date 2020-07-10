@@ -1,0 +1,220 @@
+MACRO GB_mitomacro_080 "Edit gene locus replace 'tRNA-Ile' with 'trnI'"
+VAR
+    find_text = "tRNA-Ile"
+    repl_text = "trnI"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_081 "Edit gene locus replace 'tRNA-Lys' with 'trnK'"
+VAR
+    find_text = "tRNA-Lys"
+    repl_text = "trnK"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_082 "Edit gene locus replace 'tRNA-Leu' with 'trnL'"
+VAR
+    find_text = "tRNA-Leu"
+    repl_text = "trnL"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_083 "Edit gene locus replace 'tRNA-Ser' with 'trnS'"
+VAR
+    find_text = "tRNA-Ser"
+    repl_text = "trnS"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_084 "Edit gene locus replace 'tRNA-Trp' with 'trnW'"
+VAR
+    find_text = "tRNA-Trp"
+    repl_text = "trnW"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_085 "Edit gene locus replace 'tRNA-Cys' with 'trnC'"
+VAR
+    find_text = "tRNA-Cys"
+    repl_text = "trnC"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_086 "Edit gene locus replace 'tRNA-Gly' with 'trnG'"
+VAR
+    find_text = "tRNA-Gly"
+    repl_text = "trnG"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_087 "Edit gene locus replace 'tRNA-Asn' with 'trnN'"
+VAR
+    find_text = "tRNA-Asn"
+    repl_text = "trnN"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_088 "Edit gene locus replace 'tRNA-Asp' with 'trnD'"
+VAR
+    find_text = "tRNA-Asp"
+    repl_text = "trnD"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_089 "Edit gene locus replace 'tRNA-Thr' with 'trnT'"
+VAR
+    find_text = "tRNA-Thr"
+    repl_text = "trnT"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_090 "Edit gene locus replace 'tRNA-Pro' with 'trnP'"
+VAR
+    find_text = "tRNA-Pro"
+    repl_text = "trnP"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_091 "Edit gene locus replace 'tRNA-Arg' with 'trnR'"
+VAR
+    find_text = "tRNA-Arg"
+    repl_text = "trnR"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_092 "Edit gene locus replace 'tRNA-Gln' with 'trnQ'"
+VAR
+    find_text = "tRNA-Gln"
+    repl_text = "trnQ"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_093 "Edit gene locus replace 'tRNA-Tyr' with 'trnY'"
+VAR
+    find_text = "tRNA-Tyr"
+    repl_text = "trnY"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_094 "Edit gene locus replace 'tRNA-Glu' with 'trnE'"
+VAR
+    find_text = "tRNA-Glu"
+    repl_text = "trnE"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_095 "Edit gene locus replace 'tRNA-Val' with 'trnV'"
+VAR
+    find_text = "tRNA-Val"
+    repl_text = "trnV"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_096 "Edit gene locus replace 'tRNA-Ala' with 'trnA'"
+VAR
+    find_text = "tRNA-Ala"
+    repl_text = "trnA"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_097 "Edit gene locus replace 'tRNA-His' with 'trnH'"
+VAR
+    find_text = "tRNA-His"
+    repl_text = "trnH"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_098 "Edit gene locus replace 'tRNA-Met' with 'trnM'"
+VAR
+    find_text = "tRNA-Met"
+    repl_text = "trnM"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO GB_mitomacro_099 "Edit gene locus replace 'tRNA-Phe' with 'trnF'"
+VAR
+    find_text = "tRNA-Phe"
+    repl_text = "trnF"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------

@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_wigreader_raw.app.txt 599873 2020-01-08 18:10:00Z ludwigf $
+#############################################################################
+
+NCBI_begin_app(unit_test_wigreader_raw)
+  NCBI_sources(unit_test_wigreader_raw)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xobjread)
+  NCBI_project_watchers(ludwigf)
+  NCBI_set_test_assets(wigreader_test_cases_raw)
+  NCBI_add_test()
+NCBI_end_app()
+

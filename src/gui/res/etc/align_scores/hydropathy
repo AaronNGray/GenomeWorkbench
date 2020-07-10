@@ -1,0 +1,43 @@
+[Info]
+Name        = Hydropathy Scale
+Description = Side chain hydropathy, corrected for solvation
+; Type = Protein | DNA
+Type=Protein
+; Method = Coloration | ColumnScore | MatrixScore
+Method = ColumnScore
+; Gradient = 2Colors | 3Colors
+Gradient = 3Colors
+
+[Table]
+; A table contains:
+;	MinimumValue, MinimumColor
+;   MidValue, MidColor
+;	MaximumValue, MaximumColor
+
+MinimumValue = -3.24
+MinimumColor = firebrick2
+
+MaximumValue = 3.89
+MaximumColor = royal blue
+
+[TableRows]
+A = -0.67
+R =  3.89
+N =  2.27
+D =  1.57
+C = -2.00
+Q =  2.12
+E =  1.78
+G =  0.00
+H =  1.09
+I = -3.02
+L = -3.02
+K =  2.46
+M = -1.67
+F = -3.24
+P = -1.75
+S =  0.10
+T = -0.42
+W = -2.86
+Y =  0.98
+V = -2.18

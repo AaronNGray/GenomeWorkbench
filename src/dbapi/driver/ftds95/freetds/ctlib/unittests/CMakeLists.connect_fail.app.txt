@@ -1,0 +1,8 @@
+#############################################################################
+# $Id: CMakeLists.connect_fail.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(ct95_connect_fail)
+  NCBI_sources(connect_fail common)
+NCBI_end_app()
+

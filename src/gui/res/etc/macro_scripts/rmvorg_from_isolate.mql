@@ -1,0 +1,9 @@
+MACRO RemoveTaxFromIsolate "Remove organism name from isolate"
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "isolate";
+    RemoveOrgName("o.subname");
+DONE
+--------------------------------------------------------------
+
+

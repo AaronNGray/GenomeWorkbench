@@ -1,0 +1,7 @@
+# $Id: Makefile.in 401666 2013-05-31 16:10:28Z boukn $
+
+APP_PROJ = unit_test_id_mapper
+PROJ_TAG = test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

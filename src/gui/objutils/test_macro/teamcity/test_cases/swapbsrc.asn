@@ -1,0 +1,154 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "Drs3"
+                },
+                {
+                  subtype isolate,
+                  subname "some"
+                },
+                {
+                  subtype nat-host,
+                  subname "Methanobacterium formicicum, strain Dresden Khl10"
+                }
+              },
+              gcode 1
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Germany"
+            },
+            {
+              subtype isolation-source,
+              name "Anaerobic digester"
+            },
+            {
+              subtype other,
+              name "[cultured bacterial source]"
+            }
+          },
+          pcr-primers {
+            {
+              forward {
+                {
+                  seq "5'aggcaactgtgctatccgagggag",
+                  name "nbam24"
+                }
+              },
+              reverse {
+                {
+                  seq "5-aggcaactgtgctatccgagggag3'",
+                  name "nbam24"
+                }
+              }
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 50,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTCCCGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787265
+        },
+        genbank {
+          accession "KF591394"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              mod {
+                {
+                  subtype nat-host,
+                  subname "Methanobacterium formicicum, strain Dresden Khl10"
+                }
+              },
+              gcode 1
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 528,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGCGCTATTTCCCAGGTTGC
+CAGCGTGCTTGGAGAGATGTTAGCTCCGTATGTTCAAAAGGTGTTACTAGGATTACAACTTTTATGGTCTTTCCTTGG
+GGGGGCTTTTACCGCAGTATGGCAAACCGTCGGGGGCGTGCTGGAAGCTTTCATTAGCTACATTGCAACTTTCATTAC
+ATTGTTAGCGGACCTGATCAGTGGAAATATCACGTTCACTGAGTTCATGAGTGAGATGTGGGTGGCTTTTCAGCAACT
+AATCGGTGAAGTCATAGGTGCCATTTTAAGTGGTATTGGGGAGTTTGTGTATAAAATGGTAGATTCTGCAATCCAAGC
+CGTCACAGGATGGGTAAATGCTTTCCTATCATTTTTACCACAGATCCCCGGTATGATTGCCTTTTATTTAGGCTTTGC
+AATTGGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATAACATGGGT
+CATTAACA"
+      }
+    }
+  }
+}

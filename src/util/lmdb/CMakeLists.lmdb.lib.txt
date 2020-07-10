@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.lmdb.lib.txt 573129 2018-10-23 18:10:21Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(lmdb)
+  NCBI_sources(mdb midl)
+  NCBI_requires(LocalLMDB)
+  NCBI_project_watchers(ivanov)
+  NCBI_uses_external_libraries(${CMAKE_THREAD_LIBS_INIT})
+NCBI_end_lib()

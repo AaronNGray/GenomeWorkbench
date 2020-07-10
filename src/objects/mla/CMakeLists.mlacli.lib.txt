@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.mlacli.lib.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(mlacli)
+  NCBI_generated_sources(mla_client.cpp mla_client_.cpp)
+  NCBI_uses_toolkit_libraries(mla xconnect)
+NCBI_end_lib()
+

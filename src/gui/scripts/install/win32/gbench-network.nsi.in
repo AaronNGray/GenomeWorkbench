@@ -1,0 +1,258 @@
+; $Id: gbench-network.nsi.in 14311 2007-03-05 20:41:55Z kazimird $
+;--------------------------------
+;Include Modern UI
+!include "MUI.nsh"
+
+;--------------------------------
+;Definitions
+!define GBENCH_NAME	"Genome Workbench"
+
+!define VER_MAJOR		@VERSION_MAJOR@
+!define VER_MINOR		@VERSION_MINOR@
+!define VER_REVISION	@VERSION_REVISION@
+!define VER_BUILD		@VERSION_BUILD_DATE@
+
+!define GBENCH_LOCAL "e:\users\dev\c++\compilers\msvc710_prj\dll\bin\debugdll\gbench"
+!define GBENCH_CURRENT "\\snowman\win-coremake\App\Ncbi\gbench\current"
+!define GBENCH_STABLE "\\snowman\win-coremake\App\Ncbi\gbench\stable"
+!define GBENCH_PATH "${GBENCH_CURRENT}"
+!define GBENCH_BIN      "bin"
+
+!define VER_FILE		"${VER_MAJOR}${VER_MINOR}${VER_REVISION}"
+!define VER_DISPLAY		"${VER_MAJOR}.${VER_MINOR}.${VER_REVISION}"
+
+;--------------------------------
+;General
+  ;Name and file
+  Name "${GBENCH_NAME}"
+  OutFile "${GBENCH_NAME} Network Setup v.${VER_MAJOR}.${VER_MINOR}.${VER_REVISION}-${VER_BUILD}.exe"
+
+  ;Get installation folder from registry if available
+  ;InstallDirRegKey HKCU "Software\${GBENCH_NAME}" ""
+
+;--------------------------------
+;Interface Settings
+  !define MUI_ABORTWARNING
+  !define MUI_COMPONENTSPAGE_SMALLDESC
+  
+;--------------------------------
+;Pages
+  !define MUI_WELCOMEPAGE_TITLE "Welcome to the ${GBENCH_NAME} Setup Wizard"
+  !insertmacro MUI_PAGE_WELCOME
+  !insertmacro MUI_PAGE_LICENSE "license.txt"
+  Page custom PageReinstall PageLeaveReinstall
+  !insertmacro MUI_PAGE_COMPONENTS
+  
+  !define MUI_FINISHPAGE_NOREBOOTSUPPORT
+  !insertmacro MUI_PAGE_FINISH
+  
+  !insertmacro MUI_UNPAGE_CONFIRM
+  !insertmacro MUI_UNPAGE_INSTFILES
+  
+;--------------------------------
+;Languages 
+  !insertmacro MUI_LANGUAGE "English"
+
+;Reserve Files
+  ;These files should be inserted before other files in the data block
+  ReserveFile "gbench_install.ini"
+  !insertmacro MUI_RESERVEFILE_INSTALLOPTIONS
+
+;--------------------------------
+;Installer Sections
+;
+Section "${GBENCH_NAME} application (required)" SecGbench
+  DetailPrint "Registering Genome Workbench components..."
+  SetDetailsPrint listonly
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-project" "Extension" ".gbp"
+    WriteRegStr HKCU "Software\CLASSES\gbench.project" "" "Genome Workbench project file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.project\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.project\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.project\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t project $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbp" "" "gbench.project"
+    WriteRegStr HKCU "Software\CLASSES\.gbp" "Content Type" "application/x-gbench-project"
+    WriteRegStr HKCU "Software\CLASSES\.gbp\gbench.project" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbp\gbench.project\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-workspace" "Extension" ".gbw"
+    WriteRegStr HKCU "Software\CLASSES\gbench.workspace" "" "Genome Workbench workspace file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.workspace\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.workspace\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.workspace\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t workspace $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbw" "" "gbench.workspace"
+    WriteRegStr HKCU "Software\CLASSES\.gbw" "Content Type" "application/x-gbench-workspace"
+    WriteRegStr HKCU "Software\CLASSES\.gbw\gbench.workspace" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbw\gbench.workspace\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-plugin-message" "Extension" ".gbm"
+    WriteRegStr HKCU "Software\CLASSES\gbench.plugin" "" "Genome Workbench plugin message"
+    WriteRegStr HKCU "Software\CLASSES\gbench.plugin\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.plugin\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.plugin\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t message $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbm" "" "gbench.plugin"
+    WriteRegStr HKCU "Software\CLASSES\.gbm" "Content Type" "application/x-gbench-plugin-message"
+    WriteRegStr HKCU "Software\CLASSES\.gbm\gbench.plugin" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbm\gbench.plugin\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench" "Extension" ".gbench"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto" "" "Genome Workbench input file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t auto $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbench" "" "gbench.auto"
+    WriteRegStr HKCU "Software\CLASSES\.gbench" "Content Type" "application/x-gbench"
+    WriteRegStr HKCU "Software\CLASSES\.gbench\gbench.auto" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbench\gbench.auto\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench" "Extension" ".gbench"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto" "" "Genome Workbench input file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.auto\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t auto $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbench" "" "gbench.auto"
+    WriteRegStr HKCU "Software\CLASSES\.gbench" "Content Type" "application/x-gbench"
+    WriteRegStr HKCU "Software\CLASSES\.gbench\gbench.auto" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbench\gbench.auto\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-asntext" "Extension" ".gbasntx"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asntext" "" "Genome Workbench ASN.1 text"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asntext\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asntext\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asntext\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t asntext $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbasntx" "" "gbench.asntext"
+    WriteRegStr HKCU "Software\CLASSES\.gbasntx" "Content Type" "application/x-gbench-asntext"
+    WriteRegStr HKCU "Software\CLASSES\.gbasntx\gbench.asntext" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbasntx\gbench.asntext\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-asnbin" "Extension" ".gbasnbn"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asnbin" "" "Genome Workbench ASN.1 binary"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asnbin\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asnbin\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.asnbin\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t asnbin $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbasnbn" "" "gbench.asnbin"
+    WriteRegStr HKCU "Software\CLASSES\.gbasnbn" "Content Type" "application/x-gbench-asnbin"
+    WriteRegStr HKCU "Software\CLASSES\.gbasnbn\gbench.asnbin" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbasnbn\gbench.asnbin\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-xml" "Extension" ".gbxml"
+    WriteRegStr HKCU "Software\CLASSES\gbench.xml" "" "Genome Workbench XML"
+    WriteRegStr HKCU "Software\CLASSES\gbench.xml\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.xml\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.xml\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t xml $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbxml" "" "gbench.xml"
+    WriteRegStr HKCU "Software\CLASSES\.gbxml" "Content Type" "application/x-gbench-xml"
+    WriteRegStr HKCU "Software\CLASSES\.gbxml\gbench.xml" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbxml\gbench.xml\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-fasta" "Extension" ".gbfasta"
+    WriteRegStr HKCU "Software\CLASSES\gbench.fasta" "" "Genome Workbench FASTA format file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.fasta\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.fasta\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.fasta\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t fasta $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbfasta" "" "gbench.fasta"
+    WriteRegStr HKCU "Software\CLASSES\.gbfasta" "Content Type" "application/x-gbench-fasta"
+    WriteRegStr HKCU "Software\CLASSES\.gbfasta\gbench.fasta" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbfasta\gbench.fasta\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-newick" "Extension" ".gbnewic"
+    WriteRegStr HKCU "Software\CLASSES\gbench.newick" "" "Genome Workbench Newick format tree file"
+    WriteRegStr HKCU "Software\CLASSES\gbench.newick\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.newick\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.newick\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t newick $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbnewic" "" "gbench.newick"
+    WriteRegStr HKCU "Software\CLASSES\.gbnewic" "Content Type" "application/x-gbench-newick"
+    WriteRegStr HKCU "Software\CLASSES\.gbnewic\gbench.newick" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbnewic\gbench.newick\ShellNew" "" ""
+    WriteRegStr HKCU "Software\CLASSES\MIME\Database\Content Type\application/x-gbench-textalign" "Extension" ".gbtxaln"
+    WriteRegStr HKCU "Software\CLASSES\gbench.textalign" "" "Genome Workbench text format sequence alignment"
+    WriteRegStr HKCU "Software\CLASSES\gbench.textalign\shell" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.textalign\shell\open" "" "open"
+    WriteRegStr HKCU "Software\CLASSES\gbench.textalign\shell\open\command" "" "${GBENCH_PATH}\${GBENCH_BIN}\gbench.exe -t textalign $\"%1$\""
+    WriteRegStr HKCU "Software\CLASSES\.gbtxaln" "" "gbench.textalign"
+    WriteRegStr HKCU "Software\CLASSES\.gbtxaln" "Content Type" "application/x-gbench-textalign"
+    WriteRegStr HKCU "Software\CLASSES\.gbtxaln\gbench.textalign" "" ""
+    WriteRegStr HKCU "Software\CLASSES\.gbtxaln\gbench.textalign\ShellNew" "" ""
+
+SectionEnd
+
+
+Section -post
+	SetDetailsPrint textonly
+	DetailPrint "Creating Registry Keys..."
+	SetDetailsPrint listonly	
+	SetOutPath $INSTDIR
+	WriteRegStr HKCU "Software\${GBENCH_NAME}" "" $INSTDIR
+	WriteRegDword HKCU "Software\${GBENCH_NAME}" "VersionMajor" "${VER_MAJOR}"
+	WriteRegDword HKCU "Software\${GBENCH_NAME}" "VersionMinor" "${VER_MINOR}"
+	WriteRegDword HKCU "Software\${GBENCH_NAME}" "VersionRevision" "${VER_REVISION}"
+	WriteRegDword HKCU "Software\${GBENCH_NAME}" "VersionBuild" "${VER_BUILD}"
+	WriteRegExpandStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "UninstallString" '"$INSTDIR\uninst-gbench.exe"'
+	WriteRegExpandStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "InstallLocation" "$INSTDIR"
+	WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "DisplayName" "${GBENCH_NAME}"
+	WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "DisplayIcon" "$INSTDIR\${GBENCH_BIN}\gbench.exe,0"
+	WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "DisplayVersion" "${VER_DISPLAY}"
+	WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "VersionMajor" "${VER_MAJOR}"
+	WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "VersionMinor" "${VER_MINOR}.${VER_REVISION}"
+	WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "URLInfoAbout" "http://www.ncbi.nlm.nih.gov/"
+	WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "NoModify" "1"
+	WriteRegDWORD HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}" "NoRepair" "1"
+
+	;Create uninstaller
+	SetDetailsPrint textonly
+	DetailPrint "Creating Uninstaller..."
+	SetDetailsPrint listonly
+	WriteUninstaller "$INSTDIR\uninst-gbench.exe"    
+	SetDetailsPrint both  
+SectionEnd
+
+;-------------------------------------------------------
+; Shortcuts
+!ifndef NO_STARTMENUSHORTCUTS
+Section "Start Menu and Desktop Shortcuts" SecShortcuts
+  SetDetailsPrint textonly
+  DetailPrint "Installing Start Menu and Desktop Shortcuts..."
+  SetDetailsPrint listonly
+!else
+Section "Desktop Shortcut" SecShortcuts
+  SetDetailsPrint textonly
+  DetailPrint "Installing Desktop Shortcut..."
+  SetDetailsPrint listonly
+!endif
+  SectionIn 1 2 3
+  SetOutPath $INSTDIR
+!ifndef NO_STARTMENUSHORTCUTS
+  CreateDirectory "$SMPROGRAMS\${GBENCH_NAME}"
+  CreateShortCut "$SMPROGRAMS\${GBENCH_NAME}\${GBENCH_NAME}.lnk" "${GBENCH_NETPATH_CURRENT}\${GBENCH_BIN}\gbench.exe" ""  
+  CreateShortCut "$SMPROGRAMS\${GBENCH_NAME}\Uninstall ${GBENCH_NAME}.lnk" "${GBENCH_NETPATH_CURRENT}\uninst-gbench.exe"
+!endif
+  CreateShortCut "$DESKTOP\${GBENCH_NAME}.lnk" "${GBENCH_NETPATH_CURRENT}\${GBENCH_BIN}\gbench.exe"
+  SetDetailsPrint both
+SectionEnd
+
+
+
+;--------------------------------
+;Descriptions
+
+  ;Language strings
+  LangString DESC_SecGbench  ${LANG_ENGLISH} "${GBENCH_NAME} main application. This component is requered."
+
+  ;Assign language strings to sections
+  !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
+  !insertmacro MUI_DESCRIPTION_TEXT ${SecGbench}  $(DESC_SecGbench)
+  !insertmacro MUI_FUNCTION_DESCRIPTION_END
+
+;--------------------------------
+;Functions
+;
+Function .onInit
+	!insertmacro MUI_INSTALLOPTIONS_EXTRACT "gbench_install.ini"
+FunctionEnd
+
+
+;--------------------------------
+;Uninstaller Section
+;
+Section "Uninstall"  
+  RMDir /r "$SMPROGRAMS\${GBENCH_NAME}"
+  Delete "$DESKTOP\${GBENCH_NAME}.lnk"
+  
+  SetDetailsPrint textonly
+  DetailPrint "Removing registry keys..."
+  SetDetailsPrint listonly  
+  DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Uninstall\${GBENCH_NAME}"
+  DeleteRegKey HKCU "Software\${GBENCH_NAME}"
+
+  SetDetailsPrint both
+SectionEnd

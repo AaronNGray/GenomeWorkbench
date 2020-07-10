@@ -1,0 +1,15 @@
+# $Id: Makefile.in 44361 2019-12-05 15:52:05Z katargir $
+
+# GUI Widgets
+
+SUB_PROJ = wx feedback data gl loaders feat_table text_widget object_list edit seq seq_text seq_desktop snp \
+           phylo_tree hit_matrix aln_crossaln aln_score seq_graphic aln_multiple \
+           grid_widget macro_edit
+
+EXPENDABLE_SUB_PROJ = aln_table tax_tree
+#EXPENDABLE_SUB_PROJ = aln_table snp tax_tree
+
+REQUIRES = wxWidgets OpenGL algo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,27 @@
+# $Id: Makefile.w_phylo_tree.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# Phylogenetic Tree view lib
+ASN_DEP = biotree seq
+
+SRC = phylo_tree_algorithm phylo_tree_ds  \
+      phylo_tree_force  phylo_tree_label \
+      phylo_tree_node phylo_tree_pane phylo_tree_radial phylo_tree_reader \
+      phylo_tree_rect_cladogram phylo_tree_render phylo_tree_scheme \
+      phylo_tree_slanted_cladogram phylo_tree_widget wx_phylo_settings_dlg \
+      wx_phylo_edit_dlg wx_label_edit_dlg phylo_tree_boundary_shapes \
+      phylo_image_grabber  phylo_tree_ps phylo_tree_query_exec phylo_tree_query_macro_fns \
+      tree_graphics_model tree_collision_model2d wx_tree_label_edit \
+      phylo_pdf_grabber save_tree_pdf_dlg phylo_tree phylo_circular_cladogram \
+      phylo_save_selection_dlg csv_selection_export_dlg phylo_selection_set
+
+LIB = w_phylo_tree
+
+DLL_LIB = gui_graph gui_utils gui_opengl gui_print w_gl w_data \
+          xalnmgr ximage submit tables xalgophytree biotree $(SOBJMGR_LIBS)
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+LIBS = $(WXWIDGETS_LIBS) $(GLEW_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) \
+       $(ORIG_LIBS)
+
+REQUIRES = OpenGL wxWidgets objects

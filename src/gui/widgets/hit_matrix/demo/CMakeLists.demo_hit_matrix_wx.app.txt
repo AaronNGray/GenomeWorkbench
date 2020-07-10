@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_hit_matrix_wx.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_hit_matrix_wx GUI)
+  NCBI_sources(wx_hit_matrix_demo_app hit_matrix_demo_dlg)
+  NCBI_uses_toolkit_libraries(w_hit_matrix w_data ncbi_xloader_genbank)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_app()

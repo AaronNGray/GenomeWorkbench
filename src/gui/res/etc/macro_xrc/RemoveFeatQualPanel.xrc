@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxPanel" name="RemoveFeatureQual">
+        <style>wxTAB_TRAVERSAL</style>
+        <size>400,300</size>
+        <title>Edit Simple Qual Panel</title>
+        <centered>1</centered>
+        <object class="wxBoxSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <object class="wxFlexGridSizer">
+                    <cols>2</cols>
+                    <rows>0</rows>
+                    <vgap>0</vgap>
+                    <hgap>0</hgap>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>Feature Type</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>Qualifier</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxListBox" name="feature_field">
+                            <size>-1,109</size>
+                            <style>wxLB_SINGLE</style>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxListBox" name="qualifier_field">
+                            <size>175,109</size>
+                            <style>wxLB_SINGLE</style>
+                        </object>
+                    </object>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxCheckBox" name="update_mrna">
+                    <enabled>0</enabled>
+                    <label>Make mRNA product match CDS protein name</label>
+                    <checked>0</checked>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>

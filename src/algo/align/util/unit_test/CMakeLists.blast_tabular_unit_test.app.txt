@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.blast_tabular_unit_test.app.txt 593585 2019-09-20 13:57:47Z gouriano $
+#############################################################################
+
+NCBI_begin_app(blast_tabular_unit_test)
+  NCBI_sources(blast_tabular_unit_test)
+  NCBI_uses_toolkit_libraries(xalgoalignutil)
+  NCBI_project_watchers(mozese2)
+  NCBI_set_test_assets(data)
+  NCBI_add_test(blast_tabular_unit_test -input-dir data -expected-results data/blast_tabular.test.results)
+NCBI_end_app()
+

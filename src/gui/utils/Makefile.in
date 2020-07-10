@@ -1,0 +1,14 @@
+# $Id: Makefile.in 42475 2019-03-05 20:47:36Z shkeda $
+# Author:  Mike DiCuccio
+
+# Meta-makefile for libgui_utils
+#################################
+
+LIB_PROJ = gui_utils
+SUB_PROJ = muparser splines
+
+EXPENDABLE_SUB_PROJ = app_job
+#SUB_PROJ = demo test unit_test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

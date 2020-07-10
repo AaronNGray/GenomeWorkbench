@@ -1,0 +1,9 @@
+# $Id: Makefile.in 21789 2010-07-21 13:06:47Z dicuccio $
+
+# GUI Projects
+
+APP_PROJ = gbproject
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+

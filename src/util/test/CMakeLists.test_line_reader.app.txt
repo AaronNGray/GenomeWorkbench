@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.test_line_reader.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_line_reader)
+  NCBI_sources(test_line_reader)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xutil)
+  NCBI_project_watchers(ucko)
+  NCBI_add_test(test_line_reader -selftest)
+NCBI_end_app()
+

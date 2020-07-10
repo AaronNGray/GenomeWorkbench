@@ -1,0 +1,1124 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Canis_adustus__22",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_adustus"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305088
+        },
+        genbank {
+          accession "KT448271"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "bacterium",
+            db {
+              {
+                db "taxon",
+                tag id 1869227
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "bacterium"
+                }
+              },
+              lineage "Bacteria",
+              gcode 11,
+              div "BCT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_adustus__22"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Bacterium mitochondrion sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 121,
+        strand ds,
+        seq-data iupacna "CAAGGCACTGTAAATACCTCCTTAATATTCTTCTCTGACTCTCTATCAGCAC
+CGCTACTAACACTTACAACATGACTTCTCCCTCTTATACTTATAGCAAGTCAGTCCCATCTATCAAAAG"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_aureus_Kenya_1",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_aureus_Kenya_1"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305089
+        },
+        genbank {
+          accession "KT448272"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "archaeon",
+            db {
+              {
+                db "taxon",
+                tag id 1906665
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "archaeon"
+                }
+              },
+              lineage "Archaea",
+              gcode 11,
+              div "BCT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_aureus_Kenya_1"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Archaeon sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 55,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAAGATCAAGGTGCTATTCAGTCAATGGTTTCAGGACATA
+TAG"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_aureus_Kenya_2",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_aureus_Kenya_2"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305090
+        },
+        genbank {
+          accession "KT448273"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Azotobactor sp.",
+            orgname {
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_aureus_Kenya_2"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Azotobactor sp. mitochondrion sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 28,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTACAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_aureus_Israel_1",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_aureus_Israel_1"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305091
+        },
+        genbank {
+          accession "KT448274"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Trichococcus sp.",
+            db {
+              {
+                db "taxon",
+                tag id 1985464
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Trichococcus",
+                species "sp."
+              },
+              lineage "Bacteria; Firmicutes; Bacilli; Lactobacillales;
+ Carnobacteriaceae; Trichococcus; unclassified Trichococcus",
+              gcode 11,
+              div "BCT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_aureus_Israel_1"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Trichococcus sp. mitochondrion sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 22,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTACAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_latrans_3169",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_latrans_3169"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305092
+        },
+        genbank {
+          accession "KT448275"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Legionella sp.",
+            db {
+              {
+                db "taxon",
+                tag id 459
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Legionella",
+                species "sp."
+              },
+              lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Legionellales; Legionellaceae; Legionella; unclassified Legionella",
+              gcode 11,
+              div "BCT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_latrans_3169"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Legionella sp. mitochondrion sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 39,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAATTAATAAAGCAAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_latrans_B16",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_latrans_B16"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305094
+        },
+        genbank {
+          accession "KT448277"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Bacillus sp. (in: Bacteria)",
+            db {
+              {
+                db "taxon",
+                tag id 1409
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Bacillus",
+                species "sp. (in: Bacteria)"
+              },
+              mod {
+                {
+                  subtype old-name,
+                  subname "Bacillus sp."
+                }
+              },
+              lineage "Bacteria; Firmicutes; Bacilli; Bacillales; Bacillaceae;
+ Bacillus",
+              gcode 11,
+              div "BCT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_latrans_B16"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Bacillus sp. (in: Bacteria) mitochondrion sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 69,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAATTATCATATTTACTATGTATTTTATTTATTACGCACA
+CTACAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_lupus_423",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_lupus_423"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305095
+        },
+        genbank {
+          accession "KT448278"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Actinomycetales bacterium",
+            db {
+              {
+                db "taxon",
+                tag id 1911520
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "Actinomycetales bacterium"
+                }
+              },
+              lineage "Bacteria; Actinobacteria; Actinomycetales",
+              gcode 11,
+              div "BCT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_lupus_423"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Actinomycetales bacterium mitochondrion sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 77,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAACTAATCCCCTCTCATATTTACTATGTATTTTATTTAT
+TACGCACACTACAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_lupus_302M",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_lupus_302M"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305096
+        },
+        genbank {
+          accession "KT448279"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Peptostreptococcaceae bacterium",
+            db {
+              {
+                db "taxon",
+                tag id 1904861
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "Peptostreptococcaceae bacterium"
+                }
+              },
+              lineage "Bacteria; Firmicutes; Clostridia; Clostridiales;
+ Peptostreptococcaceae",
+              gcode 11,
+              div "BCT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_lupus_302M"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Peptostreptococcaceae bacterium mitochondrion sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 34,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAACTAATAAATTTCAGTATAA"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_mesomelas__22",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_mesomelas"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305097
+        },
+        genbank {
+          accession "KT448280"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Holophagales bacterium",
+            db {
+              {
+                db "taxon",
+                tag id 2478486
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "Holophagales bacterium"
+                }
+              },
+              lineage "Bacteria; Acidobacteria; Holophagae; Holophagales",
+              gcode 11,
+              div "BCT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_mesomelas__22"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Holophagales bacterium mitochondrion sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 42,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTAATTCAGTCAATGGTTTCAGGACATATAG"
+      }
+    },
+    seq {
+      id {
+        local str "Canis_simensis__22",
+        general {
+          db "BankIt",
+          tag str "1847556/Canis_simensis"
+        },
+        general {
+          db "TMSMART",
+          tag id 57305098
+        },
+        genbank {
+          accession "KT448281"
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Methanosaeta HA",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "HA"
+                }
+              }
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Canis_simensis__22"
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 9,
+          day 1
+        },
+        title "Methanosaeta HA mitochondrion sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "OrgMods",
+                  num 1,
+                  data strs {
+                    "strain"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 74,
+        strand ds,
+        seq-data iupacna "GTTAATGTAGCTTCATTTATCAACTCACGCATAAAATCAAGGTGCTATTCAG
+TCAATGGTTTCAGGACATATAG"
+      }
+    }
+  }
+}

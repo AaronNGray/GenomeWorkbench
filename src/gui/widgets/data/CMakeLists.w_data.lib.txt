@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.w_data.lib.txt 44679 2020-02-20 17:31:36Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(w_data)
+  NCBI_sources(
+    data_commands object_contrib
+    query_parse_panel cmd_table_change_cell cmd_table_assign_column cmd_table_copy_column
+    report_dialog macro_error_dlg
+  )
+  NCBI_uses_toolkit_libraries(gui_objects w_feedback)
+  NCBI_requires(wxWidgets)
+NCBI_end_lib()

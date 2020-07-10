@@ -1,0 +1,11 @@
+# $Id: Makefile.gui_glmesa.lib 28039 2013-05-06 21:01:53Z rafanovi $
+
+SRC = glcgi_image gloscontext
+
+LIB = gui_glmesa
+
+DLL_LIB = xhtml xcgi
+
+LIBS = $(OSMESA_LIBS) $(CMPRS_LIBS) $(ORIG_LIBS)
+
+CPPFLAGS = $(OPENGL_INCLUDE) $(GLEW_INCLUDE) $(ORIG_CPPFLAGS)

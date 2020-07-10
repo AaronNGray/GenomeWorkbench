@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GuiPkgManifest>
+  <Name>Alignment</Name>
+  <Description>Alignment views, basic alignment analysis tools</Description>
+  <Version>01.00.0000</Version>
+  <MainDll>pkg_alignment</MainDll>
+  <GuiPkgDependency>
+    <GuiDependentPkg>
+      <Name>GBench</Name>
+      <Version>03.00.0000</Version>
+    </GuiDependentPkg>
+  </GuiPkgDependency>
+  <GuiPkgDependency>
+    <GuiDependentPkg>
+      <Name>Sequence</Name>
+      <Version>01.00.0000</Version>
+    </GuiDependentPkg>
+  </GuiPkgDependency>
+</GuiPkgManifest>

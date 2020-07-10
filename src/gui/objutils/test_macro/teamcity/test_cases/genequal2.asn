@@ -1,0 +1,436 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "q",
+          first "q",
+          initials "qq"
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "q",
+              first "q",
+              initials "qq."
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2013,
+        month 6,
+        day 4
+      }
+    },
+    subtype new,
+    tool "Sequin 12.60 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class phy-set,
+      descr {
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "q",
+                      first "q",
+                      initials "qq."
+                    }
+                  }
+                },
+                affil str "q"
+              },
+              title "q"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "seq_1"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Influenza A virus",
+                db {
+                  {
+                    db "taxon",
+                    tag id 11320
+                  }
+                },
+                orgname {
+                  mod {
+                    {
+                      subtype strain,
+                      subname "5121"
+                    },
+                    {
+                      subtype serotype,
+                      subname "this is my serotype"
+                    }
+                  },
+                  lineage "Viruses; ssRNA viruses; ssRNA negative-strand
+ viruses; Negarnaviricota; Polyploviricotina; Insthoviricetes;
+ Articulavirales; Orthomyxoviridae; Alphainfluenzavirus",
+                  gcode 1,
+                  mgcode 0,
+                  div "VRL"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 347,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+CTTAGCTGACCTCAATGGCGCCCTCATCATGGTGGTGGTGGGGTCCCTGTCCCAGTTCCATCTGATGAGGCATCAGTC
+CATCAGAGGGTTCGTCCAGAAACGGCAGTACTTGAGGTGGCCTGAGGATCTCCAGGATGTTGACTGGTTTCTCAATAA
+ACTCTCTCAATGCATTCTAAAGAAAGAAAAGGAAAGGAAGAAAGACAGTRCTATTCAGCTGCAAAATGTAACCACCAT
+CTCCTAGGCAAAGGAGCAGTTTCCACTTATCGCAAGCCACAGATAACTCTGTACCTTTTATTTCC"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "new locus",
+                    locus-tag "XMA104_00516"
+                  },
+                  location int {
+                    from 0,
+                    to 346,
+                    strand plus,
+                    id local str "seq_1"
+                  }
+                },
+                {
+                  data imp {
+                    key "misc_feature"
+                  },
+                  comment "some comment",
+                  location int {
+                    from 0,
+                    to 346,
+                    strand plus,
+                    id local str "seq_1"
+                  },
+                  qual {
+                    {
+                      qual "inference",
+                      val "COORDINATES: profile:Infernal:1.1"
+                    }
+                  },
+                  xref {
+                    {
+                      data gene {
+                        locus "new locus",
+                        locus-tag "XMA104_00516"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "seq_2"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus hemionus",
+                orgname {
+                  mod {
+                    {
+                      subtype strain,
+                      subname "5125"
+                    },
+                    {
+                      subtype isolate,
+                      subname "JEW01"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_2"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 381,
+            seq-data iupacna "TGTCYTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCARTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGAGCCG
+TCTATCTTTCCTGCAACCTCACCCAAGTGCCCCAGGTCCCCCCATCTCCAAATCCTCTATCTGAATAAAAGGCCTGAG
+GATCTCCAGGATGTCGACTGGTTTCTCAATAAACTCTCTCAATGCATTCTAAAGGAAGAAAAGGAAAGGAAGAAAGAC
+AGTGCTATTCAGCTGCAAAGTGTAACCACCATCTCCTAGTCAAAGGAGCAGTTTCCACTTATTAGAAGCCACAGATAA
+CTTTGTACCTTTTATTTCCGC"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus-tag "XMA104_00512"
+                  },
+                  location int {
+                    from 0,
+                    to 380,
+                    strand plus,
+                    id local str "seq_2"
+                  }
+                },
+                {
+                  data imp {
+                    key "misc_feature"
+                  },
+                  comment "some comment",
+                  location int {
+                    from 0,
+                    to 380,
+                    strand plus,
+                    id local str "seq_2"
+                  },
+                  qual {
+                    {
+                      qual "allele",
+                      val "Ballele"
+                    },
+                    {
+                      qual "locus_tag",
+                      val "XMA104_00512"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "seq_3"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus virginianus",
+                orgname {
+                  mod {
+                    {
+                      subtype strain,
+                      subname "20881"
+                    },
+                    {
+                      subtype isolate,
+                      subname "JEW21"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_3"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 539,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGAGCCG
+TCTATCTTTCCTGCAACCTCACCCAAGTGCCCCAGGTCCCCAACACCACCAAGAGCCTCCTGTTTTAAGGGGCTTTCC
+CATCTCCAAATCCTCTATCTGAATAAAAACTACCTGAATTTCCTTCCACCAGGAGTATTTCATCATCTGACTGCACTG
+AGGGGACTCAGCCTCAAAGACAATAGACTGACTGTTCCCATCAGAGGGTTCGTCCAGAAACAGCAATACTTGAGGTGG
+CCTGAGGATCTCCAGGATGTCGACTGGTTTCTCAATAAACTCTCTCAATGCATTCTAAAGGAAGAAAAGGAAAGGAAG
+AAAGACAGTGCTATTCAGCTGCAAAGCGTAACCACCATCTCCTAGTCAAAGGAGCAGTTTCCACTTATTAGAAGCCAC
+AGATAACTTTGTACCTTTTATTT"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus-tag "XMA104_00511"
+                  },
+                  location int {
+                    from 1,
+                    to 49,
+                    strand plus,
+                    id local str "seq_3"
+                  }
+                },
+                {
+                  data gene {
+                    locus-tag "XMA104_00513"
+                  },
+                  location int {
+                    from 24,
+                    to 149,
+                    strand plus,
+                    id local str "seq_3"
+                  }
+                },
+                {
+                  data imp {
+                    key "misc_feature"
+                  },
+                  location int {
+                    from 0,
+                    to 55,
+                    strand plus,
+                    id local str "seq_3"
+                  },
+                  xref {
+                    {
+                      data gene {
+                        locus-tag "XMA104_00513"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "seq_9"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Tragelaphus imberbis",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "SAZ17"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_9"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 447,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATTTCTTCCTGCTTCTTCGATGGTTGGAGAGCCA
+TCTATCTTTCCTGCAACCTCACCCAAGTGCCCCAGGTTCCCAGCACCACCAAGAGCCTCCTGCTCAGCTTCAAAGGCT
+GACTGTTCTTCTTCCTGGCGACTTACCTGCTAACTTAGAGATCCTGGATATATCTAGAAACCAGCTCCTCTCTCCTGA
+TCCTGATTTATTTGGATCACTGAGTGCCACTAAAGAAAGAAAAGGAAAAGAAGAAAGACAGTGCTATTGAGTTGCAAA
+ATGTAACCACCATCTCCTAGGCAAAGGAGCAGTTTCCACTTATTGCAAGCCACAGATAGCTCTGTACTTTTTATTTCC
+GCCAGTTAC"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "AKI"
+                  },
+                  location int {
+                    from 1,
+                    to 49,
+                    strand plus,
+                    id local str "seq_9"
+                  }
+                },
+                {
+                  data imp {
+                    key "misc_feature"
+                  },
+                  location int {
+                    from 0,
+                    to 446,
+                    strand plus,
+                    id local str "seq_9"
+                  },
+                  qual {
+                    {
+                      qual "locus_tag",
+                      val "test locus tag"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# $Id: Makefile.unit_test_util.lib 536932 2017-05-24 16:36:13Z ucko $
+
+# Build library "xobjutil"
+###############################
+
+SRC = unit_test_util
+
+LIB = xunittestutil
+
+DLL_LIB = xobjutil
+
+ASN_DEP = general biblio pub seq seqset submit
+
+WATCHERS = bollin
+
+
+USES_LIBRARIES =  \
+    xobjutil

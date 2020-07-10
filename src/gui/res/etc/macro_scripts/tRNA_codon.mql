@@ -1,0 +1,43 @@
+MACRO tRNAcodon_01 "Parse text starting with ':' from tRNA comment into codons-recognized"
+VAR
+    include_left = false
+    include_right = false
+    case_sensitive = true
+    whole_word = false
+    rmv_from_parsed = false
+    rmv_left = false
+    rmv_right = false
+    cap_change = "none"
+    existing_text = "eReplace"
+FOR EACH RNA
+WHERE data.rna.type = "tRNA"
+DO 
+    text = ParsedText("comment", ":", include_left, "", include_right, case_sensitive, whole_word, rmv_from_parsed, rmv_left, rmv_right);
+    SetCodonsRecognized(text);
+DONE
+------------------------------------------------------------------------------
+MACRO tRNAcodon_02 "Parse text between '' from tRNA comment into codons-recognized"
+VAR
+    include_left = false
+    include_right = false
+    case_sensitive = true
+    whole_word = false
+    rmv_from_parsed = true
+    rmv_left = true
+    rmv_right = true
+    cap_change = "none"
+    existing_text = "eReplace"
+FOR EACH RNA
+WHERE data.rna.type = "tRNA"
+DO 
+    text = ParsedText("comment", "'", include_left, "'", include_right, case_sensitive, whole_word, rmv_from_parsed, rmv_left, rmv_right);
+    SetCodonsRecognized(text);
+DONE
+------------------------------------------------------------------------------
+MACRO tRNAcodon_03 "Remove tRNA comment"
+FOR EACH RNA
+WHERE data.rna.type = "tRNA"
+DO 
+   RemoveQual("comment");
+DONE
+------------------------------------------------------------------------------

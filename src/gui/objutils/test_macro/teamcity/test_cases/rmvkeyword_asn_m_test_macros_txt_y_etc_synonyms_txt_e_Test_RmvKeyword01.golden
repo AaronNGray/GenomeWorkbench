@@ -1,0 +1,63 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        genbank {
+          keywords {
+            "new gb keyword"
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Habropoda laboriosa",
+            db {
+              {
+                db "taxon",
+                tag id 597456
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Protostomia; Ecdysozoa; Panarthropoda; Arthropoda;
+ Mandibulata; Pancrustacea; Hexapoda; Insecta; Dicondylia; Pterygota;
+ Neoptera; Endopterygota; Hymenoptera; Apocrita; Aculeata; Apoidea; Apidae;
+ Anthophorinae; Anthophorini; Habropoda",
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 189,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCAACCCGTAATCCCTGCCTCTGAAGCCCTAAAAACCCTAAGACAAGGGGACACCATAGACCCCA
+ACACATGGGTGGACTTAAACCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+      }
+    }
+  }
+}

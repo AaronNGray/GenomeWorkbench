@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.test_seqport.app.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_seqport)
+  NCBI_sources(test_seqport)
+  NCBI_uses_toolkit_libraries(seq)
+  NCBI_project_watchers(clausen)
+NCBI_end_app()
+

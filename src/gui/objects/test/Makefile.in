@@ -1,0 +1,9 @@
+# $Id: Makefile.in 24804 2011-12-02 20:37:51Z wuliangs $
+
+# Meta-makefile("ALGO" project)
+#################################
+
+APP_PROJ = test_asn_io
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

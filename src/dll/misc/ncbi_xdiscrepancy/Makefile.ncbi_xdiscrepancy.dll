@@ -1,0 +1,8 @@
+# $Id: Makefile.ncbi_xdiscrepancy.dll 461905 2015-03-13 15:42:53Z ivanov $
+
+DLL = ncbi_xdiscrepancy
+
+HOSTED_LIBS  = xdiscrepancy
+DEPENDENCIES = ncbi_core ncbi_web ncbi_general ncbi_pub ncbi_misc ncbi_seq ncbi_seqext ncbi_xloader_genbank ncbi_validator
+
+CPPFLAGS = -DNCBI_DISCREPANCY_EXPORTS

@@ -1,0 +1,34 @@
+MACRO RemoveFullLength_01 "Remove CDS and gene only objects with single interval with 5' end exactly 0 from end of sequence with 3' end exactly 0 from end of sequence"
+VAR
+     loc_type = "single-interval"
+FOR EACH SeqFeat
+WHERE (CHOICETYPE("data") = "gene" OR CHOICETYPE("data") = "cdregion") AND
+      ISLOCATIONTYPE(loc_type) AND
+      DISTFROMSTART() = 0 AND
+      DISTFROMSTOP() = 0
+DO
+    RemoveFeature();
+DONE
+------------------------------------------------------------------------------
+MACRO RemoveFullLength_02 "Remove misc_RNA only objects with single interval with 5' end exactly 0 from end of sequence with 3' end exactly 0 from end of sequence"
+VAR
+     loc_type = "single-interval"
+FOR EACH MiscRNA
+WHERE ISLOCATIONTYPE(loc_type) AND
+      DISTFROMSTART() = 0 AND
+      DISTFROMSTOP() = 0
+DO
+    RemoveFeature();
+DONE
+------------------------------------------------------------------------------
+MACRO RemoveFullLength_03 "Remove rRNA only objects with single interval with 5' end exactly 0 from end of sequence with 3' end exactly 0 from end of sequence"
+VAR
+     loc_type = "single-interval"
+FOR EACH rRNA
+WHERE ISLOCATIONTYPE(loc_type) AND
+      DISTFROMSTART() = 0 AND
+      DISTFROMSTOP() = 0
+DO
+    RemoveFeature();
+DONE
+------------------------------------------------------------------------------

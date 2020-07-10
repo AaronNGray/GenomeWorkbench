@@ -1,0 +1,196 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2",
+            genbank {
+              accession "KF591394"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 207,
+            strand ds,
+            seq-data iupacna "GATGCGTTCAAAAGGGGATGAAGCAAAAGAGATAGAGAAATTTCCTGA
+AGACGGATGAGGGGAGCATGGCAGCGTTCTGCTACATTGCAACTTTCATTACATTGTTAGCGGACCTGATCAGTGGAA
+ATATCACGTTCACTGAGTTCATGAGTGAGATGTGGGTGGCTTTTCAGCAACTAATCGGTGAAGTCATATGGGTCATTA
+ACA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Hypothetical protein gene",
+                    desc "Hypothetical protein gene"
+                  },
+                  location int {
+                    from 10,
+                    to 57,
+                    strand plus,
+                    id local str "Seq2"
+                  }
+                },
+                {
+                  data gene {
+                    locus "putative tape measure protein gene",
+                    desc "tape measure protein gene"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 65,
+                    to 200,
+                    strand plus,
+                    id local str "Seq2",
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_2",
+            general {
+              db "TMSMART",
+              tag id 39787266
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 15,
+            seq-data ncbieaa "-GDEAKEIEKFPEDG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 14,
+                    id local str "Seq2_prot_2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_3",
+            general {
+              db "TMSMART",
+              tag id 39787267
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness no-right
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 45,
+            seq-data iupacaa "MAAFCYIATFITLLADLISGNITFTEFMSEMWVAFQQLIGEVIWV"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "putative tape measure protein"
+                    },
+                    desc "tape measure protein"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 44,
+                    id local str "Seq2_prot_3",
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq2_prot_2",
+              location int {
+                from 10,
+                to 57,
+                strand plus,
+                id local str "Seq2"
+              }
+            },
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              comment "[intronless gene]",
+              product whole local str "Seq2_prot_3",
+              location int {
+                from 65,
+                to 200,
+                strand plus,
+                id local str "Seq2",
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

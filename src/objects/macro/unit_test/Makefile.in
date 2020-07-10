@@ -1,0 +1,9 @@
+# $Id: Makefile.in 539735 2017-06-27 11:11:02Z bollin $
+
+APP_PROJ = unit_test_string_constraint unit_test_location_constraint
+PROJ_TAG = test
+
+REQUIRES = Boost.Test.Included
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,6 @@
+# $Id: Makefile.in 3424 2003-12-22 19:46:00Z dicuccio $
+
+APP_PROJ = demo_taxtree
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

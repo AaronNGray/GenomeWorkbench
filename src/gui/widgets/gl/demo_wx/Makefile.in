@@ -1,0 +1,9 @@
+# $Id: Makefile.in 14794 2007-08-07 20:47:23Z katargir $
+# Author:  Roman Katargin
+# Meta-makefile for plugin testapp
+#################################
+
+APP_PROJ = demo_widgets_gl_wx
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

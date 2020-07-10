@@ -1,0 +1,21 @@
+#############################################################################
+# $Id: CMakeLists.gbproject.app.txt 42463 2019-03-04 19:50:43Z ucko $
+#############################################################################
+
+NCBI_begin_app( gbproject)
+  NCBI_sources(gbproject_tool fileloader projectfilewriter)
+  NCBI_uses_toolkit_libraries(gui_objects xobjsimple)
+NCBI_end_app()
+
+if(OFF)
+add_executable(gbproject-app
+    gbproject_tool fileloader projectfilewriter
+)
+
+set_target_properties(gbproject-app PROPERTIES OUTPUT_NAME gbproject)
+
+target_link_libraries(gbproject-app
+    gui_objects xobjsimple
+)
+endif()
+

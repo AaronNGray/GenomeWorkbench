@@ -1,0 +1,6 @@
+MACRO RemoveGene "Remove gene"
+FOR EACH Gene
+DO
+    RemoveFeature();
+DONE
+------------------------------------------------------------------------------

@@ -1,0 +1,251 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class phy-set,
+      descr {
+        title "Human immunodeficiency virus 1 envelope glycoprotein (env)
+ gene, partial cds."
+      },
+      seq-set {
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome proviral,
+              org {
+                taxname "Human immunodeficiency virus 1",
+                db {
+                  {
+                    db "taxon",
+                    tag id 11676
+                  }
+                },
+                orgname {
+                  name virus "Human immunodeficiency virus 1",
+                  mod {
+                    {
+                      subtype gb-acronym,
+                      subname "HIV-1"
+                    }
+                  },
+                  lineage "Viruses; Retro-transcribing viruses; Retroviridae;
+ Orthoretrovirinae; Lentivirus; Primate lentivirus group",
+                  gcode 1,
+                  mgcode 0,
+                  div "VRL"
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "12HNVN567",
+                general {
+                  db "BankIt",
+                  tag str "1787011/12HNVN567"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 51277851
+                },
+                genbank {
+                  accession "KP402047"
+                }
+              },
+              descr {
+                title "HIV-1 isolate 12HNVN567 from Viet Nam envelope
+ glycoprotein (env) gene, partial cds.",
+                molinfo {
+                  biomol genomic,
+                  completeness partial
+                },
+                user {
+                  type str "Submission",
+                  data {
+                    {
+                      label str "AdditionalComment",
+                      data str "LocalID:12HNVN567"
+                    }
+                  }
+                },
+                user {
+                  type str "OriginalID",
+                  data {
+                    {
+                      label str "LocalId",
+                      data str "12HNVN567"
+                    }
+                  }
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 715,
+                strand ds,
+                seq-data ncbi4na '84241848111484811841811111888211844412144122
+184811111848214282148121184212121844118811422148448182112821188428428111844214
+828842141144141418118418214182841111828212141211842211112218118148421128811811
+882848141118211884812214122182244231811114112114458412828144122144124148188281
+812112145141118A48144111818111411142181284811548811815112111184419841148888152
+121448142844111128111145421288811A11814811818112288821122121282144144141828141
+118814112121821888811884814144441188888281884211812112121128488811811812842884
+218111211812114244441144484811844212818218128822184221418111121118818111218484
+421114142144111142118481842822822218211844114218841484814182111818812144118128
+188412114141844844812811811282814811841812288240'H
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data gene {
+                        locus "env"
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 714,
+                        strand plus,
+                        id genbank {
+                          accession "KP402047"
+                        },
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    },
+                    {
+                      data gene {
+                        locus "test pseudo gene",
+                        allele "dominant"
+                      },
+                      location int {
+                        from 55,
+                        to 344,
+                        strand minus,
+                        id genbank {
+                          accession "KP402047"
+                        }
+                      },
+                      qual {
+                        {
+                          qual "pseudogene",
+                          val "unknown"
+                        }
+                      },
+                      pseudo TRUE
+                    },
+                    {
+                      data cdregion {
+                        frame one,
+                        code {
+                          id 1
+                        }
+                      },
+                      partial TRUE,
+                      comment "Fructose 1,6-Bisphosphatase",
+                      location int {
+                        from 55,
+                        to 344,
+                        strand minus,
+                        id genbank {
+                          accession "KP402047"
+                        }
+                      },
+                      qual {
+                        {
+                          qual "pseudogene",
+                          val "unknown"
+                        }
+                      },
+                      pseudo TRUE
+                    }
+                  }
+                }
+              }
+            },
+            seq {
+              id {
+                local str "12HNVN567_prot_72"
+              },
+              descr {
+                title "envelope glycoprotein, partial [Human immunodeficiency
+ virus 1]",
+                molinfo {
+                  biomol peptide,
+                  completeness no-ends
+                },
+                user {
+                  type str "OriginalID",
+                  data {
+                    {
+                      label str "LocalId",
+                      data str "12HNVN567_prot_72"
+                    }
+                  }
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 238,
+                seq-data ncbieaa "CDVKCNDKNFNGTGPCKNVSSVQCTHGIKPVVSTQLLLNGSLAE
+GEIMIRSENLTDNAKTIIVQLNNSVEINCTRPSGXKRTRXTLGPGRVFYTTXEIVGNIKKAYCKVNXTKWXEVLXQVA
+GKLKXHFNNSNITFQPHSGGDLEIRTHHFNCRGEFFYCNTTQLFNNTACINNTSGEGCNGTIILPCQIKQIINMWQRA
+GKAMYAPPINGSIECRSNITGILLTRDGGTNNSSNDTF"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "envelope glycoprotein"
+                        }
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 237,
+                        id local str "12HNVN567_prot_72",
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    code {
+                      id 1
+                    }
+                  },
+                  partial TRUE,
+                  comment "gp120",
+                  product whole local str "12HNVN567_prot_72",
+                  location int {
+                    from 0,
+                    to 714,
+                    strand plus,
+                    id genbank {
+                      accession "KP402047"
+                    },
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+#############################################################################
+# $Id: CMakeLists.test_app_job.app.txt 42463 2019-03-04 19:50:43Z ucko $
+#############################################################################
+
+NCBI_begin_app( test_app_job)
+  NCBI_sources(test_app_job test_client)
+  NCBI_uses_toolkit_libraries(gui_utils)
+NCBI_end_app()
+
+if(OFF)
+add_executable(test_app_job test_app_job test_client)
+
+target_link_librarieS(test_app_job
+    gui_utils tables xconnect ${SOBJMGR_LIBS} ${COMPRESS_LIBS}
+       
+)
+
+
+target_link_libraries(test_app_job
+    gui_utils
+)
+endif()

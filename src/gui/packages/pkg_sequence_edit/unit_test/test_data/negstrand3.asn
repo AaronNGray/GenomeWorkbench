@@ -1,0 +1,50 @@
+Seq-entry ::= set {
+  class pop-set,
+  descr {
+    update-date std {
+      year 2016,
+      month 6,
+      day 29
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "Nay14"
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Helianthus ciliaris",
+            db {
+              {
+                db "taxon",
+                tag id 73280
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 651,
+        strand ds,
+        seq-data ncbi2na 'D877A42D851EE2C775D84389F3794DB435614217A6AB3F740B41
+31E136FD1216B47E3714B9AEB36109814D882F620AF2D1FD5F63666D7F95363F55C61D806E5671
+567621403FF90CE16C3FFFEBA247C55947E261A99B795DF153DD105D8E2E6DB46ED012D1C14F41
+0CA096789DAC2AF5F42C65EAF7E109D0A589B89BACD14D8CF9DDE82F621D7671CED16D3EB3BED1
+D39F4F79F77DA1C13367486756B45B8FD34204E0'H
+      }
+    }
+  }
+}

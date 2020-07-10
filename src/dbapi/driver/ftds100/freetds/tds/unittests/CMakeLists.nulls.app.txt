@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.nulls.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(tds100_nulls)
+  NCBI_sources(nulls common)
+  NCBI_add_test(test-tds100 tds100_nulls)
+NCBI_end_app()
+

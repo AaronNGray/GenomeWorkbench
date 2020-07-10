@@ -1,0 +1,12 @@
+# $Id: Makefile.xobjmanip.lib 427429 2014-02-20 13:41:40Z gouriano $
+
+ASN_DEP = general
+
+LIB = xobjmanip
+SRC = sage_manip
+
+WATCHERS = dicuccio
+
+
+USES_LIBRARIES =  \
+    general

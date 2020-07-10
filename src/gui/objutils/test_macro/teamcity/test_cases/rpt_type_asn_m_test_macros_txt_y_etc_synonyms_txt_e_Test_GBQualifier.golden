@@ -1,0 +1,255 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class genbank,
+      seq-set {
+        seq {
+          id {
+            local str "Seq1"
+          },
+          descr {
+            source {
+              org {
+                taxname "Falco cherrug",
+                common "Saker falcon",
+                db {
+                  {
+                    db "taxon",
+                    tag id 345164
+                  }
+                },
+                orgname {
+                  attrib "specified",
+                  lineage "cellular organisms; Eukaryota; Opisthokonta;
+ Metazoa; Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+ Tetrapoda; Amniota; Sauropsida; Sauria; Archelosauria; Archosauria;
+ Dinosauria; Saurischia; Theropoda; Coelurosauria; Aves; Neognathae;
+ Falconiformes; Falconidae; Falco",
+                  gcode 1,
+                  mgcode 2,
+                  div "VRT"
+                }
+              }
+            },
+            molinfo {
+              biomol mRNA
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 30,
+            strand ss,
+            seq-data iupacna "GTGCCATTTTTTCACTCAGCGGAGATCGGA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "repeat_region"
+                  },
+                  location int {
+                    from 0,
+                    to 29,
+                    strand plus,
+                    id local str "Seq1"
+                  },
+                  qual {
+                    {
+                      qual "rpt_type",
+                      val "tandem"
+                    },
+                    {
+                      qual "satellite",
+                      val "microsatellite:XBLG013"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2"
+          },
+          descr {
+            source {
+              org {
+                taxname "Falco cherrug",
+                common "Saker falcon",
+                db {
+                  {
+                    db "taxon",
+                    tag id 345164
+                  }
+                },
+                orgname {
+                  attrib "specified",
+                  lineage "cellular organisms; Eukaryota; Opisthokonta;
+ Metazoa; Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+ Tetrapoda; Amniota; Sauropsida; Sauria; Archelosauria; Archosauria;
+ Dinosauria; Saurischia; Theropoda; Coelurosauria; Aves; Neognathae;
+ Falconiformes; Falconidae; Falco",
+                  gcode 1,
+                  mgcode 2,
+                  div "VRT"
+                }
+              }
+            },
+            molinfo {
+              biomol mRNA
+            },
+            update-date std {
+              year 2017,
+              month 6,
+              day 19
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 14,
+            strand ss,
+            seq-data iupacna "ACGGTCCAGTTGGT"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "repeat_region"
+                  },
+                  location int {
+                    from 0,
+                    to 13,
+                    strand plus,
+                    id local str "Seq2"
+                  },
+                  qual {
+                    {
+                      qual "rpt_type",
+                      val "flanking; tandem"
+                    },
+                    {
+                      qual "rpt_type",
+                      val "terminal; tandem"
+                    },
+                    {
+                      qual "satellite",
+                      val "microsatellite:XBLG033"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq3"
+          },
+          descr {
+            source {
+              org {
+                taxname "Falco cherrug",
+                common "Saker falcon",
+                db {
+                  {
+                    db "taxon",
+                    tag id 345164
+                  }
+                },
+                orgname {
+                  attrib "specified",
+                  lineage "cellular organisms; Eukaryota; Opisthokonta;
+ Metazoa; Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+ Tetrapoda; Amniota; Sauropsida; Sauria; Archelosauria; Archosauria;
+ Dinosauria; Saurischia; Theropoda; Coelurosauria; Aves; Neognathae;
+ Falconiformes; Falconidae; Falco",
+                  gcode 1,
+                  mgcode 2,
+                  div "VRT"
+                }
+              }
+            },
+            molinfo {
+              biomol mRNA
+            },
+            update-date std {
+              year 2017,
+              month 6,
+              day 19
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq3"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 13,
+            strand ss,
+            seq-data iupacna "CAAGATTTCCAAA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "repeat_region"
+                  },
+                  location int {
+                    from 0,
+                    to 12,
+                    strand plus,
+                    id local str "Seq3"
+                  },
+                  qual {
+                    {
+                      qual "rpt_type",
+                      val "tandem"
+                    },
+                    {
+                      qual "satellite",
+                      val "microsatellite:XBLG036"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

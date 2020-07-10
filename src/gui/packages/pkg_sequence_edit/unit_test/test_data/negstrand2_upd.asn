@@ -1,0 +1,198 @@
+Seq-entry ::= seq {
+  id {
+    genbank {
+      accession "DQ403849",
+      version 1
+    },
+    gi 89214157
+  },
+  descr {
+    title "Astragalus layneae voucher ASLA-1 tRNA-Leu (trnL) gene, partial
+ sequence; and trnL-trnF intergenic spacer, complete sequence; chloroplast.",
+    source {
+      genome chloroplast,
+      org {
+        taxname "Astragalus layneae",
+        db {
+          {
+            db "taxon",
+            tag id 374740
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Astragalus",
+            species "layneae"
+          },
+          mod {
+            {
+              subtype specimen-voucher,
+              subname "ASLA-1"
+            }
+          },
+          lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons; Gunneridae;
+ Pentapetalae; rosids; fabids; Fabales; Fabaceae; Papilionoideae; Galegeae;
+ Astragalus",
+          gcode 1,
+          mgcode 1,
+          div "PLN"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic
+    },
+    pub {
+      pub {
+        article {
+          title {
+            name "Genetic Variation in the Endangered Astragalus jaegerianus
+ (Fabaceae, Papilionoideae): A Geographically Restricted Species"
+          },
+          authors {
+            names std {
+              {
+                name name {
+                  last "Walker",
+                  first "George",
+                  middle "F.",
+                  initials "G.F."
+                }
+              },
+              {
+                name name {
+                  last "Metcalf",
+                  first "Anthony",
+                  middle "E.",
+                  initials "A.E."
+                }
+              }
+            }
+          },
+          from journal {
+            title {
+              iso-jta "Bull South Calif Acad Sci"
+            },
+            imp {
+              date std {
+                year 2008
+              },
+              volume "107",
+              issue "3",
+              pages "158-177"
+            }
+          }
+        }
+      }
+    },
+    pub {
+      pub {
+        sub {
+          authors {
+            names std {
+              {
+                name name {
+                  last "Walker",
+                  first "George",
+                  middle "F",
+                  initials "G.F."
+                }
+              },
+              {
+                name name {
+                  last "Metcalf",
+                  first "Anthony",
+                  middle "E",
+                  initials "A.E."
+                }
+              }
+            },
+            affil std {
+              affil "California State University, San Bernardino",
+              div "Biology",
+              city "San Bernardino",
+              sub "CA",
+              country "USA",
+              street "5500 University Parkway",
+              postal-code "92407"
+            }
+          },
+          medium email,
+          date std {
+            year 2006,
+            month 2,
+            day 15
+          }
+        }
+      }
+    },
+    create-date std {
+      year 2006,
+      month 3,
+      day 11
+    },
+    update-date std {
+      year 2008,
+      month 12,
+      day 29
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 690,
+    strand ds,
+    seq-data ncbi2na '3E8F897EB3A01F142E007F40F488057A0F443A90D78940D79FD60040
+00C02F480BC03E8CAE488743A09EF7040E8BE104F04FD7F64B280E0D7DCC00F52028D0A3013333
+BF3333F1E031CFD2F8F0E00F101F3FFA033F63D8FD8D1008EE0D0383D41F82000EC33D3E340D2D
+1D4132DE3A37FE080E3C348620C08C8B54F713B4316114380FFCB08A00D6D87F2036E2AF42D5DC
+D540255CF3DDC3FFCD7335DFFFFFCBE1321D070FDF00E28CB97420E0'H
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data imp {
+            key "misc_feature"
+          },
+          comment "trnL-trnF intergenic spacer",
+          location int {
+            from 586,
+            to 689,
+            id gi 89214157
+          }
+        },
+        {
+          data gene {
+            locus "trnL"
+          },
+          partial TRUE,
+          location int {
+            from 0,
+            to 585,
+            strand plus,
+            id gi 89214157,
+            fuzz-from lim lt
+          }
+        },
+        {
+          data rna {
+            type tRNA,
+            ext tRNA {
+              aa ncbieaa 76
+            }
+          },
+          partial TRUE,
+          location int {
+            from 536,
+            to 585,
+            strand plus,
+            id gi 89214157,
+            fuzz-from lim lt
+          }
+        }
+      }
+    }
+  }
+}

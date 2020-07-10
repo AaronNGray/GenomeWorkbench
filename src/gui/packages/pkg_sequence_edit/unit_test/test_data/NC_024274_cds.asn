@@ -1,0 +1,1224 @@
+Seq-entry ::= set {
+  class nuc-prot ,
+  descr {
+    source {
+      genome mitochondrion ,
+      org {
+        taxname "Macaca fascicularis" ,
+        common "crab-eating macaque" ,
+        db {
+          {
+            db "taxon" ,
+            tag
+              id 9541 } } ,
+        orgname {
+          lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Actinopterygii; Neopterygii; Teleostei; Ostariophysi;
+ Cypriniformes; Cyprinidae; Barbonymus" ,
+          gcode 1 ,
+          mgcode 2 ,
+          div "PRI" } } } ,
+    update-date
+      std {
+        year 2014 ,
+        month 7 ,
+        day 2 } } ,
+  seq-set {
+    seq {
+      id {
+        other {
+          accession "NC_024274" ,
+          version 1 } ,
+        general {
+          db "NCBI_GENOMES" ,
+          tag
+            id 36360 } ,
+        gi 651424522 } ,
+      descr {
+        molinfo {
+          biomol genomic ,
+          completeness complete } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol dna ,
+        length 16576 ,
+        topology circular ,
+        strand ds ,
+        seq-data
+          ncbi2na '9C9B27C01024C91E08E708E2D70007593910293AD585F34D2770741F113
+90B759054B8B395D0D5795AA18A26A4D2910B3C950865E942511550A83D24B8C04F094C2E027E1
+D2F2EF08A96B0076E525166BC862295CBE33C41A6C0ABAF0A300C00C0940E957696D319F72BB58
+25704602C9FC140505E1546027880407A8F23154739D25B01F21350710F23B594AB1C624F27C01
+50285E1AEDD2155722897BDC81630556FC17451F7251549733165B6D27C57B8280402C2403A900
+5481B4AD8AEC99380E8080EA713FDC5120CF1813914E032E7E0A28FCB2C02A0322ED5FE0569DE2
+19B111656D1DD57B40193C00C7C310090E10AA290B6C11AC2EC5A0AE47E850152ACE9E2D2D0937
+47C458821353903E8F15E25012727C1C3F307010CC0C0100407C31003C053DFF17CB3A884802B5
+44090C80CB1642A02780880E01054CC24F0024087C17EC5FF934E3F252C454240885FCBF805580
+50B89C55884973C2A5056DDEE9008BA82275AB20B8C85C5817AE327AF97080E8C82F49760F5D03
+40404D090847C88044622F2F02AAC4957F0C0A1105F5CA28C08D30C4C0119EF72EA5C024945C04
+809BC09D212100BF34D78C0037CF55C0473CA5054E554EA223CE700E2C10829595F750910BB094
+05A1414FA41C181D05422203B81C000342001510FC34DBC55C47A2E4FF0280870080A8281DA405
+425D97BF14004D975E411250B328AD497952E1C42FC1A59ACFF85B902B264347EDFF032217B383
+A7018A9F07B7557D4B4B80F85C56E48A6ACC30C42188215FE89F0AC401D051B0241D04009001FE
+E800E235C5F6BEA9851A2800025D4CBA1E8301FDC494222137709448137850138D69410258D060
+50BC572A304990D77548B5336188ABF185D8EFA34A135C3AE49673C2AF6FEF418F02D71B8DE2F4
+85A24352B4BF737B0E71FF5CB180A368022A9531E0246551570FCE0040C0C0B02A2A40055C0525
+00C284C7AAE9224EB03E60297095FF0522BD035DF54BF39C04F70C15370F0D5725CCFB14B1CF24
+B25F5C15F3E0600B9CA31312718028501B2CA14C6971C4143E4869B0073F340895B19535134D57
+FDCFFC94550E7E4F05765305738914317315454B0585E05DA0F73F31C95CD09764B31D0D728D28
+E24D01D00C64F0DA2571896C95010FDB382F25CA3C3DD775B0F37DD28A3311C404F4114542024D
+E1CF0D565E1572490CE333F413C92010162457D8DC120AE0D2072CD69F41B20CE4A2853D91CFFD
+7278B394135D70C0477F492D73D72897444550935481C1053C374C1C296471CD4FB3D738B18974
+CD463D63185078C45FB38003F5D55F11C97DB1CE13165794364724A1D55441CCBD60A07B978995
+0A147F8C8B8FC4AAF005574BD72020A836054E74223401DFAE7D771147F70A6AB49C3027F6A54C
+5581386BC0B575D650E054CEC7E435C73727CA3CA0515D17F9C9D53E1D725E0CA5C80F0C47E43C
+755C32441145151992C824144033F5D15094592490C3FCF642441439783C4A20E013438FCD8154
+D9C910EFCE1E57247003E87E450C47DE0C520B9C42B72171E12870DF371784007E553D93C3CD40
+49100CF854D1E70471FA0D1751BCBA8A38A1C05015035800D725C74D0D99132AE0C3CF3CD43195
+541D11C36472813134D305D6493D705300334D0418034911C904178D8005535C10414595CB1C7F
+67A9A5C514744A3D39403870F71081C10041075536C90414C95C16570D2DCC7DC5C61CE7190C13
+C1CDD150C5141D07157E18179105405D5D55C95CFC532595CA3C7143055053CE91C147CA87CA30
+CF214025F409DC2C82E00DF72D5E1C2179080F0764DDF8F90342C7F0F09C297472BA8297635C40
+77CBC127099D01498935371FF5659703C840A6A00956922CF2DE6DF68FE4350CEF7D146A9E3282
+287C05DCDF6A9C495165C0776945717BA4346678F7DDC70510213EB15FCDFB3FAE5E25A0CBA816
+5F097DF3D89E07CB415AB47DCA618503F306C36F165465F6C30FF7F32C3943DD3EAA3DA01E1FB1
+570C3689548CE93D51830104C27DE3C795534F5C71E727DF5AEF825AE5A84AB812CCD455F92805
+E95192A934B217043FDD1D4FC92BBB4D0F72A90F0FF3451053C138055494DD50CD0114F3FBF8D6
+C7EC165B1C75D7B4717B5E965A0F10E75C123601741144F7F8D692BA2885435FC504DCF78F7FA1
+1520BF337C3DF52AF683CDDD1BEC971C74AC002053FAB132832FE2738E9CDA5FF2AFCFB3895344
+EF47BE8321BA11DB931FC4DE410C3CD90F504AEC02CFCBE1E944753A28DCF03880450C73A95CAB
+D3FD7BD12CA28784A0FBFCD43D347633EF7D38C5C71BEF911F51C6CF3432B96CF673CC925F6C47
+8F5773C1E8C45753265E0400D47DA2C33D3EAB41704F7D51047D72B7A4A0E5186B1DE1C54865C6
+5738044B34D0FAB470FD7CB24B0F33D73D3FCE2097D96701A82C7B7B207043040EC8387D1A795D
+75F3444C6281493DB101D0D01C18A0A8A0F8155331EBF4252513051DED1F5F70213CB00EC0F114
+5FB42B80F92BC0F5E4EDF09FC27C3A44D4110F28F5086693456F32081F7D1F5185191C30DB3D70
+D2C472CF333CFBE43AFD0701F1410313DC8774203603ECE053DD525B4FF2CF0D95C5757193DCC5
+F32180D0E15517053C090CA11438C78273833123C6005CA3F8F7C4CB1415085C154A10F5873C80
+485160CBED50C83552F6ED72CD67823B1C475E27BD4D5CA6C00C866B54A1870340597D365D1B52
+873FCE8439D60379AA705327F31436CBE092C59C811F60078D7470C720865D9CA09C0CFA1026FA
+5FF094087AE3D5851572E039443C255A57E3D90FF0EFF5E3CBFD7073CF50700DF0144FD140E058
+552C2E78004401E0D78878538CB09FFD850FE4256D33F283547CF94F90F91E538B1FC54155D376
+383C305870510D428E3D34363F10141C31E51C0ECA284C0E2471CF25D1C30DF7C3C434339CA5C7
+14C44F445041107357013A8F65B147B876512C34FA0E60341412F95CA1379C520A045CD51E3D4B
+3C3CD36010D2DCF4F6147257EAB5A7449C170592B45C70F41F365125B3FBDD71430C504B2435C1
+6512C77D71F11C720BE4B2430D425CECF6C7DD709733710801B70E9514244E5CD332F8D4254E14
+705A2736795C70C135A7C90DE3F47D474104F0C1DCA0C35C71F7C5331438E1B8CF35882817D429
+45115752C400A1C633A0C35CF4F17782CF7FF5CA3DF789FDC51D097A4504520728A3BE155C4A0F
+35472153F82C51D7C1127B1F7A4DAABC4B04E2545124F3A0A226004273D0D5C11C14D73CA1FC7D
+1E47509CC833C60917F443648E8B33A7413DF6C944A3D469713B4D3E8D05F5C92CE5F71840D431
+47F13581147FA7F825965E31E11FED86CB3873D771B37373E38A74C37F72CF0272C42E1F50D11A
+DFAF03542808C38378F30537CBCD10495CD7C35CAADB37FF871440C0548E4800734531839ABF8D
+5728DE765C53DD5C67DFFCB243DCF5D73F85C80D95D75D51C578AA143C441547A04FFDE25104B5
+C3FCF057A870FCE0E07428A7C838920CA89CB500421778FDA748036EBF07518757CE115B13FC9F
+C9D24FCF72970CA1E93D45815179CD6471DE5C82B30C73573D3E4F25F3893E43F825128FF41255
+CC71D725F77979827245A5C91C72F945959153A47858F1005F05D710E700B1C35510F33CF5410F
+E1CD75540E1EE041F41644CB75C3E5F4F25C138F00E04DE0168E05D4504CC5E9448547341557DC
+B1C139E1C7D474C3DE94940344F0548143C1610674C4F15F705D1C405F5C34C93DAA71203CD33F
+CCF3BF82511F35411F3CF3C56B8AC14058187C3928171F7CFF31DC968D5D51DF2F95C75D7D04B5
+12811CD0CF2C7D0CF4417F10741D7EAD330FE38969EFC3E4F5CB00314733AAD45CE3C500911B20
+957B24AB432C72492FF1C01DA28CE830C64C32C31C854734020725CD4FCD35C95DE283CF385A34
+3797D840487C03470D9F1D75B0B44CA3CB24AAA3FC350154E28FF4A243CF70C365468FAFD3695C
+F797250C493181815125A10C3DF9D8A1E42C3FF51D164B38E3F3E505C94172475451C54170CA20
+70C3CD10473F078D54E043DC747ADEA0570F125AF3D5CC4CF5C334418A5411405134CA1D414F51
+15881171C30571170D52D3DC72C10052074EE28E39CFB0B32FC14033C8FB8F702128BC0155F1D1
+6282C1200C9091E70C7E5546BC035BA7D7E67F40A3049D35BEB7CA05001DFAE40D42E82700E13C
+3CC474D1D7DC37FFCDF0CC5471D1047C15C34108B408C92030500D9EF27593DF4D27C79570C37D
+701700120A4F3C40F843830115013F86C0CD27F03F851C7570DF6F50D97CCEF1F8D0D720FE4738
+C4C477856C4D058F7F033F1F13D72C94C3CFF2D1250C333F41CF4FA788ABB2834CD3D75D369E38
+4686248E50449257D29EF373058B2884FA1C3CC14E9787643017C1D7880F41037F15CD000FF84C
+10F51C32A7E5724984A00D2543FA5D455E1D53594C8A95C452CD6571F4742C432FBE4A0FF7C70F
+65F45574C8010507277041797F9F2893C17773F12517B97C1500E134000FB27F741342D072870C
+32F10DA1F050510724F5F44DE46465F7F02531CF5CE75A3434F44970386042135800CAA971D04D
+315945D85CFD10FAC9725704A0557D724A3DF7502190F36095E045D7370197895C15C11C365134
+FC592CCC9FD872CC7DB0F3A815463D3157F550D06004151CB0D0F534061F978A0934F92974F3C4
+403F7C50C00452D30431414738032497C32C10D7A971C12532072504C149010B00B0550D354351
+47DD4131CABDF5590F3D161C75701C01F1FCA10D2794741F8C01387201CDA1402870470440414C
+9003C40E13C462A30F004C5F14FF5CF0570D72514F52D75DC8591822F5185C0518B09D41105043
+BC024115091030704C5545018333C494451E33751B00C801D7D0D4D441454205F4CD25574802D7
+9C701C157040C47004C050448587554A5D68029DA49C09E78309001C624F5170303C008A1408C0
+020554E141401544571549641C5214224900CEBBE8F209049450171052273C10C004C032B4C3DF
+9D21FC16214387E08145BEF3D071081670E909718004455F0F00DB418E470D85C52453504FD2CE
+3807FA3575CA1CE7C3C740DF07A5CF5C94C4711748CFD0793DD34B0544DE5886C071A7870D6433
+119C1A24D3DF7F379371F113E7629731C6AD7177102017804DA2CB5C73C72F30C125F6DA73BDD5
+38A10334F78AE712C34405E73596C53332884C72F438378AAAF74B210E411C118F7D93D47F7DE5
+3D34F9E49073DD45C77D751804A3404150FA3C0748648403D5F51531F44C4085D7EAF6C3CC7DC9
+5D91C72473DD5405C728854801F4556505572F1575133C0520E33F5CFE5C6535C6353D6040768A
+2D76471CF7535CB3C32CB5571C445D00418A5C13D65437543D7BDE0572C92130F37C1383E8A4C5
+2C81153D34D3E840D935B5CC7D91DF5DB5D394F24A3872004091C8308795CB27C1700936B7EC35
+82168AF00D7572654800223FC1DD157875409483DC0701CFF78E59573AEFB130CEED2C4DCECF34
+5074C3FC14C090B1C9B33306C4F21331EC0348AC1F3FC1F0B03CFCDC1000F85D03BF1FEE0743CA
+3F4F803343B2C2014505FB720CA40D3938CAB4A8430FBAAB4443381CF1E937AF5CFD2813078C03
+550C230F31E9378F0EBB0C4CEFD3C54139429BDFF339332CFFF327F5FD1FE4FD22E42540ECC3C2
+BE04CF5FB3B8E3B23B0EF3084C1F083C4CC3C0D0B9304CCC75CBD0735F1CCB9557EBFD19B40555
+C555C6741035E7CD7ED01570142821D0899389430BEEF300E93551333D3CCCCCCCCCEE47057C3D
+F57F1CF05400E5C50034708105611C0CF7044CD'H } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  rna {
+                    type rRNA ,
+                    ext
+                      name "s-rRNA" } ,
+                comment "12S ribosomal RNA" ,
+                location
+                  int {
+                    from 69 ,
+                    to 1022 ,
+                    strand plus ,
+                    id
+                      gi 651424522 } } ,
+              {
+                data
+                  rna {
+                    type rRNA ,
+                    ext
+                      name "l-rRNA" } ,
+                comment "16S ribosomal RNA" ,
+                location
+                  int {
+                    from 1097 ,
+                    to 2782 ,
+                    strand plus ,
+                    id
+                      gi 651424522 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040624" ,
+          version 1 } ,
+        gi 651424523 } ,
+      descr {
+        title "NADH dehydrogenase subunit 1 (mitochondrion) [Macaca
+ fascicularis]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61498" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453775 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 324 ,
+        seq-data
+          ncbieaa "MLNILMTHLINPLAYIVPVLLAVAFLTLIERKVLGYMQLRKGPNVVGPYGLLQPIADGV
+KLFIKEPVRPSTSSPFLFLATPMLALTLAMTLWAPMPMPHPVTDLNLGILFMLALSSLAVYSILGSGWASNSKYALIG
+ALRAVAQTISYEVSLGLILLSVIIFSGGYTLQTFNTTQESIWLLIPAWPLAAMWYISTLAETNRAPFDLTEGESELVS
+GFNVEYAGGPFALFFLAEYANILLMNTLSAVLFLGASHTPSIPELTTINLMTKAALLSIVFLWVRASYPRFRYDQLMH
+LVWKNFLPLTLAFVLWHTALPIALAGLPPQL" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "NADH dehydrogenase subunit 1" ,
+                      "import prot name" } ,
+                    desc "import prot descr" ,
+                    ec {
+                      "import EC1" ,
+                      "import EC2" } ,
+                    activity {
+                      "import activity" } } ,
+                comment "import prot comment" ,
+                location
+                  int {
+                    from 0 ,
+                    to 323 ,
+                    id
+                      gi 651424523 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040625" ,
+          version 1 } ,
+        gi 651424524 } ,
+      descr {
+        title "NADH dehydrogenase subunit 2 (mitochondrion) [Barbonymus
+ schwanenfeldii]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans ,
+          completeness complete } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61499" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453776 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 347 ,
+        seq-data
+          ncbieaa "MNPYVLAILLSSLGLGTTLTFASSHWLLAWMGLEINTLAITPLMAQHHHPRAVEATTKY
+FLTQATAAAMILFASTTNAWITGEWNINDLSNPIASTMFMTALALKIGLAPMHFWMPEVLQGLDLLTGLILSTWQKLA
+PFALIIQTAQNIDPSLLTLLGITSTLVGGWGLNQTQIRKILAYSSIAHMGWMIIIIQYAPQLTLIALGTYIIMTSAAF
+LTMKMSSTTKISTLATTWSKNPILTTTTALVLLSLGGLPPLTGFMPKWLILQELTKQQLPIVATTMALTALISLYFYL
+RLCYAMTLTISPNTTNSTTPWRTCTTQTSLPLALFTMAALGLLPMTPTIMALTT" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "NADH dehydrogenase subunit 2" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 346 ,
+                    id
+                      gi 651424524 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040626" ,
+          version 1 } ,
+        gi 651424525 } ,
+      descr {
+        title "cytochrome c oxidase subunit I (mitochondrion) [Barbonymus
+ schwanenfeldii]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans ,
+          completeness complete } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61500" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453777 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 516 ,
+        seq-data
+          ncbieaa "MAITRWFFSTNHKDIGTLYLVFGAWAGMVGTALSLLIRAELSQPGSLLGDDQIYNVIVT
+AHAFVMIFFMVMPILIGGFGNWLVPLMIGAPDMAFPRMNNMSFWLLPPSFLLLLASSGVEAGAGTGWTVYPPLAGNLA
+HAGASVDLTIFSLHLAGVSSILGAINFITTTINMKPPAISQYQTPLFVWSVLVTAVLLLLSLPVLAAGITMLLTDRNL
+NTTFFDPAGGGDPILYQHLFWFFGHPEVYILILPGFGIISHVVAYYSGKKEPFGYMGMVWAMMAIGLLGFIVWAHHMF
+TVGMDVDTRAYFTSATMIIAIPTGVKVFSWLATLHGGSIKWETPMLWALGFIFLFTVGGLTGIVLSNSSLDIVLHDTY
+YVVAHFHYVLSMGAVFAIMAAFVHWFPLLTGYTLHSAWTKIHFGVMFIGVNLTFFPQHFLGLAGMPRRYSDYPDAYAL
+WNTVSSIGSLISLVAVIMFLFILWEAFAAKREVLSVELTMTNVEWLHGCPPPYHTYEEPAFVQTQSN" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "cytochrome c oxidase subunit I" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 515 ,
+                    id
+                      gi 651424525 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040627" ,
+          version 1 } ,
+        gi 651424526 } ,
+      descr {
+        title "cytochrome c oxidase subunit II (mitochondrion) [Barbonymus
+ schwanenfeldii]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans ,
+          completeness complete } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61501" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453778 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 230 ,
+        seq-data
+          ncbieaa "MAHPTQLGFQDAASPVMEELLHFHDHALMIVFLISTLVLYIIVAMVSTKLTNKYILDSQ
+EIEIVWTILPAVILVLIALPSLRILYLMDEINDPHLTIKAMGHQWYWSYEYTDYENLGFDSYMVPTQDLTPGQFRLLE
+TDHRMVVPMESPVRVLVSAEDVLHSWAVPSLGVKMDAVPGRLNQTAFIASRPGLFYGQCSEICGANHSFMPIVVEAVP
+LEHFENWSSLMLEDA" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "cytochrome c oxidase subunit II" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 229 ,
+                    id
+                      gi 651424526 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040628" ,
+          version 1 } ,
+        gi 651424527 } ,
+      descr {
+        title "ATP synthase F0 subunit 8 (mitochondrion) [Barbonymus
+ schwanenfeldii]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans ,
+          completeness complete } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61502" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453779 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 54 ,
+        seq-data
+          ncbieaa "MPQLSPGPWFAILMFSWLVFLTIIPTKILNHISPNEPTPVSAEKHKTESWDWPW" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "ATP synthase F0 subunit 8" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 53 ,
+                    id
+                      gi 651424527 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040629" ,
+          version 1 } ,
+        gi 651424528 } ,
+      descr {
+        title "ATP synthase F0 subunit 6 (mitochondrion) [Barbonymus
+ schwanenfeldii]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans ,
+          completeness complete } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61503" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453780 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 227 ,
+        seq-data
+          ncbieaa "MMVSFFDQFASPSYLGIPLIAIAIALPWVLYPTPSSRWINNRLTTIQGWFINRFTNQLM
+LPLNVGGHKWALLLASLMIFLITINMLGLLPYTFTPTTQLSLNMGFAVPLWLATVIIGMRNQPTVALGHLLPEGTPIP
+LIPVLIIIETISLFIRPLALGVRLTANLTAGHLLIQLIATAVFVLLPMMPTVAILTATVLFLLTLLEVAVAMIQAYVF
+VLLLSLYLQENV" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "ATP synthase F0 subunit 6" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 226 ,
+                    id
+                      gi 651424528 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040631" ,
+          version 1 } ,
+        gi 651424530 } ,
+      descr {
+        title "NADH dehydrogenase subunit 3 (mitochondrion) [Barbonymus
+ schwanenfeldii]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans ,
+          completeness complete } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61505" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453782 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 116 ,
+        seq-data
+          ncbieaa "MNLIMTILVITTALSLILGVVSFWLPQMNPDAEKLSPYECGFDPLGSARLPFSLRFFLV
+AILFLLFDLEIALLLPLPWGDQLHNPTGTFFWATTVLILLTLGLIYEWTQGGLEWAE" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "NADH dehydrogenase subunit 3" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 115 ,
+                    id
+                      gi 651424530 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040632" ,
+          version 1 } ,
+        gi 651424531 } ,
+      descr {
+        title "NADH dehydrogenase subunit 4L (mitochondrion) [Macaca
+ fascicularis]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61506" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453783 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 98 ,
+        seq-data
+          ncbieaa "MTPVHFSFSSAFILGLMGLAFHRTHLLSALLCLEGMMLSLFIALALWALQFEATGFSTA
+PMLLLAFSACEASTGLALLVATARTHGTDRLQNLNLLQC" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "NADH dehydrogenase subunit 4L" ,
+                      "import prot name" } ,
+                    desc "import prot descr" ,
+                    processed mature } ,
+                location
+                  int {
+                    from 0 ,
+                    to 97 ,
+                    id
+                      gi 651424531 } } ,
+              {
+                data
+                  prot {
+                    name {
+                      "import protein" } ,
+                    ec {
+                      "import ec1" ,
+                      "import ec2" } } ,
+                comment "import protein comment" ,
+                location
+                  int {
+                    from 0 ,
+                    to 97 ,
+                    strand plus ,
+                    id
+                      gi 651424531 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040633" ,
+          version 1 } ,
+        gi 651424532 } ,
+      descr {
+        title "NADH dehydrogenase subunit 4 (mitochondrion) [Barbonymus
+ schwanenfeldii]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans ,
+          completeness complete } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61507" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453784 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 460 ,
+        seq-data
+          ncbieaa "MLKVLIPTIMLFPTIWLSSPKWLWTTSTAHSLLIAFISLTWLKWTSETGWTSTNMYLAT
+DPLSTPLLVLTCWLLPLMILASQNHINPEPINRQRSYITLLTSLQTFLIMAFGATEIIMFYIMFEATLIPTLIIITRW
+GNQTERLNAGTYFLFYTLAGSLPLLVALLLLQQSTGTLSMLVLQYSQPLQLNSLGHMIWWAGCLIAFLVKMPLYGVHL
+WLPKAHVEAPVAGSMVLAAVLLKLGGYGMMRMMVMLDPLSKELAYPFIILALWGIIMTGSICLRQTDLKSLIAYSSVS
+HMGLVAGGILIQTPWGFSGAIILMIAHGLVSSALFCLANTAYERTHSRTMILARGLQVIFPLTAVWWFIANLANLALP
+PLPNLMGELMIITTLFNWSPWTILLTGLGTLITAGYSLYMFLMSQRGPTPNHIMGLQPFHTREHLLMTLHLIPVILLV
+TKPELMWGWCY" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "NADH dehydrogenase subunit 4" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 459 ,
+                    id
+                      gi 651424532 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040635" ,
+          version 1 } ,
+        gi 651424534 } ,
+      descr {
+        title "NADH dehydrogenase subunit 6 (mitochondrion) [Barbonymus
+ schwanenfeldii]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans ,
+          completeness complete } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61509" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453786 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 173 ,
+        seq-data
+          ncbieaa "MTYFMFLLLMALVVGLVAVASNPTPYFAALGLVVAAGVGCGVLVGHGGSFLSLVLFLIY
+LGGMLVVFAYSAALAAEPFPEAWGSRSVLVYVLVYLLGVSLVAGLFWGGWYEGSWVVVDGLKEFSILRGDISGVAVMY
+SFGGGMLVICAWVLLLTLLVVLELTRGLGRGTLRAV" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "NADH dehydrogenase subunit 6" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 172 ,
+                    id
+                      gi 651424534 } } } } } } ,
+    seq {
+      id {
+        other {
+          accession "YP_009040636" ,
+          version 1 } ,
+        gi 651424535 } ,
+      descr {
+        title "cytochrome b (mitochondrion) [Barbonymus schwanenfeldii]" ,
+        molinfo {
+          biomol peptide ,
+          tech concept-trans ,
+          completeness complete } ,
+        user {
+          type
+            str "RefGeneTracking" ,
+          data {
+            {
+              label
+                str "IdenticalTo" ,
+              data
+                fields {
+                  {
+                    label
+                      id 0 ,
+                    data
+                      fields {
+                        {
+                          label
+                            str "accession" ,
+                          data
+                            str "AIA61510" } ,
+                        {
+                          label
+                            str "gi" ,
+                          data
+                            int 641453787 } } } } } ,
+            {
+              label
+                str "Status" ,
+              data
+                str "Reviewed" } } } ,
+        create-date
+          std {
+            year 2014 ,
+            month 6 ,
+            day 11 } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 378 ,
+        seq-data
+          ncbieaa "MASLRKTHPLIKIVNDALIDLPAPSNISVWWNFGSLLGLCLITQILTGLFLAMHYTSDI
+STAFSSVTHICRDVNYGWLIRNMHANGASFFFICIYLHIARGLYYGSYLYKETWNIGVVLLLLVMMTAFVGYVLPWGQ
+MSFWGATVITNLLSAVPYMGDMLVQWIWGGFSVDNATLTRFFAFHFLLPFIIAAATILHLLFLHETGSNNPIGLNSDA
+DKIPFHPYFTYKDLLGFVIMLLALALLALFSPNLLGDPENFTPANPLVTPPHIKPEWYFLFAYAILRSIPNKLGGVLA
+LLFSILVLMVVPLLHTSKQRGLTFRPISQFLFWTLVADMIILTWIGGMPVEHPFIIIGQIASVLYFALFLVLMPLAGW
+LENKALE" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "cytochrome b" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 377 ,
+                    id
+                      gi 651424535 } } } } } } } ,
+  annot {
+    {
+      data
+        ftable {
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } } ,
+            comment "import cds comment" ,
+            product
+              whole
+                gi 651424523 ,
+            location
+              int {
+                from 2860 ,
+                to 3834 ,
+                strand plus ,
+                id
+                  gi 651424522 } ,
+            qual {
+              {
+                qual "experiment" ,
+                val "COORDINATES:import cds exp" } } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } ,
+                code-break {
+                  {
+                    loc
+                      int {
+                        from 5094 ,
+                        to 5094 ,
+                        strand plus ,
+                        id
+                          gi 651424522 } ,
+                    aa
+                      ncbieaa 42 } } } ,
+            comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA" ,
+            product
+              whole
+                gi 651424524 ,
+            location
+              int {
+                from 4053 ,
+                to 5094 ,
+                strand plus ,
+                id
+                  gi 651424522 } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } } ,
+            product
+              whole
+                gi 651424525 ,
+            location
+              int {
+                from 5484 ,
+                to 7034 ,
+                strand plus ,
+                id
+                  gi 651424522 } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } ,
+                code-break {
+                  {
+                    loc
+                      int {
+                        from 7884 ,
+                        to 7884 ,
+                        strand plus ,
+                        id
+                          gi 651424522 } ,
+                    aa
+                      ncbieaa 42 } } } ,
+            comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA" ,
+            product
+              whole
+                gi 651424526 ,
+            location
+              int {
+                from 7194 ,
+                to 7884 ,
+                strand plus ,
+                id
+                  gi 651424522 } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } } ,
+            product
+              whole
+                gi 651424527 ,
+            location
+              int {
+                from 7962 ,
+                to 8126 ,
+                strand plus ,
+                id
+                  gi 651424522 } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } } ,
+            product
+              whole
+                gi 651424528 ,
+            location
+              int {
+                from 8120 ,
+                to 8803 ,
+                strand plus ,
+                id
+                  gi 651424522 } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } ,
+                code-break {
+                  {
+                    loc
+                      int {
+                        from 10008 ,
+                        to 10008 ,
+                        strand plus ,
+                        id
+                          gi 651424522 } ,
+                    aa
+                      ncbieaa 42 } } } ,
+            comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA" ,
+            product
+              whole
+                gi 651424530 ,
+            location
+              int {
+                from 9660 ,
+                to 10008 ,
+                strand plus ,
+                id
+                  gi 651424522 } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } } ,
+            product
+              whole
+                gi 651424531 ,
+            location
+              int {
+                from 10079 ,
+                to 10375 ,
+                strand plus ,
+                id
+                  gi 651424522 } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } ,
+                code-break {
+                  {
+                    loc
+                      int {
+                        from 11749 ,
+                        to 11749 ,
+                        strand plus ,
+                        id
+                          gi 651424522 } ,
+                    aa
+                      ncbieaa 42 } } } ,
+            comment "TAA stop codon is completed by the addition of 3' A
+ residues to the mRNA" ,
+            product
+              whole
+                gi 651424532 ,
+            location
+              int {
+                from 10369 ,
+                to 11749 ,
+                strand plus ,
+                id
+                  gi 651424522 } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } } ,
+            product
+              whole
+                gi 651424534 ,
+            location
+              int {
+                from 13785 ,
+                to 14306 ,
+                strand minus ,
+                id
+                  gi 651424522 } } ,
+          {
+            data
+              cdregion {
+                code {
+                  id 2 } } ,
+            product
+              whole
+                gi 651424535 ,
+            location
+              int {
+                from 14381 ,
+                to 15517 ,
+                strand plus ,
+                id
+                  gi 651424522 } } } } } }

@@ -1,0 +1,187 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Helianthus ciliaris",
+        db {
+          {
+            db "taxon",
+            tag id 73280
+          }
+        },
+        orgname {
+          gcode 1,
+          mgcode 1,
+          div "PLN"
+        }
+      }
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        genbank {
+          accession "KP964900",
+          version 1
+        },
+        gi 959098710
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 1066,
+        strand ds,
+        seq-data ncbi2na '8098497EABEC9617DF8E0228ADD7E38DD7AC1A974851FAEBB537
+EF8E98438AF7E1142AECA42089B9D1AB7A535FA231497607452C5A690E3883A643697A82C52E34
+EF7E380D1AE16A26DE2E33BCB18220B20E09389841314386B84CB2628B7607D48890CD8EB8C519
+D19DA5F89FB42054A6C7E0A057C589D269F5CFBE0EBCB879F846E186474F8AFB883AC22A406756
+D9D0BA6AB0B95450000F1AD33E403FFADD89AAC9A91BF62DB2A80D8EA40A1998D82A02E1C17DD8
+1F763AF67ED8C51647AC8D0B85ADEE018ED2CEF87F880C5594ADFADA8F863A48C274FB6288B1D1
+2EB61F948B61BA58E1861BC2B8B7ED75F153FE1AFB83AFEE30AFFE3B1B9EE08AD269608A43B8A0
+24A63CD0833750'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type mRNA,
+                ext name "translation elongation factor 1-alpha"
+              },
+              partial TRUE,
+              location mix {
+                int {
+                  from 884,
+                  to 955,
+                  strand minus,
+                  id gi 959098710,
+                  fuzz-to lim gt
+                },
+                int {
+                  from 720,
+                  to 782,
+                  strand minus,
+                  id gi 959098710
+                },
+                int {
+                  from 348,
+                  to 486,
+                  strand minus,
+                  id gi 959098710
+                },
+                int {
+                  from 0,
+                  to 292,
+                  strand minus,
+                  id gi 959098710,
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        genbank {
+          accession "ALQ80739",
+          version 1
+        },
+        gi 959098711
+      },
+      descr {
+        title "translation elongation factor 1-alpha, partial [Fusarium
+ oxysporum]",
+        molinfo {
+          biomol peptide,
+          completeness no-right
+        },
+        create-date std {
+          year 2015,
+          month 12,
+          day 8
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 189,
+        seq-data ncbieaa "MGKEDKTHLNVVVIGHVDSGKSTTTGHLIYQCGGIDKRTIEKFEKEAAELGK
+GSFKYAWVLDKLKAERERGITIDIALWKFETPRYYVTVIDAPGHRDFIKNMITGTSQADCAILIIAAGTGEFEAGISK
+DGQTREHALLAYTLGVKNLIVAINKMDTTKWSEARYQEIIKETSSFIKKVGYNPKAVAF"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "translation elongation factor 1-alpha"
+                }
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 188,
+                id gi 959098711,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame one,
+            code {
+              id 1
+            }
+          },
+          partial TRUE,
+          product whole gi 959098711,
+          location mix {
+            int {
+              from 884,
+              to 955,
+              strand minus,
+              id gi 959098710
+            },
+            int {
+              from 720,
+              to 782,
+              strand minus,
+              id gi 959098710
+            },
+            int {
+              from 348,
+              to 486,
+              strand minus,
+              id gi 959098710
+            },
+            int {
+              from 0,
+              to 292,
+              strand minus,
+              id gi 959098710,
+              fuzz-from lim lt
+            }
+          }
+        }
+      }
+    }
+  }
+}

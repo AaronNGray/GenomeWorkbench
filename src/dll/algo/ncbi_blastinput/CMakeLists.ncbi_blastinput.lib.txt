@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_blastinput.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_blastinput SHARED)
+  NCBI_hosts_projects(
+    algo/blast/blastinput/blastinput
+  )
+  NCBI_add_definitions(NCBI_XALGO_BLASTINPUT_EXPORTS)
+NCBI_end_lib()

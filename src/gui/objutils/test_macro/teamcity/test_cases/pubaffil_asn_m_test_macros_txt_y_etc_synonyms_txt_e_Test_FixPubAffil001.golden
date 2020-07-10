@@ -1,0 +1,117 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "KA47784ACT"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "PARK",
+                      first "JH",
+                      initials "J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "HONG",
+                      first "SAM",
+                      initials "S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "KIM",
+                      first "BS",
+                      initials "B."
+                    }
+                  },
+                  {
+                    name name {
+                      last "SHIN",
+                      first "HUGO",
+                      initials "H.",
+                      suffix "III"
+                    }
+                  }
+                },
+                affil std {
+                  affil "Korea University",
+                  div "Division of Environmental Science and Ecological
+ Engineering",
+                  city "Seoul",
+                  country "Korea",
+                  street "Anam-Dong, Seongbuk-Gu",
+                  postal-code "136-701"
+                }
+              },
+              title "Pseudocercospora leaf spot Caused by Pseudocercospora
+ nymphaeacea on Nymphaea tetragona"
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "PARK",
+                      first "JH",
+                      initials "J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Hong",
+                      first "SANDERS",
+                      initials "S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "KIM",
+                      first "BS",
+                      initials "B."
+                    }
+                  }
+                },
+                affil std {
+                  affil "korea university",
+                  div "division of environmental Science and Ecological
+ Engineering",
+                  city "seoul",
+                  country "korea",
+                  street "Anam-Dong, Seongbuk-Gu",
+                  postal-code "136-701"
+                }
+              },
+              date std {
+                year 2015,
+                month 6,
+                day 10
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 28,
+        seq-data iupacna "GTGCAAGGCCGGTTTCGCCGGTGACGAT"
+      }
+    }
+  }
+}

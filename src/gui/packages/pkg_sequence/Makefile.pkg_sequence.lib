@@ -1,0 +1,50 @@
+# $Id: Makefile.pkg_sequence.lib 37888 2017-02-28 15:44:33Z shkeda $
+
+
+ASN_DEP = seq entrez2 variation
+
+SRC = dll_register text_view seq_text_view view_graphic \
+      gb_ui_data_source \
+      fasta_format_load_manager gff_load_manager \
+      gff_exporter gff_export_page gff_export_params gff_export_job \
+	  gtf_exporter gtf_export_page gtf_export_params gtf_export_job \
+      fasta_exporter fasta_export_page fasta_export_params fasta_export_job \
+      agp_exporter agp_export_params agp_export_page agp_export_job \
+      flatfile_exporter flatfile_export_params flatfile_export_page \
+      flatfile_export_job \
+      view_feattable bam_ui_data_source \
+      component_search_tool entrez_search_tool feature_search_tool sequence_search_tool \
+      cleanup_tool cleanup_params cleanup_panel \
+      windowmasker_tool windowmasker_params windowmasker_panel \
+      agp_loader \
+      orf_search_tool cpg_search_tool \
+      wig_load_manager bed_load_manager vcf_load_manager \
+      merge_tool merge_panel \
+      snp_search_tool \
+      5col_exporter 5col_export_params 5col_export_page 5col_export_job \
+      5col_load_manager \
+      wiggle_export_params wiggle_export_job wiggle_export_page wiggle_exporter \
+      text_view_project_item_extension bam_utils
+
+LIB = pkg_sequence
+
+DLL_LIB = gui_objects gui_core \
+          w_seq_graphic w_seq w_seq_text w_feat_table \
+          w_data w_gl gui_config \
+          gui_graph gui_opengl gui_print snputil gui_objutils gui_utils \
+          sequtil xcleanup xalnmgr xobjreadex $(OBJREAD_LIBS) xobjwrite xobjutil ximage xregexp xalgoseq \
+          submit tables taxon1 eutils_client xmlwrapp \
+          ncbi_xloader_genbank ncbi_xcache_netcache \
+          ncbi_xloader_bam bamread $(BAM_LIBS) \
+          ncbi_xloader_csra $(SRAREAD_LIBS) ncbi_xloader_vdbgraph \
+          ncbi_xloader_wgs ncbi_xloader_snp $(PCRE_LIB) $(COMPRESS_LIBS) $(SOBJMGR_LIBS)
+
+
+LIBS = $(SRA_SDK_SYSLIBS) $(LIBXSLT_LIBS) $(LIBXML_LIBS) $(WXWIDGETS_LIBS) $(GLEW_LIBS) $(IMAGE_LIBS) $(CMPRS_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)  $(SRA_INCLUDE)
+
+LIB_OR_DLL = dll
+DLL_TYPE = plugin
+
+REQUIRES = gbench wxWidgets objects

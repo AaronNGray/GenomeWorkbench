@@ -1,0 +1,7 @@
+# $Id: Makefile.in 41258 2018-06-25 20:38:15Z katargir $
+
+LIB_PROJ = w_gl
+SUB_PROJ = demo_wx
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

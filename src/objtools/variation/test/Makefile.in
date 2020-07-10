@@ -1,0 +1,9 @@
+# $Id: Makefile.in 454794 2014-12-18 11:33:55Z holmesbr $
+# Meta-makefile("objtools" project)
+#################################
+    
+EXPENDABLE_SUB_PROJ = reference_allele_fix \
+	shift
+   
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,123 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          org {
+            taxname "Nothophoma quercina",
+            db {
+              {
+                db "taxon",
+                tag id 749835
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Nothophoma",
+                species "quercina"
+              },
+              attrib "specified",
+              lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Dothideomycetes; Pleosporomycetidae; Pleosporales; Pleosporineae;
+ Didymellaceae; Nothophoma",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1"
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 195,
+            strand ds,
+            seq-data ncbi2na '036B965F7A485375A624E97E1A75AEDC43A45DA175276264
+E06DC7D062B1C8CE119FC79868798B9E17FA4A5DE9042F6F54'H
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 46,
+            seq-data ncbieaa "IGAAFWQTISGEHGLDGSGVYNGTSDLQLERMNVYFNEASGNKFVP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "partial beta-tubulin"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 45,
+                    id local str "Seq1_prot_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "Seq1_prot_1",
+              location mix {
+                int {
+                  from 2,
+                  to 115,
+                  strand plus,
+                  id local str "Seq1",
+                  fuzz-from lim lt
+                },
+                int {
+                  from 171,
+                  to 194,
+                  strand plus,
+                  id local str "Seq1",
+                  fuzz-to lim gt
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

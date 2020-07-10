@@ -1,0 +1,4710 @@
+MACRO Test_EditStringQual01 "Replace text in the organism name"
+VAR
+    find_text = "ba"
+    repl_text = "TEST"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------
+MACRO Test_EditStringQual02 "Replace text in source isolate"
+VAR
+    find_text = "Dr"
+    repl_text = "TEST"
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") Where obj.subtype = "isolate";
+    EditStringQual("obj.subname", find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------
+MACRO Test_EditStringQual03 "Edit structured comment field Sequencing Technology replace 'Pacific Biosciences' (case insensitive) with 'PacBio'"
+VAR
+    find_text = "Pacific Biosciences"
+    repl_text = "PacBio"
+    location = "anywhere"
+    case_sensitive = false
+    field = "Sequencing Technology"
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE obj.label.str = field;
+    EditStringQual ("obj.data.str", find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------
+MACRO Test_EditStringQual04 "Edit publication country replace 'Moldova, Republic of' with 'Republic of Moldova'"
+VAR
+    find_text = "Moldova, Republic of"
+    repl_text = "Republic of Moldova"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Pubdesc
+DO
+    obj = PUB_AFFIL("country");
+    EditStringQual(obj, find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------
+MACRO Test_EditStringQual05 "Edit taxname replace 'subsp.' with 'subsp. ' where taxname does not contain 'subsp. '"
+VAR
+    qual_name = "org.taxname"
+    find_text = "subsp."
+    repl_text = "subsp. "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+WHERE NOT CONTAINS(qual_name, repl_text)
+DO
+    EditStringQual (qual_name, find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------
+MACRO Test_EditStringQual06 "Edit publication city replace 'Madison' (case sensitive)  with 'Cleveland'"
+VAR
+    find_text = %Madison%
+    repl_text = %Cleveland%
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Pubdesc
+DO
+    city = PUB_AFFIL("city");
+    EditStringQual(city, find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------
+MACRO Test_EditStringQual07 "Edit structured comment field 'Coverage' replace '\d+\.\d{4}\K\d+' (case sensitive)  with ''"
+VAR
+    find_text = %\d+\.\d{4}\K\d+%
+    repl_text = %%
+    location = "anywhere"
+    case_sensitive = %true%
+    is_regex = true
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE EQUALS("obj.label.str", "Coverage", true);
+    EditStringQual("obj.data.str", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetQual01 "Set common name where country is Germany"
+FOR EACH BioSource
+Where EQUALS("subtype","country", "Germany")
+DO   
+    SetQual("org.common", "test common name");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetStringQual01 "Apply maturase K to CDS product (overwrite existing text) where protein name equals 'maturase' (ignore spaces, ignore punctuation) and where gene locus equals 'matK' (ignore spaces, ignore punctuation)"
+VAR
+    new_value = "maturase K"
+    existing_text = "eReplace"
+    match = "maturase"
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+FOR EACH Protein
+WHERE EQUALS(RELATED_FEATURE("gene", "data.gene.locus"), "matK", case_sensitive, ignore_spaces, ignore_punctuation)
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive, ignore_spaces, ignore_punctuation);
+    SetStringQual (o, new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveQual01 "Remove the reverse primer names"
+VAR
+    field = "pcr-primers..reverse..name"
+FOR EACH BioSource
+DO
+    RemoveQual(field);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveQual02 "Remove publication state where state is all punctuation"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AFFIL("sub") WHERE ISPUNCTUATION(obj);
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Removequal03 "Remove author last name (it will not remove it)"
+FOR EACH Pubdesc
+DO
+    last = PUB_AUTHORS("last");
+    RemoveQual(last);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Removequal04 "Remove publication author first name"
+FOR EACH Pubdesc
+DO
+    first = PUB_AUTHORS("first");
+    RemoveQual(first);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Removequal05 "Remove structured comment database name"
+VAR
+    case_sensitive = true
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE EQUALS("obj.label.str", "StructuredCommentPrefix", case_sensitive) OR EQUALS("obj.label.str", "StructuredCommentSuffix", case_sensitive) ;
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Removequal06 "Remove structured comment field names"
+VAR
+    case_sensitive = true
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE NOT EQUALS("obj.label.str", "StructuredCommentPrefix", case_sensitive) AND NOT EQUALS("obj.label.str", "StructuredCommentSuffix", case_sensitive) ;
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Removequal07 "Remove structured comment field 'Sequencing Technology'"
+VAR
+    match = "Sequencing Technology"
+    case_sensitive = true
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE EQUALS("obj.label.str", match, case_sensitive) ;
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Removequal08 "Remove taxname"
+FOR EACH BioSource
+DO
+    RemoveQual("org.taxname");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Removequal09 "Remove taxname"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.taxname");
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Removequal10 "Remove publication author first name where author first name equals 'Amy' (case-sensitive)"
+VAR
+    equals1 = "Amy"
+FOR EACH Pubdesc
+DO
+    first = PUB_AUTHORS("first") WHERE EQUALS(first,equals1,true);
+    RemoveQual(first);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertStringQual01 "Convert clone to isolate (ignore new text when existing text is present) where source clone starts with 'TGGE'"
+VAR
+    cap_change = "none"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "isolate")
+DO
+    src = Resolve("subtype") WHERE src.subtype = "clone" AND STARTS("src.name", "TGGE");
+    ConvertStringQual("src.name", "isolate", cap_change, strip_name, existing_text);
+    RemoveModifier(src);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertStringQual02 "Convert gene synonym to gene description (append separated by colon) where Gene synonym contains 'n1' "
+VAR
+    cap_change = "firstcap"
+    strip_name = false
+    existing_text = "eAppend"
+    delimiter = ":"
+    contains1 = %n1%
+FOR EACH Gene
+WHERE CONTAINS("data.gene.syn",contains1,false,false,false,false,false)
+DO
+    src = Resolve("data.gene.syn") WHERE CONTAINS(src,contains1,false,false,false,false,false);
+    ConvertStringQual(src, "data.gene.desc", cap_change, strip_name, existing_text, delimiter);
+    RemoveQual(src);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertStringQual03 "Convert gene locus to gene locus (overwrite existing text)"
+VAR
+    cap_change = "toupper"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH Gene
+DO
+    ConvertStringQual("data.gene.locus", "data.gene.locus", cap_change, strip_name, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertStringQual04 "Convert CDS comment to CDS inference (overwrite existing text)"
+VAR
+    cap_change = "toupper"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH Cdregion
+DO
+    ConvertStringQual("comment", "inference", cap_change, strip_name, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertStringQual05 "Convert gene locus to gene synonym (overwrite existing text)"
+VAR
+    cap_change = "firstcap-restnochange"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH Gene
+DO
+    ConvertStringQual("data.gene.locus", "data.gene.syn", cap_change, strip_name, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertStringQual06 "Convert sub-species to taxname (overwrite existing text)"
+VAR
+    cap_change = "none"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH BioSource
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "sub-species";
+    ConvertStringQual("src.subname", "org.taxname", cap_change, strip_name, existing_text);
+    RemoveModifier(src);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertStringQual07 "Convert gene synonym to gene comment (append separated by semicolon) where Gene gene_synonym starts with 'SYN:' (case-sensitive)"
+VAR
+    cap_change = "none"
+    strip_name = false
+    existing_text = "eAppend"
+    delimiter = ";"
+    starts1 = %SYN:%
+FOR EACH Gene
+DO
+    obj = Resolve("data.gene.syn") Where Starts(obj, starts1, true);
+	ConvertStringQual(obj, "comment", cap_change, strip_name, existing_text, delimiter);
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixSpelling "Fixes spelling mistakes in seq-entry"
+FOR EACH TSEntry
+DO
+    FixSpelling();
+DONE
+-----------------------------------------------------------------
+MACRO Test_DuplStrComment "Remove duplicate structured comments"
+FOR EACH SeqNa
+DO
+    RemoveDuplicateStructComments();
+DONE
+-----------------------------------------------------------------
+MACRO Test_DuplFeatures "Remove duplicate features(case-sensitive) and remove protein products"
+VAR
+    check_partials = true
+    case_sensitive = true
+    remove_proteins = true
+FOR EACH Seq
+DO
+    RemoveDuplicateFeatures("any", check_partials, case_sensitive, remove_proteins);
+DONE
+-----------------------------------------------------------------
+MACRO Test_InvalidEC "Remove invalid EC numbers"
+FOR EACH Protein
+DO
+    RemoveInvalidECNumbers();
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseLocalId "Parse entire text from local ID to strain (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+    cap_change = "none"
+FOR EACH BioSource
+DO
+    id = LocalID();
+    ParseStringQual(id, "strain", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_MoveMiddleName "Move middle name to first name"
+FOR EACH Pubdesc
+DO
+    MoveMiddleToFirstName();
+DONE
+-----------------------------------------------------------------
+MACRO Test_TruncateMInitials "Truncate middle name initials"
+FOR EACH Pubdesc
+DO
+    TruncateMiddleInitials();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RevNames "Reverse author names"
+FOR EACH Pubdesc
+DO
+    ReverseAuthorNames();
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPubAffil01 "Fix pub affiliation when authors are all caps"
+FOR EACH Pubdesc
+WHERE IS_ALL_UPPER(PUB_AUTHORS())
+DO
+    obj = PUB_AFFIL();
+    FixPubCapsAffiliation(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPubAffil001 "Fix pub affiliation when authors are all caps"
+FOR EACH Pubdesc
+WHERE ISUPPER(PUB_AUTHORS())
+DO
+    obj = PUB_AFFIL();
+    FixPubCapsAffiliation(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPubAffil02 "Fix pub caps in affiliation except institution and department"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AFFIL();
+    FixPubCapsAffiliation_NOInstDept(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPubAffil03 "Fix pub caps in affiliation"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AFFIL();
+    FixPubCapsAffiliation(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPubCapsAuthors01 "Fix pub authors where all authors are all caps"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE IS_ALL_UPPER(PUB_AUTHORS());
+    FixPubCapsAuthors(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPubCapsAuthors001 "Fix pub authors where all authors are all caps"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE ISUPPER(PUB_AUTHORS());
+    FixPubCapsAuthors(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPubCapsAuthors02 "Fix pub authors where single authors are all caps"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE IS_ALL_UPPER(obj);
+    FixPubCapsAuthors(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPubCapsAuthors002 "Fix pub authors where single authors are all caps"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE ISUPPER(obj);
+    FixPubCapsAuthors(obj);
+DONE
+-----------------------------------------------------------------
+
+MACRO Test_FixAuthorLastnames "Fix capitalization in author last names where last name is all caps"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS("last") WHERE ISUPPER(obj);
+    FixCapsAuthorLastName(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveSingleItemSet "Remove single-sequence pop, phy, mut, or eco wrapper set without alignment"
+FOR EACH TSEntry
+DO
+    RemoveSingleItemSet();
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPopSets "Convert pop sets to phy sets when taxnames are inconsistent"
+FOR EACH SeqSet
+WHERE class = "pop-set" AND INCONSISTENT_TAXA()
+DO
+    SetQual("class", "phy-set");
+DONE
+-----------------------------------------------------------------
+MACRO Test_RenormalizeNucProtSet "Renormalize nuc-prot sets"
+FOR EACH TSEntry
+DO
+    RenormalizeNucProtSet();
+DONE
+-----------------------------------------------------------------
+MACRO Test_DeleteStructComm01 "Remove structured comment"
+FOR EACH StructComment
+DO
+    RemoveDescriptor();
+DONE
+-----------------------------------------------------------------
+MACRO Test_DeleteStructComm02 "Remove structured comment field Coverage where field equals 100%"
+VAR
+    match = "100%"
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE obj.label.str = "Coverage" AND EQUALS("obj.data.str", match);
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual01 "Swap protein name with gene locus where protein name equals 'cox1' (ignore spaces, ignore punctuation), allow 'cox1' to be replaced by 'coxI', 'CO1', and 'COI'"
+VAR
+   match_protein = "cox1"
+   case_sensitive = false
+   ignore_space = true
+   ignore_punctuation = true
+FOR EACH Protein
+DO
+   src_obj = Resolve("data.prot.name") WHERE EQUALS(src_obj, match_protein, case_sensitive, ignore_space, ignore_punctuation, "synonyms.txt", match_protein);
+   SwapRelateFeaturesQual(src_obj, "gene", "data.gene.locus");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual02 "Swap taxname with common name"
+FOR EACH BioSource
+DO
+   SwapQual("org.taxname", "org.common");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual03 "Swap protein name with protein description where protein name equals 'COI' (ignore spaces, ignore punctuation) and where protein description equals 'cytochrome oxidase subunit I' (ignore spaces, ignore punctuation), allow 'cytochrome oxidase subunit I' to be replaced by 'cytochrome c oxidase subunit I', 'cytochrome c oxidase subunit one', 'cytochrome oxidase subunit one', 'cytochrome c oxidase subunit I', and 'cytochrome oxidase subunit I'"
+Var
+    match_protein = "COI"
+    match_descr = "cytochrome oxidase subunit I"
+    case_sensitive = false
+    ignore_space = true
+    ignore_punctuation = true
+For each Protein
+WHERE EQUALS("data.prot.desc", match_descr, case_sensitive, ignore_space, ignore_punctuation, "synonyms.txt", match_descr)
+Do
+    src_obj = Resolve("data.prot.name") WHERE EQUALS(src_obj, match_protein, case_sensitive, ignore_space, ignore_punctuation);
+    SwapQual(src_obj, "data.prot.desc");
+Done
+-----------------------------------------------------------------
+MACRO Test_SwapQual04 "Swap gene synonym with gene locus"
+FOR EACH Gene
+DO
+   SwapQual("data.gene.syn", "data.gene.locus");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual05 "Swap source isolate with host where isolate contains rs3"
+VAR
+    match = "rs3"
+FOR EACH BioSource
+WHERE CONTAINS("org.orgname.mod", "isolate", match)
+DO
+   src = Resolve("org.orgname.mod") WHERE src.subtype = "isolate" AND CONTAINS("src.subname", match);
+   dest = Resolve("org.orgname.mod") WHERE dest.subtype = "nat-host";
+   SwapQual(src, "isolate", dest, "nat-host");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual06 "Swap source isolate with host"
+FOR EACH BioSource
+DO
+   src = Resolve("org.orgname.mod") WHERE src.subtype = "isolate";
+   dest = Resolve("org.orgname.mod") WHERE dest.subtype = "nat-host";
+   SwapQual(src, "isolate", dest, "nat-host");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual07 "Swap source isolate with taxname"
+FOR EACH BioSource
+DO
+   src = Resolve("org.orgname.mod") WHERE src.subtype = "isolate";
+   SwapQual(src, "isolate", "org.taxname");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual08 "Swap gene desc with gene inference"
+FOR EACH Gene
+DO
+   dest = Resolve("qual") WHERE dest.qual = "inference";
+   SwapQual("data.gene.desc", dest, "inference");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual09 "Swap protein name with gene locus where protein name equals 'cox1' (ignore spaces, ignore punctuation), allow 'cox1' to be replaced by 'coxI', 'CO1', and 'COI'"
+VAR
+   match_protein = "cox1"
+   case_sensitive = false
+   ignore_space = true
+   ignore_punctuation = true
+   update_mrna = true
+FOR EACH Protein
+DO
+   src_obj = Resolve("data.prot.name") WHERE EQUALS(src_obj, match_protein, case_sensitive, ignore_space, ignore_punctuation, "synonyms.txt", match_protein);
+   SwapFeatureQual(src_obj, "gene", "data.gene.locus", update_mrna);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual10 "Swap CDS comment name with gene inference"
+VAR
+    update_mrna = false
+FOR EACH Cdregion
+DO
+   SwapFeatureQual("comment", "gene", "inference", update_mrna);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual11 "Swap CDS inference with mRNA product"
+VAR
+    update_mrna = false
+FOR EACH Cdregion
+DO
+   src = Resolve("qual") Where src.qual = "inference";
+   SwapFeatureQual(src, "inference", "mRNA", "data.rna.ext.name", update_mrna);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual12 "Swap CDS comment with gene locus"
+VAR
+    update_mrna = false
+FOR EACH Cdregion
+DO
+   SwapFeatureQual("comment", "gene", "data.gene.locus", update_mrna);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual13 "Swap gene locus with protein EC number"
+VAR
+    update_mrna = false
+FOR EACH Gene
+DO
+   SwapFeatureQual("data.gene.locus", "protein", "data.prot.ec", update_mrna);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual14 "Swap tRNA product to gene locus"
+FOR EACH RNA
+WHERE data.rna.type = "tRNA"
+DO
+    SwapFeatureQual("tRNA::product", "gene", "data.gene.locus", false);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SwapQual15 "Swap tRNA gene locus to product"
+FOR EACH Gene
+DO
+    SwapFeatureQual("data.gene.locus", "tRNA", "tRNA::product", false);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyMolinfoBlock "Change to molecule genomic and class DNA where where rRNA product equals '16S ribosomal RNA'"
+FOR EACH MolInfo
+WHERE EQUALS(FEATURES("rRNA", "data.rna.ext.name"), "16S ribosomal RNA")
+DO
+    SetQual("biomol", "genomic");
+    ChangeSeqInst("mol", "dna");
+    ChangeSeqInst("strand", "ds");
+DONE
+-----------------------------------------------------------------
+MACRO Test_IsPresent01 "Set new isolate value if there is an existing isolate"
+VAR
+    container = "org.orgname.mod"
+    modifier = "isolate"
+FOR EACH BioSource
+WHERE ISPRESENT(container, modifier)
+DO   
+    obj = Resolve(container) Where obj.subtype = "isolate";
+    SetModifier(obj, container, modifier, "testing isolate", "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_IsPresent02 "Fix pub title where title is present"
+FOR EACH Pubdesc
+DO
+    obj = PUB_TITLE() WHERE ISPRESENT(obj);
+    FixPubCapsTitle(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_IsPresent03 "Append testing standard name to gene description delimited by semicolon where standard-name exist"
+FOR EACH Gene
+WHERE ISPRESENT("qual", "standard_name")
+DO
+    SetStringQual("data.gene.desc", "testing standard name", "eAppend", ";");
+DONE
+-----------------------------------------------------------------
+MACRO Test_IsPresent04 "Append testing taxname to taxname (overwrite existing text) where the common name exists"
+FOR EACH BioSource
+WHERE ISPRESENT("org.common")
+DO
+    SetStringQual("org.taxname", "testing taxname", "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_IsPresent05 "Fix pub affiliation where title is all caps and where authors is all caps and where affiliation is all caps and where department is all caps and where city is all caps and where state is all caps and where country is all caps and where street is all caps and where postal code is all caps"
+FOR EACH Pubdesc
+DO
+    title = PUB_TITLE();
+    obj = PUB_AFFIL() WHERE NOT ((ISPRESENT(title) AND NOT ISUPPER(title)) OR
+                                      (ISPRESENT(PUB_AUTHORS()) AND NOT IS_ALL_UPPER(PUB_AUTHORS())) OR
+                                      (ISPRESENT("obj.std.affil") AND NOT ISUPPER("obj.std.affil")) OR
+                                      (ISPRESENT("obj.std.div") AND NOT ISUPPER("obj.std.div")) OR
+                                      (ISPRESENT("obj.std.city") AND NOT ISUPPER("obj.std.city")) OR
+                                      (ISPRESENT("obj.std.sub") AND NOT ISUPPER("obj.std.sub")) OR
+                                      (ISPRESENT("obj.std.country") AND NOT ISUPPER("obj.std.country")) OR
+                                      (ISPRESENT("obj.std.street") AND NOT ISUPPER("obj.std.street")) OR
+                                      (ISPRESENT("obj.std.postal-code") AND NOT ISUPPER("obj.std.postal-code"))) AND
+    (ISPRESENT(title) OR ISPRESENT(PUB_AUTHORS()) OR ISPRESENT("obj.std.affil") OR ISPRESENT("obj.std.div") OR 
+    ISPRESENT("obj.std.city") OR ISPRESENT("obj.std.sub") OR ISPRESENT("obj.std.country") OR ISPRESENT("obj.std.street") 
+    OR ISPRESENT("obj.std.postal-code"));
+    FixPubCapsAffiliation(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_IsPresent005 "Fix pub affiliation where title is all caps and where authors is all caps and where affiliation is all caps and where department is all caps and where city is all caps and where state is all caps and where country is all caps and where street is all caps and where postal code is all caps"
+FOR EACH Pubdesc
+DO
+    title = PUB_TITLE();
+    obj = PUB_AFFIL() WHERE NOT ((ISPRESENT(title) AND NOT ISUPPER(title)) OR
+                                      (ISPRESENT(PUB_AUTHORS()) AND NOT ISUPPER(PUB_AUTHORS())) OR
+                                      (ISPRESENT("obj.std.affil") AND NOT ISUPPER("obj.std.affil")) OR
+                                      (ISPRESENT("obj.std.div") AND NOT ISUPPER("obj.std.div")) OR
+                                      (ISPRESENT("obj.std.city") AND NOT ISUPPER("obj.std.city")) OR
+                                      (ISPRESENT("obj.std.sub") AND NOT ISUPPER("obj.std.sub")) OR
+                                      (ISPRESENT("obj.std.country") AND NOT ISUPPER("obj.std.country")) OR
+                                      (ISPRESENT("obj.std.street") AND NOT ISUPPER("obj.std.street")) OR
+                                      (ISPRESENT("obj.std.postal-code") AND NOT ISUPPER("obj.std.postal-code"))) AND
+    (ISPRESENT(title) OR ISPRESENT(PUB_AUTHORS()) OR ISPRESENT("obj.std.affil") OR ISPRESENT("obj.std.div") OR 
+    ISPRESENT("obj.std.city") OR ISPRESENT("obj.std.sub") OR ISPRESENT("obj.std.country") OR ISPRESENT("obj.std.street") 
+    OR ISPRESENT("obj.std.postal-code"));
+    FixPubCapsAffiliation(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Satellite01 "Remove repeat_region satellite-name where repeat_region satellite-name equals 'SSR' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "satellite" AND EQUALS(SATELLITE_NAME(), "SSR", case_sensitive, ignore_spaces, ignore_punctuation);
+    RemoveSubField(obj, "satellite-name");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Satellite02 "Remove repeat_region satellite-type where repeat_region satellite-type equals 'microsatellite'"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "satellite" AND SATELLITE_TYPE() = "microsatellite";
+    RemoveSubField(obj, "satellite-type");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Reorder "Reorder structured comments"
+FOR EACH StructComment
+DO
+    ReorderStructuredComment();
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetModifier01 "Apply Homo sapiens to host (overwrite existing text) where source host equals 'homo sapiens' (ignore spaces, ignore punctuation), allow 'homo sapiens' to be replaced by 'humans', 'human', 'Homo sapien', 'Homosapiens', 'Homo-sapiens', 'Homo spiens', 'Homo Sapience', 'Homo sappiens', 'homo_sapien', 'human sapiens', 'Human Beings', and 'Human Being', allow 'sapiens' to be replaced by 'sapeins', 'sapein', 'sapens', 'sapins', 'sapin', 'sapen', 'spaeins', 'sapians', 'sapian', 'sapies', and 'sapie'"
+VAR
+    qual_name = "org.orgname.mod"
+    modifier = "nat-host" 
+    new_value = "Homo sapiens"
+    match = "homo sapiens"
+    existing_text = "eReplace"
+    case_sensitive = true
+    ignore_spaces = true
+    ignore_punct = true
+FOR EACH BioSource
+WHERE EQUALS(qual_name, modifier, match, case_sensitive, ignore_spaces, ignore_punct, "synonyms.txt", match)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveModifier01 "Remove identified-by where object text equals 'unknown' (ignore spaces, ignore punctuation), allow 'unknown' to be replaced by 'N/A', 'none', 'not applicable', 'not aplicable', 'same laboratory', 'laboratory', 'our laboratory', 'n.a.', 'not available', 'many methods', 'molecular typing method', 'biochemical tests', 'biochemical testing', 'biochemical test', and 'bacteria'"
+VAR
+    match_text = "unknown"
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punct = true
+FOR EACH BioSource
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "identified-by" AND EQUALS("obj.name", match_text, case_sensitive, ignore_spaces, ignore_punct, "synonyms.txt", match_text);
+    RemoveModifier(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveModifier02 "Remove type where source type equals 'Bacteria' (ignore spaces, ignore punctuation), allow 'Bacteria' to be replaced by 'Bacterium', 'Virus', 'Clone', 'True', 'partial', '16S rRNA gene', '16S sequencing', '16S rRNA', '16S', 'fungal', 'fungus', and 'rRNA'"
+VAR
+    match = "Bacteria"
+    case_sensitive = false
+    ignore_space = true
+    ignore_punctuation = true
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") WHERE obj.subtype = "type"
+                             AND EQUALS("obj.subname", match, case_sensitive, ignore_space, ignore_punctuation, "synonyms.txt", match);
+    RemoveModifier(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemovePub01 "Remove Publication descriptors where pub is unpublished and title equals 'none'"
+VAR
+    match = "none"
+FOR EACH Pubdesc
+WHERE PUB_CLASS() = "unpublished" AND PUB_TITLE() = match
+Do
+    RemoveDescriptor();
+Done
+-----------------------------------------------------------------
+MACRO Test_RemovePub02 "Remove publication features"
+FOR EACH Pubdesc
+DO
+    RemoveFeature();
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeature01 "Convert rRNA to misc_RNA where rRNA product equals 'Internal transcribed spacer 1, ITS1 sequence' (ignore spaces, ignore punctuation), allow '1' to be replaced by '2', allow 'ITS1' to be replaced by 'ITS', allow 'sequence' to be replaced by 'region', 'gene', and 'RNA', allow 'Internal transcribed spacer 1, ITS1 sequence' to be replaced by 'ITS1', 'ITS2', 'internal transcribed spacer 1', 'internal transcribed spacer 2', 'internal transcribed spacer 1 (ITS)', 'internal transcribed spacer 2 (ITS)', 'internal transcribed spacer 1 (ITS1)', and 'internal transcribed spacer 2 (ITS2)', remove original feature"
+VAR
+    product = "data.rna.ext.name"
+    match1 = "internal transcribed spacer 1, ITS1 sequence"
+    match2 = "internal transcribed spacer 2, ITS2 sequence"
+    match3 = "ITS1"
+    match4 = "ITS2"
+    match5 = "internal transcribed spacer 1"
+    match6 = "optional-internal transcribed spacer 1"
+    match7 = "optional-internal transcribed spacer 2"
+    match8 = "sequence"
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+FOR EACH rRNA
+WHERE EQUALS(product, match1, case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match1, match3, match5, match7, match8) OR
+      EQUALS(product, match2, case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match2, match4, match6, match7, match8)
+DO
+    ConvertFeature("misc_RNA");
+    RemoveFeature();
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeature02 "Convert CDS to misc_RNA (remove overlapping mRNA, remove overlapping gene, remove transcript ID), remove original feature"
+VAR
+    rem_mrna = true
+    rem_gene = true
+    rem_transcriptID = true
+FOR EACH Cdregion
+DO
+    ConvertCDSToFeature("misc_RNA", rem_mrna, rem_gene, rem_transcriptID);
+    RemoveFeature();
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeature03 "Convert CDS to thiolester bond, (do not remove overlapping mRNA, remove overlapping gene, do not remove overlapping transcript ID), keep original feature"
+VAR
+    rem_mrna = %false%
+    rem_gene = %true%
+    rem_transcriptID = %false%
+FOR EACH Cdregion
+DO
+    ConvertCDSToFeature("bond", "thiolester", rem_mrna, rem_gene, rem_transcriptID);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeature04 "Convert Mature Peptide AA to region on protein sequence, (do not remove overlapping mRNA, remove overlapping gene, do not remove overlapping transcript ID), keep original feature"
+VAR
+    create_on_protein = true
+FOR EACH SeqFeat
+WHERE CHOICETYPE("data") = "prot" AND data.prot.processed = "mature"
+DO
+    ConvertFeature("region", create_on_protein);
+DONE
+-----------------------------------------------------------------
+MACRO Test_AddGeneXref01 "Add gene Xref from overlapping gene feature for mRNA features"
+FOR EACH mRNA
+DO
+    AddGeneXref();
+DONE
+-----------------------------------------------------------------
+MACRO Test_AddGeneXref02 "Add gene Xref from overlapping gene feature for gene features"
+FOR EACH Gene
+DO
+    AddGeneXref();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveGeneXref01 "Remove suppressing gene Xref from CDS features"
+VAR
+    suppr_type = "suppressing"
+    necessary_type = "any"
+FOR EACH Cdregion
+DO
+    RemoveGeneXref(suppr_type, necessary_type);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveGeneXref02 "Remove non-suppressing gene Xref from CDS features"
+VAR
+    suppr_type = "nonsuppressing"
+    necessary_type = "any"
+FOR EACH Cdregion
+DO
+    RemoveGeneXref(suppr_type, necessary_type);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveGeneXref03 "Remove unnecessary gene Xref from CDS features"
+VAR
+    suppr_type = "any"
+    necessary_type = "unnecessary"
+FOR EACH Cdregion
+DO
+    RemoveGeneXref(suppr_type, necessary_type);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveGeneXref04 "Remove necessary gene Xref from CDS features"
+VAR
+    suppr_type = "any"
+    necessary_type = "necessary"
+FOR EACH Cdregion
+DO
+    RemoveGeneXref(suppr_type, necessary_type);
+DONE
+-----------------------------------------------------------------
+MACRO Test_JoinShorttRNA1 "Join short tRNA for nucleotide sequences"
+FOR EACH SeqNa
+DO
+    JoinShorttRNAs();
+DONE
+-----------------------------------------------------------------
+MACRO Test_DiscrAutofix "Perform autofix for EC_NUMBER_ON_UNKNOWN_PROTEIN discrepancy test"
+FOR EACH TSEntry
+Do
+    PerformDiscrAutofix("EC_NUMBER_ON_UNKNOWN_PROTEIN");
+Done
+-----------------------------------------------------------------
+MACRO Test_TaxLookup "Perform taxonomy lookup and extended cleanup, correct genetic codes as well"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+-----------------------------------------------------------------
+MACRO Test_CorrectGeneticCodes "Correct genetic codes in coding regions"
+FOR EACH Cdregion
+Do
+    CorrectGeneticCode();
+Done
+-----------------------------------------------------------------
+MACRO Test_Autodef1 "Autodef complete sequence with modifier strain"
+VAR
+    list_feat_rule = "Complete Sequence"
+    misc_feat_rule = "Delete"
+FOR EACH TSEntry
+Do
+    Autodef(list_feat_rule, misc_feat_rule, "strain");
+Done
+-----------------------------------------------------------------
+MACRO Test_Autodef2 "Autodef list all features with modifier strain, country, use misc_feat comment before first semicolon"
+VAR
+    list_feat_rule = "List All Features"
+    misc_feat_rule = "CommentFeat"
+FOR EACH TSEntry
+Do
+    Autodef(list_feat_rule, misc_feat_rule, "strain", "country", "wrongmodifier");
+Done
+-----------------------------------------------------------------
+MACRO Test_Autodef3 "Autodef list all features with modifier strain, country, look for noncoding products in misc_feat with comments"
+VAR
+    list_feat_rule = "List All Features"
+    misc_feat_rule = "NoncodingProductFeat"
+FOR EACH TSEntry
+Do
+    Autodef(list_feat_rule, misc_feat_rule, "strain", "country", "clone");
+Done
+-----------------------------------------------------------------
+MACRO Test_Autodef4 "Autodef complete genome with modifier isolate"
+VAR
+    list_feat_rule = "Complete Genome"
+    misc_feat_rule = "Delete"
+FOR EACH SeqNa
+WHERE ISPRESENT("descr..molinfo.completeness") AND descr..molinfo.completeness = "complete"
+Do
+    Autodef(list_feat_rule, misc_feat_rule, "isolate");
+Done
+-----------------------------------------------------------------
+MACRO Test_BarcodeXrefs "Make BARCODE DbXrefs"
+FOR EACH SeqNa
+DO
+    MakeBOLDXrefs();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveBadXrefs "Remove CDS db-xref where CDS db-xref starts with 'taxon' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_space = true
+    ignore_punctuation = true
+FOR EACH Cdregion
+DO
+    obj = Resolve("dbxref") WHERE STARTS("obj.db", "taxon", case_sensitive, ignore_space, ignore_punctuation);
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_OptionalConstraint1 "Convert gene to rRNA where sequence type is nucleotide and gene is present and sequence has exactly 1 feature and where gene locus equals '16S ribosomal RNA gene' (ignore spaces, ignore punctuation), allow '' to be replaced by 'partial sequence', 'complete sequence', 'complete', 'partial', 'gene', 'sequence', and 'region', allow 'RNA' to be replaced by 'DNA', allow 'ribosomal' to be replaced by 'r', allow '16S' to be replaced by '5.8S', '12S', '18S', '23S', '26S', '28S', 'small subunit', and 'large subunit', allow ' ribosomal RNA gene' to be replaced by 'rDNA', 'rRNA', 'RNA', 'RNA gene', and 'rRNA gene', remove original feature"
+VAR
+    match1 = "16S ribosomal RNA gene"
+    match2 = "16S"
+    match3 = "ribosomal RNA gene"
+    match4 = "ribosomal"
+    match5 = "RNA"
+    match6 = "optional-gene"
+    match7 = "optional-ribosomal RNA"
+    match8 = "optional-RNA"
+    match9 = "emptystring01"
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+FOR EACH Gene
+WHERE SEQUENCE_FOR_SEQFEAT("inst.mol") IN ("dna" ,"rna", "na")
+      AND FEATS_ON_SEQ("any") = 1
+      AND EQUALS("data.gene.locus", match1, case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match1, match2, match3, match4, match5, match6, match7, match8, match9)
+DO
+    ConvertFeature("rRNA");
+    RemoveFeature();
+DONE
+-----------------------------------------------------------------
+MACRO Test_ReplaceSelenocysteines "Replace stops with selenocysteines"
+FOR EACH Cdregion
+DO
+    ReplaceSelenocysteineStops();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RetranslateCDS "Retranslate coding regions"
+VAR
+    obey_stop_codon = true
+FOR EACH Cdregion
+DO
+    RetranslateCDS(obey_stop_codon);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Constraint01 "Set taxname to 'Homo sapiens' if constraints are true"
+Var
+    Value_To_Apply = "Homo sapiens"
+    Handle_existing_text ="eReplace"
+    match = "Drs3"
+For each BioSource
+Where EQUALS("org.orgname.mod", "isolate", match) AND NOT ISPRESENT("subtype", "germline") 
+     AND SEQUENCE_FOR_SEQDESC("inst.mol") IN ("dna" ,"rna", "na")
+Do
+    SetStringQual("org.taxname", Value_To_Apply, Handle_existing_text);
+Done
+-----------------------------------------------------------------
+MACRO Test_DeleteBioSource1 "Remove biosource descriptors"
+FOR EACH BioSource
+WHERE FEATS_ON_SEQ("any") = 0
+DO
+    RemoveDescriptor();
+DONE
+-----------------------------------------------------------------
+MACRO Test_DeleteBioSource2 "Remove biosource features"
+FOR EACH BioSource
+DO
+    RemoveFeature();
+DONE
+-----------------------------------------------------------------
+MACRO Test_FeaturesConstraint "Apply location mitochondrion (overwrite existing text) where d_loop is present and sequence has exactly 1 feature and where object text does not equal 'mitochondrion' (case-sensitive)"
+FOR EACH BioSource
+WHERE FEATS_ON_SEQ("d-loop") = 1 AND FEATS_ON_SEQ("all") = 1
+DO
+    SetQual("genome", "mitochondrion");
+DONE
+-----------------------------------------------------------------
+MACRO Test_EditMolinfo "Edit molecule replace 'genomic' (case sensitive)  with 'peptide' where molecule equals 'genomic' (case-sensitive)"
+VAR
+find_text = "genomic"
+repl_text = "peptide"
+location = "anywhere"
+case_sensitive = true
+equals1 = "genomic"
+FOR EACH MolInfo
+WHERE EQUALS("biomol",equals1,true,false,false,false,false)
+DO
+EditStringQual("biomol", find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------
+MACRO Test_MolinfoConstraint "Apply molecule cRNA (overwrite existing text) where source taxname starts with 'Influenza A virus' and where sequence type is nucleotide"
+VAR
+    match = "Influenza A virus"
+FOR EACH MolInfo
+WHERE SEQUENCE_FOR_SEQDESC("inst.mol") IN ("dna" ,"rna", "na")
+      AND STARTS(BIOSOURCE_FOR_MOLINFO("org.taxname"), match)
+DO
+    SetQual ("biomol", "cRNA");
+DONE
+-----------------------------------------------------------------
+MACRO Test_DeleteMolinfo "Remove molinfo descriptors"
+FOR EACH MolInfo
+DO
+    RemoveDescriptor();
+DONE
+-----------------------------------------------------------------
+MACRO Test_Addproteintitles "Instantiate protein titles"
+FOR EACH SeqAA
+DO
+    AddProteinTitles();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveTitle "Remove Definition Line where sequence type is protein"
+FOR EACH Seqdesc
+WHERE CHOICETYPE() = "title" AND SEQUENCE_FOR_SEQDESC("inst.mol") = "aa"
+Do
+    RemoveDescriptor();
+Done
+-----------------------------------------------------------------
+MACRO Test_Add_Pub_Submission "Adding a new publication to the sequence"
+FOR EACH SeqNa
+DO
+   SetPub_Sub("authors.names.std.name.consortium", "NCBI RefSeq Targeted Loci Project");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Add_Date_to_Sub "Set date in a submission"
+FOR EACH Pubdesc
+WHERE PUB_AUTHORS("std.name.consortium") = "NCBI RefSeq Targeted Loci Project"
+DO
+   SetPub_Date(2015, 8, 5);
+DONE
+-----------------------------------------------------------------
+MACRO Test_Add_Affil_to_Sub "Set affiliation in a submission"
+FOR EACH Pubdesc
+WHERE PUB_AUTHORS("std.name.consortium") = "NCBI RefSeq Targeted Loci Project"
+DO
+   SetPub_Affil("affil", "Leverkusen University, Germany");
+   SetPub_Affil("city", "Leverkusen");
+   SetPub_Affil("sub", "North Rhine-Westphalia");
+   SetPub_Affil("country", "Germany");
+   SetPub_Affil("postal-code", "111234");
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveTitleAll "Remove Definition Line from all sequences"
+FOR EACH Seqdesc
+WHERE CHOICETYPE() = "title"
+Do
+    RemoveDescriptor();
+Done
+-----------------------------------------------------------------
+MACRO Test_FloatConstant "Testing floating-point constant"
+FOR EACH Cdregion
+WHERE ISPARTIALSTOP() and DISTFROMSTOP() <= 4.5
+DO
+    ExtendFeatToSeqStop();
+DONE
+-----------------------------------------------------------------
+MACRO Test_FloatVariable "Testing floating-point constant"
+VAR
+    dist = 4.3
+FOR EACH Cdregion
+WHERE ISPARTIALSTOP() and DISTFROMSTOP() <= dist
+DO
+    ExtendFeatToSeqStop();
+DONE
+-----------------------------------------------------------------
+MACRO Test_NewMolinfo "Change to completeness complete where sequence type is nucleotide"
+FOR EACH SeqNa
+DO
+    SetQual("descr..molinfo.completeness", "complete");
+DONE
+-----------------------------------------------------------------
+MACRO Test_AutodefId "Generate unique deflines"
+FOR EACH TSEntry
+DO
+    AutodefId();
+DONE
+-----------------------------------------------------------------
+MACRO Test_AdjustingGene "Extend 3' end of feature to end of sequence for CDS and retranslated affected coding regions and adjust overlapping gene"
+VAR
+    case_sensitive = true
+    retranslate_cds = true
+    adjust_gene = true
+FOR EACH Cdregion
+WHERE ISPARTIALSTOP() AND
+      DISTFROMSTOP() <= 2
+DO
+    ExtendFeatToSeqStop(retranslate_cds, adjust_gene);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ExtendToStart "Extend 5' end of feature to end of sequence for gene features only objects that are 5' partial with 5' end no more than 2 from end of sequence"
+FOR EACH Gene
+WHERE ISPARTIALSTART() AND
+      DISTFROMSTART() <= 2
+DO
+    ExtendFeatToSeqStart();
+DONE
+-----------------------------------------------------------------
+MACRO Test_GProjectID "Remove Genome Project ID"
+FOR EACH UserObject
+WHERE CHOICETYPE("type") = "str" AND type.str = "GenomeProjectsDB"
+DO
+   RemoveDescriptor();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RmvComment "Remove Comment descriptor where descriptor contains 'available'"
+FOR EACH Seqdesc
+WHERE CHOICETYPE() = "comment" AND CONTAINS("comment", "available")
+DO
+    RemoveDescriptor();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RmvKeyword01 "Remove genbank keyword where keyword is all uppercase"
+FOR EACH Seqdesc
+WHERE CHOICETYPE() = "genbank"
+DO
+    obj = Resolve("genbank.keywords") WHERE ISUPPER(obj);
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RmvKeyword02 "Remove genbank keyword"
+FOR EACH Seqdesc
+WHERE CHOICETYPE() = "genbank"
+DO
+    RemoveQual("genbank.keywords");
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink "Remove BioProject"
+FOR EACH DBLink
+DO
+   dblink_obj = Resolve("data") where dblink_obj.label.str = "BioProject";
+   RemoveQual(dblink_obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink01 "Edit BioSample replace '8' with 'TEST'"
+VAR
+    find_text = "8"
+    repl_text = "TEST"
+    case_sensitive = true
+FOR EACH DBLink
+DO
+   dblink_obj = Resolve("data") Where dblink_obj.label.str = "BioSample";
+   EditStringQual("dblink_obj.data.strs", find_text, repl_text, "anywhere", case_sensitive);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink02 "Remove BioProject where BioProject starts with 'PRJNA' (case-sensitive)"
+VAR
+    case_sensitive = true
+FOR EACH DBLink
+DO
+   dblink_obj = Resolve("data") where dblink_obj.label.str = "BioProject";
+   data_obj = Resolve("dblink_obj.data.strs") Where STARTS(data_obj, "PRJNA", case_sensitive);
+   RemoveQual(data_obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink03 "Remove text before 'numbers' in BioSample where BioSample contains 'SAM'"
+VAR
+    rmv_left = false
+    rmv_right = false
+    case_insensitive_rmv = false
+    whole_word_rmv = false
+FOR EACH DBLink
+DO
+    dblink_obj = Resolve("data") Where dblink_obj.label.str = "BioSample";
+    data_obj = Resolve("dblink_obj.data.strs") Where CONTAINS(data_obj, "SAM");
+    RemoveOutsideStringQual(data_obj, true, "eDigits", rmv_left, false, "", rmv_right, case_insensitive_rmv, whole_word_rmv);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink04 "Apply '2356' (append separated by semicolon) to BioSample where BioSample starts with 'SAM' (case-sensitive)"
+VAR
+    case_sensitive = true
+FOR EACH DBLink
+DO
+   dblink_obj = Resolve("data") where dblink_obj.label.str = "BioSample";
+   data_obj = Resolve("dblink_obj.data.strs") Where STARTS(data_obj, "SAM", case_sensitive);
+   SetStringQual(data_obj, "2356", "eAppend", ";");
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink05 "Apply 'SUB2356' (add new qualifier) to BioProject where BioProject contains 'PRJNA4567'"
+FOR EACH DBLink
+DO
+   dblink_obj = Resolve("data") where dblink_obj.label.str = "BioProject";
+   data_obj = Resolve("dblink_obj.data.strs") Where CONTAINS(data_obj, "PRJNA4567", true);
+   SetStringQual(data_obj, "SUB2356", "eAddQual");
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink06 "Apply 'SAM12345' to BioSample (overwrite existing text)"
+VAR
+    new_value = %SAM12345%
+    existing_text = "eReplace"
+FOR EACH SeqNA
+DO
+    AddDBLink("BioSample", new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink07 "Apply 'newvalue' to Trace Assembly Archive (overwrite existing text)"
+VAR
+    new_value = %newvalue%
+    existing_text = "eReplace"
+FOR EACH SeqNA
+DO
+    AddDBLink("Trace Assembly Archive", new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink08 "Apply 'newvalue' to BioSample (append separated by comma)"
+VAR
+    new_value = %newvalue%
+    existing_text = "eAppend"
+    delimiter = ","
+FOR EACH SeqNA
+DO
+    AddDBLink("BioSample", new_value, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink09 "Apply 'newvalue' to BioProject (add new qualifier)"
+VAR
+    new_value = %newvalue%
+    existing_text = "eAddQual"
+FOR EACH SeqNA
+DO
+    AddDBLink("BioProject", new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink10 "Apply 'newvalue' to BioSample (overwrite existing text) where BioSample starts with 'SAM' (case-sensitive)"
+VAR
+    new_value = "newvalue"
+    existing_text = "eReplace"
+    starts1 = %SAM%
+FOR EACH DBLink
+DO
+    dblink_obj = Resolve("data") WHERE EQUALS("dblink_obj.label.str", "BioSample", true);
+    data_obj = Resolve("dblink_obj.data.strs") WHERE STARTS(data_obj,starts1,true);
+    SetStringQual(data_obj, new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DBLink11 "Remove BioSample where BioSample contains 'SUB' (case-sensitive)"
+VAR
+    contains2 = "SUB"
+    case_sensitive = true
+FOR EACH DBLink
+DO
+    dblink_obj = Resolve("data") WHERE EQUALS("dblink_obj.label.str", "BioSample", true);
+    data_obj = Resolve("dblink_obj.data.strs") WHERE CONTAINS(data_obj, contains2, case_sensitive);
+    RemoveQual(data_obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_NestedFunction01 "Apply location mitochondrion (overwrite existing text) where d_loop note equals 'control region' (ignore spaces, ignore punctuation) and where object text does not equal 'mitochondrion' (case-sensitive)"
+VAR
+    match = "control region"
+    case_sensitive = false
+    ignore_space = true
+    ignore_punctuation = true
+FOR EACH BioSource
+WHERE EQUALS(FEATURES("d-loop", "comment"), match, case_sensitive, ignore_space, ignore_punctuation)
+DO
+    SetQual("genome", "mitochondrion");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Translation "Remove cds comment where cds translation equals 'MNSHGILGLARWSV'"
+FOR EACH Cdregion
+WHERE TRANSLATION() = "MNSHGILGLARWSV"
+DO
+  RemoveQual("comment");
+DONE
+-----------------------------------------------------------------
+MACRO Test_LocationType "Remove CDS and gene only objects with single interval"
+VAR
+     loc_type = "single-interval"
+FOR EACH SeqFeat
+WHERE (CHOICETYPE("data") = "gene" OR CHOICETYPE("data") = "cdregion") AND ISLOCATIONTYPE(loc_type)
+DO
+    RemoveFeature();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveAllFeat "Remove all features"
+FOR EACH SeqNa
+DO
+    RemoveAllFeatures();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveAllFeat1 "Remove all features"
+FOR EACH TSEntry
+DO
+    RemoveAllFeatures();
+DONE
+-----------------------------------------------------------------
+MACRO Test_Interference "Fix pub affiliation"
+For Each Pubdesc
+Do
+    affil = PUB_AFFIL("affil");
+    obj = PUB_AFFIL();
+    FixPubCapsAffiliation(obj);
+Done
+-----------------------------------------------------------------
+MACRO Test_FixPubFields "Fix pub affiliation, title, authors and affiliation country"
+FOR EACH Pubdesc
+DO
+    affil = PUB_AFFIL();
+    FixPubCapsAffiliation(affil);
+    title = PUB_TITLE();
+    FixPubCapsTitle(title);
+    authors = PUB_AUTHORS();
+    FixPubCapsAuthors(authors);
+    FixPubCapsAffilCountry(affil);
+DONE
+-----------------------------------------------------------------
+MACRO Test_FixPubCountry "Fix pub affiliation country"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AFFIL();
+    FixPubCapsAffilCountry(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_TrimTerminalNs "Trim Terminal Ns"
+FOR EACH SeqNa
+DO
+    TrimTerminalNs();
+DONE
+-----------------------------------------------------------------
+MACRO Test_NoHost "Apply Homo sapiens to host (overwrite existing text) where source isolation-source equals 'Homo sapiens' (ignore spaces, ignore punctuation), allow 'Homo sapiens' to be replaced by 'human', 'Homo sapien', 'Homosapiens', 'Homo spiens', 'Homo Sapience', 'homosapein', 'homosapien', 'homo_sapien', 'homo_sapiens', 'Homosipian', 'Human Being', 'Human Beings', 'humans', 'Homo sappiens', 'human sapiens', 'human biengs', and 'human bieng', allow 'sapiens' to be replaced by 'sapeins', 'sapein', 'sapens', 'sapins', 'sapin', 'sapen', 'spaeins', 'sapians', 'sapian', 'sapies', 'sapie', and 'sapien' and where source taxname does not equal 'Homo sapiens' (case-sensitive)"
+VAR
+    qual_name = "org.orgname.mod"
+    modifier = "nat-host" 
+    new_value = "Homo sapiens"
+    existing_text = "eReplace"
+    case_sensitiveA = false
+    ignore_spaces = true
+    ignore_punct = true
+    case_sensitiveB = true
+FOR EACH BioSource
+WHERE EQUALS("subtype", "isolation-source", new_value, case_sensitiveA, ignore_spaces, ignore_punct, "synonyms.txt", new_value) AND
+      NOT EQUALS("org.taxname", new_value, case_sensitiveB)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier "Apply tandem to repeat_region rpt-type (append separated by semicolon) where repeat_region satellite-type equals 'microsatellite' (case-sensitive) and where repeat_region rpt-type does not contain 'tandem' (case-sensitive)"
+VAR
+    new_value = "tandem"
+    existing_text = "eAppend"
+    delimiter = ";"
+    case_sensitive = true
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region" AND
+    STARTS("qual", "satellite", "microsatellite", case_sensitive) AND
+    NOT CONTAINS("qual", "rpt_type", new_value, case_sensitive)
+DO   
+    obj = Resolve("qual") WHERE obj.qual = "rpt_type";
+    SetGBQualifier(obj, "qual", "rpt_type", new_value, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier1 "Apply 'new_name' to repeat_region satellite-name (append separated by semicolon)"
+VAR
+    new_value = "new_name"
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region"
+DO   
+    obj = Resolve("qual") WHERE obj.qual = "satellite";
+    SetGBQualifier(obj, "qual", "satellite-name", new_value, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier2 "Apply 'microsatellite' to repeat_region satellite-type (overwrite existing text)"
+VAR
+    new_value = "microsatellite"
+    existing_text = "eReplace"
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region"
+DO   
+    obj = Resolve("qual") WHERE obj.qual = "satellite";
+    SetGBQualifier(obj, "qual", "satellite-type", new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier3 "Apply 'microsatelliteT' to repeat_region satellite-type (overwrite existing text)"
+VAR
+    new_value = "microsatelliteT"
+    existing_text = "eReplace"
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region"
+DO   
+    obj = Resolve("qual") WHERE obj.qual = "satellite";
+    SetGBQualifier(obj, "qual", "satellite-type", new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier4 "Apply '' to repeat_region satellite-type (overwrite existing text)"
+VAR
+    new_value = ""
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region"
+DO   
+    obj = Resolve("qual") WHERE obj.qual = "satellite";
+    SetGBQualifier(obj, "qual", "satellite-type", new_value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier5 "Apply '' to repeat_region satellite-name (overwrite existing text)"
+VAR
+    new_value = ""
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region"
+DO   
+    obj = Resolve("qual") WHERE obj.qual = "satellite";
+    SetGBQualifier(obj, "qual", "satellite-name", new_value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier6 "Apply 'new_name' to mobile_element mobile-element-type-name (overwrite existing text)"
+VAR
+    new_value = %new_name%
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH ImpFeat
+WHERE data.imp.key = "mobile_element"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "mobile_element_type";
+    SetGBQualifier(obj, "qual", "mobile-element-type-name", new_value, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier7 "Apply 'integron' to mobile_element mobile-element-type-type (overwrite existing text)"
+VAR
+    new_value = %integron%
+    existing_text = "eReplace"
+FOR EACH ImpFeat
+WHERE data.imp.key = "mobile_element"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "mobile_element_type";
+    SetGBQualifier(obj, "qual", "mobile-element-type-type", new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier8 "Apply 'integronT' to mobile_element mobile-element-type-type (overwrite existing text)"
+VAR
+    new_value = %integronT%
+    existing_text = "eReplace"
+FOR EACH ImpFeat
+WHERE data.imp.key = "mobile_element"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "mobile_element_type";
+    SetGBQualifier(obj, "qual", "mobile-element-type-type", new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier9 "Apply '' to mobile_element mobile-element-type-name (overwrite existing text)"
+VAR
+    new_value = %%
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH ImpFeat
+WHERE data.imp.key = "mobile_element"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "mobile_element_type";
+    SetGBQualifier(obj, "qual", "mobile-element-type-name", new_value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_GBQualifier10 "Apply '' to mobile_element mobile-element-type-type (overwrite existing text)"
+VAR
+    new_value = %%
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH ImpFeat
+WHERE data.imp.key = "mobile_element"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "mobile_element_type";
+    SetGBQualifier(obj, "qual", "mobile-element-type-type", new_value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetEndsPartial "Set both ends partial, extend both ends of feature to end of sequence for CDS features and retranslate affected coding regions and adjust overlapping gene"
+VAR
+    extend = true
+    retranslate_cds = true
+    adjust_gene = true
+FOR EACH Cdregion
+DO
+    SetBothEndsPartial("all", extend, retranslate_cds, adjust_gene);
+DONE
+-----------------------------------------------------------------
+Macro Test_RemoveEndsPartial01 "Clear both ends partial for gene features"
+For Each Gene
+DO
+    RemoveBothEndsPartial("all");
+DONE
+-----------------------------------------------------------------
+Macro Test_RemoveEndsPartial02 "Clear both ends partial when both ends of feature are not at end of sequence for gene features"
+For Each Gene
+DO
+    RemoveBothEndsPartial("not-at-end");
+DONE
+-----------------------------------------------------------------
+Macro Test_RemoveEndsPartial03 "Clear both ends partial for CDS features and retranslate affected coding regions and adjust overlapping gene"
+VAR
+    retranslate_cds = true
+    adjust_gene = true
+For Each Cdregion
+DO
+    RemoveBothEndsPartial("all", retranslate_cds, adjust_gene);
+DONE
+-----------------------------------------------------------------
+Macro Test_ConvertLocType01 "Convert location to single interval for rRNA features and adjust overlapping gene"
+VAR
+    retranslate_cds = false
+    adjust_gene = true
+For Each rRNA
+DO
+    ConvertLocationType("single-interval", retranslate_cds, adjust_gene);
+DONE
+-----------------------------------------------------------------
+Macro Test_ConvertLocType02 "Convert location to single interval for CDS features and retranslate affected coding regions"
+VAR
+    retranslate_cds = true
+For Each Cdregion
+DO
+    ConvertLocationType("single-interval", retranslate_cds);
+DONE
+-----------------------------------------------------------------
+Macro Test_ConvertLocStrand "Convert any strand to reverse for CDS features and retranslate affected coding regions and adjust overlapping gene"
+VAR
+    retranslate_cds = true
+    adjust_gene = true
+For Each Cdregion
+DO
+    ConvertLocationStrand("any","reverse", retranslate_cds, adjust_gene);  
+DONE
+-----------------------------------------------------------------
+Macro Test_Set5Partial "Set 5' partial when coding region frame is greater than one, extend 5' end to the sequence end for CDS features and retranslate affected coding regions and adjust overlapping gene"
+VAR
+    retranslate_cds = true
+    adjust_gene = true
+For Each Cdregion
+DO
+    SetPartialStart("frame-not-one", true, retranslate_cds, adjust_gene);  
+DONE
+-----------------------------------------------------------------
+Macro Test_Set3Partial01 "Set 3' partial, extend 3' end of feature to end of seuquence for gene features and retranslate affected coding regions and adjust overlapping gene"
+VAR
+    retranslate_cds = true
+    adjust_gene = true
+For Each Gene
+DO
+    SetPartialStop("all", true, retranslate_cds, adjust_gene);  
+DONE
+-----------------------------------------------------------------
+Macro Test_Set3Partial02 "Set 3' partial, extend 3' end of feature to end of seuquence for all features and retranslate affected coding regions and adjust overlapping gene"
+VAR
+    retranslate_cds = true
+    adjust_gene = true
+For Each SeqFeat
+DO
+    SetPartialStop("all", true, retranslate_cds, adjust_gene);  
+DONE
+-----------------------------------------------------------------
+Macro Test_Clear5Partial01 "Clear 5' partial when coding region has start codon for CDS features"
+For Each Cdregion
+DO
+    ClearPartialStart("good-start");
+DONE
+-----------------------------------------------------------------
+Macro Test_Clear5Partial02 "Clear 5' partial when 5' end of feature is not at the end of sequence for all features"
+For Each SeqFeat
+DO
+    ClearPartialStart("not-at-end");
+DONE
+-----------------------------------------------------------------
+Macro Test_Clear3Partial "Clear 3' partial for all features and retranslate affected coding regions and adjust overlapping gene"
+VAR
+    retranslate_cds = true
+    adjust_gene = true
+For Each SeqFeat
+DO
+    ClearPartialStop("all", retranslate_cds, adjust_gene);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyCDS_01 "Apply CDS"
+VAR
+    partial5 = true
+    partial3 = false
+    strand = "plus"
+VAR
+    frame  = "best"
+    add_redundant = true
+    add_mRNA = false
+    protein_name = "some protein name"
+For Each SeqNa
+DO
+    location = MakeInterval(5, 105, partial5, partial3, strand);
+    ApplyCDS(protein_name, "", frame, location, add_redundant, add_mRNA);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyCDS_02 "Apply CDS"
+VAR
+    partial5 = true
+    partial3 = false
+    strand = "minus"
+VAR
+    frame  = 1
+    add_redundant = false
+    add_mRNA = false
+    protein_name = "some protein name"
+For Each SeqNa
+DO
+    location = MakePoint(5, partial5, partial3, strand);
+    ApplyCDS(protein_name, "test protein descr", frame, location, add_redundant, add_mRNA);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyCDS_03 "Apply CDS"
+VAR
+    partial5 = false
+    partial3 = true
+    strand = "plus"
+VAR
+    frame  = 2
+    add_redundant = false
+    add_mRNA = true
+    protein_name = "some protein name"
+    protein_desc = "some protein description"
+    gene_locus = "some gene locus"
+For Each SeqNa
+WHERE FEATS_ON_SEQ("cds") = 0
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyCDS(protein_name, protein_desc, frame, location, add_redundant, add_mRNA, "comment", "some CDS comment");
+    ApplyGene(location, "data.gene.locus", gene_locus);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyCDS_04 "Apply CDS"
+VAR
+    partial5 = true
+    partial3 = false
+    strand = "plus"
+VAR
+    frame  = 2
+    add_redundant = true
+    add_mRNA = true
+    protein_name = "some protein name"
+For Each SeqNa
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyCDS(protein_name, "", frame, location, add_redundant, add_mRNA, "comment", "some CDS comment");
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyRNA_01 "Apply mRNA"
+VAR
+    partial5 = true
+    partial3 = false
+    strand = "plus"
+VAR
+    add_redundant = true
+    rna_name = "test mRNA name"
+For Each SeqNa
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyRNA("mRNA", rna_name, location, add_redundant);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyRNA_02 "Apply rRNA"
+VAR
+    partial5 = true
+    partial3 = true
+    strand = "plus"
+VAR
+    add_redundant = true
+    rna_name = "16S ribosomal RNA"
+For Each SeqNa
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyRNA("rRNA", rna_name, location, add_redundant);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyRNA_03 "Apply tRNA"
+VAR
+    partial5 = true
+    partial3 = false
+    strand = "minus"
+VAR
+    add_redundant = false
+    rna_name = "tRNA-Ala"
+    gene_locus = "test gene"
+For Each SeqNa
+WHERE FEATS_ON_SEQ("tRNA") = 0
+DO
+    location = MakeInterval(230, 5, partial5, partial3, strand);
+    ApplyRNA("tRNA", rna_name, location, add_redundant);
+    ApplyGene(location, "data.gene.locus", gene_locus);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyRNA_04 "Apply ncRNA"
+VAR
+    partial5 = false
+    partial3 = false
+    strand = "plus"
+VAR
+    add_redundant = false
+    rna_name = "ncRNA name"
+For Each SeqNa
+DO
+    location = MakeInterval(10, 60, partial5, partial3, strand);
+    ApplyRNA("ncRNA", rna_name, location, add_redundant, "data.rna.ext.gen.class", "guide_RNA");
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveSequence "Remove all protein sequences"
+FOR EACH SeqAa
+DO
+    RemoveSequence();
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyGene_01 "Apply Gene"
+VAR
+    partial5 = true
+    partial3 = false
+    strand = "plus"
+VAR
+    add_redundant = false
+    gene_locus = "test gene locus"
+    gene_descr = "test gene descr"
+    gene_comment = "test gene comment"
+For Each SeqNa
+DO
+    location = MakeInterval(5, 150, partial5, partial3, strand);
+    ApplyFeature("data.gene.locus", gene_locus, location, add_redundant, "data.gene.desc", gene_descr, "comment", gene_comment);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyGene_02 "Apply Gene"
+VAR
+    partial5 = true
+    partial3 = false
+    strand = "plus"
+VAR
+    add_redundant = false
+    gene_locus = "test gene locus"
+For Each SeqNa
+DO
+    location = MakeInterval(5, 150, partial5, partial3, strand);
+    ApplyFeature("data.gene.locus", gene_locus, location, add_redundant, "qual.qual", "some_qualifier", "qual.val", "qualifier value");
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyGene_03 "Apply Gene feature with 'new syn' gene_synonym, apply gene with 'new gene locus' gene locus "
+VAR
+    partial5 = false
+    partial3 = false
+    loc_strand = %plus%
+    qual_value1 = %ndew sun%
+    gene_symbol = %new gene locus%
+    add_redundant = %true%
+FOR EACH SeqNA
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, loc_strand);
+    ApplyFeature("data.gene.locus", gene_symbol, location, add_redundant, "comment", "new comment", "data.gene.syn", qual_value1);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyProtein_01 "Apply Protein"
+VAR
+    partial5 = false
+    partial3 = false
+    strand = "plus"
+VAR
+    add_redundant = true
+    protein_name = "test protein name"
+For Each SeqAa
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyFeature("data.prot.name", protein_name, location, add_redundant);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyProtein_02 "Apply mat-peptide"
+VAR
+    partial5 = false
+    partial3 = false
+    strand = "plus"
+VAR
+    add_redundant = true
+    protein_name = "test protein name"
+For Each SeqAa
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyFeature("data.prot.name", protein_name, location, add_redundant, "data.prot.processed", "mature");
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyOtherFeat_01 "Apply misc-feature"
+VAR
+    partial5 = false
+    partial3 = false
+    strand = "plus"
+    add_redundant = true
+For Each SeqNa
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyFeature("data.imp.key", "misc_feature", location, add_redundant);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyOtherFeat_02 "Apply biosource feature"
+VAR
+    partial5 = false
+    partial3 = false
+    strand = "plus"
+    add_redundant = true
+For Each SeqNa
+WHERE FEATS_ON_SEQ("source") = 0
+DO
+    location = MakeInterval(23, 100, partial5, partial3, strand);
+    ApplyFeature("data.biosrc.org.taxname", "Falco cherrug", location, add_redundant);
+    ApplyGene(location, "data.gene.locus", "test gene");
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyOtherFeat_03 "Apply site"
+VAR
+    partial5 = false
+    partial3 = false
+    strand = "plus"
+    add_redundant = true
+For Each SeqNa
+DO
+    location = MakePoint(23, partial5, partial3, strand);
+    ApplyFeature("data.site", "glycosylation", location, add_redundant);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyOtherFeat_04 "Apply publication feature"
+VAR
+    partial5 = false
+    partial3 = false
+    strand = "plus"
+    add_redundant = true
+    pub_title = "testing title"
+For Each SeqNa
+DO
+    location = MakeInterval(23, 100, partial5, partial3, strand);
+    ApplyFeature("data.pub.pub..gen.cit", "Unpublished", location, add_redundant, "data.pub.pub..gen.title", pub_title);
+DONE
+-----------------------------------------------------------------
+Macro Test_ApplyOtherFeat_05 "Apply biosource feature"
+VAR
+    partial5 = false
+    partial3 = false
+    strand = "plus"
+    add_redundant = true
+For Each SeqNa
+DO
+    location = MakeInterval(23, 100, partial5, partial3, strand);
+    ApplyFeature("data.biosrc.org.taxname", "Falco cherrug", location, add_redundant);
+    ApplyGene(location, "data.gene.locus", "test gene");
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyOtherFeat_06 "Apply misc_feature feature with 'some experiment' experiment with 'some function' function"
+VAR
+    partial5 = false
+    partial3 = %false%
+    loc_strand = %plus%
+    qual_value1 = %some experiment%
+    qual_value3 = %some function%
+    add_redundant = true
+FOR EACH SeqNA
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, loc_strand);
+    ApplyFeature("data.imp.key", "misc_feature", location, add_redundant, "qual.qual", "experiment", "qual.val", qual_value1, "qual.qual", "function", "qual.val", qual_value3);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ISOJTALookup "Lookup ISO_JTA for article titles"
+For Each Pubdesc
+Do
+    ISOJTALookup();
+Done
+-----------------------------------------------------------------
+MACRO Test_FixUSA "Fix USA and state abbreviations in publications"
+FOR EACH Pubdesc
+DO
+    FixUSAAndStateAbbreviations();
+DONE
+-----------------------------------------------------------------
+MACRO Test_UpdatemRNAProduct1 "Edit protein name replace ', partial CDS' (case insensitive) with ''"
+VAR
+    find_text = ", partial CDS"
+    repl_text = ""
+    location = "at the end"
+    case_sensitive = false
+FOR EACH Protein
+DO
+    bool_obj = EditStringQual ("data.prot.name", find_text, repl_text, location, case_sensitive);
+    UpdatemRNAProduct(bool_obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_UpdatemRNAProduct2 "Edit protein name replace ', partial CDS' (case insensitive) with ''"
+VAR
+    find_text = ", partial CDS"
+    repl_text = ""
+    location = "at the end"
+    case_sensitive = false
+FOR EACH Protein
+WHERE ENDS("data.prot.name", find_text)
+DO
+    EditStringQual ("data.prot.name", find_text, repl_text, location, case_sensitive);
+    UpdatemRNAProduct();
+DONE
+-----------------------------------------------------------------
+MACRO Test_UpdatemRNAProduct3 "Convert protein name to protein name (overwrite existing text) where protein name equals 'Inclusion body protein', allow 'Inclusion body protein' to be replaced by 'Reverse Transcriptase', 'Glucose-6-phosphate dehydrogenase', 'Phosphoribosylaminoimidazole carboxylase', 'Transkelotase', 'Envelope glycoprotein precursor', 'Fusion protein', 'Core protein', 'large Surface protein', 'Rhodopsin', 'Brain Derived Neurotrophic Factor', 'Oocyte maturation factor', 'Phosducin', 'Prolactin receptor', 'Spike protein', 'Histone protein', 'Nucleocapsid protein', 'Adenylate Kinase', 'Alcohol dehydrogenase', 'Glucosephosphate isomerase', 'Malate Dehydrogenase', 'Hemagglutinin', 'Large protein', 'Matrix protein', 'Phosphoprotein', 'Nucleolin', 'Cell Division Cycle 42', 'Heat Shock Protein 90', 'Growth Hormone', 'Elongation Factor 1 alpha', and 'Attachment protein'" 
+VAR
+    match = "Inclusion body protein"
+    cap_change = "tolower"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH Protein
+WHERE EQUALS("data.prot.name", match, "synonyms.txt", match)
+DO
+    src = Resolve("data.prot.name") WHERE EQUALS(src, match, "synonyms.txt", match);
+    dest = Resolve("data.prot.name") WHERE EQUALS(dest, match, "synonyms.txt", match);
+    ConvertStringQual (src, dest, cap_change, strip_name, existing_text);
+    UpdatemRNAProduct();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RnaProduct1 "Apply alanine to rna product (overwrite existing text)"
+VAR
+    new_value = "alanine"
+    existing_text = "eReplace"
+FOR EACH Rna
+DO
+    SetRnaProduct(new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RnaProduct2 "Remove any rna product"
+FOR EACH Rna
+DO
+    RemoveRnaProduct();
+DONE
+-----------------------------------------------------------------
+MACRO Test_RnaProduct3 "Apply '' to rna product (overwrite existing text)"
+VAR
+    new_value = ""
+    existing_text = "eReplace"
+FOR EACH Rna
+DO
+    SetRnaProduct(new_value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RnaProduct4 "Apply '' to rna product (overwrite existing text)"
+VAR
+    new_value = ""
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH Rna
+DO
+    SetRnaProduct(new_value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RmvLineageSrcNotes "Remove lineage source notes"
+FOR EACH BioSource
+DO
+    RemoveLineageSourceNotes();
+DONE
+-----------------------------------------------------------------
+MACRO Test_BsrcForSequence01 "Remove topology where bio-material contains 'test' (case-sensitive) and the number of misc_RNA features on sequence is exactly 1"
+VAR
+contains1 = "test"
+FOR EACH Seq
+WHERE CONTAINS(BIOSOURCE_FOR_SEQUENCE("org.orgname.mod", "bio-material"),contains1,true,false,false,false,false)
+DO
+RemoveQual("inst.topology");
+DONE
+-----------------------------------------------------------------
+MACRO Test_LookupPub "Lookup publication by PubMedID"
+FOR EACH Pubdesc
+DO
+    PMIDLookup();
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyPmid1 "Apply '21156586' to PMID (overwrite existing text)"
+VAR
+    new_value = %21156586%
+FOR EACH Pubdesc
+DO
+    SetPMID(new_value);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyPmid2 "Apply 21156586 to PMID (overwrite existing text) where PMID equals '5689'"
+FOR EACH Pubdesc
+WHERE PUB_PMID() = 5689
+DO
+    SetPMID(21156586);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyPmid3 "Apply 22956918 to PMID (overwrite existing text) where publication status is Unpublished"
+FOR EACH Pubdesc
+WHERE PUB_CLASS() = "Unpublished"
+DO
+    SetPMID(22956918);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyPmid4 "Apply '' to PMID (overwrite existing text)"
+VAR
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    SetPMID("", remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubTitle1 "Apply new title to publication title (append separated by comma)"
+VAR
+    existing_text = "eAppend"
+    delimiter = ","
+FOR EACH Pubdesc
+DO
+    title = PUB_TITLE();
+    SetPubTitle(title, "new title", existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubTitle2 "Apply new title to publication title (append separated by comma) where title contains 'abbreviated'"
+VAR
+    existing_text = "eAppend"
+    delimiter = ","
+FOR EACH Pubdesc
+WHERE CONTAINS(PUB_TITLE(), "abbreviated")
+DO
+    title = PUB_TITLE() WHERE CONTAINS(title, "abbreviated");
+    SetPubTitle(title, "new title", existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubTitle3 "Apply new title to publication title (append separated by comma) (will affect multiple ones) where title contains 'abbreviated'"
+VAR
+    existing_text = "eAppend"
+    delimiter = ","
+FOR EACH Pubdesc
+WHERE CONTAINS(PUB_TITLE(), "abbreviated")
+DO
+    title = PUB_TITLE();
+    SetPubTitle(title, "new title", existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubTitle4 "Apply new title to publication title (append separated by comma), remove blank fields"
+VAR
+    existing_text = "eAppend"
+    delimiter = ","
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    title = PUB_TITLE();
+    SetPubTitle(title, "", existing_text, delimiter, remove_blank);
+DONE
+-----------------------------------------------------------------
+
+MACRO Test_SetPubAffil_01 "Apply Mera to publication city (append separated by comma)"
+VAR
+    existing_text = "eAppend"
+    delimiter = ","
+FOR EACH Pubdesc
+DO
+    SetPubAffil("city", "Mera", existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAffil_02 "Apply University of Delhi to publication affiliation (overwrite existing text) where affiliation contains 'Calcutta'"
+VAR
+    existing_text = "eReplace"
+FOR EACH Pubdesc
+WHERE CONTAINS(PUB_AFFIL("affil"), "Calcutta")
+DO
+    SetPubAffil("affil", "University of Delhi", existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAffil_03 "Apply 25689 to publication postal code (overwrite existing text) where postal code is not present"
+VAR
+    existing_text = "eReplace"
+FOR EACH Pubdesc
+WHERE NOT ISPRESENT(PUB_AFFIL("postal-code"))
+DO
+    SetPubAffil("postal-code", "25689", existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_DelAuthors "Remove author name list"
+FOR EACH Pubdesc
+DO
+   RemoveAuthors();
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_01 "Apply 'Mera' to publication author last name (append (no separator)) where author last name is 'Jorrin'"
+VAR
+    existing_text = "eAppend"
+    delimiter = ""
+    match = "Jorrin"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() where EQUALS("obj.last", match);
+    SetPubAuthorName(obj, "last", "Mera", existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_02 "Apply 'Ana' to publication author first name (overwrite existing text) where author last name does not contain 'Uj'"
+VAR
+    existing_text = "eReplace"
+    match = "Uj"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE NOT CONTAINS("obj.last", match);
+    SetPubAuthorName(obj, "first", "Ana", existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_03 "Apply 'Ana' to publication author first name (overwrite existing text) where author last name contains 'Kern'"
+VAR
+    existing_text = "eReplace"
+    match = "Kern"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE CONTAINS("obj.last", match);
+    SetPubAuthorName(obj, "first", "Ana", existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_04 "Apply 'Ana' to publication author first name (overwrite existing text) where author last name equals 'Reetz'"
+VAR
+    existing_text = "eReplace"
+    match = "Reetz"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE EQUALS("obj.last", match);
+    SetPubAuthorName(obj, "first", "Ana", existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_05 "Apply Jr. to publication author suffix (overwrite existing text) where author last name is 'Hoffmann'"
+VAR
+    existing_text = "eReplace"
+    match = "Hoffmann"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE EQUALS("obj.last", match);
+    SetPubAuthorName(obj, "suffix", "Jr", existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_06 "Apply 'NewName' to publication author last name (add new qualifier) where author last name contains 'Uj'"
+VAR
+    existing_text = "eAddQual"
+    match = "Uj"
+FOR EACH Pubdesc
+WHERE CONTAINS(PUB_AUTHORS("last"), match)
+DO
+    obj = PUB_AUTHORS();
+    SetPubAuthorName(obj, "last", "NewName", existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_07 "Apply 'NewCons' to publication consortium (append (no separator)) where author last name is 'Wolf'"
+VAR
+    existing_text = "eAppend"
+    delimiter = ""
+    match = "Wolf"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() where EQUALS("obj.last", match);
+    SetPubAuthorName(obj, "consortium", "NewCons", existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_08 "Apply 'NewCons'to publication consortium (add new qualifier) where author last name contains 'Hoffmann'"
+VAR
+    existing_text = "eAddQual"
+    match = "Hoffmann"
+FOR EACH Pubdesc
+Where CONTAINS(PUB_AUTHORS("last"), match)
+DO
+    obj = PUB_AUTHORS();
+    SetPubAuthorName(obj, "consortium", "NewCons", existing_text);
+DONE
+-------------------------------------------------------------------
+MACRO Test_SetPubAuthor_09 "Apply 'D.' to publication author initials (append (no separator)) where author last name equals 'Hoffmann'"
+VAR
+    existing_text = "eAppend"
+    delimiter = ""
+    match = "Hoffmann"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() where EQUALS("obj.last", match);
+    SetPubAuthorName(obj, "initials", "D.", existing_text, delimiter);
+DONE
+-------------------------------------------------------------------
+MACRO Test_SetPubAuthor_10 "Apply 'NewName' to publication author last name (add new qualifier) where author last name contains 'Sarkar'"
+VAR
+    existing_text = "eAddQual"
+    match = "Sarkar"
+FOR EACH Pubdesc
+WHERE CONTAINS(PUB_AUTHORS("last"), match)
+DO
+    obj = PUB_AUTHORS();
+    SetPubAuthorName(obj, "last", "NewName", existing_text);
+DONE
+-------------------------------------------------------------------
+MACRO Test_SetPubAuthor_11 "Apply 'M' to publication author middle initials (overwrite existing text) where author first name equals 'Beatriz' (case-sensitive)"
+VAR
+    existing_text = "eReplace"
+    equals1 = %Beatriz%
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE EQUALS("obj.first",equals1,true);
+    SetPubAuthorMI(obj, "M", existing_text);
+DONE
+-------------------------------------------------------------------
+MACRO Test_SetPubAuthor_12 "Apply 'A' to publication author middle initials (overwrite existing text) where author last name equals 'Poole' (case-sensitive)"
+VAR
+    existing_text = "eReplace"
+    equals2 = %Poole%
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE EQUALS("obj.last",equals2,true);
+    SetPubAuthorMI(obj, "A", existing_text);
+DONE
+-------------------------------------------------------------------
+MACRO Test_SetPubAuthor_13 "Apply '' to publication author first name (append (no separator)) where author last name is 'Jorrin'"
+VAR
+    existing_text = "eAppend"
+    delimiter = ""
+    match = "Jorrin"
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() where EQUALS("obj.last", match);
+    SetPubAuthorName(obj, "first", "", existing_text, delimiter, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_14 "Apply '' to publication author last name (append (no separator)) where author last name is 'Jorrin' (no change)"
+VAR
+    existing_text = "eAppend"
+    delimiter = ""
+    match = "Jorrin"
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() where EQUALS("obj.last", match);
+    SetPubAuthorName(obj, "last", "", existing_text, delimiter, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_15 "Apply '' to publication author suffix (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS();
+    SetPubAuthorName(obj, "suffix", "", existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_16 "Apply '' to publication consortium (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS("consortium");
+    SetPubAuthorName(obj, "consortium", "", existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubAuthor_17 "Apply 'A' to publication author middle initials (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS();
+    SetPubAuthorMI(obj, "A", existing_text);
+DONE
+-------------------------------------------------------------------
+MACRO Test_SetPubAuthor_18 "Apply '' to publication author middle initials (overwrite existing text) where author last name equals 'Poole' (case-sensitive)"
+VAR
+    existing_text = "eReplace"
+    equals2 = "Poole"
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS() WHERE EQUALS("obj.last",equals2,true);
+    SetPubAuthorMI(obj, "", existing_text, remove_blank);
+DONE
+-------------------------------------------------------------------
+MACRO Test_EditPubName01 "Edit publication author first name replace 'Sandro' (case sensitive)  with 'Adam'"
+VAR
+    find_text = "Michael"
+    repl_text = "Adam"
+    location = "anywhere"
+    case_sensitive = true
+    is_regex = false
+FOR EACH Pubdesc
+DO
+    first = PUB_AUTHORS("first");
+    EditStringQual(first, find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+-------------------------------------------------------------------
+MACRO Test_EditPubName02 "Edit publication author first name replace 'Jochen' (case sensitive)  with 'Adam' where author last name equals 'Reetz' (case-sensitive)"
+VAR
+    find_text = "Jochen"
+    repl_text = "Adam"
+    location = "anywhere"
+    case_sensitive = true
+    is_regex = false
+    equals1 = "Reetz"
+FOR EACH Pubdesc
+WHERE EQUALS(PUB_AUTHORS("last"),equals1,true,false,false,false,false)
+DO
+    first = PUB_AUTHORS("first");
+    EditStringQual(first, find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+-------------------------------------------------------------------
+MACRO Test_RmvPubAuthorMI_01 "Remove publication author middle initials"
+FOR EACH Pubdesc
+DO
+    obj = PUB_AUTHORS();
+    RemovePubAuthorMI(obj);
+DONE
+-------------------------------------------------------------------
+Macro Test_TrimGeneLocus2 "Trim the first two characters from gene locus"
+For Each Gene
+DO
+    TrimStringQual("data.gene.locus", 2);
+DONE
+-------------------------------------------------------------------
+MACRO Test_RemoveTaxFrom "Remove organism name from isolate"
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "isolate";
+    RemoveOrgName("o.subname");
+DONE
+-------------------------------------------------------------------
+MACRO Test_ApplyPmidEntry "Apply pmid 21148857 to the entry"
+FOR EACH TSEntry
+DO
+    ApplyPmidToEntry(21148857);
+DONE
+-------------------------------------------------------------------
+MACRO Test_SetStrCommField01 "Apply 'de novo A5 pipeline' to structured comment field 'Assembly method' (overwrite existing text)"
+FOR EACH StructComment
+DO
+    SetStructCommField("Assembly method", "de novo A5 pipeline", "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetStrCommField02 "Apply 'de novo A5 pipeline' to structured comment field 'Assembly Method' (append separated by comma)"
+FOR EACH StructComment
+DO
+    SetStructCommField("Assembly Method", "de novo A5 pipeline", "eAppend", ",");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetStrCommField03 "Apply 'Test' to structured comment database (append separated by colon)"
+FOR EACH SeqNa
+DO
+    SetStructCommDb("Test", "eAppend", ":");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetStrCommField04 "Apply 'NewFieldName' structured comment field names (prepend separated by semicolon)"
+VAR
+    case_sensitive = true
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE NOT EQUALS("obj.label.str", "StructuredCommentPrefix", case_sensitive) AND NOT EQUALS("obj.label.str", "StructuredCommentSuffix", case_sensitive);
+    SetStringQual("obj.label.str", "NewFieldName", "ePrepend", ";");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetStrCommField05 "Apply new structured comment with 'MIGS:4.0-Data' database name"
+VAR
+    strcomm_field1 = %assembly%
+    new_value1 = %new assembly%
+    strcomm_field2 = %collection_date%
+    new_value2 = %09-12-2016%
+    strcomm_field3 = %project_name%
+    new_value3 = %new project_name%
+FOR EACH SeqNA
+DO
+    obj = SetStructCommDb("MIGS:4.0-Data", "eAddQual");
+    SetStructCommField(obj, strcomm_field1, new_value1, "eReplace");
+    SetStructCommField(obj, strcomm_field2, new_value2, "eReplace");
+    SetStructCommField(obj, strcomm_field3, new_value3, "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetStrCommField06 "Apply 'new method' to structured comment field 'Assembly Method' (add qualifier) where the structured comment database name equals 'Genome-Assembly-Data'"
+FOR EACH StructComment
+WHERE StructCommDB() = "Genome-Assembly-Data"
+DO
+    SetStructCommField("Assembly Method", "new method", "eAddQual");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetStrCommField07 "Apply 'Test' to structured comment database (append separated by colon)"
+FOR EACH StructComment
+DO
+    SetStructCommDb("Test", "eAppend", ":");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetStrCommField08 "Apply 'Test' to structured comment database (add new qualifier)"
+FOR EACH SeqNa
+DO
+    SetStructCommDb("Test", "eAddQual");
+DONE
+-----------------------------------------------------------------
+MACRO Test_AddAuthor1 "Apply 'Elek R Benedek Jr.', 'Zoltan Kalmar' to publication authors (overwrite existing text)"
+VAR
+    last = "Benedek"
+    first = "Elek"
+    middle = "R"
+    suffix = "Jr."
+FOR EACH Pubdesc
+DO
+    AddAuthor(last, first, middle, suffix, "eReplace");
+    AddAuthor("Kalmar", "Zoltan", "", "", "eAppend");
+DONE
+-----------------------------------------------------------------
+MACRO Test_AddAuthor2 "Apply 'Elek R. Benedek', 'Zoltan Kalmar', 'Szabadi R.' to publication authors (append (no separator))"
+VAR
+    last = "Benedek"
+    first = "Elek"
+    middle = "R."
+    suffix = ""
+    existing_text = "eAppend"
+FOR EACH Pubdesc
+WHERE PUB_PMID() = 21148857
+DO
+    AddAuthor(last, first, middle, suffix, existing_text);
+    AddAuthor("Kalmar", "Zoltan", "", "", existing_text);
+    AddAuthor("Szabadi", "", middle, "", "ePrepend");
+DONE
+-----------------------------------------------------------------
+MACRO Test_AddAuthor3 "Apply 'Elek R. Benedek', 'Zoltan Kalmar', 'Szabadi R.' to publication authors (overwrite existing text)"
+FOR EACH Pubdesc
+DO
+    AddAuthorList("Elek R. Benedek, Zoltan Kalmar, Szabadi R.");
+DONE
+-----------------------------------------------------------------
+MACRO Test_AddAuthor4 "Apply '' to publication authors (remove existing text)"
+VAR
+    new_value = ""
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    AddAuthorList(new_value, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubJournal01 "Apply 'new journal' to publication journal (append separated by space)"
+FOR EACH Pubdesc
+DO
+    SetPubJournal("new journal", "eAppend", " ");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubJournal02 "Apply 'new journal' to publication journal (overwrite existing text) where journal is all caps"
+FOR EACH Pubdesc
+WHERE ISUPPER(PUB_JOURNAL())
+DO
+    SetPubJournal("new journal", "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_RmvPubJournal "Remove publication journal"
+FOR EACH Pubdesc
+DO
+    journal = PUB_JOURNAL();
+    RemoveQual(journal);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubVolume "Apply 'new vol' to publication volume (overwrite existing text)"
+FOR EACH Pubdesc
+DO
+    SetPubVolume("new vol", "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubIssuePages "Apply 'new issue' to publication issue (append separated by comma) and apply 'new pages' to publication pages (overwrite existing text)"
+FOR EACH Pubdesc
+DO
+    SetPubIssue("new issue", "eAppend", ",");
+    SetPubPages("new pages", "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveCitation "Remove publication citation where title is present"
+FOR EACH Pubdesc
+WHERE ISPRESENT(PUB_TITLE())
+DO
+    cit = PUB_CIT();
+    RemoveQual(cit);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubCitation01 "Apply 'Title: Some other title' to publication citation (append separated by semicolon)"
+FOR EACH Pubdesc
+DO
+    SetPubCitation("Title: Some other title", "eAppend", ";");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubCitation02 "Apply 'new citation' to publication citation (overwrite existing text) where publication citation does not contain 'in press'"
+FOR EACH Pubdesc
+WHERE NOT CONTAINS(PUB_CIT(), "in press")
+DO
+    SetPubCitation("Title: Some other title", "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubCitation03 "Apply '' to publication citation (append separated by semicolon)"
+VAR
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    SetPubCitation("", "eAppend", ";", remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubSerialNumber01 "Apply '12345' to publication serial number (overwrite existing text)"
+FOR EACH Pubdesc
+DO
+    SetPubSerialNumber(12345, "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetPubSerialNumber02 "Apply '' to publication serial number (overwrite existing text)"
+VAR
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+    SetPubSerialNumber("", "eReplace", remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RemoveSerialNumber "Remove publication serial number"
+FOR EACH Pubdesc
+DO
+    obj = PUB_SERIAL_NUMBER();
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetDate01 "Apply '5-8-2015' to publication date"
+FOR EACH Pubdesc
+DO
+   SetPubDate(2015, 8, 5);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetDateYear01 "Apply '2017' to publication date year"
+FOR EACH Pubdesc
+DO
+   SetPubDateField("year", 2017);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetDateYear02 "Apply '' to publication date year (nothing changes, as year is a mandatory field)"
+VAR
+    remove_blank = true
+FOR EACH Pubdesc
+DO
+   SetPubDateField("year", "", remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetDateMonth01 "Apply '12' to publication date month where publication month is present"
+FOR EACH Pubdesc
+WHERE ISPRESENT(PUB_DATE("month"))
+DO
+   SetPubDateField("month", 12);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetDateMonth02 "Apply '' to publication date month where publication month is present"
+VAR
+    remove_blank = true
+FOR EACH Pubdesc
+WHERE ISPRESENT(PUB_DATE("month"))
+DO
+   SetPubDateField("month", "", remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetDateMonth03 "Apply '' to publication date month where publication month is present"
+VAR
+    remove_blank = false
+FOR EACH Pubdesc
+WHERE ISPRESENT(PUB_DATE("month"))
+DO
+   SetPubDateField("month", "", remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetStatus "Apply 'published' to publication status"
+FOR EACH Pubdesc
+DO
+   SetPubStatus("published");
+DONE
+-----------------------------------------------------------------
+MACRO Test_RmvAlignment "Remove alignment"
+FOR EACH SeqAlign
+DO
+    RemoveAlignment();
+DONE
+-----------------------------------------------------------------
+MACRO Test_CreateProtFeats "Create full length protein features"
+FOR EACH TSEntry
+DO
+    CreateProteinFeatures();
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeatQual01 "Convert CDS comment to gene locus"
+VAR
+    cap_change = "toupper"
+    strip_name = false
+    existing_text = "eReplace"
+    update_mrna = false
+FOR EACH Cdregion
+DO
+    ConvertFeatureQual("comment", "gene", "data.gene.locus", cap_change, strip_name, update_mrna, existing_text);
+    RemoveQual("comment");
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeatQual02 "Convert gene description to protein name, update mRNA product name"
+VAR
+    cap_change = "toupper"
+    strip_name = false
+    existing_text = "eReplace"
+    update_mrna = true
+FOR EACH Gene
+DO
+    ConvertFeatureQual("data.gene.desc", "protein", "data.prot.name", cap_change, strip_name, update_mrna, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeatQual03 "Convert codon-start to gene description (overwrite existing text)"
+VAR
+    cap_change = "toupper"
+    strip_name = false
+    existing_text = "eAppend"
+    delimiter = ";"
+    update_mrna = true
+FOR EACH Cdregion
+DO
+    ConvertFeatureQual("data.cdregion.frame", "gene", "data.gene.desc", cap_change, strip_name, update_mrna, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeatQual04 "Convert protein name to mat-peptide name (append separated by semicolon) where protein name contains 'hypothetical'"
+VAR
+    cap_change = "toupper"
+    strip_name = false
+    existing_text = "eAppend"
+    delimiter = ";"
+    update_mrna = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE CONTAINS(src, "hypothetical");
+    ConvertFeatureQual(src, "mat-peptide", "data.prot.name", cap_change, strip_name, update_mrna, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeatQual05 "Convert gene locus to CDS inference (ignore new text when old text is present)"
+VAR
+    cap_change = "toupper"
+    strip_name = false
+    existing_text = "eLeaveOld"
+    update_mrna = false
+FOR EACH Gene
+WHERE NOT ISPRESENT(RELATED_FEATURE("cds", "qual", "inference"))
+DO
+    ConvertFeatureQual("data.gene.locus", "cds", "inference", cap_change, strip_name, update_mrna, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertFeatQual06 "Convert tRNA gene synonym to product (overwrite existing text)"
+VAR
+    cap_change = "toupper"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH Gene
+DO
+    ConvertFeatureQual("data.gene.syn", "tRNA", "tRNA::product", cap_change, strip_name, false, existing_text);
+    RemoveQual("data.gene.syn");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetRelFeatQual01 "Apply 'new gene locus' to CDS locus (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+FOR EACH Cdregion
+DO
+    SetRelatedFeatureQual("gene", "data.gene.locus", "new gene locus", existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetRelFeatQual02 "Apply 'new test locus' to mRNA locus (overwrite existing text) where mRNA locus starts with 'putative' (case insensitive)"
+VAR
+    existing_text = "eReplace"
+FOR EACH mRNA
+WHERE STARTS(RELATED_FEATURE("gene", "data.gene.locus"), "putative")
+DO
+    SetRelatedFeatureQual("gene", "data.gene.locus", "new test locus", existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_SetRelFeatQual03 "Apply 'new test locus' to mRNA locus (prepend separated by colon)"
+VAR
+    existing_text = "ePrepend"
+    delimiter = ":"
+FOR EACH mRNA
+DO
+    SetRelatedFeatureQual("gene", "data.gene.locus", "new test locus", existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_EditRelFeatQual01 "Edit mRNA gene locus replace 'putative' with 'TEST'" 
+VAR
+    find_text = "putative"
+    repl_text = "TEST"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH mRNA
+DO
+    EditRelatedFeatureQual("gene", "data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------
+MACRO Test_EditRelFeatQual02 "Edit mRNA gene locus replace '\((\d+)\)' (case sensitive)  with ''"
+VAR
+    find_text = %\((\d+)\)%
+    repl_text = %%
+    location = "anywhere"
+    case_sensitive = %true%
+    is_regex = %true%
+FOR EACH mRNA
+DO
+    EditRelatedFeatureQual("gene", "data.gene.locus", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+-----------------------------------------------------------------
+MACRO Test_RmvRelFeatQual01 "Remove mRNA gene locus where mRNA gene locus starts with 'putative' (case insensitive)"
+VAR
+    existing_text = "eReplace"
+FOR EACH mRNA
+WHERE STARTS(RELATED_FEATURE("gene", "data.gene.locus"), "putative")
+DO
+    RemoveRelatedFeatureQual("gene", "data.gene.locus");
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText01 "Parse text starting with 's' from local id to culture-collection (overwrite existing text)"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = false
+    whole_word = false
+VAR
+    cap_change = "toupper"
+    existing_text = "eReplace"
+VAR
+    find_text = "s"
+FOR EACH BioSource
+DO
+    text = ParsedText("localid", find_text, include_left, "_", include_right, case_sens_parse, whole_word);
+    AddParsedText(text, "culture-collection", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText02 "Parse text starting with 's' from definition line to culture-collection (overwrite existing text)"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = false
+    whole_word = false
+    rmv_from_parsed = true
+VAR
+    cap_change = "toupper"
+    existing_text = "eReplace"
+VAR
+    find_text = "s"
+FOR EACH BioSource
+DO
+    text = ParsedText("defline", find_text, include_left, " ", include_right, case_sens_parse, whole_word, rmv_from_parsed);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText03 "Parse text starting with 'CBS' replace 'CBS' with 'CBS:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'CBS' and where source strain does not contain ',' (case-sensitive) and where source strain does not contain ';' (case-sensitive) and where source strain does not contain 'ATCC' (ignore spaces, ignore punctuation), allow 'ATCC' to be replaced by 'DSM', 'JCM', 'NBRC', 'LMG', 'CCUG', and 'KCTC' and where source strain starts with 'CBS' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym01-ATCC"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "CBS"
+    repl_text = "CBS:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "ATCC", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AddParsedText(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText04 "Parse text starting with 's' from definition line to protein name (overwrite existing text) where protein name equals 'hypothetical'"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = false
+    whole_word = false
+    rmv_from_parsed = true
+VAR
+    cap_change = "toupper"
+    existing_text = "eReplace"
+VAR
+    find_text = "s"
+FOR EACH Protein
+DO
+    text = ParsedText("defline", find_text, include_left, " ", include_right, case_sens_parse, whole_word, rmv_from_parsed);
+    dest = Resolve("data.prot.name") WHERE EQUALS(dest, "hypothetical");
+    AddParsedText(text, dest, cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText05 "Parse text starting with 's' from definition line to gene locus (overwrite existing text)"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = false
+    whole_word = false
+    rmv_from_parsed = true
+VAR
+    cap_change = "toupper"
+    existing_text = "eReplace"
+VAR
+    find_text = "s"
+FOR EACH Gene
+DO
+    text = ParsedText("defline", find_text, include_left, " ", include_right, case_sens_parse, whole_word, rmv_from_parsed);
+    AddParsedText(text, "data.gene.locus", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText06 "Parse text just after ' ', up to from gene locus to gene synonym (overwrite existing text)"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+    include_left = false
+    include_right = false
+    rmv_from_parsed = false
+    rmv_left = false
+    rmv_right = false
+    case_sensitive_parse = true
+    whole_word_parse = false
+FOR EACH Gene
+DO
+    text = ParsedText("data.gene.locus", " ", include_left, "", include_right, case_sensitive_parse, whole_word_parse, rmv_from_parsed, rmv_left, rmv_right);
+    AddParsedText(text, "data.gene.syn", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText07 "Parse entire text from protein description to protein name (overwrite existing text)"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+FOR EACH Protein
+DO
+    ParseStringQual("data.prot.desc", "data.prot.name", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText08 "Parse text just after, up to 'numbers' from Local id to taxname (overwrite existing text)"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+    include_left = false
+    include_right = false
+    rmv_from_parsed = false
+    rmv_left = false
+    rmv_right = false
+    case_sensitive_parse = true
+    whole_word_parse = false
+FOR EACH BioSource
+DO
+    text = ParsedText("localid", "", include_left, "eDigits", include_right, case_sensitive_parse, whole_word_parse, rmv_from_parsed, rmv_left, rmv_right);
+    AddParsedText(text, "org.taxname", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText09 "Parse text just after 'Micro', up to from taxname to acronym (overwrite existing text)"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+    include_left = false
+    include_right = false
+    rmv_from_parsed = true
+    rmv_left = true
+    rmv_right = false
+    case_sensitive_parse = true
+    whole_word_parse = false
+FOR EACH BioSource
+DO
+    text = ParsedText("org.taxname", "Micro", include_left, "", include_right, case_sensitive_parse, whole_word_parse, rmv_from_parsed, rmv_left, rmv_right);
+    AddParsedText(text, "acronym", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseText10 "Parse text just after 'Micro', up to ' ' from taxname to acronym (overwrite existing text)"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+    include_left = false
+    include_right = false
+    rmv_from_parsed = true
+    rmv_left = true
+    rmv_right = false
+    case_sensitive_parse = true
+    whole_word_parse = false
+FOR EACH BioSource
+DO
+    text = ParsedText("org.taxname", "Micro", include_left, " ", include_right, case_sensitive_parse, whole_word_parse, rmv_from_parsed, rmv_left, rmv_right);
+    AddParsedText(text, "acronym", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseBsrcQual "Parse entire text from strain to taxname (append separated by colon) where strain contains 'flu'"
+VAR
+    existing_text = "eAppend"
+    delimiter = ":"
+    cap_change = "none"
+FOR EACH BioSource
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND CONTAINS("src.subname", "flu");
+    ParseStringQual("src.subname", "org.taxname", cap_change, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseFeatQual01 "Parse entire text from mRNA product to gene locus (overwrite existing text)"
+VAR
+    cap_change = "none"
+    update_mrna = false
+    existing_text = "eReplace"
+FOR EACH mRNA
+DO
+    ParseFeatureQual("data.rna.ext.name", "gene", "data.gene.locus", cap_change, update_mrna, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseFeatQual02 "Parse text just after ' ', up to from mRNA product to gene locus (overwrite existing text)"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+    include_left = false
+    include_right = false
+    rmv_from_parsed = true
+    rmv_left = true
+    rmv_right = false
+    case_sensitive_parse = true
+    whole_word_parse = false
+FOR EACH mRNA
+DO
+    text = ParsedText("data.rna.ext.name", " ", include_left, "", include_right, case_sensitive_parse, whole_word_parse, rmv_from_parsed, rmv_left, rmv_right);
+    AddParsedTextToFeatureQual(text, "gene", "data.gene.locus", cap_change, false, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseFeatQual03 "Parse text starting with 'numbers', up to from preRNA product to gene comment (append separated by semicolon)"
+VAR
+    cap_change = "none"
+    existing_text = "eAppend"
+    delimiter = ";"
+    include_left = true
+    include_right = false
+    rmv_from_parsed = false
+    rmv_left = false
+    rmv_right = false
+    case_sensitive_parse = true
+    whole_word_parse = false
+FOR EACH RNA
+WHERE data.rna.type = "premsg"
+DO
+    text = ParsedText("data.rna.ext.name", "eDigits", include_left, "", include_right, case_sensitive_parse, whole_word_parse, rmv_from_parsed, rmv_left, rmv_right);
+    AddParsedTextToFeatureQual(text, "gene", "comment", cap_change, false, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ParseFeatQual04 "Parse text starting with 'gene', up to from preRNA gene locus to tag-peptide (append separated by semicolon)"
+VAR
+    cap_change = "none"
+    existing_text = "eAppend"
+    delimiter = ";"
+    include_left = true
+    include_right = false
+    rmv_from_parsed = true
+    rmv_left = false
+    rmv_right = false
+    case_sensitive_parse = true
+    whole_word_parse = false
+FOR EACH Gene
+DO
+    text = ParsedText("data.gene.locus", "gene", include_left, "", include_right, case_sensitive_parse, whole_word_parse, rmv_from_parsed, rmv_left, rmv_right);
+    AddParsedTextToFeatureQual(text, "preRNA", "tag_peptide", cap_change, false, existing_text, delimiter);
+DONE
+---------------------------------------------------
+MACRO Test_ParseFeatQual05 "Parse entire text from tRNA gene locus to product (overwrite existing text) and remove tRNA gene locus"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+FOR EACH Gene
+DO
+    ParseFeatureQual("data.gene.locus", "tRNA", "tRNA::product", cap_change, false, existing_text);
+    RemoveQual("data.gene.locus");
+DONE
+---------------------------------------------------
+MACRO Test_ParseFeatQual06 "Parse text just after 'trn', up to '-' from tRNA gene locus to product (overwrite existing text)"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+    include_left = false
+    include_right = false
+    rmv_from_parsed = false
+    rmv_left = false
+    rmv_right = false
+    case_sensitive_parse = true
+    whole_word_parse = false
+FOR EACH Gene
+DO
+    text = ParsedText("data.gene.locus", "trn", include_left, "-", include_right, case_sensitive_parse, whole_word_parse, rmv_from_parsed, rmv_left, rmv_right);
+    AddParsedTextToFeatureQual(text, "tRNA", "tRNA::product", cap_change, false, existing_text);
+DONE
+---------------------------------------------------
+MACRO Test_StructCommFuncs01 "Edit structured comment field Coverage where structured comment field 'Coverage' equals 100a"
+VAR
+    find_text = "100"
+    repl_text = "56"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH StructComment
+DO
+    obj = Resolve("data") where EQUALS ("obj.label.str", "Coverage") AND EQUALS("obj.data.str", "100a");
+    EditStringQual("obj.data.str", find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructCommFuncs02 "Apply 'Newfieldname' to structured comment field names (prefix separated by semicolon) where structured comment field name contains 'Coverage' (case-sensitive)"
+VAR
+    new_value = "Newfieldname"
+    existing_text = "ePrepend"
+    delimiter = ";"
+    equals1 = %Coverage%
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE CONTAINS("obj.label.str", equals1, true);
+    SetStringQual("obj.label.str", new_value, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructCommFuncs03 "Remove structured comment field Coverage where object text equals '100%'"
+VAR
+    match = "100%"
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE obj.label.str = "Coverage" AND STRUCTCOMMFIELD("Coverage") = match;
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructCommFuncs04 "Edit structured comment field names replace 'Tech' (case sensitive)  with 'Test' where Structured comment Database Name equals 'Assembly-Data' (case-sensitive)"
+VAR
+    find_text = "Tech"
+    repl_text = "Test"
+    location = "anywhere"
+    case_sensitive = true
+    is_regex = false
+    equals1 = "Assembly-Data"
+FOR EACH StructComment
+WHERE EQUALS(STRUCTCOMMDB(),equals1,true)
+DO
+    obj = Resolve("data") WHERE NOT EQUALS("obj.label.str", "StructuredCommentPrefix", true) AND NOT EQUALS("obj.label.str", "StructuredCommentSuffix", true);
+    EditStringQual("obj.label.str", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructCommFuncs05 "Remove structured comment field names where Structured comment Field Name contains 'Coverage' "
+VAR
+    contains1 = "Coverage"
+FOR EACH StructComment
+WHERE CONTAINS(StructCommFieldName(),contains1)
+DO
+    obj = Resolve("data") WHERE CONTAINS("obj.label.str", contains1);
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_RmvDbXRef01 "Remove dbxref"
+FOR EACH BioSource
+WHERE org.taxname = "Influenza A virus"
+DO
+    RemoveQual("org.db");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_RmvDbXRef02 "Remove dbxref where dbxref contains 'taxon' (case-sensitive)"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.db") where CONTAINS("obj.db", "taxon", true);
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyProteinName01 "Edit CDS product replace 'leucin' with 'leukin'"
+VAR
+    find_text = "leucin"
+    repl_text = "leukin"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+WHERE CONTAINS("data.prot.name", find_text, case_sensitive)
+DO
+    CopyNameToCDSNote();
+    EditStringQual ("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyFeatQual01 "Copy CDS comment to gene locus"
+VAR
+    existing_text = "eReplace"
+    update_mrna = false
+FOR EACH Cdregion
+DO
+    CopyFeatureQual("comment", "gene", "data.gene.locus", update_mrna, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyFeatQual02 "Copy protein name to mat-peptide name (append separated by semicolon) where protein name contains 'hypothetical'"
+VAR
+    existing_text = "eAppend"
+    delimiter = ";"
+    update_mrna = true
+FOR EACH Protein
+DO
+    src = Resolve("data.prot.name") WHERE CONTAINS(src, "hypothetical");
+    CopyFeatureQual(src, "mat-peptide", "data.prot.name", update_mrna, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyFeatQual03 "Copy mat-peptide description to protein name (append separated by semicolon) where protein name contains 'hypothetical'"
+VAR
+    existing_text = "eAppend"
+    delimiter = ";"
+    update_mrna = true
+FOR EACH SeqFeat
+WHERE CHOICETYPE("data") = "prot"
+      AND data.prot.processed = "mature" 
+      AND CONTAINS(RELATED_FEATURE("protein", "data.prot.name"), "hypothetical")
+DO
+    CopyFeatureQual("data.prot.desc", "protein", "data.prot.name", update_mrna, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyFeatQual04 "Copy mRNA product to protein name, update mRNA product name"
+VAR
+    existing_text = "eReplace"
+    update_mrna = true
+FOR EACH mRNA
+DO
+    CopyFeatureQual("data.rna.ext.name", "protein", "data.prot.name", update_mrna, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyFeatQual05 "Copy tRNA gene locus to product (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+    update_mrna = false
+FOR EACH Gene
+DO
+    CopyFeatureQual("data.gene.locus", "tRNA", "tRNA::product", update_mrna, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_RmvOutside01 "Remove text before 'numbers' in publication title"
+VAR
+    rmv_left = false
+    rmv_right = false
+    case_insensitive_rmv = false
+    whole_word_rmv = false
+FOR EACH Pubdesc
+DO
+    title = PUB_TITLE();
+    RemoveOutsideStringQual(title, true, "eDigits", rmv_left, false, "", rmv_right, case_insensitive_rmv, whole_word_rmv);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_RmvOutside02 "Remove text after 'numbers' in publication street"
+VAR
+    rmv_left = false
+    rmv_right = true
+    case_insensitive_rmv = false
+    whole_word_rmv = false
+FOR EACH Pubdesc
+DO
+    street = PUB_AFFIL("street");
+    RemoveOutsideStringQual(street, false, "", rmv_left, true, "eDigits", rmv_right, case_insensitive_rmv, whole_word_rmv);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_RmvOutside03 "Remove text before 'large'  and after ' gene' in gene locus where Gene description starts with 'terminase' (case-sensitive)"
+VAR
+    rmv_left = false
+    rmv_right = true
+    case_insensitive_rmv = false
+    whole_word_rmv = false
+    starts1 = %terminase%
+FOR EACH Gene
+WHERE STARTS("data.gene.desc",starts1,true)
+DO
+    RemoveOutsideStringQual("data.gene.locus", true, "large", rmv_left, true, " gene", rmv_right, case_insensitive_rmv, whole_word_rmv);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_RmvOutside04 "Remove text before 'terminase' and after ',' in protein name, update mRNA product to match protein name"
+VAR
+    rmv_left = true
+    rmv_right = true
+    case_insensitive_rmv = false
+    whole_word_rmv = false
+    update_mrna = %true%
+FOR EACH Protein
+DO
+    RemoveOutsideStringQual("data.prot.name", true, "terminase", rmv_left, true, ",", rmv_right, case_insensitive_rmv, whole_word_rmv, update_mrna);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_RmvOutside05 "Remove text before 'large' in  mRNA gene description"
+VAR
+    rmv_left = true
+    rmv_right = false
+    case_insensitive_rmv = false
+    whole_word_rmv = false
+FOR EACH mRNA
+DO
+    RmvOutsideRelatedFeatureQual("gene", "data.gene.desc", true, "large", rmv_left, false, "", rmv_right, case_insensitive_rmv, whole_word_rmv);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_RmvOutside06 "Remove text before 'a' in taxname"
+VAR
+    rmv_left = false
+    rmv_right = false
+    case_insensitive_rmv = false
+    whole_word_rmv = false
+FOR EACH BioSource
+DO
+    RemoveOutsideStringQual("org.taxname", true, "a", rmv_left, false, "", rmv_right, case_insensitive_rmv, whole_word_rmv);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyStringQual01 "Copy gene locus to gene allele (overwrite existing text) where taxname does not contain 'laboriosa' (case-insensitive)"
+VAR
+    existing_text = "eReplace"
+    not_contains1 = %laboriosa%
+FOR EACH Gene
+WHERE NOT CONTAINS(BIOSOURCE_FOR_SEQFEAT("org.taxname"),not_contains1)
+DO
+    CopyStringQual("data.gene.locus", "data.gene.allele", existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyStringQual02 "Copy CDS inference to CDS comment (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+FOR EACH Cdregion
+DO
+    src = Resolve("qual") WHERE src.qual = "inference";
+    CopyStringQual("src.val", "comment", existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyStringQual03 "Copy CDS inference to CDS comment (overwrite existing text) where CDS inference contains 'aaa' (case-sensitive)"
+VAR
+    existing_text = "eReplace"
+    contains2 = %aaa%
+FOR EACH Cdregion
+DO
+    src = Resolve("qual") WHERE src.qual = "inference" AND CONTAINS("src.val",contains2);
+    CopyStringQual("src.val", "comment", existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_CopyStringQual04 "Copy sub-species to taxname (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+FOR EACH BioSource
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "sub-species";
+    CopyStringQual("src.subname", "org.taxname", existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_SeqID "Apply 'newvalue' to BioProject (add new qualifier) where SeqId equals '1657039/Seq1'"
+VAR
+    new_value = %newvalue%
+    existing_text = "eAddQual"
+FOR EACH SeqNA
+WHERE EQUALS(SeqID(), "1657039/Seq1")
+DO
+    AddDBLink("BioProject", new_value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_SeqID01 "Apply 'newvalue' to BioProject (add new qualifier) where SeqId equals 'MH463958'"
+VAR
+    new_value = %newvalue%
+    existing_text = "eAddQual"
+FOR EACH SeqNA
+WHERE EQUALS(SeqID(), "MH463958")
+DO
+    AddDBLink("BioProject", new_value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_SeqID02 "Apply 'newvalue' to BioProject (add new qualifier) where SeqId equals 'MH463994.1'"
+VAR
+    new_value = %newvalue%
+    existing_text = "eAddQual"
+FOR EACH SeqNA
+WHERE EQUALS(SeqID(), "MH463994.1")
+DO
+    AddDBLink("BioProject", new_value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_AddAssemblyGap01 "Add assembly gaps with gap_type 'within', linkage 'within Scaffolds' and linkage_evidence 'paired-ends', adjust coding regions" 
+VAR
+    min_unknown = 100
+    max_unknown = 100
+    min_known = 101
+    max_known = -1
+    adjust_cds = true
+    keep_gap_length = false
+    gap_type = "scaffold"
+    linkage = "linked"
+    linkage_evidence = "paired-ends"
+FOR EACH TSEntry
+DO
+    AddAssemblyGapsbyNs(min_unknown, max_unknown, min_known, max_known, adjust_cds, keep_gap_length, gap_type, linkage, linkage_evidence);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StringConstr02 "Apply nonstructural protein to protein name (overwrite existing text) where object text equals 'Nonstructural protein' (ignore spaces, ignore punctuation)"
+VAR
+    new_value = "nonstructural protein"
+    existing_text = "eReplace"
+    match = "Nonstructural protein"
+    case_sensitive = false
+    ignore_space = true
+    ignore_punctuation = true
+FOR EACH Protein
+DO
+    o = Resolve("data.prot.name") WHERE EQUALS(o, match, case_sensitive, ignore_space, ignore_punctuation);
+    SetStringQual (o, new_value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ParseToStructComm01 "Parse entire text from source isolate to structured comment field 'Coverage' (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+    cap_change = "none"
+FOR EACH BioSource
+DO
+    src = Resolve("org.orgname.mod") Where src.subtype = "isolate";
+    ParseToStructComment("src.subname", "fieldvalue", "Coverage", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ParseToStructComm02 "Parse entire text from source country to structured comment database name (append separated by colon)"
+VAR
+    existing_text = "eAppend"
+    delimiter = ","
+    cap_change = "none"
+FOR EACH BioSource
+DO
+    src = Resolve("subtype") Where src.subtype = "country";
+    ParseToStructComment("src.name", "dbname", cap_change, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ParseToStructComm03 "Parse text starting with 's' from source isolate up to '-' to structured comment fieldname"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = false
+    whole_word = false
+    rmv_from_parsed = true
+VAR
+    cap_change = "toupper"
+    existing_text = "eReplace"
+FOR EACH BioSource
+DO
+    src = Resolve("org.orgname.mod") Where src.subtype = "isolate";
+    text = ParsedText("src.subname", "s", include_left, "-", include_right, case_sens_parse, whole_word, rmv_from_parsed);
+    ParseToStructComment(text, "fieldname", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ParseToStructComm04 "Parse entire text from source isolate to structured comment field 'Coverage' (ignore new text when existing text is present)"
+VAR
+    existing_text = "eLeaveOld"
+    cap_change = "none"
+FOR EACH BioSource
+DO
+    src = Resolve("org.orgname.mod") Where src.subtype = "isolate";
+    ParseToStructComment("src.subname", "fieldvalue", "Coverage", cap_change, existing_text);
+    RemoveModifier(src);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_EditDefline "Edit Definition line replace 'toll-like' (case insensitive)  with 'TESTTT'"
+VAR
+    find_text = "toll-like"
+    repl_text = "TEST"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH Seqdesc
+WHERE CHOICETYPE() = "title"
+DO
+    EditStringQual("title", find_text, repl_text, location, case_sensitive);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_FeatsOnSeq "Apply 'complete' to completedness (overwrite existing text) where the number of protein features on sequence is more or equal to 2"
+VAR
+    existing_text = "eReplace"
+FOR EACH SeqNa
+WHERE FEATS_ON_SEQ("Protein") >= 2
+DO
+    SetStringQual("descr..molinfo.completeness", "complete", existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_FirstFeat "Apply 'complete' to completedness (overwrite existing text) where the number of nucleotides is at least 4 before the first coding region"
+VAR
+    existing_text = "eReplace"
+FOR EACH SeqNa
+WHERE DistFromStart(FirstOf(Features("cds"))) >= 4
+DO
+    SetStringQual("descr..molinfo.completeness", "complete", existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_Norovirus1 "Apply 'complete' to completedness (overwrite existing text) where the number of CDS features on sequence is more than 2 and the number of CDS features on sequence is fewer than 5 and taxname starts with 'Norovirus' (case-sensitive)"
+VAR
+    existing_text = "eReplace"
+    starts3 = %Norovirus%
+FOR EACH SeqNa
+WHERE inst.repr = "raw"
+      AND inst.length >= 250
+      AND FEATS_ON_SEQ("Protein") >= 3
+      AND FEATS_ON_SEQ("Protein") <= 4
+      AND STARTS(BIOSOURCE_FOR_SEQUENCE("org.taxname"), starts3, true)
+      AND DISTFROMSTART(FIRSTOF(FEATURES("CDS"))) >= 4
+      AND DISTFROMSTOP(LASTOF(FEATURES("CDS"))) >= 40
+DO
+    SetStringQual("descr..molinfo.completeness", "complete", existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_AdjustCDS "Adjust CDS for consensus splice sites"
+FOR EACH Cdregion
+DO
+    AdjustCDSConsensusSpliceSites();
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableGeneComment01 "Apply gene comment from table, use gene locus-tag as identifier" 
+VAR
+    table = "genecomment_table.txt"
+    existing_text = "eReplace"
+    merge_delimiter = false
+    split_first_col = false
+    convert_multi = false
+    merge_first_cols = false
+FOR EACH Gene
+WHERE
+   INTABLE("data.gene.locus-tag", table, 1, "\t", merge_delimiter, split_first_col, convert_multi, merge_first_cols)
+DO
+   value = ValueFromTable(table, 2);
+   SetStringQual("comment", value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableGeneComment02 "Apply gene comment from table, use gene locus-tag as identifier (one value is missing)" 
+VAR
+    table = "genecomment_table1.txt"
+    existing_text = "eReplace"
+    merge_delimiter = false
+    split_first_col = false
+    convert_multi = false
+    merge_first_cols = false
+FOR EACH Gene
+WHERE
+   INTABLE("data.gene.locus-tag", table, 1, "\t", merge_delimiter, split_first_col, convert_multi, merge_first_cols)
+DO
+   value = ValueFromTable(table, 2);
+   SetStringQual("comment", value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableRmvGeneNote "For the entries found in the table, remove gene note"
+VAR
+    table = "genecomment_table1.txt"
+    existing_text = "eReplace"
+FOR EACH Gene
+WHERE INTABLE("data.gene.locus-tag", table, 1, "\t")
+DO
+   RemoveQual("comment");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableGenCov "Apply genome coverage from table, use strain as identifier"
+VAR
+    table = "genome_coverage.txt"
+    strcomm_field = "Genome Coverage"
+    existing_text = "eReplace"
+FOR EACH StructComment
+WHERE INTABLE(BIOSOURCE_FOR_SEQDESC("org.orgname.mod", "strain"), table, 4, "\t")
+DO
+    value = ValueFromTable(table, 5);
+    SetStructCommField(strcomm_field, value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableGenCovSpace "Apply genome coverage from table, use strain as identifier"
+VAR
+    table = "genome_coverage_spaces.txt"
+    strcomm_field = "Genome Coverage"
+    existing_text = "eReplace"
+    merge_delimiter = true
+FOR EACH StructComment
+WHERE INTABLE(BIOSOURCE_FOR_SEQDESC("org.orgname.mod", "strain"), table, 4, " ", merge_delimiter)
+DO
+    value = ValueFromTable(table, 5);
+    SetStructCommField(strcomm_field, value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO ApplyTableGenCovDblink "Apply genome coverage from table, use Biosample ID as identifier"
+VAR
+    table = "gencov_dblink.txt"
+    strcomm_field = "Genome Coverage"
+    existing_text = "eReplace"
+FOR EACH StructComment
+WHERE INTABLE(DBLinkType("BioSample"), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    SetStructCommField(strcomm_field, value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO ApplyTableGenCovFieldnameDblink "Apply genome coverage from table and fieldname, use Biosample ID as identifier"
+VAR
+    table = "gencov_dblink.txt"
+    strcomm_field = "Genome Coverage"
+    existing_text = "eReplace"
+FOR EACH StructComment
+WHERE INTABLE(DBLinkType("BioSample"), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    SetStructCommField(strcomm_field, value, existing_text);
+    value = ValueFromTable(table, 3);
+    field = Resolve("data") WHERE NOT EQUALS("field.label.str", "StructuredCommentPrefix", true) AND NOT EQUALS("field.label.str", "StructuredCommentSuffix", true);
+    SetStringQual("field.label.str", value, existing_text, ";");
+DONE
+-----------------------------------------------------------------------------
+MACRO ApplyTableGenCovDblink02 "Apply genome coverage from table, match to BioSample"
+VAR
+    table = "gencov_dblink_wblanks.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = false
+    merge_first = false
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH StructComment
+WHERE INTABLE(DBLINKTYPE("BioSample"), table, 1, "\t", merge_del, split_first, convert_multi, merge_first)
+DO
+    value = ValueFromTable(table, 2);
+    SetStructCommField("Genome Coverage", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyFieldname01 "Apply structured comment field name, match to BioSample where Structured comment Field Name equals 'Genome Coverage' (case-sensitive)"
+VAR
+    table = "fieldname_dblink.txt"
+    existing_text = "eReplace"
+    remove_blank = false
+    equals1 = %Genome Coverage%
+FOR EACH StructComment
+WHERE INTABLE(DBLINKTYPE("BioSample"), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    field = Resolve("data") WHERE NOT EQUALS("field.label.str", "StructuredCommentPrefix", true) 
+    AND NOT EQUALS("field.label.str", "StructuredCommentSuffix", true)
+    AND EQUALS("field.label.str",equals1,true,false,false,false,false);
+    SetStringQual("field.label.str", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyFieldname02 "Apply structured comment field name, match to BioSample where Structured comment Field Name equals 'Genome Coverage' (case-sensitive)"
+VAR
+    table = "fieldname_dblink.txt"
+    existing_text = "eReplace"
+    remove_blank = true
+    equals1 = %Genome Coverage%
+FOR EACH StructComment
+WHERE INTABLE(DBLINKTYPE("BioSample"), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    field = Resolve("data") WHERE NOT EQUALS("field.label.str", "StructuredCommentPrefix", true) 
+    AND NOT EQUALS("field.label.str", "StructuredCommentSuffix", true)
+    AND EQUALS("field.label.str",equals1,true,false,false,false,false);
+    SetStringQual("field.label.str", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableDbName "Apply structured comment database name from table (overwrite existing text) where strain is used as identifier"
+VAR
+    table = "dbnames.txt"
+    existing_text = "eReplace"
+FOR EACH StructComment
+WHERE INTABLE(BIOSOURCE_FOR_SEQDESC("org.orgname.mod", "strain"), table, 2, "\t")
+DO
+    value = ValueFromTable(table, 3);
+    SetStructCommDb(value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableDbName02 "Apply structured comment database name from table, match to strain"
+VAR
+    table = "dbnames_wblanks.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = false
+    merge_first = false
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH StructComment
+WHERE INTABLE(BIOSOURCE_FOR_SEQDESC("org.orgname.mod", "strain"), table, 2, "\t", merge_del, split_first, convert_multi, merge_first)
+DO
+    value = ValueFromTable(table, 3);
+    SetStructCommDb(value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBSID "Apply biosample ID from table, use clone as identifier"
+VAR
+    table = "bsid_mapping.txt"
+    existing_text = "eReplace"
+FOR EACH SeqNA
+WHERE INTABLE(BIOSOURCE_FOR_SEQUENCE("subtype", "clone"), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    AddDBLink("BioSample", value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBSID2 "Apply biosample ID from table, use clone as identifier"
+VAR
+    table = "dblink_tbl.txt"
+    existing_text = "eReplace"
+FOR EACH SeqNA
+WHERE INTABLE(BIOSOURCE_FOR_SEQUENCE("subtype", "clone"), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    AddDBLink("BioSample", value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBSID3 "Apply biosample ID from table, use clone as identifier"
+VAR
+    table = "dblink_tbl3.txt"
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH SeqNA
+WHERE INTABLE(BIOSOURCE_FOR_SEQUENCE("subtype", "clone"), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    AddDBLink("BioSample", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableRmvSeqId "Remove sequences where sequence ids are listed in a table"
+VAR
+    table = "remvseqidtable.txt"
+FOR EACH SeqNA
+WHERE INTABLE("id.local.str", table, 1, "\t")
+DO
+    RemoveSequence();
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual01 "Convert misc_feature locus-tag to misc_feature note (append separated by semicolon)"
+VAR
+    cap_change = "none"
+    strip_name = false
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH MiscFeat
+DO
+    src = GeneQual("locus-tag");
+    ConvertStringQual(src, "comment", cap_change, strip_name, existing_text, delimiter);
+    RemoveQual(src);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual02 "Remove misc_feature locus-tag"
+FOR EACH MiscFeat
+DO
+    obj = GeneQual("locus_tag");
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual03 "Remove gene locus-tag"
+FOR EACH Gene
+DO
+    obj = GeneQual("data.gene.locus-tag");
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual04 "Copy misc_feature locus-tag to misc_feature note (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+FOR EACH MiscFeat
+DO
+    src = GeneQual("locus_tag");
+    CopyStringQual(src, "comment", existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual05 "Parse entire text from misc_feature locus-tag to note (overwrite existing text)"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+FOR EACH MiscFeat
+DO
+    src = GeneQual("locus_tag");
+    ParseStringQual(src, "comment", cap_change, existing_text);
+    RemoveQual(src);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual06 "Parse text starting with '_', up to from misc_feature locus-tag to note (overwrite existing text)"
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+    include_left = true
+    include_right = false
+    rmv_from_parsed = true
+    rmv_left = true
+    rmv_right = false
+    case_sensitive_parse = true
+    whole_word_parse = false
+FOR EACH MiscFeat
+DO
+    src = GeneQual("locus_tag");
+    text = ParsedText(src, "_", include_left, "", include_right, case_sensitive_parse, whole_word_parse, rmv_from_parsed, rmv_left, rmv_right);
+    AddParsedText(text, "comment", cap_change, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual07 "Edit misc_feature locus-tag replace 'XMA104' (case insensitive)  with 'edited'"
+VAR
+    find_text = "XMA104"
+    repl_text = "edited"
+    location = "anywhere"
+    case_sensitive = false
+    is_regex = false
+FOR EACH MiscFeat
+DO
+    src = GeneQual("locus_tag") WHERE STARTS(src, "XMA", case_sensitive);
+    EditStringQual(src, find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual08 "Remove text before '_' in misc_feature locus-tag"
+VAR
+    rmv_left = true
+    rmv_right = false
+    case_insensitive_rmv = false
+    whole_word_rmv = false
+    update_mrna = false
+FOR EACH MiscFeat
+DO
+    src = GeneQual("locus_tag");
+    RemoveOutsideStringQual(src, true, "_", rmv_left, false, "", rmv_right, case_insensitive_rmv, whole_word_rmv, update_mrna);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual09 "Swap misc_feature note to misc_feature locus-tag"
+FOR EACH MiscFeat
+DO
+    dest = GeneQual("locus-tag");
+    SwapQual("comment", dest, "locus_tag");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_GeneQual10 "Swap misc_feature locus-tag to misc_feature note"
+FOR EACH MiscFeat
+DO
+    src = GeneQual("locus-tag");
+    SwapQual(src, "locus_tag", "comment");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_Contained "Remove tRNA features and their overlapping gene where tRNA is contained within tmRNA"
+VAR
+    delete_gene = true
+FOR EACH RNA
+WHERE data.rna.type = "tRNA" AND ISCONTAINEDIN("tmRNA")
+DO
+    RemoveFeature(delete_gene);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_DBLinkType01 "Apply Gene feature with 'test locus_tag' locus_tag where BioSample starts with 'PRJ' (case-sensitive)"
+VAR
+    partial5 = false
+    partial3 = false
+    loc_strand = "plus"
+    qual_value1 = "test locus_tag"
+    add_redundant = true
+    starts1 = %PRJ%
+FOR EACH SeqNA
+WHERE STARTS(DBLinkType("BioSample"), starts1, true)
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, loc_strand);
+    ApplyFeature("data.gene.locus", "", location, add_redundant, "data.gene.locus-tag", qual_value1);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_DBLinkType02 "Apply 'EST' to technique (overwrite existing text) where Biosample contains 'SAM' (case-sensitive)"
+VAR
+    new_value = "est"
+    existing_text = "eReplace"
+    contains2 = %SAM%
+FOR EACH Seq
+WHERE CONTAINS(DBLINKTYPE("Biosample"),contains2,true,false,false,false,false)
+DO
+    SetStringQual("descr..molinfo.tech", new_value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_DBxRef01 "Copy mRNA db-xref to mRNA note (append separated by semicolon)"
+VAR
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH mRNA
+DO
+    CopyStringQual("dbxref", "comment", existing_text, delimiter);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_DBxRef02 "Convert mRNA db-xref to mRNA note (append separated by semicolon)"
+VAR
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH mRNA
+DO
+    ConvertStringQual("dbxref", "comment", "none", false, existing_text, delimiter);
+    RemoveQual("dbxref");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_DBxRef03 "Convert mRNA db-xref to mRNA note (append separated by semicolon) where mRNA db_xref starts with 'Panther' (case-sensitive)"
+VAR
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH mRNA
+DO
+    obj = Resolve("dbxref") Where STARTS("obj.db", "Panther");
+    ConvertStringQual(obj, "comment", "none", false, existing_text, delimiter);
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_DBxRef04 "Parse entire text from mRNA db-xref to mRNA note (append separated by semicolon)"
+VAR
+    cap_change = "none"
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH mRNA
+DO
+    ParseStringQual("dbxref", "comment", cap_change, existing_text, delimiter);
+    RemoveQual("dbxref");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_DBxRef05 "Copy mRNA illegal db-xrefs to mRNA note (append separated by semicolon) and delete them"
+VAR
+    existing_text = "eAppend"
+    delimiter = ";"
+FOR EACH mRNA
+DO
+    obj = Resolve("dbxref") Where IllegalDbXref(obj);
+    CopyStringQual(obj, "comment", existing_text, delimiter);
+    RemoveQual(obj);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBsrc01 "Apply source qualifiers from table"
+VAR
+    table = "giraffe1.txt"
+    container = "org.orgname.mod"
+    existing_text = "eReplace"
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+   value = ValueFromTable(table, 2);
+   SetStringQual("org.taxname", value, existing_text);
+   value = ValueFromTable(table, 3);
+   obj_acronym = Resolve(container) where obj_acronym.subtype = "acronym";
+   SetModifier(obj_acronym, container, "acronym", value, "eReplace");
+   value = ValueFromTable(table, 4);
+   obj_isolate = Resolve(container) Where obj_isolate.subtype = "isolate";
+   SetModifier(obj_isolate, container, "isolate", value, "eAppend", ";");
+   value = ValueFromTable(table, 5);
+   obj_serotype = Resolve(container) Where obj_serotype.subtype = "serotype";
+   SetModifier(obj_serotype, container, "serotype", value, "eAppend", ";");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBsrc02 "Apply source qualifiers from table" 
+VAR
+    table = "giraffe1.txt"
+    container = "org.orgname.mod"
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+   value = ValueFromTable(table, 2);
+   SetStringQual("org.taxname", value, existing_text, remove_blank);
+   value = ValueFromTable(table, 3);
+   obj_acronym = Resolve(container) where obj_acronym.subtype = "acronym";
+   SetModifier(obj_acronym, container, "acronym", value, "eReplace", remove_blank);
+   value = ValueFromTable(table, 4);
+   obj_isolate = Resolve(container) Where obj_isolate.subtype = "isolate";
+   SetModifier(obj_isolate, container, "isolate", value, "eAppend", ";");
+   value = ValueFromTable(table, 5);
+   obj_serotype = Resolve(container) Where obj_serotype.subtype = "serotype";
+   SetModifier(obj_serotype, container, "serotype", value, "eAppend", ";", remove_blank);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBsrc03 "Apply source qualifiers from table" 
+VAR
+    table = "giraffe2.txt"
+    container = "org.orgname.mod"
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+   value = ValueFromTable(table, 2);
+   SetStringQual("org.taxname", value, existing_text, remove_blank);
+   value = ValueFromTable(table, 3);
+   obj_acronym = Resolve(container) where obj_acronym.subtype = "acronym";
+   SetModifier(obj_acronym, container, "acronym", value, "eReplace", remove_blank);
+   value = ValueFromTable(table, 5);
+   obj_serotype = Resolve(container) Where obj_serotype.subtype = "serotype";
+   SetModifier(obj_serotype, container, "serotype", value, "eReplace");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBsrc04 "Apply source qualifiers from table" 
+VAR
+    table = "cloneIsosrctable.txt"
+    container = "subtype"
+    existing_text = "eReplace"
+FOR EACH BioSource
+WHERE INTABLE("subtype", "clone", table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    obj = Resolve(container) where obj.subtype = "isolation-source";
+    SetModifier(obj, container, "isolation-source", value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBsrc05 "Apply source qualifiers from table" 
+VAR
+    table = "specidtable.txt"
+    container = "org.orgname.mod"
+    existing_text = "eReplace"
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    ApplyStructVoucherPart("specimen-voucher", "specid", value, existing_text);
+    value = ValueFromTable(table, 3);
+    ApplyStructVoucherPart("specimen-voucher", "inst", value, existing_text);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBsrc06 "Apply source qualifiers from table" 
+VAR
+    table = "specidtable2.txt"
+    container = "org.orgname.mod"
+    existing_text = "eReplace"
+    remove_blank = false
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    ApplyStructVoucherPart("specimen-voucher", "specid", value, existing_text, remove_blank);
+    value = ValueFromTable(table, 3);
+    ApplyStructVoucherPart("specimen-voucher", "inst", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBsrc07 "Apply source qualifiers from table" 
+VAR
+    table = "specidtable2.txt"
+    container = "org.orgname.mod"
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    ApplyStructVoucherPart("specimen-voucher", "specid", value, existing_text, remove_blank);
+    value = ValueFromTable(table, 3);
+    ApplyStructVoucherPart("specimen-voucher", "inst", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyStructVoucher01 "Apply 'GY789' to bio-material-inst (overwrite existing text)"
+VAR
+    new_value = "GY789"
+FOR EACH BioSource
+DO
+    ApplyStructVoucherPart("bio-material", "inst", new_value, "eReplace");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyStructVoucher02 "Apply 'CC789' to culture-collection-coll (add new qualifier)"
+VAR
+    new_value = "CC789"
+FOR EACH BioSource
+DO
+    ApplyStructVoucherPart("culture-collection", "coll", new_value, "eAddQual");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyStructVoucher03 "Apply 'SS789' to specimen-voucher-specid (append separated by comma)"
+VAR
+    new_value = "SS789"
+FOR EACH BioSource
+DO
+    ApplyStructVoucherPart("specimen-voucher", "specid", new_value, "eAppend", ",");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyStructVoucher04 "Apply 'SS789' to specimen-voucher-inst (append separated by comma) where bio-material-specid contains 876"
+VAR
+    new_value = "SS789"
+FOR EACH BioSource
+WHERE CONTAINS(STRUCTVOUCHERPART("bio-material", "specid"), "876")
+DO
+    ApplyStructVoucherPart("specimen-voucher", "inst", new_value, "eAppend", ",");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyStructVoucher05 "Apply 'SS789' to specimen-voucher-inst (append separated by comma) where specimen-voucher-specid contains 879"
+VAR
+    new_value = "SS789"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") where obj.subtype = "specimen-voucher" AND CONTAINS(STRUCTVOUCHERPART("obj.subname", "specid"), "879");
+    ApplyStructVoucherPart(obj, "inst", new_value, "eAppend", ",");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyStructVoucher06 "Apply 'CC789' to culture-collection-coll (overwrite existing text) where culture-collection starts with ':'"
+VAR
+    new_value = "CC789"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") where obj.subtype = "culture-collection" AND Starts("obj.subname", ":");
+    ApplyStructVoucherPart(obj, "coll", new_value, "eReplace");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyStructVoucher07 "Apply 'CC789' to culture-collection-coll (add new qualifier) where culture-collection starts with ':'"
+VAR
+    new_value = "CC789"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") where obj.subtype = "culture-collection" AND Starts("obj.subname", ":");
+    ApplyStructVoucherPart(obj, "coll", new_value, "eAddQual");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructVoucherPart01 "Remove culture-collection-inst"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") Where obj.subtype = "culture-collection";
+    RemoveSubField(obj, "inst");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructVoucherPart02 "Remove culture-collection-inst where culture-collection-coll equals 'U89'"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") Where obj.subtype = "culture-collection" 
+          AND EQUALS(STRUCTVOUCHERPART("obj.subname", "coll"), "U89");
+    RemoveSubField(obj, "inst");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructVoucherPart03 "Edit specimen-voucher-inst replace 'U' with 'TEST'"
+VAR
+    find_text = "U"
+    repl_text = "TEST"
+    location = "anywhere"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") Where obj.subtype = "specimen-voucher";
+    EditSubField("obj.subname", "inst", find_text, repl_text, location, false, false);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructVoucherPart04 "Edit specimen-voucher-inst replace 'U' with 'TEST' where specimen-voucher-inst contains 765"
+VAR
+    find_text = "U"
+    repl_text = "TEST"
+    location = "anywhere"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") Where obj.subtype = "specimen-voucher"
+          AND CONTAINS(StructVoucherPart("obj.subname", "inst"), "765");
+    EditSubField("obj.subname", "inst", find_text, repl_text, location, false, false);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructVoucherPart05 "Edit repeat_region satellite-name replace '67' with '33'"
+VAR
+    find_text = 67
+    repl_text = 33
+    location = "anywhere"
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "satellite";
+    EditSubField("obj.val", "satellite-name", find_text, repl_text, location, false, false);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructVoucherPart06 "Edit repeat_region satellite-type replace 'sat' with 'SAT'"
+VAR
+    find_text = "sat"
+    repl_text = "SAT"
+    location = "anywhere"
+FOR EACH ImpFeat
+WHERE data.imp.key = "repeat_region"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "satellite";
+    EditSubField("obj.val", "satellite-type", find_text, repl_text, location, true, false);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructVoucherPart07 "Remove bio-material where bio-material-inst is present"
+FOR EACH BioSource
+DO
+    obj_bsrc = Resolve("org.orgname.mod") 
+    WHERE obj_bsrc.subtype = "bio-material" AND ISPRESENT(STRUCTVOUCHERPART("obj_bsrc.subname", "inst"));
+    RemoveModifier(obj_bsrc);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructVoucherPart08 "Remove bio-material where bio-material-specid contains '876' (case-sensitive)"
+VAR
+    contains3 = 876
+FOR EACH BioSource
+DO
+    obj_bsrc = Resolve("org.orgname.mod") 
+    WHERE obj_bsrc.subtype = "bio-material" AND CONTAINS(STRUCTVOUCHERPART("obj_bsrc.subname", "specid"),contains3);
+    RemoveModifier(obj_bsrc);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_StructVoucherPart09 "Remove specimen-voucher-inst where isolate contains '3332' (case-sensitive)"
+VAR
+    contains4 = 3332
+FOR EACH BioSource
+WHERE CONTAINS("org.orgname.mod", "isolate",contains4,true,false,false,false,false)
+DO
+    obj = Resolve("org.orgname.mod") WHERE obj.subtype = "specimen-voucher";
+    RemoveSubField(obj, "inst");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableMerge01 "Apply taxname and strain from table, merge first two columns to form the unique identifier" 
+VAR
+    table = "mergetable.txt"
+    container = "org.orgname.mod"
+    existing_text = "eReplace"
+    merge_delimiter = false
+    split_first_col = false
+    convert_multi = false
+    merge_first_cols = true
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 1, "\t", merge_delimiter, split_first_col, convert_multi, merge_first_cols)
+DO
+    value = ValueFromTable(table, 2);
+    SetStringQual("org.taxname", value, existing_text);
+    value = ValueFromTable(table, 3);
+    obj = Resolve(container) WHERE obj.subtype = "strain";
+    SetModifier(obj, container, "strain", value, "eReplace");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableMerge02 "Apply strain from table, merge first two columns to form the unique identifier (case sensitive, empty line)" 
+VAR
+    table = "mergetableci.txt"
+    container = "org.orgname.mod"
+    existing_text = "eReplace"
+    merge_delimiter = false
+    split_first_col = false
+    convert_multi = false
+    merge_first_cols = true
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 1, "\t", merge_delimiter, split_first_col, convert_multi, merge_first_cols)
+DO
+    value = ValueFromTable(table, 2);
+    obj = Resolve(container) WHERE obj.subtype = "strain";
+    SetModifier(obj, container, "strain", value, "eReplace");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableMultiSp01 "Apply taxname and isolation-source from table, convert each separate occurrence of multiple adjacent spaces into a tab"
+VAR
+    table = "convertmultitbl.txt"
+    container = "subtype"
+    existing_text = "eReplace"
+    merge_delimiter = false
+    split_first_col = false
+    convert_multi = true
+    merge_first_cols = false
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 3, "\t", merge_delimiter, split_first_col, convert_multi, merge_first_cols)
+DO
+    value = ValueFromTable(table, 1);
+    SetStringQual("org.taxname", value, existing_text);
+    value = ValueFromTable(table, 2);
+    obj = Resolve(container) WHERE obj.subtype = "isolation-source";
+    SetModifier(obj, container, "isolation-source", value, "eReplace");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableSplit01 "Apply taxname, isolate and orgmod note from table, split first column to form the unique identifier"
+VAR
+    table = "splitcoltable.txt"
+    container = "org.orgname.mod"
+    existing_text = "eReplace"
+    merge_delimiter = false
+    split_first_col = true
+    convert_multi = false
+    merge_first_cols = false
+FOR EACH BioSource
+WHERE INTABLE(SeqId(), table, 1, "\t", merge_delimiter, split_first_col, convert_multi, merge_first_cols)
+DO
+    value = ValueFromTable(table, 2);
+    SetStringQual("org.taxname", value, existing_text);
+    value = ValueFromTable(table, 3);
+    obj = Resolve(container) WHERE obj.subtype = "isolate";
+    SetModifier(obj, container, "isolate", value, "eReplace");
+    value = ValueFromTable(table, 4);
+    obj_note = Resolve(container) WHERE obj_note.subtype = "other";
+    SetModifier(obj_note, container, "other", value, "eReplace");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_RemoveComplete "Remove completedness from nucleotide sequences where the first feature is partial or the last feature is partial"
+FOR EACH MolInfo
+WHERE SEQUENCE_FOR_SEQDESC("inst.mol") IN ("dna" ,"rna", "na") AND (ISPARTIALSTART(FIRSTOF(FEATURES("any"))) OR ISPARTIALSTOP(LASTOF(FEATURES("any"))))
+DO
+    RemoveQual("completeness");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_ApplyTableBsrc08 "Apply table from file molinfo_clonetbl.txt, match to technique"
+VAR
+    table = "molinfo_clonetbl.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = false
+    merge_first = false
+    existing_text = "eAppend"
+    delimiter = ";"
+    remove_blank = false
+FOR EACH BioSource
+WHERE INTABLE(MOLINFO_FOR_BIOSOURCE("tech"), table, 2, ";", merge_del, split_first, convert_multi, merge_first)
+DO
+    value = ValueFromTable(table, 3);
+    obj = Resolve("subtype") WHERE obj.subtype = "clone";
+    SetModifier(obj, "subtype", "clone", value, existing_text, delimiter, remove_blank);
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_DeltaToRaw "Convert delta sequences to raw in the entry"
+FOR EACH TSEntry
+DO
+    ConvertDeltaSeqToRaw();
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_Strand01 "Remove features with the negative strand"
+FOR EACH SeqFeat
+WHERE STRAND() = "minus"
+DO
+    RemoveFeature();
+DONE
+-----------------------------------------------------------------
+MACRO Test_Strand02 "Write starting position of rRNA feature to note for rRNAs that have 'both' strand"
+FOR EACH rRNA
+WHERE STRAND() = "both"
+DO
+    f_start = Start();
+    SetStringQual("comment", f_start, "eAppend", ";");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Strand03 "Write start, end position and strand of all features"
+FOR EACH SeqFeat
+DO
+    f_start = Start();
+    SetStringQual("comment", f_start, "eAppend", " ");
+    f_stop = Stop();
+    SetStringQual("comment", f_stop, "eAppend", ":");
+    f_strand = Strand();
+    SetStringQual("comment", f_strand, "eAppend", ",");
+    SetStringQual("comment", "+1:  ", "eAppend", " ");
+    f_start = Start(true);
+    SetStringQual("comment", f_start, "eAppend", "");
+    f_stop = Stop(true);
+    SetStringQual("comment", f_stop, "eAppend", ":");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Strand04 "Write strand of all features in two ways"
+FOR EACH SeqFeat
+DO
+    strand_str = Strand();
+    SetStringQual("comment", strand_str, "eReplace");
+    strand_sym = StrandSymbol();
+    SetStringQual("comment", strand_sym, "eAppend", ",");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Accession "Write accession into a comment descriptor for all sequences"
+FOR EACH Seq
+DO
+    acc = Accession();
+    SetStringQual("descr..comment", acc, "eReplace");
+DONE
+-----------------------------------------------------------------
+MACRO Test_GeneType "Write gene type for all genes"
+FOR EACH Gene
+DO
+    type = Genetype();
+    SetStringQual("comment", type, "eAppend", ", ");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Label "Write label for all feature to their respective comment"
+FOR EACH SeqFeat
+DO
+    feat_label = Label("eDefault");
+    SetStringQual("comment", feat_label, "eAppend", ";");
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyTablePub01 "Apply table from file pubaffil_tbl.txt, match to sequence id"
+VAR
+    table = "pubaffil_tbl.txt"
+    existing_text = "eAppend"
+    delimiter = ";"
+    remove_blank = false
+FOR EACH Pubdesc
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    SetPubAffil("affil", value, existing_text, delimiter, remove_blank);
+    value = ValueFromTable(table, 3);
+    SetPubAffil("div", value, existing_text, delimiter);
+    value = ValueFromTable(table, 4);
+    SetPubAffil("street", value, existing_text, delimiter, remove_blank);
+    value = ValueFromTable(table, 5);
+    SetPubAffil("country", value, existing_text, delimiter, true);
+    value = ValueFromTable(table, 6);
+    title = PUB_TITLE();
+    SetPubTitle(title, value, "eReplace");
+    value = ValueFromTable(table, 7);
+    SetPubAffil("postal-code", value, existing_text, delimiter);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyTablePub02 "Apply table from file pubvol_tbl.txt, match to sequence id"
+VAR
+    table = "pubvol_tbl.txt"
+    existing_text = "eReplace"
+    remove_blank = false
+FOR EACH Pubdesc
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    SetPubVolume(value, existing_text, remove_blank);
+    value = ValueFromTable(table, 3);
+    SetPubIssue(value, existing_text);
+    value = ValueFromTable(table, 4);
+    SetPubPages(value, existing_text, true);
+    value = ValueFromTable(table, 5);
+    SetPubJournal(value, existing_text, true);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyTablePub03 "Apply table from file pubauthors.txt, match to sequence id"
+VAR
+    table = "pubauthors.txt"
+    existing_text = "eReplace"
+FOR EACH Pubdesc
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    AddAuthorList(value);
+    value = ValueFromTable(table, 3);
+    SetPubJournal(value, existing_text);
+    value = ValueFromTable(table, 4);
+    SetPubVolume(value, existing_text);
+    value = ValueFromTable(table, 5);
+    SetPubIssue(value, existing_text);
+    value = ValueFromTable(table, 6);
+    SetPubPages(value, existing_text);
+    value = ValueFromTable(table, 7);
+    SetPubDateField("year", value);
+    value = ValueFromTable(table, 8);
+    title = PUB_TITLE();
+    SetPubTitle(title, value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyTablePub04 "Apply table from file pubvol_tbl.txt, match to sequence id"
+VAR
+    table = "pubvol_tbl.txt"
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH Pubdesc
+WHERE INTABLE(SeqId(), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    SetPubVolume(value, existing_text, remove_blank);
+    value = ValueFromTable(table, 3);
+    SetPubIssue(value, existing_text);
+    value = ValueFromTable(table, 4);
+    SetPubPages(value, existing_text, remove_blank);
+    value = ValueFromTable(table, 5);
+    SetPubJournal(value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertGap1 "Convert gaps of estimated length of 20 to unknown length gaps"
+VAR
+    gap_size = 20
+FOR EACH SeqNA
+DO
+    ConvertGapsByGapSize(gap_size);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertGap2 "Convert gaps of estimated length of 377 to unknown length gaps (no change)"
+VAR
+    gap_size = 377
+FOR EACH SeqNA
+DO
+    ConvertGapsByGapSize(gap_size);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ConvertGap3 "Convert gaps of estimated length of 100 to unknown length gaps"
+VAR
+    gap_size = 100
+FOR EACH SeqNA
+DO
+    ConvertGapsByGapSize(gap_size);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyTableGeneLocus1 "Apply gene comment from table, use gene locus-tag as identifier (one value is missing)" 
+VAR
+    table = "applygenetable.txt"
+    existing_text = "eReplace"
+FOR EACH Gene
+WHERE INTABLE("data.gene.locus-tag", table, 2, "\t")
+DO
+   value = ValueFromTable(table, 4);
+   SetStringQual("data.gene.locus", value, existing_text);
+   value = ValueFromTable(table, 6);
+   SetRelatedFeatureQual("protein", "data.prot.name", value, existing_text);
+   value = ValueFromTable(table, 8);
+   SetRelatedFeatureQual("cds", "comment", value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyTableGeneLocus2 "Apply gene comment from table, use gene locus-tag as identifier (one value is missing)" 
+VAR
+    table = "applygenetable.txt"
+    existing_text = "eReplace"
+    update_mrna = true
+FOR EACH Gene
+WHERE INTABLE("data.gene.locus-tag", table, 2, "\t")
+DO
+   value = ValueFromTable(table, 4);
+   SetStringQual("data.gene.locus", value, existing_text);
+   value = ValueFromTable(table, 6);
+   SetRelatedFeatureQual("protein", "data.prot.name", value, existing_text, false, update_mrna);
+   value = ValueFromTable(table, 8);
+   SetRelatedFeatureQual("cds", "comment", value, existing_text);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyTableGeneLocus3 "Apply gene comment from table, use gene locus-tag as identifier (one value is missing)" 
+VAR
+    table = "applygenetable.txt"
+    existing_text = "eReplace"
+    update_mrna = true
+    remove_blank = true
+FOR EACH Gene
+WHERE INTABLE("data.gene.locus-tag", table, 2, "\t")
+DO
+   value = ValueFromTable(table, 4);
+   SetStringQual("data.gene.locus", value, existing_text);
+   value = ValueFromTable(table, 6);
+   SetRelatedFeatureQual("protein", "data.prot.name", value, existing_text, remove_blank, update_mrna);
+   value = ValueFromTable(table, 8);
+   SetRelatedFeatureQual("cds", "comment", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyTableGeneLocus4 "Apply table from file applygenetable.txt, match to Gene locus_tag"
+VAR
+    table = "applygenetable.txt"
+    existing_text = "eReplace"
+    remove_blank = false
+    update_mrna = true
+FOR EACH Protein
+WHERE INTABLE(RELATED_FEATURE("Gene", "data.gene.locus-tag"), table, 2, "\t")
+DO
+    value = ValueFromTable(table, 4);
+    SetStringQual("data.prot.name", value, existing_text, remove_blank);
+    UpdatemRNAProduct();
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyTechniqueTable "Apply table from file clonetechnique.txt, match to clone"
+VAR
+    table = "clonetechnique.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = true
+    merge_first = false
+    existing_text = "eReplace"
+    remove_blank = false
+FOR EACH Seq
+WHERE INTABLE(BIOSOURCE_FOR_MOLINFO("subtype", "clone"), table, 1, "\t", merge_del, split_first, convert_multi, merge_first)
+DO
+    value = ValueFromTable(table, 2);
+    SetStringQual("descr..molinfo.tech", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyInstTable "Apply table from file cloneinst.txt (WINDOWS), match to clone where technique equals 'HTGS 0' (case-sensitive)"
+VAR
+    table = "cloneinst.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = true
+    merge_first = false
+    existing_text = "eReplace"
+    remove_blank = false
+    equals1 = %htgs-0%
+FOR EACH Seq
+WHERE INTABLE(BIOSOURCE_FOR_MOLINFO("subtype", "clone"), table, 1, "\t", merge_del, split_first, convert_multi, merge_first)
+      AND EQUALS("descr..molinfo.tech",equals1,true,false,false,false,false)
+DO
+    value = ValueFromTable(table, 2);
+    SetStringQual("inst.mol", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_AddDBLinkMulti01 "Apply table from file dblink_multitbl.txt (WINDOWS), match to BioSample"
+VAR
+    table = "dblink_multitbl.txt"
+    existing_text = "eReplace"
+    remove_blank = false
+FOR EACH SeqNA
+WHERE INTABLE(DBLINKTYPE("BioSample"), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    AddDBLink("Sequence Read Archive", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_AddDBLinkMulti02 "Apply table from file dblink_multitbl.txt (WINDOWS), match to BioSample"
+VAR
+    table = "dblink_multitbl.txt"
+    existing_text = "eAddQual"
+    remove_blank = false
+FOR EACH SeqNA
+WHERE INTABLE(DBLINKTYPE("BioSample"), table, 1, "\t")
+DO
+    value = ValueFromTable(table, 2);
+    AddDBLink("Sequence Read Archive", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_MobileElement1 "Remove mobile_element note where mobile_element mobile_element_type_type is present"
+FOR EACH ImpFeat
+WHERE data.imp.key = "mobile_element"
+      AND ISPRESENT(MOBILE_ELEMENTTYPE_TYPE())
+DO
+    RemoveQual("comment");
+DONE
+-----------------------------------------------------------------
+MACRO Test_MobileElement2 "Edit mobile_element mobile-element-type-name replace '6' (case sensitive)  with 'Test'"
+VAR
+    find_text = %6%
+    repl_text = %Test%
+    location = "anywhere"
+    case_sensitive = %true%
+    is_regex = %false%
+FOR EACH ImpFeat
+WHERE data.imp.key = "mobile_element"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "mobile_element_type";
+    EditSubfield("obj.val", "mobile-element-type-name", find_text, repl_text, location, case_sensitive, is_regex);
+DONE
+-----------------------------------------------------------------
+MACRO Test_MobileElement3 "Remove mobile_element mobile-element-type-name where mobile_element mobile_element_type_name is present"
+FOR EACH ImpFeat
+WHERE data.imp.key = "mobile_element"
+DO
+    obj = Resolve("qual") WHERE obj.qual = "mobile_element_type" AND ISPRESENT(MOBILE_ELEMENTTYPE_NAME());
+    RemoveSubField(obj, "mobile-element-type-name");
+DONE
+-----------------------------------------------------------------
+MACRO Test_MobileElement4 "Remove mobile_element mobile-element-type-type where mobile_element mobile_element_type_name is present"
+FOR EACH ImpFeat
+WHERE data.imp.key = "mobile_element"
+      AND ISPRESENT(MOBILE_ELEMENTTYPE_NAME())
+DO
+    obj = Resolve("qual") WHERE obj.qual = "mobile_element_type";
+    RemoveSubField(obj, "mobile-element-type-type");
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyRnaTable01 "Apply table from file applyrnatable.txt (WINDOWS), match to mRNA gene locus tag"
+VAR
+    table = "applyrnatable.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = false
+    merge_first = false
+    existing_text = "eReplace"
+    remove_blank = false
+FOR EACH mRNA
+WHERE INTABLE(RELATED_FEATURE("gene", "data.gene.locus-tag"), table, 2, "\t", merge_del, split_first, convert_multi, merge_first)
+DO
+    value = ValueFromTable(table, 3);
+    SetRelatedFeatureQual("gene", "data.gene.locus", value, existing_text, remove_blank, false);
+    value = ValueFromTable(table, 4);
+    SetStringQual("data.rna.ext.name", value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyRnaTable02 "Apply table from file applyrnatable.txt (WINDOWS), match to SeqId"
+VAR
+    table = "applyrnatable.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = false
+    merge_first = false
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH RNA
+WHERE INTABLE(SEQID(), table, 1, "\t", merge_del, split_first, convert_multi, merge_first)
+DO
+    value = ValueFromTable(table, 5);
+    SetRnaProduct(value, existing_text, remove_blank);
+DONE
+-----------------------------------------------------------------
+MACRO Test_ApplyRnaTable03 "Apply table from file applyrnatable.txt (WINDOWS), match to SeqId"
+VAR
+    table = "applyrnatable.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = false
+    merge_first = false
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH RNA
+WHERE data.rna.type = "ncRNA"
+      AND data.rna.ext.gen.class = "miRNA"
+      AND INTABLE(SEQID(), table, 1, "\t", merge_del, split_first, convert_multi, merge_first)
+DO
+    value = ValueFromTable(table, 6);
+    SetStringQual("comment", value, existing_text, remove_blank);
+DONE
+---------------------------------------------------
+MACRO Test_ApplyMiscQuals01 "Apply table from file clonemisctable.txt (WINDOWS), match to clone"
+VAR
+    table = "clonemisctable.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = false
+    merge_first = false
+    existing_text = "eReplace"
+    remove_blank = false
+FOR EACH SeqNA
+WHERE INTABLE(BIOSOURCE_FOR_SEQUENCE("subtype", "clone"), table, 1, "\t", merge_del, split_first, convert_multi, merge_first)
+DO
+    value = ValueFromTable(table, 2);
+    SetStringQual("descr..title", value, existing_text, remove_blank);
+    value = ValueFromTable(table, 3);
+    SetStringQual("descr..comment", value, existing_text, remove_blank);
+    value = ValueFromTable(table, 4);
+    SetStringQual("descr..genbank.keywords", value, existing_text, remove_blank);
+DONE
+---------------------------------------------------
+MACRO Test_ApplyMiscQuals02 "Apply table from file clonemisctable.txt (WINDOWS), match to clone"
+VAR
+    table = "clonemisctable.txt"
+    merge_del = false
+    split_first = false
+    convert_multi = false
+    merge_first = false
+    existing_text = "eReplace"
+    remove_blank = true
+FOR EACH SeqNA
+WHERE INTABLE(BIOSOURCE_FOR_SEQUENCE("subtype", "clone"), table, 1, "\t", merge_del, split_first, convert_multi, merge_first)
+DO
+    value = ValueFromTable(table, 2);
+    SetStringQual("descr..title", value, existing_text, remove_blank);
+    value = ValueFromTable(table, 3);
+    SetStringQual("descr..comment", value, existing_text, remove_blank);
+    value = ValueFromTable(table, 4);
+    SetStringQual("descr..genbank.keywords", value, existing_text, remove_blank);
+DONE
+---------------------------------------------------
+MACRO Test_MakeSimpleCSV "Write gene locus, start and end positions, and GeneID for all gene features"
+VAR
+    print_once = true
+FOR EACH Gene
+DO
+    PrintLiteral("accession,start,stop,gene locus,strand,GeneID,gene descr,gene_type,label\n", print_once);
+    f_acc = Accession();
+    Print(f_acc, ",");
+    f_start = START(true);
+    Print(f_start, ",");
+    f_stop = STOP(true);
+    Print(f_stop, ",");
+    Print("data.gene.locus", ",");
+    f_strand = Strand();
+    Print(f_strand, ",");
+    dbxref = Resolve("dbxref") Where dbxref.db = "GeneID";
+    Print("dbxref.tag.id", ",");
+    Print("data.gene.desc", ",");
+    gene_type = Genetype();
+    Print(gene_type, ",");
+    gene_label = Label("eDefault");
+    Print(gene_label);
+    PrintLiteral("\n");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_MakeTable1 "Write Accession, BioProject, biosamples, SRR accessions, structured comment fields and comment for all sequences"
+VAR
+    print_once = true
+FOR EACH SeqNa
+DO
+    PrintLiteral("Accession\tBioProject\tBioSample\tSRR accession\tAssembly Method\tSequencing Technology\tComment\n", print_once);
+    f_acc = Accession();
+    PrintBankit(f_acc, "", "\t");
+    proj = DBLinkType("BioProject");
+    PrintBankit(proj, ";", "\t");
+    sample = DBLinkType("BioSample");
+    PrintBankit(sample, ";", "\t");
+    sample = DBLinkType("Sequence Read Archive");
+    PrintBankit(sample, ";", "\t");
+    method = STRUCTCOMMFIELD("Assembly Method");
+    PrintBankit(method, "", "\t");
+    tech = STRUCTCOMMFIELD("Sequencing Technology");
+    PrintBankit(tech, "", "\t");
+    PrintBankit("descr..comment");
+    PrintLiteral("\n");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_Ranges01 "Apply 'in range' to gene description (append separated by semicolon) where genes are in the specified range"
+For Each gene Range [63, 100]
+Do
+    SetStringQual("data.gene.desc", "in range", "eAppend", ";");
+Done
+-----------------------------------------------------------------------------
+MACRO Test_Ranges02 "Delete RNA features within the specified range"
+For Each rna Range [600, 2600]
+Do
+    RemoveFeature();
+Done
+-----------------------------------------------------------------------------
+MACRO Test_MakeSimpleTSV "Write gene locus, start and end positions, and GeneID for all gene features"
+VAR
+    print_once = true
+FOR EACH Gene
+DO
+    PrintLiteral("accession\tstart\tstop\tgene locus\tstrand\tGeneID\tgene descr\tgene_type\tlabel\n", print_once);
+    f_acc = Accession();
+    PrintTSV(f_acc, "\t");
+    f_start = START(true);
+    PrintTSV(f_start, "\t");
+    f_stop = STOP(true);
+    PrintTSV(f_stop, ", ");
+    PrintTSV("data.gene.locus", "\t");
+    f_strand = Strand();
+    PrintTSV(f_strand, "\t");
+    dbxref = Resolve("dbxref") Where dbxref.db = "GeneID";
+    PrintTSV("dbxref.tag.id", " DELIMITER ");
+    PrintTSV("data.gene.desc", "\t");
+    gene_type = Genetype();
+    PrintTSV(gene_type, "; ");
+    gene_label = Label("eDefault");
+    PrintTSV(gene_label);
+    PrintLiteral("\n");
+DONE
+-----------------------------------------------------------------------------
+MACRO Test_LookupDOI "Lookup publication by DOI number"
+FOR EACH Pubdesc
+DO
+    DOILookup("10.1101/2020.02.12.945220");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Apple1 "Test genes from named annotation"
+For Each gene From NA000213277.1
+RANGE [3000, 2774000]
+DO
+    f_start = START(true);
+    Print(f_start, ",");
+    f_stop = STOP(true);
+    Print(f_stop, ",");
+    Print("data.gene.locus");
+    PrintLiteral("\n");
+DONE
+-----------------------------------------------------------------
+MACRO Test_Apple2 "Test genes from named annotation"
+For Each gene From NA000213277.1
+RANGE [3000, 2774000]
+DO_P (4)
+    f_start = START(true);
+    Print(f_start, ",");
+    f_stop = STOP(true);
+    Print(f_stop, ",");
+    Print("data.gene.locus");
+    PrintLiteral("\n");
+DONE
+-----------------------------------------------------------------
+MACRO Test_SNP1 "Write track data"
+FOR EACH SNP From NA000193272.4#17 
+RANGE [90000000, 90002000]
+DO_P (5)
+    snp_start = Start(true);
+    PrintTSV(snp_start, "\t");
+    snp_id = SnpId();
+    PrintTSV(snp_id, "\t");
+    snp_ref_allele = RefAllele();
+    PrintTSV(snp_ref_allele, "\t");
+    snp_alt_alleles = AltAlleles(",");
+    PrintTSV(snp_alt_alleles, "\t");
+    PrintLiteral("\n");
+DONE
+-----------------------------------------------------------------------------
+
+
+

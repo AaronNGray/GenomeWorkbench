@@ -1,0 +1,231 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "Gryzenhout",
+          first "Marieka",
+          initials "M.M."
+        },
+        affil std {
+          affil "Forestry and Agricultural Biotechnology Institute (FABI)",
+          city "Pretoria",
+          sub "Gauteng",
+          country "South Africa",
+          street "University of Pretoria",
+          email "Marieka.Gryzenhout@fabi.up.ac.za",
+          fax "+27-12-4203938",
+          phone "+27-12-4203933",
+          postal-code "0002"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Gryzenhout",
+              first "Marieka",
+              initials "M."
+            }
+          },
+          {
+            name name {
+              last "Vermeulen",
+              first "Marcele",
+              initials "M."
+            }
+          },
+          {
+            name name {
+              last "Dick",
+              first "Margaret",
+              initials "M."
+            }
+          },
+          {
+            name name {
+              last "Wingfield",
+              first "Michael",
+              initials "M.J."
+            }
+          }
+        },
+        affil std {
+          affil "Forestry and Agricultural Biotechnology Institute (FABI)",
+          city "Pretoria",
+          sub "Gauteng",
+          country "South Africa",
+          street "University of Pretoria",
+          postal-code "0002"
+        }
+      },
+      date std {
+        year 2009,
+        month 8,
+        day 5
+      }
+    },
+    hup TRUE,
+    reldate std {
+      year 2010,
+      month 7,
+      day 31
+    },
+    subtype new,
+    tool "Sequin 9.20 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Holocryphia eucalypti",
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "CMW8541"
+                }
+              },
+              lineage "Cryphonectriaceae Diaporthales",
+              gcode 1
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "South Africa"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "CMW8541SA"
+          },
+          descr {
+            title "Holocryphia eucalypti",
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2009,
+              month 8,
+              day 5
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "CMW8541SA"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 305,
+            seq-data iupacna "CAAACCATCTCGGGGACCAGGCCACCGAGCTTGCCCTTCTGACGCGTT
+TCTCGTCCAGGCCTCCGGCAACAAGGGTGCCATCTTGTACGTTTTTGTCTTCTCTGTCTCACCAGCCGTGGCAACTAC
+TTCGTCGAGTGGATCCCCAACAACGTCCAGACCGCCCTCTGCTCCATCCCCCCCAAGGGCCTCAAGATGTCCTCCACC
+TTTGTCGGCAACTCCACCGCCATCCAGGAGCTCTTCAAGCGTGTTGGCGAGCAGTTCACCGCCATGTTCCGGCGCAAG
+GCTTTCTTGCATTGGTACACTGG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    frame one,
+                    code {
+                      id 1
+                    }
+                  },
+                  product whole local str "CMW8541SA_1",
+                  location packed-int {
+                    {
+                      from 0,
+                      to 14,
+                      strand plus,
+                      id local str "CMW8541SA"
+                    },
+                    {
+                      from 304,
+                      to 304,
+                      strand plus,
+                      id local str "CMW8541SA"
+                    },
+                    {
+                      from 58,
+                      to 83,
+                      strand plus,
+                      id local str "CMW8541SA"
+                    },
+                    {
+                      from 113,
+                      to 304,
+                      strand plus,
+                      id local str "CMW8541SA"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "CMW8541SA_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              tech concept-trans-a
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "CMW8541SA_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 78,
+            seq-data ncbieaa "-TISGGLRQQGCHLPWQLLRRVDPQQRPDRPLLHPPQGPQDVLHLCRQ
+LHRHPGALQACWRAVHRHVPAQGFLALVHW"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "NADH dehydrogenase subunit 3"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 77,
+                    id local str "CMW8541SA_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

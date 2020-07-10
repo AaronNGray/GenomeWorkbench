@@ -1,0 +1,256 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class pop-set,
+      seq-set {
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Hepatitis D virus",
+                orgname {
+                  attrib "specified"
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "BD-HBV01",
+                general {
+                  db "BankIt",
+                  tag str "2042031/BD-HBV01"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 85680429
+                },
+                genbank {
+                  accession "MF925358"
+                }
+              },
+              descr {
+                molinfo {
+                  biomol genomic,
+                  completeness complete
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 3182,
+                topology circular,
+                strand ds,
+                seq-data ncbi2na '75105F514077908D52AE2297B3F579EBA752F4A04B01
+5EF5871E5DD5336D0DF7628FAA15E67813A204D134A3D72855E76EF129AAFFDFBE10835D10C592
+2DC876EBA1F7743FDCAAA145BBB7E9403D92D541750D1D14175ED7507ED7AF367A3BB79A6FF34D
+F5DF4D79E73974DF7EFAF7DE87342B3BE56FED770F528DF414526EA14E481791871EF4281773B3
+575EF9EC5017DA1A03E45ECF54D534D7A9FDA00F5CEA2EA5D256FDD7A74BF1CB94FEF4BAF6CA9F
+D551EFE9FD2F33A38EEB3EAA50B7B124DF8B57FF167BC50FF7FEDFEACC4FC0570401C023AAF1DF
+C0FD3A9CED3E8EF3AB4F9442344D31200D020EFF2807D7BC12973E3E80B7B41B3EEADDFABFE795
+7FC443BAF35E7F0E57ECE5ECF4370929FD1FDD941F10A5FDEEC04317817F156F95A41A52B7B942
+EFE78641551E9EA9FAD3A94D264E6E817F7A75DE58D4C79A075C967EFF9D925ADE89013DDA868C
+1DEFBDDD59033136FD4E9E729EE7941E8D799A86D7FBF1B56DA67835668615F76A967EA9DDDB55
+F75B796FDB5851AA645DDFC668755B7B97DD379685BB91F67D17791B64E88516E065451F7E542B
+7C4C22877E8777B0ED061617E2931F4087BFBF021EA28BEAA288F23C0ADFEC728A7B29303EB799
+14914E41FFD177970D377EF4ED71EF425D427B97EAE9FEA93A13E15F3020FE89C7BA2F1DDBFF97
+DE1F7F5F4B188DF7E3165D277B36A097C8B75E24FBD174D31E474A42435FE7AAA070E1DC9C5EAE
+AEF0FE823524DCA85CB2D2F3B411C33A9702F4A41CFBAFD13F7EDD1FDA08806B4C8B3FAEDFDA2E
+E8F6475D49F32145C395737CD047D68871EFBC8618A4AD572082075765D92182B743659B648237
+4376A0DD0EF2CF5FA1D30AEA01FC6A9FCF7DC7B17B7F0574FA0045F7FD70CC4FC45084D34003B8
+10FECAD4744B43880608790F0F3979CAFF3503BC5033F94F230AA3C05F3CD481372F0D3C7D4052
+13CFC44773A0A6ACCF3308880411B265D3FEEAD14CF7EA04027124EA920DFD452435DEA3DFD585
+14BE8D497D224044903523EA1F435410A117A5219410ACA27A24F6A7A8F45516468A5FFAAE895D
+29D2A4C31017E5240D65D79371436D2D282925C559EDD45FE2011D35D294E4BA00'H
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data gene {
+                        locus "P"
+                      },
+                      location mix {
+                        int {
+                          from 2306,
+                          to 3181,
+                          strand plus,
+                          id local str "BD-HBV01"
+                        },
+                        int {
+                          from 0,
+                          to 1622,
+                          strand plus,
+                          id local str "BD-HBV01"
+                        }
+                      }
+                    },
+                    {
+                      data gene {
+                        locus "X"
+                      },
+                      location int {
+                        from 1373,
+                        to 1837,
+                        strand plus,
+                        id local str "BD-HBV01"
+                      }
+                    },
+                    {
+                      data rna {
+                        type mRNA,
+                        ext name "mRNA product name"
+                      },
+                      location int {
+                        from 1373,
+                        to 1837,
+                        id local str "BD-HBV01"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            seq {
+              id {
+                local str "BD-HBV01_prot_1",
+                general {
+                  db "TMSMART",
+                  tag id 85680430
+                }
+              },
+              descr {
+                title "polymerase [Hepatitis B virus]",
+                molinfo {
+                  biomol peptide
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 832,
+                seq-data ncbieaa "MPLSYQHFRRLLLLDDEAGPLEEELPRLADEGLNRRVAEDLNLG
+NLNVSIPWTHKVGNFTGLYSSTVPVFNPHWKTPSFPNIHLHQDIIKKCEQFVGPLTVNEKRRLQLIMPARFYPNVTKY
+LPLDKGIKPYYPEHLVNHYFQTRHYLHTLWKAGILYKRETTRSASFCGSPYSWEQKLQHGAESFHQQSSGILSRPPVG
+SSLQSKHSKSRLGLQSQQGHLARRQQGRSWSIRAGIHPTARRPFGVEPSGSGHNTNLASKSASCIYQSSVRKAAYPAV
+STFEKHSSSGHAVELHNLPPNSARSQGERPVFPCWWLQFRNSKPCSDYCLSHIVNLLEDWGPCAEHGEHHIRIPRTPA
+RVTGGVFLVDKNPHNTAESRLVVDFSQFSRGDHRVSWPKFAVPNLQSLTNLLSSNLSWLSLDVSAAFYHLPLHPAAMP
+HLLVGSSGLSRYVARLSSNSRIFNHQRGTMQNLHDYCSRNLYVSLLLLYQTFGRKLHLYSHPIILGFRKIPMGVGLSP
+FLLAQFTSAICSVVRRAFPHCLAFSYMDDVVLGAKSVQHLESLFTAVTNFLLSLGIHLNPNKTKRWGYSLNFMGYVIG
+CYGSLPQDHIIQKIKECFRKLPVNRPIDWKVCQRIVGLLGFAAPFTQCGYPALMPLYACIQSKQAFTFSPTYKAFLCK
+QYLNLYPVARQRPGLCQVFADATPTGWGLVMGHQRMRGTFLAPLPIHTAELLAACFARSRSGANILGTDNSVVLSRKY
+TSFPWLLGCAANWILRGTSFVYVPSALNPADDPSRGRLGLSRPLLRLPFRPTTGRTSLYADSPSVPSHLPDRVHFASP
+LHVAWRPP"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "polymerase"
+                        }
+                      },
+                      location int {
+                        from 0,
+                        to 831,
+                        id local str "BD-HBV01_prot_1"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            seq {
+              id {
+                local str "BD-HBV01_prot_5",
+                general {
+                  db "TMSMART",
+                  tag id 85680434
+                }
+              },
+              descr {
+                title "X protein [Hepatitis B virus]",
+                molinfo {
+                  biomol peptide
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 154,
+                seq-data ncbieaa "MAARLCCQLDPARDVLCLRPVGAESRGRPFSGPLGALSSPSPSA
+VSSDHGAHLSLRGLPVCAFSSAGPCALRFTSARRMETTVNAHHFLPKVLHKRTLGLSVMSTTDLEAYFKDCLFKDWEE
+LGEEIRLKVFVLGGCRHKLVCAPAPCNFFTSA"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "X protein"
+                        }
+                      },
+                      location int {
+                        from 0,
+                        to 153,
+                        id local str "BD-HBV01_prot_5"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    code {
+                      id 1
+                    }
+                  },
+                  product whole local str "BD-HBV01_prot_1",
+                  location mix {
+                    int {
+                      from 2306,
+                      to 3181,
+                      strand plus,
+                      id local str "BD-HBV01"
+                    },
+                    int {
+                      from 0,
+                      to 1622,
+                      strand plus,
+                      id local str "BD-HBV01"
+                    }
+                  }
+                },
+                {
+                  data cdregion {
+                    code {
+                      id 1
+                    }
+                  },
+                  product whole local str "BD-HBV01_prot_5",
+                  location int {
+                    from 1373,
+                    to 1837,
+                    strand plus,
+                    id local str "BD-HBV01"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

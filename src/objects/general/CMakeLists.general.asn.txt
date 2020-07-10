@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.general.asn.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(general)
+  NCBI_sources(uoconv)
+  NCBI_dataspecs(general.asn)
+  NCBI_uses_toolkit_libraries(xser)
+  NCBI_project_watchers(bollin)
+NCBI_end_lib()
+

@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.test_seqmap_switch.app.txt 593493 2019-09-19 15:37:14Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_seqmap_switch)
+  NCBI_sources(test_seqmap_switch)
+  NCBI_uses_toolkit_libraries(xobjmgr)
+  NCBI_project_watchers(vasilche)
+NCBI_end_app()
+

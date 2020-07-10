@@ -1,0 +1,102 @@
+Seq-annot ::= {
+  data ftable {
+    {
+      data gene {
+        locus "thrL",
+        locus-tag "B0X74_01565"
+      },
+      location int {
+        from 189,
+        to 254,
+        strand plus,
+        id local str "test"
+      }
+    },
+    {
+      data cdregion {
+        code {
+          id 11
+        }
+      },
+      comment "Derived by automated computational analysis using gene
+ prediction method: Protein Homology.",
+      product whole genbank {
+        accession "ASF62819"
+      },
+      location int {
+        from 189,
+        to 254,
+        strand plus,
+        id local str "test"
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "gb|ASF62819||gnl|PRJNA371529|B0X74_01565"
+        },
+        {
+          qual "inference",
+          val "COORDINATES: similar to AA sequence:RefSeq:NP_454611.1"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "Thr operon leader peptide ThrL"
+            }
+          }
+        }
+      }
+    },
+    {
+      data gene {
+        locus "thrA",
+        locus-tag "B0X74_01570"
+      },
+      location int {
+        from 336,
+        to 2798,
+        strand plus,
+        id local str "test"
+      }
+    },
+    {
+      data cdregion {
+        code {
+          id 11
+        }
+      },
+      comment "Derived by automated computational analysis using gene
+ prediction method: Protein Homology.",
+      product whole genbank {
+        accession "ASF62820"
+      },
+      location int {
+        from 336,
+        to 2798,
+        strand plus,
+        id local str "test"
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "gnl|PRJNA371529|B0X74_01570|gb|ASF62820"
+        },
+        {
+          qual "inference",
+          val "COORDINATES: similar to AA sequence:RefSeq:WP_005124053.1"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "bifunctional aspartate kinase/homoserine dehydrogenase I"
+            }
+          }
+        }
+      }
+    }
+  }
+}

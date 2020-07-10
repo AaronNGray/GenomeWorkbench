@@ -1,0 +1,34 @@
+Seq-entry ::= seq {
+  id {
+    local str "update_seq"
+  },
+  descr {
+    user {
+      type str "CFastaReader",
+      data {
+        {
+          label str "DefLine",
+          data str ">update_seq"
+        }
+      }
+    },
+    user {
+      type str "OriginalID",
+      data {
+        {
+          label str "LocalId",
+          data str "update_seq"
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol na,
+    length 535,
+    seq-data ncbi2na '5E6828D3C5C8BFB29FE5E7377C54EDFF8B17DBF5DA6AD65658FA1053
+014FE4BE4349B78001CC32F107F41068DDFAF7A4D8E0819260398C2CBB83E483D2E0D360DFE064
+4F9957EB3D4EA9397BD89B4FEC5F42779FAEFABBFB765DE66C8765D0043E925A6CF8FDA264B137
+667F91D306186D402C4FFC477E1768D2B2A3159E07C24CD0C25A2800'H
+  }
+}

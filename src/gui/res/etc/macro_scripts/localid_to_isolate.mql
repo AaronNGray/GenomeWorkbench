@@ -1,0 +1,10 @@
+MACRO ParseLocalId_Isolate "Parse entire text from local ID to isolate (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+    cap_change = "none"
+FOR EACH BioSource
+DO
+    id = LocalID();
+    ParseStringQual(id, "isolate", cap_change, existing_text);
+DONE
+------------------------------------------------------------------------------

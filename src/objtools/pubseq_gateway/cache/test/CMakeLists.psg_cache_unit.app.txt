@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.psg_cache_unit.app.txt 594157 2019-09-30 18:28:48Z gouriano $
+#############################################################################
+
+NCBI_begin_app(psg_cache_unit)
+  NCBI_sources(
+    psg_cache_unit unit/psg_cache_base unit/psg_cache_bioseq_info unit/psg_cache_si2csi
+    unit/psg_cache_blobprop unit/psg_pack_unpack
+  )
+  NCBI_uses_toolkit_libraries(psg_protobuf psg_cache)
+  NCBI_project_watchers(saprykin)
+  NCBI_requires(PROTOBUF GMOCK)
+NCBI_end_app()

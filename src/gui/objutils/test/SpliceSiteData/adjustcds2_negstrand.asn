@@ -1,0 +1,265 @@
+Seq-entry ::= set {
+  class phy-set,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Paphiopedilum adductum",
+            db {
+              {
+                db "taxon",
+                tag id 53066
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Paphiopedilum",
+                species "adductum"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Paphiopedilum",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "G1_P_adductum_62-6",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G1_P_adductum_62-6"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716524
+            },
+            genbank {
+              accession "JQ182152"
+            }
+          },
+          descr {
+            title "Paphiopedilum adductum clone 6
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1336,
+            seq-data ncbi2na '69D7E9780FDE5C2B127D3B2D7608407EAB2175F7DD779751
+4096996A08D1A6D9F56AFB20E298F84D7BE5B67799451DAE4D11DFB3F56FEE345E5143EF4F0EAD
+3C39F0FE77B9FFABDBF7C4F9EC27CFD0D0BFFDEC6FF4C0027D21E017809E1E0B22FFED8BCCB000
+02CD21FB82843FEFD2D6E7978400AC2238028020012288EF9F024E4E77FCCD702740DFFFFFC3BF
+DFFFAE012288EF9FAAE93317427AD963BE3863A0E9A229A86D854BF5B5F882FA296785E34D7A08
+828E3165A6DAEE266495BE389D29F6A42BAB2F9E17DB5406DA7D535854C0295DF4AC55F750550B
+5D11048D0B25DD6727DD49D45901D7D1A1F9E030000E0C8844E221234760C69A3898E6CEFE83AC
+5AC62D362B4A85DA23BE804A8AE9A2820AE7F54B623ED1ED05F755E7D0A97E9260F5F806F9D1A0
+197B2E75FAD9A5D857B5389DB888D5BAF482793D1439304EF2D30E42A3847AE82220A693D1'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1335,
+                    strand minus,
+                    id local str "G1_P_adductum_62-6",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1032,
+                    to 1259,
+                    strand minus,
+                    id local str "G1_P_adductum_62-6"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 607,
+                    to 945,
+                    strand minus,
+                    id local str "G1_P_adductum_62-6"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 221,
+                    strand minus,
+                    id local str "G1_P_adductum_62-6",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1032,
+                      to 1259,
+                      strand minus,
+                      id local str "G1_P_adductum_62-6",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 607,
+                      to 945,
+                      strand minus,
+                      id local str "G1_P_adductum_62-6"
+                    },
+                    {
+                      from 0,
+                      to 221,
+                      strand minus,
+                      id local str "G1_P_adductum_62-6",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "G1_P_adductum_62-6_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G1_P_adductum_62-6_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716525
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Paphiopedilum adductum]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 263,
+            seq-data ncbieaa "LLNHGISHELMDRVEAATKEHYRRFREQRFKEFAAKALEAGEKVDSDN
+LDWESTFFLRHLPVSNISEVPDLDDSYRKSVKEFAVELEKLAERLLDLLCEDLGLEKGYLKRAFYGSDGKPTFGTKVS
+NYPPCPKPELINGLRAHTDAGGIILLFQDDQVSGLQLLKDGNWVDVPPLRHSIVINIGDQLEVITNGKYKSVMHRVVA
+QSDGNRMSIASFYNPGSDAVIFPAPALVEAEEKKEVYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 262,
+                    id local str "G1_P_adductum_62-6_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "G1_P_adductum_62-6_1",
+              location packed-int {
+                {
+                  from 1032,
+                  to 1259,
+                  strand minus,
+                  id local str "G1_P_adductum_62-6",
+                  fuzz-to lim gt
+                },
+                {
+                  from 607,
+                  to 945,
+                  strand minus,
+                  id local str "G1_P_adductum_62-6"
+                },
+                {
+                  from 0,
+                  to 221,
+                  strand minus,
+                  id local str "G1_P_adductum_62-6",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

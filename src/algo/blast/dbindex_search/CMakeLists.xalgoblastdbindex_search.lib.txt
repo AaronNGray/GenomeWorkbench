@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.xalgoblastdbindex_search.lib.txt 593585 2019-09-20 13:57:47Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(xalgoblastdbindex_search)
+  NCBI_sources(sr_search)
+  NCBI_uses_toolkit_libraries(seqset xobjmgr)
+  NCBI_add_definitions(DO_INLINE)
+  NCBI_project_watchers(morgulis)
+NCBI_end_lib()
+

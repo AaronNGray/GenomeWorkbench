@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.t0006.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db95_t0006)
+  NCBI_sources(t0006 common)
+  NCBI_set_test_assets(t0006.sql)
+  NCBI_add_test(test-db95 db95_t0006)
+NCBI_end_app()
+

@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.objprt.asn.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(objprt)
+  NCBI_dataspecs(objprt.asn)
+  NCBI_uses_toolkit_libraries(xser)
+NCBI_end_lib()
+

@@ -1,0 +1,359 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "?"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Lorch",
+              first "Jeffrey",
+              initials "J.M."
+            }
+          }
+        },
+        affil std {
+          affil "U.S. Geological Survey",
+          div "National Wildlife Health Center",
+          city "Madison",
+          sub "WI",
+          country "USA",
+          street "6006 Schroeder Road",
+          postal-code "53711"
+        }
+      },
+      medium email,
+      date std {
+        year 2016,
+        month 6,
+        day 30
+      }
+    },
+    tool "Genome Workbench 3.1.1 Windows 10 (build 17134), 64-bit edition"
+  },
+  data entrys {
+    set {
+      class genbank,
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KX290926"
+            },
+            gi 1044897359
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            pub {
+              pub {
+                gen {
+                  cit "Unpublished",
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lorch",
+                          first "Jeffrey",
+                          initials "J.M."
+                        }
+                      }
+                    }
+                  },
+                  journal {
+                    name "Cell"
+                  },
+                  volume "I",
+                  issue "23",
+                  pages "34-38",
+                  title "First detection of bat white-nose syndrome"
+                }
+              }
+            },
+            pub {
+              pub {
+                sub {
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lorch",
+                          first "Jeffrey",
+                          initials "J.M."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "U.S. Geological Survey",
+                      div "National Wildlife Health Center",
+                      city "Madison",
+                      sub "WI",
+                      country "USA",
+                      street "6006 Schroeder Road",
+                      postal-code "53711"
+                    }
+                  },
+                  medium email,
+                  date std {
+                    year 2016,
+                    month 5,
+                    day 26
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 109,
+            strand ds,
+            seq-data iupacna "TACGAAAGGACAAGAGAGACAGGGCCCACTTAAAATAAGCGCCCTAAC
+TAATAGGGGTTTAAATCCCCTTATTTCTAGAGTTACAGGAATTGAACCTGCTCCTAAGAAT"
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "KX290927"
+            },
+            gi 1044897361
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            source {
+              genome mitochondrion,
+              org {
+                taxname "Myotis lucifugus",
+                common "little brown bat",
+                db {
+                  {
+                    db "taxon",
+                    tag id 59463
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Myotis",
+                    species "lucifugus"
+                  },
+                  attrib "specified",
+                  lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Laurasiatheria; Chiroptera;
+ Microchiroptera; Vespertilionidae; Myotis",
+                  gcode 1,
+                  mgcode 2,
+                  div "MAM"
+                }
+              }
+            },
+            pub {
+              pub {
+                article {
+                  title {
+                    name "First detection of bat white-nose syndrome"
+                  },
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lorch",
+                          first "Jeffrey",
+                          initials "J.M."
+                        }
+                      }
+                    }
+                  },
+                  from journal {
+                    title {
+                    },
+                    imp {
+                      date std {
+                        year 2018
+                      },
+                      volume "II",
+                      issue "23",
+                      prepub in-press
+                    }
+                  }
+                }
+              }
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "GenBank",
+                  data str "gb|KX290927|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 110,
+            strand ds,
+            seq-data iupacna "ATGACCAACATTCGCTTCTTATACAATTAGCATCAATTCTCTACTTTT
+CTATTATCATTATCTTAATACCACTCACCAGCCTGATAGAAAACCATTTACTAAAATGAAGA"
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "KX463942"
+            },
+            gi 1044897654
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2016,
+              month 7,
+              day 20
+            },
+            source {
+              genome mitochondrion,
+              org {
+                taxname "Myotis lucifugus",
+                common "little brown bat",
+                db {
+                  {
+                    db "taxon",
+                    tag id 59463
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Myotis",
+                    species "lucifugus"
+                  },
+                  attrib "specified",
+                  lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Laurasiatheria; Chiroptera;
+ Microchiroptera; Vespertilionidae; Myotis",
+                  gcode 1,
+                  mgcode 2,
+                  div "MAM"
+                }
+              }
+            },
+            pub {
+              pub {
+                pmid 123456,
+                article {
+                  title {
+                    name "[The laboratory in programs for enteric infection
+ control].",
+                    trans "El laboratorio en los programas de control de las
+ infecciones entericas"
+                  },
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Grados",
+                          first "Jeffrey",
+                          initials "J.B."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Smith",
+                          first "Hogan",
+                          initials "H."
+                        }
+                      }
+                    }
+                  },
+                  from journal {
+                    title {
+                      iso-jta "Bol Oficina Sanit Panam",
+                      ml-jta "Bol Oficina Sanit Panam",
+                      issn "0030-0632",
+                      name "New Journal"
+                    },
+                    imp {
+                      date std {
+                        year 1975,
+                        month 4
+                      },
+                      volume "III",
+                      issue "4",
+                      pages "8-23",
+                      language "spa",
+                      pubstatus ppublish,
+                      history {
+                        {
+                          pubstatus pubmed,
+                          date std {
+                            year 1975,
+                            month 4,
+                            day 1
+                          }
+                        },
+                        {
+                          pubstatus medline,
+                          date std {
+                            year 1975,
+                            month 4,
+                            day 1,
+                            hour 0,
+                            minute 1
+                          }
+                        },
+                        {
+                          pubstatus other,
+                          date std {
+                            year 1975,
+                            month 4,
+                            day 1,
+                            hour 0,
+                            minute 0
+                          }
+                        }
+                      }
+                    }
+                  },
+                  ids {
+                    pubmed 123456
+                  }
+                }
+              }
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "GenBank",
+                  data str "gb|KX463942|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 278,
+            strand ds,
+            seq-data iupacna "TTTGGTGCCTGAGCTGGTATAGTGGGCACTGCATTGAGCCTACTGATC
+CGCGCTGAGCTGGGTCAACCAGGAGCCCTATTGGGTGATGATCAGATTTATAACGTAATTGTCACTGCCCATGCTTAT
+TATTTGTCTGATCTGTTTTAATTACAGCTGTCTTACTTCTTCTCTCTCTTCCAGTCCTAGCTGCCGGGATTACAATAT
+TATTAACAGACCGAAACCTTAATACTACTTTCTTTGATCCTGCCGGAGGAGGAGATCCAATCCTATATCAACAC"
+          }
+        }
+      }
+    }
+  }
+}

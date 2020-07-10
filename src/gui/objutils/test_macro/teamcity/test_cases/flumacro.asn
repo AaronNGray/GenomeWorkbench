@@ -1,0 +1,1194 @@
+Seq-entry ::= set {
+  class small-genome-set,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza D virus (D/bovine/Nebraska/9-5/2012)",
+            db {
+              {
+                db "taxon",
+                tag id 1539324
+              }
+            },
+            orgname {
+              name virus "Influenza D virus",
+              lineage "Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; unclassified Orthomyxoviridae; Influenzavirus D",
+              gcode 1,
+              div "VRL"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KM392468",
+              version 1
+            },
+            gi 685509445
+          },
+          descr {
+            molinfo {
+              biomol cRNA,
+              completeness complete
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 2364,
+            seq-data ncbi4na '142141142141441848212812818811242824211114148184
+211182821211144181141118218421118842848242114441224848211428121221288881141118
+441211218241411114141111122218222882411841418444211844411421148822211821844211
+121414111888844114114284441812214112118444114441814122888448211111144184184888
+211148844441844848814248282224214221811288128441188888484412284414844121188288
+284811811444184888121114211118881841111114141418441414141282848444412211841128
+884112844844481112111411414844884111282112214844111811112811122111114111811114
+112811241848444882888884144184114211122884211421118821812144111188828212884822
+848218811414112888121144411144214811181114184884214288881841884212122118888282
+224141141448828812221288884422221881412214111441844142812822128488814444484128
+828441141814144214811284214441482841184114112111141141414184881414214884221411
+111888422881414211484844128818881282214214141141811444128181818211484841211841
+418884411214814111411248824114124811811411121484184181818284244114841228818421
+114244212884418424118844421111421841428884441182811182841441114821484454114214
+111211814111111214818188444418811142221811118121118428441414414144111218888188
+424112841441114811288481848881411448284114422814188444281121884412284488212284
+114111411414142828844211844841841818828421414184441418828884118284212214881181
+884184118218828881411211412841181114111812288182118184842842811118444811442118
+241414121128844184228848841481211414412841812284282181884412118824411114411844
+411814184411481428218288281844888121144444821848848241111212241814121814844141
+421114141142121442848888811184121181814114241811214141414414211844884218221811
+844122818214144181181414111218881124184841288881122184824128814284882821114184
+111111284211811811141828182418212844844111411811121284184184184422812284288841
+811844481111418188814148848182118814184114841114124244824442811812211112441842
+844444248188228122144211412142821812118242141821111184121488181422882284111811
+811118842842228828488121422282211141111848818884184441288822188821111182111848
+184881442284441811121211122888821488881481141224121111421141818184841124411424
+214841111811142884842824414124184111844121221482884228884884114418882114888484
+118184182211414212288841812211411414188841412841884448824411141114881414888884
+884482144412144141111222844841441241428221111414224228222184184811421111121882
+481411842482844114888411421218841111118228288428128428'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "PB2"
+                  },
+                  location int {
+                    from 14,
+                    to 2332,
+                    strand plus,
+                    id gi 685509445
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "AIO11653",
+              version 1
+            },
+            gi 685509446
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 772,
+            seq-data ncbieaa "MSLLLTLAKEYANLTKDKKSCKLLSQGTVSSYTTFKKWTTSRKEKNPS
+LRMRWAMGSKFPIMANREILEEAGIPEQWEGIDLWSKKDDVSKLGMVLASPAAITYWNFCGPGVDNSSVIRDVYKAKF
+MKKERWRETLWGPMNFELVGKQRRVVETQPVEIKLNQKEIKELTMWVLFEDEANLASKFIQENFSLVLSLRELYKGKA
+VNKDVAAFMIAHQFSPEKRFLPTFGPIRPERMELLHCLGGDFWKIEAVTAGSLNEEQKKRDVRAVARKICLRASVDLF
+TPAEKIRDYISSVTMRFGTVERTFEDVIRNSDDISAEVTLCKAALGCELGKSMSFGNLNLRKVSGEAETIEKTVYWGL
+KPIKYKCWRGEETFYCELRKVTCMFRRSEGLDWANIGPGSPEERRELLAMVMIFCRDGRFFESAPVNIDESFFRTRLN
+KEIPYQYVLLKWVRQSRDNLDALLSTRGLIPAHIGQFGKGMGIDGSSSSSMVYKGVMLSKTPIDIVESKEKHRLFLND
+NIEAITERGAMVASIMDLSEDNRETFNDVTFNHVDLAVLKDEKTAIIKIYRSLVERINTDDDGLPALIMGKRYLELYQ
+LDEVKDAVGLIPKRMLGAYSYQARQLIQSQIKNDSYSLPEIIKLLPFCYSPPKKMLFDGTFHFKNQMYVRPGINTNLF
+SFSKTDKSKIYVNGSAVKIKLVLGDDEMDTSLAFVEGFQVCEYDPRAPLIPRRDLRLIGFGKKVRVFVGQGQEKTLVR
+TSSKRAASHDVSKNIRRMRLEV"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "polymerase PB2"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 771,
+                    id gi 685509446
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              product whole gi 685509446,
+              location int {
+                from 14,
+                to 2332,
+                strand plus,
+                id gi 685509445
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza D virus (D/bovine/Nebraska/9-5/2012)",
+            db {
+              {
+                db "taxon",
+                tag id 1539324
+              }
+            },
+            orgname {
+              name virus "Influenza D virus",
+              lineage "Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; unclassified Orthomyxoviridae; Influenzavirus D",
+              gcode 1,
+              div "VRL"
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "[BankIt_influenza_wizard]"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KM392469",
+              version 1
+            },
+            gi 685509447
+          },
+          descr {
+            molinfo {
+              biomol cRNA,
+              completeness complete
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 2330,
+            seq-data ncbi2na '248248A3FCC10E80C054CDC74EF010E3306D0E334F84C54C
+47AA45D73B44E8136140C743A21EED081F1D712C81C0022B17DA833D50C088280F7B0443208408
+017A00160E80EF8CC0FD3BCD9E92039E82008EA00ABDF40F7B94382782780FF82391F4909D1E0A
+0A407CE1E842E02033949251677D2704B219CC420112A04F40A0714EBE0CF904233C80E3A3E948
+2E03D002B4838FBD2293EA1580140020300382DD413E38C1023E822083D30228CE4630114E9408
+68808A00C402089CC94556A3A834A53DD003EE807F244023FB888724889AFE5EFAA80E20809407
+001C6B77D0407401C420A92F4EB01304AA10490BA0E0ED2414827CDF90EFA4C4F1C0849241F0E0
+23779D2C9D413EF790C2C6E00EA10AFD62400100800502032E31590028E02028083E3819A0E8A8
+5EFE010C817C4E8E88B9E7DFAAA2839E3A83BF04EFB41EFFE8B4E13C0F12A2824FA520A07BC7A1
+EA7102F48E3FEE77FE4DDC01FA5223A23873DC03D367BF90BE3A83013B7FA0035C6AE7E5E07FF8
+BD1093BDFF5AA3FEDD01325FA2F179FD1049E8383828161F449E63B7B4C20404E3430E87F75EA1
+E7F0E95E60FEDE4A0FC8904C48B115F3877A2E0834D838034C280F4F8073E00408E8F9E3348E9A
+80F0E0433742FE44D5E080CF808A3F8E8D5D7128122FF435CA055FC44BF88212F84DFC290BA973
+08B22881824BECD064F5FC010A243284F9C04484E2A43A776088023142FBF904EC58DADF602E48
+6F04550CA343B63A88A43E094035F85A948152FE00E834CAA8820CF780D00870D8A19426D061ED
+EFC27F9BEFC304800D77E71E70'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "PB1"
+                  },
+                  location int {
+                    from 25,
+                    to 2286,
+                    strand plus,
+                    id gi 685509447
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "AIO11654",
+              version 1
+            },
+            gi 685509448
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 753,
+            seq-data ncbieaa "MEINPYLLMLNNDITSMISLTYPYTGAPPMSHGTSTKYSMETVSRTYS
+YSRTKKEVPSGIFPIKRRKFCNTIEDKENLEKPNGNVDINFMLSLAEMLEEKMGKGFFKFCANEAEAEILKMHFSKLT
+EGRQTYDWTSERNMPAATALQLTVDAIQETQGTFKGTTMVEYCNKILEMMDWPEVKFKKVRMIVQRHWDPKTKKEIKM
+KSPTLMITKIGREEFIKRICTINTMAKDGERGKYKRRAIATPGMGIRPFSKIVETLAQKICERLAESGLPVGGNEKKA
+KLKTTVSSTNSKLQEGQFMVNITGDNSKWNECQQPEAYLAMLAYITKDSSNLMKDLCSVAPTLFCNKYVKMGQGFRAK
+NKRKTKEIVIPAKRMKERKELMNAEWRDLFETIEPYMDGECCFLGGGMLMGMFNMLSTVFGVMTLNYREEALARRNCY
+WTGLQSSDDFVLFCISKTWPEMEMTILKFIAVCKLMGINMSLEKSYGCLPELFEFTSMFFSGDFVSNIALELPAFTTA
+GMNEGTDFTAAMSVIRTNMINNGLSPGTALMALRICLQEFRATYRVHPYDSGVKNHRMKIIRKFIETIENKDGLLISD
+GGKLMNNISSLHIPEEILKEDLMDPSYRNRVFNPRNPFTQFEKTVDIFKASGPIRVEENEAVVSTHSFKTRSNRTLLN
+TDMRAMALEEKRYQVVCNMYRSVFESADVNTPIGSMSMGEAIEAKILDRARTQFENGIIGGEEYSEIKRLIEDAKRQR
+LSV"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "polymerase PB1"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 752,
+                    id gi 685509448
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              product whole gi 685509448,
+              location int {
+                from 25,
+                to 2286,
+                strand plus,
+                id gi 685509447
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza D virus (D/bovine/Nebraska/9-5/2012)",
+            db {
+              {
+                db "taxon",
+                tag id 1539324
+              }
+            },
+            orgname {
+              name virus "Influenza D virus",
+              lineage "Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; unclassified Orthomyxoviridae; Influenzavirus D",
+              gcode 1,
+              div "VRL"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KM392470",
+              version 1
+            },
+            gi 685509449
+          },
+          descr {
+            molinfo {
+              biomol cRNA,
+              completeness complete
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 2195,
+            seq-data ncbi2na '24824A23F203B72EC34880D90263DFA042418C04D9E082EB
+48833A214E020438CDEFA2F4FD427E797CC2E383315F8A3884154231BDFFA2A3E2084229CC2424
+8304FE751FEA3E815F880DC9233FF8D8004208F5F80CA0F102220D638B3C52802F4100CA0384E8
+4C4EFF44CE0A40CFD2410D50EAFA084D4021083FF13D737FEED2183E2008813BD1203B3BC4820A
+A45E27E03B10B409FF4F90E221889B97F97C4C0738917CA108EE013D0080D29E0E60902B268EE9
+F469C00D01E81372080101E6967223160A20229D5CC6440FCE3808E7EBDFE40174E3DA22244164
+1233ECE3F7F8249013AAF4E184D5401633DA0242878ECD1D5DEAA48C00A90C0A10880E2FA25F48
+122A1F5FEE83E8225D4200C4A2840E90835222822FC042088702A92708AABD504EBF0E083A7FA9
+0E2A1D2A8EA84100CAA3E8C54E92039757908380E823CE40023BB820F20D40312A040FB9CA80ED
+42F8C4C43EA27C4C483B281FD5A02B4232E5CCC7922A11E22A8341E1EFEFE8324300A80D53F010
+238E83B31EFB07FE2FF51E08140D42404E00331ADF609E812E5EE825BAEF075402A022F7408820
+3EFDFCF92071E83890BC0818FAFF7039288EDF31410E887B2248CB9E020E67780820048BF488EF
+A20C2227E8F953881A220DF108FACD0409D021FBB20E70FB8443FCF1ECCCC18434BE828F7B0624
+0203D7CEFDF4248C287403793F1FF0D202AF338003E08BB3ED24353CECFF5C9E329E040F3F7EC9
+42D43A270B1FE0E140A5FB0EF00375F9C79C'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "P3"
+                  },
+                  location int {
+                    from 22,
+                    to 2154,
+                    strand plus,
+                    id gi 685509449
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "AIO11655",
+              version 1
+            },
+            gi 685509450
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 710,
+            seq-data ncbieaa "MSSVIREIAKRFLEQATINIAEEVVREYGDHERTMISVGVHFQACCLI
+SDEYTLEDETTPRYVLLEGLRRQEAISKQNNICSTLGLEPLRNLADIFDRKTRRFLEIGITKRESDEYYQEKFNKIGN
+DMDIHVFTYEGKYFSNNPNGLEDIQKTRIFTFLSFVSDELRKENMFTEMYVTEEGAPELEMYKSKLFIAMRDESVPLP
+YINYEHLRTRCETFKRNQAECEAKVADVASRLKIKLEHLEENKLRPLEIPKEKEAPYTHKFMMKDAWFFAKPHDSERA
+QPQQILYDFFEAANMGFMTTSPKPIFGKQGLMYHSLWGQIKRAIKDKRNELEPSEQRDFLCGIGRASKKIQEDKWQES
+REEEFKQEETKGAAKRGFPTWFNEEWLWAMRDSGDGDNKIGDWIPMAEMPPCKNEMEDYAKKMCEELESKIQGTNCAR
+EMSKLIHTIGSLHTECRNFPGKVKIVPIYCRGTLRGESTDCLFGIAIKGKSHLNKDDGMYTVVTFEFSTEEPNPSKHE
+KYTVFEAGTVPVEAVVLTPKRERVLKEKKLFLYCRTTGMSKLKNDWFSKCRRCLIPTMETVEQIVLKECALKEENRVS
+EMLENKRAWIAHENGENLTRLVSTKLKDLCRMLIVTQFYYCIYNDNQLEGFCNEQKKFLMFLQADKDSKSAFTFNQKG
+LYEKIEECIVSNPLCIFLADRLNKLFLVAKSNGAKYFE"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "polymerase 3"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 709,
+                    id gi 685509450
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              product whole gi 685509450,
+              location int {
+                from 22,
+                to 2154,
+                strand plus,
+                id gi 685509449
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza D virus (D/bovine/Nebraska/9-5/2012)",
+            db {
+              {
+                db "taxon",
+                tag id 1539324
+              }
+            },
+            orgname {
+              name virus "Influenza D virus",
+              mod {
+                {
+                  subtype other,
+                  subname "[BankIt_influenza_wizard]"
+                }
+              },
+              lineage "Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; unclassified Orthomyxoviridae; Influenzavirus D",
+              gcode 1,
+              div "VRL"
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "[BankIt_flu_wizard]"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KM392471",
+              version 1
+            },
+            gi 685509451
+          },
+          descr {
+            molinfo {
+              biomol cRNA,
+              completeness complete
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 2049,
+            seq-data ncbi4na '142141142144141888821114184888884288281421121188
+121421181128428842211421411141411284181848181484211141484118411142882828288212
+828441888441441118488812142184114128414221184128441882121118484122111448428148
+482182112211111412844488441882441418821144121412884128118428214888221424828821
+418482221884421484421114114888144821884821444428824881184884821428888441228228
+442114488418812288818211441842444111411111481888818411444481112844822228414421
+441188418842888444821112844128214121111114412882818824144181818411428428141442
+142124842184122288481118828281412122114181821821111121422121428441122121828828
+848828821142844184111142224884844818421411828828488118228441428141228211428848
+444128414211821421128888128884224121148882441188812111842112114218481484211288
+848812888484818411112111121421888112128288442848441418818812211118812818412444
+118441112284481444441584418112141484421421812141441181421442828441488111188411
+848228821111182884112228444128812142188151821121221111882288284481221111144821
+818842882412128418441444812228181211484488211828414844821428821241141821418118
+422128411411421842281211121411441848188882182111114121122228818481441411421418
+412112218444412188414184144211282884148444288442112112412121484848488822211148
+441812121111441414122228888481114418818884148228222114818442141848214884111128
+412148441141182221128281228828444884181181224211421444128418828881184141128884
+121221421121144182882441181418412881482882444288881882181444888482421441441488
+421441448812882844441141821148441444448448448422824484142149124214428441888412
+111182441111418181214214288244118412121118421421188411442882112444141188422218
+418414211422188114118884421111411182411418421144421411428884481444411288448181
+181141822282181488422112181142184112281111411828881818411282421112211181121114
+141441441441188421211411421442221444848844818488412822411112848418421142842114
+414812188882112882118442148422128482222121884144221488412122118488481181121824
+418228818812884442824122181428282848288884448284184424188428428888488448484148
+8441828488421141118141182881411111182822884281284280'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "HE"
+                  },
+                  location int {
+                    from 24,
+                    to 2018,
+                    strand plus,
+                    id gi 685509451
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "AIO11656",
+              version 1
+            },
+            gi 685509452
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 664,
+            seq-data ncbieaa "MFLLLATITAITACQAERELICIVQRVNESFSLHSGFGGNVYSMKTEP
+MTGFTNVTKGASVINQKDWVGFGDSRTDLTNAQFPASSDVPLAVAKKFRSLSGASLMLSAFGPPGKVDYLYQGCGKEK
+VFYEGVNWSPEAGIDCFGSNWTQTKKDFYSRIYEAARGSTCMTLVNSLDTKISSKTATAGTTSSCSSSWMKSPLWYAE
+SSVNPGARPQACGTEQSATFTLPTSFGIYKCNKHVVQLCYFVYENKTAFNTLGCGDYYQNYYDGNGNLVGGXDNRVAA
+YRGIAGSGVKIECPSKILNPGTYSIXSTPKFLLVPKRSYCFDTDGGYPIQVVQSEWSASRRSDNATEEACLQTEGCIF
+IKKTTPYVGEADDNHGDIEMRQLLSGLGNNDTVCVSQSGYTKGETPFVKDYLSPPKYGRCQLKTDSGRIPTLPSGLII
+PQAGTDSLMRTLTPATRIFGIDDLVFGLLFIGFVAGGVAGGYFWGRSSGGGGGASVSXTQAGFDKIGKDIQQLRNDTN
+AAIEGFNGRIAHDEQAIKNLAKEIEDARAEALVGELGIIRSLIVANISMNLKESLYELANQITKRGGGIAQEAGPGCW
+YVDSENCDASCKEYIFNFNGSATVPTLRPVDTNVVITSDPYYLGSTIALCLLGLMAIAAFVGVSWICCKK"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "hemagglutinin-esterase"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 663,
+                    id gi 685509452
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              product whole gi 685509452,
+              location int {
+                from 24,
+                to 2018,
+                strand plus,
+                id gi 685509451
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza D virus (D/bovine/Nebraska/9-5/2012)",
+            db {
+              {
+                db "taxon",
+                tag id 1539324
+              }
+            },
+            orgname {
+              name virus "Influenza D virus",
+              lineage "Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; unclassified Orthomyxoviridae; Influenzavirus D",
+              gcode 1,
+              div "VRL"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KM392472",
+              version 1
+            },
+            gi 685509453
+          },
+          descr {
+            molinfo {
+              biomol cRNA,
+              completeness complete
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 1775,
+            seq-data ncbi2na '24824A23CF090CE8741009501978224089020E500535F881
+31233380A3BB8DDFEABB482384078C3E204B3F43E220E308BEC123080CD084201C0839E82E37E0
+08F90392A02FF7963EBA2D049EA03B2E423EA0E91E01506F8A4B5E163B1DA8389E8CA9E7B9FA80
+28EABF1243BD03405E822BFEC5022808349F0022839E4807F477F442B9F6722908FCA54C3A0011
+72BBEA1EFBA6D0C08335E90900206A07128108EB8A017A28048809EB453E88880CD7F781082FBF
+5E850E292779080F60C7E0614220907A5F0174E7A390B74D782510B874C038C397EB43BA7A7B82
+0339203810A8D152DF821764973DE8B0897F3A5F43127E7138B03D14FA82A0FBA88E488D3A00E8
+06108E4077E43A7EFFA1E9B382116A3EF92438DD5054E0802334BE2AEA81F415D4820A04300A04
+265A73F510BA9E0FE80CA797F412FFA07AE0D4048C241D28BBF92E48A5491C704F4087A489C3A7
+2831E880526107F1D2FAF480308810BAA17F9E34009037D88BD168A333F38CF1E1B0608905508C
+5D2FABAA1DFDF7F8BD168261BD4207A2500822EA289E38EE157A07D52542008A0A42B968920D0B
+3A13E012FAE08F077DFE8EBDEF92D54BABBC0AEFAFEDF3F0400375F9C79C'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "NP"
+                  },
+                  location int {
+                    from 27,
+                    to 1685,
+                    strand plus,
+                    id gi 685509453
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "AIO11657",
+              version 1
+            },
+            gi 685509454
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 552,
+            seq-data ncbieaa "MDSTKAQTPEEQRAKNAKTILENIQIYERMCDLFGVSEDDKLIIENSI
+SIERMIRVVTDKKYQDKKLKNAGSDLEKIANAGKVFCRLVESTAGKCSARLGMALKPNVEAVLTDVLGNELDRAAVLG
+KRMGFTAMFKSNLEEVLYQRGKNQLKKRNAAETFTLSQGASLEARFRPIMEKHLGVGTVVASIKNILASKKNGNYRNK
+MVRKPGGNRESWSPLEREISFLNKKLFPGPMRQLCKKFEYLNDQEKQLALNLMLDASLILKPQVTHKMIMPWSMWLAV
+KKYAEMNKGSPSLEDLAAYSGVRAFMAFNTACYMSKFTIGKGIVGDAEIMENGNDKMQTLAMACFGLAYEDTGIVAAM
+ISQPMKKRYQLRVGNFNPPEEGTIKGTSAGYFHKWAEFGNRLPFNSFGTGESKQISNSGVFAVQRPSTTNIQRLAELM
+ARNTGETSDNFTQLVQKIREQVGTFADQKANLREFTGGYIYDITDVTKSNPKIPQLGGDSFFFEFTGSDVPRTGAKRR
+VGGADDVTPGTSQPKKRGRQGAGAESSMDIETVGED"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "nucleocapsid protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 551,
+                    id gi 685509454
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              product whole gi 685509454,
+              location int {
+                from 27,
+                to 1685,
+                strand plus,
+                id gi 685509453
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza D virus (D/bovine/Nebraska/9-5/2012)",
+            db {
+              {
+                db "taxon",
+                tag id 1539324
+              }
+            },
+            orgname {
+              name virus "Influenza D virus",
+              lineage "Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; unclassified Orthomyxoviridae; Influenzavirus D",
+              gcode 1,
+              div "VRL"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KM392473",
+              version 1
+            },
+            gi 685509455
+          },
+          descr {
+            molinfo {
+              biomol cRNA,
+              completeness complete
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 1219,
+            seq-data ncbi4na '142141142141441818888841242118442121141121128128
+842841128841444181228214144118811222118412214421112118888414182842114144844118
+441814242814441842142155142142411411444141118421128112114844141414818148448421
+218184228414442218481222844118111422184482141142211111141828841811142812141144
+128414844111141214211114218114111442888414411442444141228412144418111441418418
+418418481841118414441441211111142141118448441421118281241241822141441888812141
+141848114428844412248842842284428821184211111211114414241411181821821211118482
+118482844114212842128842288444141842221111142844118442218141111818442214848848
+122118411111141442221442128421211141242141148288118841128442114118142181844482
+114142118441144121228421111842118441244118844114211148214844118442811828842828
+111114482148828812888488118488448118884844418182212284848111842841112848441141
+188884814111411128111821412441141111448881848221884888211841441841814824442118
+412828142842888418128844184288814818428881218888118111442118128418428888488412
+118218111844114122111844114884441841288411121848848111184888882141412844114841
+411288242214441818118448228441482214424141844441441412114282228441441444128444
+222822188414844188211841111844848188218441112188181182424111111822828842812842
+80'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "P42"
+                  },
+                  location int {
+                    from 28,
+                    to 1191,
+                    strand plus,
+                    id gi 685509455
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "AIO11658",
+              version 1
+            },
+            gi 685509456
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 387,
+            seq-data ncbieaa "MAQEQLLAELEGYLRGINPMTRQTILRSARGGMDSARDAAXAAKKGEM
+QLTSGESIVVHICLRAMYPGIKPWSEAKKDLDKATEGLSGKDSKSIRKALRKAGDLTGIKEMMMMYEMREDKKAEMVE
+QIYDDPEDFTEDVRLGTVAAWLQCKNKRSEKYHHKMSMSGSTALALGDAQKAGMAIENMASVVPMKKEAQALHKDAEV
+LIELARIAYGSRAMEGHLQNAMDGIGSKVSGMANLALKRSVLTLLMLVICGISTCVNAETVEEFCRKKLNQTEEKVYV
+HCFNEDDSRAMTLAALILGCFSMLYILIKAILMLLLTIINGRPNGSWDDLKHVVKCFSETGSENFARDIMVLESRRDG
+EETSSLEEGLGPPLSGFNENGVFMETL"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "P42"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 386,
+                    id gi 685509456
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              product whole gi 685509456,
+              location int {
+                from 28,
+                to 1191,
+                strand plus,
+                id gi 685509455
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza D virus (D/bovine/Nebraska/9-5/2012)",
+            db {
+              {
+                db "taxon",
+                tag id 1539324
+              }
+            },
+            orgname {
+              name virus "Influenza D virus",
+              lineage "Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; unclassified Orthomyxoviridae; Influenzavirus D",
+              gcode 1,
+              div "VRL"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KM392474",
+              version 1
+            },
+            gi 685509457
+          },
+          descr {
+            molinfo {
+              biomol cRNA,
+              completeness complete
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 868,
+            seq-data ncbi2na '24824AAEC43F433B78030B4B811040CD22490DD60FA4FA99
+2527A3A3D77A3C387F6200E202DE7883D1E22D812BF3816207EA08E4BA582B2203DCA3D1C73E79
+7C2005228874E7BE0FA80813CDCD5F28A035FDCDE254EC53E11DECE250274C210A20B7EA2C0336
+81E43E7FB001E781CF2E1613A880D3EE77FE48047880527C797C20FD6C8A23854882D2C60231D2
+0FE882E87EFBE5BE39A0DC88E2348631037A3B8048D5F7A2088299071E88AF4A2F9FAED3E30AF8
+0D427A8B263AE077F870528CE2A59FE8E0342D2FD8810FD0EF0083B3DBDFCB3800157E71E7'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "NS1"
+                  },
+                  location int {
+                    from 28,
+                    to 759,
+                    strand plus,
+                    id gi 685509457
+                  }
+                },
+                {
+                  data gene {
+                    locus "NS2"
+                  },
+                  location int {
+                    from 28,
+                    to 847,
+                    strand plus,
+                    id gi 685509457
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "AIO11659",
+              version 1
+            },
+            gi 685509458
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 243,
+            seq-data ncbieaa "MSENKSVNTTNIRAAISELALGAASWMDSSGLMTFEKMRKSAENSLRV
+EQVYEPRTWEDAVAEGREILGFTTIAALRKPEETHAVELGKNIIYPLGGNPFYLSPCTIDTLYEPKLIRQGEVLGVKY
+RNCNCFVKTAELLVTDMGEIIVLFCRNTEKPAYCLKNFRRGDDPEKSVRKILRIWRSGLVVAVDAESRDEIRRYKSGC
+ETDPFWRREGATTGEVQELLGVIDKVEIQAGSSDGELFD"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "nonstructural protein 1"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 242,
+                    id gi 685509458
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "AIO11660",
+              version 1
+            },
+            gi 685509459
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            create-date std {
+              year 2014,
+              month 9,
+              day 23
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 184,
+            seq-data ncbieaa "MSENKSVNTTNIRAAISELALGAASWMDSSGLMTFEKMRKSAENSLRV
+EQVYEPRTWEDAVAEETLRNQLTALRISVEEMTQRSQYERYSEFGEVDLLLPLMRNLEMRSDDTNLDVKQIPSGEEKA
+QLLERFRSCLVSLIRLKSKLGVAMVNSLTNQDMRAALDEIKSVSRTISMLKECIRSLV"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "nonstructural protein 2"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 183,
+                    id gi 685509459
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              product whole gi 685509458,
+              location int {
+                from 28,
+                to 759,
+                strand plus,
+                id gi 685509457
+              }
+            },
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              product whole gi 685509459,
+              location mix {
+                int {
+                  from 28,
+                  to 217,
+                  strand plus,
+                  id gi 685509457
+                },
+                int {
+                  from 483,
+                  to 847,
+                  strand plus,
+                  id gi 685509457
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

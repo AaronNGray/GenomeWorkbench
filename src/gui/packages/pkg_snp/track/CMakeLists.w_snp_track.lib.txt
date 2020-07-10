@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.w_snp_track.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_snp_track)
+  NCBI_sources(snp_track snp_ds)
+  NCBI_uses_toolkit_libraries(w_seq_graphic w_snp_filter)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

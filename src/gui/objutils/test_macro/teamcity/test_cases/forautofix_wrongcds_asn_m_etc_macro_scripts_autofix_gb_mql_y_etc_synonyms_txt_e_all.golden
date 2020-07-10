@@ -1,0 +1,118 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          org {
+            taxname "Vibrio cholerae",
+            db {
+              {
+                db "taxon",
+                tag id 666
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Bacteria; Proteobacteria;
+ Gammaproteobacteria; Vibrionales; Vibrionaceae; Vibrio",
+              gcode 11,
+              mgcode 0,
+              div "BCT"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq10"
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            title "Vibrio cholerae."
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 700,
+            seq-data ncbi2na '33A7870F601713941A65D3DF7D37B3F1711368628F71CE9D
+F1733022178044A2D35D71D1DD3241E5F6CA33B5C578A50334F78AA512D34505CF7494D5313694
+057EC838978AA8F74B2105513C158F7D95C4FD75F5FD30D9287C570F45D17D753834A7404355FA
+4DB3407B840354F51573F4570084F729FCC77C75F51C10572573FD5405C728854803FC55240567
+ED1175D3342520E31F7CFE4C6535C674357040F29A2C727727934B1CB5CF5C954F5D'H
+          }
+        },
+        seq {
+          id {
+            local str "Seq10_1"
+          },
+          descr {
+            title "cytochrome b, partial [Vibrio cholerae]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 233,
+            seq-data ncbieaa "YGWLIRNLHANGASFFFICIYLHIGRGFYYGSYLYKETWNTGVILLLT
+LMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQTLVEWAWGGFSVDNPTLTRFFALHFLLPFMIAGLTLIHLTFL
+HESGSNNPLGIVSNCDKIPFHPYFTLKDILGFMLLLLPLTTLALFSPNLLGDPENFTPANPLVTPPHIKPEWYFLFAY
+AILRSIPNKLGGVLALAASVLVLFLAPFL"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "cytochrome b"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 232,
+                    id local str "Seq10_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 2
+                }
+              },
+              partial TRUE,
+              product whole local str "Seq10_1",
+              location int {
+                from 0,
+                to 699,
+                strand plus,
+                id local str "Seq11",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

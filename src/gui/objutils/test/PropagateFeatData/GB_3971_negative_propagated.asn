@@ -1,0 +1,159 @@
+Seq-entry ::= set {
+  seq-set {
+    seq {
+      id {
+        local str "seq_1"
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 30,
+        seq-data iupacna "AAGGCCTTTTAGAGATGATGATGATGATGA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "gene locus"
+              },
+              location int {
+                from 0,
+                to 20,
+                strand minus,
+                id local str "seq_1"
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "seq_2"
+      },
+      descr {
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "seq_2"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 23,
+        seq-data iupacna "AAGGCCTATTAGGATGATGATGA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "gene locus"
+              },
+              location int {
+                from 0,
+                to 13,
+                strand minus,
+                id local str "seq_2"
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "seq_3"
+      },
+      descr {
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "seq_3"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 22,
+        seq-data iupacna "CCTTTTAGAGATGATGATATGA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "gene locus"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 16,
+                strand minus,
+                id local str "seq_3",
+                fuzz-from lim lt
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data align {
+        {
+          type global,
+          dim 3,
+          segs denseg {
+            dim 3,
+            numseg 6,
+            ids {
+              local str "seq_1",
+              local str "seq_2",
+              local str "seq_3"
+            },
+            starts {
+              0,
+              0,
+              -1,
+              4,
+              4,
+              0,
+              12,
+              -1,
+              8,
+              19,
+              12,
+              15,
+              22,
+              15,
+              -1,
+              26,
+              19,
+              18
+            },
+            lens {
+              4,
+              8,
+              7,
+              3,
+              4,
+              4
+            }
+          }
+        }
+      }
+    }
+  }
+}

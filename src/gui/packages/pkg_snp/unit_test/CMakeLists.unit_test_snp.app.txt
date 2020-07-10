@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_snp.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app( unit_test_snp)
+  NCBI_sources(main test_snp_filters ../filter/snp_filter)
+  NCBI_uses_toolkit_libraries(gui_objutils)
+  NCBI_requires(Boost.Test)
+NCBI_end_app()

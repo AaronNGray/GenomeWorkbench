@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbimime.app.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbimime)
+  NCBI_sources(test_ncbimime)
+  NCBI_uses_toolkit_libraries(medlars medline)
+  NCBI_project_watchers(vasilche)
+NCBI_end_app()
+

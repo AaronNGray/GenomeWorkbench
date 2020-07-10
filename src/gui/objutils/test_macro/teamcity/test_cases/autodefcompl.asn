@@ -1,0 +1,391 @@
+Seq-entry ::= set {
+  class eco-set,
+  descr {
+    update-date std {
+      year 2014,
+      month 11,
+      day 11
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        genbank {
+          accession "KT989026",
+          version 1
+        },
+        gi 948563205
+      },
+      descr {
+        source {
+          org {
+            taxname "Escherichia coli",
+            db {
+              {
+                db "taxon",
+                tag id 562
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Escherichia",
+                species "coli"
+              },
+              mod {
+                {
+                  subtype strain,
+                  subname "SCS-HST"
+                }
+              },
+              lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Enterobacteriales; Enterobacteriaceae; Escherichia",
+              gcode 11,
+              div "BCT"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Netherlands"
+            },
+            {
+              subtype isolation-source,
+              name "feces-Homo sapiens"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        create-date std {
+          year 2015,
+          month 11,
+          day 11
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "GenBank",
+              data str "gb|KT989026.1|"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 689,
+        seq-data ncbi2na 'C8AAAC83D4AEC9AE039B2237A28316BA60A6955E860878674AE6
+026EA890128F2315EB2D465B018ED87E8AFB95F8A6E9F5A27066F0B6165EA8B1A590AF00740E0F
+86AA564426BA24EEBF0F6390660817C5EB7E1351A0BFD223883B97DA816E212B9E4E9EDB49DBBE
+E03BEAF0B5641899057CD7FBE526B5A5A81D0288794B8C07A282BAA386D0B4D3A57C614A9C446E
+710E99310220985D988909A174C0B9B6CB5A3E8B790761D4E0B683672C00'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type rRNA,
+                ext name "16S ribosomal RNA"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 688,
+                strand plus,
+                id gi 948563205,
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            },
+            {
+              data imp {
+                key "misc_feature"
+              },
+              comment "first comment; second comment; third comment",
+              location int {
+                from 66,
+                to 88,
+                strand plus,
+                id gi 948563205
+              },
+              qual {
+                {
+                  qual "allele",
+                  val "dominant"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          org {
+            taxname "Escherichia coli",
+            db {
+              {
+                db "taxon",
+                tag id 562
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Escherichia",
+                species "coli"
+              },
+              mod {
+                {
+                  subtype strain,
+                  subname "SCS_HK"
+                }
+              },
+              lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Enterobacteriales; Enterobacteriaceae; Escherichia",
+              gcode 11,
+              div "BCT"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Netherlands"
+            },
+            {
+              subtype isolation-source,
+              name "feces-Homo sapiens"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KT989027",
+              version 1
+            },
+            gi 948563206
+          },
+          descr {
+            title "old title",
+            molinfo {
+              biomol genomic,
+              tech unknown,
+              completeness complete
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "GenBank",
+                  data str "gb|KT989027.1|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 690,
+            topology not-set,
+            strand not-set,
+            seq-data ncbi2na 'B22AAB20F52BB26B80E6C88DE8A0C5AE9829A557A1821E19
+D2B9809BAA2404A3C8C57ACB5196C063B61FA2BEE57E29BA7D689C19BC2D8597AA2C69642BC01D
+0383E1AA959109AE893BAFC3D8E4198205F17ADF84D4682FF488E20EE5F6A05B884AE793A7B6D2
+76EFB80EFABC2D590626415F35FEF949AD696A0740A21E52E301E8A0AEA8E1B42D34E95F1852A7
+111B9C43A64C40882617662242685D302E6DB2D68FA2DE41D875382DA0D9CB00'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data rna {
+                    type rRNA,
+                    ext name "16S ribosomal RNA"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 689,
+                    strand plus,
+                    id gi 948563206,
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "948563206_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "948563206_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 49,
+            seq-data iupacaa "MPVAKAAPWTKTDAQVRKRGEQTGLDTLVVHAVNDVDLEVVPLRRGFRS"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "test protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 48,
+                    id local str "948563206_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 11
+                }
+              },
+              product whole local str "948563206_1",
+              location int {
+                from 55,
+                to 204,
+                strand plus,
+                id gi 948563206
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        genbank {
+          accession "KT989028",
+          version 1
+        },
+        gi 948563207
+      },
+      descr {
+        title "testing title",
+        source {
+          org {
+            taxname "Cellulosimicrobium cellulans",
+            db {
+              {
+                db "taxon",
+                tag id 1710
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cellulosimicrobium",
+                species "cellulans"
+              },
+              mod {
+                {
+                  subtype strain,
+                  subname "SCS_WK"
+                }
+              },
+              lineage "Bacteria; Actinobacteria; Micrococcales;
+ Promicromonosporaceae; Cellulosimicrobium",
+              gcode 11,
+              div "BCT"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Netherlands"
+            },
+            {
+              subtype isolation-source,
+              name "feces-Warthog"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "GenBank",
+              data str "gb|KT989028.1|"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 715,
+        seq-data ncbi4na '2141281414842448144441412844118822844848142448441184
+242141818214414411212241844241144214482FF8444224211284124284144142411142184444
+142411214418814181222844814822184224811124884442128144848444428218822124148822
+484224214211124218811484222242284444148124422421144281111282111441188412444442
+224212114244244142184244188118824184211242411411228812211442884121842124141142
+212214141844844828288844121282484212144844842184488482482142824848248414184884
+448811482224211241424211222824822218488422142444881842244441282184441412842244
+448211282441441144844441841248211182182184222288184828844428821242184281211844
+224481211144428424181224811448441424118222111114224482821488244188444482842112
+8241222218411482441482428148118242141820'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type rRNA,
+                ext name "16S ribosomal RNA"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 714,
+                strand plus,
+                id gi 948563207,
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

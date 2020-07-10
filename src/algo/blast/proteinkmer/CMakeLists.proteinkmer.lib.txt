@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.proteinkmer.lib.txt 593585 2019-09-20 13:57:47Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(proteinkmer)
+  NCBI_sources(
+    blastkmer blastkmerindex blastkmeroptions blastkmerresults 
+    blastkmerutils mhfile pearson kblastapi
+  )
+  NCBI_uses_toolkit_libraries(xblast)
+  NCBI_project_watchers(boratyng madden)
+NCBI_end_lib()
+

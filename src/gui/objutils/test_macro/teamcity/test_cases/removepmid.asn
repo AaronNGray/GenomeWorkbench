@@ -1,0 +1,162 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class genbank,
+      seq-set {
+        seq {
+          id {
+            local str "P14B3B",
+            general {
+              db "NCBIFILE",
+              tag str "Chaetoceros large subunit rDNA.sqn/P14B3B"
+            },
+            general {
+              db "TMSMART",
+              tag id 64954491
+            },
+            genbank {
+              accession "KX065218"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Chaetoceros decipiens",
+                db {
+                  {
+                    db "taxon",
+                    tag id 655751
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Chaetoceros",
+                    species "decipiens"
+                  },
+                  lineage "Eukaryota; Stramenopiles; Bacillariophyta;
+ Coscinodiscophyceae; Chaetocerotophycidae; Chaetocerotales; Chaetocerotaceae;
+ Chaetoceros",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            pub {
+              pub {
+                pmid 21156586,
+                article {
+                  title {
+                    name "Three new species from warm-temperate waters"
+                  },
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Li",
+                          first "Yang",
+                          initials "Y."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Chen",
+                          first "Zuoyi",
+                          initials "Z."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Moestrup",
+                          first "Ojvind",
+                          initials "O."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Lundholm",
+                          first "Nina",
+                          initials "N."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "Laboratory of Phycology",
+                      div "College of Life Science, South China Normal
+ University",
+                      city "Guangzhou",
+                      sub "Guangdong",
+                      country "P. R. China",
+                      street "West 55 of Zhongshan Avenue",
+                      postal-code "510631"
+                    }
+                  },
+                  from journal {
+                    title {
+                      iso-jta "PLoS ONE"
+                    },
+                    imp {
+                      date std {
+                        year 2017
+                      },
+                      volume "12",
+                      issue "1",
+                      pages "e0168887"
+                    }
+                  },
+                  ids {
+                    pubmed 21156586
+                  }
+                }
+              }
+            },
+            pub {
+              pub {
+                sub {
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Li",
+                          first "Yang",
+                          initials "Y."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "Laboratory of Phycology",
+                      div "College of Life Science, South China Normal
+ University",
+                      city "Guangzhou",
+                      sub "Guangdong",
+                      country "P. R. China",
+                      street "West 55 of Zhongshan Avenue",
+                      postal-code "510631"
+                    }
+                  },
+                  date std {
+                    year 2016,
+                    month 4,
+                    day 12
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 26,
+            seq-data iupacna "ACTAGGATTCCCCCAGTAAGGGCGAC"
+          }
+        }
+      }
+    }
+  }
+}

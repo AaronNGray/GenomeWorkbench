@@ -1,0 +1,4 @@
+acc. num.	volume	issue	pages	journal
+KX290926	I	23	34-38	Cell	
+KX290927	II	23		
+KX463942	III		8-23	New Journal

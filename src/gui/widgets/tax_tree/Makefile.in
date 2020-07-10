@@ -1,0 +1,7 @@
+# $Id: Makefile.in 11346 2006-01-18 13:09:26Z dicuccio $
+
+LIB_PROJ = w_taxtree
+#SUB_PROJ = demo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

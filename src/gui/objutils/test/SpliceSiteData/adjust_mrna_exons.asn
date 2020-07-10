@@ -1,0 +1,265 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Tulipa fosteriana",
+            db {
+              {
+                db "taxon",
+                tag id 93697
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Tulipa",
+                species "fosteriana"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Liliales; Liliaceae;
+ Tulipa",
+              gcode 1,
+              mgcode 1,
+              div "PLN",
+              pgcode 11
+            }
+          },
+          subtype {
+            {
+              subtype tissue-type,
+              name "Petal"
+            },
+            {
+              subtype country,
+              name "China"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "1_1",
+            general {
+              db "BankIt",
+              tag str "1732339/1"
+            },
+            general {
+              db "TMSMART",
+              tag id 46055045
+            },
+            genbank {
+              accession "KJ935033"
+            }
+          },
+          descr {
+            title "[Tulipa fosteriana] partial DNA sequence of TfCHS1 in
+ tulipa fosteriana",
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 2480,
+            strand ds,
+            seq-data ncbi2na 'A85DA0923A3847D093BFAD1338E8038A8FF82AF62CCFEB47
+C32828328A8FC8A9FC88213B88A7FD1DDDD40DDD4BFEA28030EA88FEAA3F02DDDF0DDF5FD5F4F2
+E0050138F00F35D43FD7DDD70DDD33DDCC0354FF2FB6F82CB2F6A02B9FE5D100D555A8FFFF5365
+C22703F7D5751410A4102D4E983B6388D692DD22A68AB5271EF725369165154941B4DC52D22CD6
+871C7D28D14226145F163742882F4228EEC241F17E7C733183DBCD03C7B0F9382C329DFB683CF2
+7403F4301089C54E73DCF77F0DEEF4D0B43908708F542ED46842020034742097AF7F2CC73F0B23
+2C37F813DFF1EBDF252C420EFDF84E49D23C7F4FE04C5173C83F3E0F85450F43DE601F180372F7
+06FA2C4041FE38431A3CF1430384034334A34FCEE12E0880F4271478C3FF0378FCB24B482CDFAE
+F8072037B082FF0FD043FE640C1FE380F9D5500000007F8E03E070C9308CC48130FBBCEC4350ED
+003F58B40E81D31F7C4306FFC334DBE072DFF7310FF0EFE0CFEBF0F83323BD330F4AE103738D08
+26F13917018A231E0A085704EEE5C4E955D5E86565284EB6DBA2BD509DA408A596D0A53428BAA9
+2542D4234545F37DE47149AEC84E56B921C5274509D769759575B4167D38EC524A9E7F968A45BD
+F67D94285D9E20416E99D9B5FB6DE7780D1E5B45F5AA15DA2D5176125EBE94A477DA61A259E5B4
+FB69D63561165BA06177BD48FB7694948535D523DA2A65361A5175A82EA5D17D4DE74286F56974
+DD4204F88225EB9297D9947AA37587A07577DE8F9D356AA5694F7614AE8BE09E9DE84288238298
+4293B9E2E2C6904ED49979B5DF4D7E388E6429769224AA0A7145A62A9C87AAAFFBDA7DA54A1D16
+D885B6D79125F50D175078'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "TfCHS1"
+                  },
+                  location int {
+                    from 0,
+                    to 2479,
+                    strand plus,
+                    id local str "1_1"
+                  }
+                },
+                {
+                  data imp {
+                    key "5'UTR"
+                  },
+                  location int {
+                    from 348,
+                    to 452,
+                    strand plus,
+                    id local str "1_1"
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "matching mRNA"
+                  },
+                  location packed-int {
+                    {
+                      from 453,
+                      to 632,
+                      id genbank {
+                        accession "KJ935033"
+                      }
+                    },
+                    {
+                      from 1481,
+                      to 2479,
+                      id genbank {
+                        accession "KJ935033"
+                      }
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 453,
+                    to 632,
+                    strand plus,
+                    id genbank {
+                      accession "KJ935033"
+                    }
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "1"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1481,
+                    to 2479,
+                    strand plus,
+                    id genbank {
+                      accession "KJ935033"
+                    }
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "1_prot_1_1",
+            general {
+              db "TMSMART",
+              tag id 46055046
+            }
+          },
+          descr {
+            title "CHS [Tulipa fosteriana]",
+            molinfo {
+              biomol peptide
+            },
+            user {
+              type str "OrginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "1_prot_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 392,
+            seq-data ncbieaa "MANVDEIRQSQRAEGPATVLAIGTATPANVIYQSEYPDYYFRITKSDH
+LTDLKEKFKRMCDKSMIKKRYMHLNEEILKEDPNMCAYMAPSLDARQDMVVVEVPKLGKEAAVKAIKEWGQPKSKITH
+LIFCTTSGVDMPGADYQLTKLLGLRPSVNRFMMYQQGCFAGGTVLRFAKDLAENNRGARVLVVCSEITAVTFRGPSES
+HLDSLVGQALFGDGAAAVIVGSDPDTAVERPLFQIVSASQTILPDSEGAIDGHLREVGLTFHLLKDVPGLISKNIEKS
+LVQAFAPLGISDWNSLFWIAHPGGPAILDQVELKLALDKEKMKATRHVLSEYGNMSSACVLFILDEMRKASAEQGKAT
+TGEGLDWGVLFGFGPGLTVETVVLHSLPITSN"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "CHS"
+                    },
+                    desc "chalcone synthase"
+                  },
+                  location int {
+                    from 0,
+                    to 391,
+                    id local str "1_prot_1_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "1_prot_1_1",
+              location mix {
+                int {
+                  from 453,
+                  to 632,
+                  strand plus,
+                  id local str "1_1"
+                },
+                int {
+                  from 1481,
+                  to 2479,
+                  strand plus,
+                  id local str "1_1"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+#############################################################################
+# $Id: CMakeLists.snp_ptis_test.app.txt 598006 2019-12-02 22:20:46Z vasilche $
+#############################################################################
+
+NCBI_begin_app(snp_ptis_test)
+  NCBI_sources(snp_ptis_test)
+  NCBI_uses_toolkit_libraries(dbsnp_ptis)
+NCBI_end_app()

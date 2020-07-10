@@ -1,0 +1,12 @@
+Seq-entry ::= seq {
+  id {
+    local str "old_sequence"
+  },
+  inst {
+    repr raw,
+    mol na,
+    length 128,
+    seq-data ncbi2na '88A0AC83D5AEC9AE039B2236A555555555E11E2B98093AB2404A3C8C
+57ACB519'H
+  }
+}

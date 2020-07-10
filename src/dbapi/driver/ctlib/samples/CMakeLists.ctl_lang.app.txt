@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.ctl_lang.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(ctl_lang)
+  NCBI_sources(ctl_lang dbapi_driver_sample_base_ctl)
+  NCBI_uses_toolkit_libraries(xconnext)
+  NCBI_project_watchers(ucko satskyse)
+  NCBI_set_test_assets(ctl_lang.ini)
+  NCBI_add_test(run_sybase_app.sh ctl_lang -S DBAPI_SYB160_TEST)
+  NCBI_add_test(run_sybase_app.sh ctl_lang -S DBAPI_DEV16_16K)
+NCBI_end_app()
+

@@ -1,0 +1,7 @@
+MACRO RemoveAssemblyName "Remove structured comment field Assembly Name"
+FOR EACH StructComment
+DO
+    obj = Resolve("data") WHERE obj.label.str = "Assembly Name";
+    RemoveQual(obj);
+DONE
+------------------------------------------------------------------------------

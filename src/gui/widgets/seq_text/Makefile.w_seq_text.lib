@@ -1,0 +1,21 @@
+# $Id: Makefile.w_seq_text.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# Seq Text Widget lib
+
+ASN_DEP = seq seqset
+
+SRC = seq_graph seq_text_conf seqtextviewoptions \
+      seq_text_ds seq_text_pane_conf \
+      seq_text_job seq_text_pane seq_text_widget \
+      seq_tick_graph text_sel_handler variation_graph \
+      seq_text_panel
+
+
+LIB = w_seq_text
+
+DLL_LIB = w_gl gui_opengl gui_print gui_utils gui_objutils gui_config \
+          w_wx xalnmgr ximage submit tables $(SOBJMGR_LIBS)
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) $(ORIG_LIBS)

@@ -1,0 +1,205 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class phy-set,
+      descr {
+        title "Botryosphaeriaceae beta-tubulin gene, partial cds."
+      },
+      seq-set {
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Neofusicoccum occulatum",
+                db {
+                  {
+                    db "taxon",
+                    tag id 1167695
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Neofusicoccum",
+                    species "occulatum"
+                  },
+                  attrib "specified",
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Dothideomycetes; Dothideomycetes incertae sedis;
+ Botryosphaeriales; Botryosphaeriaceae; Neofusicoccum",
+                  gcode 1,
+                  mgcode 4,
+                  div "PLN"
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "CMW48023"
+              },
+              descr {
+                title "Neofusicoccum occulatum beta-tubulin gene, partial cds.",
+                molinfo {
+                  biomol genomic
+                },
+                user {
+                  type str "OriginalID",
+                  data {
+                    {
+                      label str "LocalId",
+                      data str "CMW48023"
+                    }
+                  }
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 349,
+                strand ds,
+                seq-data iupacna "AGTTGTTACCGGCGCCAGACTGGCCGAAGACGAAGTTGTCGGGG
+CGGAAGAGCTGGCCGAAGGGGCCGGCGCGGACGGCATCCATGGTGCCGGGCTCGAGGTCGACGAGGACGGCACGAGGA
+ACGTACTTGTTGTTGGACGCCTGCTGCGCGTTCAGAAGATTGCCATACTTTACGTGTTTGTGCAATTAGTGAGAGAGT
+ACCTCGTTGAAGTAGACGTTCATGCGCTCGAGCTGCAGGTCGGAGGTGCCATTGTAGCTGCTGCGGGTCAGCCATTGC
+CATTCGCGCGGGAAACGGCGCAGACTCACACACCAGAGCCGTCCAGGCCGTGCTCGCCGGAAATGGTCTGC"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data rna {
+                        type mRNA,
+                        ext name "beta-tubulin"
+                      },
+                      partial TRUE,
+                      location packed-int {
+                        {
+                          from 307,
+                          to 347,
+                          strand minus,
+                          id local str "CMW48023",
+                          fuzz-to lim gt
+                        },
+                        {
+                          from 202,
+                          to 256,
+                          strand minus,
+                          id local str "CMW48023"
+                        },
+                        {
+                          from 0,
+                          to 141,
+                          strand minus,
+                          id local str "CMW48023",
+                          fuzz-from lim lt
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            seq {
+              id {
+                local str "CMW48023_prot_11",
+                general {
+                  db "TMSMART",
+                  tag id 94361431
+                }
+              },
+              descr {
+                title "beta-tubulin, partial [Neofusicoccum occulatum]",
+                molinfo {
+                  biomol peptide,
+                  completeness no-ends
+                },
+                user {
+                  type str "OriginalID",
+                  data {
+                    {
+                      label str "LocalId",
+                      data str "CMW48023_prot_11"
+                    },
+                    {
+                      label str "General",
+                      data str "gnl|TMSMART|94361431"
+                    }
+                  }
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 79,
+                seq-data ncbieaa "QTISGEHGLDGSGVYNGTSDLQLERMNVYFNEASNNKYVPRAVL
+VDLEPGTMDAVRAGPFGQLFRPDNFVFGQSGAGNN"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "beta-tubulin"
+                        }
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 78,
+                        id local str "CMW48023_prot_11",
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    code {
+                      id 1
+                    }
+                  },
+                  partial TRUE,
+                  product whole local str "CMW48023_prot_11",
+                  location packed-int {
+                    {
+                      from 307,
+                      to 347,
+                      strand minus,
+                      id local str "CMW48023",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 202,
+                      to 256,
+                      strand minus,
+                      id local str "CMW48023"
+                    },
+                    {
+                      from 0,
+                      to 141,
+                      strand minus,
+                      id local str "CMW48023",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

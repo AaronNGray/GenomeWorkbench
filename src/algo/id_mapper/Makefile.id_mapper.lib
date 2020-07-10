@@ -1,0 +1,14 @@
+# $Id: Makefile.id_mapper.lib 468535 2015-05-26 13:23:32Z ucko $
+
+LIB = xid_mapper
+SRC = id_mapper
+
+DLL_LIB = $(SOBJMGR_LIBS)
+
+ASN_DEP = genome_collection seqset
+
+WATCHERS = boukn meric
+
+
+USES_LIBRARIES =  \
+    $(DL_LIBS) $(SOBJMGR_LIBS)

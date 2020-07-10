@@ -1,0 +1,77 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 305,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGAAAGTAAAGCTTTACAAAGAAA
+ATTAAGAGAATGGATAGGGGGAACAGCTAAAACCCGACTAGAAAAACGAAAAAACGGGTTACCTCCTATAATGATAGT
+AATAGCTCAAAGACTTCACATTAATGACCTACACGGCATAATCAAAGAAACAGAACCCGTAATCCCTGCCTCTGAAGC
+CCTAAAAACCCTAAGACAAGGGGACACCATAGACCCCAACACATGGGTGGACTTAAACCTCCCCGCTATCTGTGAAAA
+CCCCGAAACTGACCTACTA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "Putative terminase large subunit gene",
+                desc "COORDINATES: nucleotide motif:aaa:caca"
+              },
+              partial TRUE,
+              location int {
+                from 30,
+                to 304,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                },
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

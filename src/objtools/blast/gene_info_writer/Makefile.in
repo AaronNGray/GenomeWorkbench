@@ -1,0 +1,8 @@
+# $Id: Makefile.in 542392 2017-07-31 13:30:44Z camacho $
+
+LIB_PROJ = gene_info_writer
+
+SUB_PROJ = unit_test app
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

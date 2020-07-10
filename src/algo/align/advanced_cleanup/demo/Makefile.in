@@ -1,0 +1,9 @@
+# $Id: Makefile.in 592923 2019-09-10 01:20:30Z ucko $
+
+# Meta-makefile (algo/align/advanced_cleanup/demo)
+#################################
+
+EXPENDABLE_APP_PROJ = demo_align_cleanup
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

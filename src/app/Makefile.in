@@ -1,0 +1,6 @@
+# $Id: Makefile.in 41405 2018-07-23 18:36:15Z shkeda $
+
+SUB_PROJ = netcache project_tree_builder winmasker blast blastdb gbench multireader
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

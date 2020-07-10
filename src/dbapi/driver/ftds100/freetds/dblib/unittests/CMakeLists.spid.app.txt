@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.spid.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db100_spid)
+  NCBI_sources(spid common)
+  NCBI_set_test_assets(spid.sql)
+  NCBI_add_test(test-db100 db100_spid)
+NCBI_end_app()
+

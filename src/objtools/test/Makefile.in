@@ -1,0 +1,10 @@
+# $Id: Makefile.in 399248 2013-05-13 14:58:20Z kornbluh $
+
+# Meta-makefile("objtools/test" project)
+#################################
+
+SUB_PROJ = objmgr
+PROJ_TAG = test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

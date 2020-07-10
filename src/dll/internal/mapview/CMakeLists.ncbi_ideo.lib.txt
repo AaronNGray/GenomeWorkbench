@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_ideo.lib.txt 598722 2019-12-12 18:45:15Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_ideo SHARED)
+  NCBI_hosts_projects(
+    internal/mapview/objects/ideo/ideo
+    internal/mapview/objects/ideo/ideocli
+  )
+  NCBI_add_definitions(NCBI_IDEO_EXPORTS)
+NCBI_end_lib()

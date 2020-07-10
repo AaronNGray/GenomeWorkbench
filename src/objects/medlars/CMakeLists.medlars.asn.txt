@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.medlars.asn.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(medlars)
+  NCBI_dataspecs(medlars.asn)
+  NCBI_uses_toolkit_libraries(biblio)
+NCBI_end_lib()
+

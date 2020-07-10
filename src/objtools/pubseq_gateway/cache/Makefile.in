@@ -1,0 +1,9 @@
+# $Id: Makefile.in 587450 2019-06-04 18:54:38Z sadyrovr $
+
+LIB_PROJ = psg_cache
+SUB_PROJ = test
+
+REQUIRES = MT LMDB
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

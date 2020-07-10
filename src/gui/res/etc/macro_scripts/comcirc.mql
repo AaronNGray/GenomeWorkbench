@@ -1,0 +1,35 @@
+MACRO ComCirc_01 "Apply completeness complete (overwrite existing text) where sequence type is nucleotide"
+FOR EACH SeqNa
+DO
+    SetQual("descr..molinfo.completeness", "complete");
+DONE
+------------------------------------------------------------------------------
+MACRO ComCirc_02 "Apply topology circular (overwrite existing text) where sequence type is DNA"
+FOR EACH SeqNa
+WHERE inst.mol = "dna"
+DO
+    SetQual("inst.topology", "circular");
+DONE
+------------------------------------------------------------------------------
+MACRO ComCirc_03 "Autodef complete genome with modifiers clone, cultivar, culture-collection, haplogroup, isolate, strain, specimen-voucher, look for noncoding products in misc_feat with comments"
+VAR
+    list_feat_rule = "Complete Genome"
+    misc_feat_rule = "NoncodingProductFeat"
+FOR EACH TSEntry
+Do
+    Autodef(list_feat_rule, misc_feat_rule, "clone", "cultivar", "culture-collection", "haplogroup", "isolate", "strain", "specimen-voucher");
+Done
+------------------------------------------------------------------------------
+MACRO ComCirc_04 "Convert d_loop allele to d_loop note (overwrite existing text)"
+VAR
+    cap_change = "none"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH ImpFeat
+WHERE data.imp.key = "D-loop" AND ISPRESENT("qual", "allele")
+DO
+    obj = Resolve("qual") where obj.qual = "allele";
+    ConvertStringQual("obj.val", "comment", cap_change, strip_name, existing_text);
+    RemoveQual(obj);
+DONE
+------------------------------------------------------------------------------

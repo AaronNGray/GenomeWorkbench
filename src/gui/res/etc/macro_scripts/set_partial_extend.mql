@@ -1,0 +1,18 @@
+MACRO SetPartialAndExtend_01 "Set both ends partial, extend both ends of feature to end of sequence for CDS features and retranslate affected coding regions"
+VAR
+    extend = true
+    retranslate_cds = true
+FOR EACH Cdregion
+DO
+    SetBothEndsPartial("all", extend, retranslate_cds);
+DONE
+------------------------------------------------------------------------------
+MACRO SetPartialAndExtend_02 "Set both ends partial, extend both ends of feature to end of sequence for gene features and retranslate affected coding regions"
+VAR
+    extend = true
+    retranslate_cds = true
+FOR EACH Gene
+DO
+    SetBothEndsPartial("all", extend, retranslate_cds);
+DONE
+------------------------------------------------------------------------------

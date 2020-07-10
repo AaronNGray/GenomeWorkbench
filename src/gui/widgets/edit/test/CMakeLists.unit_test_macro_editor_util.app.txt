@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_macro_editor_util.app.txt 44736 2020-03-03 19:44:00Z asztalos $
+#############################################################################
+
+NCBI_begin_app( unit_test_macro_editor_util)
+  NCBI_sources( unit_test_macro_editor_util)
+  NCBI_uses_toolkit_libraries( w_edit)
+  NCBI_requires(Boost.Test.Included wxWidgets)
+NCBI_end_app()
+

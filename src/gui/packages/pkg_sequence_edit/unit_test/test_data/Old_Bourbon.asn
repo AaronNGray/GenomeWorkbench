@@ -1,0 +1,264 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Bourbon virus",
+        db {
+          {
+            db "taxon",
+            tag id 1618189
+          }
+        },
+        orgname {
+          name virus "Bourbon virus",
+          mod {
+            {
+              subtype strain,
+              subname "Original"
+            },
+            {
+              subtype nat-host,
+              subname "Homo sapiens"
+            }
+          },
+          lineage "Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; unclassified Orthomyxoviridae",
+          gcode 1,
+          div "VRL"
+        }
+      }
+    },
+    pub {
+      pub {
+        article {
+          title {
+            name "Novel Thogotovirus Species Associated with Febrile Illness
+ and Death, United States, 2014"
+          },
+          authors {
+            names std {
+              {
+                name name {
+                  last "Kosoy",
+                  first "O",
+                  initials "O.I."
+                }
+              },
+              {
+                name name {
+                  last "Lambert",
+                  first "Amy",
+                  initials "A.J."
+                }
+              },
+              {
+                name name {
+                  last "Hawkinson",
+                  first "D",
+                  initials "D.J."
+                }
+              },
+              {
+                name name {
+                  last "Pastula",
+                  first "D",
+                  initials "D.M."
+                }
+              },
+              {
+                name name {
+                  last "Goldsmith",
+                  first "C",
+                  initials "C.S."
+                }
+              },
+              {
+                name name {
+                  last "Hunt",
+                  first "D",
+                  initials "D.C."
+                }
+              },
+              {
+                name name {
+                  last "Staples",
+                  first "J",
+                  initials "J.E."
+                }
+              }
+            }
+          },
+          from journal {
+            title {
+              iso-jta "Emerging Infect. Dis."
+            },
+            imp {
+              date std {
+                year 2015
+              },
+              prepub in-press
+            }
+          }
+        }
+      }
+    },
+    pub {
+      pub {
+        sub {
+          authors {
+            names std {
+              {
+                name name {
+                  last "Lambert",
+                  first "Amy",
+                  initials "A.J."
+                }
+              }
+            },
+            affil std {
+              affil "Centers for Disease Control and Prevention",
+              div "CDC/DVBD/ADB",
+              city "Fort Collins",
+              sub "CO",
+              country "USA",
+              street "3150 Rampart Road",
+              postal-code "80521"
+            }
+          },
+          medium email,
+          date std {
+            year 2015,
+            month 1,
+            day 14
+          }
+        }
+      }
+    },
+    update-date std {
+      year 2015,
+      month 3,
+      day 2
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        genbank {
+          accession "KP657748",
+          version 1
+        },
+        gi 761229278
+      },
+      descr {
+        title "Bourbon virus segment 3 polymerase gene, partial cds.",
+        molinfo {
+          biomol cRNA
+        },
+        create-date std {
+          year 2015,
+          month 3,
+          day 2
+        }
+      },
+      inst {
+        repr raw,
+        mol rna,
+        length 1904,
+        strand ss,
+        seq-data ncbi2na '38D21500434916233A48EDA04F61E2E8CDE524B55188E60FF22E
+EE03312CEF944D2E33937930EA7D42B135E744EB958082FB23D2C38840148EBBF90A5013D784E7
+A17821C07AB773B02371143823415021CE3D6458180E35D28E1451286BF2579C7760C7E8D4DD0D
+D08EE201FFEB84F710E0E5C83405FC6028F908BD20E0897BD4FE7B57F84BA21BE75C4A11A37E37
+8C503F22BC9AC431452C0A8848E8940E08779401D08550CA8852403AAE7E9E929022908F40B7F8
+E2244850BAE9E423F7268731611EDEEC220DD394750214D3E216F724D3E224F748AA29500A1023
+508217D093FA8DACD0822800128608AD21E037DAC8E3E80624DFF58E8209748948BAB2C8207608
+1C80A54484E83A747F238C1C4D4C73EE8E04E412092D074C4284CBC501FEAE26474F80A392BE59
+06224FC381E444848940BC512D5CC307282DBA0844F47F441CEAAFED3EFA564D134042012320D5
+4DB47BA2FAFD208415E003154147447F03D7B1442A038F7BAA4E286F7AE22D1F43E503109EF45F
+741CD208B333105FB26EF4909E3DD090DE48822220A1FC97A00D932234E341A8A52E7ED17A28BE
+8C3CAB1DE4F8B378E94C4C105440E82AFDD90134A6DE4CE91A46738E882D7BBBD794FE9DE45E28
+40EC38B934C04152EBE6FDE9CA17A0E2F940EFC4EC'H
+      }
+    },
+    seq {
+      id {
+        genbank {
+          accession "AJP32538",
+          version 1
+        },
+        gi 761229279
+      },
+      descr {
+        title "polymerase, partial [Bourbon virus]",
+        molinfo {
+          biomol peptide,
+          completeness no-right
+        },
+        create-date std {
+          year 2015,
+          month 3,
+          day 2
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 634,
+        seq-data ncbieaa "MIRPKTISTEIWQMSEHSTEWISASSPHEMRILECVKYTVCCHISDMHLHNG
+LPRYILLTWCPKEVVDSVMRQNQMVFARPNIPDMLDLKTKLGLYVKIYTNEDQPKDYDSAPNEMILRMTTTGRFSPAT
+LEYLDPSQSQDVRNFLVTFYNECLESNLYERIARVQNEEPVPFAVPLTVETLLLQDTDLDLIPNLEVSGTIPPVKGDR
+WSQMKTLPKLKTPIGRPAKWGAWLAGKEARFKVFDESTDQVVAARFLADYTDTVCVRESHATPKTIIETVLASLRAFS
+EGRPKRTKIQEDLQAFGIGIKKRKKQDEEVRLKSSVDDWKRASFPMEEASEPEWVVEELEELERPTDMEWLTLDDNYI
+HTIVDEHATEAVNSYKDIVTKLWVSALIERMQVAATRAFNELHTDRAKVTTVPIITRKSWKTHSLSQLWGFVIVGPHH
+IKQETDRIPIVTVELVSEDNPEKYPNHSHFKFLYHKGNDSVGHEDVLVRVTSIAKYKLFTFSTIRRVYIQPCSVFSKL
+ILKQSAEKREKDFSLENRIEIMINGRPVLVTWRSWIIRVLCIEYLMAIHNNPQMEGFLANIRRLHMARHAMMEKSCVF
+LPFGSAPEDKCNECIINNPVVAFLARTWNELPNVYM"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "polymerase"
+                }
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 633,
+                id gi 761229279,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame one,
+            code {
+              id 1
+            }
+          },
+          partial TRUE,
+          product whole gi 761229279,
+          location int {
+            from 0,
+            to 1903,
+            strand plus,
+            id gi 761229278,
+            fuzz-to lim gt
+          }
+        }
+      }
+    }
+  }
+}

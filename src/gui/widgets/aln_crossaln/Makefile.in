@@ -1,0 +1,7 @@
+# $Id: Makefile.in 222 2002-12-05 17:01:14Z lebedev $
+
+LIB_PROJ = w_aln_crossaln
+SUB_PROJ = demo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

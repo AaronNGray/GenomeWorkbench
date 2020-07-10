@@ -1,0 +1,9 @@
+# $Id: Makefile.in 21790 2010-07-21 14:08:52Z dicuccio $
+
+# Meta-makefile("obj_conv_profile" project)
+#################################
+
+EXPENDABLE_APP_PROJ = obj_conv_profile
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

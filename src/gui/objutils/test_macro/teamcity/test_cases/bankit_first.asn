@@ -1,0 +1,182 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "?"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Lasko",
+              first "P.F",
+              initials "P."
+            }
+          }
+        },
+        affil str "Paul F. Lasko, Biology, McGill University, 1205 Avenue
+ Docteur Penfield, Montreal, QC H3A 1B1, Canada"
+      },
+      medium other,
+      date std {
+        year 1996,
+        month 4,
+        day 9
+      }
+    },
+    hup FALSE,
+    tool "Genome Workbench 3.1.1 Windows 10 (build 17134), 64-bit edition"
+  },
+  data entrys {
+    set {
+      class genbank,
+      seq-set {
+        seq {
+          id {
+            genbank {
+              name "DMU54469",
+              accession "U54469",
+              version 1
+            },
+            gi 1322283
+          },
+          descr {
+            title "Drosophila melanogaster eukaryotic initiation factor 4E
+ (eIF4E) gene, alternative splice products, complete cds.",
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "GenBank",
+                  data str "gb|U54469.1|DMU54469"
+                }
+              }
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioProject",
+                  num 1,
+                  data strs {
+                    "PRJNA123456"
+                  }
+                },
+                {
+                  label str "BioSample",
+                  num 2,
+                  data strs {
+                    "SAMN12345671",
+                    "SAMN12345672"
+                  }
+                },
+                {
+                  label str "Sequence Read Archive",
+                  num 2,
+                  data strs {
+                    "SRR123456",
+                    "SRR789012"
+                  }
+                }
+              }
+            },
+            comment "some comment",
+            source {
+              org {
+                taxname "Drosophila melanogaster",
+                common "fruit fly",
+                db {
+                  {
+                    db "taxon",
+                    tag id 7227
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Drosophila",
+                    species "melanogaster"
+                  },
+                  attrib "specified",
+                  lineage "Eukaryota; Metazoa; Ecdysozoa; Arthropoda;
+ Hexapoda; Insecta; Pterygota; Neoptera; Holometabola; Diptera; Brachycera;
+ Muscomorpha; Ephydroidea; Drosophilidae; Drosophila; Sophophora",
+                  gcode 1,
+                  mgcode 5,
+                  div "INV"
+                }
+              },
+              subtype {
+                {
+                  subtype chromosome,
+                  name "3"
+                },
+                {
+                  subtype map,
+                  name "67A8-B2"
+                }
+              }
+            },
+            create-date std {
+              year 1996,
+              month 5,
+              day 17
+            },
+            update-date std {
+              year 1998,
+              month 2,
+              day 22
+            },
+            user {
+              type str "StructuredComment",
+              data {
+                {
+                  label str "StructuredCommentPrefix",
+                  data str "##Assembly-Data-START##"
+                },
+                {
+                  label str "Assembly Method",
+                  data str "method v. 4.5"
+                },
+                {
+                  label str "Assembly Name",
+                  data str "name"
+                },
+                {
+                  label str "Coverage",
+                  data str "56x"
+                },
+                {
+                  label str "Sequencing Technology",
+                  data str "Illumina"
+                },
+                {
+                  label str "StructuredCommentSuffix",
+                  data str "##Assembly-Data-END##"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 461,
+            seq-data iupacna "CGGTTGCTTGGGTTTTATAACATCAGTCAGTGACAGGCATTTCCAGAG
+TTTGGACTGCCGACGGAAACAACGAGGAAGCTGCCCTTGAGATTGGTCACAAGCTGCGCGATGCCTTGCGTCTGGGAC
+GCAACAACTCGCTGCAGTATCAGTTGCACAAGGACACGATGGTCAAGCAGGGCTCCAACGTGAAATCGATCTACACTT
+TGTAGGCGGCTAATAACTGGCCGCTCCTTACTCGGTCCGATCCCACACAGATTAGTTTGTCTTTCATTTATTTATCGT
+TATAAGCAACAGTAGCGATTAATCGTGACTATTGTCTAAGACCCGCGTAACGAAACCGAAACGGAACCCCCTTTGTTA
+TCAAAAATCGGCATAATATAAAATCTATCCGCTTTTTGTAGTCACTGTCAATAATGGATTAGACGGAAAAGTATATTA
+ATAAAAACCTACATTAAAACCGG"
+          }
+        }
+      }
+    }
+  }
+}

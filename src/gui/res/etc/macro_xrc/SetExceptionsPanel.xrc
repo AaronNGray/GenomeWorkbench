@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxPanel" name="SetFeatException">
+        <style>wxTAB_TRAVERSAL</style>
+        <title>Set Feature Exception Panel</title>
+        <centered>1</centered>
+        <object class="wxBoxSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxStaticText" name="wxID_STATIC">
+                    <label>Feature Type</label>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxListBox" name="feature_field">
+                    <size>-1,218</size>
+                    <style>wxLB_SINGLE</style>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxStaticText" name="wxID_STATIC">
+                    <label>Set exception to</label>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxComboBox" name="exception_type">
+                    <style>wxCB_DROPDOWN</style>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxRadioBox" name="where_feature_product">
+                    <style>wxRA_SPECIFY_ROWS</style>
+                    <label>Where feature product is</label>
+                    <dimension>1</dimension>
+                    <selection>2</selection>
+                    <content>
+                        <item>&amp;Present</item>
+                        <item>&amp;Absent</item>
+                        <item>&amp;Either</item>
+                    </content>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxCheckBox" name="move_explanation">
+                    <label>Move original exception to note</label>
+                    <checked>0</checked>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>

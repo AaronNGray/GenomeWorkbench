@@ -1,0 +1,6 @@
+# $Id: Makefile.in 597164 2019-11-18 18:14:20Z vasilche $
+
+APP_PROJ = snp_ptis_test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

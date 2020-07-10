@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_xloader_patcher.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_xloader_patcher SHARED)
+  NCBI_hosts_projects(
+    objtools/data_loaders/patcher/ncbi_xloader_patcher
+  )
+  NCBI_add_definitions(NCBI_XLOADER_PATCHER_EXPORTS)
+NCBI_end_lib()

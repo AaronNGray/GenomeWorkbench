@@ -1,0 +1,14 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_parse_text.app.txt 593577 2019-09-20 12:22:42Z gouriano $
+#############################################################################
+
+NCBI_begin_app(unit_test_parse_text)
+  NCBI_sources(unit_test_parse_text)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xobjedit)
+  NCBI_project_watchers(asztalos)
+
+  NCBI_set_test_timeout(3000)
+  NCBI_add_test()
+NCBI_end_app()
+

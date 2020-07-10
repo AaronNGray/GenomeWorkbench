@@ -1,0 +1,17 @@
+#############################################################################
+# $Id: CMakeLists.muparser.lib.txt 42463 2019-03-04 19:50:43Z ucko $
+#############################################################################
+
+NCBI_begin_lib( muparser)
+  NCBI_sources(
+    muParser muParserBase muParserBytecode muParserCallback muParserComplex
+    muParserDLL muParserError muParserInt muParserTest muParserTokenReader
+  )
+NCBI_end_lib()
+
+if(OFF)
+add_library(muparser
+    muParser muParserBase muParserBytecode muParserCallback muParserComplex
+    muParserDLL muParserError muParserInt muParserTest muParserTokenReader
+)
+endif()

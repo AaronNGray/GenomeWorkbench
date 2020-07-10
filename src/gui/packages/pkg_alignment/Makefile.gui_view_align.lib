@@ -1,0 +1,26 @@
+# $Id: Makefile.gui_view_align.lib 36053 2016-08-02 14:06:39Z evgeniev $
+
+ASN_DEP = biotree
+
+SRC = align_span_view cross_align_view dot_matrix_view mp_cross_align_view \
+	  phy_export_params phy_export_job phy_exporter phy_export_page \
+	  multi_align_view phy_tree_view annot_compare_view export_tree_dlg
+
+LIB = gui_view_align
+
+DLL_LIB = gui_core w_aln_crossaln w_hit_matrix w_data w_aln_table w_phylo_tree \
+		  w_aln_multi w_object_list w_gl w_wx \
+		  gui_objutils gui_objects gui_config gui_graph gui_opengl gui_utils \
+          xalgophytree fastme  xobjutil ximage xregexp \
+          $(PCRE_LIB) tables $(COMPRESS_LIBS) $(SOBJMGR_LIBS)
+
+LIBS = $(SRA_SDK_SYSLIBS) $(WXWIDGETS_GL_LIBS) $(GLEW_LIBS) $(WXWIDGETS_LIBS) \
+       $(IMAGE_LIBS) $(CMPRS_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+REQUIRES = gbench objects wxWidgets OpenGL
+
+LIB_OR_DLL = dll
+DLL_TYPE = plugin

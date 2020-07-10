@@ -1,0 +1,8 @@
+#############################################################################
+# $Id: CMakeLists.make_score_method.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(make_score_method)
+  NCBI_sources(make_score_method)
+  NCBI_uses_toolkit_libraries(tables xncbi)
+NCBI_end_app()

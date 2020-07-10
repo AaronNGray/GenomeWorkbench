@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.epost.asn.txt 593577 2019-09-20 12:22:42Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(epost)
+  NCBI_dataspecs(epost.dtd)
+  NCBI_uses_toolkit_libraries(xser)
+  NCBI_project_watchers(grichenk)
+NCBI_end_lib()
+

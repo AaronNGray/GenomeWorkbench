@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.blast_app_util.lib.txt 593591 2019-09-20 14:53:34Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(blast_app_util)
+  NCBI_sources(blast_app_util)
+  NCBI_uses_toolkit_libraries(blastdb xnetblast blastinput xblastformat)
+  NCBI_add_definitions(NCBI_MODULE=BLAST)
+NCBI_end_lib()
+

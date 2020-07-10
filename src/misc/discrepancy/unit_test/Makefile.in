@@ -1,0 +1,6 @@
+# $Id: Makefile.in 566220 2018-06-26 21:17:26Z kachalos $
+
+EXPENDABLE_APP_PROJ = unit_test_discrepancy
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

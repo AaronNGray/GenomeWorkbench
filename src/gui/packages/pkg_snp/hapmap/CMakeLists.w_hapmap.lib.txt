@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.w_hapmap.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_hapmap)
+  NCBI_sources(hapmap_ds hapmap_track)
+  NCBI_uses_toolkit_libraries(w_seq_graphic)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

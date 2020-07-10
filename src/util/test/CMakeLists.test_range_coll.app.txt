@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_range_coll.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_range_coll)
+  NCBI_sources(test_range_coll)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_project_watchers(dicuccio)
+NCBI_end_app()
+

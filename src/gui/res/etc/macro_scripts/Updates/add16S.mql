@@ -1,0 +1,36 @@
+MACRO Add16S_01 "Remove any features"
+FOR EACH TSEntry
+DO
+    RemoveAllFeatures();
+DONE
+------------------------------------------------------------------------------
+Macro Add16S_02 "Apply rRNA with rRNA name '16S ribosomal RNA'"
+VAR
+    partial5 = true
+    partial3 = true
+    strand = "plus"
+VAR
+    add_redundant = true
+    rna_name = "16S ribosomal RNA"
+For Each SeqNa
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyRNA("rRNA", rna_name, location, add_redundant);
+DONE
+------------------------------------------------------------------------------
+MACRO Add16S_03 "Change to molecule genomic, completeness where sequence type is nucleotide"
+FOR EACH MolInfo
+WHERE SEQUENCE_FOR_SEQDESC("inst.mol") IN ("dna", "rna", "na")
+DO
+    SetQual("biomol", "genomic");
+    RemoveQual("completeness");
+DONE
+------------------------------------------------------------------------------
+MACRO Add16S_04 "Change to class DNA, topology, and strand where sequence type is nucleotide"
+For Each SeqNa
+DO
+    SetQual("inst.mol", "dna");
+    RemoveQual("inst.topology");
+    RemoveQual("inst.strand");
+DONE
+------------------------------------------------------------------------------

@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.sdbapi.lib.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(sdbapi)
+  NCBI_sources(sdbapi)
+  NCBI_uses_toolkit_libraries(
+    dbapi dbapi_util_blobstore
+    ncbi_xdbapi_ftds ncbi_xdbapi_ftds95 ncbi_xdbapi_ftds100
+    xconnext xutil
+  )
+NCBI_end_lib()
+

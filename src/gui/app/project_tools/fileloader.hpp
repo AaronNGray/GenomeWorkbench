@@ -1,0 +1,79 @@
+#ifndef FILE_LOADER__HPP
+#define FILE_LOADER__HPP
+/*  $Id: fileloader.hpp 21789 2010-07-21 13:06:47Z dicuccio $
+ * ===========================================================================
+ *
+ *                            PUBLIC DOMAIN NOTICE
+ *               National Center for Biotechnology Information
+ *
+ *  This software/database is a "United States Government Work" under the
+ *  terms of the United States Copyright Act.  It was written as part of
+ *  the author's official duties as a United States Government employee and
+ *  thus cannot be copyrighted.  This software/database is freely available
+ *  to the public for use. The National Library of Medicine and the U.S.
+ *  Government have not placed any restriction on its use or reproduction.
+ *
+ *  Although all reasonable efforts have been taken to ensure the accuracy
+ *  and reliability of the software and data, the NLM and the U.S.
+ *  Government do not and cannot warrant the performance or results that
+ *  may be obtained by using this software or data. The NLM and the U.S.
+ *  Government disclaim all warranties, express or implied, including
+ *  warranties of performance, merchantability or fitness for any particular
+ *  purpose.
+ *
+ *  Please cite the author in any work or product based on this material.
+ *
+ * ===========================================================================
+ *
+ * Author:  Nathan Bouk
+ *
+ * File Description:
+ *   Tries to load any given file into a CSerialObject
+ *
+ */
+
+
+// Objects includes
+#include <objects/seq/Bioseq.hpp>
+#include <objects/seqloc/Seq_id.hpp>
+#include <objects/seqloc/Seq_loc.hpp>
+#include <objects/seqloc/Seq_interval.hpp>
+#include <objects/seq/Seq_inst.hpp>
+#include <objmgr/scope.hpp>
+
+#include <serial/serialbase.hpp>
+
+#include <util/format_guess.hpp>
+
+BEGIN_NCBI_SCOPE
+using namespace objects;
+
+class CFileLoader
+{
+public:
+    typedef CFormatGuess::EFormat EFormat;
+    typedef list<CRef<CSerialObject> > TSerialObjectList;
+
+    static void LoadFile(const string& Filename,
+                         TSerialObjectList& Objects,
+                         EFormat Format=CFormatGuess::eUnknown);
+
+    static CRef<CSerialObject> LoadFile(const string& Filename, EFormat Format=CFormatGuess::eUnknown);
+//    static CRef<CSerialObject> LoadFile(CNcbiIstream& In, EFormat Format=CFormatGuess::eUnknown);
+
+private:
+
+    static EFormat x_GuessFormat(CNcbiIfstream& In);
+    static void x_LoadFile(CNcbiIstream& In, EFormat Format, TSerialObjectList& Objects);
+    static void x_LoadGff(CNcbiIstream& In, TSerialObjectList& Objects);
+    static CRef<CSeq_annot> x_LoadRepeatMasker(CNcbiIstream& In);
+    static CRef<CSeq_entry> x_LoadFasta(CNcbiIstream& In);
+    static void x_LoadAGP(CNcbiIstream& In, TSerialObjectList& Objects);
+    static void x_LoadAsnTextOrXml(CNcbiIstream& In, ESerialDataFormat Format, TSerialObjectList& Objects);
+    static void x_LoadAsnBinary(CNcbiIstream& In, TSerialObjectList& Objects);
+
+};
+
+END_NCBI_SCOPE
+
+#endif

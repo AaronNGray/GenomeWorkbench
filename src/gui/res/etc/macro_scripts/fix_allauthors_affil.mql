@@ -1,0 +1,24 @@
+MACRO FixAllAuthorsAffil_01 "Fix USA and state abbreviations in publications"
+FOR EACH Pubdesc
+DO
+    FixUSAAndStateAbbreviations();
+DONE
+------------------------------------------------------------------------------
+MACRO FixAllAuthorsAffil_02 "Fix pub affiliation, title, authors and affiliation country"
+FOR EACH Pubdesc
+DO
+    affil = PUB_AFFIL();
+    FixPubCapsAffiliation(affil);
+    title = PUB_TITLE();
+    FixPubCapsTitle(title);
+    authors = PUB_AUTHORS();
+    FixPubCapsAuthors(authors);
+    FixPubCapsAffilCountry(affil);
+DONE
+------------------------------------------------------------------------------
+MACRO FixAllAuthorsAffil_03 "Truncate middle name initials"
+FOR EACH Pubdesc
+DO
+    TruncateMiddleInitials();
+DONE
+------------------------------------------------------------------------------

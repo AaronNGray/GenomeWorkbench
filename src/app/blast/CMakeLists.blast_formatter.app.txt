@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.blast_formatter.app.txt 593591 2019-09-20 14:53:34Z gouriano $
+#############################################################################
+
+NCBI_begin_app(blast_formatter)
+  NCBI_sources(blast_formatter)
+  NCBI_uses_toolkit_libraries(blast_app_util)
+  NCBI_add_definitions(NCBI_MODULE=BLASTFORMAT)
+NCBI_end_app()
+

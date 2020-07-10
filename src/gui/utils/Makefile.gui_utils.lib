@@ -1,0 +1,19 @@
+# $Id: Makefile.gui_utils.lib 44715 2020-02-27 21:31:39Z shkeda $
+
+SRC = app_job_dispatcher app_job_impl app_popup browser_utils clipboard \
+      curve_bezier curve_cubic event event_handler \
+      event_translator exec extension_impl fetch_url id_generator \
+      menu_item rgba_color scheduler_engine \
+      string_utils table_names thread_pool_engine \
+      ui_object utils_platform version conn_test_thread track_info \
+      job_adapter job_future log_performance ftp_utils download_job rmtfilestatus url_utils
+
+LIB = gui_utils
+
+DLL_LIB = snputil variation xid_mapper $(SOBJMGR_LIBS) ncbi_xcache_netcache xconnect xqueryparse xutil xncbi tables
+
+LIBS = $(DL_LIBS) $(CMPRS_LIBS) $(ORIG_LIBS)
+
+CPPFLAGS = $(ORIG_CPPFLAGS)
+
+LIB_OR_DLL = both

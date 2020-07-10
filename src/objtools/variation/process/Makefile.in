@@ -1,0 +1,10 @@
+# $Id: Makefile.in 413488 2013-09-16 17:29:07Z filippov $
+# Meta-makefile("objtools" project)
+#################################
+    
+REQUIRES = objects
+ 
+EXPENDABLE_APP_PROJ = analyze-shift
+   
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,33 @@
+#############################################################################
+# $Id: CMakeLists.gui_utils.lib.txt 42617 2019-03-26 19:07:19Z gouriano $
+#############################################################################
+#
+#
+#
+NCBI_begin_lib( gui_utils)
+  NCBI_sources(
+    app_job_dispatcher app_job_impl app_popup browser_utils clipboard
+    curve_bezier curve_cubic event event_handler
+    event_translator exec extension_impl fetch_url id_generator
+    menu_item rgba_color scheduler_engine
+    string_utils table_names thread_pool_engine
+    ui_object utils_platform version conn_test_thread track_info
+    job_adapter job_future log_performance ftp_utils download_job rmtfilestatus
+  )
+  NCBI_uses_toolkit_libraries( tables xcompress xconnect ncbi_xcache_netcache)
+NCBI_end_lib()
+
+if(OFF)
+add_library(gui_utils
+    app_job_dispatcher app_job_impl app_popup browser_utils clipboard
+    curve_bezier curve_cubic event event_handler
+    event_translator exec extension_impl fetch_url id_generator
+    menu_item rgba_color scheduler_engine
+    string_utils table_names thread_pool_engine
+    ui_object utils_platform version conn_test_thread track_info
+    job_adapter log_performance ftp_utils download_job
+)
+target_link_libraries(gui_utils
+    tables xcompress xconnect
+)
+endif()

@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_mmdb.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_mmdb SHARED)
+  NCBI_hosts_projects(
+    objects/cdd/cdd
+    objects/cn3d/cn3d
+    objects/ncbimime/ncbimime
+    objects/mmdb/mmdb
+  )
+  NCBI_add_definitions(NCBI_MMDB_EXPORTS)
+NCBI_end_lib()

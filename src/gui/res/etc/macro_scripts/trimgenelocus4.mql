@@ -1,0 +1,18 @@
+MACRO TrimGeneLocus4_01 "Convert gene locus to gene comment (append separated by semicolon)"
+VAR
+cap_change = "none"
+strip_name = false
+existing_text = "eAppend"
+delimiter = ";"
+FOR EACH Gene
+DO
+ConvertStringQual("data.gene.locus", "comment", cap_change, strip_name, existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------
+Macro TrimGeneLocus4_02 "Trim the first four characters from gene locus"
+For Each Gene
+DO
+    TrimStringQual("data.gene.locus", 4);
+DONE
+------------------------------------------------------------------------------
+

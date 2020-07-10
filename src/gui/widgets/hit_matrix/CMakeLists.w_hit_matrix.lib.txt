@@ -1,0 +1,14 @@
+#############################################################################
+# $Id: CMakeLists.w_hit_matrix.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_hit_matrix)
+  NCBI_sources(
+    align_seq_table wx_choose_seq_dlg dense_hit dense_ds density_map_ds
+    diag_hit gradient_panel hit_matrix_renderer
+    wx_histogram_dlg hit_coloring hit_matrix_ds_builder hit_matrix_graph
+    hit_matrix_pane hit_matrix_widget seq_graph wx_score_dlg std_seg_hit save_hit_matrix_pdf_dlg
+  )
+  NCBI_uses_toolkit_libraries(gui_graph w_gl)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.phylo_tree_demo_wx.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(phylo_tree_demo_wx GUI)
+  NCBI_sources(wx_phylo_tree_demo_app phylo_tree_demo_dlg)
+  NCBI_uses_toolkit_libraries(w_phylo_tree w_data ncbi_xloader_genbank)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_app()

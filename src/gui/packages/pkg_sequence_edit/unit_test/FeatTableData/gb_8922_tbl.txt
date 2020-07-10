@@ -1,0 +1,189 @@
+Seq-annot ::= {
+  data ftable {
+    {
+      data cdregion {
+        frame two
+      },
+      partial TRUE,
+      product whole local str "MA444777_2",
+      location int {
+        from 0,
+        to 435,
+        strand plus,
+        id genbank {
+          accession "MA444777"
+        },
+        fuzz-from lim lt
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "MA444777_2"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "protein A"
+            }
+          }
+        }
+      }
+    },
+    {
+      data prot {
+        name {
+          "core protein"
+        },
+        processed mature
+      },
+      partial TRUE,
+      product whole local str "MA444777_1",
+      location int {
+        from 0,
+        to 521,
+        strand plus,
+        id genbank {
+          accession "MA444777"
+        },
+        fuzz-from lim lt
+      }
+    },
+    {
+      data gene {
+        locus "kilo"
+      },
+      partial TRUE,
+      location int {
+        from 0,
+        to 4901,
+        strand plus,
+        id genbank {
+          accession "MA444777"
+        },
+        fuzz-from lim lt,
+        fuzz-to lim gt
+      }
+    },
+    {
+      data cdregion {
+        frame one
+      },
+      partial TRUE,
+      product whole local str "MA444777_1",
+      location int {
+        from 0,
+        to 4901,
+        strand plus,
+        id genbank {
+          accession "MA444777"
+        },
+        fuzz-from lim lt,
+        fuzz-to lim gt
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "MA444777_1"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "polyprotein"
+            }
+          }
+        }
+      }
+    },
+    {
+      data prot {
+        name {
+          "envelope protein E1"
+        },
+        processed mature
+      },
+      product whole local str "MA444777_1",
+      location int {
+        from 522,
+        to 1097,
+        strand plus,
+        id genbank {
+          accession "MA444777"
+        }
+      }
+    },
+    {
+      data prot {
+        name {
+          "envelope protein E2"
+        },
+        processed mature
+      },
+      product whole local str "MA444777_1",
+      location int {
+        from 1098,
+        to 2186,
+        strand plus,
+        id genbank {
+          accession "MA444777"
+        }
+      }
+    },
+    {
+      data prot {
+        name {
+          "protein p7"
+        },
+        processed mature
+      },
+      product whole local str "MA444777_1",
+      location int {
+        from 2187,
+        to 2375,
+        strand plus,
+        id genbank {
+          accession "MA444777"
+        }
+      }
+    },
+    {
+      data prot {
+        name {
+          "nonstructural protein"
+        },
+        processed mature
+      },
+      product whole local str "MA444777_1",
+      location int {
+        from 2376,
+        to 3026,
+        strand plus,
+        id genbank {
+          accession "MA444777"
+        }
+      }
+    },
+    {
+      data prot {
+        name {
+          "protease"
+        },
+        processed mature
+      },
+      partial TRUE,
+      product whole local str "MA444777_1",
+      location int {
+        from 3027,
+        to 4901,
+        strand plus,
+        id genbank {
+          accession "MA444777"
+        },
+        fuzz-to lim gt
+      }
+    }
+  }
+}

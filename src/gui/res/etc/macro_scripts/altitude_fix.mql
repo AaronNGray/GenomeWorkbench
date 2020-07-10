@@ -1,0 +1,7 @@
+MACRO Altitude_fix_macro "Fix altitude"
+For each BioSource
+Do
+    obj = Resolve("subtype") where obj.subtype = "altitude";
+    FixFormat(obj);
+Done
+------------------------------------------------------------------------------

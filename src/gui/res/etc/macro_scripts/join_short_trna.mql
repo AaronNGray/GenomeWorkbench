@@ -1,0 +1,20 @@
+MACRO JoinShort_tRNA1 "Join short tRNA for nucleotide sequences"
+FOR EACH SeqNa
+DO
+    JoinShorttRNAs();
+DONE
+------------------------------------------------------------------------------
+MACRO JoinShort_tRNA2 "Remove text starting with ';' in tRNA comment"
+VAR
+    include_left = false
+    include_right = true
+    case_sensitive = true
+    whole_word = false
+    rmv_from_parsed = true
+    rmv_left = true
+FOR EACH RNA
+WHERE data.rna.type = "tRNA"
+DO
+    ParsedText("comment", ";", include_left, "", include_right, case_sensitive, whole_word, rmv_from_parsed, rmv_left);
+DONE
+------------------------------------------------------------------------------

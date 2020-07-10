@@ -1,0 +1,21 @@
+[Info]
+Name        = Nucleic Acid Colors
+Description = This coloration scheme provides a simple and standard rendering for nucleic acids based on assigning a standard color to each base (A - Red, G - Blue, C - Yellow, T - Green)
+; Type = Protein | DNA
+Type=DNA
+; Method = Coloration | ColumnScore | MatrixScore
+Method = Coloration
+Id = na
+
+
+[TableRowsBackground]
+A = green3
+G = grey50
+C = 0 114 178
+T = 204 33 00
+
+[TableRowsBackground.Greyscale]
+A = 77 77 77
+G = 28 28 28
+C = 178 178 178
+T = 150 150 150

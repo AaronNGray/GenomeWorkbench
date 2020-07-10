@@ -1,0 +1,10 @@
+# $Id: Makefile.espell.lib 427429 2014-02-20 13:41:40Z gouriano $
+
+LIB = espell
+SRC = espell__ espell___
+
+WATCHERS = grichenk
+
+
+USES_LIBRARIES =  \
+    xser

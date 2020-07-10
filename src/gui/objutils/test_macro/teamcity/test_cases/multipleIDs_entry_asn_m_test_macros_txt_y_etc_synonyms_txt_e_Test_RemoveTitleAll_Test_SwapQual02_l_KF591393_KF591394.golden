@@ -1,0 +1,280 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "domestic cat",
+            common "Felis catus",
+            orgname {
+              gcode 1,
+              mgcode 2,
+              div "MAM"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq1"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787263
+            },
+            genbank {
+              accession "KF591393"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 167,
+            strand ds,
+            seq-data iupacna "AAAAAACCGAACTTGAAAAATATGCAGTGATTTACCATGAATAGCGAC
+CCGTAATCCCTGCCTCTGAAGCCCTAAAAACCCTAAGACAAGGGGACACCATAGACCCCAACACATGGGTGGACTTAA
+ACCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Putative terminase large subunit gene",
+                    desc "terminase large subunit gene"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 36,
+                    to 53,
+                    strand plus,
+                    id local str "Seq1",
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_1",
+            general {
+              db "TMSMART",
+              tag id 39787264
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 5,
+            seq-data ncbieaa "MNSDP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Putative terminase large subunit"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 4,
+                    id local str "Seq1_prot_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq1_prot_1",
+              location int {
+                from 36,
+                to 53,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "water buffalo",
+            common "Bubalus bubalis",
+            orgname {
+              gcode 1,
+              mgcode 2,
+              div "MAM"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq2"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787265
+            },
+            genbank {
+              accession "KF591394"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 124,
+            strand ds,
+            seq-data iupacna "CCGGGGGGTATTGACATGCTTATAAAGCAAAAGAGATAGAGAAATTTC
+CTGAAGACGGATGAGGGGCGTGAAATAATCTGGCTTGACTATTGTGGTTACCACTTATGTGATAGGCAAGCGGATT"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Hypothetical protein gene",
+                    desc "Hypothetical protein gene"
+                  },
+                  location int {
+                    from 30,
+                    to 61,
+                    strand plus,
+                    id local str "Seq2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_2",
+            general {
+              db "TMSMART",
+              tag id 39787266
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 9,
+            seq-data ncbieaa "EIEKFPEDG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 8,
+                    id local str "Seq2_prot_2"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame three,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq2_prot_2",
+              location int {
+                from 30,
+                to 61,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

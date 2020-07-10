@@ -1,0 +1,436 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class eco-set,
+      seq-set {
+        seq {
+          id {
+            local str "OTU_1737",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_1737"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495690
+            },
+            genbank {
+              accession "KM673298"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Hypocreales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 209465
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Hypocreales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Sordariomycetes; Hypocreomycetidae; Hypocreales;
+ environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype environmental-sample,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 62,
+            seq-data iupacna "GTGAGTCATCGAATCTTTGAACGCATATTGCGCTCTTTGGTATTCCTA
+TCAATAAGCGGAGG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "mobile_element"
+                  },
+                  comment "old note1",
+                  location int {
+                    from 0,
+                    to 61,
+                    strand plus,
+                    id genbank {
+                      accession "KM673298"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "OTU_1757",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_1757"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495691
+            },
+            genbank {
+              accession "KM673299"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Hypocreales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 209465
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Hypocreales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Sordariomycetes; Hypocreomycetidae; Hypocreales;
+ environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype environmental-sample,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 82,
+            seq-data iupacna "GTGAGTCATCGAATCTTTGAACGCATATTGCGCTCTTTGGTATTATCA
+AGTAAGACTACCCGCTGAACTTAAGCATATCAAT"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "mobile_element"
+                  },
+                  comment "old note",
+                  location int {
+                    from 0,
+                    to 81,
+                    strand plus,
+                    id genbank {
+                      accession "KM673299"
+                    }
+                  },
+                  qual {
+                    {
+                      qual "mobile_element_type",
+                      val "insertion sequence"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "OTU_942",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_942"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495692
+            },
+            genbank {
+              accession "KM673300"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Helotiales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 292464
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Helotiales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Leotiomycetes; Helotiales; environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype environmental-sample,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 31,
+            seq-data iupacna "CGCTGAACTTAAGCATATCAATAAGCGGAGG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "mobile_element"
+                  },
+                  location int {
+                    from 0,
+                    to 30,
+                    strand plus,
+                    id genbank {
+                      accession "KM673300"
+                    }
+                  },
+                  qual {
+                    {
+                      qual "mobile_element_type",
+                      val "w564"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "OTU_12525",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_12525"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495693
+            },
+            genbank {
+              accession "KM673301"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Peltigerales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 587034
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Peltigerales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Lecanoromycetes; OSLEUM clade; Lecanoromycetidae;
+ Peltigerales; environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype environmental-sample,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 85,
+            seq-data iupacna "GTGATGATCATCGAATCTTTGAACGCATATTGCGCGTGTTCCAACGTA
+GGGATACCCGCTGAATTTAAGCTATAATAAGCGGAGG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "mobile_element"
+                  },
+                  location int {
+                    from 0,
+                    to 84,
+                    strand plus,
+                    id genbank {
+                      accession "KM673301"
+                    }
+                  },
+                  qual {
+                    {
+                      qual "mobile_element_type",
+                      val "sturt"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "OTU_3797",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_3797"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495698
+            },
+            genbank {
+              accession "KM673306"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Pezizales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 299475
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Pezizales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Pezizomycetes; Pezizales; environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype environmental-sample,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 214,
+            seq-data iupacna "GTGAGTCATCGAATCTTTGAACGCACAAGCACCTCCCCACCAAAATTC
+AGAGGCGGTCCGCACCCATGCGTTAAGGCGTTGTAAAAGCTATCCAGCACTTTTCGCCGTAACTGTGGGAGTTTATCT
+AGCCATTTGAACAACCCCCATCAATCAAAGGTTGACCTCGGATCAGGTAGGGATACCCGCTGAACTTAAGCATATCAA
+TAAGCGGAGG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "mobile_element"
+                  },
+                  comment "old note",
+                  location int {
+                    from 0,
+                    to 213,
+                    strand plus,
+                    id genbank {
+                      accession "KM673306"
+                    }
+                  },
+                  qual {
+                    {
+                      qual "mobile_element_type",
+                      val "w467y6"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

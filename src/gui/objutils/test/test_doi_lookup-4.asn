@@ -1,0 +1,61 @@
+Pubdesc ::= {
+  pub {
+    article {
+      title {
+        name "Biosynthesis and incorporation of an alkylproline-derivative
+ (APD) precursor into complex natural products"
+      },
+      authors {
+        names std {
+          {
+            name name {
+              last "Janata",
+              first "J."
+            }
+          },
+          {
+            name name {
+              last "Kamenik",
+              first "Z."
+            }
+          },
+          {
+            name name {
+              last "Gazak",
+              first "R."
+            }
+          },
+          {
+            name name {
+              last "Kadlcik",
+              first "S."
+            }
+          },
+          {
+            name name {
+              last "Najmanova",
+              first "L."
+            }
+          }
+        }
+      },
+      from journal {
+        title {
+          iso-jta "Nat Prod Rep"
+        },
+        imp {
+          date std {
+            year 2018
+          },
+          volume "35",
+          issue "3",
+          pages "257-289",
+          pubstatus ppublish
+        }
+      },
+      ids {
+        doi "10.1039/C7NP00047B"
+      }
+    }
+  }
+}

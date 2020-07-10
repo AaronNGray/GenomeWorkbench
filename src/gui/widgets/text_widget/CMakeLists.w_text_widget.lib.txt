@@ -1,0 +1,17 @@
+#############################################################################
+# $Id: CMakeLists.w_text_widget.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_text_widget)
+  NCBI_sources(
+    text_item_panel draw_styled_text composite_text_item
+    selection_helper expand_glyph expand_item hyperlink_glyph
+    text_select_item plain_text_item text_position text_item
+    root_text_item
+    count_chars_stream calc_size_stream calc_textpos_stream
+    draw_text_stream calc_caretpos_stream calc_nbpos_stream
+    calc_size_cache text_line_iterator
+  )
+  NCBI_uses_toolkit_libraries(w_data)
+  NCBI_requires(wxWidgets)
+NCBI_end_lib()

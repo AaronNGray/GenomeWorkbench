@@ -1,0 +1,10 @@
+# $Id: Makefile.pkg_sequence_edit.dll 42821 2019-04-18 19:32:56Z joukovv $
+
+DLL = pkg_sequence_edit
+
+HOSTED_LIBS    = pkg_sequence_edit
+
+DEPENDENCIES   = gui_widgets_seq 
+
+
+

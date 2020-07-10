@@ -1,0 +1,187 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Felis catus",
+            common "domestic cat",
+            db {
+              {
+                db "taxon",
+                tag id 9685
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Felis",
+                species "catus"
+              },
+              lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia;
+ Felidae; Felinae; Felis",
+              gcode 1,
+              mgcode 2,
+              div "MAM"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq1"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787263
+            },
+            genbank {
+              accession "KF591393"
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 38,
+            strand ds,
+            seq-data iupacna "AAAAAACCGAACTTGAGGCATGTAATCCCTGCCTCTGA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Putative terminase large subunit gene",
+                    desc "terminase large subunit gene"
+                  },
+                  partial TRUE,
+                  comment "Putative terminase large subunit gene",
+                  location int {
+                    from 4,
+                    to 33,
+                    strand minus,
+                    id genbank {
+                      accession "KF591393"
+                    },
+                    fuzz-from lim lt
+                  }
+                },
+                {
+                  data rna {
+                    type rRNA,
+                    ext name "12S ribosomal RNA"
+                  },
+                  comment "rRNA-12S ribosomal RNA",
+                  location packed-int {
+                    {
+                      from 0,
+                      to 19,
+                      strand plus,
+                      id genbank {
+                        accession "KF591393"
+                      }
+                    },
+                    {
+                      from 24,
+                      to 37,
+                      strand plus,
+                      id genbank {
+                        accession "KF591393"
+                      }
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type rRNA,
+                    ext name "16S ribosomal RNA"
+                  },
+                  comment "rRNA-16S ribosomal RNA",
+                  location int {
+                    from 0,
+                    to 37,
+                    strand minus,
+                    id genbank {
+                      accession "KF591393"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type rRNA,
+                    ext name "small subunit ribosomal RNA"
+                  },
+                  comment "rRNA-small subunit ribosomal RNA",
+                  location int {
+                    from 0,
+                    to 37,
+                    strand plus,
+                    id genbank {
+                      accession "KF591393"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_1",
+            general {
+              db "TMSMART",
+              tag id 39787264
+            }
+          },
+          descr {
+            title "Putative terminase large subunit, partial [Methanobacterium
+ formicicum phage]",
+            molinfo {
+              biomol peptide,
+              completeness no-right
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 10,
+            seq-data ncbieaa "TELEACNPCL"
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              comment "[intronless gene]; Seq1_prot_1",
+              product whole local str "Seq1_prot_1",
+              location int {
+                from 4,
+                to 33,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                },
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

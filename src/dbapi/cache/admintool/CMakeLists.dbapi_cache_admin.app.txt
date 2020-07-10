@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.dbapi_cache_admin.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(dbapi_cache_admin)
+  NCBI_sources(dbapi_cache_admin)
+  NCBI_requires(FreeTDS)
+  NCBI_uses_toolkit_libraries(ncbi_xcache_dbapi)
+  NCBI_project_watchers(kuznets)
+NCBI_end_app()
+

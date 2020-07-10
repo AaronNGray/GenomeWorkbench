@@ -1,0 +1,413 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Caenorhabditis elegans",
+            db {
+              {
+                db "taxon",
+                tag id 6239
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Protostomia; Ecdysozoa; Nematoda; Chromadorea;
+ Rhabditida; Rhabditoidea; Rhabditidae; Peloderinae; Caenorhabditis",
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq1"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787263
+            },
+            genbank {
+              accession "KF591393"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq1"
+                },
+                {
+                  label str "General",
+                  data str "gnl|BankIt|1657039/Seq1"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|39787263"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KF591393|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1172,
+            strand ds,
+            seq-data ncbi2na '000581F8A53E332F80B8D203F80B16A8A775B03E3E06C23C
+03C34C57DE8C2AA26EC6A3CE3F8205FAA39FE00B9D28EFBC01274A98A69C73470038D322E82AFA
+30373FC0578FC3929E2363CE77C0F8F8270A0D5BC0002002AA411915753FF7F5FFFE0FCF300339
+2E3F14E0C94693DCA3C959E8BB1E34382A93A015681FE1BBC34F83E743CE7798A00BCB00CF3CA2
+F5C9293AC02C478C25807F9F7C7D73547D5A18C134CF352F125041E94B8BFA5A42E02130D04ECE
+945FD16C43B80F248E12C090105BFC13D0014C43A5A39F2ECAA49E82CF728FE896BF3D34C8E15C
+D009B2782780B027F10200F0883A32AA049C0158720018001ABC5D730E32C3274087D13C385C46
+930D02012056C35797782570015C210AA114C855044EAE87C05D56737B8015601E171C'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Putative terminase large subunit gene",
+                    desc "terminase large subunit gene"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 419,
+                    to 1171,
+                    strand plus,
+                    id local str "Seq1",
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "mRNA product name"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 419,
+                    to 1171,
+                    strand plus,
+                    id genbank {
+                      accession "KF591393"
+                    },
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_1",
+            general {
+              db "TMSMART",
+              tag id 39787264
+            }
+          },
+          descr {
+            title "Putative terminase large subunit, partial [Methanobacterium
+ formicicum phage]",
+            molinfo {
+              biomol peptide,
+              completeness no-right
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq1_prot_1"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|39787264"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 251,
+            seq-data ncbieaa "MNSHGILGLARWSVLINEGAWKPRNFDVLIIELLNYALRGKVSKILLG
+VPSRHGKSTLISRNFASYFLSHFPDDNIILSSYSQQLASEFGRQVKDIINMYGHLSPYNVKLADDSKANNRFNIQKPY
+NGRMLSVGAAGSILGFGAGLFIIDDPIKSVAEAESKALQRKLREWIGGTAKTRLEKRKNGLPPIMIVIAQRLHINDLH
+GIIKETEPVIPASEALKTLRQGDTIDPNTWVDLNLPAICENPETDLL"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Putative terminase large subunit, partial CDS"
+                    },
+                    desc "terminase large subunit"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 250,
+                    id local str "Seq1_prot_1",
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              comment "[intronless gene]",
+              product whole local str "Seq1_prot_1",
+              location int {
+                from 419,
+                to 1171,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                },
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq2"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787265
+            },
+            genbank {
+              accession "KF591394"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2"
+                },
+                {
+                  label str "General",
+                  data str "gnl|BankIt|1657039/Seq2"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|39787265"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KF591394|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 765,
+            strand ds,
+            seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGA
+ATTCCCCTAAGTGGGGATTAAGTAGTTATAAATTAAAGTTTAGGGTTAAATAATAAAAAAAAGATGGGAGAATGATAT
+ATATGGTATTGAGAAAAGATGACATATTAAAGGGGATTAATGACCCGGAACTAGTTGAAATTAAAGCTTTAGGGGGGG
+AAATCCCTCTACGTCCTCTTTCAAAAGTTGAATGGAGTAAGATTGAAAAGATTGAAGCCAAAGCATACGGTATTTTCG
+AGGCTAATGAAACTGCTAAAAGGGGCAAACGCCAACTCCGTGACGGGATGATGGAAACCCGGGGTAAAATTAACCTTG
+AAAAGCAAGCCAAAGCCGAGTTTGAAGGCAAATTAGAGGCCCTTTATCTCTCAATGAACAACACTCATCATGAATGTG
+ATGAGTGGACTAAAAGTGACATACAAAGCTTGAAGGTTGACGCTTTTGATGAGATTTTCGAGAAAGTACGTGACTTAT
+CAGGGGTGAATATTAAAGGGGATGAAGCAAAAGAGATAGAGAAATTTCCTGAAGACGGATGAGGGGCGTGAAATAATC
+TGGCTTGACTATTGTGGTTACCACTTATGTGATAGGCAAGCGGATTTAACACCCCTCCAATCCTATTTCATTAGCAAA
+GGCCGGTTAGACCTGTATAATGAAATGAATAAGGTCAAATAAACATTCCTTTACTTTTTTTTCTTTTGTATTCTTTTA
+TTTTTATAATAATAT"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Hypothetical protein gene",
+                    desc "Hypothetical protein gene"
+                  },
+                  location int {
+                    from 119,
+                    to 577,
+                    strand plus,
+                    id local str "Seq2"
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "mRNA product name"
+                  },
+                  location int {
+                    from 119,
+                    to 577,
+                    strand plus,
+                    id genbank {
+                      accession "KF591394"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_2",
+            general {
+              db "TMSMART",
+              tag id 39787266
+            }
+          },
+          descr {
+            title "Hypothetical protein [Methanobacterium formicicum phage]",
+            molinfo {
+              biomol peptide
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2_prot_2"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|39787266"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 152,
+            seq-data iupacaa "MIYMVLRKDDILKGINDPELVEIKALGGEIPLRPLSKVEWSKIEKIEA
+KAYGIFEANETAKRGKRQLRDGMMETRGKINLEKQAKAEFEGKLEALYLSMNNTHHECDEWTKSDIQSLKVDAFDEIF
+EKVRDLSGVNIKGDEAKEIEKFPEDG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Hypothetical protein",
+                      "Partial cds, hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 151,
+                    id local str "Seq2_prot_2"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq2_prot_2",
+              location int {
+                from 119,
+                to 577,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

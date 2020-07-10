@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_objmgr.app.txt 565603 2018-06-14 13:44:37Z gouriano $
+#############################################################################
+
+NCBI_begin_app(unit_test_objmgr)
+  NCBI_sources(unit_test_objmgr)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xobjmgr test_boost)
+  NCBI_project_watchers(vasilche)
+  NCBI_add_test()
+NCBI_end_app()
+

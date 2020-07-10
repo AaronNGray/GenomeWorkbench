@@ -1,0 +1,10 @@
+# $Id: Makefile.in 21388 2010-05-14 01:24:08Z dicuccio $
+
+# DEMO::  App Job Dispatcher test application
+
+APP_PROJ = test_app_job
+
+REQUIRES = objects
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

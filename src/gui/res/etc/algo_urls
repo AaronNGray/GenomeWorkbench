@@ -1,0 +1,6 @@
+# This file is used by the CAlgoWebServiceInit plugin.
+# It contains urls to be hit for information about
+# web services that can be called from gbench as plugins
+
+# Primer3 at NCBI
+http://www.ncbi.nlm.nih.gov/projects/utils/primer3/primer3_info.cgi

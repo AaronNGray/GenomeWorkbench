@@ -1,0 +1,24 @@
+Macro SetGenePartial_01 "Clear 5' partial for gene features"
+For Each Gene
+DO
+    ClearPartialStart("all");
+DONE
+------------------------------------------------------------------------------
+Macro SetGenePartial_02 "Set 5' partial, extend 5' end of feature to the end of sequence for gene features"
+For Each Gene
+DO
+    SetPartialStart("all", true);
+DONE
+------------------------------------------------------------------------------
+Macro SetGenePartial_03 "Clear 3' partial for gene features"
+For Each Gene
+DO
+    ClearPartialStop("all");
+DONE
+------------------------------------------------------------------------------
+Macro SetGenePartial_04 "Set 3' partial, extend 3' end of feature to the end of sequence for gene features"
+For Each Gene
+DO
+    SetPartialStop("all", true);
+DONE
+------------------------------------------------------------------------------

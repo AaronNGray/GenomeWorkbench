@@ -1,0 +1,12 @@
+# $Id: Makefile.in 29682 2014-01-28 15:50:01Z falkrb $
+# Author:  Roman Katargin
+# Meta-makefile for plugin testapp
+#################################
+
+APP_PROJ = \
+    demo_wx_empty_app demo_wx_tree demo_combo_app
+
+#EXPENDABLE_APP_PROJ = demo_tablectrl
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,42 @@
+Seq-entry ::= seq {
+  id {
+    local str "Seq1",
+    general {
+      db "BankIt",
+      tag str "SUB459171/1"
+    }
+  },
+  descr {
+    source {
+      org {
+        taxname "Norovirus GI",
+        db {
+          {
+            db "taxon",
+            tag id 122928
+          }
+        },
+        orgname {
+          name virus "Norovirus GI",
+          attrib "specified",
+          lineage "Viruses; ssRNA viruses; ssRNA positive-strand viruses, no
+ DNA stage; Caliciviridae; Norovirus",
+          gcode 1,
+          div "VRL"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic
+    }
+  },
+  inst {
+    repr raw,
+    mol rna,
+    length 254,
+    seq-data iupacna "GTGATTGGTTGGATGGTTTCCAAGCCATACACACAACGCCTGGAAATGGCTGTTGC
+TACTGGTTCCATCCAATCAAATGTCCCTGAAGCGATACGCAACTGCTTTGCAGTCTGTCGTACTTTTGCTTGGAATGA
+CAGAATGCCCACTGGAACTTTCCTGGGATCTTTATCGCTTCATCCCAACATTAATCCATACACATCCCATCTTTCAGG
+CATGTGGGCAGGGTGGGGAGGTAGCTTTGAGGCCCGCATATC"
+  }
+}

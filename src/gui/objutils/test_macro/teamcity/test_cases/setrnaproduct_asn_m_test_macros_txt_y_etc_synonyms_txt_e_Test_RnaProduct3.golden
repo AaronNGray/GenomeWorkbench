@@ -1,0 +1,122 @@
+Seq-entry ::= seq {
+  id {
+    local str "Seq1",
+    general {
+      db "BankIt",
+      tag str "1657039/Seq1"
+    },
+    general {
+      db "TMSMART",
+      tag id 39787263
+    },
+    genbank {
+      accession "KF591393"
+    }
+  },
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Lactuca sativa",
+        db {
+          {
+            db "taxon",
+            tag id 4236
+          }
+        },
+        orgname {
+          gcode 1,
+          mgcode 1,
+          div "PLN"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic,
+      completeness partial
+    },
+    update-date std {
+      year 2013,
+      month 8,
+      day 27,
+      hour 10,
+      minute 59,
+      second 58
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 1172,
+    strand ds,
+    seq-data ncbi2na '000581F8A53E332F80B8D203F80B16A8A775B03E3E06C23C03C34C57
+DE8C2AA26EC6A3CE3F8205FAA39FE00B9D28EFBC01274A98A69C73470038D322E82AFA30373FC0
+578FC3929E2363CE77C0F8F8270A0D5BC0002002AA411915753FF7F5FFFE0FCF3003392E3F14E0
+C94693DCA3C959E8BB1E34382A93A015681FE1BBC34F83E743CE7798A00BCB00CF3CA2F5C9293A
+C02C478C25807F9F7C7D73547D5A18C134CF352F125041E94B8BFA5A42E02130D04ECE945FD16C
+43B80F248E12C090105BFC13D0014C43A5A39F2ECAA49E82CF728FE896BF3D34C8E15CD009B278
+2780B027F10200F0883A32AA049C0158720018001ABC5D730E32C3274087D13C385C46930D0201
+2056C35797782570015C210AA114C855044EAE87C05D56737B8015601E171C'H
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data gene {
+            locus "Putative terminase large subunit gene",
+            desc "terminase large subunit gene"
+          },
+          partial TRUE,
+          location int {
+            from 419,
+            to 1171,
+            strand plus,
+            id local str "Seq1",
+            fuzz-to lim gt
+          }
+        },
+        {
+          data rna {
+            type rRNA,
+            ext name "18S ribosomal RNA"
+          },
+          location int {
+            from 0,
+            to 1171,
+            strand plus,
+            id local str "Seq1"
+          }
+        },
+        {
+          data rna {
+            type tRNA,
+            ext tRNA {
+              aa ncbieaa 69
+            }
+          },
+          location int {
+            from 0,
+            to 1171,
+            strand plus,
+            id local str "Seq1"
+          }
+        },
+        {
+          data rna {
+            type ncRNA,
+            ext gen {
+              class "lncRNA",
+              product "some name"
+            }
+          },
+          location int {
+            from 0,
+            to 1171,
+            strand plus,
+            id local str "Seq1"
+          }
+        }
+      }
+    }
+  }
+}

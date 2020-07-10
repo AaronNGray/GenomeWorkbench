@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.test-reference_allele_fix.app.txt 593577 2019-09-20 12:22:42Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test-reference_allele_fix)
+  NCBI_sources(test-reference_allele_fix)
+  NCBI_uses_toolkit_libraries(ncbi_xloader_genbank variation_utils)
+NCBI_end_app()
+

@@ -1,0 +1,240 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2",
+            genbank {
+              accession "KF591394"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KF591394|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 207,
+            strand ds,
+            seq-data iupacna "GATGCGTTCAAAAGGGGATGAAGCAAAAGAGATAGAGAAATTTCCTGA
+AGACGGATGAGGGGAGCATGGCAGCGTTCTGCTACATTGCAACTTTCATTACATTGTTAGCGGACCTGATCAGTGGAA
+ATATCACGTTCACTGAGTTCATGAGTGAGATGTGGGTGGCTTTTCAGCAACTAATCGGTGAAGTCATATGGGTCATTA
+ACA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Hypothetical protein gene",
+                    desc "Hypothetical protein gene"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 10,
+                    to 206,
+                    strand plus,
+                    id genbank {
+                      accession "KF591394"
+                    },
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data gene {
+                    locus "putative tape measure protein gene",
+                    desc "tape measure protein gene"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 187,
+                    strand minus,
+                    id genbank {
+                      accession "KF591394"
+                    },
+                    fuzz-from lim lt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_2",
+            general {
+              db "TMSMART",
+              tag id 39787266
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2_prot_2"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|39787266"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 7,
+            seq-data ncbieaa "KGMKQKR"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 6,
+                    id local str "Seq2_prot_2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_3",
+            general {
+              db "TMSMART",
+              tag id 39787267
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2_prot_3"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|39787267"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 13,
+            seq-data ncbieaa "HRLVAEKPPTSHS"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "putative tape measure protein"
+                    },
+                    desc "tape measure protein"
+                  },
+                  location int {
+                    from 0,
+                    to 12,
+                    id local str "Seq2_prot_3"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq2_prot_2",
+              location int {
+                from 10,
+                to 34,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            },
+            {
+              data cdregion {
+                frame three,
+                code {
+                  id 1
+                }
+              },
+              comment "[intronless gene]",
+              product whole local str "Seq2_prot_3",
+              location int {
+                from 144,
+                to 187,
+                strand minus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

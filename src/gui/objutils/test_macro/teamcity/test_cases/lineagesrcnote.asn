@@ -1,0 +1,155 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Gavia stellata",
+            common "red-throated loon",
+            db {
+              {
+                db "taxon",
+                tag id 37040
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Gavia",
+                species "stellata"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype other,
+                  subname "Tax class/lineage : Gavia stellata"
+                }
+              },
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+ Tetrapoda; Amniota; Sauropsida; Sauria; Archelosauria; Archosauria;
+ Dinosauria; Saurischia; Theropoda; Coelurosauria; Aves; Neognathae;
+ Gaviiformes; Gaviidae; Gavia",
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "note: tetrapoda"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq1"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 64,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAATCTGTGAAAACCCCGAA
+ACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Epipyxis sp. PR26KG",
+            db {
+              {
+                db "taxon",
+                tag id 1825121
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Epipyxis",
+                species "sp. PR26KG"
+              },
+              mod {
+                {
+                  subtype other,
+                  subname "some note"
+                }
+              },
+              lineage "cellular organisms; Eukaryota; Stramenopiles;
+ Chrysophyceae; Chromulinales; Dinobryaceae; Epipyxis",
+              gcode 1,
+              mgcode 1,
+              div "PLN",
+              pgcode 11
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "PR26KG"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq2"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 158,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGAATTC
+CCCTAATATTTAGGCTTTGCAATTGGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGA
+GTGCAACTGATAACATGGGTCATTAACA"
+      }
+    }
+  }
+}

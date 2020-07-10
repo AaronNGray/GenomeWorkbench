@@ -1,0 +1,8 @@
+# $Id: Makefile.in 16046 2008-02-16 19:44:00Z dicuccio $
+
+# DEMO::  Cross Alignment Widget
+
+EXPENDABLE_APP_PROJ = demo_cross_aln
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,11 @@
+# $Id: Makefile.gui_objects.dll 42821 2019-04-18 19:32:56Z joukovv $
+
+DLL = gui_objects
+
+HOSTED_LIBS    = gui_objects
+
+DEPENDENCIES   = gui_config gui_utils \
+                 ncbi_core ncbi_general ncbi_misc ncbi_seq ncbi_seqext
+
+CPPFLAGS = -DNCBI_GUIOBJECTS_EXPORTS
+

@@ -1,0 +1,5 @@
+
+APP_PROJ = test_msg
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

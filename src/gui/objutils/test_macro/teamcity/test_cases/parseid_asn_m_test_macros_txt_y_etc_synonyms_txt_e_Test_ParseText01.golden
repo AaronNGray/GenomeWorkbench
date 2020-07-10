@@ -1,0 +1,198 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Micropsalliota geesterani",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "CBS tobe_removed_text"
+                },
+                {
+                  subtype culture-collection,
+                  subname "SEQ"
+                }
+              }
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "seq_1",
+            general {
+              db "BankIt",
+              tag str "1765449/LAP520"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_1"
+                },
+                {
+                  label str "General",
+                  data str "gnl|BankIt|1765449/LAP520"
+                }
+              }
+            },
+            title "Micropsalliota geesterani some protein gene, complete cds."
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 24,
+            strand ds,
+            seq-data iupacna "AACTGTCCTGGGACAACTTTGAAC"
+          }
+        },
+        seq {
+          id {
+            local str "BankIt:1765449/LAP520_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "BankIt:1765449/LAP520_1"
+                }
+              }
+            },
+            title "some protein; hypothetical [Micropsalliota geesterani]"
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 8,
+            seq-data ncbieaa "-CPGTTLN"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "some protein",
+                      "hypothetical"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 7,
+                    id local str "BankIt:1765449/LAP520_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "BankIt:1765449/LAP520_1",
+              location int {
+                from 0,
+                to 23,
+                strand plus,
+                id local str "seq_1"
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "seq_2",
+        general {
+          db "BankIt",
+          tag str "1765674/LAP520"
+        }
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Micropsalliota geesterani",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "flu"
+                }
+              }
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "LAP520"
+            }
+          }
+        },
+        title "Micropsalliota geesterani some gene descr (some gene locus)
+ gene, complete sequence."
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 31,
+        strand ds,
+        seq-data iupacna "GGACCGTATACAAGTCTCCTGGGATGGAGCT"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "some gene locus",
+                desc "some gene descr"
+              },
+              location int {
+                from 0,
+                to 30,
+                strand plus,
+                id local str "seq_2"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

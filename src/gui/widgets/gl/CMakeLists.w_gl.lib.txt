@@ -1,0 +1,14 @@
+#############################################################################
+# $Id: CMakeLists.w_gl.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_gl)
+  NCBI_sources(
+    gl_widget_base graph_container html_active_area
+    histogram_graph linear_sel_handler minimap_handler
+    mouse_zoom_handler progress_panel renderable ruler seqmark_handler
+    tooltip_handler tooltip_wnd attrib_menu
+  )
+  NCBI_uses_toolkit_libraries(w_wx)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

@@ -1,0 +1,8 @@
+#################################
+# $Id: Makefile.in 17795 2008-09-17 01:08:47Z dicuccio $
+#################################
+
+DLL_PROJ = ncbi_xcache_sqlite3
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

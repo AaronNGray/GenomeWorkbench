@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.test_netservice_params.app.txt 568804 2018-08-10 16:44:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_netservice_params)
+  NCBI_sources(test_netservice_params)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xconnserv)
+  NCBI_project_watchers(sadyrovr)
+  NCBI_add_test()
+NCBI_end_app()
+

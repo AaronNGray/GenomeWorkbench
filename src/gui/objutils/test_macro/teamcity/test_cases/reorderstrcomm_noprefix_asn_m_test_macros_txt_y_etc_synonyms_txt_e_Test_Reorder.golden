@@ -1,0 +1,83 @@
+Seq-entry ::= seq {
+  id {
+    local str "FMAN01",
+    general {
+      db "NCBIFILE",
+      tag str "submission sequence.sqn/FMAN01"
+    },
+    general {
+      db "TMSMART",
+      tag id 58028517
+    },
+    genbank {
+      accession "KT722623"
+    }
+  },
+  descr {
+    molinfo {
+      tech standard,
+      completeness partial
+    },
+    user {
+      type str "StructuredComment",
+      data {
+        {
+          label str "Sequencing Technology",
+          data str "Sanger dideoxy sequencing"
+        }
+      }
+    },
+    user {
+      type str "OriginalID",
+      data {
+        {
+          label str "LocalId",
+          data str "FMAN01"
+        }
+      }
+    },
+    source {
+      genome genomic,
+      origin natural,
+      org {
+        taxname "Nyssomyia umbratilis",
+        db {
+          {
+            db "taxon",
+            tag id 182988
+          }
+        },
+        syn {
+          "Lutzomyia (Nyssomyia) umbratilis",
+          "Lutzomyia umbratilis"
+        },
+        orgname {
+          name binomial {
+            genus "Nyssomyia",
+            species "umbratilis"
+          },
+          mod {
+            {
+              subtype old-name,
+              subname "Lutzomyia umbratilis"
+            }
+          },
+          lineage "Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Hexapoda;
+ Insecta; Pterygota; Neoptera; Endopterygota; Diptera; Nematocera;
+ Psychodoidea; Psychodidae; Nyssomyia",
+          gcode 1,
+          mgcode 5,
+          div "INV"
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 99,
+    strand ds,
+    seq-data iupacna "TACAGATTTCTTGTTCATAATGGCGGCTATATTACACTCGAAACTGAATGGTCCAG
+CTTTGTTAACTAGACTGAAATATCTCCGCACCATGATTACTAC"
+  }
+}

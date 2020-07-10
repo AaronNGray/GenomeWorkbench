@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbistr.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbistr)
+  NCBI_sources(test_ncbistr)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_add_test()
+  NCBI_project_watchers(ivanov)
+NCBI_end_app()
+

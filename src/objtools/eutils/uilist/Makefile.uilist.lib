@@ -1,0 +1,10 @@
+# $Id: Makefile.uilist.lib 427429 2014-02-20 13:41:40Z gouriano $
+
+SRC = uilist__ uilist___
+LIB = uilist
+
+WATCHERS = grichenk
+
+
+USES_LIBRARIES =  \
+    xser

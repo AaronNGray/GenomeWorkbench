@@ -1,0 +1,703 @@
+Seq-entry ::= set {
+  class eco-set,
+  descr {
+    create-date std {
+      year 2016,
+      month 2,
+      day 27
+    },
+    title "Bacteria sequence."
+  },
+  seq-set {
+    seq {
+      id {
+        local str "A02-0-3",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_A02-0-3"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/A02-0-3"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726335
+        },
+        genbank {
+          accession "KU820887"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "uncultured bacterium",
+            db {
+              {
+                db "taxon",
+                tag id 77133
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "uncultured bacterium"
+                }
+              },
+              attrib "uncultured",
+              lineage "Bacteria; environmental samples",
+              gcode 11,
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "uncultured Ruequria1"
+            },
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype isolation-source,
+              name "sendiment"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        title "Uncultured bacterium clone uncultured Ruequria1 sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 177,
+        seq-data iupacna "GATCTTCGGATCTAGCGGCGGACGGGTTAGTAACGCGTGGGAACGTACCCAA
+AGGTAGGGAATAGCCACTGGAAACGGTGAGTAATACCCTATGTGCCCTTCGGGGGAAAGATTTATCGCCCACACCATG
+GGAGTTGGTTCTACCCGACGACGCTGCGCTAACCTTCGGGGGCAGGC"
+      }
+    },
+    seq {
+      id {
+        local str "A08-0-2",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_A08-0-2"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/A08-0-2"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726336
+        },
+        genbank {
+          accession "KU820888"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "uncultured type I methanotroph",
+            db {
+              {
+                db "taxon",
+                tag id 192503
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "uncultured type I methanotroph"
+                }
+              },
+              attrib "uncultured",
+              lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Methylococcales; Methylococcaceae; environmental samples",
+              gcode 11,
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype environmental-sample,
+              name ""
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        title "Uncultured type I methanotroph sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 124,
+        seq-data iupacna "TGCAAGTCGAGGGGTAACAGGGAGAGCGCAACCCCTGTGGTTAGTTGCCAGC
+GAGTAATGTCGGGAACTCTAGCCAGACTGCCGGTGCAAACCGTGAGGAAGGTGGGGATGACGTCAAATCATC"
+      }
+    },
+    seq {
+      id {
+        local str "B06-0",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_B06-0"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/B06-0"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726337
+        },
+        genbank {
+          accession "KU820889"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "Candidatus Planktophila limnetica",
+            db {
+              {
+                db "taxon",
+                tag id 573600
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Planktophila",
+                species "limnetica"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype isolate,
+                  subname "DGGE gel band w1"
+                }
+              },
+              lineage "Bacteria; Actinobacteria; Candidatus Nanopelagicales;
+ Candidatus Nanopelagicaceae; Candidatus Planktophila",
+              gcode 11,
+              div "BCT"
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "uncultured Ruequria3"
+            },
+            {
+              subtype other,
+              name "[dgge]"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        title "Candidatus Planktophila limnetica clone uncultured Ruequria3
+ sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 193,
+        seq-data iupacna "AGGCGGTAACAGGAGAAGCTTGCTTCTCGCTGACGAGCGGCGGACGGGTGAG
+TAATACTTAGGAATCTACCTAGTAGTGGGGGATAGCTCGGGGAAACTCGAATTAATACCGCATACGACCTACACCGCC
+CGTCACACCATGGGAGTTGATTGCACCAGAAGTGGTTAGCCTAACCTTTAGGAAGGCGATCAC"
+      }
+    },
+    seq {
+      id {
+        local str "C02-500",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_C02-500"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/C02-500"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726338
+        },
+        genbank {
+          accession "KU820890"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "Clonothrix fusca",
+            db {
+              {
+                db "taxon",
+                tag id 415611
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Clonothrix",
+                species "fusca"
+              },
+              attrib "specified",
+              lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Methylococcales; Methylococcaceae; Clonothrix",
+              gcode 11,
+              div "BCT"
+            }
+          },
+          subtype {
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype other,
+              name "amplified with species-specific primers"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        title "Clonothrix fusca sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 103,
+        seq-data iupacna "TAACAGGGGGAGCTTGCTCCCCGCTGACGAGCACACCGCCCGTCACACCATG
+GGAGTGGATTGCACCAGAAGTGGTTAGTCTAACCTTCGGGAGGACGATCAC"
+      }
+    },
+    seq {
+      id {
+        local str "D05-50-2",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_D05-50-2"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/D05-50-2"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726339
+        },
+        genbank {
+          accession "KU820891"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "Pandoraea pnomenusa",
+            db {
+              {
+                db "taxon",
+                tag id 93220
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Pandoraea",
+                species "pnomenusa"
+              },
+              attrib "specified",
+              lineage "Bacteria; Proteobacteria; Betaproteobacteria;
+ Burkholderiales; Burkholderiaceae; Pandoraea",
+              gcode 11,
+              div "BCT"
+            }
+          },
+          subtype {
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype other,
+              name "amplified with species-specific primers"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        title "Pandoraea pnomenusa sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 117,
+        seq-data iupacna "TGCAAGTCGAGCGGATCGATGGGAGCTTGCTCCCTCCCGGGCCTTGTACACA
+CCGCCCGTCACACCACGAGAGTTTGTAACACCCGAAGTCGGTGAGGTAACCTTTTGAGCCAGCCG"
+      }
+    },
+    seq {
+      id {
+        local str "E03-50",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_E03-50"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/E03-50"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726340
+        },
+        genbank {
+          accession "KU820892"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "uncultured Bacillus sp.",
+            db {
+              {
+                db "taxon",
+                tag id 83428
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "uncultured Bacillus sp."
+                }
+              },
+              attrib "uncultured",
+              mod {
+                {
+                  subtype isolate,
+                  subname "Drs3"
+                }
+              },
+              lineage "Bacteria; Firmicutes; Bacilli; Bacillales; Bacillaceae;
+ Bacillus; environmental samples",
+              gcode 11,
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "testing clone"
+            },
+            {
+              subtype environmental-sample,
+              name ""
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        title "Uncultured Bacillus sp. clone testing clone sequence.",
+        user {
+          class "1.0",
+          type str "AutodefOptions",
+          data {
+            {
+              label str "UseLabels",
+              data bool TRUE
+            },
+            {
+              label str "LeaveParenthetical",
+              data bool TRUE
+            },
+            {
+              label str "SpecifyNuclearProduct",
+              data bool TRUE
+            },
+            {
+              label str "MaxMods",
+              data int 0
+            },
+            {
+              label str "FeatureListType",
+              data str "List All Features"
+            },
+            {
+              label str "MiscFeatRule",
+              data str "Delete"
+            },
+            {
+              label str "HIVRule",
+              data str "WantBoth"
+            },
+            {
+              label str "ModifierList",
+              data fields {
+                {
+                  label str "SubSources",
+                  num 1,
+                  data strs {
+                    "clone"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 204,
+        seq-data iupacna "GCAAGTCGAGCGGTAACAGAGAGTAGCTTGCAAGTGCGTCGTAGTCCGGATT
+GGAGTCTGCAACTCGACTCCATGAAGTCGGAATCGCTAGTAATCGCGTATCAGAATGACGCGGTGAATACGTTCCCGG
+GCCTTGTACACACCGCCCGTCACACCATGGGAGTGGGTTGCTCCAGAAGTGGATAGTCTAACCTTCGGGAGGAC"
+      }
+    }
+  }
+}

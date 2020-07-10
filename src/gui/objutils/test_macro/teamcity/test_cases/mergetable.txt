@@ -1,0 +1,6 @@
+filename	bankit number	organism	strain
+BankIt1744698	Seq1	Penicillium dipodomyicola	MERO-A4
+BankIt1744698	Seq2	Aspergillus niger	SAF8-EGY 
+BankIt1744698	Seq3	Penicillium sp. SAF6-EGY	SAF6-EGY
+BankIt1744984	Seq1	Brevundimonas sp. MERNA14	MERNA14
+BankIt1744984	Seq2	Bacillus sp. MERNA97	MERNA97

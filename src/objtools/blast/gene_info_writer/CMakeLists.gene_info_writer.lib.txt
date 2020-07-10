@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.gene_info_writer.lib.txt 594157 2019-09-30 18:28:48Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(gene_info_writer)
+  NCBI_sources(gene_info_writer)
+  NCBI_add_definitions(NCBI_MODULE=GENEINFO)
+  NCBI_uses_toolkit_libraries(gene_info seqdb)
+  NCBI_project_watchers(camacho)
+NCBI_end_lib()
+

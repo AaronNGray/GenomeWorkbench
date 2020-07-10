@@ -1,0 +1,126 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "DBLink",
+          data {
+            {
+              label str "BioProject",
+              num 2,
+              data strs {
+                "PRJNA344532",
+                "SUB78999"
+              }
+            },
+            {
+              label str "BioSample",
+              num 2,
+              data strs {
+                "SAMN05831620, newvalue",
+                "SUB56999, newvalue"
+              }
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Saccharomyces castellii",
+            db {
+              {
+                db "taxon",
+                tag id 27288
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 3,
+              div "PLN"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 53,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTAAACCCCGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787265
+        },
+        genbank {
+          accession "KF591394"
+        }
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Taenia solium",
+            common "pork tapeworm",
+            db {
+              {
+                db "taxon",
+                tag id 6204
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 9,
+              div "INV"
+            }
+          }
+        },
+        user {
+          type str "DBLink",
+          data {
+            {
+              label str "BioSample",
+              num 2,
+              data strs {
+                "SAMN04431088, newvalue",
+                "SUB67888, newvalue"
+              }
+            },
+            {
+              label str "BioProject",
+              num 1,
+              data strs {
+                "PRJNA4567"
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 135,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTGGGGAGTTTGTGTATAAAAT
+GGTAGATTCTGCAATCCAAGCCGTCACAGGATGGGTAAATGCTTTCCTATCATTTTTACCACAGATCCCCGGTATGAT
+TGCCT"
+      }
+    }
+  }
+}

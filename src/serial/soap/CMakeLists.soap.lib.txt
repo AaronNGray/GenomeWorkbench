@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.soap.lib.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(xsoap)
+  NCBI_sources(soap_message soap_readhook soap_writehook soap_client soap_11__ soap_11___)
+  NCBI_uses_toolkit_libraries(xconnect xser)
+  NCBI_project_watchers(gouriano)
+NCBI_end_lib()
+

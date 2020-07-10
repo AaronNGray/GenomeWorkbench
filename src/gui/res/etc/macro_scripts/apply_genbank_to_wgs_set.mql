@@ -1,0 +1,7 @@
+MACRO ApplyGenBankTypeToWGSSets "Apply genbank set type to wgs sets"
+FOR EACH SeqSet
+WHERE class = "wgs-set"
+DO
+    SetQual("class", "genbank");
+DONE
+------------------------------------------------------------------------------

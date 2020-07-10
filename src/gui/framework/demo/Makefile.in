@@ -1,0 +1,9 @@
+# $Id: Makefile.in 16101 2008-02-22 02:04:53Z dicuccio $
+
+# GUI Framework Demo
+
+APP_PROJ = demo_gui_framework
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+

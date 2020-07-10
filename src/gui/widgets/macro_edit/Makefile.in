@@ -1,0 +1,6 @@
+# $Id: Makefile.in 24278 2011-08-31 20:02:27Z katargir $
+
+LIB_PROJ = w_macro_edit
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

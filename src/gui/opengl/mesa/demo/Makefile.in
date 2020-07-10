@@ -1,0 +1,10 @@
+# $Id: Makefile.in 7310 2004-12-01 13:38:00Z dicuccio $
+# Author:  Mike DiCuccio
+
+# Meta-makefile for gltest
+#################################
+
+APP_PROJ = demo_gl.cgi demo_font.cgi
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

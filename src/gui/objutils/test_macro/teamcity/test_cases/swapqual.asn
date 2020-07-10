@@ -1,0 +1,159 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Callinectes sapidus",
+            common "blue crab",
+            db {
+              {
+                db "taxon",
+                tag id 6763
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1"
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 33,
+            strand ds,
+            seq-data iupacna "AAAACCCCTGAAGCCCTAAAAACCCTAAGACAA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "cytochrome oxidase subunit one",
+                    desc "terminase large subunit gene"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 22,
+                    to 32,
+                    strand plus,
+                    id local str "Seq1",
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_1",
+            general {
+              db "TMSMART",
+              tag id 39787264
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness no-right
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq1_prot_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 3,
+            seq-data iupacaa "PKT"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "cox1",
+                      "other protein name"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 2,
+                    id local str "Seq1_prot_1",
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "Seq1_prot_1",
+              location int {
+                from 22,
+                to 32,
+                strand plus,
+                id local str "Seq1",
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

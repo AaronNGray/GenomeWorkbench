@@ -1,0 +1,7 @@
+MACRO RemoveMolComplete "Change completeness and topology to unknown where sequence type is nucleotide"
+FOR EACH SeqNa
+DO
+    SetQual("descr..molinfo.completeness", "unknown");
+    SetQual("inst.topology", "not-set");
+DONE
+------------------------------------------------------------------------------

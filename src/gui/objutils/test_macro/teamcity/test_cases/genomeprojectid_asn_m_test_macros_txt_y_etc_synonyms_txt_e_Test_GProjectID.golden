@@ -1,0 +1,106 @@
+Seq-entry ::= seq {
+  id {
+    local str "pGR-PepMV-ON"
+  },
+  descr {
+    source {
+      genome plasmid,
+      org {
+        taxname "Pepino mosaic virus",
+        db {
+          {
+            db "taxon",
+            tag id 112229
+          }
+        },
+        orgname {
+          name virus "Pepino mosaic virus",
+          lineage "Viruses; ssRNA viruses; ssRNA positive-strand viruses, no
+ DNA stage; Tymovirales; Alphaflexiviridae; Potexvirus",
+          gcode 1,
+          div "VRL"
+        }
+      }
+    },
+    molinfo {
+      biomol other-genetic,
+      completeness complete
+    },
+    user {
+      type str "StructuredComment",
+      data {
+        {
+          label str "StructuredCommentPrefix",
+          data str "##Assembly-Data-START##"
+        },
+        {
+          label str "Sequencing Technology",
+          data str "Sanger dideoxy sequencing"
+        },
+        {
+          label str "StructuredCommentSuffix",
+          data str "##Assembly-Data-END##"
+        }
+      }
+    },
+    user {
+      type str "NcbiAutofix",
+      data {
+      }
+    },
+    user {
+      type str "OriginalID",
+      data {
+        {
+          label str "LocalId",
+          data str "pGR-PepMV-ON"
+        }
+      }
+    },
+    user {
+      type str "Submission",
+      data {
+        {
+          label str "AdditionalComment",
+          data str "Vecscreen Comment:Submitter says that this sequence
+ represents a Cloning Vector"
+        }
+      }
+    },
+    user {
+      class "SMART_V1.0",
+      type id 1,
+      data {
+        {
+          label id 1,
+          num 1,
+          data int 10986640
+        }
+      }
+    },
+    user {
+      type str "Submission",
+      data {
+        {
+          label str "SmartComment",
+          data str "ALT EMAIL: Xiaoyun.Wu@Canada.ca, wxy5551@126.com"
+        },
+        {
+          label str "AdditionalComment",
+          data str "BankIt1962945"
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 356,
+    topology circular,
+    seq-data iupacna "AGACAGTTTTATTGTTCATGATAAATCGCAGTGGTGAGTAACCATGCATCATCAGG
+AGTACGGATAAAATGCTTGATGGTCGGAAGAGGCATAAATTCCGTCAGCCAGTTTAGTCTGACCATCTCATCTGTAAC
+ATCATTGGCAACGCTACCTTTGCCATGTTTCAGAAACAACTCTGGCGCATCGGGCTTCCCATACAATCGGTAGATTGT
+CGCACCTGATTGCCCGACATTATCGCGAGCCCATTTATACCCATATAAATCAGCATCCATGTTGGAATTTAATCGCGG
+CCTTGAGCAAGACGTTTCCCGTTGAATATGGCTCATAACACCCCTTGTATTACTGTTTATGTAAGC"
+  }
+}

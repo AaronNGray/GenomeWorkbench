@@ -1,0 +1,31 @@
+[Info]
+Name        = Rasmol Amino Acid Colors
+Description = Rasmol \"amino\" colors, used by the application RasMol to group amino acids with similar properties.
+; Type = Protein | DNA
+Type = Protein
+; Method = Coloration | ColumnScore | MatrixScore
+Method = Coloration
+Id=rasmol
+
+[TableRowsBackground]
+D = 230 10 10
+E = 230 10 10
+C = 230 230 0
+M = 230 230 0
+K = 20 90 255
+R = 20 90 255
+S = 250 150 0
+T = 250 150 0
+F = 50 50 170
+Y = 50 50 170
+N = 0 220 220
+Q = 0 220 220
+G = 235 235 235
+L = 15 130 15
+V = 15 130 15
+I = 15 130 15
+A = 200 200 200
+W = 180 90 180
+H = 130 130 210
+P = 220 150 130
+

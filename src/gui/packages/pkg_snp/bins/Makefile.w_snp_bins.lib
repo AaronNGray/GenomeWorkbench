@@ -1,0 +1,22 @@
+# $Id: Makefile.w_snp_bins.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# Snp Bin drwing suport
+
+LIB = w_snp_bins
+
+SRC = bins_ds bins_track bins_glyph gmark_glyph scatter_glyph
+
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+LIBS = $(WXWIDGETS_GL_LIBS) $(GLEW_LIBS) $(WXWIDGETS_LIBS) $(IMAGE_LIBS) \
+       $(VDB_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(CMPRS_LIBS) $(DL_LIBS) \
+       $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+DLL_LIB = w_seq_graphic ximage xcompress $(CMPRS_LIB) xutil xncbi w_wx \
+          w_snp_utils
+
+REQUIRES = objects wxWidgets OpenGL
+
+ASN_DEP = seqset

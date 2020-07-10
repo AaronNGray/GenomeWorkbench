@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxPanel" name="UpdateReplacedECNumbers">
+        <style>wxTAB_TRAVERSAL</style>
+        <size>400,300</size>
+        <title>Update EC numbers</title>
+        <centered>1</centered>
+        <object class="wxBoxSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+                <flag>wxALIGN_LEFT|wxALL</flag>
+                <border>5</border>
+                <object class="wxCheckBox" name="del_improper">
+                    <label>Delete improperly formatted EC numbers</label>
+                    <checked>1</checked>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_LEFT|wxALL</flag>
+                <border>5</border>
+                <object class="wxCheckBox" name="del_unrecog">
+                    <label>Delete unrecognized EC numbers</label>
+                    <checked>1</checked>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_LEFT|wxALL</flag>
+                <border>5</border>
+                <object class="wxCheckBox" name="del_mult_repl">
+                    <label>Delete EC numbers replaced by more than one number</label>
+                    <checked>1</checked>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>

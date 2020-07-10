@@ -1,0 +1,10 @@
+# $Id: Makefile.gui_config.lib 40089 2017-12-19 17:16:31Z katargir $
+
+SRC = settings_set
+
+LIB = gui_config
+
+DLL_LIB = gui_objutils gui_utils xncbi
+LIBS = $(BLAST_THIRD_PARTY_LIBS) $(ORIG_LIBS)
+
+ASN_DEP = seq

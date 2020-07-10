@@ -1,0 +1,15 @@
+MACRO CompletePhage_01 "Change to completeness complete where sequence type is nucleotide"
+FOR EACH SeqNa
+DO
+    SetQual("descr..molinfo.completeness", "complete");
+DONE
+------------------------------------------------------------------------------
+MACRO CompletePhage_02 "Autodef complete genome, look for noncoding products in misc_feat with comments"
+VAR
+    list_feat_rule = "Complete Genome"
+    misc_feat_rule = "NoncodingProductFeat"
+FOR EACH TSEntry
+Do
+    Autodef(list_feat_rule, misc_feat_rule);
+Done
+------------------------------------------------------------------------------

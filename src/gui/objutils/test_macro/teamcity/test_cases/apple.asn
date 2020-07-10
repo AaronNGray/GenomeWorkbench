@@ -1,0 +1,111 @@
+Seq-entry ::= seq {
+  id {
+    general {
+      db "ASM:GCF_002114125",
+      tag str "Chr01"
+    },
+    other {
+      accession "NC_041789",
+      version 1
+    },
+    gpipe {
+      accession "GPC_000004702",
+      version 1
+    },
+    general {
+      db "NCBI_GENOMES",
+      tag id 83359
+    },
+    gi 1624475953
+  },
+  descr {
+    source {
+      genome chromosome,
+      org {
+        taxname "Malus domestica",
+        common "apple",
+        db {
+          {
+            db "taxon",
+            tag id 3750
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Malus",
+            species "domestica"
+          },
+          mod {
+            {
+              subtype cultivar,
+              subname "Golden Delicious"
+            },
+            {
+              subtype isolate,
+              subname "X9273 #13"
+            }
+          },
+          lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons; Gunneridae;
+ Pentapetalae; rosids; fabids; Rosales; Rosaceae; Maloideae; Maleae; Malus",
+          gcode 1,
+          mgcode 1,
+          div "PLN",
+          pgcode 11
+        }
+      },
+      subtype {
+        {
+          subtype chromosome,
+          name "1"
+        },
+        {
+          subtype genotype,
+          name "X9273"
+        },
+        {
+          subtype tissue-type,
+          name "leaf"
+        },
+        {
+          subtype dev-stage,
+          name "adult"
+        },
+        {
+          subtype country,
+          name "France: Angers"
+        },
+        {
+          subtype collection-date,
+          name "Apr-2015"
+        },
+        {
+          subtype collected-by,
+          name "Jean-Marc Celton"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic,
+      tech wgs
+    },
+    create-date std {
+      year 2019,
+      month 5,
+      day 3
+    }
+  },
+  inst {
+    repr delta,
+    mol dna,
+    length 32709648,
+    ext delta {
+      loc int {
+        from 0,
+        to 32709647,
+        strand plus,
+        id gi 1624475936
+      }
+    }
+  }
+}

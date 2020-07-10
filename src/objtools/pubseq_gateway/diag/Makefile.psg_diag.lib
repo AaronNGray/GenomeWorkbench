@@ -1,0 +1,8 @@
+# $Id: Makefile.psg_diag.lib 595830 2019-10-28 19:09:49Z saprykin $
+
+LIB = psg_diag
+SRC = AppLog AppPerf IdLogUtl AppLogWrap
+
+REQUIRES = MT Linux
+
+WATCHERS = satskyse saprykin

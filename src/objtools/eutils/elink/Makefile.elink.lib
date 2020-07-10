@@ -1,0 +1,10 @@
+# $Id: Makefile.elink.lib 427429 2014-02-20 13:41:40Z gouriano $
+
+LIB = elink
+SRC = elink__ elink___
+
+WATCHERS = grichenk
+
+
+USES_LIBRARIES =  \
+    xser

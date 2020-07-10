@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.test_condvar.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_condvar)
+  NCBI_sources(test_condvar)
+  NCBI_requires(MT)
+  NCBI_uses_toolkit_libraries(test_mt)
+  NCBI_add_test()
+  NCBI_project_watchers(gouriano)
+NCBI_end_app()
+

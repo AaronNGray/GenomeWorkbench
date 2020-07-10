@@ -1,0 +1,4 @@
+# $Id: Makefile.gbench_install.msvcproj.msvc 15756 2008-01-22 16:53:29Z dicuccio $
+
+[Common]
+ProjectGUID = {6C23686B-1522-4B44-8D48-7E3176C36247}

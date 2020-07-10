@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_align_table.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_align_table GUI)
+  NCBI_sources(app_demo_align_table demo_align_table_frame)
+  NCBI_uses_toolkit_libraries(w_aln_table w_aln_multi)
+  NCBI_requires(wxWidgets)
+NCBI_end_app()

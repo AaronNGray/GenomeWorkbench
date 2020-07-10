@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbiargs.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbiargs)
+  NCBI_sources(test_ncbiargs)
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_project_watchers(gouriano ivanov)
+  NCBI_add_test(test_ncbiargs.sh)
+NCBI_end_app()
+

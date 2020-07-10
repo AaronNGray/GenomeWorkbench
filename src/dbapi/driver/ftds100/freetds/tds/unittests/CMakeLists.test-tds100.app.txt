@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.test-tds100.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test-tds100)
+  NCBI_sources(test-tds100)
+  NCBI_uses_toolkit_libraries(xncbi)
+NCBI_end_app()
+

@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_align_cleanup.app.txt 593585 2019-09-20 13:57:47Z gouriano $
+#############################################################################
+
+NCBI_begin_app( demo_align_cleanup)
+  NCBI_sources( demo_align_cleanup)
+  NCBI_uses_toolkit_libraries( xaligncleanup xobjutil xser data_loaders_util)
+NCBI_end_app()
+

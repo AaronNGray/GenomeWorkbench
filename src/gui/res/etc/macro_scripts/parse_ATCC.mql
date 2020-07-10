@@ -1,0 +1,767 @@
+MACRO ParseATCC_01 "Edit strain replace 'ATCC:' with 'ATCC '"
+VAR
+    find_text = "ATCC:"
+    repl_text = "ATCC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_02 "Edit cell-line replace 'ATCC:' with 'ATCC '"
+VAR
+    find_text = "ATCC:"
+    repl_text = "ATCC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("subtype") WHERE o.subtype = "cell-line";
+    EditStringQual ("o.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_03 "Edit tissue-type replace 'ATCC:' with 'ATCC '"
+VAR
+    find_text = "ATCC:"
+    repl_text = "ATCC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("subtype") WHERE o.subtype = "tissue-type";
+    EditStringQual ("o.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_04 "Edit strain replace 'CBS:' with 'CBS '"
+VAR
+    find_text = "CBS:"
+    repl_text = "CBS "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_05 "Edit strain replace 'DSMZ:' with 'DSMZ '"
+VAR
+    find_text = "DSMZ:"
+    repl_text = "DSMZ "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_06 "Edit strain replace 'DSM:' with 'DSM '"
+VAR
+    find_text = "DSM:"
+    repl_text = "DSM "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_07 "Edit strain replace 'JCM:' with 'JCM '"
+VAR
+    find_text = "JCM:"
+    repl_text = "JCM "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_08 "Edit strain replace 'NBRC:' with 'NBRC '"
+VAR
+    find_text = "NBRC:"
+    repl_text = "NBRC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_09 "Edit strain replace 'LMG:' with 'LMG '"
+VAR
+    find_text = "LMG:"
+    repl_text = "LMG "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_10 "Edit strain replace 'CCUG:' with 'CCUG '"
+VAR
+    find_text = "CCUG:"
+    repl_text = "CCUG "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_11 "Edit strain replace 'KCTC:' with 'KCTC '"
+VAR
+    find_text = "KCTC:"
+    repl_text = "KCTC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_12 "Edit strain replace 'DSM' with 'DSMZ ' where source taxid is present and where source lineage contains 'Viruses' (case-sensitive) and where source strain does not equal 'DSM' and where source strain does not contain 'DSMZ'"
+VAR
+    find_text = "DSM"
+    repl_text = "DSMZ "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+WHERE EQUALS("org.db.db", "taxon") AND CONTAINS("org.orgname.lineage", "Viruses", case_sensitive)
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", "DSMZ") AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_13 "Edit strain replace 'DSMZ' with 'DSM ' where source taxid is present and where source lineage does not contain 'Viruses' (case-sensitive) and where source strain does not equal 'DSMZ'"
+VAR
+    find_text = "DSMZ"
+    repl_text = "DSM "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+WHERE EQUALS("org.db.db", "taxon") AND NOT CONTAINS("org.orgname.lineage", "Viruses", case_sensitive)
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_14 "Edit culture-collection replace 'DSM' with 'DSMZ ' where source taxid is present and where source lineage contains 'Viruses' (case-sensitive) and where source culture-collection does not equal 'DSM' and where source culture-collection does not contain 'DSMZ'"
+VAR
+    find_text = "DSM"
+    repl_text = "DSMZ "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+WHERE EQUALS("org.db.db", "taxon") AND CONTAINS("org.orgname.lineage", "Viruses", case_sensitive)
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "culture-collection" AND
+                                   NOT CONTAINS("o.subname", "DSMZ") AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_15 "Edit culture-collection replace 'DSMZ' with 'DSM ' where source taxid is present and where source lineage does not contain 'Viruses' (case-sensitive) and where source culture-collection does not equal 'DSMZ'"
+VAR
+    find_text = "DSMZ"
+    repl_text = "DSM "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+WHERE EQUALS("org.db.db", "taxon") AND NOT CONTAINS("org.orgname.lineage", "Viruses", case_sensitive)
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "culture-collection" AND NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_16 "Edit strain replace 'DSMZ' with 'DSMZ ' where source strain does not contain 'DSMZ ' (case-sensitive) and where source strain does not equal 'DSMZ'"
+VAR
+    find_text = "DSMZ"
+    repl_text = "DSMZ "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_17 "Edit strain replace 'DSM' with 'DSM ' where source strain does not contain 'DSM ' (case-sensitive) and where source strain does not equal 'DSM' and where source strain does not contain 'DSMZ' (case-sensitive)"
+VAR
+    find_text = "DSM"
+    repl_text = "DSM "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.subname", find_text) AND
+                                   NOT CONTAINS("o.subname", "DSMZ", case_sensitive);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_18 "Edit strain replace 'ATCC' with 'ATCC ' where source strain does not contain 'ATCC ' (case-sensitive) and where source strain does not equal 'ATCC'"
+VAR
+    find_text = "ATCC"
+    repl_text = "ATCC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_19 "Edit cell-line replace 'ATCC' with 'ATCC ' where source cell-line does not contain 'ATCC ' (case-sensitive) and where source cell-line does not equal 'ATCC'"
+VAR
+    find_text = "ATCC"
+    repl_text = "ATCC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("subtype") WHERE o.subtype = "cell-line" AND
+                                   NOT CONTAINS("o.name", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.name", find_text);
+    EditStringQual ("o.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_20 "Edit tissue-type replace 'ATCC' with 'ATCC ' where source tissue-type does not contain 'ATCC ' (case-sensitive) and where source tissue-type does not equal 'ATCC'"
+VAR
+    find_text = "ATCC"
+    repl_text = "ATCC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("subtype") WHERE o.subtype = "tissue-type" AND
+                                   NOT CONTAINS("o.name", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.name", find_text);
+    EditStringQual ("o.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_21 "Edit strain replace 'CBS' with 'CBS ' where source strain does not contain 'CBS ' (case-sensitive) and where source strain does not equal 'CBS'"
+VAR
+    find_text = "CBS"
+    repl_text = "CBS "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_22 "Edit strain replace 'JCM' with 'JCM ' where source strain does not contain 'JCM ' (case-sensitive) and where source strain does not equal 'JCM'"
+VAR
+    find_text = "JCM"
+    repl_text = "JCM "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_23 "Edit strain replace 'NBRC' with 'NBRC ' where source strain does not contain 'NBRC ' (case-sensitive) and where source strain does not equal 'NBRC'"
+VAR
+    find_text = "NBRC"
+    repl_text = "NBRC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_24 "Edit strain replace 'LMG' with 'LMG ' where source strain does not contain 'LMG ' (case-sensitive) and where source strain does not equal 'LMG'"
+VAR
+    find_text = "LMG"
+    repl_text = "LMG "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_25 "Edit strain replace 'CCUG' with 'CCUG ' where source strain does not contain 'CCUG ' (case-sensitive) and where source strain does not equal 'CCUG'"
+VAR
+    find_text = "CCUG"
+    repl_text = "CCUG "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_26 "Edit strain replace 'KCTC' with 'KCTC ' where source strain does not contain 'KCTC ' (case-sensitive) and where source strain does not equal 'KCTC'"
+VAR
+    find_text = "KCTC"
+    repl_text = "KCTC "
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain" AND
+                                   NOT CONTAINS("o.subname", repl_text, case_sensitive) AND
+                                   NOT EQUALS("o.subname", find_text);
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_27 "Parse text starting with 'CBS' replace 'CBS' with 'CBS:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'CBS' and where source strain does not contain ',' (case-sensitive) and where source strain does not contain ';' (case-sensitive) and where source strain does not contain 'ATCC' (ignore spaces, ignore punctuation), allow 'ATCC' to be replaced by 'DSM', 'JCM', 'NBRC', 'LMG', 'CCUG', and 'KCTC' and where source strain starts with 'CBS' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym01-ATCC"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "CBS"
+    repl_text = "CBS:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "ATCC", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_28 "Parse text starting with 'ATCC' replace 'ATCC' with 'ATCC:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'ATCC' and where source strain does not contain ';' (case-sensitive) and where source strain does not contain ',' (case-sensitive) and where source strain does not contain 'CBS' (ignore spaces, ignore punctuation), allow 'CBS' to be replaced by 'DSM', 'JCM', 'NBRC', 'LMG', 'CCUG', and 'KCTC' and where source strain starts with 'ATCC' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym01-CBS"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "ATCC"
+    repl_text = "ATCC:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "CBS", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_29 "Parse text starting with 'JCM' replace 'JCM' with 'JCM:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'JCM' and where source strain does not contain ';' (case-sensitive) and where source strain does not contain ',' (case-sensitive) and where source strain does not contain 'CBS' (ignore spaces, ignore punctuation), allow 'CBS' to be replaced by 'DSM', 'NBRC', 'LMG', 'CCUG', 'KCTC', and 'ATCC' and where source strain starts with 'JCM' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym02-CBS"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "JCM"
+    repl_text = "JCM:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "CBS", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_30 "Parse text starting with 'NBRC' replace 'NBRC' with 'NBRC:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'NBRC' and where source strain does not contain ';' (case-sensitive) and where source strain does not contain ',' (case-sensitive) and where source strain does not contain 'CBS' (ignore spaces, ignore punctuation), allow 'CBS' to be replaced by 'DSM', 'JCM', 'LMG', 'CCUG', 'KCTC', and 'ATCC' and where source strain starts with 'NBRC' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym03-CBS"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "NBRC"
+    repl_text = "NBRC:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "CBS", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_31 "Parse text starting with 'LMG' replace 'LMG' with 'LMG:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'LMG' and where source strain does not contain ';' (case-sensitive) and where source strain does not contain ',' (case-sensitive) and where source strain does not contain 'CBS' (ignore spaces, ignore punctuation), allow 'CBS' to be replaced by 'DSM', 'JCM', 'NBRC', 'CCUG', 'KCTC', and 'ATCC' and where source strain starts with 'LMG' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym04-CBS"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "LMG"
+    repl_text = "LMG:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "CBS", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_32 "Parse text starting with 'CCUG' replace 'CCUG' with 'CCUG:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'CCUG' and where source strain does not contain ';' (case-sensitive) and where source strain does not contain ',' (case-sensitive) and where source strain does not contain 'CBS' (ignore spaces, ignore punctuation), allow 'CBS' to be replaced by 'DSM', 'JCM', 'NBRC', 'LMG', 'KCTC', and 'ATCC' and where source strain starts with 'CCUG' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym05-CBS"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "CCUG"
+    repl_text = "CCUG:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "CBS", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_33 "Parse text starting with 'KCTC' replace 'KCTC' with 'KCTC:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'KCTC' and where source strain does not contain ';' (case-sensitive) and where source strain does not contain ',' (case-sensitive) and where source strain does not contain 'CBS' (ignore spaces, ignore punctuation), allow 'CBS' to be replaced by 'DSM', 'JCM', 'NBRC', 'LMG', 'CCUG', and 'ATCC' and where source strain starts with 'KCTC' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym06-CBS"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "KCTC"
+    repl_text = "KCTC:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "CBS", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_34 "Parse text starting with 'DSMZ' replace 'DSMZ' with 'DSM:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'DSM', allow 'DSM' to be replaced by 'DSMZ' and where source strain does not contain ';' (case-sensitive) and where source strain does not contain ',' (case-sensitive) and where source strain does not contain 'CBS' (ignore spaces, ignore punctuation), allow 'CBS' to be replaced by 'ATCC', 'JCM', 'NBRC', 'LMG', 'CCUG', and 'KCTC' and where source strain starts with 'DSMZ' (ignore spaces, ignore punctuation), allow 'DSMZ' to be replaced by 'DSM' and where source taxid is present and where source lineage does not contain 'Viruses' (case-sensitive)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match1 = "synonym02-DSM"
+    match2 = "synonym07-CBS"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "DSMZ"
+    repl_text = "DSM:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE EQUALS("org.db.db", "taxon") AND NOT CONTAINS("org.orgname.lineage", "Viruses", case_sensitive_edit) AND
+      NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", "DSM", "synonyms.txt", match1) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "CBS", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match2) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", "DSMZ");
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_35 "Parse text starting with 'DSM' replace 'DSM' with 'DSM:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'DSM' and where source strain does not contain ';' (case-sensitive) and where source strain does not contain ',' (case-sensitive) and where source strain does not contain 'ATCC' (ignore spaces, ignore punctuation), allow 'ATCC' to be replaced by 'CBS', 'JCM', 'NBRC', 'LMG', 'CCUG', and 'KCTC' and where source strain starts with 'DSM' (ignore spaces, ignore punctuation) and where source taxid is present and where source lineage does not contain 'Viruses' (case-sensitive)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym02-ATCC"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "DSM"
+    repl_text = "DSM:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE EQUALS("org.db.db", "taxon") AND NOT CONTAINS("org.orgname.lineage", "Viruses", case_sensitive_edit) AND
+      NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "ATCC", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_36 "Parse text starting with 'DSMZ' replace 'DSMZ' with 'DSMZ:' from strain to culture-collection(ignore new text when existing text is present) where source strain does not equal 'DSMZ' and where source strain does not contain ';' (case-sensitive) and where source strain does not contain ',' (case-sensitive) and where source strain does not contain 'ATCC' (ignore spaces, ignore punctuation), allow 'ATCC' to be replaced by 'CBS', 'JCM', 'NBRC', 'LMG', 'CCUG', and 'KCTC' and where source strain starts with 'DSMZ' (ignore spaces, ignore punctuation) and where source taxid is present and where source lineage contains 'Viruses' (case-sensitive)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym02-ATCC"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "DSMZ"
+    repl_text = "DSMZ:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE EQUALS("org.db.db", "taxon") AND CONTAINS("org.orgname.lineage", "Viruses", case_sensitive_edit) AND
+      NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "strain" AND
+                   NOT EQUALS("src.subname", find_text) AND
+                   NOT CONTAINS("src.subname", ",") AND
+                   NOT CONTAINS("src.subname", ";") AND
+                   NOT CONTAINS("src.subname", "ATCC", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.subname", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.subname", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_37 "Parse text starting with 'ATCC' replace 'ATCC' with 'ATCC:' from cell-line to culture-collection(ignore new text when existing text is present) where source cell-line does not equal 'ATCC' and where source cell-line does not contain ';' (case-sensitive) and where source cell-line does not contain ',' (case-sensitive) and where source cell-line does not contain 'DSM' (ignore spaces, ignore punctuation), allow 'DSM' to be replaced by 'CBS', 'JCM', 'NBRC', 'LMG', 'CCUG', and 'KCTC' and where source cell-line starts with 'ATCC' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym01-DSM"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "ATCC"
+    repl_text = "ATCC:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("subtype") WHERE src.subtype = "cell-line" AND
+                   NOT EQUALS("src.name", find_text) AND
+                   NOT CONTAINS("src.name", ",") AND
+                   NOT CONTAINS("src.name", ";") AND
+                   NOT CONTAINS("src.name", "DSM", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.name", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.name", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_38 "Parse text starting with 'ATCC' replace 'ATCC' with 'ATCC:' from tissue-type to culture-collection(ignore new text when existing text is present) where source tissue-type does not equal 'ATCC' and where source tissue-type does not contain ';' (case-sensitive) and where source tissue-type does not contain ',' (case-sensitive) and where source tissue-type does not contain 'DSM' (ignore spaces, ignore punctuation), allow 'DSM' to be replaced by 'CBS', 'JCM', 'NBRC', 'LMG', 'CCUG', and 'KCTC' and where source tissue-type starts with 'ATCC' (ignore spaces, ignore punctuation)"
+VAR
+    case_sensitive = false
+    ignore_spaces = true
+    ignore_punctuation = true
+    match = "synonym01-DSM"
+VAR
+    include_left = true
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+VAR
+    cap_change = "none"
+    existing_text = "eReplace"
+VAR
+    find_text = "ATCC"
+    repl_text = "ATCC:"
+    location = "at the beginning"
+    case_sensitive_edit = true
+FOR EACH BioSource
+WHERE NOT ISPRESENT("org.orgname.mod", "culture-collection")
+DO
+    src = Resolve("subtype") WHERE src.subtype = "tissue-type" AND
+                   NOT EQUALS("src.name", find_text) AND
+                   NOT CONTAINS("src.name", ",") AND
+                   NOT CONTAINS("src.name", ";") AND
+                   NOT CONTAINS("src.name", "DSM", case_sensitive, ignore_spaces, ignore_punctuation, "synonyms.txt", match) AND
+                   STARTS("src.name", find_text, case_sensitive, ignore_spaces, ignore_punctuation);
+    text = ParsedText("src.name", find_text, include_left, "", include_right, case_sens_parse, whole_word);
+    AECRParseStringQual(text, "culture-collection", cap_change, existing_text);
+    edit_obj = Resolve("org.orgname.mod") Where edit_obj.subtype = "culture-collection";
+    EditStringQual("edit_obj.subname", find_text, repl_text, location, case_sensitive_edit );
+DONE
+------------------------------------------------------------------------------
+MACRO ParseATCC_39 "Edit culture-collection replace ': ' with ':'"
+VAR
+    find_text = ": "
+    repl_text = ":"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "culture-collection";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------

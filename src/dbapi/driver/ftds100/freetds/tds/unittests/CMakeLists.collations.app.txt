@@ -1,0 +1,8 @@
+#############################################################################
+# $Id: CMakeLists.collations.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(tds100_collations)
+  NCBI_sources(collations common)
+NCBI_end_app()
+

@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.test_image.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+#
+#
+#
+NCBI_begin_app(test_image)
+  NCBI_sources(test_image)
+  NCBI_uses_toolkit_libraries(ximage)
+  NCBI_project_watchers(dicuccio)
+NCBI_end_app()
+

@@ -1,0 +1,1341 @@
+word: Homo sapiens
+human
+humans
+Homo sapien
+Homosapiens
+Homo-sapiens
+Homo spiens
+Homo Sapience
+homosapein
+homosapien
+homosapiens
+homo_sapien
+homo_sapiens
+Homosipian
+Homo sapien
+Homo spiens
+Homo spaeins
+Homo Sapience
+Homo sappiens
+Homo sapeins
+Homo sapein
+Homo sapins
+Homo sapens
+Homo sapin
+Homo sapen
+Homo sapians
+Homo sapian
+Homo sapies
+Homo sapie
+human sapiens
+human bieng
+human biengs
+Human Being
+Human Beings
+
+word: homo sapiens
+humans
+human
+homosapein
+homosapien
+homosepeans
+Homo sapien
+Homosapiens
+Homo-sapiens
+Homo spiens
+Homo Sapience
+Homo sappiens
+homo_sapien
+homo_sapiens
+Homosipian
+Homo sapeins
+Homo sapein
+Homo sapens
+Homo sapins
+Homo sapin
+Homo sapen
+Homo spaeins
+Homo sapians
+Homo sapian
+Homo sapies
+Homo sapie
+homo sapien
+homo sapiens (human)
+human sapiens
+human biengs
+human bieng
+Human Being
+Human Beings
+
+word: Human immunodeficiency virus-1
+Human Immunodeficiency Virus-1
+
+word: Select A State
+none
+N/A
+Not Applicable
+NotApplicable
+Select State/Province
+--- Select One ---
+N/A = Not Applicable
+not USA
+not USA/Canada
+outside of USA
+Select if applicable
+(Outside USA)
+outside USA
+outside US
+outside the US
+Neither U.S. nor Canada
+Choose a state
+---Select A Canadian Province---
+Non-US/Non-Canadian
+Please select region, state or province
+Select one
+Please select...
+Select State/Province
+-- Please Select --
+Outside US/Canada/Australia
+Select State
+Please choose from the following:
+Non-US/Canada
+OTHER
+Please choose from the following :
+
+word: N/A
+none
+N.A.
+Not Applicable
+NotApplicable
+  
+word: none
+N/A
+to be determined
+not submitted
+nothing
+unpublished
+direct submission
+direct submit
+submit
+in preparation
+manuscript in preparation
+N.A.
+null
+directed submission
+unpublished data
+No
+title
+no title
+GenBank
+NCBI
+in prep
+in preparation for publication
+NotApplicable
+Not Applicable
+under submission
+under review
+Direct Submission
+Direct Submitted
+dirct submission
+yet to be published
+not published
+no titled
+no title yet
+Direct submision
+submitted directly
+submited direct
+direct submited
+unpublished manuscript
+sequence submission
+directed-submission
+Unpublish
+unpublication
+untitled - to update
+Unpublished sequence
+Direct submission
+Unpublished yet
+Directly submit
+Unpubilished
+title for manuscript
+no reference
+direction submission
+direction submittion
+unpublication
+Direct submisson
+non
+unknown
+No title yet
+No title given
+unpulished
+submit directly
+
+word: US Virgin Islands
+U.S. Virgin Islands
+United States Virgin Islands
+
+word: DR Congo
+Congo
+D.R. Congo
+DRCongo
+D.R.Congo
+Democratic Republic of Congo
+Democratic Republic Congo
+Congo Democratic Republic
+
+word: 5'UTR
+5' UTR
+UTR
+5`UTR
+5` UTR
+
+word: 3'UTR
+3' UTR
+UTR
+3` UTR
+3`UTR	
+
+word: gel
+band
+gel band
+
+word: recombination
+recombinatin
+recombinaton
+recombonation
+
+word: triple
+block
+
+word: gene
+sequence
+partial
+complete
+region
+protein
+partial sequence
+complete sequence
+gene sequence
+sequence region
+gene sequence region
+partial gene sequence
+
+word: cytochrome b gene
+cytochrome b cytb
+cytochrome b cyt b
+cytochrome b (cytb)
+cytochrome b (cyt b)
+cytochrome b (cytb) gene
+
+word: cytochrome b (cytb)
+cytochrome b (cytb) gene
+
+word: cytochrome oxidase C subunit I
+cytochrome C oxidase subunit I
+
+word: cytochrome oxidase c
+cytochrome c oxidase
+
+word: maturase K gene
+maturase K matK
+maturase K mat k
+maturase K (matK)
+maturase K (mat K)
+
+word: Translation elongation factor 1-alpha
+Translation elongation factor 1-alpha partial sequence
+Translation elongation factor 1-alpha partial protein
+Translation elongation factor 1-alpha partial
+Translation elongation factor 1-alpha, partial sequence
+Translation elongation factor 1-alpha, partial protein
+Translation elongation factor 1-alpha, partial
+
+word: cox1
+coxI
+CO1
+COI
+
+word: cytochrome c oxidase subunit I gene
+cytochrome c oxidase I gene
+cytochrome c oxidase I
+cytochrome c subunit I
+cytochrome c oxidase subunit I gene protein
+
+word: cytochrome c oxidase subunit II gene
+cytochrome c oxidase II gene
+cytochrome c oxidase II
+cytochrome c subunit II
+cytochrome c oxidase subunit II protein
+
+word: cytochrome oxidase subunit I gene
+cytochrome oxidase I gene
+cytochrome oxidase I
+cytochrome subunit I
+
+word: cytochrome oxidase subunit II gene
+cytochrome oxidase II gene
+cytochrome oxidase II
+cytochrome subunit II
+
+word: cytochrome oxidase subunit III gene
+cytochrome oxidase III gene
+cytochrome oxidase III
+cytochrome oxidase subunit III
+cytochrome subunit III
+cytochrome subunit III gene
+
+word: cytochrome c oxidase subunit 1 gene
+cytochrome c oxidase 1 gene
+cytochrome c oxidase 1
+cytochrome c subunit 1
+
+word: cytochrome oxidase subunit 1 gene
+cytochrome oxidase 1 gene
+cytochrome oxidase 1
+cytochrome subunit 1
+
+word: cytochrome c oxidase subunit 2 gene
+cytochrome c oxidase 2 gene
+cytochrome c oxidase 2
+cytochrome c subunit 2
+
+word: cytochrome oxidase subunit 2 gene
+cytochrome oxidase 2 gene
+cytochrome oxidase 2
+cytochrome subunit 2
+
+word: cytochrome oxidase subunit 3 gene
+cytochrome oxidase 3 gene
+cytochrome oxidase 3
+cytochrome subunit 3
+
+word: oxidase
+oxydase
+
+word: oxidase subunit
+subunit
+
+word: I
+one
+i
+
+word: II
+two
+ii
+
+word: III
+three
+iii
+
+word: 1
+one
+
+word: 2
+two
+
+word: 3
+three
+
+word: 4
+four
+
+word: 5
+five
+
+word: 6
+six
+
+word: large subunit gene
+lsu
+large
+
+word: ribulose-1,5-bisphosphate carboxylase/oxygenase large subunit gene
+ribulose-1,5-bisphosphate carboxylase/oxygenase large subunit rbcL
+
+word: ribulose-1,5-bisphosphate carboxylase/oxygenase gene
+ribulose-1,5-bisphosphate carboxylase/oxygenase rbcS
+ribulose-1,5-bisphosphate carboxylase/oxygenase subunit
+ribulose-1,5-bisphosphate carboxylase/oxygenase
+ribulose 1,5-bisphosphate carboxylase oxygenase
+
+word: ribulose-1,5-bisphosphate carboxylase/oxygenase small subunit gene
+ribulose-1,5-bisphosphate carboxylase/oxygenase small gene
+ribulose-1,5-bisphosphate carboxylase/oxygenase small subunit rbcS
+ribulose-1,5-bisphosphate carboxylase/oxygenase small subunit protein
+ribulose-1,5-bisphosphate carboxylase/oxygenase small rbcS
+ribulose-1,5-bisphosphate carboxylase/oxygenase small protein
+ribulose-1,5-bisphosphate carboxylase/oxygenase small subunit
+ribulose-1,5-bisphosphate carboxylase/oxygenase small
+
+word: rbcl gene
+rbcl
+rbcl sequence
+rbcl protein
+rbcl partial sequence
+rbcl partial protein
+rbcl partial gene
+
+word: rbcs gene
+rbcs
+rbcs sequence
+rbcs protein
+rbcs partial sequence
+rbcs partial protein
+rbcs partial gene
+
+word: NADH dehydrogenase subunit 1 gene (ND1)
+NADH dehydrogenase subunit 1 sequence (ND1)
+NADH dehydrogenase subunit 1 partial sequence (ND1)
+NADH dehydrogenase subunit 1 complete sequence (ND1)
+NADH dehydrogenase subunit 1 mitochondrial sequence (ND1)
+NADH dehydrogenase subunit 1 mtDNA (ND1)
+
+word: NADH dehydrogenase subunit 1 (ND1)
+NADH dehydrogenase subunit 1 (ND1) gene
+NADH dehydrogenase subunit 1 (ND1) sequence
+NADH dehydrogenase subunit 1 (ND1) partial sequence
+NADH dehydrogenase subunit 1 (ND1) partial protein
+
+word: NADH dehydrogenase subunit 2 gene (ND2)
+NADH dehydrogenase subunit 2 sequence (ND2)
+NADH dehydrogenase subunit 2 partial sequence (ND2)
+NADH dehydrogenase subunit 2 complete sequence (ND2)
+NADH dehydrogenase subunit 2 mitochondrial sequence (ND2)
+NADH dehydrogenase subunit 2 mtDNA (ND2)
+
+word: NADH dehydrogenase subunit 3 gene (ND3)
+NADH dehydrogenase subunit 3 sequence (ND3)
+NADH dehydrogenase subunit 3 partial sequence (ND3)
+NADH dehydrogenase subunit 3 complete sequence (ND3)
+NADH dehydrogenase subunit 3 mitochondrial sequence (ND3)
+NADH dehydrogenase subunit 3 mtDNA (ND3)
+
+word: NADH dehydrogenase subunit 4 gene (ND4)
+NADH dehydrogenase subunit 4 sequence (ND4)
+NADH dehydrogenase subunit 4 partial sequence (ND4)
+NADH dehydrogenase subunit 4 complete sequence (ND4)
+NADH dehydrogenase subunit 4 mitochondrial sequence (ND4)
+NADH dehydrogenase subunit 4 mtDNA (ND4)
+
+word: NADH dehydrogenase subunit 5 gene (ND5)
+NADH dehydrogenase subunit 5 sequence (ND5)
+NADH dehydrogenase subunit 5 partial sequence (ND5)
+NADH dehydrogenase subunit 5 complete sequence (ND5)
+NADH dehydrogenase subunit 5 mitochondrial sequence (ND5)
+NADH dehydrogenase subunit 5 mtDNA (ND5)
+
+word: NADH dehydrogenase subunit 6 gene (ND6)
+NADH dehydrogenase subunit 6 sequence (ND6)
+NADH dehydrogenase subunit 6 partial sequence (ND6)
+NADH dehydrogenase subunit 6 complete sequence (ND6)
+NADH dehydrogenase subunit 6 mitochondrial sequence (ND6)
+NADH dehydrogenase subunit 6 mtDNA (ND6)
+
+word: NADH dehydrogenase subunit 1 gene
+NADH dehydrogenase 1 gene
+NADH dehydrogenase 1
+
+word: NADH dehydrogenase subunit 2 gene
+NADH dehydrogenase 2 gene
+NADH dehydrogenase 2
+
+word: NADH dehydrogenase subunit 3 gene
+NADH dehydrogenase 3 gene
+NADH dehydrogenase 3
+
+word: NADH dehydrogenase subunit 4 gene
+NADH dehydrogenase 4 gene
+NADH dehydrogenase 4
+
+word: NADH dehydrogenase subunit 5 gene
+NADH dehydrogenase 5 gene
+NADH dehydrogenase 5
+
+word: NADH dehydrogenase subunit 6 gene
+NADH dehydrogenase 6 gene
+NADH dehydrogenase 6
+
+word: cytochrome oxidase subunit I
+cytochrome c oxidase subunit I
+cytochrome c oxidase subunit one
+cytochrome oxidase subunit one
+cytochrome c oxidase subunit I
+cytochrome oxidase subunit I
+
+word: cytochrome oxidase subunit 1 (COI)
+cytochrome oxidase subunit 1
+
+word: cytochrome oxidase subunit I (COI)
+cytochrome oxidase subunit I
+
+word: cytochrome oxidase I (COI)
+cytochrome oxidase subunit I (COI)
+
+word: cytochrome oxidase subunit III (COIII) gene
+cytochrome oxidase subunit 3 (COIII) gene
+cytochrome oxidase subunit 3 (COIII)
+cytochrome oxidase subunit III (COIII)
+
+word: Hypothetical protein gene
+Hypothetical
+
+word: putative
+hypothetical
+
+word: Polymerase sequence
+Polymerase
+Polymerase gene
+Polymerase protein
+
+word: beta-tubulin
+beta tubulin
+
+word: beta-actin
+beta actin
+beta_actin
+
+word: ribosomal RNA gene
+ribosomal RNA gene sequence
+ribosomal DNA
+rDNA
+rRNA
+RDNA
+RDAN
+RNA
+DNA
+ribosomal
+RNA gene
+rRNA gene
+rRNA partial gene
+rRNA partial sequence
+
+word: LSU ribosomal RNA
+large subunit (LSU) ribosomal RNA
+
+word: SSU ribosomal RNA
+small subunit (SSU) ribosomal RNA
+
+word: 5.8S ribosomal RNA gene
+5.8S
+5.8SrDNA
+5.8SrRNA
+5.8SrDNA gene
+5.8SrRNA gene
+5.8SrDNA gene sequence
+5.8SrRNA gene sequence
+5.8SrDNA gene sequence region
+5.8SrRNA gene sequence region
+5.8S rDNA gene
+5.8S rRNA gene
+5.8S gene
+gene 5.8S rRNA
+gene 5.8S ribosomal RNA
+
+word: 5S ribosomal RNA gene
+5S
+5SrDNA
+5SrRNA
+5SrDNA gene
+5SrRNA gene
+5SrDNA gene sequence
+5SrRNA gene sequence
+5SrDNA gene sequence region
+5SrRNA gene sequence region
+5S rDNA gene
+5S rRNA gene
+5S gene
+5S RNA
+gene 5S rRNA
+gene 5S ribosomal RNA
+
+word: 12S ribosomal RNA gene
+12S
+12SrDNA
+12SrRNA
+12SrDNA gene
+12SrRNA gene
+12SrDNA gene sequence
+12SrRNA gene sequence
+12SrDNA gene sequence region
+12SrRNA gene sequence region
+12S rDNA gene
+12S rRNA gene
+12S gene
+gene 12S rRNA
+gene 12S ribosomal RNA
+
+word: 16S ribosomal RNA gene
+16S
+16SrDNA
+16SrRNA
+16SrDNA gene
+16SrRNA gene
+16SrDNA gene sequence
+16SrRNA gene sequence
+16SrDNA gene sequence region
+16SrRNA gene sequence region
+16S rDNA gene
+16S rRNA gene
+16S gene
+gene 16S rRNA
+gene 16S ribosomal RNA
+16S ribosomal gene
+16S ribosomal
+
+word: 18S ribosomal RNA gene
+18S
+18SrDNA
+18SrRNA
+18SrDNA gene
+18SrRNA gene
+18SrDNA gene sequence
+18SrRNA gene sequence
+18SrDNA gene sequence region
+18SrRNA gene sequence region
+18S rDNA gene
+18S rRNA gene
+18S gene
+gene 18S rRNA
+gene 18S ribosomal RNA
+
+word: 23S ribosomal RNA gene
+23S
+23SrDNA
+23SrRNA
+23SrDNA gene
+23SrRNA gene
+23SrDNA gene sequence
+23SrRNA gene sequence
+23SrDNA gene sequence region
+23SrRNA gene sequence region
+23S rDNA gene
+23S rRNA gene
+23S gene
+gene 23S rRNA
+gene 23S ribosomal RNA
+
+word: 26S ribosomal RNA gene
+26S
+26SrDNA
+26SrRNA
+26SrDNA gene
+26SrRNA gene
+26SrDNA gene sequence
+26SrRNA gene sequence
+26SrDNA gene sequence region
+26SrRNA gene sequence region
+26S rDNA gene
+26S rRNA gene
+26S gene
+gene 26S rRNA
+gene 26S ribosomal RNA
+
+word: 28S ribosomal RNA gene
+28S
+28SrDNA
+28SrRNA
+28SrDNA gene
+28SrRNA gene
+28SrDNA gene sequence
+28SrRNA gene sequence
+28SrDNA gene sequence region
+28SrRNA gene sequence region
+28S rDNA gene
+28S rRNA gene
+28S gene
+gene 28S rRNA
+gene 28S ribosomal RNA
+
+word: small subunit ribosomal RNA gene
+SSU
+SSUrDNA
+SSUrRNA
+SSUrDNA gene
+SSUrRNA gene
+SSUrDNA gene sequence
+SSUrRNA gene sequence
+SSUrDNA gene sequence region
+SSUrRNA gene sequence region
+SSU rDNA gene
+SSU rRNA gene
+SSU gene
+gene SSU rRNA
+gene SSU ribosomal RNA
+
+word: large subunit ribosomal RNA gene
+LSU
+LSUrDNA
+LSUrRNA
+LSUrDNA gene
+LSUrRNA gene
+LSUrDNA gene sequence
+LSUrRNA gene sequence
+LSUrDNA gene sequence region
+LSUrRNA gene sequence region
+LSU rDNA gene
+LSU rRNA gene
+LSU gene
+gene LSU rRNA
+gene LSU ribosomal RNA
+
+word: 18S SSU ribosomal RNA
+18S small subunit SSU ribosomal RNA
+18S small subunit (SSU) ribosomal RNA
+small subunit (SSU) 18S ribosomal RNA
+
+word: 28S LSU ribosomal RNA
+28S large subunit LSU ribosomal RNA
+28S large subunit (LSU) ribosomal RNA
+large subunit (LSU) 28S ribosomal RNA
+
+word: 16S
+5.8S
+12S
+18S
+23S
+26S
+28S
+small subunit
+large subunit
+
+word: 16
+5.8
+12
+18
+23
+26
+28
+small subunit
+large subunit
+
+word: 5.8S
+12S
+16S
+18S
+23S
+26S
+28S
+small subunit
+large subunit
+
+word: 12S
+5.8S
+16S
+18S
+23S
+26S
+28S
+small subunit
+large subunit
+
+word: ribosomal
+r
+small subunit ribosomal
+large subunit ribosomal
+
+word: RNA
+DNA
+
+word: 16S ribosomal RNA
+16S small subunit ribosomal RNA
+
+word: 18S ribosomal RNA
+23S ribosomal RNA
+28S ribosomal RNA
+26S ribosomal RNA
+18S small subunit ribosomal RNA
+23S large subunit ribosomal RNA
+26S large subunit ribosomal RNA
+28S large subunit ribosomal RNA
+large subunit ribosomal RNA
+
+word: internal transcribed spacer 1, ITS1 sequence
+internal transcribed spacer 1, ITS1
+internal transcribed spacer 1 sequence
+internal transcribed spacer 1
+internal transcribed spacer 1, ITS
+internal transcribed spacer 1 (ITS)
+internal transcribed spacer 1 (ITS1)
+internal transcribed spacer 1, (ITS1)
+internal transcribed spacer 1, ITS1 sequence
+internal transcribed spacer 1, ITS1 region
+internal transcribed spacer 1, ITS1 RNA
+ITS1
+internal transcribed spacer 1, sequence
+internal transcribed spacer 1, region
+internal transcribed spacer 1, RNA
+internal transcribed spacer-1
+
+word: internal transcribed spacer 2, ITS2 sequence
+internal transcribed spacer 2, ITS2
+internal transcribed spacer 2 sequence
+internal transcribed spacer 2
+internal transcribed spacer 2, ITS
+internal transcribed spacer 2 (ITS)
+internal transcribed spacer 2 (ITS2)
+internal transcribed spacer 2, (ITS2)
+internal transcribed spacer 2, ITS2 sequence
+internal transcribed spacer 2, ITS2 region
+internal transcribed spacer 2, ITS2 RNA
+ITS2
+internal transcribed spacer 2, sequence
+internal transcribed spacer 2, region
+internal transcribed spacer 2, RNA
+internal transcribed spacer-2
+
+word: ITS1
+ITS
+(ITS)
+(ITS1)
+
+word: ITS2
+ITS
+(ITS)
+(ITS2)
+
+word: , ITS1
+ (ITS)
+ (ITS1)
+, (ITS)
+, (ITS1)
+ITS
+ 
+word: , ITS2
+ (ITS)
+ (ITS2)
+, (ITS)
+, (ITS2)
+ITS 
+
+word: Region: Internal transcribed spacer 1, ITS1 sequence
+Region: Internal transcribed spacer 2, ITS2 sequence
+ITS1 sequence
+ITS2 sequence
+
+word: Internal transcribed spacer 1, ITS1
+Internal transcribed spacer 2, ITS2
+Internal transcribed spacer 1
+Internal transcribed spacer 2
+
+word: Region: Internal transcribed spacer 1, ITS1
+Region: Internal transcribed spacer 2, ITS2
+Region: Internal transcribed spacer 1
+Region: Internal transcribed spacer 2
+
+word: internal transcribed spacer 1
+internal transcribed spacer 2
+
+word: sequence
+region
+gene
+RNA
+
+word: internal
+interal
+
+word: 16S-23S rRNA intergenic spacer
+16S-23S IGS
+16S-23S intergenic spacer
+16S-23S spacer
+
+word: 16S-23S ribosomal RNA intergenic spacer
+16S-23S intergenic spacer
+16S-23S spacer
+16S-23S rRNA intergenic spacer
+16S-23S IGS
+
+word: 16S/23S intergenic spacer
+16S-23S intergenic spacer
+16S/23S RNA intergenic spacer
+16S-23S RNA intergenic spacer
+16S/23S rRNA intergenic spacer
+16S-23S rRNA intergenic spacer
+16S/23S RRNA IGS
+16S-23S RRNA IGS
+16S/23S IGS
+16S-23S IGS
+
+word: may also
+contains
+
+word: GAG gene
+GAG sequence
+GAG
+
+word: POL gene
+POL sequence
+POL
+
+word: VIF gene
+VIF sequence
+VIF
+
+word: VPR gene
+VPR sequence
+VPR
+
+word: TAT gene
+TAT sequence
+TAT
+
+word: REV gene
+REV sequence
+REV
+
+word: VPU gene
+VPU sequence
+VPU
+
+word: ENV gene
+ENV sequence
+ENV
+
+word: NEF gene
+NEF sequence
+NEF
+
+word: gag sequence
+gag
+gag gene
+Gag protein
+Gag protein gene
+Gag protein sequence
+
+word: pol sequence
+pol
+pol gene
+Pol protein
+Pol protein gene
+Pol protein sequence
+
+word: vif sequence
+vif
+vif gene
+Vif protein
+Vif protein gene
+Vif protein sequence
+
+word: vpr sequence
+vpr
+vpr gene
+Vpr protein
+Vpr protein gene
+Vpr protein sequence
+
+word: tat sequence
+tat
+tat gene
+Tat protein
+Tat protein gene
+Tat protein sequence
+
+word: rev sequence
+rev
+rev gene
+Rev protein
+Rev protein gene
+Rev protein sequence
+
+word: vpu sequence
+vpu
+vpu gene
+Vpu protein
+Vpu protein gene
+Vpu protein sequence
+
+word: env sequence
+env gene
+envelope gene
+envelope sequence
+Env
+Env protein
+Env glycoprotein
+
+word: nef sequence
+nef
+nef gene
+Nef protein
+Nef protein gene
+Nef protein sequence
+
+word: Envelope protein sequence
+Envelope protein gene
+Envelope protein
+
+word: Polyprotein gene
+poliprotein
+pollyprotein
+polliprotein
+Polyprotein
+polyprotein cds
+polyprotein sequence
+
+word: Glycoprotein sequence
+Glycoprotein
+Glycoprotein gene
+
+word: Nucleoprotein sequence
+Nucleoprotein
+Nucleoprotein gene
+
+word: Coat protein sequence
+Coat protein
+Coat protein gene
+
+word: Capsid protein sequence
+Capsid protein
+Capsid protein gene
+capside protein
+capside protein gene
+capside protein sequence
+
+word: movement protein sequence
+movement protein gene
+Movement protein
+
+word: Envelope glycoprotein sequence
+Envelope glycoprotein
+Envelope glycoprotein gene
+Envelope glycoprotein protein
+
+word: lung tissue
+lung tissues
+
+word: blood sample
+blood samples
+
+word: Gallus domesticus (chicken)
+Gallus domesticus
+Gallus gallus domesticus
+
+word: Naso pharyngeal aspirate
+Naso-pharyngeal aspirate
+naso pharyngeal aspirate
+naso-pharyngeal aspirate
+
+word: unknown
+N/A
+none
+not applicable
+not aplicable
+same laboratory
+laboratory
+lab
+our laboratory
+n.a.
+not available
+many methods
+molecular methods
+molecular typing method
+biochemical tests
+biochemical testing
+biochemical test
+self
+me
+myself
+bacteria
+PCR, Sequencing and Cloning
+PCR, Sequencing, Cloning
+16S
+Sanger
+Sanger sequencing
+sanger-sequencing
+sequence
+sequencing
+Author
+authors
+student
+students
+Rose Rainbolt
+Carlos Cutrer
+
+word: Inclusion body protein
+Reverse Transcriptase
+Glucose-6-phosphate dehydrogenase
+Phosphoribosylaminoimidazole carboxylase
+Transkelotase
+Envelope glycoprotein precursor
+Fusion protein
+Core protein
+large Surface protein
+Rhodopsin
+Brain Derived Neurotrophic Factor
+Oocyte maturation factor
+Phosducin
+Prolactin receptor
+Spike protein
+Histone protein
+Nucleocapsid protein
+Adenylate Kinase
+Alcohol dehydrogenase
+Glucosephosphate isomerase
+Malate Dehydrogenase
+Hemagglutinin
+Large protein
+Matrix protein
+Phosphoprotein
+Nucleolin
+Cell Division Cycle 42
+Heat Shock Protein 90
+Growth Hormone
+Elongation Factor 1 alpha
+Attachment protein
+
+word: pure-cultured strain
+pure-culture
+strain
+Pure
+
+word: gut
+processed salad
+mushroom
+throat swab & urine
+mouth swab
+induced sputum
+skin tissue
+biogas plant
+bait shop
+Nasopharyngeal/Throat Swab
+water sample
+coastal water
+Soil samples
+Oral Swab
+throat swab
+Surface Seawater
+Plant
+Insect Gut
+Sea Water
+
+word: pumpkin
+grasshopper
+green pepper
+barley
+
+word: PCR
+microscope
+cloning
+clone
+sequencing
+direct sequencing
+taxonomy
+sequence
+PCR cloning
+sequence similarity
+blast
+blastn
+blastp
+blastx
+tblastn
+tblastx
+RT-PCR
+TAIL-PCR
+TAIL PCR
+polymerase chain reaction
+BLAST search
+PCR amplification and sequencing
+pGEMT-Easy
+nested PCR
+nested polymerase chain reaction
+RT PCR
+RTPCR
+pGEMT Easy
+pGEMTEasy
+
+word: 100%
+partial
+all
+-
+n/a
+complete
+complete sequence
+partial sequence
+
+word: mt DNA COI
+mtCOI
+mt COI
+mitochondrial COI
+
+word: DNA
+RNA
+genomic
+
+word: Bacteria
+Bacterium
+Virus
+Clone
+True
+partial
+16S rRNA gene
+16S sequencing
+16S rRNA
+16S
+fungal
+fungus
+rRNA
+fungi
+
+
+word: [uncultured (using universal primers)]
+[BankIt_uncultured16S_wizard]; [universal primers]; [tgge]
+[BankIt_uncultured16S_wizard]; [universal primers]; [dgge]
+[BankIt_uncultured16S_wizard]; [universal primers]
+[universal primers]; [uncultured; wizard]
+[uncultured (using universal primers) bacterial source]
+[uncultured]; [universal primers]
+
+word: emptystring01
+partial sequence
+complete sequence
+complete
+partial
+gene
+sequence
+region
+
+word: emptystring02
+sequence
+gene
+partial
+complete
+
+word: taxon
+?
+
+word: direct PCR
+Bacterium
+Virus
+Clone
+True
+partial
+16S rRNA gene
+16S sequencing
+16S rRNA
+16S
+fungal
+fungus
+rRNA
+fungi
+Bacteria
+prokaryote
+prokaryotic
+
+word: aceae
+ales
+
+word: sp.
+sp
+
+word: Bacterium
+Archaeon
+
+word: bacterium
+archaeon
+
+word: 16S ribosomal RNA gene, partial sequence
+strain 16S ribosomal RNA gene, partial sequence
+gene for 16S rRNA, partial sequence
+16S ribosomal RNA, partial sequence
+16S rRNA gene, partial sequence
+16S ribosomal RNA gene
+16S rRNA gene
+16S ribosomal RNA
+16S rRNA
+
+word: synonym01-ATCC
+DSM
+JCM
+NBRC
+LMG
+CCUG
+KCTC
+
+word: synonym02-ATCC
+CBS
+JCM
+NBRC
+LMG
+CCUG
+KCTC
+
+word: synonym01-CBS
+DSM
+JCM
+NBRC
+LMG
+CCUG
+KCTC
+
+word: synonym02-CBS
+DSM
+NBRC
+LMG
+CCUG
+KCTC
+ATCC
+
+word: synonym03-CBS
+DSM
+JCM
+LMG
+CCUG
+KCTC
+ATCC
+
+word: synonym04-CBS
+DSM
+JCM
+NBRC
+CCUG
+KCTC
+ATCC
+
+word: synonym05-CBS
+DSM
+JCM
+NBRC
+LMG
+KCTC
+ATCC
+
+word: synonym06-CBS
+DSM
+JCM
+NBRC
+LMG
+CCUG
+ATCC
+
+word: synonym07-CBS
+ATCC
+JCM
+NBRC
+LMG
+CCUG
+KCTC
+
+word: synonym01-DSM
+CBS
+JCM
+NBRC
+LMG
+CCUG
+KCTC
+
+word: synonym02-DSM
+DSMZ
+
+word: DSMZ
+DSM
+
+word: [BankIt_cultured16S_wizard]
+[cultured bacterial source]
+[BankIt_cultured16S_wizard]; [universal primers]
+[cultured; wizard]
+[BankIt_cultured16S_wizard]; [species_specific primers]; [tgge]
+[BankIt_cultured16S_wizard]; [species_specific primers]; [dgge]
+[BankIt_cultured16S_wizard]; [species_specific primers]
+[BankIt_cultured23S_wizard]
+[BankIt_cultured16S-23SIGS_wizard]
+[BankIt_flu_wizard]
+
+
+

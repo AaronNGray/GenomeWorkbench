@@ -1,0 +1,621 @@
+Seq-entry ::= set {
+  class genbank ,
+  descr {
+    user {
+      type
+        str "NcbiCleanup" ,
+      data {
+        {
+          label
+            str "method" ,
+          data
+            str "SequinCleanup" } ,
+        {
+          label
+            str "version" ,
+          data
+            int 8 } ,
+        {
+          label
+            str "month" ,
+          data
+            int 1 } ,
+        {
+          label
+            str "day" ,
+          data
+            int 11 } ,
+        {
+          label
+            str "year" ,
+          data
+            int 2016 } } } } ,
+  seq-set {
+    set {
+      class phy-set ,
+      descr {
+        pub {
+          pub {
+            gen {
+              cit "Unpublished" ,
+              authors {
+                names
+                  std {
+                    {
+                      name
+                        name {
+                          last "Solanki" ,
+                          first "Manoj" ,
+                          initials "M.K." } } ,
+                    {
+                      name
+                        name {
+                          last "Wang" ,
+                          first "Zhen" ,
+                          initials "Z." } } ,
+                    {
+                      name
+                        name {
+                          last "Wang" ,
+                          first "Fei-Yong" ,
+                          initials "F.-Y." } } ,
+                    {
+                      name
+                        name {
+                          last "Li" ,
+                          first "Chang-Ning" ,
+                          initials "C.-N." } } ,
+                    {
+                      name
+                        name {
+                          last "Singh" ,
+                          first "Rajesh" ,
+                          initials "R.K." } } ,
+                    {
+                      name
+                        name {
+                          last "Singh" ,
+                          first "Pratiksha" ,
+                          initials "P." } } ,
+                    {
+                      name
+                        name {
+                          last "Yang" ,
+                          first "Li-Tao" ,
+                          initials "L.-T." } } ,
+                    {
+                      name
+                        name {
+                          last "Li" ,
+                          first "Yang-Rui" ,
+                          initials "Y.-R." } } } } ,
+              title "Assessment of Sugarcane/peanut/soybean intercropping
+ system in relation to soil properties and diazotropic bacteria: a field
+ study" } } } ,
+        pub {
+          pub {
+            sub {
+              authors {
+                names
+                  std {
+                    {
+                      name
+                        name {
+                          last "Solanki" ,
+                          first "Manoj" ,
+                          initials "M.K." } } ,
+                    {
+                      name
+                        name {
+                          last "Wang" ,
+                          first "Zhen" ,
+                          initials "Z." } } ,
+                    {
+                      name
+                        name {
+                          last "Wang" ,
+                          first "Fei-Yong" ,
+                          initials "F.-Y." } } ,
+                    {
+                      name
+                        name {
+                          last "Li" ,
+                          first "Chang-Ning" ,
+                          initials "C.-N." } } ,
+                    {
+                      name
+                        name {
+                          last "Singh" ,
+                          first "Rajesh" ,
+                          initials "R.K." } } ,
+                    {
+                      name
+                        name {
+                          last "Singh" ,
+                          first "Pratiksha" ,
+                          initials "P." } } ,
+                    {
+                      name
+                        name {
+                          last "Yang" ,
+                          first "Li-Tao" ,
+                          initials "L.-T." } } ,
+                    {
+                      name
+                        name {
+                          last "Li" ,
+                          first "Yang-Rui" ,
+                          initials "Y.-R." } } } ,
+                affil
+                  std {
+                    affil "Guangxi Academy of Agricultural Sciences" ,
+                    div "Guangxi crop Genetic Improvement and Biotechnology
+ Laboratory" ,
+                    city "Nanning" ,
+                    sub "Guangxi" ,
+                    country "China" ,
+                    street "174, Daxue Road" ,
+                    postal-code "530007" } } ,
+              medium email ,
+              date
+                std {
+                  year 2015 ,
+                  month 11 ,
+                  day 14 } } } } ,
+        update-date
+          std {
+            year 2015 ,
+            month 12 ,
+            day 2 } } ,
+      seq-set {
+        seq {
+          id {
+            local
+              str "Seq22" ,
+            general {
+              db "BankIt" ,
+              tag
+                str "1871034/Seq22" } ,
+            general {
+              db "TMSMART" ,
+              tag
+                id 59426879 } ,
+            genbank {
+              accession "KU145677" } } ,
+          descr {
+            title "[Enterobacter cloacae]" ,
+            source {
+              genome genomic ,
+              org {
+                taxname "Enterobacter cloacae" ,
+                syn {
+                  "Aerobacter cloacae" ,
+                  "Bacillus cloacae" ,
+                  "Bacterium cloacae" ,
+                  "Cloaca cloacae" } ,
+                orgname {
+                  name
+                    binomial {
+                      genus "Enterobacter" ,
+                      species "cloacae" } ,
+                  gcode 11 } } } ,
+            molinfo {
+              biomol genomic } ,
+            user {
+              type
+                str "OriginalID" ,
+              data {
+                {
+                  label
+                    str "LocalId" ,
+                  data
+                    str "Seq22" } } } } ,
+          inst {
+            repr raw ,
+            mol dna ,
+            length 1452 ,
+            strand ds ,
+            seq-data
+              ncbi2na 'DF9A697044E4B626B244889F9DDAB862E9A1AB8B0EDEA01E5E3A2AA
+3071E806B270C59306D908502AAA17DA977E5348EE548EA3C9EB2BAAC1A745CA618D5C9EB788A3
+852511E81E211AD4875C6A2924BAA0CF910EA6425E39253966EEE08297DABEC091FD26A8A0AEF8
+AF0C17490F86F159208245A7075B949259AC31A2AE426F0DA0F1EA6C0991929ADED0B68EE0355A
+9D01EA0693D807A4A722DFB22AAB20F52BB26B80E6C88DE8A0C5AE9829A557A1021E19D2B9809B
+AA2404A3C8C57ACB5196C063B63FA2BEE57E29BA9F5A27066F036165EA8B1A590AF00740E0F86A
+A564426BA24EEBF0F6390660817C5EB7E1351207F5223A3EB97DA81EE212B9E4E9EDB49DBBEE03
+BEAF0B5641899057CD7FBE526BCA5A81D0288794B8C07A282BAA386D0B4D3A57C614A9C446E710
+E91310220985D988909A174C0B9B6CB5A3E8B790761D4E0B683672C36C8D20E71AE0C6F56A5FB1
+11656D114EA2EAF90082CAC9F05F6A2A67C51FEE3D387AA'H } ,
+          annot {
+            {
+              data
+                ftable {
+                  {
+                    data
+                      rna {
+                        type rRNA ,
+                        ext
+                          name "16S ribosomal RNA" } ,
+                    partial TRUE ,
+                    location
+                      int {
+                        from 0 ,
+                        to 1451 ,
+                        strand plus ,
+                        id
+                          local
+                            str "Seq22" ,
+                        fuzz-from
+                          lim lt ,
+                        fuzz-to
+                          lim gt } } } } } } ,
+        set {
+          class nuc-prot ,
+          descr {
+            source {
+              genome genomic ,
+              org {
+                taxname "Influenza A virus" ,
+                orgname {
+                  name
+                    binomial {
+                      genus "Sinorhizobium" ,
+                      species "medicae" } ,
+                  mod {
+                    {
+                      subtype gb-synonym ,
+                      subname "Ensifer medicae" } } ,
+                  gcode 11 } } } } ,
+          seq-set {
+            seq {
+              id {
+                local
+                  str "Seq23" ,
+                general {
+                  db "BankIt" ,
+                  tag
+                    str "1871034/Seq23" } ,
+                general {
+                  db "TMSMART" ,
+                  tag
+                    id 59426880 } ,
+                genbank {
+                  accession "KU145678" } } ,
+              descr {
+                title "[Bacillus sp.] Bacillus spp.strain D3Ml91 16S ribosomal
+ RNA gene, partial sequence" ,
+                molinfo {
+                  biomol genomic } ,
+                user {
+                  type
+                    str "OriginalID" ,
+                  data {
+                    {
+                      label
+                        str "LocalId" ,
+                      data
+                        str "Seq23" } } } } ,
+              inst {
+                repr raw ,
+                mol dna ,
+                length 1430 ,
+                strand ds ,
+                seq-data
+                  ncbi2na 'B626078F209F9F7386F269A1AB8B046EA41797B087A8C1F6A01
+609C3168CA37DD7D3A88E3E023AFDA7347C48EA566B93C9CBEB8AC1A7450A418E4C961788AB8DA
+511EA1E211A54875C6A2924B2A0DF590E8602DE1A241966E2E3829FDAB6C01DEFBCA82042C422C
+1E7EC5F86B170520251A7071B949259AC31B2BA426F35A0F3EA6C0999929AFDF0B78EE025469D0
+5BA2AD3E807AA07E2E4822009A0F51BB26B80E6C88EE8A0452E9829A7FFADEC1E19E299809BAA2
+404A3C8C57ACB5196C0638B9C2EF22AFD657F2E7927064F091D65EA8B1AD908780740A0F86AA56
+4426BA24EEBF0F6090660817C52B7E135DE1077223226F55F6AA122E12BAE4EBEDB49DBB6E23BE
+AF0B5641899057E37CBE524FCBEA4770AE1E5AE10168A0AEA8E1B40D34E55F385EA7111B9C43A3
+AC40A9E421662B4250D530053DD2F68FB29E41D9713827A0D9CB0D9A3493966B831BD5A97EC445
+95B445188BFB04560B6BA2C16C289C964070AE150'H } ,
+              annot {
+                {
+                  data
+                    ftable {
+                      {
+                        data
+                          rna {
+                            type rRNA ,
+                            ext
+                              name "16S ribosomal RNA" } ,
+                        partial TRUE ,
+                        location
+                          int {
+                            from 0 ,
+                            to 1429 ,
+                            strand plus ,
+                            id
+                              local
+                                str "Seq23" ,
+                            fuzz-from
+                              lim lt ,
+                            fuzz-to
+                              lim gt } } ,
+                      {
+                        data
+                          imp {
+                            key "misc_feature" } ,
+                        comment "shorter than sequence (3')" ,
+                        location
+                          int {
+                            from 0 ,
+                            to 99 ,
+                            strand plus ,
+                            id
+                              genbank {
+                                accession "KU145678" } } ,
+                        qual {
+                          {
+                            qual "allele" ,
+                            val "A" } } } ,
+                      {
+                        data
+                          imp {
+                            key "misc_feature" } ,
+                        comment "shorter than sequence (5', 3')" ,
+                        location
+                          int {
+                            from 299 ,
+                            to 1199 ,
+                            strand plus ,
+                            id
+                              genbank {
+                                accession "KU145678" } } ,
+                        qual {
+                          {
+                            qual "allele" ,
+                            val "A" } } } ,
+                      {
+                        data
+                          imp {
+                            key "misc_feature" } ,
+                        comment "shorter than sequence (5')" ,
+                        location
+                          int {
+                            from 699 ,
+                            to 1429 ,
+                            strand plus ,
+                            id
+                              genbank {
+                                accession "KU145678" } } ,
+                        qual {
+                          {
+                            qual "allele" ,
+                            val "B" } } } ,
+                      {
+                        data
+                          rna {
+                            type tRNA ,
+                            ext
+                              tRNA {
+                                aa
+                                  ncbieaa 65 } } ,
+                        location
+                          mix {
+                            int {
+                              from 59 ,
+                              to 199 ,
+                              strand minus ,
+                              id
+                                genbank {
+                                  accession "KU145678" } } ,
+                            int {
+                              from 0 ,
+                              to 19 ,
+                              strand minus ,
+                              id
+                                genbank {
+                                  accession "KU145678" } } } } ,
+                      {
+                        data
+                          imp {
+                            key "3'UTR" } ,
+                        partial TRUE ,
+                        location
+                          int {
+                            from 1409 ,
+                            to 1429 ,
+                            strand minus ,
+                            id
+                              genbank {
+                                accession "KU145678" } ,
+                            fuzz-to
+                              lim gt } } ,
+                      {
+                        data
+                          imp {
+                            key "5'UTR" } ,
+                        partial TRUE ,
+                        location
+                          int {
+                            from 1419 ,
+                            to 1425 ,
+                            strand plus ,
+                            id
+                              genbank {
+                                accession "KU145678" } ,
+                            fuzz-to
+                              lim gt } } ,
+                      {
+                        data
+                          rna {
+                            type mRNA ,
+                            ext
+                              name "test mRNA" } ,
+                        partial TRUE ,
+                        location
+                          int {
+                            from 199 ,
+                            to 799 ,
+                            strand minus ,
+                            id
+                              genbank {
+                                accession "KU145678" } ,
+                            fuzz-from
+                              lim lt } } ,
+                      {
+                        data
+                          rna {
+                            type premsg ,
+                            ext
+                              name "test name" } ,
+                        comment "feature with one end belonging in the
+ alignment range" ,
+                        location
+                          mix {
+                            int {
+                              from 24 ,
+                              to 39 ,
+                              strand plus ,
+                              id
+                                genbank {
+                                  accession "KU145678" } } ,
+                            int {
+                              from 1359 ,
+                              to 1379 ,
+                              strand plus ,
+                              id
+                                genbank {
+                                  accession "KU145678" } } } } } } } } ,
+            seq {
+              id {
+                local
+                  str "KU145678_1" } ,
+              descr {
+                molinfo {
+                  biomol peptide ,
+                  tech concept-trans } ,
+                user {
+                  type
+                    str "OriginalID" ,
+                  data {
+                    {
+                      label
+                        str "LocalId" ,
+                      data
+                        str "KU145678_1" } } } } ,
+              inst {
+                repr raw ,
+                mol aa ,
+                length 32 ,
+                seq-data
+                  ncbieaa "RAN*LEACFYDVSGGRVSNTWATCL*DWDNFG" } ,
+              annot {
+                {
+                  data
+                    ftable {
+                      {
+                        data
+                          prot {
+                            name {
+                              "test protein" } } ,
+                        location
+                          int {
+                            from 0 ,
+                            to 31 ,
+                            id
+                              local
+                                str "KU145678_1" } } } } } } } ,
+          annot {
+            {
+              data
+                ftable {
+                  {
+                    data
+                      cdregion {
+                        frame three ,
+                        code {
+                          id 11 } } ,
+                    product
+                      whole
+                        local
+                          str "KU145678_1" ,
+                    location
+                      int {
+                        from 0 ,
+                        to 99 ,
+                        strand plus ,
+                        id
+                          genbank {
+                            accession "KU145678" } } } } } } } ,
+        seq {
+          id {
+            local
+              str "Seq24" ,
+            general {
+              db "BankIt" ,
+              tag
+                str "1871034/Seq24" } ,
+            general {
+              db "TMSMART" ,
+              tag
+                id 59426881 } ,
+            genbank {
+              accession "KU145679" } } ,
+          descr {
+            title "[Pantoea dispersa] P. dispersa" ,
+            source {
+              genome genomic ,
+              org {
+                taxname "Pantoea dispersa" ,
+                syn {
+                  "Pantoea dispersa Gavini et al. 1989" } ,
+                orgname {
+                  name
+                    binomial {
+                      genus "Pantoea" ,
+                      species "dispersa" } ,
+                  gcode 11 } } } ,
+            molinfo {
+              biomol genomic } ,
+            user {
+              type
+                str "OriginalID" ,
+              data {
+                {
+                  label
+                    str "LocalId" ,
+                  data
+                    str "Seq24" } } } } ,
+          inst {
+            repr raw ,
+            mol dna ,
+            length 1407 ,
+            strand ds ,
+            seq-data
+              ncbi2na '415392D81A4912089F9DFEAE98BA686AE2C3B7A807958E8AA8C1C7A
+01AC9C3164C1B662140BAA85F6A5D114DA3B9523A8F272CAEAB0E9D17298635727ADE228E14944
+7A078846B521D71A8A492EA833E443A990978E494E59BB3820A5F6AFB02C7F49AA2829AE2BC305
+F963E1BC5648209169C1D6E524966B0C68AB909BC3683C7A9B026464A6B7BC2D23B80D56A7C17A
+81E4FE01E929F8B76C8AAAC83D4AEC9AE039B2237A28316BA60A6955E860878674AE6026EA8901
+28F2315EB2D465B018ED87E8AFB95F8A6E9F5A27066F0B6165EA8B1A590AF00740E0F86AA56442
+6BA24EEBF0F6390660817C5E97E1352207C92239FEB97DA81DE212B9E4E9EDB49DBBEE03BEAF0B
+564189905735FEF949A7696A0740A21E5AE30168A0AEA8E1B42D34E95F1A52A7111B9C43A64C40
+882617662241A174C0B9B6CB5A3E8B790761D4E0B683672C1B234839C6B831BD5A97EC44595B44
+53A8BABE4020B2B27C17DA8A8'H } ,
+          annot {
+            {
+              data
+                ftable {
+                  {
+                    data
+                      rna {
+                        type rRNA ,
+                        ext
+                          name "16S ribosomal RNA" } ,
+                    partial TRUE ,
+                    location
+                      int {
+                        from 0 ,
+                        to 1406 ,
+                        strand plus ,
+                        id
+                          local
+                            str "Seq24" ,
+                        fuzz-from
+                          lim lt ,
+                        fuzz-to
+                          lim gt } } } } } } } } } }

@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_combo_app.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_combo_app GUI)
+  NCBI_sources(demo_combo_app hello_combo_dlg)
+  NCBI_uses_toolkit_libraries(w_wx)
+  NCBI_requires(wxWidgets)
+NCBI_end_app()

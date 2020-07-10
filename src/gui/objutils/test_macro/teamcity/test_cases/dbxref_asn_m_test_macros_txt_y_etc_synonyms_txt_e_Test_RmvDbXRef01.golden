@@ -1,0 +1,206 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "q",
+          first "q",
+          initials "qq"
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "q",
+              first "q",
+              initials "qq."
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2013,
+        month 6,
+        day 4
+      }
+    },
+    subtype new,
+    tool "Sequin 12.60 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class phy-set,
+      seq-set {
+        seq {
+          id {
+            local str "seq_1"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Influenza A virus",
+                orgname {
+                  name virus "Influenza A virus",
+                  attrib "specified",
+                  lineage "Viruses; ssRNA viruses; ssRNA negative-strand
+ viruses; Orthomyxoviridae; Alphainfluenzavirus",
+                  gcode 1,
+                  div "VRL"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 152,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCTTCTAAAGAAAGAAAAGGAAAGGAA
+GAAAGACAGTRCTATTCAGCTGCAAAATGTAACCACCATCTCCTAGGCAAAGGAGCAGTTTCCACTTATCGCAAGCCA
+CAGATAACTCTGTACCTTTTATTTCC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_2"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus hemionus",
+                common "mule deer",
+                db {
+                  {
+                    db "taxon",
+                    tag id 9872
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Odocoileus",
+                    species "hemionus"
+                  },
+                  attrib "specified",
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "JEW01"
+                    }
+                  },
+                  lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Laurasiatheria; Cetartiodactyla;
+ Ruminantia; Pecora; Cervidae; Odocoileinae; Odocoileus",
+                  gcode 1,
+                  mgcode 2,
+                  div "MAM"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_2"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 200,
+            seq-data iupacna "TGTCYTCACTCTCCCTTCTTCTGGATCTCCAGGATGTCGACTGGTTTC
+TCAATAAACTCTCTCAATGCATTCTAAAGGAAGAAAAGGAAAGGAAGAAAGACAGTGCTATTCAGCTGCAAAGTGTAA
+CCACCATCTCCTAGTCAAAGGAGCAGTTTCCACTTATTAGAAGCCACAGATAACTTTGTACCTTTTATTTCCGC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_10"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Oryx dammah",
+                common "scimitar-horned oryx",
+                db {
+                  {
+                    db "taxon",
+                    tag id 59534
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Oryx",
+                    species "dammah"
+                  },
+                  attrib "specified",
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "SAZ21"
+                    }
+                  },
+                  lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Laurasiatheria; Cetartiodactyla;
+ Ruminantia; Pecora; Bovidae; Hippotraginae; Oryx",
+                  gcode 1,
+                  mgcode 2,
+                  div "MAM"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_10"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 338,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCCCCAGAGCAGGTGCTTAGCTGACC
+TCAATGGCGCCCTCATCATGGTGGTGGTGGGGTCCCTGTCCCAGTTCCATTTGATGAAGCATCAGTCCATCAGAGGGT
+TCGTCCAGAAACGGCAGTACTTGAGGTGGCCTGAGGATCTCCAGGATGTTGACTGGTTTCTCAATAAACTCTCTCAAT
+GCATTCTAAAGAAAGAAAAGGAAAGGAAGAAAGACAGTGCTATTCAGCTGCAAAGTGTAACCACCATCTCCTAGGCAA
+AGGAGCAGTTTCCACTTACTGCAAGCCACAGATAACTCTGTACCTTTTATTTCCGC"
+          }
+        }
+      }
+    }
+  }
+}

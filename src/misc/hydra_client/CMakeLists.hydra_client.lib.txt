@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.hydra_client.lib.txt 593581 2019-09-20 13:30:24Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(hydra_client)
+  NCBI_sources(hydra_client)
+  NCBI_uses_toolkit_libraries(xmlwrapp)
+  NCBI_project_watchers(grichenk choi)
+NCBI_end_lib()
+

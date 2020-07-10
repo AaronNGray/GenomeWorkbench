@@ -1,0 +1,8 @@
+#################################
+# $Id: Makefile.in 461905 2015-03-13 15:42:53Z ivanov $
+#################################
+
+DLL_PROJ = ncbi_xdiscrepancy
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,109 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Rother",
+                      first "Michael",
+                      initials "M."
+                    }
+                  }
+                }
+              },
+              title "3 infecting Methanobacterium formicicum"
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Technische Universitat Dresden",
+                  div "Biology / Institute of Microbiology",
+                  city "Dresden",
+                  sub "Saxony",
+                  country "Germany",
+                  street "Zellescher Weg 20b",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 47,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAACTGACCTACTA"
+      }
+    }
+  }
+}

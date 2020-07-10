@@ -1,0 +1,364 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "ContactLN",
+          first "ContactFn",
+          initials "CC"
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "CitSub_ln",
+              first "CitSub_fn",
+              initials "C.C.K."
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2013,
+        month 6,
+        day 4
+      }
+    },
+    subtype new,
+    tool "Sequin 12.60 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class phy-set,
+      descr {
+        source {
+          org {
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "new strain"
+                },
+                {
+                  subtype isolate,
+                  subname "some isolate"
+                }
+              }
+            }
+          }
+        }
+      },
+      seq-set {
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Influenza A virus",
+                common "flu",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "new isolate"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "seq_1"
+              },
+              descr {
+                title "toll-like receptor 5 (TLR5) gene, complete cds",
+                molinfo {
+                  biomol genomic
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 137,
+                seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGC
+CTTGACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATGTCTTCCTGCTTCTTTGATGGTTGGAGA
+GCCATCTATCTTTCC"
+              }
+            },
+            seq {
+              id {
+                local str "seq_1_1"
+              },
+              descr {
+                molinfo {
+                  biomol peptide,
+                  completeness complete
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 8,
+                seq-data ncbieaa "VFTLPSSP"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                      },
+                      location int {
+                        from 0,
+                        to 7,
+                        id local str "seq_1_1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    frame two,
+                    code {
+                      id 1
+                    }
+                  },
+                  product whole local str "seq_1_1",
+                  location int {
+                    from 0,
+                    to 27,
+                    strand plus,
+                    id local str "seq_1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "seq_2"
+          },
+          descr {
+            title "Different title",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus hemionus",
+                orgname {
+                  mod {
+                    {
+                      subtype nat-host,
+                      subname "Homo sapiens"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 217,
+            seq-data iupacna "TGTCYTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCARTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGAGTAT
+TCAGCTGCAAAGTGTAACCACCATCTCCTAGTCAAAGGAGCAGTTTCCACTTATTAGAAGCCACAGATAACTTTGTAC
+CTTTTATTTCCGC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_3"
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 241,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGAGCCG
+TCTATCTTTCATTTTAAATCAAAATCGCTTTTCCTTTTGTCACCAAAACCATGCCCCTTCAGAGAATCCCAGCCTAGA
+AAAGCTTTTCCTTGGAGAAAATATGTTGCAACTTGCC"
+          }
+        },
+        set {
+          class nuc-prot,
+          seq-set {
+            seq {
+              id {
+                local str "seq_5"
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 263,
+                seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCACAGGATCATGGGAGATTGC
+CTTGACCTTCTCTTAGGAGTCRTACTCCTGACCAATCCTGCACTTGGAATTTCTTCCTGCTTCTTCGATGGTTGGAGA
+GCCCTCTATCTTTCCTGTAACCTCACCCAGTGCCATGGACATAACTCATAACAAATTCATCTGTGATTGTGAACTTAG
+TGCTTTTATCCATTGGGTCAATCAAACCAATATCACAATATCTGGGTCTCCAGCAGACATGTA"
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "seq_6"
+          },
+          descr {
+            title "New title",
+            source {
+              genome genomic,
+              org {
+                taxname "Oryx gazella",
+                orgname {
+                  mod {
+                    {
+                      subtype nat-host,
+                      subname "Pinus sp."
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 153,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTTGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGAGCCC
+TCTATCTTTCCTGCAACCTCACCCAAA"
+          }
+        },
+        seq {
+          id {
+            local str "seq_7"
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Oryx gazella",
+                orgname {
+                  mod {
+                    {
+                      subtype nat-host,
+                      subname "Eschericia coli"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 263,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCAGG
+GGACTCAGCCTCAGGGACAACAGGCTGACTGTTCTTTCTCCTGGCGACTTACCTGCTAACTTAGAGATCCTGGATATA
+TCTGGAAACCAGCTCCTCTCAGAAAGACAGTGCTATTCAGCTGCAAAGTGTAACCACCATCTCCTAGGCAAAGGAGCA
+GTTTCCACTTACTGCAAGCCACAGATAACTCTGTACCTTTTATTTCCGCCAGTTACCAA"
+          }
+        },
+        seq {
+          id {
+            local str "seq_9"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            molinfo {
+              biomol genomic
+            },
+            source {
+              genome genomic,
+              org {
+                taxname "Tragelaphus imberbis",
+                orgname {
+                  mod {
+                    {
+                      subtype nat-host,
+                      subname "bacilus coli"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 136,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATTTCTTCCTGCTTCTTCGATGGTTGGAGAGCCA
+TCTATCTTTT"
+          }
+        },
+        seq {
+          id {
+            local str "seq_10"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Oryx dammah",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "new isolate"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 241,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGCAACTTGCCTGGG
+AAACTGAGTCATGCTGGGATATTTTTAAGGGGCTTTCTCATCTCCAAGTCCTCTATCTGAATAAAAACTACCTGAATT
+TCCTTCCACCAGGAGTATTTCATCATCTGACGGCACTGAGGGGACTCAGCCTCAGGGACAACAGGCTGACTGTTCTTT
+CTCCTGGCGACTTACCTGCTAACTTAGAGATCCTGGA"
+          }
+        }
+      }
+    }
+  }
+}

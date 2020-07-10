@@ -1,0 +1,36 @@
+# $Id: Makefile.gui_opengl.lib 43891 2019-09-16 13:50:00Z evgeniev $
+
+SRC_C = ncbi_10x20 ncbi_12x24 ncbi_5x7 ncbi_8x13 ncbi_9x15 \
+    ncbi_clean10 ncbi_clean12 ncbi_clean13 ncbi_clean14 ncbi_clean15 \
+    ncbi_clean16 ncbi_clean6 ncbi_clean8 ncbi_courier10 ncbi_courier12 \
+    ncbi_courier14 ncbi_courier18 ncbi_courier20 ncbi_courier24 ncbi_courier6 \
+    ncbi_courier8 ncbi_fixed10 ncbi_fixed12 ncbi_fixed14 ncbi_fixed18 \
+    ncbi_fixed20 ncbi_fixed6 ncbi_fixed8 ncbi_helvetica10 ncbi_helvetica12 \
+    ncbi_helvetica14 ncbi_helvetica18 ncbi_helvetica20 ncbi_helvetica24 \
+    ncbi_helvetica6 ncbi_helvetica8 ncbi_lucida10 ncbi_lucida12 \
+    ncbi_lucida14 ncbi_lucida18 ncbi_lucida20 ncbi_lucida24 ncbi_lucida6 \
+    ncbi_lucida8 ncbi_times10 ncbi_times12 ncbi_times14 ncbi_times18 \
+    ncbi_times20 ncbi_times24 ncbi_times6 ncbi_times8
+
+SRC_CXX = \
+    glarcball gllight glmaterial glfont glbitmapfont glfontutils \
+    glcamera glcolortable gldlist gltexture glutils \
+    gldrawscale glpane glevent glwidget glframebuffer \
+    glcontainer geometry glrendernode glmodel2d \
+    glvbonode glstate glvbogeom glresmgr gltexturefont ftglfontmanager \
+    glrender glshader render_common mtlrender mtlvbogeom mtldata \
+    mtltexture mtlframebuffer MTLTextureGlyph MTLTextureFont \
+    render_vector vbogeom_base treenodevbo_base gltreenodevbo \
+    mtltreenodevbo tri_perimeter
+
+SRC = $(SRC_C) $(SRC_CXX)
+
+LIB = gui_opengl
+
+DLL_LIB = ximage xncbi
+
+LIBS = $(FTGL_LIBS) $(OPENGL_LIBS) $(GLEW_LIBS) $(ORIG_LIBS)
+
+CPPFLAGS = -DNCBI_BYPASS_FL_GL $(FTGL_INCLUDE) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(ORIG_CPPFLAGS)
+CXXFLAGS = $(ORIG_CXXFLAGS) $(OBJCXX_CXXFLAGS)
+

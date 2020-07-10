@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.convert2blastmask.app.txt 593591 2019-09-20 14:53:34Z gouriano $
+#############################################################################
+
+NCBI_begin_app(convert2blastmask)
+  NCBI_sources(convert2blastmask)
+  NCBI_uses_toolkit_libraries(blast seqmasks_io)
+  NCBI_add_definitions(NCBI_MODULE=BLASTDB)
+  NCBI_project_watchers(camacho fongah2)
+NCBI_end_app()
+

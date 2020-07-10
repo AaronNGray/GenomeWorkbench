@@ -1,0 +1,13 @@
+# $Id: Makefile.w_grid_widget.lib 40089 2017-12-19 17:16:31Z katargir $
+
+SRC = grid wxgrid_table_adapter grid_widget \
+      str_url_parser str_url_renderer cell_hyperlink \
+      assign_column_value_dlg copy_column_dlg filter_columns_dlg
+
+LIB = w_grid_widget
+
+DLL_LIB = w_wx gui_utils
+
+CPPFLAGS = $(WXWIDGETS_INCLUDE) $(ORIG_CPPFLAGS)
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) $(ORIG_LIBS)

@@ -1,0 +1,6 @@
+accession	locus_tag	mRNA gene locus	mRNA product	RNA product	ncRNA miRNA comment
+seq_1	UMAG_00837	afu2	arabinofuranosidase 2	leucine	new comment
+seq_2	UMAG_01829	afu1	arabinofuranosidase 1	methionine	new comment
+seq_3	UMAG_06332	egl1	endoglucanase 1		new comment
+seq_5	UMAG_02387	opt4	oligopeptide transporter 4	new product	new comment
+seq_4	UMAG_02523	egl2	endoglucanase 2	new product	new comment

@@ -1,0 +1,10 @@
+# $Id: Makefile.in 34073 2015-10-29 19:04:46Z katargir $
+
+# Genome Workbench Packages Projects
+
+SUB_PROJ = pkg_sequence pkg_alignment pkg_snp pkg_sequence_edit
+
+REQUIRES = algo OpenGL MT
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

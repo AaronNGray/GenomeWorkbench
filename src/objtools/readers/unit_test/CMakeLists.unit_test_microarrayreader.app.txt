@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_microarrayreader.app.txt 597513 2019-11-22 13:54:51Z ludwigf $
+#############################################################################
+
+NCBI_begin_app(unit_test_microarrayreader)
+  NCBI_sources(unit_test_microarrayreader)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xobjread)
+  NCBI_project_watchers(ludwigf)
+  NCBI_set_test_assets( microarrayreader_test_cases )
+  NCBI_add_test()
+NCBI_end_app()
+

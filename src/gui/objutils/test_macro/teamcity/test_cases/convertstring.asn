@@ -1,0 +1,175 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Enterococcus faecalis",
+        orgname {
+          name binomial {
+            genus "Enterococcus",
+            species "faecalis"
+          },
+          mod {
+            {
+              subtype nat-host,
+              subname "Human BEING"
+            },
+            {
+              subtype anamorph,
+              subname "test"
+            }
+          },
+          gcode 11
+        }
+      },
+      subtype {
+        {
+          subtype clone,
+          name "TGGE gel band"
+        }
+      }
+    },
+    pub {
+      pub {
+        sub {
+          authors {
+            names std {
+              {
+                name name {
+                  last "Chen",
+                  first "Muya",
+                  initials "M."
+                }
+              }
+            },
+            affil std {
+              affil "College of Veterinary Medicine",
+              div "South China Agricultural University",
+              city "Guangzhou",
+              sub "---",
+              country "China",
+              street "Wushan Street",
+              postal-code "510642"
+            }
+          },
+          medium email,
+          date std {
+            year 2015,
+            month 9,
+            day 21
+          }
+        }
+      }
+    },
+    update-date std {
+      year 2015,
+      month 9,
+      day 21
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "MU"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "MU"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 106,
+        strand ds,
+        seq-data iupacna "ATGACTGGTTCATGGAAAATGGACGAGACTTATATCAAAATTAAAGGAAAGT
+GGCATTATTTATATCGCGCTATCGATGTAGATGGCTTAACCTTAGATATCTGAA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "MATK",
+                desc "desc"
+              },
+              location int {
+                from 5,
+                to 69,
+                strand plus,
+                id local str "MU"
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "MU_1"
+      },
+      descr {
+        molinfo {
+          biomol peptide,
+          completeness complete
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 11,
+        topology not-set,
+        seq-data iupacaa "VHGKWTRLISK"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "maturase"
+                }
+              },
+              location int {
+                from 0,
+                to 10,
+                id local str "MU_1"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame two,
+            code {
+              id 11
+            }
+          },
+          product whole local str "MU_1",
+          location int {
+            from 6,
+            to 39,
+            strand plus,
+            id local str "MU"
+          }
+        }
+      }
+    }
+  }
+}

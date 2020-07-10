@@ -1,0 +1,26 @@
+MACRO PB1_genexref_01 "Add gene Xref from overlapping gene feature for CDS features"
+FOR EACH Cdregion
+DO
+    AddGeneXref();
+DONE
+------------------------------------------------------------------------------
+MACRO PB1_genexref_02 "Apply PB1-F2 to CDS locus (overwrite existing text) where CDS product contains 'PB1-F2' (case-sensitive)"
+VAR
+    new_value = "PB1-F2"
+    existing_text = "eReplace"
+    case_sensitive = true
+FOR EACH Gene
+WHERE CONTAINS(RELATED_FEATURE("protein", "data.prot.name"), new_value, case_sensitive)
+DO
+    SetStringQual ("data.gene.locus", new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO PB1_genexref_03 "Remove unnecessary gene Xref from any features"
+VAR
+    suppr_type = "any"
+    necessary_type = "unnecessary"
+FOR EACH SeqFeat
+DO
+    RemoveGeneXref(suppr_type, necessary_type);
+DONE
+------------------------------------------------------------------------------

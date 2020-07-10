@@ -1,0 +1,14 @@
+#############################################################################
+# $Id: CMakeLists.w_aln_score.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_aln_score)
+  NCBI_sources(
+    init_w_aln_score scoring_method aln_scoring
+    simple_methods quality_methods template_methods
+    scoring_methods_dlg properties_panel_dlg
+    gradient_color_panel
+  )
+  NCBI_uses_toolkit_libraries(w_wx)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

@@ -1,0 +1,40 @@
+Seq-annot ::= {
+  desc {
+    name "MAFFT alignment: 5 sequences.",
+    create-date std {
+      year 2018,
+      month 11,
+      day 1,
+      hour 14,
+      minute 6,
+      second 18
+    }
+  },
+  data align {
+    {
+      type not-set,
+      dim 5,
+      segs denseg {
+        dim 5,
+        numseg 1,
+        ids {
+          local str "KY657508",
+          local str "KY657509",
+          local str "KY657510",
+          local str "KY657511",
+          local str "KY657512"
+        },
+        starts {
+          0,
+          0,
+          0,
+          0,
+          0
+        },
+        lens {
+          671
+        }
+      }
+    }
+  }
+}

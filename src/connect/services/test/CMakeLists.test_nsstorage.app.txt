@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.test_nsstorage.app.txt 593499 2019-09-19 15:56:50Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_nsstorage)
+  NCBI_sources(test_nsstorage)
+  NCBI_uses_toolkit_libraries(xconnserv)
+  NCBI_project_watchers(sadyrovr)
+NCBI_end_app()
+

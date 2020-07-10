@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_xloader_cdd.lib.txt 598159 2019-12-04 17:40:14Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_xloader_cdd SHARED)
+  NCBI_sources(cdd_loader)
+  NCBI_add_definitions(NCBI_XLOADER_CDD_EXPORTS)
+  NCBI_uses_toolkit_libraries(cdd_access xcompress seq xobjmgr)
+  NCBI_project_watchers(grichenk)
+NCBI_end_lib()
+

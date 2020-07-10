@@ -1,0 +1,17 @@
+# $Id: Makefile.w_feedback.lib 44950 2020-04-23 20:49:10Z asztalos $
+
+SRC = dump_sysinfo feedback_wizard
+
+LIB = w_feedback
+
+DLL_LIB = gui_objects
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+CXXFLAGS = $(ORIG_CXXFLAGS) $(OBJCXX_CXXFLAGS)
+
+ASN_DEP = gui_objects general
+
+LIBS = $(OBJCXX_LIBS) $(FOUNDATION_LIBS) $(WXWIDGETS_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+
+REQUIRES = OpenGL wxWidgets

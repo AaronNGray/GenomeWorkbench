@@ -1,0 +1,10 @@
+# $Id: Makefile.xmergetree.lib 440220 2014-07-10 15:15:52Z gouriano $
+
+WATCHERS = boukn 
+SRC = merge_tree merge_tree_core   equiv_range 
+
+LIB = xmergetree
+
+ASN_DEP = genome_collection seqset
+USES_LIBRARIES =  \
+    $(DL_LIBS) $(SOBJMGR_LIBS)

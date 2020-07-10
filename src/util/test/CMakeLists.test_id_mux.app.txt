@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.test_id_mux.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_id_mux)
+  NCBI_sources(test_id_mux)
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_project_watchers(kuznets)
+  NCBI_add_test()
+NCBI_end_app()
+

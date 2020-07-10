@@ -1,0 +1,337 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "q",
+          first "q",
+          initials "qq"
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "q",
+              first "q",
+              initials "qq."
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2013,
+        month 6,
+        day 4
+      }
+    },
+    subtype new,
+    tool "Sequin 12.60 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class phy-set,
+      descr {
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "q",
+                      first "q",
+                      initials "qq."
+                    }
+                  }
+                },
+                affil str "q"
+              },
+              title "q"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "seq_1",
+            genbank {
+              accession "KT448271"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Felis catus",
+                common "domestic cat",
+                db {
+                  {
+                    db "taxon",
+                    tag id 9685
+                  }
+                },
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "BoBM478"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 2,
+                  div "MAM"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            title "toll-like receptor 5 (TLR5) gene, complete cds"
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 97,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCTTCCTTCATCTCCTAGGCAAAGGAG
+CAGTTTCCACTTATCGCAAGCCACAGATAACTCTGTACCTTTTATTTCC"
+          }
+        },
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus hemionus",
+                common "mule deer",
+                orgname {
+                  name binomial {
+                    genus "Odocoileus",
+                    species "hemionus"
+                  },
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "JEW01"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 2,
+                  div "MAM"
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "seq_2",
+                genbank {
+                  accession "KT448272"
+                }
+              },
+              descr {
+                molinfo {
+                  biomol genomic
+                },
+                title "toll-like receptor 5 (TLR5) gene, complete cds"
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 60,
+                seq-data iupacna "TGTCYTCACTCTCCCTTCTTACTTAGAAGCCACAGATAACTTTG
+TACCTTTTATTTCCGC"
+              }
+            },
+            seq {
+              id {
+                local str "KT448272_1"
+              },
+              descr {
+                molinfo {
+                  biomol peptide,
+                  completeness complete
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 20,
+                seq-data ncbieaa "VXTLPSYLEATDNFVPFISA"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "some protein name"
+                        }
+                      },
+                      location int {
+                        from 0,
+                        to 19,
+                        id local str "KT448272_1"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    frame two,
+                    code {
+                      id 1
+                    }
+                  },
+                  product whole local str "KT448272_1",
+                  location int {
+                    from 0,
+                    to 59,
+                    strand plus,
+                    id genbank {
+                      accession "KT448272"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "seq_3",
+            genbank {
+              accession "KT448273"
+            }
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Influenza B virus",
+                common "flu",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "GHY56"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 51,
+            seq-data iupacna "TGTCYTCACTCTCCCAGAAGCCACAGATAACTTTGTACCTTTTATTTC
+CGC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_4",
+            genbank {
+              accession "KT448274"
+            }
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus virginianus",
+                common "white-tailed deer",
+                orgname {
+                  name binomial {
+                    genus "Odocoileus",
+                    species "virginianus"
+                  },
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "JEW21"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 2
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 34,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCACCTTTTATTT"
+          }
+        },
+        seq {
+          id {
+            local str "seq_5",
+            genbank {
+              accession "KT448275"
+            }
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Giraffa camelopardalis",
+                common "giraffe",
+                orgname {
+                  name binomial {
+                    genus "Giraffa",
+                    species "camelopardalis"
+                  },
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "KB3332"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 2
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 60,
+            seq-data iupacna "TGTCTTCACTCTCTCTTCTTCTCCTAACTCTGTACCTTTTATTTCCGC
+CAGTTTACCCAA"
+          }
+        }
+      }
+    }
+  }
+}

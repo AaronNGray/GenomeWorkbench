@@ -1,0 +1,279 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class pop-set,
+      seq-set {
+        seq {
+          id {
+            local str "Cama19"
+          },
+          descr {
+            title "Cardamine amara microsatellite locus Cama19",
+            source {
+              genome genomic,
+              org {
+                taxname "Cardamine amara",
+                db {
+                  {
+                    db "taxon",
+                    tag id 50461
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Cardamine",
+                    species "amara"
+                  },
+                  lineage "Eukaryota; Viridiplantae; Streptophyta;
+ Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons;
+ Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae;
+ Cardamineae; Cardamine",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Cama19"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 448,
+            seq-data ncbi2na 'F70D4C1BFAE09FFDDD5434E9BE096F8304DE8F6DB490ED7E
+EB8FA039CEF23D8288E0D01E50B0700980F804104104F14D34D34D34D16CE31EEF4E5F1BEB40DF
+C81E38E09FF833CC9D3D9CA08BAFFD8F6C091AD06809483F2BBF32888FDBFBCDBDEBFC34972820
+270EC8135CA89B035B98'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "repeat_region"
+                  },
+                  location int {
+                    from 0,
+                    to 447,
+                    strand plus,
+                    id local str "Cama19"
+                  },
+                  qual {
+                    {
+                      qual "rpt_type",
+                      val "tandem"
+                    },
+                    {
+                      qual "rpt_unit_range",
+                      val "169..210"
+                    },
+                    {
+                      qual "rpt_unit_seq",
+                      val "(aac)...(atc)"
+                    },
+                    {
+                      qual "satellite",
+                      val "microsatellite:Cama19"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Cama23"
+          },
+          descr {
+            title "Cardamine amara microsatellite locus Cama23",
+            source {
+              genome genomic,
+              org {
+                taxname "Cardamine amara",
+                db {
+                  {
+                    db "taxon",
+                    tag id 50461
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Cardamine",
+                    species "amara"
+                  },
+                  lineage "Eukaryota; Viridiplantae; Streptophyta;
+ Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons;
+ Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae;
+ Cardamineae; Cardamine",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Cama23"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 237,
+            seq-data ncbi4na '214212114812141842411418828848414288148111114211
+111411411411411411411411414114141411112828142888442482111442141141182118441411
+118282848411882121118224182882428882411428424418824114441421141182888428828284
+828882811888281288888888888F8888F0'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "repeat_region"
+                  },
+                  location int {
+                    from 0,
+                    to 236,
+                    strand plus,
+                    id local str "Cama23"
+                  },
+                  qual {
+                    {
+                      qual "rpt_type",
+                      val "tandem"
+                    },
+                    {
+                      qual "rpt_unit_range",
+                      val "50..73"
+                    },
+                    {
+                      qual "rpt_unit_seq",
+                      val "aag"
+                    },
+                    {
+                      qual "satellite",
+                      val "microsatellite:Cama23"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Cama25"
+          },
+          descr {
+            title "Cardamine amara microsatellite locus Cama25",
+            source {
+              genome genomic,
+              org {
+                taxname "Cardamine amara",
+                db {
+                  {
+                    db "taxon",
+                    tag id 50461
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Cardamine",
+                    species "amara"
+                  },
+                  lineage "Eukaryota; Viridiplantae; Streptophyta;
+ Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons;
+ Gunneridae; Pentapetalae; rosids; malvids; Brassicales; Brassicaceae;
+ Cardamineae; Cardamine",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Cama25"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 382,
+            seq-data ncbi2na 'F03BB41FF327F0EDF423D7CCECD3FFAFFED2EFF8B0EA0F82
+888E3890EFE8E423AFE24F8E2020ABE32302380D38F6D83820D880A41B2B322420268E6A082AAF
+F8E20DDDBF8853A8420820820823BA0722FC3A28A170CBCEF881FEE29BBF3E4320'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "repeat_region"
+                  },
+                  location int {
+                    from 0,
+                    to 381,
+                    strand plus,
+                    id local str "Cama25"
+                  },
+                  qual {
+                    {
+                      qual "rpt_type",
+                      val "tandem"
+                    },
+                    {
+                      qual "rpt_unit_range",
+                      val "286..306"
+                    },
+                    {
+                      qual "rpt_unit_seq",
+                      val "aag"
+                    },
+                    {
+                      qual "satellite",
+                      val "microsatellite:Cama25"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

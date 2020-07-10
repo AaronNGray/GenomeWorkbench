@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.test_histogram_binning.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_histogram_binning)
+  NCBI_sources(test_histogram_binning)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xutil)
+  NCBI_project_watchers(kornbluh)
+  NCBI_add_test()
+NCBI_end_app()
+

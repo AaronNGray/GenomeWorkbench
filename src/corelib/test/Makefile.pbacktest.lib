@@ -1,0 +1,10 @@
+# $Id: Makefile.pbacktest.lib 420265 2013-12-03 17:28:29Z gouriano $
+
+SRC = pbacktest
+LIB = xpbacktest
+
+WATCHERS = lavr
+
+
+USES_LIBRARIES =  \
+    xncbi

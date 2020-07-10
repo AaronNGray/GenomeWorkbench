@@ -1,0 +1,56 @@
+# $Id: Makefile.gui_core.lib 42099 2018-12-19 18:25:33Z asztalos $
+
+ASN_DEP = seq submit gui_objects variation
+
+SRC = init \
+	  algo_tool_manager_base app_explorer_data_object \
+	  app_dialogs asn_export_job \
+	  asn_export_page asn_export_params asn_exporter asn_format_load_manager \
+	  broadcast_settings_dlg commands data_mining_panel \
+	  data_mining_service data_mining_view data_sources_page \
+	  document file_load_option_panel folder_edit_dlg \
+	  loading_app_job select_project_options open_dlg \
+	  open_view_dlg open_view_manager_impl \
+	  project_view_factory file_auto_loader \
+	  project_converters project_edit_dlg \
+	  project_load_option_panel project_loading_task project_selector_dlg \
+	  project_selector_panel project_service \
+	  project_task project_tree_panel project_tree_view \
+	  project_view_base_impl project_view_impl \
+	  run_tool_dlg save_dlg search_form_base search_tool_base \
+	  selection_service selection_view selection_panel selection_client \
+      seq_feat_remove_dlg ui_gcassembly_load_manager \
+	  ui_data_source_service ui_file_load_manager ui_project_load_manager \
+	  broadcast_vr_change_dlg \
+	  filter_dialog visible_range_service \
+      async_obj_convert undo_manager \
+      quick_launch_list add_quick_launch_dlg recent_tool_list prj_helper \
+      object_loading_task table_view simple_project_view \
+      table_file_load_manager table_data_gbproject save_smart_objects_dlg \
+      open_view_task ws_auto_saver project_locked_dlg exclusive_edit_dlg \
+      prefetch_seq_descr \
+      pt_utils pt_project pt_project_folder pt_workspace \
+      pt_item pt_project_item pt_data_loader pt_icon_list pt_root \
+      pt_data_source pt_folder pt_view cmd_change_projectitem
+
+LIB = gui_core
+
+DLL_LIB = gui_framework w_object_list w_loaders \
+          gui_opengl gui_print gui_objutils gui_objects gui_utils w_grid_widget w_seq \
+          searchbyrsid trackmgr gencoll_client genome_collection eutils_client xmlwrapp \
+          gui_config hgvs entrez2cli entrez2 \
+          blastinput $(BLAST_LIBS) $(BLAST_DB_DATA_LOADER_LIBS) \
+          align_format xcgi xhtml blastdb gene_info \
+          ximage xalnmgr xobjreadex xcleanup xobjutil biotree tables submit \
+          ncbi_xloader_genbank ncbi_xcache_netcache pubmed \
+          $(COMPRESS_LIBS) $(SOBJMGR_LIBS)
+
+LIBS = $(SRA_SDK_SYSLIBS) $(LIBXML_LIBS) $(WXWIDGETS_LIBS) $(GLEW_LIBS) $(IMAGE_LIBS) $(CMPRS_LIBS) $(DL_LIBS) \
+       $(BLAST_THIRD_PARTY_LIBS) $(VDB_LIBS) $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+CPPFLAGS = $(WXWIDGETS_INCLUDE) $(GLEW_INCLUDE) $(ORIG_CPPFLAGS) $(CMPRS_INCLUDE)
+
+LIB_OR_DLL = both
+
+REQUIRES = objects LIBXML LIBXSLT -LimitedLinker

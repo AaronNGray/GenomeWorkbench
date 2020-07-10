@@ -1,0 +1,220 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Colletotrichum siamense",
+        db {
+          {
+            db "taxon",
+            tag id 690259
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Colletotrichum",
+            species "siamense"
+          },
+          attrib "specified",
+          mod {
+            {
+              subtype nat-host,
+              subname "Ligustrum japonicum"
+            }
+          },
+          lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Hypocreomycetidae; Glomerellales; Glomerellaceae;
+ Colletotrichum",
+          gcode 1,
+          mgcode 4,
+          div "PLN"
+        }
+      },
+      subtype {
+        {
+          subtype country,
+          name "China"
+        }
+      }
+    },
+    update-date std {
+      year 2017,
+      month 1,
+      day 9,
+      hour 6,
+      minute 6,
+      second 22
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "BSeq#1",
+        general {
+          db "BankIt",
+          tag str "1981429/BSeq#1"
+        },
+        general {
+          db "TMSMART",
+          tag id 75664756
+        },
+        genbank {
+          accession "KY440782"
+        }
+      },
+      descr {
+        title "Colletotrichum siamense TUB2 gene, partial cds.",
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "BSeq#1"
+            },
+            {
+              label str "General",
+              data str "gnl|BankIt|1981429/BSeq#1"
+            },
+            {
+              label str "General",
+              data str "gnl|TMSMART|75664756"
+            },
+            {
+              label str "GenBank",
+              data str "gb|KY440782|"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 721,
+        strand ds,
+        seq-data iupacna "CAGACTGGCCGAAGACGAAGTTGTCGGGGCGGAAGAGCTGGCCGAAAGGACC
+GGCACGGACGGCGTCCATGGTACCGGGCTCCAAATCGACGAGGACGGCACGGGGCACGTACTTGTTGCCGGAAGCCTG
+GGTAGGAGCGAAGGTCAGTACTCGTCAATATGTTTATCTTGCACTCTGGGGGCTATAAGGTAACAAACTTCGTTGAAG
+TAGACGCTCATGCGCTCGAGCTGGAGCTCAGAGGTGCCGTTGTAGCTGTTCGAGTTTAGCGGTCAACCACCAATGTGG
+CCAGATAAGGGGCATGACATACACTCCATTGCTGTCGAGGCCGTGCTCGCCAGAAATGTTTTGCCTACTCTATCGTCA
+ACATCTGCCGTCCTCGCAAGTATATATTGCCGGATCGTCGGCGGTCTCGTCACGTACCAGAAGGCAGCACCAATCTGG
+TTACCCTGTACAAGGAGGTTAGCCCCGCAATCAGGCAGTTGGATTTGGCTTGGGAAGACTTACGCACTGGCCGGTCTG
+GAGGTGAACCTGTAGACAAAAAAAAGCAGCAGTCAGCAAAACATTCCAGAGTTGGACGTCGATGATTGACAGGCGTCG
+CGGGTTTGTTGAGCATAGAAGTCGGGTAAAAATGTCGGCGGGGTACGCTCAGGGGCAAGGCGGATAAACGCGTCGCAA
+GCGTTGTTGTGATTGTGGTGATGGACTGCAACTTACATCCCCCGC"
+      }
+    },
+    seq {
+      id {
+        local str "BSeq#1_prot_1",
+        general {
+          db "TMSMART",
+          tag id 75664757
+        }
+      },
+      descr {
+        title "TUB2, partial [Colletotrichum siamense]",
+        molinfo {
+          biomol peptide,
+          completeness no-ends
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "BSeq#1_prot_1"
+            },
+            {
+              label str "General",
+              data str "gnl|TMSMART|75664757"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 91,
+        seq-data ncbieaa "VHLQTGQCGNQIGAAFWQNISGEHGLDSNGVYNGTSELQLERMSVYFNEASG
+NKYVPRAVLVDLEPGTMDAVRAGPFGQLFRPDNFVFGQS"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "TUB2"
+                },
+                desc "beta-tubulin 2 gene"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 90,
+                id local str "BSeq#1_prot_1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame one,
+            code {
+              id 1
+            }
+          },
+          partial TRUE,
+          product whole local str "BSeq#1_prot_1",
+          location mix {
+            int {
+              from 505,
+              to 528,
+              strand minus,
+              id local str "BSeq#1",
+              fuzz-to lim gt
+            },
+            int {
+              from 421,
+              to 446,
+              strand minus,
+              id local str "BSeq#1"
+            },
+            int {
+              from 308,
+              to 349,
+              strand minus,
+              id local str "BSeq#1"
+            },
+            int {
+              from 198,
+              to 252,
+              strand minus,
+              id local str "BSeq#1"
+            },
+            int {
+              from 1,
+              to 126,
+              strand minus,
+              id local str "BSeq#1",
+              fuzz-from lim lt
+            }
+          }
+        }
+      }
+    }
+  }
+}

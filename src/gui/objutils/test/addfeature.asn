@@ -1,0 +1,48 @@
+Seq-entry ::= seq {
+      id {
+        local str "seq_1"
+      },
+      descr {
+        title "toll-like receptor 5 (TLR5) gene, complete cds",
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza A virus",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "this is my strain"
+                },
+                {
+                  subtype serotype,
+                  subname "this is my serotype"
+                },
+                {
+                  subtype isolate,
+                  subname "BoBM478"
+                }
+              }
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        },
+        create-date std {
+          year 2013,
+          month 6,
+          day 4
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 270,
+        seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGCTGATGACTTTGCCAAA
+CATCCCACTTACAGCCAATTTCATCCAATTATCAGAGAATAGGCTAGAAAATCTGAATGATCTCTACTTCCTTCTCCA
+GGTACCTCATCTCCAGATTCTCATTTTAAATCAAAATCGCTTTTCCTTTTGTCACCAAAACCATGCCCCTTCAGAGAA
+TTCCAGCCTAGAAAAGCTTTTCCTTGGAGAAAATATGTTGCAGCTTGCCTGGGAAACTGGGT"
+      }
+    }
+  

@@ -1,0 +1,10 @@
+# $Id: Makefile.ncbi_image.dll 108294 2007-08-06 17:29:58Z Gouriano $
+
+DLL = ncbi_image
+
+HOSTED_LIBS    = ximage
+
+DEPENDENCIES   = ncbi_core
+
+CPPFLAGS = -DNCBI_XIMAGE_EXPORTS
+

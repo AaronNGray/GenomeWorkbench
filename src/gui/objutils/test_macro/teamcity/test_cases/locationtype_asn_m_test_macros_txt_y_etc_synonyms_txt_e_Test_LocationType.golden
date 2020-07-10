@@ -1,0 +1,93 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq1"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Felis catus",
+            common "domestic cat",
+            db {
+              {
+                db "taxon",
+                tag id 9685
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Felis",
+                species "catus"
+              },
+              lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia;
+ Felidae; Felinae; Felis",
+              gcode 1,
+              mgcode 2,
+              div "MAM"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 38,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCATGTAATCCCTGCCTCTGA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "some locus"
+              },
+              location packed-int {
+                {
+                  from 0,
+                  to 19,
+                  strand plus,
+                  id genbank {
+                    accession "KF591393"
+                  }
+                },
+                {
+                  from 29,
+                  to 37,
+                  strand plus,
+                  id genbank {
+                    accession "KF591393"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

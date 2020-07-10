@@ -1,0 +1,132 @@
+MACRO ITSMacro_01 "Remove note-subsrc where source note-subsrc equals '[BankIt_organellerRNA_wizard]'"
+FOR EACH BioSource
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "other" AND obj.name = "[BankIt_organellerRNA_wizard]";
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_02 "Remove note-subsrc where source note-subsrc equals '[BankIt_ITS_wizard]'"
+FOR EACH BioSource
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "other" AND obj.name = "[BankIt_ITS_wizard]";
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_03 "Remove note-orgmod where source note-orgmod equals '[BankIt_organellerRNA_wizard]'"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other" AND obj.subname = "[BankIt_organellerRNA_wizard]";
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_04 "Remove note-orgmod where source note-orgmod equals '[BankIt_ITS_wizard]'"
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other"  AND obj.subname = "[BankIt_ITS_wizard]";
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_05 "Edit taxname replace '_' with ' '"
+VAR
+    find_text = "_"
+    repl_text = " "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_06 "Edit taxname replace 'Novel ' (case insensitive) with ''"
+VAR
+    find_text = "Novel "
+    repl_text = ""
+    location = "at the beginning"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_07 "Edit taxname replace 'unclassified' (case insensitive) with ''"
+VAR
+    find_text = "unclassified"
+    repl_text = ""
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_08 "Edit taxname replace ' SP.' (case insensitive) with ' sp.', replace ' SP' (case insensitive) with ' sp.'"
+VAR
+    find_text1 = " SP."
+    repl_text = " sp."
+    find_text2 = " SP"
+    location = "at the end"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text1, repl_text, location, case_sensitive);
+    EditStringQual ("org.taxname", find_text2, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_09 "Edit taxname replace ' species' (case insensitive) with ' sp.', replace ' spp' (case insensitive) with ' sp.', replace ' spp.' (case insensitive) with ' sp.'"
+VAR
+    find_text1 = " species"
+    repl_text = " sp."
+    find_text2 = " spp"
+    find_text3 = " spp."
+    location = "at the end"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text1, repl_text, location, case_sensitive);
+    EditStringQual ("org.taxname", find_text2, repl_text, location, case_sensitive);
+    EditStringQual ("org.taxname", find_text3, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_10 "Apply . to taxname (append (no separator)) where source taxname ends with ' sp' (case-sensitive)"
+VAR
+    existing_text = "eAppend"
+    case_sensitive = true
+FOR EACH BioSource
+WHERE ENDS("org.taxname", " sp", case_sensitive)
+DO
+    SetStringQual("org.taxname", ".", existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_11 "Edit taxname replace ' ' with ''"
+VAR
+    find_text = " "
+    repl_text = ""
+    location = "at the end"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    EditStringQual ("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_12 "Apply sp. to taxname (append with space) where source taxname does not contain a space and source taxname does not contain 'sp.' (case-insensitive)"
+VAR
+    existing_text = "eAppend"
+    delimiter = " "
+FOR EACH BioSource
+WHERE NOT CONTAINS("org.taxname", " ") AND NOT CONTAINS("org.taxname", "sp.")
+DO
+    SetStringQual("org.taxname", "sp.", existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------
+MACRO ITSMacro_13 "Perform taxonomy lookup and extended cleanup and correct genetic codes"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO ITSMacro_14 "Generate unique deflines"
+FOR EACH TSEntry
+DO
+    AutodefId();
+DONE
+------------------------------------------------------------------------------

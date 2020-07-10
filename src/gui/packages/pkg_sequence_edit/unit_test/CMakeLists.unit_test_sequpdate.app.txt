@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_sequpdate.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app( unit_test_sequpdate GUI)
+  NCBI_sources(unit_test_sequpdate)
+  NCBI_uses_toolkit_libraries(pkg_sequence_edit gui_objutils xunittestutil ncbi_xloader_genbank)
+  NCBI_requires(Boost.Test.Included wxWidgets)
+NCBI_end_app()

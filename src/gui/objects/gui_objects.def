@@ -1,0 +1,20 @@
+[-]
+_export        = NCBI_GUIOBJECTS_EXPORT
+_extra_headers = gui/gui_export.h
+clients        = gbench_svc_cli
+
+[gbench_svc_cli]
+class   = CGBenchService
+service = GBench
+request = GBenchServiceRequest
+reply   = GBenchServiceReply
+
+[MessageHistoryEntry]
+predecessor._type = size_t
+successors._type  = vector
+
+[PluginMessageHistory]
+table._type = vector
+
+[TrackConfig]
+subTracks._type = vector

@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.mla.asn.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(mla)
+  NCBI_dataspecs(mla.asn)
+  NCBI_uses_toolkit_libraries(medlars pubmed pub)
+NCBI_end_lib()
+

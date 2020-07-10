@@ -1,0 +1,8 @@
+# $Id: Makefile.in 15095 2007-10-02 18:59:46Z yazhuk $
+
+# DEMO::  Hit Matrix Widget
+
+APP_PROJ = demo_hit_matrix_wx
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,19 @@
+# $Id: Makefile.w_object_list.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# Object List lib
+
+ASN_DEP = seq seqset submit
+
+SRC = object_list_widget object_list_widget_sel \
+      object_text_item \
+      text_item_default text_item_seq_align text_item_seq_feat text_item_seq_loc
+
+LIB = w_object_list
+
+DLL_LIB = w_text_widget w_data w_wx \
+          gui_utils gui_objutils ximage submit \
+          tables $(SOBJMGR_LIBS)
+
+CPPFLAGS = $(WXWIDGETS_INCLUDE) $(ORIG_CPPFLAGS)
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) $(ORIG_LIBS)

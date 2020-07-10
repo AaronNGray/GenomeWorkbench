@@ -1,0 +1,6 @@
+# $Id: Makefile.in 4763 2004-04-16 15:57:04Z dicuccio $
+
+LIB_PROJ = w_aln_table
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

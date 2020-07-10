@@ -1,0 +1,343 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "q",
+          first "q",
+          initials "qq"
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "q",
+              first "q",
+              initials "qq."
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2013,
+        month 6,
+        day 4
+      }
+    },
+    subtype new,
+    tool "Sequin 12.60 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class phy-set,
+      seq-set {
+        seq {
+          id {
+            local str "seq_1"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "soil metagenome",
+                db {
+                  {
+                    db "taxon",
+                    tag id 410658
+                  }
+                },
+                orgname {
+                  mod {
+                    {
+                      subtype serotype,
+                      subname "this is my serotype"
+                    }
+                  },
+                  lineage "unclassified sequences; metagenomes; ecological
+ metagenomes",
+                  gcode 11,
+                  mgcode 2,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "M01464_9_000000000D03DD_1_1101_19893_19615#0"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype metagenomic,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioSample",
+                  num 1,
+                  data strs {
+                    "SAMN09238745"
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 552,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATGTCTTCCTGCTGGCAATAAGCTGATGACTTTG
+CCAAACATCCAGAGTATTTCATCCAGGATGCYGTGTGGAGCAGCAGAAAGATTGTCTGTCTCGTGAGCAGACACTTCC
+TTAGAGACGGGTGGTGCCTCGAAGCCTTCAGTTATGCCCAGAGCAGGTGCTTAGCTGACCTCAATGGCGCCCTCATCA
+TGGTGGTGGTGGGGTCCCTGTCCCAGTTCCATCTGATGAGGCATCAGTCCATCAGAGGGTTCGTCCAGAAACGGCAGT
+ACTTGAGGTGGCCTGAGGATCTCCAGGATGTTGACTGGTTTCTCAATAAACTCTCTCAATGCATTCTAAAGAAAGAAA
+AGGAAAGGAAGAAAGACAGTRCTATTCAGCTGCAAAATGTAACCACCATCTCCTAGGCAAAGGAGCAGTTTCCACTTA
+TCGCAAGCCACAGATAACTCTGTACCTTTTATTTCC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_2"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "soil metagenome",
+                db {
+                  {
+                    db "taxon",
+                    tag id 410658
+                  }
+                },
+                orgname {
+                  lineage "unclassified sequences; metagenomes; ecological
+ metagenomes",
+                  gcode 11,
+                  mgcode 2,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "other clone"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype metagenomic,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_2"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 457,
+            seq-data iupacna "TGTCYTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCARTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGAGCCG
+TCTATCTTTCCTGCAACCTCTTATGGACTTGACAACCTCCATCAATGGCGCCCTCATCATGGTAGTGGTGGGGTCCCT
+GTCCCAGTTCCATCTGATGAAGCATCAGCCCATCAGAGGGTTCGTCCAGAAACAGCARTACTTGAGGTGGCCTGAGGA
+TCTCCAGGATGTCGACTGGTTTCTCAATAAACTCTCTCAATGCATTCTAAAGGAAGAAAAGGAAAGGAAGAAAGACAG
+TGCTATTCAGCTGCAAAGTGTAACCACCATCTCCTAGTCAAAGGAGCAGTTTCCACTTATTAGAAGCCACAGATAACT
+TTGTACCTTTTATTTCCGC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_3"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "soil metagenome",
+                db {
+                  {
+                    db "taxon",
+                    tag id 410658
+                  }
+                },
+                orgname {
+                  lineage "unclassified sequences; metagenomes; ecological
+ metagenomes",
+                  gcode 11,
+                  mgcode 2,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "clone1"
+                },
+                {
+                  subtype clone,
+                  name "M01464_9_000000000D03DD_1_1102_9053_18648#0"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype metagenomic,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_3"
+                }
+              }
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioSample",
+                  num 1,
+                  data strs {
+                    "SAMN09238745"
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 339,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTAGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTTGTGAAGAG
+AGGGTTCGTCCAGAAACAGCAATACTTGAGGTGGCCTGAGGATCTCCAGGATGTCGACTGGTTTCTCAATAAACTCTC
+TCAATGCATTCTAAAGGAAGAAAAGGAAAGGAAGAAAGACAGTGCTATTCAGCTGCAAAGCGTAACCACCATCTCCTA
+GTCAAAGGAGCAGTTTCCACTTATTAGAAGCCACAGATAACTTTGTACCTTTTATTT"
+          }
+        },
+        seq {
+          id {
+            local str "seq_10"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "soil metagenome",
+                db {
+                  {
+                    db "taxon",
+                    tag id 410658
+                  }
+                },
+                orgname {
+                  lineage "unclassified sequences; metagenomes; ecological
+ metagenomes",
+                  gcode 11,
+                  mgcode 2,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "M01464_9_000000000D03DD_1_1102_9053_18648#0"
+                },
+                {
+                  subtype country,
+                  name "Germany"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype metagenomic,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_10"
+                }
+              }
+            },
+            user {
+              type str "DBLink",
+              data {
+                {
+                  label str "BioSample",
+                  num 1,
+                  data strs {
+                    "SAMN09238745"
+                  }
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 562,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCATAGGATCATGGGAGACTGCCTTG
+ACCTTCTCTTTGGAGTCGTACTCCTGACCAGTCCTGCACTTGGAATTTCTTCCTGCTTCTTCAATGGTTGGAGAGCCC
+TCTATCTTTCCTGCAACCTCACCCAAGTGCCCCAGGTCCCGACTCAGCCTCAGGGACAACAGGCTGACTGTTCTTTCT
+CCTGGCGACTTACCTGCTAACTTAGAGATCCTGGATTTATCTGGAAACCAGCTCCTCTCTCCTGATCCTAATGTATTT
+GCATCACTGAGTGCCATGGACATAACTCATAACAAATTCATCTGTGACTGTGAACTTAGTGCTTTTATCCATTGGCTC
+AATCAAACCAATATCACAATAGCTGGGTCTCCAGCAGACATGTACTGCATGTACCCAAACTTTCTGGCTAGGGTTTAA
+GAAAGAAAAGGAAAGGAAGAAAGACAGTGCTATTCAGCTGCAAAGTGTAACCACCATCTCCTAGGCAAAGGAGCAGTT
+TCCACTTACTGCAAGCCACAGATAACTCTGTACCTTTTATTTCCGC"
+          }
+        }
+      }
+    }
+  }
+}

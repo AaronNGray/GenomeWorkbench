@@ -1,0 +1,20 @@
+MACRO Add16S_01 "Remove any features"
+FOR EACH TSEntry
+DO
+    RemoveAllFeatures();
+DONE
+------------------------------------------------------------------------------
+Macro Add16S_02 "Apply rRNA with rRNA name '16S ribosomal RNA'"
+VAR
+    partial5 = true
+    partial3 = true
+    strand = "plus"
+VAR
+    add_redundant = true
+    rna_name = "16S ribosomal RNA"
+For Each SeqNa
+DO
+    location = MakeWholeSeqInterval(partial5, partial3, strand);
+    ApplyRNA("rRNA", rna_name, location, add_redundant);
+DONE
+------------------------------------------------------------------------------

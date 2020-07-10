@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.w_snp_bins.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_snp_bins)
+  NCBI_sources(bins_ds bins_track bins_glyph gmark_glyph scatter_glyph)
+  NCBI_uses_toolkit_libraries(w_seq_graphic)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbidiag_p.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbidiag_p)
+  NCBI_sources(test_ncbidiag_p.cpp test_ncbidiag_py test_ncbidiag_pn)
+  NCBI_headers(test_ncbidiag_p.hpp)
+  NCBI_uses_toolkit_libraries(test_mt)
+  NCBI_add_test()
+  NCBI_project_watchers(grichenk)
+NCBI_end_app()
+
+

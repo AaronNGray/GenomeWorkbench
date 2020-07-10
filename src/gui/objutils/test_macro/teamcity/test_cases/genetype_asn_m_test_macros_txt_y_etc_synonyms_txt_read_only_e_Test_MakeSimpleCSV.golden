@@ -1,0 +1,4 @@
+accession,start,stop,gene locus,strand,GeneID,gene descr,gene_type,label
+KF591393,112,543,"Putative terminase, large subunit gene",plus,7865,terminase large subunit gene,pseudogene,"Putative terminase, large subunit gene"
+KF591394,467,688,putative tape measure protein gene,plus,23456,tape measure protein gene,pseudogene,putative tape measure protein gene
+KF591394,120,242,"Hypothetical, protein gene",plus,,Hypothetical protein gene,gene,"Hypothetical, protein gene"

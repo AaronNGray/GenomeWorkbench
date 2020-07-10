@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_multialign.cgi.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_multialign.cgi)
+  NCBI_sources(aln_multi_cgi)
+  NCBI_uses_toolkit_libraries(w_aln_multi gui_glmesa)
+  NCBI_requires(wxWidgets GLEW OSMesa)
+NCBI_end_app()

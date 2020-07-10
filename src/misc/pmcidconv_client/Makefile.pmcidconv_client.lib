@@ -1,0 +1,12 @@
+# $Id: Makefile.pmcidconv_client.lib 539696 2017-06-26 17:47:33Z bollin $
+
+LIB = pmcidconv_client
+SRC = pmcidconv_client
+
+DLL_LIB = xmlwrapp
+
+WATCHERS = bollin
+
+USES_LIBRARIES = xconnect xmlwrapp
+
+ASN_DEP = pub

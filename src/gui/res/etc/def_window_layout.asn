@@ -1,0 +1,618 @@
+User-object ::= {
+  class "NCBI",
+  type str "GUI-App-Registry",
+  data {
+    {
+      label str "WindowLayouts2",
+      data fields {
+        {
+          label str "Default",
+          data object {
+            type str "Dock Manager Layout 2",
+            data {
+              {
+                label str "VideoId",
+                data str "744F290E13EF8B75016390024E8E7012"
+              },
+              {
+                label str "Containers",
+                num 1,
+                data objects {
+                  {
+                    type str "DockContainer",
+                    data {
+                      {
+                        label str "Tree",
+                        data object {
+                          type str "Layout Tree Node",
+                          data {
+                            {
+                              label str "Type",
+                              data int 1
+                            },
+                            {
+                              label str "Hidden",
+                              data bool FALSE
+                            },
+                            {
+                              label str "Fingerprint",
+                              data str ""
+                            },
+                            {
+                              label str "Central",
+                              data bool FALSE
+                            },
+                            {
+                              label str "Splitter Sizes",
+                              num 2,
+                              data ints {
+                                548,
+                                311
+                              }
+                            },
+                            {
+                              label str "Children",
+                              num 2,
+                              data objects {
+                                {
+                                  type str "Layout Tree Node",
+                                  data {
+                                    {
+                                      label str "Type",
+                                      data int 2
+                                    },
+                                    {
+                                      label str "Hidden",
+                                      data bool FALSE
+                                    },
+                                    {
+                                      label str "Fingerprint",
+                                      data str ""
+                                    },
+                                    {
+                                      label str "Central",
+                                      data bool FALSE
+                                    },
+                                    {
+                                      label str "Splitter Sizes",
+                                      num 2,
+                                      data ints {
+                                        303,
+                                        970
+                                      }
+                                    },
+                                    {
+                                      label str "Children",
+                                      num 2,
+                                      data objects {
+                                        {
+                                          type str "Layout Tree Node",
+                                          data {
+                                            {
+                                              label str "Type",
+                                              data int 0
+                                            },
+                                            {
+                                              label str "Hidden",
+                                              data bool FALSE
+                                            },
+                                            {
+                                              label str "Fingerprint",
+                                              data str "Project View"
+                                            },
+                                            {
+                                              label str "Central",
+                                              data bool FALSE
+                                            }
+                                          }
+                                        },
+                                        {
+                                          type str "Layout Tree Node",
+                                          data {
+                                            {
+                                              label str "Type",
+                                              data int 3
+                                            },
+                                            {
+                                              label str "Hidden",
+                                              data bool FALSE
+                                            },
+                                            {
+                                              label str "Fingerprint",
+                                              data str ""
+                                            },
+                                            {
+                                              label str "Central",
+                                              data bool TRUE
+                                            },
+                                            {
+                                              label str "Children",
+                                              num 1,
+                                              data objects {
+                                                {
+                                                  type str "Layout Tree Node",
+                                                  data {
+                                                    {
+                                                      label str "Type",
+                                                      data int 0
+                                                    },
+                                                    {
+                                                      label str "Hidden",
+                                                      data bool FALSE
+                                                    },
+                                                    {
+                                                      label str "Fingerprint",
+                                                      data str "Search View"
+                                                    },
+                                                    {
+                                                      label str "Central",
+                                                      data bool FALSE
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                {
+                                  type str "Layout Tree Node",
+                                  data {
+                                    {
+                                      label str "Type",
+                                      data int 2
+                                    },
+                                    {
+                                      label str "Hidden",
+                                      data bool FALSE
+                                    },
+                                    {
+                                      label str "Fingerprint",
+                                      data str ""
+                                    },
+                                    {
+                                      label str "Central",
+                                      data bool FALSE
+                                    },
+                                    {
+                                      label str "Splitter Sizes",
+                                      num 2,
+                                      data ints {
+                                        661,
+                                        612
+                                      }
+                                    },
+                                    {
+                                      label str "Children",
+                                      num 2,
+                                      data objects {
+                                        {
+                                          type str "Layout Tree Node",
+                                          data {
+                                            {
+                                              label str "Type",
+                                              data int 3
+                                            },
+                                            {
+                                              label str "Hidden",
+                                              data bool FALSE
+                                            },
+                                            {
+                                              label str "Fingerprint",
+                                              data str ""
+                                            },
+                                            {
+                                              label str "Central",
+                                              data bool FALSE
+                                            },
+                                            {
+                                              label str "Children",
+                                              num 2,
+                                              data objects {
+                                                {
+                                                  type str "Layout Tree Node",
+                                                  data {
+                                                    {
+                                                      label str "Type",
+                                                      data int 0
+                                                    },
+                                                    {
+                                                      label str "Hidden",
+                                                      data bool FALSE
+                                                    },
+                                                    {
+                                                      label str "Fingerprint",
+                                                      data str "Event View"
+                                                    },
+                                                    {
+                                                      label str "Central",
+                                                      data bool FALSE
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  type str "Layout Tree Node",
+                                                  data {
+                                                    {
+                                                      label str "Type",
+                                                      data int 0
+                                                    },
+                                                    {
+                                                      label str "Hidden",
+                                                      data bool FALSE
+                                                    },
+                                                    {
+                                                      label str "Fingerprint",
+                                                      data str "Task View"
+                                                    },
+                                                    {
+                                                      label str "Central",
+                                                      data bool FALSE
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        },
+                                        {
+                                          type str "Layout Tree Node",
+                                          data {
+                                            {
+                                              label str "Type",
+                                              data int 0
+                                            },
+                                            {
+                                              label str "Hidden",
+                                              data bool FALSE
+                                            },
+                                            {
+                                              label str "Fingerprint",
+                                              data str "Active Objects Inspector"
+                                            },
+                                            {
+                                              label str "Central",
+                                              data bool FALSE
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        label str "WindowPos",
+                        data object {
+                          type str "WindowPos",
+                          data {
+                            {
+                              label str "x",
+                              data int 0
+                            },
+                            {
+                              label str "y",
+                              data int 0
+                            },
+                            {
+                              label str "width",
+                              data int 600
+                            },
+                            {
+                              label str "height",
+                              data int 500
+                            },
+                            {
+                              label str "maximized",
+                              data bool TRUE
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      label str "WindowLayouts",
+      data fields {
+        {
+          label str "Default",
+          data object {
+            type str "Dock Manager Layout",
+            data {
+              {
+                label str "Containers",
+                num 1,
+                data objects {
+                  {
+                    type str "Layout Tree Node",
+                    data {
+                      {
+                        label str "Type",
+                        data int 1
+                      },
+                      {
+                        label str "Hidden",
+                        data bool FALSE
+                      },
+                      {
+                        label str "Fingerprint",
+                        data str ""
+                      },
+                      {
+                        label str "Central",
+                        data bool FALSE
+                      },
+                      {
+                        label str "Splitter Sizes",
+                        num 2,
+                        data ints {
+                          548,
+                          311
+                        }
+                      },
+                      {
+                        label str "Children",
+                        num 2,
+                        data objects {
+                          {
+                            type str "Layout Tree Node",
+                            data {
+                              {
+                                label str "Type",
+                                data int 2
+                              },
+                              {
+                                label str "Hidden",
+                                data bool FALSE
+                              },
+                              {
+                                label str "Fingerprint",
+                                data str ""
+                              },
+                              {
+                                label str "Central",
+                                data bool FALSE
+                              },
+                              {
+                                label str "Splitter Sizes",
+                                num 2,
+                                data ints {
+                                  303,
+                                  970
+                                }
+                              },
+                              {
+                                label str "Children",
+                                num 2,
+                                data objects {
+                                  {
+                                    type str "Layout Tree Node",
+                                    data {
+                                      {
+                                        label str "Type",
+                                        data int 0
+                                      },
+                                      {
+                                        label str "Hidden",
+                                        data bool FALSE
+                                      },
+                                      {
+                                        label str "Fingerprint",
+                                        data str "Project View"
+                                      },
+                                      {
+                                        label str "Central",
+                                        data bool FALSE
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type str "Layout Tree Node",
+                                    data {
+                                      {
+                                        label str "Type",
+                                        data int 3
+                                      },
+                                      {
+                                        label str "Hidden",
+                                        data bool FALSE
+                                      },
+                                      {
+                                        label str "Fingerprint",
+                                        data str ""
+                                      },
+                                      {
+                                        label str "Central",
+                                        data bool TRUE
+                                      },
+                                      {
+                                        label str "Children",
+                                        num 1,
+                                        data objects {
+                                          {
+                                            type str "Layout Tree Node",
+                                            data {
+                                              {
+                                                label str "Type",
+                                                data int 0
+                                              },
+                                              {
+                                                label str "Hidden",
+                                                data bool FALSE
+                                              },
+                                              {
+                                                label str "Fingerprint",
+                                                data str "Search View"
+                                              },
+                                              {
+                                                label str "Central",
+                                                data bool FALSE
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          {
+                            type str "Layout Tree Node",
+                            data {
+                              {
+                                label str "Type",
+                                data int 2
+                              },
+                              {
+                                label str "Hidden",
+                                data bool FALSE
+                              },
+                              {
+                                label str "Fingerprint",
+                                data str ""
+                              },
+                              {
+                                label str "Central",
+                                data bool FALSE
+                              },
+                              {
+                                label str "Splitter Sizes",
+                                num 2,
+                                data ints {
+                                  661,
+                                  612
+                                }
+                              },
+                              {
+                                label str "Children",
+                                num 2,
+                                data objects {
+                                  {
+                                    type str "Layout Tree Node",
+                                    data {
+                                      {
+                                        label str "Type",
+                                        data int 3
+                                      },
+                                      {
+                                        label str "Hidden",
+                                        data bool FALSE
+                                      },
+                                      {
+                                        label str "Fingerprint",
+                                        data str ""
+                                      },
+                                      {
+                                        label str "Central",
+                                        data bool FALSE
+                                      },
+                                      {
+                                        label str "Children",
+                                        num 2,
+                                        data objects {
+                                          {
+                                            type str "Layout Tree Node",
+                                            data {
+                                              {
+                                                label str "Type",
+                                                data int 0
+                                              },
+                                              {
+                                                label str "Hidden",
+                                                data bool FALSE
+                                              },
+                                              {
+                                                label str "Fingerprint",
+                                                data str "Event View"
+                                              },
+                                              {
+                                                label str "Central",
+                                                data bool FALSE
+                                              }
+                                            }
+                                          },
+                                          {
+                                            type str "Layout Tree Node",
+                                            data {
+                                              {
+                                                label str "Type",
+                                                data int 0
+                                              },
+                                              {
+                                                label str "Hidden",
+                                                data bool FALSE
+                                              },
+                                              {
+                                                label str "Fingerprint",
+                                                data str "Task View"
+                                              },
+                                              {
+                                                label str "Central",
+                                                data bool FALSE
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  {
+                                    type str "Layout Tree Node",
+                                    data {
+                                      {
+                                        label str "Type",
+                                        data int 0
+                                      },
+                                      {
+                                        label str "Hidden",
+                                        data bool FALSE
+                                      },
+                                      {
+                                        label str "Fingerprint",
+                                        data str "Active Objects Inspector"
+                                      },
+                                      {
+                                        label str "Central",
+                                        data bool FALSE
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                label str "Dead Descriptors",
+                num 0,
+                data objects {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

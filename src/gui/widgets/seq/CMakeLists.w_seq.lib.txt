@@ -1,0 +1,28 @@
+#############################################################################
+# $Id: CMakeLists.w_seq.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_seq)
+  NCBI_sources(
+    feature_check_panel feature_check_dialog
+    flat_file_text_item flat_file_header_item flat_file_context
+    flat_file_seqblock_collapsed flat_file_feature_collapsed
+    flat_file_retrieve_job flat_feature_retrieve_job
+    flat_file_seq_iterator flat_file_seq_block_iterator
+    features_group sequence_group
+    text_retrieve_job
+    asn_retrieve_job asn_header_item asn_header_primitive
+    asn_element_item asn_block_end_item info_item
+    asn_styles asn_view_context
+    asn_element_primitive asn_element_block_start asn_element_block_collapsed
+    xml_retrieve_job xml_base_item xml_version_item xml_doctype_item
+    xml_value_item xml_expand_item xml_closed_block xml_styles
+    sequence_goto_dlg text_panel
+    fasta_retrieve_job flat_file_sequence_list_job text_ds
+    fasta_title_item fasta_seqhdr_item fasta_seqblock_item
+    flat_file_locus_item feature_create_dlg text_view_options_dlg
+    select_sequence_dlg edit_tb fasta_context
+  )
+  NCBI_uses_toolkit_libraries(w_text_widget)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

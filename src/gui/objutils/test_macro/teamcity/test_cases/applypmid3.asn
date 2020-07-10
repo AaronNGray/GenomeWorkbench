@@ -1,0 +1,188 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "NODE_241_length_126_cov_48.706348"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          tech wgs
+        },
+        source {
+          org {
+            taxname "Escherichia coli",
+            db {
+              {
+                db "taxon",
+                tag id 562
+              }
+            },
+            syn {
+              "Bacillus coli",
+              "Bacterium coli",
+              "Bacterium coli commune",
+              "E. coli",
+              "Enterococcus coli"
+            },
+            orgname {
+              name binomial {
+                genus "Escherichia",
+                species "coli"
+              },
+              lineage "cellular organisms; Bacteria; Proteobacteria;
+ Gammaproteobacteria; Enterobacterales; Enterobacteriaceae; Escherichia",
+              gcode 11,
+              mgcode 0,
+              div "BCT"
+            }
+          }
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "De Toro",
+                      first "Maria",
+                      initials "M."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Fernandez",
+                      first "Javier",
+                      initials "J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Garcia",
+                      first "Vanessa",
+                      initials "V."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Mora",
+                      first "Azucena",
+                      initials "A."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Blanco",
+                      first "Jorge",
+                      initials "J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "De La Cruz",
+                      first "Fernando",
+                      initials "F."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Rodicio",
+                      first "M Rosario",
+                      initials "M.R."
+                    }
+                  }
+                }
+              },
+              title "Comprehensive analysis of OXA-48 producing Escherichia
+ coli from a Spanish hospital using whole genome sequencing combined with
+ conventional typing tools"
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "De Toro",
+                      first "Maria",
+                      initials "M."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Fernandez",
+                      first "Javier",
+                      initials "J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Garcia",
+                      first "Vanessa",
+                      initials "V."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Mora",
+                      first "Azucena",
+                      initials "A."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Blanco",
+                      first "Jorge",
+                      initials "J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "De La Cruz",
+                      first "Fernando",
+                      initials "F."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Rodicio",
+                      first "M Rosario",
+                      initials "M.R."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Centro de Investigacion Biomedica de La Rioja",
+                  div "Genomics & Bioinformatics Core Facility",
+                  city "Logrono",
+                  sub "La Rioja",
+                  country "Spain",
+                  street "Piqueras 98, 3",
+                  postal-code "26006"
+                }
+              },
+              date std {
+                year 2017,
+                month 4,
+                day 3
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 214,
+        seq-data ncbi2na '4FB7B45F488C25201F4BF1481C33C564F123FFC800968CEC00A1
+A324A8A365B9C000D2DE13782B3BFFCF48A7477E44093B378080DEA0'H
+      }
+    }
+  }
+}

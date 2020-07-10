@@ -1,0 +1,10 @@
+MACRO ApplygDNA "Apply molecule genomic, class DNA, completeness 'unknown', topology 'not-set'(overwrite existing text), remove strand, where sequence type is nucleotide"
+FOR EACH SeqNa
+DO
+    SetQual("descr..molinfo.biomol", "genomic");
+    SetQual("inst.mol", "dna");
+    SetQual("descr..molinfo.completeness", "unknown");
+    SetQual("inst.topology", "not-set");
+    RemoveQual("inst.strand");
+DONE
+------------------------------------------------------------------------------

@@ -1,0 +1,33 @@
+MACRO ParseBla_Allele_01 "Parse text just after 'bla' from gene allele to gene comment"
+VAR
+   include_left = false
+   include_right = false
+   case_sens_parse = true
+   whole_word = false
+VAR
+   cap_change = "none"
+   existing_text = choice { "eAppend", "ePrepend", "eReplace", "eLeaveOld"}
+   delimiter = choice {";", ",", ":", " "}
+FOR EACH Gene
+DO
+   text = ParsedText("data.gene.allele", "bla", include_left, "", include_right, case_sens_parse, whole_word);
+   AECRParseStringQual(text, "comment", cap_change, existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------
+MACRO ParseBla_Allele_02 "Parse text just after 'bla' from gene allele to CDS comment"
+VAR
+   include_left = false
+   include_right = false
+   case_sens_parse = true
+   whole_word = false
+VAR
+   cap_change = "none"
+   existing_text = choice { "eAppend", "ePrepend", "eReplace", "eLeaveOld"}
+   delimiter = choice {";", ",", ":", " "}
+FOR EACH Cdregion
+DO
+   src_obj = Related_Feature("gene", "data.gene.allele");
+   text = ParsedText(src_obj, "bla", include_left, "", include_right, case_sens_parse, whole_word);
+   AECRParseStringQual(text, "comment", cap_change, existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------

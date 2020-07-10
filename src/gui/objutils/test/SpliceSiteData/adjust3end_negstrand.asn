@@ -1,0 +1,281 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Colletotrichum siamense",
+        db {
+          {
+            db "taxon",
+            tag id 690259
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Colletotrichum",
+            species "siamense"
+          },
+          attrib "specified",
+          mod {
+            {
+              subtype nat-host,
+              subname "Ligustrum japonicum"
+            }
+          },
+          lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Hypocreomycetidae; Glomerellales; Glomerellaceae;
+ Colletotrichum",
+          gcode 1,
+          mgcode 4,
+          div "PLN"
+        }
+      },
+      subtype {
+        {
+          subtype country,
+          name "China"
+        }
+      }
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "BSeq#1",
+        general {
+          db "BankIt",
+          tag str "1981429/BSeq#1"
+        },
+        general {
+          db "TMSMART",
+          tag id 75664756
+        },
+        genbank {
+          accession "KY440782"
+        }
+      },
+      descr {
+        title "Colletotrichum siamense TUB2 gene, partial cds.",
+        molinfo {
+          biomol genomic,
+          completeness partial
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 748,
+        strand ds,
+        seq-data ncbi2na '2557152FBE5A4521E960860BEDAA68227A580A1691A1A6D4EB16
+A7503618A1A46A91B1FBE5A097AB28982B4B1DB433BF37E477AA9CC2B0407DBE0B219D399D89E8
+9D22B96FB27BD8BF26B41450EE948C2A9384C4753E7B6296E765203BFE5C7736D04DE5B5D90B33
+3E5A36DA6B76D1B148292450DEBC57B10A2BC956434A4BE8FE9FA821F191E96B7A2B817B210000
+924B49004F522FA1B638F84A6D9ABFBE24C82DAB003B69AAC674AA429A3019B6426FBEE3EEB8E8
+7907C4D559'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type mRNA,
+                ext name "beta-tubulin"
+              },
+              partial TRUE,
+              location packed-int {
+                {
+                  from 532,
+                  to 555,
+                  strand minus,
+                  id genbank {
+                    accession "KY440782"
+                  },
+                  fuzz-to lim gt
+                },
+                {
+                  from 448,
+                  to 473,
+                  strand minus,
+                  id genbank {
+                    accession "KY440782"
+                  }
+                },
+                {
+                  from 335,
+                  to 376,
+                  strand minus,
+                  id genbank {
+                    accession "KY440782"
+                  }
+                },
+                {
+                  from 225,
+                  to 279,
+                  strand minus,
+                  id genbank {
+                    accession "KY440782"
+                  }
+                },
+                {
+                  from 28,
+                  to 153,
+                  strand minus,
+                  id genbank {
+                    accession "KY440782"
+                  },
+                  fuzz-from lim lt
+                }
+              }
+            },
+            {
+              data imp {
+                key "exon"
+              },
+              partial TRUE,
+              location int {
+                from 532,
+                to 555,
+                strand minus,
+                id genbank {
+                  accession "KY440782"
+                },
+                fuzz-to lim gt
+              },
+              qual {
+                {
+                  qual "number",
+                  val "1"
+                }
+              }
+            },
+            {
+              data imp {
+                key "exon"
+              },
+              location int {
+                from 28,
+                to 153,
+                strand minus,
+                id genbank {
+                  accession "KY440782"
+                }
+              },
+              qual {
+                {
+                  qual "number",
+                  val "5"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "BSeq#1_prot_1",
+        general {
+          db "TMSMART",
+          tag id 75664757
+        }
+      },
+      descr {
+        title "TUB2, partial [Colletotrichum siamense]",
+        molinfo {
+          biomol peptide,
+          completeness no-ends
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 91,
+        seq-data ncbieaa "VHLQTGQCGNQIGAAFWQNISGEHGLDSNGVYNGTSELQLERMSVYFNEASG
+NKYVPRAVLVDLEPGTMDAVRAGPFGQLFRPDNFVFGQS"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "TUB2"
+                },
+                desc "beta-tubulin 2 gene"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 90,
+                id local str "BSeq#1_prot_1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame one,
+            code {
+              id 1
+            }
+          },
+          partial TRUE,
+          product whole local str "BSeq#1_prot_1",
+          location packed-int {
+            {
+              from 532,
+              to 555,
+              strand minus,
+              id genbank {
+                accession "KY440782"
+              },
+              fuzz-to lim gt
+            },
+            {
+              from 448,
+              to 473,
+              strand minus,
+              id genbank {
+                accession "KY440782"
+              }
+            },
+            {
+              from 335,
+              to 376,
+              strand minus,
+              id genbank {
+                accession "KY440782"
+              }
+            },
+            {
+              from 225,
+              to 279,
+              strand minus,
+              id genbank {
+                accession "KY440782"
+              }
+            },
+            {
+              from 28,
+              to 153,
+              strand minus,
+              id genbank {
+                accession "KY440782"
+              },
+              fuzz-from lim lt
+            }
+          }
+        }
+      }
+    }
+  }
+}

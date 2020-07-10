@@ -1,0 +1,83 @@
+MACRO rRNAmacro_01 "Edit rRNA product replace 's-rRNA' (case insensitive) with '12S ribosomal RNA'"
+VAR
+    find_text = "s-rRNA"
+    repl_text = "12S ribosomal RNA"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO rRNAmacro_02 "Edit rRNA product replace 'l-rRNA' (case insensitive) with '16S ribosomal RNA'"
+VAR
+    find_text = "l-rRNA"
+    repl_text = "16S ribosomal RNA"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO rRNAmacro_03 "Edit rRNA product replace '5 ribosomal' with '5S ribosomal'"
+VAR
+    find_text = "5 ribosomal"
+    repl_text = "5S ribosomal"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO rRNAmacro_04 "Remove gene db-xref"
+FOR EACH Gene
+DO
+    RemoveQual("dbxref");
+DONE
+------------------------------------------------------------------------------
+MACRO rRNAmacro_05 "Edit rRNA product replace 'small ribosomal RNA subunit RNA' with '12S rRNA'"
+VAR
+    find_text = "small ribosomal RNA subunit RNA"
+    repl_text = "12S rRNA"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO rRNAmacro_06 "Edit rRNA product replace 'l-RNA' with '16S rRNA'"
+VAR
+    find_text = "l-RNA"
+    repl_text = "16S rRNA"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO rRNAmacro_07 "Edit rRNA product replace 's-RNA' with '12S rRNA'"
+VAR
+    find_text = "s-RNA"
+    repl_text = "12S rRNA"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO rRNAmacro_08 "Edit rRNA product replace 'large ribosomal RNA subunit RNA' with '16S rRNA'"
+VAR
+    find_text = "large ribosomal RNA subunit RNA"
+    repl_text = "16S rRNA"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH rRNA
+DO
+    EditStringQual ("data.rna.ext.name", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------

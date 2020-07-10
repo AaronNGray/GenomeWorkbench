@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.lmdbxx_sample.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(lmdbxx_sample)
+  NCBI_sources(example.cpp)
+  NCBI_add_include_directories(${includedir}/util/lmdbxx)
+  NCBI_project_tags(demo)
+  NCBI_project_watchers(ivanov)
+NCBI_end_app()
+

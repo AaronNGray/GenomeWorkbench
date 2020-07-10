@@ -1,0 +1,11 @@
+MACRO TSANote "Edit CDS comment replace 'Incomplete stop codon' with 'TAA stop codon is completed by the addition of 3' A residues to the mRNA'"
+VAR
+    find_text = "Incomplete stop codon"
+    repl_text = "TAA stop codon is completed by the addition of 3' A residues to the mRNA"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Cdregion
+DO
+    EditStringQual("comment", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------

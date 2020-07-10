@@ -1,0 +1,6 @@
+# $Id: Makefile.in 38225 2017-04-12 14:24:56Z evgeniev $
+
+LIB_PROJ = w_feedback
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

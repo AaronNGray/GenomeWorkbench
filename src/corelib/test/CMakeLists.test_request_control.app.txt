@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_request_control.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_request_control)
+  NCBI_sources(test_request_control)
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_add_test()
+  NCBI_project_watchers(ivanov)
+NCBI_end_app()
+

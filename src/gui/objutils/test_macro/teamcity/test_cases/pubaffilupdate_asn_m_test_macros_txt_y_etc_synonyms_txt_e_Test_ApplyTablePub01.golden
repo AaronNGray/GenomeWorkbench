@@ -1,0 +1,358 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "?"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Lorch",
+              first "Jeffrey",
+              initials "J.M."
+            }
+          }
+        },
+        affil std {
+          affil "U.S. Geological Survey",
+          div "National Wildlife Health Center",
+          city "Madison",
+          sub "WI",
+          country "USA",
+          street "6006 Schroeder Road",
+          postal-code "53711"
+        }
+      },
+      medium email,
+      date std {
+        year 2016,
+        month 6,
+        day 30
+      }
+    },
+    tool "Genome Workbench 3.1.1 Windows 10 (build 17134), 64-bit edition"
+  },
+  data entrys {
+    set {
+      class genbank,
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KX290926"
+            },
+            gi 1044897359
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            pub {
+              pub {
+                gen {
+                  cit "Unpublished",
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lorch",
+                          first "Jeffrey",
+                          initials "J.M."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "University of Madrid",
+                      div "Physics",
+                      country "Spain",
+                      street "Goya Str.",
+                      postal-code "89765"
+                    }
+                  },
+                  title "First detection of bat white-nose syndrome in western
+ North America"
+                }
+              }
+            },
+            pub {
+              pub {
+                sub {
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lorch",
+                          first "Jeffrey",
+                          initials "J.M."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "U.S. Geological Survey; University of Madrid",
+                      div "National Wildlife Health Center; Physics",
+                      city "Madison",
+                      sub "WI",
+                      country "USA; Spain",
+                      street "6006 Schroeder Road; Goya Str.",
+                      postal-code "53711; 89765"
+                    }
+                  },
+                  medium email,
+                  date std {
+                    year 2016,
+                    month 5,
+                    day 26
+                  },
+                  descr "First detection of bat white-nose syndrome in western
+ North America"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 677,
+            strand ds,
+            seq-data iupacna "TACGAAAGGACAAGAGAGACAGGGCCCACTTAAAATAAGCGCCCTAAC
+TAATTAGATGAAATAATCTCAATCTTATATAAATATAAATTTAACCCAAGAATAGGGTTCAGTTAAAGTGGCAGAGAC
+CGGTAATTGCATAAAACTTAAGCTTTTAAAACCAGAGGTTCAATTCCTCTCTTTAACAATTCTATGTATCTTGTTAAT
+TTATTAGCAATAATTATCCCCATTCTCCTAGCCGTAGCATTCCTGACCCTACTAGAACGAAAAGTGTTAGGCTATATA
+CAACTCCGAAAAGGACCCAATGTTGTAGGCCCTTACGGCTTACTACAACCAATTGCCGATGCAGTTAAATTATTTACT
+AAAGAACCCCTACAACCACTAACATCATCCCTTACCTTATTTATTATCGCACCTACCCTAGCCTTGACCCTCGCTTTG
+ATAATATGAATTCCACTGCCAATACCACACCCCCTAATCAACATAAACCTAAGCATACTTTTTACCCCTCACCCTAGT
+AATATGCATATGACATGTAACTCTGCCTATTATTTTAGCAAGTATTCCACCTCAAACATAAGAAATATGTCTGATAAT
+AGAGTTACTTTGATAGAGTAAATCATAGGGGTTTAAATCCCCTTATTTCTAGAGTTACAGGAATTGAACCTGCTCCTA
+AGAAT"
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "KX290927"
+            },
+            gi 1044897361
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            source {
+              genome mitochondrion,
+              org {
+                taxname "Myotis lucifugus",
+                common "little brown bat",
+                db {
+                  {
+                    db "taxon",
+                    tag id 59463
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Myotis",
+                    species "lucifugus"
+                  },
+                  attrib "specified",
+                  lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Laurasiatheria; Chiroptera;
+ Microchiroptera; Vespertilionidae; Myotis",
+                  gcode 1,
+                  mgcode 2,
+                  div "MAM"
+                }
+              }
+            },
+            pub {
+              pub {
+                gen {
+                  cit "Unpublished",
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lorch",
+                          first "Jeffrey",
+                          initials "J.M."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "University of Barcelona",
+                      div "Biophysics",
+                      street "Goya Str.",
+                      postal-code "76543"
+                    }
+                  },
+                  title "First detection of bat white-nose syndrome in western
+ North America"
+                }
+              }
+            },
+            pub {
+              pub {
+                sub {
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lorch",
+                          first "Jeffrey",
+                          initials "J.M."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "U.S. Geological Survey; University of Barcelona",
+                      div "National Wildlife Health Center; Biophysics",
+                      city "Madison",
+                      sub "WI",
+                      street "6006 Schroeder Road; Goya Str.",
+                      postal-code "53711; 76543"
+                    }
+                  },
+                  medium email,
+                  date std {
+                    year 2016,
+                    month 5,
+                    day 27
+                  },
+                  descr "First detection of bat white-nose syndrome in western
+ North America"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 110,
+            strand ds,
+            seq-data iupacna "ATGACCAACATTCGCTTCTTATACAATTAGCATCAATTCTCTACTTTT
+CTATTATCATTATCTTAATACCACTCACCAGCCTGATAGAAAACCATTTACTAAAATGAAGA"
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "KX463942"
+            },
+            gi 1044897654
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2016,
+              month 7,
+              day 20
+            },
+            source {
+              genome mitochondrion,
+              org {
+                taxname "Myotis lucifugus",
+                common "little brown bat",
+                db {
+                  {
+                    db "taxon",
+                    tag id 59463
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Myotis",
+                    species "lucifugus"
+                  },
+                  attrib "specified",
+                  lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Laurasiatheria; Chiroptera;
+ Microchiroptera; Vespertilionidae; Myotis",
+                  gcode 1,
+                  mgcode 2,
+                  div "MAM"
+                }
+              }
+            },
+            pub {
+              pub {
+                gen {
+                  cit "Unpublished",
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lorch",
+                          first "Jeffrey",
+                          initials "J.M."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "Pottsdam University",
+                      div "Biology",
+                      country "Germany",
+                      street "Baum Str.",
+                      postal-code "6543"
+                    }
+                  },
+                  title "First detection of bat white-nose syndrome in western
+ North America"
+                }
+              }
+            },
+            pub {
+              pub {
+                sub {
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lorch",
+                          first "Jeffrey",
+                          initials "J.M."
+                        }
+                      }
+                    },
+                    affil std {
+                      affil "U.S. Geological Survey; Pottsdam University",
+                      div "National Wildlife Health Center; Biology",
+                      city "Madison",
+                      sub "WI",
+                      country "USA; Germany",
+                      street "6006 Schroeder Road; Baum Str.",
+                      postal-code "53711; 6543"
+                    }
+                  },
+                  medium email,
+                  date std {
+                    year 2016,
+                    month 6,
+                    day 30
+                  },
+                  descr "First detection of bat white-nose syndrome in western
+ North America"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 278,
+            strand ds,
+            seq-data iupacna "TTTGGTGCCTGAGCTGGTATAGTGGGCACTGCATTGAGCCTACTGATC
+CGCGCTGAGCTGGGTCAACCAGGAGCCCTATTGGGTGATGATCAGATTTATAACGTAATTGTCACTGCCCATGCTTAT
+TATTTGTCTGATCTGTTTTAATTACAGCTGTCTTACTTCTTCTCTCTCTTCCAGTCCTAGCTGCCGGGATTACAATAT
+TATTAACAGACCGAAACCTTAATACTACTTTCTTTGATCCTGCCGGAGGAGGAGATCCAATCCTATATCAACAC"
+          }
+        }
+      }
+    }
+  }
+}

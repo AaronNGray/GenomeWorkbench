@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.demo_widgets_gl_wx.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_widgets_gl_wx GUI)
+  NCBI_sources(
+    demo_widgets_gl_wx gl_demo_dlg ruler_demo_panel font_demo_panel
+    font_window gl3d_demo_panel gl3d_window glinfo_demo_panel
+    glpanewidget_demo_panel glpanewidget_child_demo glpanewidget_demo
+  )
+  NCBI_uses_toolkit_libraries(w_gl w_feedback)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_app()

@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.genparams.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(odbc100_genparams)
+  NCBI_sources(genparams common c2string)
+  NCBI_add_test(test-odbc100 --no-auto odbc100_genparams)
+NCBI_end_app()
+

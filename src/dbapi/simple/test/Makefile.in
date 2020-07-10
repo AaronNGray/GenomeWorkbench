@@ -1,0 +1,7 @@
+# $Id: Makefile.in 527389 2017-02-13 19:54:24Z ucko $
+
+APP_PROJ = sdbapi_unit_test mirror_test sdbapi_test_mt_pooling
+PROJ_TAG = test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

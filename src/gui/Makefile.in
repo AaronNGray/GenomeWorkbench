@@ -1,0 +1,16 @@
+# $Id: Makefile.in 43500 2019-07-19 01:28:33Z ucko $
+
+# GUI Projects
+
+REQUIRES = gui algo OpenGL GLEW LIBXML LIBXSLT SQLITE3 -Solaris
+
+SUB_PROJ = utils opengl print objutils objects cache config \
+           graph widgets framework core packages app
+
+PROJ_TAG = gbench
+
+WATCHERS = dicuccio kuznets
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+

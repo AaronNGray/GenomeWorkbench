@@ -1,0 +1,1037 @@
+
+--
+--
+-- --------------------------------------------------------------------------
+-- The Sequence Graphical View Track Configuration Data Structure
+-- --------------------------------------------------------------------------
+
+NCBI-SeqGraphical  DEFINITIONS ::=
+
+BEGIN
+
+IMPORTS User-object FROM NCBI-General;
+
+CheckBox ::= SEQUENCE {
+    name         VisibleString,
+    value        BOOLEAN DEFAULT FALSE,
+    display-name VisibleString OPTIONAL,
+    help         VisibleString OPTIONAL,
+    legend-text  VisibleString OPTIONAL
+}
+
+TextBox ::= SEQUENCE {
+    name         VisibleString,
+    value        VisibleString,
+    display-name VisibleString OPTIONAL,
+    help         VisibleString OPTIONAL,
+    legend-text  VisibleString OPTIONAL
+}
+
+HiddenSetting ::= SEQUENCE {
+    name         VisibleString,
+    value        VisibleString
+}
+
+ChoiceItem ::= SEQUENCE {
+    name         VisibleString,
+    display-name VisibleString OPTIONAL,
+    help         VisibleString OPTIONAL,
+    legend-text  VisibleString OPTIONAL
+}
+
+Choice ::= SEQUENCE {
+    name         VisibleString,
+    curr-value   VisibleString,
+    values       SET OF ChoiceItem,
+    display-name VisibleString OPTIONAL,
+    help         VisibleString OPTIONAL
+}
+
+Conditional ::= SEQUENCE {
+    -- conditional control name
+    name        VisibleString,
+    -- conditional control value
+    value        SET OF VisibleString,
+    action ENUMERATED {
+        enable(0),
+        disable(1)
+    } DEFAULT enable
+}
+
+RangeValue ::= SEQUENCE {
+    min          VisibleString,
+    max          VisibleString, 
+    -- if TRUE range min/max are ignored 
+    autoscale   BOOLEAN DEFAULT TRUE, 
+    -- TRUE if max value should go first in UI
+    inverse      BOOLEAN DEFAULT FALSE 
+}
+
+RangeControl ::= SEQUENCE {
+    name         VisibleString,
+    value        RangeValue,
+    conditions   SET OF Conditional OPTIONAL,
+    display-name VisibleString OPTIONAL,
+    help         VisibleString OPTIONAL
+}
+
+Category ::= SEQUENCE {
+    name         VisibleString,
+    order        INTEGER,
+    display-name VisibleString OPTIONAL,
+    help         VisibleString OPTIONAL
+}
+
+Comment ::= SEQUENCE {
+    label        VisibleString,
+    pos-str      VisibleString
+}
+
+LegendItem ::= SEQUENCE {
+    -- track identifier
+    id           VisibleString,
+    label        VisibleString,
+    color        VisibleString
+}
+
+TrackConfig ::= SEQUENCE {
+    --  track name uniquely identify a track
+    name         VisibleString,
+    --  track order number
+    order        INTEGER,
+    --  track type key, such as gene_model_track
+    key          VisibleString,
+    shown        BOOLEAN DEFAULT FALSE,
+    -- suggested track display name shown in track title bar
+    display-name VisibleString OPTIONAL,
+    --  track subtype key, valid only for feature track
+    subkey       VisibleString OPTIONAL,
+    --  filter apply on a track
+    filter       VisibleString OPTIONAL,
+    help         VisibleString OPTIONAL,
+    legend-text  VisibleString OPTIONAL,
+    --  one or more particular annotations a track looks at
+    annots       SET OF VisibleString OPTIONAL,
+    --  one or more comments to hightlight a sequence location
+    comments     SET OF Comment OPTIONAL,
+
+    category     Category OPTIONAL,
+    subcategory  Category OPTIONAL,
+    choice-list  SET OF Choice OPTIONAL,
+    check-boxes  SET OF CheckBox OPTIONAL,
+    hidden-settings SET OF HiddenSetting OPTIONAL,
+    range-controls SET OF RangeControl OPTIONAL,
+
+    highlights   SET OF VisibleString OPTIONAL,
+    highlights-color VisibleString OPTIONAL,
+    setting-group VisibleString OPTIONAL,
+    sort-by VisibleString OPTIONAL,
+
+    -- track identifier
+    id           VisibleString OPTIONAL,
+
+    -- data source db name
+    dbname       VisibleString OPTIONAL,
+
+    -- Net storage key used for user-uploded data track
+    data-key     VisibleString OPTIONAL,
+
+    -- Optional user-changable settings, such as a threshold value
+    text-boxes   SET OF TextBox OPTIONAL,
+
+    -- Show track title (and title bar) or not
+    show-title   BOOLEAN OPTIONAL,
+
+    -- if TMS returned is_private attribute, contents of this attribute
+    is-private   BOOLEAN OPTIONAL,
+
+    -- stored_scale attribute from TMS (when present there)
+    -- contains a string (linear, log2, loge, log10) that defines the stored format of a histogram
+    stored-scale VisibleString OPTIONAL,
+
+    -- All tracks with the same render group should be rendered in one call
+    render-group INTEGER OPTIONAL,
+
+    -- Track legend
+    legend        SET OF LegendItem OPTIONAL,
+
+    -- user-defined track_id (e.g. to assign graphs to graph overlay)
+    uId VisibleString OPTIONAL,
+
+    --  list of id, annots or track_id that this track contains (e.g. graph_overlay children)
+    subTracks       SET OF VisibleString OPTIONAL,
+
+    -- batch for alignment tracks based on AlignDb
+    batch VisibleString OPTIONAL,
+
+    -- affinity token that needs to be presented to seqgraphic.cgi in affinity_token parameter
+    -- when it is called specifically for this track
+    affinity-token VisibleString OPTIONAL,
+
+    -- data provider for this track
+    -- if absent, seqgraphic is assumed
+    data-provider VisibleString OPTIONAL,
+
+    -- data is remote
+    -- if absent, false is assumed
+    remote-data VisibleString OPTIONAL,
+
+    -- contents of TMS seq_data_key to NetCache that contains GBProject with local sequence data
+    seq-data-key VisibleString OPTIONAL,
+
+    -- extra, track dependend, info needed to create the track
+    extra-info VisibleString OPTIONAL,
+
+    -- for remote tracks (bigBed/bigWig), string to which NCBI seq-id is mapped in the remote file
+    rmt-mapped-id VisibleString OPTIONAL,
+
+    -- for remote tracks (BAM), the location of a remote data file containing the index.
+    big-data-index VisibleString OPTIONAL,
+
+    -- hub information to which this track may belong
+    hub-id VisibleString OPTIONAL,
+    hub-name VisibleString OPTIONAL,
+    hub-url VisibleString OPTIONAL
+}
+
+TrackConfigSet ::= SET OF TrackConfig
+
+TrackConfigResult ::= SEQUENCE {
+    track-config-set TrackConfigSet OPTIONAL,
+    success BOOLEAN OPTIONAL,
+    err-msg VisibleString OPTIONAL
+}
+
+-- old stuff, to be removed
+DisplayOptions ::= SEQUENCE {
+    id              VisibleString,
+    track-type      VisibleString,
+    subtype         VisibleString OPTIONAL,
+    legend-link     VisibleString OPTIONAL,
+    choice-list     SET OF Choice OPTIONAL,
+    check-boxes     SET OF CheckBox OPTIONAL,
+    range-controls  SET OF RangeControl OPTIONAL,
+    hidden-settings SET OF HiddenSetting OPTIONAL
+}
+
+DisplayOptionSet ::= SET OF DisplayOptions
+
+-- new stuff
+DisplayOptionValue ::= SEQUENCE {
+    key     VisibleString,
+    label   VisibleString OPTIONAL,
+    help    VisibleString OPTIONAL,
+    legend  VisibleString OPTIONAL
+}
+
+DisplayOption ::= SEQUENCE {
+    type   VisibleString,
+    key    VisibleString,
+    label  VisibleString OPTIONAL,
+    dflt   VisibleString OPTIONAL,
+    help   VisibleString OPTIONAL,
+    values SET OF DisplayOptionValue OPTIONAL
+}
+
+DisplayTrack ::= SEQUENCE {
+    key     VisibleString,
+    subkey  VisibleString OPTIONAL,
+    options SET OF INTEGER,
+    help    VisibleString OPTIONAL,
+    legend-text VisibleString OPTIONAL
+}
+
+DisplayOptionsBundle ::= SEQUENCE {
+    options SET OF DisplayOption,
+    tracks  SET OF DisplayTrack
+}
+
+END
+
+--
+--
+--
+-- --------------------------------------------------------------------------
+-- The GBench Service is a start-up and reporting service use by Genome
+-- Workbench.  The intention is to provide information to clients about
+-- changes in the application (updates, temporary or long-term) and to
+-- provide a means for clients to tell us about crashes and other events
+-- --------------------------------------------------------------------------
+
+NCBI-GBenchService  DEFINITIONS ::=
+
+BEGIN
+
+IMPORTS PluginInfo        FROM NCBI-Plugin
+        Date, User-object, User-field FROM NCBI-General
+        ;
+
+
+--
+-- A request is a choice of a few different entities
+--
+GBenchServiceRequest ::= CHOICE {
+    init           GBenchInitRequest,
+    version-update GBenchVersionRequest,
+    feedback       GBenchFeedbackRequest,
+    generic        User-object
+}
+
+--
+-- Matched replies for our request
+--
+GBenchServiceReply ::= CHOICE {
+    init           GBenchInitReply,
+    version-update GBenchVersionReply,
+    feedback       NULL,
+    generic        User-object
+}
+
+--
+-- At initialization, we only ask for the version of Genome Workbench
+-- being run.  We must respect our client's privacy, and only request
+-- the barest minimum of information.  A version request includes only
+-- very general information about our clients (the version and build date
+-- of the software, as well as an enumerated category for their operating
+-- system)
+--
+-- All of this information would otherwise be available through a weblog;
+-- thus, we don't request anything that isn't already public
+--
+GBenchInitRequest ::= SEQUENCE {
+    version GBenchVersionInfo
+}
+
+--
+-- We reply to 'init' with the current version so the client can make a
+-- decision about whether to request an update
+-- We also send some configuration information, including:
+--
+--  - a description of publically-available services
+--  - a set of optional config libraries we can use to customize and upgrade
+--    the configuration
+--
+GBenchInitReply ::= SEQUENCE {
+    current-version GBenchVersionInfo,
+    public-services SET OF PluginInfo  OPTIONAL,
+    extra-configs   SET OF User-object OPTIONAL
+}
+
+GBenchVersionRequest ::= SEQUENCE {
+    version GBenchVersionInfo,
+    version-request ENUMERATED {
+        download-url(0),
+        package(1)
+    } DEFAULT download-url
+}
+
+GBenchVersionReply ::= SEQUENCE {
+    -- the version we return
+    version GBenchVersionInfo,
+
+    -- path where the latest version can be found
+    download-path VisibleString,
+
+    -- the package is the executable to be launched
+    -- the package portion is zlib compressed!
+    package OCTET STRING OPTIONAL
+}
+
+
+GBenchFeedbackRequest ::= SEQUENCE {
+    date    Date,
+    version GBenchVersionInfo,
+
+    -- email to contact the submittor
+    email-addr VisibleString OPTIONAL,
+
+    -- description of the issue
+    -- this is zlib compressed
+    desc OCTET STRING OPTIONAL,
+
+    -- application log
+    -- this is zlib compressed!
+    app-log OCTET STRING OPTIONAL,
+
+    -- system config information
+    -- this is zlib compressed!
+    sys-config OCTET STRING OPTIONAL,
+
+    -- set of attachments
+    attachments SET OF GBenchFeedbackAttachment OPTIONAL,
+
+    -- enable subscription to gbench-announce
+    subscribe BOOLEAN OPTIONAL
+}
+
+GBenchFeedbackAttachment ::= SEQUENCE
+{
+    -- path to the file
+    file-path VisibleString,
+
+    -- file contents
+    -- this is zlib compressed!
+    data OCTET STRING
+}
+
+
+OS-Ver ::= ENUMERATED {
+    unknown(0),
+
+    -- bitmaks covering all Windows versions
+    -- this corresponds to 0xff
+    windows-generic(127),
+
+    -- specific windows versions
+    -- 0x1
+    windows-95(1),
+    -- 0x2
+    windows-98(2),
+    -- 0x3
+    windows-me(3),
+    -- 0x4
+    windows-351(4),
+    -- 0x5
+    windows-nt4(5),
+    -- 0x6
+    windows-2000(6),
+    -- 0x7
+    windows-xp(7),
+    -- 0x8
+    windows-2003(8),
+    -- 0x9
+    windows-2003-R2(9),
+    -- 0xa
+    windows-vista(10),
+    -- 0xb
+    windows-2008(11),
+    -- 0xc
+    windows-2008-R2(12),
+    -- 0xd
+    windows-seven(13),
+    -- 0xe
+    windows-2012(14),
+    -- 0xf
+    windows-eight(15),
+    -- 0x10
+    windows-2012-R2(16),
+    -- 0x11
+    windows-eight-one(17),
+    -- 0x12
+    windows-2016(18),
+    -- 0x13
+    windows-ten(19),
+
+    -- bitmask covering all MacOS X versions
+    -- this corresponds to 0xff00
+    macosx-generic(65280),
+
+    -- specific MacOS X versions
+    -- 0x100
+    macosx-10-1(256),
+    -- 0x200
+    macosx-10-2(512),
+    -- 0x300
+    macosx-10-3(768),
+    -- 0x400
+    macosx-10-4(1024),
+    -- 0x500
+    macosx-10-5(1280),
+    -- 0x600
+    macosx-10-6(1536),
+    -- 0x700
+    macosx-10-7(1792),
+    -- 0x800
+    macosx-10-8(2048),
+    -- 0x900
+    macosx-10-9(2304),
+    -- 0xA00
+    macosx-10-10(2560),
+    -- 0xB00
+    macosx-10-11(2816),
+    -- 0xC00
+    macosx-10-12(3072),
+    -- 0xD00
+    macosx-10-13(3328),
+    -- 0xE00
+    macosx-10-14(3584),
+    -- 0xF00
+    macosx-10-15(3840),
+
+    -- bitmask for all linux and unix flavors
+    -- this corresponds to 0xff0000
+    unix-generic(16711680),
+
+    -- specific supported versions
+    -- 0x10000
+    unix-linux(65536),
+    -- 0x20000
+    unix-solaris-9(131072),
+    -- 0x30000
+    unix-solaris-10(196608),
+
+    -- CPU attributes
+    -- general mask (0xff000000)
+    cpu-generic(251658240),
+    -- any intel x32 (0x01000000)
+    intel-x32(16777216),
+    -- any amd x64 (0x02000000)
+    amd-x64(33554432),
+    -- any intel x64 (0x03000000)
+    intel-x64(50331648),
+    -- any powerpc (0x04000000)
+    ppc(67108864),
+    -- any sparc (0x05000000)
+    sparc(83886080),
+    -- any mips (0x06000000)
+    mips(100663296),
+    -- any alpha (0x07000000)
+    alpha(117440512)
+}
+
+GBenchVersionInfo ::= SEQUENCE {
+    ver-major INTEGER,
+    ver-minor INTEGER,
+    ver-patch INTEGER,
+    os-ver INTEGER,
+    -- os-arch INTEGER OPTIONAL,
+    os-ver-string VisibleString OPTIONAL,
+    build-date Date OPTIONAL
+}
+
+
+END
+
+--- -------------------------------------------------------------------------
+---
+--- Definitions for standard plugin interfaces
+---
+--- -------------------------------------------------------------------------
+
+NCBI-Plugin DEFINITIONS ::=
+BEGIN
+
+EXPORTS PluginValue, PluginValueConstraint,
+        PluginArg, PluginArgSet, PluginInfo, PluginInfoSet,
+        PluginRequest, PluginReply, PluginReplyAction,
+        PluginMessage, MessageStatus, MessageHistoryInfo,
+        PluginCommand;
+
+IMPORTS Annotdesc, Bioseq, Seq-annot       FROM NCBI-Sequence
+        Seq-submit              FROM NCBI-Submit
+        Seq-id, Seq-loc         FROM NCBI-Seqloc
+        Seq-align, Seq-align-set FROM NCBI-Seqalign
+        Bioseq-set, Seq-entry   FROM NCBI-Seqset
+        Seq-feat                FROM NCBI-Seqfeat
+        GBProjectHandle         FROM NCBI-GUI-Project;
+
+---
+--- This defines the object stored in a plugin cache
+---
+PluginCache ::= SET OF PluginLibInfo
+
+
+---
+--- kludge around missing CTypeRef code (doesn't support
+--- SET OF SEQUENCE {...} if the sequence includes a derived class)
+---
+PluginLibInfo ::= SEQUENCE {
+    library  VisibleString,
+    enabled  BOOLEAN DEFAULT TRUE,   -- flag: is this plugin enabled?
+    info     PluginInfoSet
+}
+
+
+---
+--- PluginInfo defines the basic information that all plugins must support
+---
+PluginInfoSet ::= SET OF PluginInfo
+
+PluginIconInfo ::= SEQUENCE {
+	path VisibleString,
+	alias VisibleString
+}
+
+PluginInfo ::= SEQUENCE {
+    ver-major       INTEGER,                -- major version number
+    ver-minor       INTEGER,                -- minor version number
+    ver-revision    INTEGER,                -- plugin-specific revision number
+    ver-build-date  VisibleString,          -- date of build
+
+    class-name      VisibleString,          -- text tag uniquely identifying
+                                            -- this plugin
+    menu-item       VisibleString OPTIONAL, -- menu item that will be shown
+                                            -- in a GUI
+    tooltip         VisibleString OPTIONAL, -- text for mouse-overs and status
+                                            -- bars
+    help-file       VisibleString OPTIONAL, -- location of the help file
+                                            -- associated with this plugin
+
+    -- if 'autorun' is true, we launch this
+    -- plugin command at application startup
+    autorun  BOOLEAN DEFAULT FALSE,
+
+    -- if 'foreground-only' is true, then this plugin will run entirely
+    -- in the foreground (main) thread.  This is a requirement of any
+    -- plugin that services a GUI directly, as GUI components must be
+    -- manipulated only in the foreground thread on some platforms
+    affinity ENUMERATED {
+        foreground(0),
+        background(1),
+        background-restartable(2)
+    } DEFAULT background,
+
+    -- the command and requirements
+    -- for this plugin
+    command PluginCommand,
+
+    -- optional information about an icon suitable for this plugin
+    -- this is managed as a named resource, with separate registration
+    -- of the resource binding the name to an image
+    icon-info PluginIconInfo OPTIONAL,
+
+    -- here is the set of user types to which this plugin subscribes
+    -- any object of these types will work for this plugin
+    applicable-user-types SET OF PluginUserType OPTIONAL
+}
+
+---
+--- PluginRequest defines the commands we can issue to a plugin
+---
+PluginRequest ::= SEQUENCE {
+    command  PluginCommand
+}
+
+--
+-- user types for determining which plugins apply to a given set of objects
+--
+PluginUserType ::= SEQUENCE {
+    type VisibleString,
+    subtype VisibleString OPTIONAL
+}
+
+---
+--- PluginReply defines the responses received from a plugin after completion
+--- of its activities.
+---
+PluginReply ::= SEQUENCE {
+    status      MessageStatus DEFAULT failed,
+    action      SET OF PluginReplyAction OPTIONAL,
+    raw         SET OF PluginValue       OPTIONAL, -- things we've produced
+    formatted   PluginArgSet             OPTIONAL  -- caller-defined args
+}
+
+
+---
+--- PluginReplyAction lists possible modes of action for the items returned
+--- from a plugin
+---
+PluginReplyAction ::= CHOICE {
+    -- add this item to the associated project
+    add-to-project          NULL,
+
+    -- launch a view named by the supplied argument
+    new-view                VisibleString,
+
+    -- launch a view named by the supplied argument
+    new-composite-view      VisibleString,
+
+    -- store this object for future use
+    -- The string parameter is used as a caller-defined key for retrieval
+    store                   VisibleString,
+
+    -- create an empty project(s) for Raw item(s), takes plugin param as argument
+    create-project          VisibleString,
+
+    -- create single project for any number of Raw items
+    create-single-project   VisibleString,
+
+    -- attach loaded project to Project Manager
+    attach-project          GBProjectHandle,
+
+    -- refresh loaded project to Project Manager
+    refresh-project          GBProjectHandle,
+
+    --a dd an entry to the MRU list
+    add-to-MRU              PluginMRUEntry,
+
+    -- show an error message
+    error                   VisibleString,
+
+    -- execute 'run' on a named plugin with our results
+    plugin-cmd-run          VisibleString,
+
+    -- register object created by the plugin
+    register-interface      NULL,
+
+    -- report a warning to the user
+    warning                 VisibleString,
+
+    -- report an info-level message to the user
+    info                    VisibleString
+}
+
+
+---
+--- PluginCommand is the list of arguments that a plugin takes
+---
+PluginCommand ::= SEQUENCE {
+    command ENUMERATED {
+        -- general-purpose commands
+        no-command(0),
+        init(1),
+        get-status(2),
+        finish(3),
+        abort(4),
+        create-interface(5),
+
+        -- data commands
+        load(6),
+        save(7),
+        import(8),
+        load-project(9),
+        save-project(10),
+
+        -- data source commands
+        search(11),
+        manage(12),
+
+        -- algorithm commands
+        run(13),
+        suspend(14),
+        resume(15),
+
+        -- view commands
+        new-view(16),
+        new-composite-view(17)
+    },
+
+    -- optional named context
+    context  VisibleString OPTIONAL,
+
+    -- input arguments
+    args     PluginArgSet  OPTIONAL
+}
+
+
+---
+--- PluginArgSet defines a set of arguments
+---
+PluginArgSet ::= SEQUENCE OF PluginArg
+
+
+---
+--- PluginArg defines the properties of a given argument
+---
+PluginArg ::= SEQUENCE {
+    name        VisibleString,
+    desc        VisibleString OPTIONAL,
+    long-desc   VisibleString OPTIONAL,
+    optional    BOOLEAN DEFAULT FALSE,
+    default     BOOLEAN DEFAULT FALSE,
+    hidden      BOOLEAN DEFAULT FALSE,
+
+    data CHOICE {
+        single  PluginValue,
+        array   SET OF PluginValue
+    },
+    constraint  SET OF PluginValueConstraint OPTIONAL
+}
+
+
+---
+--- Wrappers for non-serializable objects
+--- For these we encode a pointer and a name of the object type
+---
+PluginObject ::= SEQUENCE {
+    objaddr VisibleString,
+    subtype VisibleString
+}
+
+
+---
+--- PluginValue variant
+---
+PluginValue ::= CHOICE {
+    integer       VisibleString,
+    double        VisibleString,
+    string        VisibleString,
+    secret-string VisibleString,
+    input-file    VisibleString,
+    output-file   VisibleString,
+    boolean       VisibleString,
+    project       PluginObject,
+    dataHandle    PluginObject,
+    object        PluginObject
+}
+
+
+---
+--- Value constraints
+---
+PluginValueConstraint ::= CHOICE {
+    --- simple constraints for built-in types
+    lower VisibleString,
+    upper VisibleString,
+    range PluginValueRangeConstraint,
+    set   SET OF VisibleString,
+
+    --- bioseq constraints
+    seq-repr          SET OF INTEGER, --- segmented, raw, virtual, etc
+    seq-mol           SET OF INTEGER, --- nucleic acid, protein, etc
+    seq-mol-same-type NULL,
+    seq-length-lower  INTEGER,
+    seq-length-upper  INTEGER,
+    seq-length-range  PluginValueRangeConstraint,
+    seq-length-same   NULL,
+
+    --- seq-entry constraints
+    entry-type INTEGER,          --- genprod set, nucprot set, etc
+
+    --- seq-annot constraints
+    annot-type INTEGER,          --- feature table, alignments, graphs
+
+    --- seq-feat constraints
+    feat-type        SET OF INTEGER, --- gene, rna, user, pub, etc.
+    feat-subtype     SET OF INTEGER, --- any recognized subtype
+    feat-has-product NULL,           --- only features with the product flag set
+
+    --- ProjectItem constraints
+    project-item-type VisibleString  --- the type of item available in a project item
+                                     --- this should be available either from CTypeInfo
+                                     --- or from type_info<>.
+}
+
+
+PluginValueRangeConstraint ::= SEQUENCE {
+    lower VisibleString,
+    upper VisibleString
+}
+
+
+---
+--- MessageStatus defines return codes for plugin operations
+---
+MessageStatus ::= ENUMERATED {
+    failed(0),
+    success(1),
+    not-handled(2),
+    ignored(3),
+    pending(4) --indicates that background processing is still in progress
+}
+
+
+---
+--- PluginMessage holds information regarding a single request to a plugin
+---
+PluginMessage ::= SEQUENCE {
+    -- routing information
+    source          VisibleString   OPTIONAL,   -- source plugin
+    destination     VisibleString,              -- destination plugin
+
+    --- context in which we operate
+    context     VisibleString OPTIONAL,
+
+    --- PluginMessage we are responding to
+    in-reply-to PluginMessage OPTIONAL,
+
+    request     PluginRequest, -- command to be passed to the plugin
+    reply       PluginReply    -- reply received from a plugin
+}
+
+
+---
+--- MRU structures
+---
+PluginMRUEntry ::= SEQUENCE {
+    label VisibleString,
+    message PluginMessage
+}
+
+---
+--- PluginMessageChain holds a set of plugin messages that are intended to
+--- be called sequentially.
+---
+PluginMessageChain ::= SEQUENCE OF PluginMessage
+
+
+---
+--- MessageHistoryInfo holds information about plugin commands
+---
+MessageHistoryInfo ::= SEQUENCE {
+    id              INTEGER,
+    description     VisibleString,
+    reply-to        INTEGER         DEFAULT 0,
+    time            VisibleString   OPTIONAL
+}
+
+
+END
+
+--- -------------------------------------------------------------------------
+--- Definitions for GUI project
+--- GUI projects are the basic units of data used in Genome Workbench
+---
+--- -------------------------------------------------------------------------
+
+NCBI-GUI-Project DEFINITIONS ::=
+BEGIN
+
+IMPORTS Annotdesc, Seq-annot     FROM NCBI-Sequence
+        Seq-submit               FROM NCBI-Submit
+        Seq-entry                FROM NCBI-Seqset
+        Seq-id, Seq-loc          FROM NCBI-Seqloc
+        Seq-align, Seq-align-set FROM NCBI-Seqalign
+        Date, User-object        FROM NCBI-General
+        ProjectItem,
+        ProjectHistoryItem,
+        ProjectDescr, ProjectAnnot,
+        FolderInfo, ViewDescriptor,
+        ProjectFolder,
+        LoaderDescriptor         FROM NCBI-GBProject
+        PluginMessage            FROM NCBI-Plugin;
+
+EXPORTS GBWorkspace, GBProject, GBProjectHandle, WorkspaceFolder;
+
+--
+-- A workspace is a hierarchically organized set of projects
+-- Projects represent the leaves in the tree
+--
+GBWorkspace ::= SEQUENCE {
+    -- standard descriptors
+    descr ProjectDescr,
+
+    -- projects in this workspace
+    workspace WorkspaceFolder,
+
+    -- GUI layout items
+    layout SET OF ViewDesc OPTIONAL,
+
+    -- arbitrary annotations
+    annot SET OF ProjectAnnot OPTIONAL
+}
+
+
+WorkspaceFolder ::= SEQUENCE {
+    info        FolderInfo,
+    folders     SET OF WorkspaceFolder  OPTIONAL,
+    projects    SET OF GBProjectHandle  OPTIONAL
+}
+
+
+--
+-- A project handle is an abstraction that binds all possible versions
+-- This is stored in a workspace; the serialized component
+--
+GBProjectHandle ::= SEQUENCE {
+    -- URI for the project
+    -- this can be a local file (default) or an http:// or ftp:// link
+    filename VisibleString,
+
+    -- flag: is this project disabled?
+    disabled BOOLEAN DEFAULT FALSE
+}
+
+
+--
+-- Version 1 (unversioned) project
+-- This project description is frozen as of 12/1/2005 and should not be
+-- modified.  Further, its core dependencies should also not be changed in
+-- any breaking way.
+--
+GBProject ::= SEQUENCE {
+    -- next counter for project items
+    counter INTEGER DEFAULT 0,
+
+    -- standard descriptors
+    descr ProjectDescr,
+
+    -- the core item we wrap
+    core ProjectItem,
+
+    -- a set of extra analyses perfromed by the user
+    -- each of these may have descriptors
+    extra ProjectFolder OPTIONAL,
+
+    -- a copy of the original plugin message used to generate this project
+    orig-message PluginMessage OPTIONAL,
+
+    -- history of things done to this object
+    history SET OF ProjectHistoryItem OPTIONAL,
+
+    --name of the plugin that can handle External Data for the project
+    data-plugin VisibleString OPTIONAL,
+
+    --optional parameter for the data-plugin
+    plugin-param VisibleString OPTIONAL,
+
+    -- arbitrary annotations
+    annot SET OF ProjectAnnot OPTIONAL,
+
+    -- a set of data sources including data loader and data
+    loaders SET OF LoaderDescriptor OPTIONAL,
+
+     --- set of views, associated with project
+    views SET OF ViewDescriptor OPTIONAL
+}
+
+ViewDesc ::= SEQUENCE {
+    view VisibleString,
+    range Seq-loc
+}
+
+END
+
+
+--
+--
+-- --------------------------------------------------------------------------
+-- Data structure for storing id mapping information including tax id
+-- and gencoll assembly information
+-- --------------------------------------------------------------------------
+--
+--
+
+NCBI-AssmInfo  DEFINITIONS ::=
+
+BEGIN
+
+SV-AssmAccs ::= SEQUENCE {
+    seq-id VisibleString,
+    assm-context-status INTEGER,
+    assm-acc-best VisibleString OPTIONAL,
+    assm-accs SET OF VisibleString OPTIONAL
+}
+
+DL-AssmInfoResponse ::= SEQUENCE {
+    success        BOOLEAN,
+    msg            VisibleString OPTIONAL,
+    data           DL-AssmInfo OPTIONAL
+}
+
+DL-AssmInfo ::= CHOICE {
+    tax-ids        SET OF DL-TaxId,
+    assemblies     SET OF DL-Assembly
+}
+
+DL-TaxId ::= SEQUENCE {
+    id              VisibleString,
+    name            VisibleString OPTIONAL,
+    scientific-name VisibleString OPTIONAL,
+    division        VisibleString OPTIONAL
+}
+
+DL-Assembly ::= SEQUENCE {
+    name           VisibleString,
+    accession      VisibleString,
+    organism       VisibleString OPTIONAL,
+    category       VisibleString OPTIONAL,
+    release-type   VisibleString OPTIONAL,
+    class          VisibleString OPTIONAL,
+    descr          VisibleString OPTIONAL,
+    release-date   VisibleString OPTIONAL,
+    other-names    SET OF VisibleString OPTIONAL
+}
+
+END
+

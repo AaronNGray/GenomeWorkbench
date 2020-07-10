@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_seq_text.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_seq_text GUI)
+  NCBI_sources(seq_text_demo seq_text_demo_dlg)
+  NCBI_uses_toolkit_libraries(w_seq_text ncbi_xloader_genbank)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_app()

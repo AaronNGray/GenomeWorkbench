@@ -1,0 +1,27 @@
+/* XPM */
+static const char *warning16x16_xpm[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 5 1",
+"o c Black",
+"O c #808080",
+"X c #FFFF00",
+". c #808000",
+"  c None",
+/* pixels */
+"      ...       ",
+"     .XXXo      ",
+"     .XXXoO     ",
+"    .XXXXXo     ",
+"    .XXoXXoO    ",
+"   .XXoooXXo    ",
+"   .XXoooXXoO   ",
+"  .XXXoooXXXo   ",
+"  .XXX.o.XXXoO  ",
+" .XXXXXoXXXXXo  ",
+" .XXXXXXXXXXXoO ",
+".XXXXXOoOXXXXXo ",
+".XXXXXOoOXXXXXoO",
+".XXXXXXXXXXXXXoO",
+" .ooooooooooooOO",
+"  OOOOOOOOOOOOO "
+};

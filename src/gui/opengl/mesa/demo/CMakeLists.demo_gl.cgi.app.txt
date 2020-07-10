@@ -1,0 +1,25 @@
+#############################################################################
+# $Id: CMakeLists.demo_gl.cgi.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app( demo_gl.cgi)
+  NCBI_sources(gltest)
+  NCBI_uses_toolkit_libraries(gui_glmesa gui_opengl)
+  NCBI_requires(GLEW)
+NCBI_end_app()
+
+if(OFF)
+add_executable(demo_gl.cgi-app
+    gltest
+)
+
+set_target_properties(demo_gl.cgi-app PROPERTIES OUTPUT_NAME demo_gl.cgi)
+
+include_directories(SYSTEM ${FTGL_INCLUDE} ${OPENGL_INCLUDE} ${GLEW_INCLUDE})
+
+target_link_libraries(demo_gl.cgi-app
+    gui_glmesa gui_opengl gui_utils ximage xcompress ${CMPRS_LIB} xcgi xhtml
+    xconnect xutil xncbi ${FTGL_LIBS} ${OSMESA_LIBS} ${IMAGE_LIBS}
+     
+)
+endif()

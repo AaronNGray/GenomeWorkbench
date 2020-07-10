@@ -1,0 +1,4 @@
+acc. num.	institution	department	street	country	title	postal-code
+KX290926	University of Madrid	Physics	Goya Str.	Spain	First detection of bat white-nose syndrome in western North America	89765
+KX290927	University of Barcelona	Biophysics	Goya Str.		First detection of bat white-nose syndrome in western North America	76543
+KX463942	Pottsdam University	Biology	Baum Str.	Germany	First detection of bat white-nose syndrome in western North America	6543

@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_trackmgr.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_trackmgr SHARED)
+  NCBI_hosts_projects(
+    objects/trackmgr/trackmgr
+    objects/trackmgr/trackmgrcli
+    objects/gbproj/gbproj
+  )
+  NCBI_add_definitions(NCBI_TRACKMGRASN_EXPORTS)
+NCBI_end_lib()

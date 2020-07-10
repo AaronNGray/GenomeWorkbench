@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.cache_demo.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(cache_demo)
+  NCBI_sources(cache_demo)
+  NCBI_uses_toolkit_libraries(xutil)
+  NCBI_project_watchers(grichenk)
+NCBI_end_app()
+

@@ -1,0 +1,196 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "guha",
+          first "sohini",
+          middle "",
+          initials "",
+          suffix "",
+          title ""
+        },
+        affil std {
+          affil "University of calcutta",
+          div "Biochemistry",
+          city "kolkata",
+          sub "west bengal",
+          country "India",
+          street "35,Ballygunge Circular Road",
+          email "maitrayee_d@hotmail.com",
+          postal-code "700019"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Guha",
+              first "Sohini",
+              initials "S."
+            }
+          },
+          {
+            name name {
+              last "Jorrin",
+              first "Beatriz",
+              initials "B."
+            }
+          },
+          {
+            name name {
+              last "Sarkar",
+              first "Monolina",
+              initials "M."
+            }
+          },
+          {
+            name name {
+              last "Poole",
+              first "Philip",
+              initials "P.S."
+            }
+          },
+          {
+            name name {
+              last "Dasgupta",
+              first "Maitrayee",
+              initials "M."
+            }
+          }
+        },
+        affil std {
+          affil "University of calcutta",
+          div "Biochemistry",
+          city "kolkata",
+          sub "west bengal",
+          country "India",
+          street "35,Ballygunge Circular Road",
+          postal-code "700019"
+        }
+      },
+      date std {
+        year 2018,
+        month 3,
+        day 19
+      },
+      descr "new title"
+    },
+    subtype new,
+    tool "table2asn 1.20.333",
+    comment "SUB3797542"
+  },
+  data entrys {
+    set {
+      class genbank,
+      descr {
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Guha",
+                      first "Sohini",
+                      initials "S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Jorrin",
+                      first "Beatriz",
+                      initials "B."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Sarkar",
+                      first "Monolina",
+                      initials "M."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Poole",
+                      first "Philip",
+                      initials "P.S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Dasgupta",
+                      first "Maitrayee",
+                      initials "M."
+                    }
+                  }
+                }
+              },
+              title "Genomes of Endosymbiotic and Endophytic Bradyrhizobium,
+ new title"
+            }
+          }
+        },
+        update-date std {
+          year 2018,
+          month 3,
+          day 19
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "NODE_1_length_1061560_cov_15.707_ID_3458"
+          },
+          descr {
+            source {
+              org {
+                taxname "Danio rerio",
+                common "zebrafish",
+                db {
+                  {
+                    db "taxon",
+                    tag id 7955
+                  }
+                },
+                orgname {
+                  lineage "cellular organisms; Eukaryota; Opisthokonta;
+ Metazoa; Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Actinopterygii; Actinopteri;
+ Neopterygii; Teleostei; Osteoglossocephalai; Clupeocephala; Otomorpha;
+ Ostariophysi; Otophysi; Cypriniphysae; Cypriniformes; Cyprinoidea;
+ Cyprinidae; Danio",
+                  gcode 1,
+                  mgcode 2,
+                  div "VRT"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            comment "Bacteria and source DNA available from Prof.Maitrayee
+ DasGupta.",
+            create-date std {
+              year 2018,
+              month 3,
+              day 19
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 231,
+            seq-data iupacna "AGATGTGTATAAGAGACAGGTACTTGATCTGGCGATACTCGGGATACC
+ACTTTGTGAAGTAGATCGCACTGTTGCGGGCGGCAAAGGCCACCGCAAGGCTCGACCAGAGCGGCAGCTCGATGCGGA
+CCTTGCCTTCCTTCTCCTCGGTAAGCCACATGCCGACCGGCGAATTGAGGTCGCGCGTCGGCGCAGCCGCCGGAGCAG
+GGGGCGCGACGGCAGCCTGAACGGGAG"
+          }
+        }
+      }
+    }
+  }
+}

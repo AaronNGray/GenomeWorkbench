@@ -1,0 +1,11 @@
+# $Id: Makefile.in 550492 2017-11-02 18:04:03Z grichenk $
+
+# Meta-makefile (ncbi_xloader_lds)
+##################################
+
+LIB_PROJ = ncbi_xloader_lds2
+SUB_PROJ = test
+REQUIRES = SQLITE3
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

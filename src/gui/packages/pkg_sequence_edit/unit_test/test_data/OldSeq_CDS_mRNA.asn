@@ -1,0 +1,252 @@
+Seq-entry ::= set {
+  class nuc-prot ,
+  descr {
+    source {
+      genome genomic ,
+      org {
+        taxname "Salinicola sp. SOil-1" ,
+        orgname {
+          gcode 1 } } } ,
+    pub {
+      pub {
+        gen {
+          cit "Unpublished" ,
+          authors {
+            names
+              std {
+                {
+                  name
+                    name {
+                      last "Zamani" ,
+                      first "Sara" ,
+                      initials "S." } } ,
+                {
+                  name
+                    name {
+                      last "Semnani Rahbar" ,
+                      first "Mojtaba" ,
+                      initials "M." } } ,
+                {
+                  name
+                    name {
+                      last "Ebrahimipour" ,
+                      first "Gholamhossein" ,
+                      initials "G." } } } ,
+            affil
+              std {
+                affil "Payam Noor university, North Tehran center" ,
+                div "Chemical engineering" ,
+                city "Tehran" ,
+                country "Iran" } } ,
+          title "unpublished" } } } ,
+    pub {
+      pub {
+        sub {
+          authors {
+            names
+              std {
+                {
+                  name
+                    name {
+                      last "Zamani" ,
+                      first "Sara" ,
+                      initials "S." } } ,
+                {
+                  name
+                    name {
+                      last "Semnani Rahbar" ,
+                      first "Mojtaba" ,
+                      initials "M." } } ,
+                {
+                  name
+                    name {
+                      last "Ebrahimipour" ,
+                      first "Gholamhossein" ,
+                      initials "G." } } } ,
+            affil
+              std {
+                affil "Payam Noor university, North Tehran center" ,
+                div "Chemical engineering" ,
+                city "Tehran" ,
+                country "Iran" } } ,
+          date
+            std {
+              year 2014 ,
+              month 10 ,
+              day 14 } } } } ,
+    user {
+      type
+        str "OriginalID" ,
+      data {
+        {
+          label
+            str "LocalId" ,
+          data
+            str "Untitled_Seq_#1" } } } ,
+    user {
+      type
+        str "NcbiCleanup" ,
+      data {
+        {
+          label
+            str "method" ,
+          data
+            str "SequinCleanup" } ,
+        {
+          label
+            str "version" ,
+          data
+            int 8 } ,
+        {
+          label
+            str "month" ,
+          data
+            int 7 } ,
+        {
+          label
+            str "day" ,
+          data
+            int 8 } ,
+        {
+          label
+            str "year" ,
+          data
+            int 2015 } } } ,
+    create-date
+      std {
+        year 2014 ,
+        month 10 ,
+        day 10 } } ,
+  seq-set {
+    seq {
+      id {
+        local
+          str "Untitled_Seq_#1" ,
+        general {
+          db "NCBIFILE" ,
+          tag
+            str "salinicola sp/Untitled_Seq_#1" } ,
+        general {
+          db "TMSMART" ,
+          tag
+            id 48938773 } ,
+        genbank {
+          accession "KM986631" } } ,
+      descr {
+        molinfo {
+          biomol rRNA } } ,
+      inst {
+        repr raw ,
+        mol rna ,
+        length 985 ,
+        seq-data
+          ncbi2na 'E4B6269246A89F9D5EBA6269A1AB8B0ECA0DE56B2EAA306EA8054670C59
+31B5C6A20268A37DA1F667368E25CEDA3C9CBEB0AC1A7C50A618D6C9EB788A38D2511EA1E211A5
+4875C6A2924BAA0CFA10EA6025F8D494E59BBB820A7F6AFB0247F498A08097AEBC09169C1D6E52
+4966B0C68AB989BC3683C7A9B02666CAE9FA465AFB80956A7417A81A4D681A529C8B9288A0AC83
+D5AEC9AE039B2236A28314BA60A697DE978478478AE6026EAC90128F2315EB2D465B018ED8725B
+EA17F0A1F2E992F06630B6165EAA2C69642BC01D0383E1AA959109AE893BAFC3D8E4198205F171
+5F84D7983FAC88C5F2E5F6A264B84AE793A7B6D276640'H } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  gene {
+                    locus "16S rDNA" } ,
+                comment "partial sequence" ,
+                location
+                  int {
+                    from 0 ,
+                    to 983 ,
+                    strand plus ,
+                    id
+                      local
+                        str "Untitled_Seq_#1" } } ,
+              {
+                data
+                  rna {
+                    type mRNA ,
+                    ext
+                      name "new mRNA" } ,
+                comment "mRNA comment" ,
+                location
+                  mix {
+                    int {
+                      from 199 ,
+                      to 399 ,
+                      strand plus ,
+                      id
+                        genbank {
+                          accession "KM986631" } } ,
+                    int {
+                      from 499 ,
+                      to 599 ,
+                      strand plus ,
+                      id
+                        genbank {
+                          accession "KM986631" } } } } } } } } ,
+    seq {
+      id {
+        local
+          str "KM986631_1" } ,
+      descr {
+        molinfo {
+          biomol peptide ,
+          completeness partial } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 70 ,
+        seq-data
+          ncbieaa "HTGTETRPRLLREAAVGNIGQWAKALIQPCRVCEEGFRVVKHFQRGRKPGGTPVVKAPG
+STWERHPERPG" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "new protein" } } ,
+                partial TRUE ,
+                location
+                  int {
+                    from 0 ,
+                    to 69 ,
+                    id
+                      local
+                        str "KM986631_1" } } } } } } } ,
+  annot {
+    {
+      data
+        ftable {
+          {
+            data
+              cdregion {
+                frame three ,
+                code {
+                  id 1 } } ,
+            partial TRUE ,
+            product
+              whole
+                local
+                  str "KM986631_1" ,
+            location
+              mix {
+                int {
+                  from 249 ,
+                  to 399 ,
+                  strand plus ,
+                  id
+                    genbank {
+                      accession "KM986631" } } ,
+                int {
+                  from 499 ,
+                  to 562 ,
+                  strand plus ,
+                  id
+                    genbank {
+                      accession "KM986631" } } } } } } } }

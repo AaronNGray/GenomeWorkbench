@@ -1,0 +1,56 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Lactobacillus delbrueckii subsp.bulgaricus",
+            orgname {
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 35,
+        strand ds,
+        seq-data iupacna "CCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Lactobacillus delbrueckii subsp. bulgaricus",
+            orgname {
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 59,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGCTATCCCTAATCGCCCCTACT
+GTGGATA"
+      }
+    }
+  }
+}

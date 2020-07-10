@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.test_fix_feature_ids.app.txt 593577 2019-09-20 12:22:42Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_fix_feature_ids)
+  NCBI_sources(test_fix_feature_ids)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xcleanup seqset)
+  NCBI_project_watchers(filippov)
+  NCBI_set_test_assets(test_cases)
+  NCBI_add_test()
+NCBI_end_app()

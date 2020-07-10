@@ -1,0 +1,11 @@
+<!-- $Id: gui_framework.dtd 16663 2008-04-15 16:41:49Z katargir $ -->
+
+<!ELEMENT Name        (#PCDATA)>   <!-- .+ -->
+<!ELEMENT Description (#PCDATA)>   <!-- .+ -->
+<!ELEMENT Version     (#PCDATA)>   <!-- \d\d\.\d\d\.\d\d\d\d -->
+<!ELEMENT MainDll     (#PCDATA)>   <!-- .+ -->
+
+<!ELEMENT GuiPkgManifest (Name, Description, Version, MainDll, GuiPkgDependency*)>
+<!ELEMENT GuiPkgDependency (GuiDependentPkg)>
+<!ELEMENT GuiDependentPkg (Name, Version)>
+

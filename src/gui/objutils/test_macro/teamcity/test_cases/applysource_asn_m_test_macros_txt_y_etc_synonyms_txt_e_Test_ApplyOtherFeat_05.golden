@@ -1,0 +1,102 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq1"
+            },
+            {
+              label str "GenBank",
+              data str "gb|KF591393|"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Helicoverpa assulta",
+            orgname {
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 210,
+        strand ds,
+        seq-data ncbi2na '000581ABC5D730E32C3274087D13C385C46930D02012056C3579
+7782570015C210AA114C855044EAE87C05D56737B8015601E171C0'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data biosrc {
+                org {
+                  taxname "Fopius arisanus",
+                  orgname {
+                  }
+                }
+              },
+              location int {
+                from 0,
+                to 44,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            },
+            {
+              data biosrc {
+                org {
+                  taxname "Falco cherrug"
+                }
+              },
+              location int {
+                from 22,
+                to 99,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            },
+            {
+              data gene {
+                locus "test gene"
+              },
+              location int {
+                from 22,
+                to 99,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

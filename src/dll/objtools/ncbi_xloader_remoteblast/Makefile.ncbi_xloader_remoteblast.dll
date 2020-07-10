@@ -1,0 +1,10 @@
+# $Id: Makefile.ncbi_xloader_remoteblast.dll 123564 2008-04-03 19:49:28Z ivanov $
+
+DLL = ncbi_xloader_remoteblast
+
+HOSTED_LIBS  = ncbi_xloader_remoteblast
+
+DEPENDENCIES = ncbi_core ncbi_algo ncbi_pub ncbi_seq ncbi_seqext seqdb xnetblast
+
+CPPFLAGS = -DNCBI_XLOADER_REMOTEBLAST_EXPORTS
+

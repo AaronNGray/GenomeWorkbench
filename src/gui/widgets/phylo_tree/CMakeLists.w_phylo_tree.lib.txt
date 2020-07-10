@@ -1,0 +1,25 @@
+#############################################################################
+# $Id: CMakeLists.w_phylo_tree.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_phylo_tree)
+  NCBI_sources(
+    phylo_tree_algorithm phylo_tree_ds
+    phylo_tree_force  phylo_tree_label
+    phylo_tree_node phylo_tree_pane phylo_tree_radial phylo_tree_reader
+    phylo_tree_rect_cladogram phylo_tree_render phylo_tree_scheme
+    phylo_tree_slanted_cladogram phylo_tree_widget wx_phylo_settings_dlg
+    wx_phylo_edit_dlg wx_label_edit_dlg phylo_tree_boundary_shapes
+    phylo_image_grabber  phylo_tree_ps phylo_tree_query_exec phylo_tree_query_macro_fns
+    tree_graphics_model tree_collision_model2d wx_tree_label_edit
+    phylo_pdf_grabber save_tree_pdf_dlg phylo_tree phylo_circular_cladogram
+    phylo_save_selection_dlg csv_selection_export_dlg phylo_selection_set
+  )
+  NCBI_uses_toolkit_libraries(
+    gui_graph
+    w_data
+    w_gl
+    xalgophytree
+  )
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

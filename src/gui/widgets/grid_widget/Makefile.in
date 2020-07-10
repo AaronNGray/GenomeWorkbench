@@ -1,0 +1,6 @@
+# $Id: Makefile.in 23825 2011-06-09 16:08:34Z katargir $
+
+LIB_PROJ = w_grid_widget
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

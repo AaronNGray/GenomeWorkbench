@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.gumbelparams_unit_test.app.txt 593585 2019-09-20 13:57:47Z gouriano $
+#############################################################################
+
+NCBI_begin_app(gumbelparams_unit_test)
+  NCBI_sources(general_score_matrix_unit_test gumbel_params_unit_test)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(gumbelparams)
+  NCBI_project_watchers(boratyng madden camacho)
+  NCBI_set_test_assets(data)
+  NCBI_add_test()
+NCBI_end_app()
+

@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.test_strsearch.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_strsearch)
+  NCBI_sources(test_strsearch)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xutil)
+  NCBI_project_watchers(ivanov)
+  NCBI_add_test()
+NCBI_end_app()
+

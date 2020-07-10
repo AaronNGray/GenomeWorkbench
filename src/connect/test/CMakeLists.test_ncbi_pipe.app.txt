@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbi_pipe.app.txt 593499 2019-09-19 15:56:50Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbi_pipe)
+  NCBI_sources(test_ncbi_pipe)
+  NCBI_uses_toolkit_libraries(xconnect)
+  NCBI_project_watchers(ivanov lavr)
+  NCBI_add_test()
+NCBI_end_app()
+

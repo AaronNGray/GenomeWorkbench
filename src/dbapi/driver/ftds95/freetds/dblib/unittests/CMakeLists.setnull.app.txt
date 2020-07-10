@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.setnull.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db95_setnull)
+  NCBI_sources(setnull common)
+  NCBI_add_test(test-db95 db95_setnull)
+NCBI_end_app()
+

@@ -1,0 +1,149 @@
+Seq-entry ::= seq {
+  id {
+    genbank {
+      accession "DQ403849" ,
+      version 1 } ,
+    gi 89214157 } ,
+  descr {
+    title "Astragalus layneae voucher ASLA-1 tRNA-Leu (trnL) gene, partial
+ sequence; and trnL-trnF intergenic spacer, complete sequence; chloroplast." ,
+    source {
+      genome chloroplast ,
+      org {
+        taxname "Astragalus layneae" ,
+        db {
+          {
+            db "taxon" ,
+            tag
+              id 374740 } } ,
+        orgname {
+          name
+            binomial {
+              genus "Astragalus" ,
+              species "layneae" } ,
+          mod {
+            {
+              subtype specimen-voucher ,
+              subname "ASLA-1" } } ,
+          lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons; Gunneridae;
+ Pentapetalae; rosids; fabids; Fabales; Fabaceae; Papilionoideae; Galegeae;
+ Astragalus" ,
+          gcode 1 ,
+          mgcode 1 ,
+          div "PLN" } } } ,
+    molinfo {
+      biomol genomic } ,
+    pub {
+      pub {
+        article {
+          title {
+            name "Genetic Variation in the Endangered Astragalus jaegerianus
+ (Fabaceae, Papilionoideae): A Geographically Restricted Species" } ,
+          authors {
+            names
+              std {
+                {
+                  name
+                    name {
+                      last "Walker" ,
+                      first "George" ,
+                      middle "F." ,
+                      initials "G.F." } } ,
+                {
+                  name
+                    name {
+                      last "Metcalf" ,
+                      first "Anthony" ,
+                      middle "E." ,
+                      initials "A.E." } } } } ,
+          from
+            journal {
+              title {
+                iso-jta "Bull South Calif Acad Sci" } ,
+              imp {
+                date
+                  std {
+                    year 2008 } ,
+                volume "107" ,
+                issue "3" ,
+                pages "158-177" } } } } } ,
+    pub {
+      pub {
+        sub {
+          authors {
+            names
+              std {
+                {
+                  name
+                    name {
+                      last "Walker" ,
+                      first "George" ,
+                      middle "F" ,
+                      initials "G.F." } } ,
+                {
+                  name
+                    name {
+                      last "Metcalf" ,
+                      first "Anthony" ,
+                      middle "E" ,
+                      initials "A.E." } } } ,
+            affil
+              std {
+                affil "California State University, San Bernardino" ,
+                div "Biology" ,
+                city "San Bernardino" ,
+                sub "CA" ,
+                country "USA" ,
+                street "5500 University Parkway" ,
+                postal-code "92407" } } ,
+          medium email ,
+          date
+            std {
+              year 2006 ,
+              month 2 ,
+              day 15 } } } } ,
+    create-date
+      std {
+        year 2006 ,
+        month 3 ,
+        day 11 } ,
+    update-date
+      std {
+        year 2008 ,
+        month 12 ,
+        day 29 } } ,
+  inst {
+    repr raw ,
+    mol dna ,
+    length 56 ,
+    strand ds ,
+    seq-data
+      ncbi2na '7CBE1321D070FDF00E28CB97420E'H } ,
+  annot {
+    {
+      data
+        ftable {
+          {
+            data
+              imp {
+                key "misc_feature" } ,
+            comment "originally at the end" ,
+            location
+              int {
+                from 44 ,
+                to 54 ,
+                strand plus ,
+                id
+                  gi 89214157 } } ,
+          {
+            data
+              gene {
+                locus "some gene" } ,
+            location
+              int {
+                from 1 ,
+                to 39 ,
+                strand minus ,
+                id
+                  gi 89214157 } } } } } }

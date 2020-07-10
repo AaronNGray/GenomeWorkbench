@@ -1,0 +1,9 @@
+# $Id: Makefile.in 25668 2012-04-19 15:54:28Z katargir $
+# Author:  Roman Katargin
+# Meta-makefile for plugin testapp
+#################################
+
+APP_PROJ = make_score_method demo_score_props
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

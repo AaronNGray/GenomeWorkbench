@@ -1,0 +1,10 @@
+# $Id: Makefile.in 43836 2019-09-09 20:29:51Z evgeniev $
+# Author:  Peter Meric
+# Meta-makefile for libgui_print
+#################################
+
+LIB_PROJ = gui_print
+REQUIRES = OpenGL
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,13 @@
+# $Id: Makefile.psg_protobuf.lib 595830 2019-10-28 19:09:49Z saprykin $
+
+LIB = psg_protobuf
+
+SRC = psg_protobuf.pb
+
+CPPFLAGS = $(PROTOBUF_INCLUDE) $(ORIG_CPPFLAGS)
+LIBS = $(PROTOBUF_LIBS) $(ORIG_LIBS)
+
+WATCHERS = satskyse saprykin
+
+REQUIRES = MT PROTOBUF
+

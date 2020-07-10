@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.text_buffer.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db95_text_buffer)
+  NCBI_sources(text_buffer common)
+  NCBI_set_test_assets(text_buffer.sql)
+  NCBI_add_test(test-db95 db95_text_buffer)
+NCBI_end_app()
+

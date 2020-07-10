@@ -1,0 +1,19 @@
+[Info]
+Name        = DNA Quality Scoring with Coloring.
+Description = Color bases where the quality scoring is above (or below) a given threshold.
+; Type = Protein | DNA
+Type = DNA
+; Method = Coloration | ColumnScore | MatrixScore | QualityColoration
+Method = QualityColoration
+
+[Methods]
+
+; If the score from the scoring method is less/greater 
+; than the threshold the coloring method colors the 
+
+ScoringMethod = Column Quality score: DNA
+Threshold = 1
+; Comparison = greater | less
+Comparison = greater
+
+ColoringMethod = Nucleic Acid Colors

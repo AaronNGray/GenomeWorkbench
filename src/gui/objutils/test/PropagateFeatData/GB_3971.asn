@@ -1,0 +1,581 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class phy-set,
+      descr {
+        title "Veronica ndhF-rpl32 intergenic spacer, partial sequence; and
+ ribosomal protein L32 gene, partial cds.",
+        create-date std {
+          year 2015,
+          month 2,
+          day 24
+        },
+        update-date std {
+          year 2015,
+          month 2,
+          day 25
+        }
+      },
+      seq-set {
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Veronica forrestii",
+                db {
+                  {
+                    db "taxon",
+                    tag id 1569047
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Veronica",
+                    species "forrestii"
+                  },
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "Veronica_fargesii_NB15",
+                general {
+                  db "NCBIFILE",
+                  tag str "ndhFrpl32 sequin FINAL/Veronica_fargesii_NB15"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 52708488
+                },
+                genbank {
+                  accession "KP844866"
+                }
+              },
+              descr {
+                title "Veronica forrestii isolate NB15 ndhF-rpl32 intergenic
+ spacer, partial sequence; and ribosomal protein L32 gene, partial cds.",
+                molinfo {
+                  biomol genomic
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 750,
+                seq-data ncbi2na '33E33B7BD4C000BFF03DF0F1CF2F3F58FD5A37C9DFF4
+022D1C003023391C13030300FF303FF2B3DFDE7031F40CF40D082F50FAD034E3C0D3280800CF02
+FD7F83FD03D03408E03A2DFFD560FE50BD33C70107F0302AFCF0131C004CABFD57F762B3EDCF62
+C0E03320F20E3B0B0222A003C9D33DBCFB3C2F43D3D8FCCD930A8F7000CE8FE8083F808C0CD050
+027FFFA048CF7F2000320E0F203FFF0433F04323B7F44D49CC50E2C377C3FF3F03A4BD40006C7D
+E4D0001B3DB003FFA000'H
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data imp {
+                        key "misc_feature"
+                      },
+                      partial TRUE,
+                      comment "ndhF-rpl32 intergenic spacer",
+                      location int {
+                        from 0,
+                        to 685,
+                        id genbank {
+                          accession "KP844866"
+                        },
+                        fuzz-from lim lt
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            seq {
+              id {
+                local str "KP844866_1"
+              },
+              descr {
+                molinfo {
+                  biomol peptide,
+                  completeness no-right
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 21,
+                seq-data iupacaa "MAVPKKRTSASKKRIRKNFWK"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      data prot {
+                        name {
+                          "ribosomal protein L32"
+                        },
+                        ec {
+                        },
+                        activity {
+                        }
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 20,
+                        id local str "KP844866_1",
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data cdregion {
+                    frame one,
+                    code {
+                      id 1
+                    }
+                  },
+                  partial TRUE,
+                  product whole local str "KP844866_1",
+                  location int {
+                    from 686,
+                    to 749,
+                    id genbank {
+                      accession "KP844866"
+                    },
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Veronica_szechuanica_NB03",
+            general {
+              db "NCBIFILE",
+              tag str "ndhFrpl32 sequin FINAL/Veronica_szechuanica_NB03"
+            },
+            general {
+              db "TMSMART",
+              tag id 52708493
+            },
+            genbank {
+              accession "KP844871"
+            }
+          },
+          descr {
+            title "Veronica szechuanica isolate NB03 ndhF-rpl32 intergenic
+ spacer, partial sequence; and ribosomal protein L32 gene, partial cds.",
+            source {
+              genome genomic,
+              org {
+                taxname "Veronica szechuanica",
+                db {
+                  {
+                    db "taxon",
+                    tag id 309821
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Veronica",
+                    species "szechuanica"
+                  },
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 753,
+            seq-data ncbi2na 'CF8CEDEF530002FFC0F7C3C73CBCFD63F568DF277FD008B4
+3000C08CE4704C0C0C03FCC0FFCACF7F79C0C7D033D03420BD43EB40D38F034CA020033C0BF5FE
+0FF40F40D02380E8B7FF558BF942F0CF1C041FC0C0ABF3C04C70013AAFF55FDD8ACFB73D8B0380
+CC83C838EC2C088A800F2F4CF4F3ECF0BD0F0F63F3364C2A3DF0033A3FA020FE023033414009FF
+FF81233DFC8000320E0F20099F3FFFF0433F44323B7F44D49CC50E2C377C3FF3F03A4BD40006C7
+DE4D0001B3DB003FC0'H
+          }
+        },
+        seq {
+          id {
+            local str "Veronica_szechuanica_NB06",
+            general {
+              db "NCBIFILE",
+              tag str "ndhFrpl32 sequin FINAL/Veronica_szechuanica_NB06"
+            },
+            general {
+              db "TMSMART",
+              tag id 52708494
+            },
+            genbank {
+              accession "KP844872"
+            }
+          },
+          descr {
+            title "Veronica szechuanica isolate NB06 ndhF-rpl32 intergenic
+ spacer, partial sequence.",
+            source {
+              genome genomic,
+              org {
+                taxname "Veronica szechuanica",
+                db {
+                  {
+                    db "taxon",
+                    tag id 309821
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Veronica",
+                    species "szechuanica"
+                  },
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 485,
+            seq-data ncbi2na '8F034CA020033C0BF5FE0FE00F40D02380E8B7FF558BF942
+F0CF1C041FC0C0ABF3C04C70013AAFF55FDD8ACFB73E8B0380CC83C838EC2C088A800F2F4CF6F3
+ECF0BD0F0F63F3364C2A3DF0033A3FA020FE023033414009FFFF81233DFC8000C8383C802678FF
+FFC10CFD10C8EDFD1352731438B0DDF0FFCFC0C0'H
+          }
+        },
+        seq {
+          id {
+            local str "Veronica_szechuanica_NB14",
+            general {
+              db "NCBIFILE",
+              tag str "ndhFrpl32 sequin FINAL/Veronica_szechuanica_NB14"
+            },
+            general {
+              db "TMSMART",
+              tag id 52708495
+            },
+            genbank {
+              accession "KP844873"
+            }
+          },
+          descr {
+            title "Veronica szechuanica isolate NB14 ndhF-rpl32 intergenic
+ spacer, partial sequence; and ribosomal protein L32 gene, partial cds.",
+            source {
+              genome genomic,
+              org {
+                taxname "Veronica szechuanica",
+                db {
+                  {
+                    db "taxon",
+                    tag id 309821
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Veronica",
+                    species "szechuanica"
+                  },
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 755,
+            seq-data ncbi2na '33E33B7BD4C0000BFF03DF0F1CF2F3F58FD5A37C9DFF4022
+D0C003023391C13030300FF303FF2B3DFDE7031F40CF40D082F50FAD034E3C0D3280800CF02FD7
+F83FC03D03408E03A2DFFD562FE50BC33C70107F0302AFCF0131C004EABFD57F762B3EDCF62C0E
+03320F20E3B0B0222A013CBD33DBCFB3C2F43C3D8FCCD930A8F7C00CE8FE8083F808C0CD050027
+FFFE048CF7F2000320E0F20099E3FFFF0433F44323B7F44D49CC50E2C377C3FF3F03A4BD40006C
+7DE4D0001B3DB003FC'H
+          }
+        }
+      },
+      annot {
+        {
+          data align {
+            {
+              type partial,
+              dim 4,
+              segs denseg {
+                dim 4,
+                numseg 24,
+                ids {
+                  local str "Veronica_fargesii_NB15",
+                  local str "Veronica_szechuanica_NB03",
+                  local str "Veronica_szechuanica_NB06",
+                  local str "Veronica_szechuanica_NB14"
+                },
+                starts {
+                  0,
+                  -1,
+                  -1,
+                  0,
+                  1,
+                  0,
+                  -1,
+                  1,
+                  -1,
+                  -1,
+                  -1,
+                  28,
+                  28,
+                  27,
+                  -1,
+                  30,
+                  36,
+                  35,
+                  -1,
+                  38,
+                  52,
+                  51,
+                  -1,
+                  54,
+                  54,
+                  53,
+                  -1,
+                  56,
+                  213,
+                  212,
+                  0,
+                  215,
+                  240,
+                  239,
+                  27,
+                  242,
+                  264,
+                  263,
+                  51,
+                  266,
+                  270,
+                  269,
+                  57,
+                  272,
+                  293,
+                  292,
+                  80,
+                  295,
+                  400,
+                  399,
+                  187,
+                  402,
+                  406,
+                  405,
+                  193,
+                  408,
+                  569,
+                  568,
+                  356,
+                  571,
+                  -1,
+                  592,
+                  -1,
+                  -1,
+                  593,
+                  593,
+                  380,
+                  595,
+                  -1,
+                  609,
+                  396,
+                  611,
+                  609,
+                  617,
+                  404,
+                  619,
+                  -1,
+                  624,
+                  411,
+                  626,
+                  616,
+                  626,
+                  413,
+                  628,
+                  688,
+                  698,
+                  -1,
+                  700,
+                  711,
+                  721,
+                  -1,
+                  723,
+                  743,
+                  -1,
+                  -1,
+                  -1
+                },
+                lens {
+                  1,
+                  27,
+                  2,
+                  8,
+                  16,
+                  2,
+                  159,
+                  27,
+                  24,
+                  6,
+                  23,
+                  107,
+                  6,
+                  163,
+                  24,
+                  1,
+                  16,
+                  8,
+                  7,
+                  2,
+                  72,
+                  23,
+                  32,
+                  7
+                },
+                strands {
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

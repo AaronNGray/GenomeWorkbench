@@ -1,0 +1,39 @@
+[Info]
+Name        = Size
+Description = Amino acid size
+; Type = Protein | DNA
+Type=Protein
+; Method = Coloration | ColumnScore | MatrixScore
+Method = ColumnScore
+
+[TABLE]
+; A table contains:
+;   MinimumValue ?
+;   MaximumValue ?
+;   Columns - Index for MatrixScore Methods only.
+MinimumValue = 0.5
+MaximumValue = 7.5
+
+[TableRows]
+A = 2.5
+R = 7.5
+N = 5.0
+D = 2.5
+C = 3.0
+Q = 6.0
+T = 5.0
+G = 0.5
+H = 6.0
+I = 5.5
+L = 5.5
+K = 7.0
+M = 6.0
+F = 6.5
+P = 5.5
+S = 3.0
+E = 5.0
+W = 7.0
+Y = 7.0
+V = 5.0
+
+

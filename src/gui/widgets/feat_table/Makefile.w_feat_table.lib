@@ -1,0 +1,18 @@
+# $Id: Makefile.w_feat_table.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# Feature table view lib
+
+ASN_DEP = seq seqset
+
+PROJ_TAG = demo
+
+SRC = feat_table feat_table_ds feature_filter_dlg
+
+LIB = w_feat_table
+
+DLL_LIB = w_wx gui_utils xalnmgr ximage submit tables \
+          $(SOBJMGR_LIBS)
+
+CPPFLAGS = $(WXWIDGETS_INCLUDE) $(ORIG_CPPFLAGS)
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) $(ORIG_LIBS)

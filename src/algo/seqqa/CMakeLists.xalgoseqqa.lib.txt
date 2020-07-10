@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.xalgoseqqa.lib.txt 594157 2019-09-30 18:28:48Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(xalgoseqqa)
+  NCBI_sources(
+    seqtest xcript_tests prot_prod_tests blastp_tests single_aln_tests
+    seq_id_tests
+  )
+  NCBI_uses_toolkit_libraries(entrez2cli seqtest xalgognomon)
+  NCBI_project_watchers(jcherry)
+NCBI_end_lib()
+

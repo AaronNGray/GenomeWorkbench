@@ -1,0 +1,16 @@
+# $Id: Makefile.ncbi_pub.dll 108294 2007-08-06 17:29:58Z Gouriano $
+
+DLL = ncbi_pub
+
+HOSTED_LIBS    = biblio  \
+                 medline \
+                 medlars \
+                 mla     \
+                 mlacli  \
+                 pub     \
+                 pubmed
+
+DEPENDENCIES   = ncbi_core ncbi_general
+
+CPPFLAGS = -DNCBI_PUB_EXPORTS
+

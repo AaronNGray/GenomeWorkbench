@@ -1,0 +1,15 @@
+# $Id: Makefile.gbench_install_xcode 44594 2020-01-28 20:03:50Z katargir $
+
+XCODE_PROJ = gbench_install_xcode
+
+APP_DEP   = gbench-bin gbench_monitor gbench_feedback_agent \
+            windowmasker blastn blastp blastx tblastn tblastx \
+			gbenchmacro macroflow ini2reg demo_widgets_gl_wx
+
+DLL_DEP   = ncbi_align_format ncbi_dbapi ncbi_dbapi_driver ncbi_lds2 \
+			ncbi_mmdb ncbi_validator ncbi_web ncbi_xcache_netcache \
+			ncbi_xcache_sqlite3 ncbi_xdbapi_ftds \
+			ncbi_xdbapi_odbc ncbi_xloader_blastdb ncbi_xloader_lds2 \
+			pkg_alignment pkg_sequence pkg_sequence_edit pkg_snp
+
+LIB_DEP = shaders

@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_field_collection.app.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_app(unit_test_field_collection)
+  NCBI_sources(unit_test_field_collection)
+  NCBI_uses_toolkit_libraries(general test_boost)
+  NCBI_project_watchers(whlavina)
+  NCBI_set_test_assets(uo.asnt)
+  NCBI_add_test(unit_test_field_collection -data-in uo.asnt)
+NCBI_end_app()
+

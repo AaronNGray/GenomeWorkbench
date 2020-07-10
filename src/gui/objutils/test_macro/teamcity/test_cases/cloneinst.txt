@@ -1,0 +1,9 @@
+OTU_1737   rna
+OTU_1757   rna
+OTU_942   rna
+OTU_12525   rna
+OTU_346   rna
+OTU_823   rna
+OTU_2380   rna
+OTU_2533   rna
+OTU_530   rna

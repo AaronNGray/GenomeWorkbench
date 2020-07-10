@@ -1,0 +1,173 @@
+Seq-entry ::= seq {
+  id {
+    local str "EntQ50",
+    genbank {
+      accession "KY873303"
+    }
+  },
+  descr {
+    molinfo {
+      biomol genomic
+    },
+    source {
+      genome genomic,
+      org {
+        taxname "Staphylococcus aureus",
+        db {
+          {
+            db "taxon",
+            tag id 1280
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Staphylococcus",
+            species "aureus"
+          },
+          attrib "specified",
+          lineage "cellular organisms; Bacteria; Terrabacteria group;
+ Firmicutes; Bacilli; Bacillales; Staphylococcaceae; Staphylococcus",
+          gcode 11,
+          mgcode 0,
+          div "BCT"
+        }
+      }
+    },
+    pub {
+      pub {
+        article {
+          title {
+            name "Antimicrobial resistance and occurrence of cvfB, sek, and
+ seq gene of Staphylococcus aureus isolated from pediatric bloodstream
+ infections."
+          },
+          authors {
+            names std {
+              {
+                name name {
+                  last "Liang",
+                  first "Bingshao",
+                  initials "B."
+                }
+              },
+              {
+                name name {
+                  last "Zhou",
+                  first "Zhenwen",
+                  initials "Z."
+                }
+              },
+              {
+                name name {
+                  last "Chen",
+                  first "Yinshuang",
+                  initials "Y."
+                }
+              },
+              {
+                name name {
+                  last "Huang",
+                  first "Yanmei",
+                  initials "Y."
+                }
+              },
+              {
+                name name {
+                  last "Mai",
+                  first "Jialiang",
+                  initials "J."
+                }
+              },
+              {
+                name name {
+                  last "Dong",
+                  first "Hui",
+                  initials "H."
+                }
+              }
+            }
+          },
+          from journal {
+            title {
+              iso-jta "Virology"
+            },
+            imp {
+              date std {
+                year 2017
+              },
+              prepub in-press
+            }
+          }
+        }
+      }
+    },
+    pub {
+      pub {
+        sub {
+          authors {
+            names std {
+              {
+                name name {
+                  last "Liang",
+                  first "Bingshao",
+                  initials "B."
+                }
+              },
+              {
+                name name {
+                  last "Zhou",
+                  first "Zhenwen",
+                  initials "Z."
+                }
+              },
+              {
+                name name {
+                  last "Mai",
+                  first "Jialiang",
+                  initials "J."
+                }
+              },
+              {
+                name name {
+                  last "Dong",
+                  first "Hui",
+                  initials "H."
+                }
+              }
+            },
+            affil std {
+              affil "guangzhou women and children's medical centre",
+              div "clinical lab",
+              city "Guangzhou",
+              sub "Guangdong",
+              country "China",
+              street "318 Renminzhong",
+              postal-code "510120"
+            }
+          },
+          medium email,
+          date std {
+            year 2017,
+            month 4,
+            day 3
+          }
+        }
+      }
+    },
+    update-date std {
+      year 2017,
+      month 3,
+      day 5,
+      hour 21,
+      minute 6,
+      second 16
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 18,
+    strand ds,
+    seq-data iupacna "CTCTGTATCTATAGTTGC"
+  }
+}

@@ -1,0 +1,14 @@
+#############################################################################
+#  $Id: CMakeLists.unit_test_pmcidconv_client.app.txt 594373 2019-10-03 13:30:50Z gouriano $
+#############################################################################
+
+NCBI_begin_app(unit_test_pmcidconv_client)
+  NCBI_sources(unit_test_pmcidconv_client)
+  NCBI_uses_toolkit_libraries(
+    pmcidconv_client xformat tables macro test_boost ncbi_xloader_genbank
+   
+  )
+  NCBI_requires(Boost.Test.Included)
+  NCBI_add_test()
+  NCBI_project_watchers(bollin)
+NCBI_end_app()

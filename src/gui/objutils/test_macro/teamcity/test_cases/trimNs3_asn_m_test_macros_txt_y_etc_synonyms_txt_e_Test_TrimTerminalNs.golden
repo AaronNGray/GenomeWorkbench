@@ -1,0 +1,199 @@
+Seq-entry ::= set {
+  class pop-set,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "2022840/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 83031360
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Zearaja maugeana",
+            common "Port Davey skate",
+            db {
+              {
+                db "taxon",
+                tag id 496415
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Zearaja",
+                species "maugeana"
+              },
+              attrib "specified",
+              lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Chondrichthyes; Elasmobranchii; Batoidea; Rajiformes; Rajidae; Zearaja",
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 28,
+        strand ds,
+        seq-data iupacna "CTCCATTCTCCTTCTCCCCCTAACCCCC"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "NADH2"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 27,
+                strand plus,
+                id local str "Seq1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "Seq3",
+        general {
+          db "BankIt",
+          tag str "2022840/Seq3"
+        },
+        general {
+          db "TMSMART",
+          tag id 83031362
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Zearaja maugeana",
+            common "Port Davey skate",
+            db {
+              {
+                db "taxon",
+                tag id 496415
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Zearaja",
+                species "maugeana"
+              },
+              attrib "specified",
+              lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Chondrichthyes; Elasmobranchii; Batoidea; Rajiformes; Rajidae; Zearaja",
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 1,
+        strand ds,
+        seq-data ncbi4na '20'H
+      }
+    },
+    seq {
+      id {
+        local str "Seq4",
+        general {
+          db "BankIt",
+          tag str "2022840/Seq4"
+        },
+        general {
+          db "TMSMART",
+          tag id 83031363
+        }
+      },
+      descr {
+        source {
+          genome mitochondrion,
+          org {
+            taxname "Zearaja maugeana",
+            common "Port Davey skate",
+            db {
+              {
+                db "taxon",
+                tag id 496415
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Zearaja",
+                species "maugeana"
+              },
+              attrib "specified",
+              lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Chondrichthyes; Elasmobranchii; Batoidea; Rajiformes; Rajidae; Zearaja",
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 358,
+        strand ds,
+        seq-data iupacna "GTATAAACATCTAGGCATACTGTTGTATGTGCATTCACTGATATGGAAGTGT
+AGGGTGAATTTGCAAAGAGGAGCAAAACAAGGTCAGACAACTATGGAAGGCAAAATGCTGGAATATTTTTTCAGTCAA
+CATGAAAACAATTTTGATAAACAAAAGATTCACAAAAACTAAATTACATTGAGTGGCAAAAGAGAAAAGGTGGAAGCC
+TCCACAGACTTTTCACCCAACAAGTATAAAGATGAAGACTCTGAAATCTACACCGATGCCAAGGTGGAGAACACCACC
+ACTTTGAAAAGCTATGTTCTAATTATTCAATGCATTGTGTTCTAATTGTTCACATCTACAGATTCCAACTTC"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "CTRL"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 357,
+                strand plus,
+                id local str "Seq4",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

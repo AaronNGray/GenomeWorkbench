@@ -1,0 +1,107 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza A virus",
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "Drs3"
+                },
+                {
+                  subtype nat-host,
+                  subname "dog"
+                }
+              },
+              gcode 1
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Germany"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 22,
+        strand ds,
+        seq-data iupacna "AAAAAAGGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Felis catus",
+            common "domestic cat",
+            db {
+              {
+                db "taxon",
+                tag id 9685
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Felis",
+                species "catus"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype old-name,
+                  subname "cat"
+                }
+              },
+              lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Mammalia; Eutheria; Laurasiatheria; Carnivora; Feliformia;
+ Felidae; Felinae; Felis",
+              gcode 1,
+              mgcode 2,
+              div "MAM"
+            }
+          },
+          subtype {
+            {
+              subtype isolation-source,
+              name "Anaerobic digester"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 224,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGAATTC
+CCCTATTCCTTGGTAGTGTGTTCGGTGCTCTGAAGAGTATGTTAGGTTTATTATGGAATGCTTTACAACAGGTTTTCG
+GTGACTGGTTCACAGCTAAGGCTCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATA
+ACATGGGTCATTAACA"
+      }
+    }
+  }
+}

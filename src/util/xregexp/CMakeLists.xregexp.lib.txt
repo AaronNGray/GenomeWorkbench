@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.xregexp.lib.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+#
+#
+#
+
+NCBI_begin_lib(xregexp)
+  NCBI_sources(regexp arg_regexp mask_regexp)
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_project_watchers(ivanov)
+NCBI_end_lib()
+

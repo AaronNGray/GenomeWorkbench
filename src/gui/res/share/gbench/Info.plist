@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>gbw</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>gbench_workspace.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>Genome Workbench Workspace Document</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>gbw</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>gbp</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>gbench_project.icns</string>
+			<key>CFBundleTypeName</key>
+			<string>Genome Workbench Project Document</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>gbp</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+		</dict>
+	</array>
+	<key>CFBundleExecutable</key>
+	<string>Genome Workbench</string>
+	<key>CFBundleIconFile</key>
+	<string>Genome Workbench.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.NCBI.GenomeWorkbench</string>
+	<key>CFBundleName</key>
+	<string>Genome Workbench</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>placeholder_for_gbench_version</string>
+	<key>CFBundleVersion</key>
+	<string>placeholder_for_gbench_version</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>XX.X</string>
+	<key>NSPrincipalClass</key>
+	<string>NSApplication</string>
+</dict>
+</plist>

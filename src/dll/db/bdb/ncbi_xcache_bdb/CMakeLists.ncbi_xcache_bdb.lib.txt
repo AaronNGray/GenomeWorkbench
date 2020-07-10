@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_xcache_bdb.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_xcache_bdb SHARED)
+  NCBI_hosts_projects(
+    db/bdb/ncbi_xcache_bdb
+  )
+  NCBI_add_definitions(NCBI_BDB_CACHE_EXPORTS)
+NCBI_end_lib()

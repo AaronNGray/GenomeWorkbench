@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.gumbelparams.app.txt 593585 2019-09-20 13:57:47Z gouriano $
+#############################################################################
+
+NCBI_begin_app(gumbelparams_app)
+  NCBI_sources(gumbelparams_app)
+  NCBI_uses_toolkit_libraries(gumbelparams)
+  NCBI_project_watchers(boratyng madden camacho)
+NCBI_end_app()
+

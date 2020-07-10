@@ -1,0 +1,9 @@
+# $Id: Makefile.in 398392 2013-05-06 12:30:09Z bollin $
+
+# Meta-makefile (object utilities)
+##################################
+
+LIB_PROJ = unit_test_util
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

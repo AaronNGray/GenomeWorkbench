@@ -1,0 +1,10 @@
+# $Id: Makefile.esearch.lib 427429 2014-02-20 13:41:40Z gouriano $
+
+LIB = esearch
+SRC = esearch__ esearch___
+
+WATCHERS = grichenk
+
+
+USES_LIBRARIES =  \
+    xser

@@ -1,0 +1,17 @@
+MACRO FixSourceUnderscores "Edit taxname replace '_' with ''"
+VAR
+    find_text = "_"
+    repl_text = " "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    EditStringQual("org.taxname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO TaxLookup "Perform tax lookup"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+------------------------------------------------------------------------------

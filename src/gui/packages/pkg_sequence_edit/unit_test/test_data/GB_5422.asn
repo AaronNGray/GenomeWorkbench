@@ -1,0 +1,91 @@
+Seq-entry ::= seq {
+  id {
+    local str "Seq11",
+    general {
+      db "BankIt",
+      tag str "1837063/Seq11"
+    },
+    general {
+      db "TMSMART",
+      tag id 56749595
+    },
+    genbank {
+      accession "KT250608"
+    }
+  },
+  descr {
+    title "Mychonastes sp. MA1A21 18S ribosomal RNA gene, partial sequence.",
+    source {
+      genome genomic,
+      org {
+        taxname "Mychonastes sp. MA1A21",
+        db {
+          {
+            db "taxon",
+            tag id 1761926
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Mychonastes",
+            species "sp. MA1A21"
+          },
+          mod {
+            {
+              subtype isolate,
+              subname "MA1A21"
+            }
+          },
+          lineage "Eukaryota; Viridiplantae; Chlorophyta; Chlorophyceae;
+ Sphaeropleales; Mychonastaceae; Mychonastes",
+          gcode 1,
+          mgcode 1,
+          div "PLN",
+          pgcode 11
+        }
+      }
+    },
+    molinfo {
+      biomol genomic
+    },
+    update-date std {
+      year 2015,
+      month 11,
+      day 25
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 1086,
+    seq-data ncbi2na 'AA4938BB24313F8E985A406AE6811B1105F5CC2EA83254880FE8F0C5
+5B04C38EE9344F3CF3271A67CF8EAEE69E3C8CBE9AAC1A5450B718D2C9E3B88938D2511A91E211
+A95875C6A2924B0A0CFAD0E8642DE05253966E0A3C2B5DE8FB01F7FCDEA180029CF7CB47E1AC52
+38309169C1D6E524966B0C68AB909BCD68F47ABF02AE6CA6A4AC2D2EB80D7A27C1D481E53E31CD
+EDF833EE8AC26833B4EC9AE039F23384C81173E60A49F1C64CCF8678A46026EA8D0128F2315EB2
+D4657018E8C7613198C47BBBB7898093C2CD517A82C61642BE01D0283E9AAB59109AE893BAFC3D
+8E3198A05F17A9C839CFE16EAE0274FEC90C448CB0AE793A7B6D276E5A8BBAB2D59189915734F2
+E44B39E87F380799B250'H
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data rna {
+            type rRNA,
+            ext name "18S ribosomal RNA"
+          },
+          partial TRUE,
+          location int {
+            from 0,
+            to 1085,
+            strand plus,
+            id local str "Seq11",
+            fuzz-from lim lt,
+            fuzz-to lim gt
+          }
+        }
+      }
+    }
+  }
+}

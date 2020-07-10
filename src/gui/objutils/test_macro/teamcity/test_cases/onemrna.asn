@@ -1,0 +1,64 @@
+Seq-entry ::= seq {
+  id {
+    local str "Seq2",
+    general {
+      db "BankIt",
+      tag str "1657039/Seq2"
+    },
+    general {
+      db "TMSMART",
+      tag id 39787265
+    },
+    genbank {
+      accession "KF591394"
+    }
+  },
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Methanobacterium formicicum phage",
+        orgname {
+          gcode 1
+        }
+      }
+    },
+    molinfo {
+      biomol genomic,
+      completeness partial
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 501,
+    strand ds,
+    seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGAATTCCCCT
+AAGTGGGGATTAAGTAGTTATAAATTAAAGTTTAGGGTTAAATAATAACTTCCTTTTACCGCAGTATGGCAAACCGTC
+GGGGGCGTGCTGGAAGCTTTCATTAGCTACATTGCAACTTTCATTACATTGTTAGCGGACCTGATCAGTGGAAATATC
+ACGTTCACTGAGTTCATGAGTGAGATGTGGGTGGCTTTTCAGCAACTAATCGGTGAAGTCATAGGTGCCATTTTAAGT
+GGTATTGGGGAGTTTGTGTATAAAATGGTAGATTCTGCAATCCAAGCCGTCACAGGATGGGTAAATGCTTTCCTATCA
+TTTTTACCACAGATCCCCGGTATGATTGCCTTTTATTTAGGCTTTGCAATTGGGCAATTCATCAGTTTCAGCATGTCC
+CTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATAACATGGGTCATTAACA"
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data rna {
+            type mRNA,
+            ext name "new mrna"
+          },
+          location int {
+            from 0,
+            to 500,
+            strand plus,
+            id genbank {
+              accession "KF591394"
+            }
+          }
+        }
+      }
+    }
+  }
+}

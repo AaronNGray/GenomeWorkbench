@@ -1,0 +1,414 @@
+Seq-entry ::= seq {
+  id {
+    local str "Seq1",
+    genbank {
+      accession "KF591393"
+    }
+  },
+  descr {
+    molinfo {
+      biomol genomic,
+      completeness partial
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 510,
+    strand ds,
+    seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGAAAGT
+ACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAATTAATCATACCCTTCTGGATAAGGGGGAGCGTGTA
+CGGGATTATGATTTGAAGAACCTTGGGGATGCTTTGAAAAGTGCTCAGGATGTTGTTAAAACAGCTCAGGGCGAGGCG
+GCTACTATCACTAAAAATGATCATAGAGTGGAAGGGTTGGATAAATCTATTTTAAACCCTGATTTAATGCAGGCTGAG
+ATCGATTATGCTCTTAAATTGATTGAAGCTAAGGAATCCCGTTAAAAAAAAGAAAAAGGGGGCAACACGCACCCCTCC
+ATTTTTCTTTCCTTTTTTTGAATTTATTATAAAAATATGCAGTGATTTACCATGAATAGCCACGGCATTCTAGGATTA
+GCCCGCTGGAGTGTACTGATCAATGAAGGGGCATGGAAACCCCGGAACTTTGACGTGTTAATCA"
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data gene {
+            locus "gene0"
+          },
+          location int {
+            from 0,
+            to 509,
+            strand plus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene1"
+          },
+          location int {
+            from 10,
+            to 50,
+            strand plus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene2"
+          },
+          location int {
+            from 40,
+            to 110,
+            strand plus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene3"
+          },
+          location int {
+            from 40,
+            to 120,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene4"
+          },
+          location int {
+            from 60,
+            to 100,
+            strand plus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene5"
+          },
+          location pnt {
+            point 99,
+            strand plus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene6"
+          },
+          location pnt {
+            point 100,
+            strand plus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene7"
+          },
+          location pnt {
+            point 101,
+            strand plus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene8"
+          },
+          location pnt {
+            point 99,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene9"
+          },
+          location pnt {
+            point 100,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene10"
+          },
+          location pnt {
+            point 101,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene11"
+          },
+          location int {
+            from 70,
+            to 100,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene12"
+          },
+          location int {
+            from 100,
+            to 200,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene13"
+          },
+          location int {
+            from 100,
+            to 200,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene14"
+          },
+          location int {
+            from 130,
+            to 300,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene15"
+          },
+          location int {
+            from 300,
+            to 401,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene16"
+          },
+          location int {
+            from 300,
+            to 400,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene17"
+          },
+          location int {
+            from 300,
+            to 400,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene18"
+          },
+          location int {
+            from 240,
+            to 450,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene19"
+          },
+          location int {
+            from 240,
+            to 450,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene20"
+          },
+          location int {
+            from 400,
+            to 455,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene21"
+          },
+          location pnt {
+            point 400,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene22"
+          },
+          location pnt {
+            point 400,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene23"
+          },
+          location pnt {
+            point 399,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene24"
+          },
+          location pnt {
+            point 399,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene25"
+          },
+          location pnt {
+            point 401,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene26"
+          },
+          location pnt {
+            point 401,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene27"
+          },
+          location int {
+            from 430,
+            to 490,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene28"
+          },
+          location int {
+            from 430,
+            to 490,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene29"
+          },
+          location int {
+            from 10,
+            to 50,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "gene30"
+          },
+          location int {
+            from 0,
+            to 509,
+            strand minus,
+            id genbank {
+              accession "KF591393"
+            }
+          }
+        }
+      }
+    }
+  }
+}

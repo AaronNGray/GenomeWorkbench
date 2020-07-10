@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.msbuild_dataobj.lib.txt 564206 2018-05-23 12:53:05Z dicuccio $
+#############################################################################
+
+# Include projects from this directory
+NCBI_begin_lib(msbuild_dataobj)
+  NCBI_dataspecs(msbuild_dataobj.xsd)
+  NCBI_uses_toolkit_libraries(xser)
+NCBI_end_lib()

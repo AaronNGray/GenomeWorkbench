@@ -1,0 +1,188 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Microbotryum violaceum",
+            db {
+              {
+                db "taxon",
+                tag id 5272
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Microbotryum",
+                species "violaceum"
+              },
+              lineage "Eukaryota; Fungi; Dikarya; Pucciniomycotina;
+ Microbotryomycetes; Microbotryales; Microbotryaceae; Microbotryum",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 543,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAATTAATCATACCCGTGAAATTAGCAGATGACA
+GTAAAGCAAACAACCGTTTTAACATTCAAAAACCATACAATGGCCGGATGCTTAGTGTAGGGGCAGCTGGAAGTATTC
+TAGGATTTGGAGCCGGTTTATTCATCATAGATGACCCTATCAAAAGCGTAGCTGAAGCTGAAAGTAAAGCTTTACAAA
+GAAAATTAAGAGAATGGATAGGGGGAACAGCTAAAACCCGACTAGAAAAACGAAAAAACGGGTTACCTCCTATAATGA
+TAGTAATAGCTCAAAGACTTCACATTAATGACCTACACGGCATAATCAAAGAAACAGAACCCGTAATCCCTGCCTCTG
+AAGCCCTAAAAACCCTAAGACAAGGGGACACCATAGACCCCAACACATGGGTGGACTTAAACCTCCCCGCTATCTGTG
+AAAACCCCGAAACTGACCTACTA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "Putative terminase, large subunit\gene",
+                desc "terminase large subunit gene"
+              },
+              partial TRUE,
+              location int {
+                from 111,
+                to 542,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                },
+                fuzz-to lim gt
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 7865
+                }
+              },
+              pseudo TRUE
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        genbank {
+          accession "KF591394"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "bacterium",
+            db {
+              {
+                db "taxon",
+                tag id 1869227
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "bacterium"
+                }
+              },
+              lineage "Bacteria",
+              gcode 11,
+              div "BCT"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 688,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGAATTC
+CCCTAAGTGGGGATTAAGTAGTTATAAATTAAAGTTTAGGGTTAAATAATAAAAAAAAGATGGGAGAATGATATATAT
+GGACGGGATGATGGAAACCCGGGGTAAAATTAACCTTGAAAAGCAAGCCAAAGCCGAGTATATTAAAGGGGATGAAGC
+AAAAGAGATAGAGAAATTTCCTGAAGACGGATGAGGGGCGTGAAATAATCTGGCTTGACTATTGTGGTTACCACTTAT
+GTGATAGGCAAGCGGATTTAACACCCCTCCAATCCTATTTCATTAGCAAAGGCCGGTTAGACCTGTATAATGAAATGA
+ATAAGGTCAAATAAACATTCCTTTACTTTTTTTTCTTTTGTATTCTTTTATTTTTATAATAATATTTTATACATTCTT
+TTTCACGTTTACACTATCACGATAGACTGGTTCACAGCTAAGGCCAGTGAAGCTAATAAATGGTAGATTCTGCAATCC
+AAGCCGTCACAGGATGGGTAAATGCTTTCCTATCATTTTTACCACAGATCCCCGGTATGATTGCCTTTTATTTAGGCT
+TTGCAATTGGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATAACAT
+GGGTCATTAACA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "putative tape measure\nprotein gene",
+                desc "tape measure protein gene"
+              },
+              partial TRUE,
+              location int {
+                from 466,
+                to 687,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                },
+                fuzz-to lim gt
+              },
+              qual {
+                {
+                  qual "pseudogene",
+                  val "unknown"
+                }
+              },
+              dbxref {
+                {
+                  db "GeneID",
+                  tag id 23456
+                }
+              },
+              pseudo TRUE
+            },
+            {
+              data gene {
+                locus "Hypothetical, protein\tgene",
+                desc "Hypothetical protein gene"
+              },
+              location int {
+                from 119,
+                to 241,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

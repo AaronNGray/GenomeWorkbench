@@ -1,0 +1,3097 @@
+Seq-entry ::= set {
+  class phy-set,
+  descr {
+    create-date std {
+      year 2011,
+      month 11,
+      day 29
+    }
+  },
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Paphiopedilum adductum",
+            db {
+              {
+                db "taxon",
+                tag id 53066
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Paphiopedilum",
+                species "adductum"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Paphiopedilum",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "G1_P_adductum_62-6",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G1_P_adductum_62-6"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716524
+            },
+            genbank {
+              accession "JQ182152"
+            }
+          },
+          descr {
+            title "Paphiopedilum adductum clone 6
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1336,
+            seq-data ncbi2na '69D7E9780FDE5C2B127D3B2D7608407EAB2175F7DD779751
+4096996A08D1A6D9F56AFB20E298F84D7BE5B67799451DAE4D11DFB3F56FEE345E5143EF4F0EAD
+3C39F0FE77B9FFABDBF7C4F9EC27CFD0D0BFFDEC6FF4C0027D21E017809E1E0B22FFED8BCCB000
+02CD21FB82843FEFD2D6E7978400AC2238028020012288EF9F024E4E77FCCD702740DFFFFFC3BF
+DFFFAE012288EF9FAAE93317427AD963BE3863A0E9A229A86D854BF5B5F882FA296785E34D7A08
+828E3165A6DAEE266495BE389D29F6A42BAB2F9E17DB5406DA7D535854C0295DF4AC55F750550B
+5D11048D0B25DD6727DD49D45901D7D1A1F9E030000E0C8844E221234760C69A3898E6CEFE83AC
+5AC62D362B4A85DA23BE804A8AE9A2820AE7F54B623ED1ED05F755E7D0A97E9260F5F806F9D1A0
+197B2E75FAD9A5D857B5389DB888D5BAF482793D1439304EF2D30E42A3847AE82220A693D1'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1335,
+                    strand minus,
+                    id local str "G1_P_adductum_62-6",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1033,
+                    to 1259,
+                    strand minus,
+                    id local str "G1_P_adductum_62-6"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 610,
+                    to 946,
+                    strand minus,
+                    id local str "G1_P_adductum_62-6"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 224,
+                    strand minus,
+                    id local str "G1_P_adductum_62-6",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1033,
+                      to 1259,
+                      strand minus,
+                      id local str "G1_P_adductum_62-6",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 610,
+                      to 946,
+                      strand minus,
+                      id local str "G1_P_adductum_62-6"
+                    },
+                    {
+                      from 0,
+                      to 224,
+                      strand minus,
+                      id local str "G1_P_adductum_62-6",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "G1_P_adductum_62-6_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G1_P_adductum_62-6_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716525
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Paphiopedilum adductum]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 263,
+            seq-data ncbieaa "LLNHGISHELMDRVEAATKEHYRRFREQRFKEFAAKALEAGEKVDSDN
+LDWESTFFLRHLPVSNISEVPDLDDSYRKSVKEFAVELEKLAERLLDLLCEDLGLEKGYLKRAFYGSDGKPTFGTKVS
+NYPPCPKPELINGLRAHTDAGGIILLFQDDQVSGLQLLKDGNWVDVPPLRHSIVINIGDQLEVITNGKYKSVMHRVVA
+QSDGNRMSIASFYNPGSDAVIFPAPALVEAEEKKEVYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 262,
+                    id local str "G1_P_adductum_62-6_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "G1_P_adductum_62-6_1",
+              location packed-int {
+                {
+                  from 1033,
+                  to 1259,
+                  strand minus,
+                  id local str "G1_P_adductum_62-6",
+                  fuzz-to lim gt
+                },
+                {
+                  from 610,
+                  to 946,
+                  strand minus,
+                  id local str "G1_P_adductum_62-6"
+                },
+                {
+                  from 0,
+                  to 224,
+                  strand minus,
+                  id local str "G1_P_adductum_62-6",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Paphiopedilum dianthum",
+            db {
+              {
+                db "taxon",
+                tag id 53081
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Paphiopedilum",
+                species "dianthum"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Paphiopedilum",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "G9_P_dianthum_6-17",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G9_P_dianthum_6-17"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716526
+            },
+            genbank {
+              accession "JQ182153"
+            }
+          },
+          descr {
+            title "Paphiopedilum dianthum clone 17
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1326,
+            seq-data ncbi2na '69D7E9780FDE5C2B127D3B2D7608407EAB2175F7DD779751
+4096996A08D1A6D9D56AFB20E298F84D7BE5B67799451DEE4D11DFB3F56FEE345E5343EF5F0EAD
+3C39F0FE77B9FFABD3F7C6F9EC27CF90D07FDF0BFCB0009F487805E0178D82C0BFFB62F32C0000
+B3487EE0A10FFBE435B9E78400AF223002802001A288EF9F024E4E77FCCDC09D037C00800EDF7B
+F8B8068A23BE7EAB24CC5D09EB658EF8E10E83A688AAA1B6152FD6D7E20BE8A59E178D35E8220A
+38E5969B6BB8999256F8E274A7DAB0AEACBE785F6D502BE9F54D615300A577D2B257DD41542D76
+4412342C97759C9F75275164075F4587E780C00E088844E221234760C69A38D8E4CEFE83AC5ACA
+2D362B4A85DA23BE804A8AE9A2820AE7F54B62BED1ED85F755E5D0A9769260F5F806F9D1A0197B
+2E75FAD9A5D457B5389DB888D5BAF482793D143B30EF2D30E42A3847AE82220A693D19'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1325,
+                    strand minus,
+                    id local str "G9_P_dianthum_6-17",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1025,
+                    to 1251,
+                    strand minus,
+                    id local str "G9_P_dianthum_6-17"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 605,
+                    to 941,
+                    strand minus,
+                    id local str "G9_P_dianthum_6-17"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 224,
+                    strand minus,
+                    id local str "G9_P_dianthum_6-17",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1025,
+                      to 1251,
+                      strand minus,
+                      id local str "G9_P_dianthum_6-17",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 605,
+                      to 941,
+                      strand minus,
+                      id local str "G9_P_dianthum_6-17"
+                    },
+                    {
+                      from 0,
+                      to 224,
+                      strand minus,
+                      id local str "G9_P_dianthum_6-17",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "G9_P_dianthum_6-17_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G9_P_dianthum_6-17_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716527
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Paphiopedilum dianthum]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 263,
+            seq-data ncbieaa "LLNHGISHELMDRVEAATKEHYRRFREQRFKEFAAEALEAGEKVDSDN
+LDWESTFFLRHLPVSNISEVPDLDDSYRKSVKEFAVELEKLAERLLDLLCEDLGLEKGYLKRAFYGSDGKPTFGTKVS
+NYPPYPKPELINGLRAHTDAGGIILLFQDDQVSGLQLLKDGNWVDVPPLRHSIVINIGDQLEVITNGKYKSVMHRVVA
+QSDGNRMSIASFYNPGSDAVIFPAPALVEAEEKKEVYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 262,
+                    id local str "G9_P_dianthum_6-17_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "G9_P_dianthum_6-17_1",
+              location packed-int {
+                {
+                  from 1025,
+                  to 1251,
+                  strand minus,
+                  id local str "G9_P_dianthum_6-17",
+                  fuzz-to lim gt
+                },
+                {
+                  from 605,
+                  to 941,
+                  strand minus,
+                  id local str "G9_P_dianthum_6-17"
+                },
+                {
+                  from 0,
+                  to 224,
+                  strand minus,
+                  id local str "G9_P_dianthum_6-17",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Paphiopedilum delenatii",
+            db {
+              {
+                db "taxon",
+                tag id 78826
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Paphiopedilum",
+                species "delenatii"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Paphiopedilum",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "G26_P_delenatii_58-3",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G26_P_delenatii_58-3"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716528
+            },
+            genbank {
+              accession "JQ182154"
+            }
+          },
+          descr {
+            title "Paphiopedilum delenatii clone 3
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1318,
+            seq-data ncbi2na '69D7E9780FDE5C2B127D3B2D7408407EAB2175F7DD779751
+4196996A08D1A6D9D56AFB20E298F84D7BE5B47799471DEE4D11DFB3756FEE345E5343EF5FAD3C
+3973FF7B9FFABD3F7C4F9EC278F90D3BFDCC2FFAC0024D21E057809E3E0902FFED8BCCB000B3A1
+C38E80FFBF435B92DE3002B288C08A2080048A23BE7C09391FF335C09D037D000000EFFFCB8048
+A23BEBEAB24CC5D09EB458EF8E18E83A688AAA1B6152FD6D7E20BE0859E178D35E8224838E5969
+B4BB8999256F8E275A7DA90A6ACBE785F6D502B69F54D615180A777D2B157DD41542D744412342
+49775949F75275164075F4D87E780C00E088644E221A36760C69A389498E4CEF283AC5ACA2D362
+B4A86DA23BE804A8AE9A2820AE7F54B62BED9ED85F755E7D0A97C9A60F5F816F9D1A0197B2E75F
+AE9A5D457B538ADB988D53AF482793F4D81138AC74D0ECC18F2736CC220A493D19'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1317,
+                    strand minus,
+                    id local str "G26_P_delenatii_58-3",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1015,
+                    to 1241,
+                    strand minus,
+                    id local str "G26_P_delenatii_58-3"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 591,
+                    to 927,
+                    strand minus,
+                    id local str "G26_P_delenatii_58-3"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 224,
+                    strand minus,
+                    id local str "G26_P_delenatii_58-3",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1015,
+                      to 1241,
+                      strand minus,
+                      id local str "G26_P_delenatii_58-3",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 591,
+                      to 927,
+                      strand minus,
+                      id local str "G26_P_delenatii_58-3"
+                    },
+                    {
+                      from 0,
+                      to 224,
+                      strand minus,
+                      id local str "G26_P_delenatii_58-3",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "G26_P_delenatii_58-3_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G26_P_delenatii_58-3_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716529
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Paphiopedilum delenatii]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 263,
+            seq-data ncbieaa "LLNHGISHDLMDRVEAATKEHYRRFREQRFKEFAAKALEAGEKVDSDN
+LDWESTFFLRHLPVSNISDVPDLDDSYRKSMKEFAVELEKLAERLLDLLCEDLGLEKGYLKRAFRGSDGKPTFGTKVS
+NYPPCPKPELINGLRAHTDAGGIILLFQDDQVSGLQLLKDGNWVDVPPLRHSIVINIGDQLEVITNGRYKSVMHRVVA
+QSDGNRMSIASFYNPGSDAVIFPAPALVEAEEKKEVYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 262,
+                    id local str "G26_P_delenatii_58-3_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "G26_P_delenatii_58-3_1",
+              location packed-int {
+                {
+                  from 1015,
+                  to 1241,
+                  strand minus,
+                  id local str "G26_P_delenatii_58-3",
+                  fuzz-to lim gt
+                },
+                {
+                  from 591,
+                  to 927,
+                  strand minus,
+                  id local str "G26_P_delenatii_58-3"
+                },
+                {
+                  from 0,
+                  to 224,
+                  strand minus,
+                  id local str "G26_P_delenatii_58-3",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Paphiopedilum vietnamense",
+            db {
+              {
+                db "taxon",
+                tag id 299268
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Paphiopedilum",
+                species "vietnamense"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Paphiopedilum",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "G37_P_vietnamense_60-1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G37_P_vietnamense_60-1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716530
+            },
+            genbank {
+              accession "JQ182155"
+            }
+          },
+          descr {
+            title "Paphiopedilum vietnamense clone 1
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1320,
+            seq-data ncbi2na '69D7E9780FDE5C2B127D3B2D7608407EAB2175F7DDF79751
+4196996A08D1A6D9D56AFB20E298F84D7BE5B47799451DEE4D11DFB3756FEE345ED343EF5FAD3C
+39F0FF77B9FFABD3F7C4F9EC278F90D0BFDCC2FF2C0024D21E017809E3A0B02FFB62C32C000B34
+87EE3A03FEFD0D6E4B78400ACA230228820092288EF9F024647FCCD702740DF400003BFFD3B804
+8A23BE7EAB24CC5D09EB658EF8E18E83A688AAA1B6152FD6D7E20BE0859E178D35E8224838E596
+9B6BB8999256F8C275A7DA90A6ACBE785F6D502B69F54D615180A777D2B157DD41542D74441234
+249775949F75275164075F4D87E780C00E088644E221AB6760C69A1C9C98E4CEF283AC5ACA2D36
+2B4A86DA23BE804A8AE9A2820AE7F54B62BED9ED85F755E7D0A97E9A60F5F816F9D1A0997B2E75
+FAE9A5D457B5389DB988D5BAF482793F6D81138AC74E0ECC18F2D36C0220A693D1'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1319,
+                    strand minus,
+                    id local str "G37_P_vietnamense_60-1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1017,
+                    to 1243,
+                    strand minus,
+                    id local str "G37_P_vietnamense_60-1"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 593,
+                    to 929,
+                    strand minus,
+                    id local str "G37_P_vietnamense_60-1"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 224,
+                    strand minus,
+                    id local str "G37_P_vietnamense_60-1",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1017,
+                      to 1243,
+                      strand minus,
+                      id local str "G37_P_vietnamense_60-1",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 593,
+                      to 929,
+                      strand minus,
+                      id local str "G37_P_vietnamense_60-1"
+                    },
+                    {
+                      from 0,
+                      to 224,
+                      strand minus,
+                      id local str "G37_P_vietnamense_60-1",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "G37_P_vietnamense_60-1_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G37_P_vietnamense_60-1_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716531
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Paphiopedilum vietnamense]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 263,
+            seq-data ncbieaa "LLNHGISHELMDRVEAATKEHYRRFREQRFKEFAAKALEAGEKVDSDN
+LDWESTFFLRHLPVSNISDVPDLDDSYRKSMKEFAVELEKLAERLLDLLCEDLGLEKGYLKRAFRGSDGKPTFGTKVS
+NYPPCPKPELINGLRAHTDAGGIILLFQDDQVSGLQLLKDGNWVDVPPLRHSIVINIGDQLEVITNGRYKSVMHRVVA
+QSDGNRMSIASFYNPGSDAVIFPAPALVEAEEKKEVYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 262,
+                    id local str "G37_P_vietnamense_60-1_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "G37_P_vietnamense_60-1_1",
+              location packed-int {
+                {
+                  from 1017,
+                  to 1243,
+                  strand minus,
+                  id local str "G37_P_vietnamense_60-1",
+                  fuzz-to lim gt
+                },
+                {
+                  from 593,
+                  to 929,
+                  strand minus,
+                  id local str "G37_P_vietnamense_60-1"
+                },
+                {
+                  from 0,
+                  to 224,
+                  strand minus,
+                  id local str "G37_P_vietnamense_60-1",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Cypripedium californicum",
+            db {
+              {
+                db "taxon",
+                tag id 53039
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cypripedium",
+                species "californicum"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Cypripedium",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "L37_C_californicum_6-5",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L37_C_californicum_6-5"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716536
+            },
+            genbank {
+              accession "JQ182158"
+            }
+          },
+          descr {
+            title "Cypripedium californicum clone 5
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1129,
+            seq-data ncbi2na 'E9D7E97807FE582B127D3B2D7608407EAB2977F7DD75977D
+45265A65A82344936757ABEC818A636135AF94D9DE651477B934677EC5D53FB8C1794D33B94EBF
+0A7C37BDCE7BE7BC3FBC4B008E4880E1E82780A4340EA3220A9282493317427AD963BE1863A2E9
+A26AA86D8549E5B5F8A27A296785EB4D7A08908E3965A6DAEE2764357E309D69F6A469AB2F9D17
+FB560ADA595B5857E8295DF4AC55F752550B5D11248D0905DD6527DD49D44983D7D36DF5EC3133
+819848C8D2339D6EBA3C02FEB29FBC8F88CCCEFE43AC5ACB4D362B6885DA63BE886A8AE9A20202
+E7754B62BED9ED85F765A5D0AB7C9A6075F81679D1A0596B2E75FAD5A5D457B5389DB988DDBAF4
+82793D4145138BC7C930CC3DFB49343933C45F880A2404F444'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1128,
+                    strand minus,
+                    id local str "L37_C_californicum_6-5",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 809,
+                    to 1035,
+                    strand minus,
+                    id local str "L37_C_californicum_6-5"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 370,
+                    to 706,
+                    strand minus,
+                    id local str "L37_C_californicum_6-5"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 227,
+                    strand minus,
+                    id local str "L37_C_californicum_6-5",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 809,
+                      to 1035,
+                      strand minus,
+                      id local str "L37_C_californicum_6-5",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 370,
+                      to 706,
+                      strand minus,
+                      id local str "L37_C_californicum_6-5"
+                    },
+                    {
+                      from 0,
+                      to 227,
+                      strand minus,
+                      id local str "L37_C_californicum_6-5",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "L37_C_californicum_6-5_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L37_C_californicum_6-5_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716537
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Cypripedium californicum]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 264,
+            seq-data ncbieaa "LLNHEISHELMDRVEAGTKEHYRRFREQRFKEFAAKTLEAGEKVDSDN
+LDWESTFFLRHLPVSNIAEVSDLDDDYRKTMKEFAVELEKLAERLLDLLCEDLGLEKGYLKRAFQGSDGRPTFGTKVS
+NYPPCPKPELIKGLRAHTDAGGIILLFQDDQVSGLQLLKDGSWVDVPPLRHSIVVNIGDQLEVITNGRYKSVMHRVVA
+QSDGNRMSIASFYNPGSDAVIFPAPALVEEAEEKKEAYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 263,
+                    id local str "L37_C_californicum_6-5_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "L37_C_californicum_6-5_1",
+              location packed-int {
+                {
+                  from 809,
+                  to 1035,
+                  strand minus,
+                  id local str "L37_C_californicum_6-5",
+                  fuzz-to lim gt
+                },
+                {
+                  from 370,
+                  to 706,
+                  strand minus,
+                  id local str "L37_C_californicum_6-5"
+                },
+                {
+                  from 0,
+                  to 227,
+                  strand minus,
+                  id local str "L37_C_californicum_6-5",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Cypripedium acaule",
+            common "pink lady's slipper",
+            db {
+              {
+                db "taxon",
+                tag id 38191
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cypripedium",
+                species "acaule"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Cypripedium",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "L81_C_acaule_5-12",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L81_C_acaule_5-12"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716538
+            },
+            genbank {
+              accession "JQ182159"
+            }
+          },
+          descr {
+            title "Cypripedium acaule clone 12
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1244,
+            seq-data ncbi2na 'E9D7E97807FE542B127D3B2D7608C07EAB2177F7DD379F5D
+45265A65A82344935757ABEC818A636135AF94D9DE651077B934477EC5D59FB8C1794D33B94333
+3BD3C19F0DEF3396FAEF0FDF12C33AEB4F0A7C37BDC689DF0F3882BC2108304E7703A0C211424D
+03A8C882A4A0924CC5D09EB658EF8618E8BA689AAA1B6352796D7E289E8A59E17AD35E8224238E
+5969B6BB89D90D5F8E275A7DA91A6ACBE745FED582B69656D615FA02577D2B157DD49542D74449
+23424377594BF75075124075F4DBFD7B0C4CCCE06444E2212309D2C7AE8F08CCCEFF43AC5A0B6D
+362B6A85DA63BE886ACAE9A2820AE7754B62BED9ED8DF765A5D0BB7F9A6075F81679D1A0196B2E
+75FAFDA5D457B5389DB988D5BAF482793D4145138FC7C12E8C143800E4C0FD4BCE3142C138E7D5
+C76E3390FD4BCE83E820289093D1'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1243,
+                    strand minus,
+                    id local str "L81_C_acaule_5-12",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 865,
+                    to 1091,
+                    strand minus,
+                    id local str "L81_C_acaule_5-12"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 443,
+                    to 779,
+                    strand minus,
+                    id local str "L81_C_acaule_5-12"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 227,
+                    strand minus,
+                    id local str "L81_C_acaule_5-12",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 865,
+                      to 1091,
+                      strand minus,
+                      id local str "L81_C_acaule_5-12",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 443,
+                      to 779,
+                      strand minus,
+                      id local str "L81_C_acaule_5-12"
+                    },
+                    {
+                      from 0,
+                      to 227,
+                      strand minus,
+                      id local str "L81_C_acaule_5-12",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "L81_C_acaule_5-12_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L81_C_acaule_5-12_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716539
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Cypripedium acaule]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 264,
+            seq-data ncbieaa "LLNHGISHELMDRVEAETKEHYRRFREQRFKEFAAKTLEAGEKIDSDN
+LDWESTFFLRHLPVSNIAEVPDLDDDFRKTMKEFAVELEKLAERLLDLLCEDLGLEKGYLKRAFQGSDGRPTFGTKVS
+NYPPCPKPELIKGLRAHTDAGGIILLFQDDQVSGLQLLKDGSWIDVPPLRHSIVVNIGDQLEVITSGRYKSVMHRVVA
+QSDGNRMSIASFYNPGRDAVIFPAPALVEEADEKKEVYPKFIFEDYMKLYLGQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 263,
+                    id local str "L81_C_acaule_5-12_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "L81_C_acaule_5-12_1",
+              location packed-int {
+                {
+                  from 865,
+                  to 1091,
+                  strand minus,
+                  id local str "L81_C_acaule_5-12",
+                  fuzz-to lim gt
+                },
+                {
+                  from 443,
+                  to 779,
+                  strand minus,
+                  id local str "L81_C_acaule_5-12"
+                },
+                {
+                  from 0,
+                  to 227,
+                  strand minus,
+                  id local str "L81_C_acaule_5-12",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Cypripedium tibeticum",
+            db {
+              {
+                db "taxon",
+                tag id 752253
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cypripedium",
+                species "tibeticum"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Cypripedium",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "1_C_tibeticum_2-3",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/1_C_tibeticum_2-3"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716544
+            },
+            genbank {
+              accession "JQ182162"
+            }
+          },
+          descr {
+            title "Cypripedium tibeticum clone 3
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1895,
+            seq-data ncbi2na 'E9D7E97807FE582B127D3B2D7608407EAB2977F7DD77975D
+75149B6996A08C1E0D9D56AFB006298D84D6BE5367799441DEE4D11DFB1756F6E305E534CEC53A
+F3C29F1DEF739EFAEF0FD3CD0EF77C03D4EFCEF3FBAFCFE3C9D9C10B8B60C68CC3FCBD01301030
+FB5BFBBD8B6EF4F000CCCE0F310F3B3ECBFC03FC33332C8333BCFCC333B933C30E1FB3030420F3
+3313C3320CFF030030FEFFFFF38609DE070701E023832201004544450003B3E4D43FFFB44D3404
+0003F0323FBEB237F2924E7F972401DCF04086040F20CF7C0BF068D813030303033F33D8F7F865
+70F3DBDA33F75F5C80BCA10C02B6440304C1DB14E7703A0C231424D03A8F3A8C882A4A09E4CC5D
+09EB658EF8618E8BA689AAA1B6152796D7E289E8A59E17AD35E8224238E5949B6BB89D90D5F8E2
+75A7DA91A6ACBE745FED582B69656D615FA0A577D2B157DD4A543D74449234209775949F752751
+24075F4DB7E7B0C4CE06444F22123234E2339D2EBA3C22FEB29F7C0F88CCCEFC43AC5ACBED362B
+6A851A63BD886A8AE9A2820AE7754B62BED86D85F775A3D0AB7F9A6075F81679D1A0596B2E75FA
+DDA5D453B5389DB988D5BAF482793D4145138BC7C00E8C143802E4C03C133C05F88F7E48E3182C
+1CAC4E3BF5F5DB8E43F52F3A1C3DEF8080A2420F46'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1894,
+                    strand minus,
+                    id local str "1_C_tibeticum_2-3",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1481,
+                      to 1707,
+                      strand minus,
+                      id local str "1_C_tibeticum_2-3",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 1029,
+                      to 1365,
+                      strand minus,
+                      id local str "1_C_tibeticum_2-3"
+                    },
+                    {
+                      from 0,
+                      to 230,
+                      strand minus,
+                      id local str "1_C_tibeticum_2-3",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "1_C_tibeticum_2-3_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/1_C_tibeticum_2-3_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716545
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Cypripedium tibeticum]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 265,
+            seq-data ncbieaa "LLNHGISHELMDMVEAETKEHYRRFREQRFKEFAAKTLESGEKVDVDN
+LDWESTFFLRHLPVSNIAVVPDLDDNYRKTMKEFAVELEKLAERLLDLLCEELGLEKGYLKRAFQGSDGRPTFGTKVS
+NYPPCPKPELIKGLRAHTDAGGIILLFQDDQVSGLQLLKDGSWVDVPPLRHSIVVNIGDQLEVITNGRYKSVMHRVVA
+QSDGNRMSIASFYNPGSDSVIFPAPTLVEEEAEEKKEAYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 264,
+                    id local str "1_C_tibeticum_2-3_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "1_C_tibeticum_2-3_1",
+              location packed-int {
+                {
+                  from 1481,
+                  to 1707,
+                  strand minus,
+                  id local str "1_C_tibeticum_2-3",
+                  fuzz-to lim gt
+                },
+                {
+                  from 1029,
+                  to 1365,
+                  strand minus,
+                  id local str "1_C_tibeticum_2-3"
+                },
+                {
+                  from 0,
+                  to 230,
+                  strand minus,
+                  id local str "1_C_tibeticum_2-3",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Cypripedium candidum",
+            db {
+              {
+                db "taxon",
+                tag id 442461
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cypripedium",
+                species "candidum"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Cypripedium",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "L69_C_candidum_6-4",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L69_C_candidum_6-4"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716548
+            },
+            genbank {
+              accession "JQ182164"
+            }
+          },
+          descr {
+            title "Cypripedium candidum clone 4
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 2178,
+            seq-data ncbi2na 'E9D7E97807FE582B127D3B2D7608407EAB2977F7DD779751
+7514996996A08C120D9D56AFB206298D84D6BE5367799451DEE4D11DFB1756FEE305E534CEC53A
+F3C29F0DEF739EFEBBC3F4C7B08E4840E1E8278FD0342FFFFF42ED3FFE21B3CFC3E8B100F2C3A0
+0FE7D2D464B78C90A8A038C9068A0000000A20C21A00022883CC430BCBF8A4677FCDDF82743FFF
+F15012D0479C24E0DAE02D273EDFA021CFCF70F77C03E4AFC0FD0689CF1F7296D242BDBCF6DBF3
+F8FCF0B8B60C68CC38340CC0C0C3EF6FEEF62D39DBC20333383CCF30ECFB2FE00FF0CCCC740CCE
+F3F30FCEEC4F0C38FDCC0C3083CCCC4F0CC833FC0C00C3F8FFFFFE38627781C1C07BD0038C1814
+05002C3833C102181038813DF027C183C09F040E81103033F3D3F33D8F7F86570F3DBDA33F75D5
+C00BCA10800AD9100C13076C539DC0E8308C509340EA3CEA3220A5282493317427AD963BE1863A
+2E9A269A86D8549E5B5F8A27A296785EB4D7A08908E3965A6DAEE2764357E389D69F6A469AB2F9
+D17FB560ADA595B5817E8295DF4AC55F752550F5D11248D0825DD6527DD49D44901D7D36DF5EC3
+1381911388848C8D388CE74BAE8F08BFACA7DF23E23333BF10EB16B2F84D8ADAA17698EF621AA2
+BA68A082B9DD52D8AFB61B617DD968F42ADFE6981D7E059E74E8165ACB9D7EB7697514ED4E276E
+62356EBD209E4F505144E2F1F043A3050E00B9300F04CF117E23DF9238C60B072B138EFD7D76E3
+390FC4BCE8F0F7BE020289083D18'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 2177,
+                    strand minus,
+                    id local str "L69_C_candidum_6-4",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1762,
+                    to 1988,
+                    strand minus,
+                    id local str "L69_C_candidum_6-4"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1312,
+                    to 1648,
+                    strand minus,
+                    id local str "L69_C_candidum_6-4"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 230,
+                    strand minus,
+                    id local str "L69_C_candidum_6-4",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1762,
+                      to 1988,
+                      strand minus,
+                      id local str "L69_C_candidum_6-4",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 1312,
+                      to 1648,
+                      strand minus,
+                      id local str "L69_C_candidum_6-4"
+                    },
+                    {
+                      from 0,
+                      to 230,
+                      strand minus,
+                      id local str "L69_C_candidum_6-4",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "L69_C_candidum_6-4_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L69_C_candidum_6-4_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716549
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Cypripedium candidum]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 265,
+            seq-data ncbieaa "LLNHGISHELMDMVEAETKEHYRRFHEQRFKEFAAKTLESGEKVDVDN
+LDWESTFFLRHLPVSNIAEVPDLDVNYRKTMKEFAVELEKLAERLLDLLCEELGLEKGYLKRAFQGSDGRPTFGTKVS
+NYPPCPKPELIKGLRAHTDAGGIILLFQDDQVSGLQLLKDGSWVDVPPLRHSIVVNIGDQLEVITNGRYKSVMHRVVA
+QSDGNRMSIASFYNPGSDSVIFPAPALVEVEAEEKKEAYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 264,
+                    id local str "L69_C_candidum_6-4_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "L69_C_candidum_6-4_1",
+              location packed-int {
+                {
+                  from 1762,
+                  to 1988,
+                  strand minus,
+                  id local str "L69_C_candidum_6-4",
+                  fuzz-to lim gt
+                },
+                {
+                  from 1312,
+                  to 1648,
+                  strand minus,
+                  id local str "L69_C_candidum_6-4"
+                },
+                {
+                  from 0,
+                  to 230,
+                  strand minus,
+                  id local str "L69_C_candidum_6-4",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Cypripedium debile",
+            db {
+              {
+                db "taxon",
+                tag id 442462
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cypripedium",
+                species "debile"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Cypripedium",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "L102_C_debile_2-8",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L102_C_debile_2-8"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716550
+            },
+            genbank {
+              accession "JQ182165"
+            }
+          },
+          descr {
+            title "Cypripedium debile clone 8
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1337,
+            seq-data ncbi2na 'E9D7E97807FE582B127D3B2D7608407EAB2977F7DD77945D
+4726DA65A82347936757ABEC8186636135EF94D9DE651477B934477EC5D5BFB8C1794D31B94EB4
+F0A7C1EF739EF7F7F0FA2C403FB0E83FFFFC312012D04579C3FB78CE9383610024873DC3DDF30F
+92BF00FD3A207C75FE8CF7D753880BC2D080293039D80E8308C529302EA3A20A93928248CC5D09
+EB658EF8618E8BA689AAA196152796D7E289E8A59E17AD35E8224238E5969B6BB89D9057F8E275
+A7DA91A6AC9E705FED580B6B656F615FE0A577D2B157DD48540D74449234249775949374275D24
+075F4DB7D7B0E4CE0CEF48AEBE08BFACA7DF23E23333BF80EB16B2DB4D8ADAA17698EFA21AB2B9
+68A082B9DD52D88FB65B517DD969742ADFE6981D7E059E76681652CB9D7EB7497515ED4E276E62
+356EBD209C4F505346EBC7F00E8010380EE9B8A1F5F5FB8C243F42C0A9CFDEFA080824037443'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1336,
+                    strand minus,
+                    id local str "L102_C_debile_2-8",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 978,
+                    to 1204,
+                    strand minus,
+                    id local str "L102_C_debile_2-8"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 557,
+                    to 893,
+                    strand minus,
+                    id local str "L102_C_debile_2-8"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 227,
+                    strand minus,
+                    id local str "L102_C_debile_2-8",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 978,
+                      to 1204,
+                      strand minus,
+                      id local str "L102_C_debile_2-8",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 557,
+                      to 893,
+                      strand minus,
+                      id local str "L102_C_debile_2-8"
+                    },
+                    {
+                      from 0,
+                      to 227,
+                      strand minus,
+                      id local str "L102_C_debile_2-8",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "L102_C_debile_2-8_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L102_C_debile_2-8_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716551
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Cypripedium debile]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 264,
+            seq-data ncbieaa "LLNHGISHELMDRVEAETKEHYWRFREQRFKEFAAKTLEAGEKVDGDN
+LDWESTFFLRHLPVSNIAEVPDLDDDYRKTMKEFAEELEMLAERLLDLLCEDLGLEKGYLKRAFKGSNGRPTFGTKVS
+SYPPCPKPELIKGLRAHTDAGGIILLFQDDQVSGLQLLKDGSWVGVPPLRHSIVVNIGDQLEVITNGRYKSVMHRVVA
+QSDGNRMSIASFYNPGSDAVIFPAPTLVEVAEEKKEAYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 263,
+                    id local str "L102_C_debile_2-8_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "L102_C_debile_2-8_1",
+              location packed-int {
+                {
+                  from 978,
+                  to 1204,
+                  strand minus,
+                  id local str "L102_C_debile_2-8",
+                  fuzz-to lim gt
+                },
+                {
+                  from 557,
+                  to 893,
+                  strand minus,
+                  id local str "L102_C_debile_2-8"
+                },
+                {
+                  from 0,
+                  to 227,
+                  strand minus,
+                  id local str "L102_C_debile_2-8",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Cypripedium passerinum",
+            db {
+              {
+                db "taxon",
+                tag id 53048
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cypripedium",
+                species "passerinum"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Cypripedium",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "L23_C_passerinum_2-4",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L23_C_passerinum_2-4"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716554
+            },
+            genbank {
+              accession "JQ182167"
+            }
+          },
+          descr {
+            title "Cypripedium passerinum clone 4
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1619,
+            seq-data ncbi2na 'E9D7E9F807FE582B127D3B2D7608407EAB2937F7DD77975D
+45265A65A82344936757ABEC818A636135AF94D9DE651477B934477EC5D5BFB8C1794D33B94EB4
+FDCC7BEBBE3F7C4B08E4840E1E8278F90D07FFFFD0830C0C2E97FDE23B3CFC3E8BF00F2C3A00FE
+FD2D4E4B78490A8A00082082082208480048919DF777E09D0FFFFF15032D0479CBFB7CCE93837B
+80B49CF3FE80F92BF00FD3A277C75FE8CFDDB53880BC200BD21A0C13076C539DC0E8B080509340
+EA3220A9282893317427AD963BE1863A2E9A26AA0658549E5B5F8A27A296785FB4D7A08908E396
+5A6DAEE2764357E389D69F6A46BAB2F9D17FB560ADA595B5857E8295DF4AC55F752550BDD12248
+D0925DD6527DD49D40901DFD36FF5EC31338191138E221232348CE74BAE8CCCCEFE43AC58CB6D3
+62B6A85DA63BE8A4A8AE9A2820AE7754B62BED96D85F765A5D0AB7F9A6075F81679D1A0596B2E7
+5F2DD25D457B5389DB888D5BAF482793D4145938BC7C10E8C143800E4C230F5ED18A0A79343937
+C45F88F7E48E3182C1CAC4D19F5F5DB8CC43F52F3A1C3DEFA08022420F46'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1618,
+                    strand minus,
+                    id local str "L23_C_passerinum_2-4",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1175,
+                    to 1401,
+                    strand minus,
+                    id local str "L23_C_passerinum_2-4"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 752,
+                    to 1088,
+                    strand minus,
+                    id local str "L23_C_passerinum_2-4"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 227,
+                    strand minus,
+                    id local str "L23_C_passerinum_2-4",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1175,
+                      to 1401,
+                      strand minus,
+                      id local str "L23_C_passerinum_2-4",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 752,
+                      to 1088,
+                      strand minus,
+                      id local str "L23_C_passerinum_2-4"
+                    },
+                    {
+                      from 0,
+                      to 227,
+                      strand minus,
+                      id local str "L23_C_passerinum_2-4",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "L23_C_passerinum_2-4_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/L23_C_passerinum_2-4_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716555
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Cypripedium passerinum]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 264,
+            seq-data ncbieaa "LLNHGISHELMDRVEAETKEHYRRFREQRFKEFAAKTLEAGEKVDGDN
+LDWESTFFLRHLPASNIAEVPDLDDDYRKTMKEFALELEKLAERLLDLLCENLGLEKGYLKRAFQGSDGRPTFGTKVS
+NYPPCPKPELIKGLRAHTDAGGIILLFQDDKVSGLQLLKDGSWVGVPPLRHSIVVNIGDQLEVITNGRYKSVMHRVVA
+QSDGNRMSIASFYNPGSDAVIFPAPALVEEAEEKKDAYPKFVFEDYMKLYLRQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 263,
+                    id local str "L23_C_passerinum_2-4_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "L23_C_passerinum_2-4_1",
+              location packed-int {
+                {
+                  from 1175,
+                  to 1401,
+                  strand minus,
+                  id local str "L23_C_passerinum_2-4",
+                  fuzz-to lim gt
+                },
+                {
+                  from 752,
+                  to 1088,
+                  strand minus,
+                  id local str "L23_C_passerinum_2-4"
+                },
+                {
+                  from 0,
+                  to 227,
+                  strand minus,
+                  id local str "L23_C_passerinum_2-4",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Cypripedium irapeanum",
+            db {
+              {
+                db "taxon",
+                tag id 49711
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cypripedium",
+                species "irapeanum"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Cypripedium",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "G259_C_irapeanum_1-4",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G259_C_irapeanum_1-4"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716558
+            },
+            genbank {
+              accession "JQ182169"
+            }
+          },
+          descr {
+            title "Cypripedium irapeanum clone 4
+ 1-aminocyclopropane-1-carboxylate oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1734,
+            seq-data ncbi2na 'E9D7E97807FE782B127D3B2D7608407EAB2975D7DD77975D
+44265865A82344936757ABEC818A636135AF94F9DE651477B934477EC5D5BFB8C1794C33B953AD
+3C29F0FEF739EFEEFCFDF12C239A10B8780920278F90D0BFFF42332C08BA4FF788ECF3F0FA24E1
+2CB0E803FBF4B5392DE1242A28000B88E288208C80048A203210C2F9FE2919DFF377C09D03FFF0
+FFFFCD8243411DE70FEDF33A4E0DAE029273EDFA021CF707B7043E8AFC03F4E89F3D7DA03F75D4
+E200F004280AF20C13076C539DC0E83080509340EA3220A9082493317427AD963BE1863A2E9A26
+AA86D8D49E5B5F8A27A296785EB4D7808908E3965A6DA6E2764157E389DA9F6A46BAB2F9D17FB5
+60ADA595B5857E8295DF4AC55F752550B5D11248D0925DD6527DDC9D44901D7D36DF5EC3133819
+11388848C8D2339D2EBA3C21F6CA7DF23E23333BF92EB16B2DB4D8ADAA17698EFA21A82BA68AC8
+2B9DD52D8AFB45B617DD969742ADFE4981D7E079E7468161ACB9176B7697515CD4E2F6E62356EB
+D209E4F525144E2F1F043A3050E1024C03C9308C3D7B4E2829E4D3E44F117E23DF9238C61B072B
+938E7DFD76E3390FD4BCE030F7BE82028909BD19'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1733,
+                    strand minus,
+                    id local str "G259_C_irapeanum_1-4",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1280,
+                    to 1506,
+                    strand minus,
+                    id local str "G259_C_irapeanum_1-4"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 832,
+                    to 1168,
+                    strand minus,
+                    id local str "G259_C_irapeanum_1-4"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 227,
+                    strand minus,
+                    id local str "G259_C_irapeanum_1-4",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1280,
+                      to 1506,
+                      strand minus,
+                      id local str "G259_C_irapeanum_1-4",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 832,
+                      to 1168,
+                      strand minus,
+                      id local str "G259_C_irapeanum_1-4"
+                    },
+                    {
+                      from 0,
+                      to 227,
+                      strand minus,
+                      id local str "G259_C_irapeanum_1-4",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "G259_C_irapeanum_1-4_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G259_C_irapeanum_1-4_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716559
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Cypripedium irapeanum]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 264,
+            seq-data ncbieaa "LLNHGISHELMDRVEAETEVHYRRFREQQFKEFAAKTLEAGEKVDGDN
+LDWESTFYLRHLPVSNIAEVPDLDDDYRKTMKEFAVELEKLAERLLDLLCEDLGLEKGYLKRAFQGSDGRPTFGTKVS
+NYPPCPKPELIKGLRAHADAGGIILLFQDDQVSGLQLLKDGSWIDVPPLRHSIVVNIGDQLEVITNGRYKSVMHRVVA
+QSNGNRMSIASFYNPGSDAVIFPASALVEEAEEKEEAYPKFVFEDYMKLYLQQKFQAKEP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 263,
+                    id local str "G259_C_irapeanum_1-4_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "G259_C_irapeanum_1-4_1",
+              location packed-int {
+                {
+                  from 1280,
+                  to 1506,
+                  strand minus,
+                  id local str "G259_C_irapeanum_1-4",
+                  fuzz-to lim gt
+                },
+                {
+                  from 832,
+                  to 1168,
+                  strand minus,
+                  id local str "G259_C_irapeanum_1-4"
+                },
+                {
+                  from 0,
+                  to 227,
+                  strand minus,
+                  id local str "G259_C_irapeanum_1-4",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Cypripedium molle",
+            db {
+              {
+                db "taxon",
+                tag id 926553
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cypripedium",
+                species "molle"
+              },
+              lineage "Eukaryota; Viridiplantae; Streptophyta; Embryophyta;
+ Tracheophyta; Spermatophyta; Magnoliophyta; Liliopsida; Asparagales;
+ Orchidaceae; Cypripedioideae; Cypripedium",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "G260_C_molle_2-2",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G260_C_molle_2-2"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716560
+            },
+            genbank {
+              accession "JQ182170"
+            }
+          },
+          descr {
+            title "Cypripedium molle clone 2 1-aminocyclopropane-1-carboxylate
+ oxidase (ACO), partial cds.",
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1735,
+            seq-data ncbi2na 'E9F7E97807FE782B127D3B2D7608407EAB2975D7DD77975D
+44265865A82344936757ABEC818A636135AF94F9DE651477B934477EC5D5BFB8C1794C33B953AD
+3C29F0FEF739EFEEF0FDF12C239210B8780920278F90D0BFFF42332C08BA4FF788ECF3F0FA24E1
+2CB0E803FBF4B5B92DE1242A28000B88E288208C80048A203210C2F9FE2919DFF377C09D03FFF0
+FFFFF36090D04779C3FB7CCE93836B80B49CFB7E80873DC1EDC10FA2BF00F53A27CF5F680FDD75
+38803C010A02BC8304C1DB14E7703A0C201424D03A8C882A420924CC5D09EB658EF8618E8BA689
+AAA1B6352796D7E289E8A59E17AD35E0224238E5969B6BB89D9055F8E276A7DA91AEACBE745FED
+582B69656D615FA0A577D2B15FDD49542D74449234249775949F77275124075F4DB7D7B0C4CE06
+444E221232348CE74BAE8F087DB29F7C8F88CCCEFE4BAC5ACB6D362B6A85DA63BE886A0AE9A2B2
+0AE7754B62BED16D85F765A5D0AB7F926075F81E79D1A0586B2E45FADDA5D4573538BDB988D5BA
+F482793D4945138BC7C10E8C1438439300F24C230F5ED38A0A7934F913C45F88F7E48E3186C1CA
+E4E39F7F5DB8CE43F52F380C3DEFA080A2426F46'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "ACO"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 1734,
+                    strand minus,
+                    id local str "G260_C_molle_2-2",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 1281,
+                    to 1507,
+                    strand minus,
+                    id local str "G260_C_molle_2-2"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "2"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  location int {
+                    from 833,
+                    to 1169,
+                    strand minus,
+                    id local str "G260_C_molle_2-2"
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "3"
+                    }
+                  }
+                },
+                {
+                  data imp {
+                    key "exon"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 227,
+                    strand minus,
+                    id local str "G260_C_molle_2-2",
+                    fuzz-from lim lt
+                  },
+                  qual {
+                    {
+                      qual "number",
+                      val "4"
+                    }
+                  }
+                },
+                {
+                  data rna {
+                    type mRNA,
+                    ext name "1-aminocyclopropane-1-carboxylate oxidase"
+                  },
+                  partial TRUE,
+                  location packed-int {
+                    {
+                      from 1281,
+                      to 1507,
+                      strand minus,
+                      id local str "G260_C_molle_2-2",
+                      fuzz-to lim gt
+                    },
+                    {
+                      from 833,
+                      to 1169,
+                      strand minus,
+                      id local str "G260_C_molle_2-2"
+                    },
+                    {
+                      from 0,
+                      to 227,
+                      strand minus,
+                      id local str "G260_C_molle_2-2",
+                      fuzz-from lim lt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "G260_C_molle_2-2_1",
+            general {
+              db "NCBIFILE",
+              tag str "ACO_18sp.sqn/G260_C_molle_2-2_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 26716561
+            }
+          },
+          descr {
+            title "1-aminocyclopropane-1-carboxylate oxidase, partial
+ [Cypripedium molle]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 264,
+            seq-data ncbieaa "LLNHGISHELMDRVEAETKVHYRRFREQQFKEFAAKTLEAGEKVDGDN
+LDWESTFYLRHLPVSNIAEVPDLDDDYRKTMKEFAVELEKLAERLLDLLCEDLGLEKGYLKRAFQGSDGRPTFGTKVS
+NYPPCPKPELIKGLRAHTDAGGIILLFQDDQVSGLQLLKDGSWIDVPPLRHSIVVNIGDQLEVITNGRYKSVMHRVVA
+QSNGNRMSIASFYNPGSDAVIFPASALVEEAEEKEEAYPKFVFEDYMKLYLQQKFQAKKP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "1-aminocyclopropane-1-carboxylate oxidase"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 263,
+                    id local str "G260_C_molle_2-2_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "G260_C_molle_2-2_1",
+              location packed-int {
+                {
+                  from 1281,
+                  to 1507,
+                  strand minus,
+                  id local str "G260_C_molle_2-2",
+                  fuzz-to lim gt
+                },
+                {
+                  from 833,
+                  to 1169,
+                  strand minus,
+                  id local str "G260_C_molle_2-2"
+                },
+                {
+                  from 0,
+                  to 227,
+                  strand minus,
+                  id local str "G260_C_molle_2-2",
+                  fuzz-from lim lt
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

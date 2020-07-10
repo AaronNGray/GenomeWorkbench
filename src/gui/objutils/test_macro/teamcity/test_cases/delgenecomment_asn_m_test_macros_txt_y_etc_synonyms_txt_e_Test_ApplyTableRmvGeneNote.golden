@@ -1,0 +1,331 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "Submission",
+          data {
+            {
+              label str "AdditionalComment",
+              data str "LocalID:Seq1"
+            }
+          }
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq1"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Microbotryum violaceum",
+            db {
+              {
+                db "taxon",
+                tag id 5272
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Microbotryum",
+                species "violaceum"
+              },
+              lineage "Eukaryota; Fungi; Dikarya; Pucciniomycotina;
+ Microbotryomycetes; Microbotryales; Microbotryaceae; Microbotryum",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 839,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCAAATATGCAGTGATTTACCATGAATAGCCACGGCATTCTAGGATTAGCCCGCTGGAGTGTACT
+GATCAATGAAGGGGCATGGAAACCCCGGAACTTTGACGTGTTAATCATTGAATTGCTCAATTATGCTCTGCGAGGAAA
+AGTTAGTAAAATATTATTAGGAGTTCCTAGCAGGCATGGTAAAAGTACACTGATAAGCCGAAACTTTGCTTCTTACTT
+CCTATCCCACTTCCCGGACGATAACATCATATTATCCAGTTACAGCCAACAACTGGCCAGTGAGTTTGGCCGGCAAGT
+GAAAGACATAATCAACATGTATGGCCACCTTTCACCGTACAATGTGAAATTAGCAGATGACAGTAAAGCAAACAACCG
+TTTTAACATTCAAAAACCATACAATGGCCGGATGCTTAGTGTAGGGGCAGCTGGAAGTATTCTAGGATTTGGAGCCGG
+TTTATTCATCATAGATGACCCTATCAAAAGCGTAGCTGAAGCTGAAAGTAAAGCTTTACAAAGAAAATTAAGAGAATG
+GATAGGGGGAACAGCTAAAACCCGACTAGAAAAACGAAAAAACGGGTTACCTCCTATAATGATAGTAATAGCTCAAAG
+ACTTCACATTAATGACCTACACGGCATAATCAAAGAAACAGAACCCGTAATCCCTGCCTCTGAAGCCCTAAAAACCCT
+AAGACAAGGGGACACCATAGACCCCAACACATGGGTGGACTTAAACCTCCCCGCTATCTGTGAAAACCCCGAAACTGA
+CCTACTA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus-tag "C5167_007729"
+              },
+              partial TRUE,
+              location int {
+                from 86,
+                to 149,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                },
+                fuzz-to lim gt
+              }
+            },
+            {
+              data gene {
+                locus-tag "C5167_007730"
+              },
+              comment "some note",
+              location int {
+                from 114,
+                to 179,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            },
+            {
+              data gene {
+                locus "some locus",
+                locus-tag "C5167_007768"
+              },
+              location int {
+                from 189,
+                to 249,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787265
+        },
+        genbank {
+          accession "KF591394"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq2"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Reetz",
+                      first "Jochen",
+                      initials "J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Hoffmann",
+                      first "Kathrin",
+                      initials "K."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Kern",
+                      first "Tobias",
+                      initials "T."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Rother",
+                      first "Michael",
+                      initials "M."
+                    }
+                  }
+                }
+              },
+              title "Isolation of the lytic archeophage Drs3 infecting
+ Methanobacterium formicicum"
+            }
+          }
+        },
+        user {
+          class "SMART_V1.0",
+          type id 1,
+          data {
+            {
+              label id 1,
+              num 1,
+              data int 8039486
+            }
+          }
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 1736,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGAATTC
+CCCTAAGTGGGGATTAAGTAGTTATAAATTAAAGTTTAGGGTTAATAGAGGCCCTTTATCTCTCAATGAACAACACTC
+ATCATGAATGTGATGAGTGGACTAAAAGTGACATACAAAGCTTGAAGGTTGACGCTTTTGATGAGATTTTCGAGAAAG
+TACGTGACTTATCAGGGGTGAATATTAAAGGGGATGAAGCAAAAGAGATAGAGAAATTTCCTGAAGACGGATGAGGGG
+CGTGAAATAATCTGGCTTGACTATTGTGGTTACCACTTATGTGATAGGCAAGCGGATTTAACACCCCTCCAATCCTAT
+TTCATTAGCAAAGGCCGGTTAGACCTGTATAATGAAATGAATAAGGTCAAATAAACATTCCTTTACTTTTTTTTCTTT
+TGTATTCTTTTATTTTTATAATAATATTTTATACATTCTTTTTCACGTTTACACTATCACGATAATTGTCTATTTTGG
+AGTTGGAAGTAGCATGGCAGCGTTAATGGAAATCATAATAAGAGCGGTGGATAAGGCCAGCGAAGTCGCTGACAAAGT
+GCAAGGAAAATTCAGTGGCATGGGGGACAAAGTTAGTAAATCACTAGACAAAGTTAGCCAATCCACTGAGACGGGAGT
+AAACTAGTTTCAGGATTAGAATCTGCAAGTGTAAAAGTAACCTCTTTCACACAAAAATTTGACGGAGTTAAAGCTAAA
+ATCGCCGAAGTGGGGAGTAAGATCGGGAGTGAGCTTGGTAATGCAATGAACAATATCAAGATCAGCACTGGAATGACC
+ACCAAGCAGCTATCCCTAATCGCCCCTACTGTGGATAAGGTTGGCCAGGCTGCTATTTTGATGGGTAAAGACACCACA
+ACTGCTCAGGAAATAATGACCGCCTCTTTCCGTGGGTTGAATGGCGAATTTGACATCCTTAGATCTAATTTTGGTATA
+ACTAAACAAACCTTGATGGATGCTGGTTGGAGTGGTGCAGCGGATGATGTTGAAGGATATAACGCTGCATTATCTAAA
+GTTCTTGATGAGAACCTTGATTTAAGTGGAGTGATGGATTCCACCACCGGAAAAATTGAGAAAATTAAGAAGTCTTTC
+AGGACTGCTGGTAAAATTATTGGGGAACAGGTTGTTCCTTACATTGAAAAAGCCGCTGATATATTCTTAAGGTTAACA
+CAACAATTCCCGGGACTCACCACGGGGATTATAGCCATAGCCGCAGGGTTCATGTTATTTTTAACGGCACTCCCTATC
+CTTGGTAGTGTGTTCGGTGCTCTGAAGAGTATGGCTGTATTTTTAGGAATTGTTAAAGGTGCTGAAGACGCTTTAACT
+CTTTCTAAGATGAAATCAGCTGCGGTGGATGCGGCCACTATGGCTTATACTCGTGCAAAGGCAGCGGCACTGGCTGTC
+CTTGGAGCTGCCACCAGAGTTTATAATTTCATAGTTGCTGAAGGTACCATAGCAACTAAGTTAGCAACTGCCGCCCAA
+TGGCTTTGGAACGCTGCCCTAGCTGCTAACCCTATCGGGATAGTGGTAGTGGCCATAATAGCCCTCATAGCCGTACTA
+GCTTACTTATATAATAGTAATGAGACTGTTAGGAATGCAATAAACTGGTTATGGAACGGGTTAAAACAATTAGGGGGG
+TACATTTATGGGGGACTTATTGCAGCATGGAACATGTGGGTGGCTT"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "putative tape measure protein gene",
+                desc "tape measure protein gene",
+                locus-tag "C5167_007782"
+              },
+              partial TRUE,
+              location int {
+                from 533,
+                to 999,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                },
+                fuzz-to lim gt
+              }
+            },
+            {
+              data gene {
+                locus "Hypothetical protein gene",
+                desc "Hypothetical protein gene",
+                locus-tag "C5167_007769"
+              },
+              location int {
+                from 97,
+                to 281,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            },
+            {
+              data gene {
+                locus-tag "C5167_007786"
+              },
+              location int {
+                from 1199,
+                to 1735,
+                strand minus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

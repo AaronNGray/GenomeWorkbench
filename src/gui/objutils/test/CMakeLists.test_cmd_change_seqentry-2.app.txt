@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.test_cmd_change_seqentry-2.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app( test_cmd_change_seqentry-2)
+  NCBI_sources(test_cmd_change_seqentry-2)
+  NCBI_uses_toolkit_libraries(gui_core)
+  NCBI_requires(Boost.Test.Included)
+NCBI_end_app()

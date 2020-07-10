@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbi_server_info.app.txt 568804 2018-08-10 16:44:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbi_server_info)
+  NCBI_sources(test_ncbi_server_info)
+  NCBI_uses_toolkit_libraries(connect)
+  NCBI_project_watchers(lavr)
+  NCBI_add_test(test_ncbi_server_info.sh)
+NCBI_end_app()

@@ -1,0 +1,20 @@
+#############################################################################
+# $Id: CMakeLists.gui_glmesa.lib.txt 42463 2019-03-04 19:50:43Z ucko $
+#############################################################################
+
+NCBI_begin_lib( gui_glmesa)
+  NCBI_sources(glcgi_image gloscontext)
+  NCBI_uses_toolkit_libraries(xcgi xhtml ximage)
+  NCBI_requires(GLEW OSMesa OpenGL)
+NCBI_end_lib()
+
+if(OFF)
+add_library(gui_glmesa
+    glcgi_image gloscontext
+)
+include_directories(SYSTEM ${OPENGL_INCLUDE} ${GLEW_INCLUDE})
+
+target_link_libraries(gui_glmesa
+    xcgi xhtml ximage ${OSMESA_LIBS}
+)
+endif()

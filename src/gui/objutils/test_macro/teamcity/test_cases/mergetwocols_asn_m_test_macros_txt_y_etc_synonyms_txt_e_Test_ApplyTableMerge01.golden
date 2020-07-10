@@ -1,0 +1,220 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1744698/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 46783826
+        }
+      },
+      descr {
+        title "[Penicillium dipodomyicola MERO-A4]",
+        source {
+          genome genomic,
+          org {
+            taxname "Penicillium dipodomyicola",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "MERO-A4"
+                }
+              }
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness complete
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 159,
+        topology circular,
+        seq-data iupacna "GGGAACTGGGGATCCTACCTGATCCGAGGTCACCTGGATAAAAATTTGTGGT
+TGATCGGCAAGCGCCGGCCGGGCCTACAGAGCGGGTGACAAAGCCCCATACGCTCGAGGACCGGACGCGGTGCCGCCG
+CTGCCTTTCGGGCCCGTCCCCCGGGATCG"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1744698/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 46783827
+        }
+      },
+      descr {
+        title "[Aspergillus niger SAF8-EGY ]",
+        source {
+          genome genomic,
+          org {
+            taxname "Aspergillus niger",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "SAF8-EGY"
+                }
+              }
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness complete
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 191,
+        topology circular,
+        seq-data iupacna "GAACTCGGGGATCCCTACCTGATCCGAGGTCACCTGGGAAAGAATGGTTGGA
+AAACGTCGGCAGGCGCCGGCCAATCCTACAGAGCATGTGACAAAGCCCCATACGCTCGAGGATCGGACGCGGTGCCGC
+CGCTGCCTTTCGGGCCCGTCCCCCCGGAGAGGGGGACGGCGACCCAACACACAAGCCGGAT"
+      }
+    },
+    seq {
+      id {
+        local str "Seq3",
+        general {
+          db "BankIt",
+          tag str "1744698/Seq3"
+        },
+        general {
+          db "TMSMART",
+          tag id 46783828
+        }
+      },
+      descr {
+        title "[Penicillium sp. SAF6-EGY]",
+        source {
+          genome genomic,
+          org {
+            taxname "Penicillium sp. SAF6-EGY",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "SAF6-EGY"
+                }
+              }
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness complete
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 203,
+        topology circular,
+        seq-data iupacna "GGAACTGGGAACTCCTACCTGATCCGAGGTAACCGTGGTAAAAAAACATGGT
+GGTGACCAACCCCCGCAGGTCCCTCCCGAGCGAGTGACAGAGCCCCATACGCTCGAGGACCAGACGGACGTCGCCGCT
+GCCTTTCGGGCAGGTCCCCGGGGGGACCACACCCAACACACAAGCCGTGTATACACCTGTTGCTGAACTCTGA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq1_1",
+        general {
+          db "BankIt",
+          tag str "1744984/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 46789066
+        }
+      },
+      descr {
+        title "[Brevundimonas sp. MERNA14]",
+        source {
+          genome genomic,
+          org {
+            taxname "Brevundimonas sp. MERNA14",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "MERNA14"
+                }
+              }
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness complete
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 200,
+        topology circular,
+        seq-data iupacna "GAGGGACGTTACTCGGCATACTGCGGCGTAAGGGCGCGTACGCGGACATTTA
+AGTCAGCGGGTGAAATCCCGGAGCTCAACTCTGGAACTGCCTTTGATACTGGGTGTCTTGAGTGTGAGAGAGGTATGT
+GGAACTCCGAGTGTAGAGGTGAAATTCGTAGATATTCGGAAGAACACCAGTGGCGAAGGACCGTAAACAA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2_1",
+        general {
+          db "BankIt",
+          tag str "1744984/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 46789067
+        }
+      },
+      descr {
+        title "[Bacillus sp. MERNA97]",
+        source {
+          genome genomic,
+          org {
+            taxname "Bacillus sp. MERNA97",
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "MERNA97"
+                }
+              }
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness complete
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 197,
+        topology circular,
+        seq-data iupacna "CGGGACCGTTTCTCGGGCATATTTGCGGCGTAAAAGGCTCGCAGGCGGTTTC
+TTAAGTCTGATGTGAAAGCCCCCGGCTCCACCGGGGAGGGTCATTGGAAACTGGGGAACTTGAGTGCAGAAGAGGAGA
+ATGGAATTCCACGTGTAGCGGTGAAATGCGTAGAGATGTGGAGGAACACCAGTGGCGAAGTTCGTGC"
+      }
+    }
+  }
+}

@@ -1,0 +1,582 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class eco-set,
+      seq-set {
+        seq {
+          id {
+            local str "OTU_1737",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_1737"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495690
+            },
+            genbank {
+              accession "KM673298"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Hypocreales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 209465
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Hypocreales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Sordariomycetes; Hypocreomycetidae; Hypocreales;
+ environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_1737; clone_298"
+                },
+                {
+                  subtype country,
+                  name "U.S.A"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype other,
+                  name "[universal primers]; [uncultured; wizard]"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              tech standard
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "OTU_1737"
+                },
+                {
+                  label str "General",
+                  data str "gnl|NCBIFILE|Semenova_et_al.sqn/OTU_1737"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|48495690"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KM673298|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 62,
+            topology not-set,
+            seq-data iupacna "GTGAGTCATCGAATCTTTGAACGCATATTGCGCTCTTTGGTATTCCTA
+TCAATAAGCGGAGG"
+          }
+        },
+        seq {
+          id {
+            local str "OTU_1757",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_1757"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495691
+            },
+            genbank {
+              accession "KM673299"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Hypocreales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 209465
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Hypocreales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Sordariomycetes; Hypocreomycetidae; Hypocreales;
+ environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_1757; clone_299"
+                },
+                {
+                  subtype country,
+                  name "U.S.A"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype other,
+                  name "[universal primers]; [uncultured; wizard]"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              tech est
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "OTU_1757"
+                },
+                {
+                  label str "General",
+                  data str "gnl|NCBIFILE|Semenova_et_al.sqn/OTU_1757"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|48495691"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KM673299|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 82,
+            topology not-set,
+            seq-data iupacna "GTGAGTCATCGAATCTTTGAACGCATATTGCGCTCTTTGGTATTATCA
+AGTAAGACTACCCGCTGAACTTAAGCATATCAAT"
+          }
+        },
+        seq {
+          id {
+            local str "OTU_942",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_942"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495692
+            },
+            genbank {
+              accession "KM673300"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Helotiales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 292464
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Helotiales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Leotiomycetes; Helotiales; environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_942; clone_300"
+                },
+                {
+                  subtype country,
+                  name "U.S.A"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype other,
+                  name "[universal primers]; [uncultured; wizard]"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              tech sts
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "OTU_942"
+                },
+                {
+                  label str "General",
+                  data str "gnl|NCBIFILE|Semenova_et_al.sqn/OTU_942"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|48495692"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KM673300|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 31,
+            topology not-set,
+            seq-data iupacna "CGCTGAACTTAAGCATATCAATAAGCGGAGG"
+          }
+        },
+        seq {
+          id {
+            local str "OTU_12525",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_12525"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495693
+            },
+            genbank {
+              accession "KM673301"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Peltigerales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 587034
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Peltigerales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Lecanoromycetes; OSLEUM clade; Lecanoromycetidae;
+ Peltigerales; environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_12525"
+                },
+                {
+                  subtype country,
+                  name "U.S.A"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype other,
+                  name "[universal primers]; [uncultured; wizard]"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "OTU_12525"
+                },
+                {
+                  label str "General",
+                  data str "gnl|NCBIFILE|Semenova_et_al.sqn/OTU_12525"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|48495693"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KM673301|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 85,
+            seq-data iupacna "GTGATGATCATCGAATCTTTGAACGCATATTGCGCGTGTTCCAACGTA
+GGGATACCCGCTGAATTTAAGCTATAATAAGCGGAGG"
+          }
+        },
+        seq {
+          id {
+            local str "OTU_3797",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_3797"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495698
+            },
+            genbank {
+              accession "KM673306"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Pezizales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 299475
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Pezizales"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Pezizomycetes; Pezizales; environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_3797; clone_306"
+                },
+                {
+                  subtype country,
+                  name "U.S.A"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype other,
+                  name "[universal primers]; [uncultured; wizard]"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              tech derived
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "OTU_3797"
+                },
+                {
+                  label str "General",
+                  data str "gnl|NCBIFILE|Semenova_et_al.sqn/OTU_3797"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|48495698"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KM673306|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 337,
+            topology not-set,
+            seq-data ncbi2na 'B8B4D837F81913E65FDACF5A0A4E5EF622D3E1053F6355FC
+3BFC2AA9FACFAE8228BA804D4D4245D54500F48A6B591539BC29BEC02735247FD96C1EEA2FCDC9
+4FE0415534340AF85DA34ACA8C56781F09334309A280'H
+          }
+        },
+        seq {
+          id {
+            local str "OTU_2380",
+            general {
+              db "NCBIFILE",
+              tag str "Semenova_et_al.sqn/OTU_2380"
+            },
+            general {
+              db "TMSMART",
+              tag id 48495699
+            },
+            genbank {
+              accession "KM673307"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Sordariomycetes",
+                db {
+                  {
+                    db "taxon",
+                    tag id 586223
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Sordariomycetes"
+                    }
+                  },
+                  lineage "Eukaryota; Fungi; Dikarya; Ascomycota;
+ Pezizomycotina; Sordariomycetes; environmental samples",
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_2380; clone_307"
+                },
+                {
+                  subtype country,
+                  name "U.S.A"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                },
+                {
+                  subtype other,
+                  name "[universal primers]; [uncultured; wizard]"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              tech htgs-0
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "OTU_2380"
+                },
+                {
+                  label str "General",
+                  data str "gnl|NCBIFILE|Semenova_et_al.sqn/OTU_2380"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|48495699"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KM673307|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 336,
+            topology not-set,
+            seq-data ncbi2na 'B8B4D837F81913E654F2CF73EA4E5EF626D3F415F09D27CB
+BEA0DC5B89AEF15AC5054FDAA2BC57B2715ECBD740D41A68B4CB4DDE264B0FFCD19FF8239CC95F
+96701550FFF0EBE1768D2B283159E07C24CD0C268A'H
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+#############################################################################
+# $Id: CMakeLists.test_asn_io.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app( test_asn_io)
+  NCBI_sources( test_asn_io )
+  NCBI_uses_toolkit_libraries( seq )
+NCBI_end_app()
+
+if (OFF)
+add_executable(test_asn_io-app
+    test_asn_io
+)
+
+set_target_properties(test_asn_io-app PROPERTIES OUTPUT_NAME test_asn_io)
+
+target_link_libraries(test_asn_io-app
+    seq
+)
+endif()

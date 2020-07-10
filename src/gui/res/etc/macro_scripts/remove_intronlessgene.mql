@@ -1,0 +1,10 @@
+MACRO RemoveIntronlessGene "Remove CDS comment where CDS comment equals '[intronless gene]'"
+VAR
+    match = "[intronless gene]"
+    case_sensitive = true
+FOR EACH Cdregion
+WHERE EQUALS("comment", match, case_sensitive)  
+DO
+    RemoveQual("comment");
+DONE
+------------------------------------------------------------------------------

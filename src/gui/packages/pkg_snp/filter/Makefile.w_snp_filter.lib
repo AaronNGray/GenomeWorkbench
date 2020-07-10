@@ -1,0 +1,19 @@
+
+# $Id: Makefile.w_snp_filter.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# SNP Filter library
+
+LIB = w_snp_filter
+
+SRC = snp_filter
+
+CPPFLAGS = $(WXWIDGETS_INCLUDE) $(ORIG_CPPFLAGS)
+
+LIBS = $(WXWIDGETS_GL_LIBS) $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) \
+       $(IMAGE_LIBS) $(CMPRS_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+
+DLL_LIB = ximage xcompress $(CMPRS_LIB) xutil xncbi w_wx
+
+REQUIRES = objects wxWidgets OpenGL
+
+ASN_DEP = seqset

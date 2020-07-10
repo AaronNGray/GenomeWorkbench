@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxPanel" name="ParseBsrcToStructCommQual">
+        <style>wxTAB_TRAVERSAL</style>
+        <title>Parse From Biosource To Structured Comment Qual Panel</title>
+        <centered>1</centered>
+        <object class="wxBoxSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <object class="wxFlexGridSizer">
+                    <cols>2</cols>
+                    <rows>0</rows>
+                    <vgap>0</vgap>
+                    <hgap>0</hgap>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>From</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>To</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxBoxSizer">
+                            <orient>wxHORIZONTAL</orient>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_TOP|wxALL</flag>
+                                <border>0</border>
+                                <object class="wxBoxSizer">
+                                    <orient>wxVERTICAL</orient>
+                                    <object class="sizeritem">
+                                        <flag>wxALIGN_LEFT|wxALL</flag>
+                                        <border>5</border>
+                                        <object class="wxRadioButton" name="text_qualifier_from">
+                                            <style>wxRB_GROUP</style>
+                                            <label>Text qualifier</label>
+                                            <value>1</value>
+                                        </object>
+                                    </object>
+                                    <object class="sizeritem">
+                                        <flag>wxALIGN_LEFT|wxALL</flag>
+                                        <border>5</border>
+                                        <object class="wxRadioButton" name="taxonomy_from">
+                                            <label>Taxonomy</label>
+                                            <value>0</value>
+                                        </object>
+                                    </object>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                                <border>5</border>
+                                <object class="wxListBox" name="from_field">
+                                    <size>-1,109</size>
+                                    <style>wxLB_SINGLE</style>
+                                </object>
+                            </object>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_TOP|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxBoxSizer">
+                            <orient>wxHORIZONTAL</orient>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_TOP|wxALL</flag>
+                                <border>5</border>
+                                <object class="wxChoice" name="to_field">
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_TOP|wxRIGHT|wxTOP|wxBOTTOM|wxRESERVE_SPACE_EVEN_IF_HIDDEN</flag>
+                                <border>5</border>
+                                <object class="wxTextCtrl" name="strcomm_field">
+                                    <size>170,-1</size>
+                                </object>
+                            </object>
+                        </object>
+                    </object>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxLEFT|wxRIGHT|wxBOTTOM</flag>
+                <border>5</border>
+                <object class="wxFlexGridSizer">
+                    <cols>8</cols>
+                    <rows>0</rows>
+                    <vgap>0</vgap>
+                    <hgap>0</hgap>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>Between</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="just_after">
+                            <style>wxRB_GROUP</style>
+                            <label>just after</label>
+                            <value>1</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="starting_at">
+                            <label>starting at</label>
+                            <value>0</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="text_left">
+                            <style>wxRB_GROUP</style>
+                            <label>Text</label>
+                            <value>1</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT|wxBOTTOM</flag>
+                        <border>5</border>
+                        <object class="wxTextCtrl" name="delimiter_left">
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="digits_left">
+                            <label>Digits</label>
+                            <value>0</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="letters_left">
+                            <label>Letters</label>
+                            <value>0</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxCheckBox" name="rmv_left">
+                            <enabled>0</enabled>
+                            <label>Also remove search pattern</label>
+                            <checked>0</checked>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>and</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="up_to">
+                            <style>wxRB_GROUP</style>
+                            <label>up to</label>
+                            <value>1</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="including">
+                            <label>including</label>
+                            <value>0</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="text_right">
+                            <style>wxRB_GROUP</style>
+                            <label>Text</label>
+                            <value>1</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT</flag>
+                        <border>5</border>
+                        <object class="wxTextCtrl" name="delimiter_right">
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="digits_right">
+                            <label>Digits</label>
+                            <value>0</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxRadioButton" name="letters_right">
+                            <label>Letters</label>
+                            <value>0</value>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxCheckBox" name="rmv_right">
+                            <enabled>0</enabled>
+                            <label>Also remove search pattern</label>
+                            <checked>0</checked>
+                        </object>
+                    </object>
+                </object>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxBoxSizer">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxCheckBox" name="rmv_from_parsed">
+                            <label>Remove from parsed field</label>
+                            <checked>0</checked>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxCheckBox" name="case_insensitive_parse">
+                            <label>Case Insensitive</label>
+                            <checked>0</checked>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxCheckBox" name="whole_word_parse">
+                            <label>Whole Word</label>
+                            <checked>0</checked>
+                        </object>
+                    </object>
+                </object>
+            </object>
+            <object class="spacer">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <option>1</option>
+                <size>5,0</size>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <object class="wxBoxSizer">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxRadioBox" name="existing_text">
+                            <style>wxRA_SPECIFY_ROWS</style>
+                            <label>Ways to add new value</label>
+                            <dimension>0</dimension>
+                            <selection>0</selection>
+                            <content>
+                                <item>&amp;Overwrite</item>
+                                <item>&amp;Append</item>
+                                <item>&amp;Prefix</item>
+                                <item>&amp;Ignore new value</item>
+                            </content>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALL|wxRESERVE_SPACE_EVEN_IF_HIDDEN</flag>
+                        <border>5</border>
+                        <object class="wxRadioBox" name="delimiter">
+                            <style>wxRA_SPECIFY_ROWS</style>
+                            <enabled>0</enabled>
+                            <label>Delimiters</label>
+                            <dimension>0</dimension>
+                            <selection>0</selection>
+                            <content>
+                                <item>&amp;Semicolon</item>
+                                <item>&amp;Space</item>
+                                <item>&amp;Colon</item>
+                                <item>&amp;Comma</item>
+                                <item>&amp;No separation</item>
+                            </content>
+                        </object>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>

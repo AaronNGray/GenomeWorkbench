@@ -1,0 +1,4 @@
+[CustomScript]
+Shell = /bin/sh
+Script = gbench_install_xcode.sh
+

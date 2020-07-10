@@ -1,0 +1,89 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "q",
+          first "q",
+          initials "q"
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "q",
+              first "q",
+              initials "q."
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2015,
+        month 6,
+        day 30
+      }
+    },
+    subtype new,
+    tool "Sequin 14.00 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class genbank,
+      seq-set {
+        seq {
+          id {
+            local str "A1"
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Bacillus sp.",
+                db {
+                  {
+                    db "taxon",
+                    tag id 1409
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Bacillus",
+                    species "sp."
+                  },
+                  lineage "Bacteria; Firmicutes; Bacilli; Bacillales;
+ Bacillaceae; Bacillus",
+                  gcode 11,
+                  div "BCT"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            create-date std {
+              year 2015,
+              month 6,
+              day 30
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 591,
+            seq-data ncbi2na '95FAF17EF187D154B4605796EB0995D7C6BCA7171F7A4815
+9D53AEE1A9AEEC4215A81B3D16613DE3598F1C98F587D192D8BE48798D687187A7F3A8F2755766
+AFA415DEC5253ECE1BBB2551730A94E287E1B4D545F5D6BFB45A4B54F22E57F6C9070E90ABE676
+F9A87C1504DD1846278612539245EEE4AF57F6A460D4DDE807D794ED02BAB0AFFD9BE4D83C0513
+4D459FB9AB55B4'H
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbi_tree.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbi_tree)
+  NCBI_sources(test_ncbi_tree)
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_add_test()
+  NCBI_project_watchers(grichenk)
+NCBI_end_app()
+

@@ -1,0 +1,5 @@
+#############################################################################
+# $Id: CMakeLists.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_add_app(unit_test_pkg_seqedit unit_test_sequpdate unit_test_import_feattable)

@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.macro.asn.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(macro)
+  NCBI_dataspecs(macro.asn)
+  NCBI_uses_toolkit_libraries(seq)
+  NCBI_project_watchers(bollin kans)
+NCBI_end_lib()
+

@@ -1,0 +1,23 @@
+MACRO RmvXtraGeneInfo_01 "Remove gene comment"
+FOR EACH Gene
+DO
+    RemoveQual("comment");
+DONE
+------------------------------------------------------------------------------
+MACRO RmvXtraGeneInfo_02 "Remove gene description"
+FOR EACH Gene
+DO
+    RemoveQual("data.gene.desc");
+DONE
+------------------------------------------------------------------------------
+MACRO RmvXtraGeneInfo_03 "Edit gene locus replace 'gene' (case_insensitive) with ''"
+VAR
+    find_text = "gene"
+    repl_text = ""
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------

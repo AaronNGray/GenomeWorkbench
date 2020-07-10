@@ -1,0 +1,16 @@
+# $Id: Makefile.cserial.lib 593766 2019-09-24 16:34:52Z gouriano $
+
+# Build library "XSER"
+#################################
+
+SRC    = asntypes serialasn
+
+LIB    = xcser
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(NCBI_C_INCLUDE)
+
+WATCHERS = vasilche
+
+
+USES_LIBRARIES =  \
+    xser

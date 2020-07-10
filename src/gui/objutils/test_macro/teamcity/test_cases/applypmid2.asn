@@ -1,0 +1,368 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class genbank,
+      seq-set {
+        seq {
+          id {
+            local str "P14B3B",
+            general {
+              db "NCBIFILE",
+              tag str "Chaetoceros large subunit rDNA.sqn/P14B3B"
+            },
+            general {
+              db "TMSMART",
+              tag id 64954491
+            },
+            genbank {
+              accession "KX065218"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Chaetoceros decipiens",
+                db {
+                  {
+                    db "taxon",
+                    tag id 655751
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Chaetoceros",
+                    species "decipiens"
+                  },
+                  lineage "Eukaryota; Stramenopiles; Bacillariophyta;
+ Coscinodiscophyceae; Chaetocerotophycidae; Chaetocerotales; Chaetocerotaceae;
+ Chaetoceros",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            pub {
+              pub {
+                article {
+                  title {
+                    name "Steady-state distribution and biogenesis of
+ endogenous Madin-Darby canine kidney glycoproteins: evidence for
+ intracellular sorting and polarized cell surface delivery."
+                  },
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lisanti",
+                          first "M",
+                          initials "M.P."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Le Bivic",
+                          first "A",
+                          initials "A."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Sargiacomo",
+                          first "M",
+                          initials "M."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Rodriguez-Boulan",
+                          first "E",
+                          initials "E."
+                        }
+                      }
+                    }
+                  },
+                  from journal {
+                    title {
+                      iso-jta "J. Cell Biol.",
+                      ml-jta "J Cell Biol",
+                      issn "0021-9525",
+                      name "The Journal of cell biology"
+                    },
+                    imp {
+                      date std {
+                        year 1989,
+                        month 11
+                      },
+                      volume "109",
+                      issue "5",
+                      pages "2117-2127",
+                      language "eng",
+                      pubstatus ppublish,
+                      history {
+                        {
+                          pubstatus pubmed,
+                          date std {
+                            year 1989,
+                            month 11,
+                            day 1
+                          }
+                        },
+                        {
+                          pubstatus medline,
+                          date std {
+                            year 1989,
+                            month 11,
+                            day 1,
+                            hour 0,
+                            minute 1
+                          }
+                        },
+                        {
+                          pubstatus other,
+                          date std {
+                            year 1989,
+                            month 11,
+                            day 1,
+                            hour 0,
+                            minute 0
+                          }
+                        }
+                      }
+                    }
+                  },
+                  ids {
+                    pubmed 2808522,
+                    other {
+                      db "pmc",
+                      tag str "PMC2115858"
+                    }
+                  }
+                }
+              }
+            },
+            create-date std {
+              year 2016,
+              month 4,
+              day 12
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "P14B3B"
+                },
+                {
+                  label str "General",
+                  data str "gnl|NCBIFILE|Chaetoceros large subunit
+ rDNA.sqn/P14B3B"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|64954491"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KX065218|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 184,
+            seq-data iupacna "ACTAGGATTCCCCCAGTAAGGGCGACTGAAGCGGGAAGTGCTCACCAT
+GTGAATCTGTACAGATCTGATCTGTGCCGAATTGTGCGGGAGAAAGGTCTGAGTGTGAGCATACATGTTGGGACCCGA
+AAGATGGTGAACTATGCCTGAATAGGGTGAAGCCAGGGGAAACTCTGGTGGAGGCTCG"
+          }
+        },
+        seq {
+          id {
+            local str "D12",
+            general {
+              db "NCBIFILE",
+              tag str "Chaetoceros large subunit rDNA.sqn/D12"
+            },
+            general {
+              db "TMSMART",
+              tag id 64954492
+            },
+            genbank {
+              accession "KX065219"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Chaetoceros decipiens",
+                db {
+                  {
+                    db "taxon",
+                    tag id 655751
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Chaetoceros",
+                    species "decipiens"
+                  },
+                  lineage "Eukaryota; Stramenopiles; Bacillariophyta;
+ Coscinodiscophyceae; Chaetocerotophycidae; Chaetocerotales; Chaetocerotaceae;
+ Chaetoceros",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            pub {
+              pub {
+                article {
+                  title {
+                    name "Steady-state distribution and biogenesis of
+ endogenous Madin-Darby canine kidney glycoproteins: evidence for
+ intracellular sorting and polarized cell surface delivery."
+                  },
+                  authors {
+                    names std {
+                      {
+                        name name {
+                          last "Lisanti",
+                          first "M",
+                          initials "M.P."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Le Bivic",
+                          first "A",
+                          initials "A."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Sargiacomo",
+                          first "M",
+                          initials "M."
+                        }
+                      },
+                      {
+                        name name {
+                          last "Rodriguez-Boulan",
+                          first "E",
+                          initials "E."
+                        }
+                      }
+                    }
+                  },
+                  from journal {
+                    title {
+                      iso-jta "J. Cell Biol.",
+                      ml-jta "J Cell Biol",
+                      issn "0021-9525",
+                      name "The Journal of cell biology"
+                    },
+                    imp {
+                      date std {
+                        year 1989,
+                        month 11
+                      },
+                      volume "109",
+                      issue "5",
+                      pages "2117-2127",
+                      language "eng",
+                      pubstatus ppublish,
+                      history {
+                        {
+                          pubstatus pubmed,
+                          date std {
+                            year 1989,
+                            month 11,
+                            day 1
+                          }
+                        },
+                        {
+                          pubstatus medline,
+                          date std {
+                            year 1989,
+                            month 11,
+                            day 1,
+                            hour 0,
+                            minute 1
+                          }
+                        },
+                        {
+                          pubstatus other,
+                          date std {
+                            year 1989,
+                            month 11,
+                            day 1,
+                            hour 0,
+                            minute 0
+                          }
+                        }
+                      }
+                    }
+                  },
+                  ids {
+                    other {
+                      db "pmc",
+                      tag str "PMC2115858"
+                    }
+                  }
+                },
+                pmid 5689
+              }
+            },
+            create-date std {
+              year 2016,
+              month 4,
+              day 12
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "D12"
+                },
+                {
+                  label str "General",
+                  data str "gnl|NCBIFILE|Chaetoceros large subunit rDNA.sqn/D12"
+                },
+                {
+                  label str "General",
+                  data str "gnl|TMSMART|64954492"
+                },
+                {
+                  label str "GenBank",
+                  data str "gb|KX065219|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 121,
+            seq-data iupacna "TAAGGGCGACTGAAGCGGGAAGTGCTCACCAGTCTGAGTGTGAGCATA
+CATGTTGGGACCCGAAAGATGGTGAACTATGCCTGAATAGGGTGAAGCCAGGGGAAACTCTGGTGGAGGCTCG"
+          }
+        }
+      }
+    }
+  }
+}

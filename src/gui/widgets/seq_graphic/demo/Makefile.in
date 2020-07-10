@@ -1,0 +1,8 @@
+# $Id: Makefile.in 16106 2008-02-22 16:32:34Z lebedev $
+
+# DEMO::  SeqGraphic Widget
+
+APP_PROJ = demo_seqgraphic_wx
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

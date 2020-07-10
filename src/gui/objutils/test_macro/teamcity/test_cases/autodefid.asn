@@ -1,0 +1,223 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "ContactLN",
+          first "ContactFn",
+          initials "CC"
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "CitSub_ln",
+              first "CitSub_fn",
+              initials "CCK"
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2013,
+        month 6,
+        day 4
+      }
+    },
+    subtype new,
+    tool "Sequin 12.60 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class phy-set,
+      descr {
+        source {
+          org {
+            orgname {
+              mod {
+                {
+                  subtype strain,
+                  subname "new strain"
+                }
+              }
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "seq_1"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Influenza A virus",
+                common "flu",
+                orgname {
+                  mod {
+                    {
+                      subtype strain,
+                      subname "strain_99"
+                    },
+                    {
+                      subtype cultivar,
+                      subname "cv4"
+                    },
+                    {
+                      subtype isolate,
+                      subname "BoBM478"
+                    },
+                    {
+                      subtype nat-host,
+                      subname "Homo supiens"
+                    }
+                  }
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "clon2"
+                },
+                {
+                  subtype haplotype,
+                  name "hapl55"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 45,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCCAACTCTGTACCTTTTATTTCC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_2"
+          },
+          descr {
+            title "ez meg egy masik cim",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus hemionus",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "BOM789"
+                    },
+                    {
+                      subtype nat-host,
+                      subname "Homo sapiens"
+                    },
+                    {
+                      subtype bio-material,
+                      subname "AAA:Mat68"
+                    }
+                  },
+                  gcode 1
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "clon4"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 58,
+            seq-data iupacna "TGTCYTCACTCTCCCTTCTTCTCCAAGCCACAGATAACTTTGTACCTT
+TTATTTCCGC"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data rna {
+                    type tRNA,
+                    ext tRNA {
+                      aa ncbieaa 74
+                    }
+                  },
+                  location int {
+                    from 4,
+                    to 32,
+                    strand plus,
+                    id local str "seq_2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "seq_3"
+          },
+          descr {
+            title "",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus virginianus",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "BUM678"
+                    },
+                    {
+                      subtype nat-host,
+                      subname "Homo sapins"
+                    }
+                  },
+                  gcode 1
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "clon8"
+                },
+                {
+                  subtype haplotype,
+                  name "HT345"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 42,
+            seq-data iupacna "TGTCTTCACTCTCCCTTCTTCTCAACTTTGTACCTTTTATTT"
+          }
+        }
+      }
+    }
+  }
+}

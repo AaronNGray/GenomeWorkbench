@@ -1,0 +1,82 @@
+This is the documentation for the Genome Workbench project tool suite.
+
+Tools Included
+==============
+
+    gbproject
+
+Notes on Usage
+==============
+
+gbproject
+---------
+
+
+Arguments:
+    -i          Filename for the input Gbench project file.
+    -o          Filename for the output Gbench project file.
+
+    All actions that modify a project file read in a -i project file, and
+    write the changes out to the -o project file.
+
+    -list       Prints out a listing of the contents of the -i Gbench project
+                file
+    -create     Creates an empty Gbench project to the -o file.
+    -title      The title to use on the -create'ed project file.
+    -add        Reads in the -i Gbench project file, adds the given file, and 
+                writes them new Gbench project file out to the -o file.
+    -fmt        The format of the file being added with -add.
+    -proj-folder    The folder to add the -add'ed file to. 
+    -add-folder Adds an empty folder to the -i Gbench project folder, and
+                writes it out to the -o file.
+    -rm         The label of an object to remove from the project.
+    -rmdir      The label of a folder in to remove from the project. Removes
+                all objects and folders that are below that folder. 
+
+    -expand     Directory to write the -i Gbench project file's contents out to
+                Recreates the structure of the Gbench project file out as
+                directorys and seperate files.
+    -expand-fmt Format to expand Gbench project file parts out in. 
+                Defaults to asn binary, other options are asnt, xml, and gtf.
+                (GTF format uses GTF for seq-ids and seq-annots. XML for 
+                 anything else.)
+    -collapse   Reads in all files under this directory, and writes them
+                into a combined Gbench project file to the -o file. 
+
+
+
+Usage:
+
+    Create a new project file:
+
+        ./gbproject -o <project-file-name> -create
+
+
+    Import items into a new project file:
+
+        ./gbproject -i <project-file-name> -add <files to add>
+
+
+    Create a Genome Workbench project file by importing the contents of a
+    directory.  This will create a series of folders in the project file,
+    mapping to the directory structure created under the import directory.
+
+        ./gbproject -o <project-file-name> -collapse <directory>
+
+
+    Split all of the parts of a project file out to seperate files, in 
+    ASN Binary format
+
+        ./gbproject  -i Y.gbp  -expand project-parts/
+
+  
+    Split all of the parts of a project file out to seperate files, in 
+    GTF format
+        ./gbproject  -i Y.gbp  -expand project-parts/  -expand-fmt gtf
+
+
+Revision History
+================
+
+    revision 0.1, 5/12/2008
+        - initial revision

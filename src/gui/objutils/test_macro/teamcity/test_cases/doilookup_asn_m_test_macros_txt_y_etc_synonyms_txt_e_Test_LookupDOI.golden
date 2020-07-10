@@ -1,0 +1,172 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        },
+        pub {
+          pub {
+            article {
+              title {
+                name "Metabolic flexibility allows generalist bacteria to
+ become dominant in a frequently disturbed ecosystem"
+              },
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Chen",
+                      first "Ya-Jou",
+                      initials "Y.-J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Leung",
+                      first "Pok Man",
+                      initials "P.M."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Bay",
+                      first "Sean",
+                      initials "S.K."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Hugenholtz",
+                      first "Philip",
+                      initials "P."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Kessler",
+                      first "Adam",
+                      initials "A.J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Shelley",
+                      first "Guy",
+                      initials "G."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Waite",
+                      first "David",
+                      initials "D.W."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Cook",
+                      first "Perran L M",
+                      initials "P.L.M."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Greening",
+                      first "Chris",
+                      initials "C."
+                    }
+                  }
+                }
+              },
+              from journal {
+                title {
+                  iso-jta "bioRxiv"
+                },
+                imp {
+                  date std {
+                    year 2020,
+                    month 2,
+                    day 13
+                  }
+                }
+              },
+              ids {
+                doi "10.1101/2020.02.12.945220"
+              }
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Technische Universitat Dresden",
+                  div "Biology / Institute of Microbiology",
+                  city "Dresden",
+                  sub "Saxony",
+                  country "Germany",
+                  street "Zellescher Weg 20b",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 413,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGTTTAACATTCAAAAACCATACAATGGCCGGATGCT
+TAGTGTAGGGGCAGCTGGAAGTATTCTAGGATTTGGAGCCGGTTTATTCATCATAGATGACCCTATCAAAAGCGTAGC
+TGAAGCTGAAAGTAAAGCTTTACAAAGAAAATTAAGAGAATGGATAGGGGGAACAGCTAAAACCCGACTAGAAAAACG
+AAAAAACGGGTTACCTCCTATAATGATAGTAATAGCTCAAAGACTTCACATTAATGACCTACACGGCATAATCAAAGA
+AACAGAACCCGTAATCCCTGCCTCTGAAGCCCTAAAAACCCTAAGACAAGGGGACACCATAGACCCCAACACATGGGT
+GGACTTAAACCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+      }
+    }
+  }
+}

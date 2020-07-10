@@ -1,0 +1,10 @@
+MACRO ParseLocalId_Strain "Parse entire text from local ID to strain (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+    cap_change = "none"
+FOR EACH BioSource
+DO
+    id = LocalID();
+    ParseStringQual(id, "strain", cap_change, existing_text);
+DONE
+------------------------------------------------------------------------------

@@ -1,0 +1,12 @@
+# $Id: Makefile.in 25739 2012-04-27 18:55:44Z voronov $
+
+# GUI Projects
+
+APP_PROJ = demo_wx_app 
+#listtest
+
+PROJ_TAG = test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+

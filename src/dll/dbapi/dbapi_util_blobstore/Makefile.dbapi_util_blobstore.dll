@@ -1,0 +1,10 @@
+# $Id: Makefile.dbapi_util_blobstore.dll 108294 2007-08-06 17:29:58Z Gouriano $
+
+DLL = dbapi_util_blobstore
+
+HOSTED_LIBS    = dbapi_util_blobstore
+
+DEPENDENCIES   = ncbi_core ncbi_dbapi_driver
+
+CPPFLAGS = -DNCBI_DBAPIUTIL_BLOBSTORE_EXPORTS
+

@@ -1,0 +1,13 @@
+# $Id: Makefile.in 507847 2016-07-21 19:22:34Z filippov $
+# Meta-makefile("objtools/variation" project)
+#################################
+
+REQUIRES = objects
+
+LIB_PROJ = variation_utils
+EXPENDABLE_SUB_PROJ = test
+
+WATCHERS = holmesbr
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,7 @@
+# $Id: Makefile.in 10825 2005-11-08 20:09:50Z bollin $
+
+LIB_PROJ = w_seq_text
+SUB_PROJ = demo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

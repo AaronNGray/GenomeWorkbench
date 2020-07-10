@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.w_macro_edit.lib.txt 44679 2020-02-20 17:31:36Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(w_macro_edit)
+  NCBI_sources(edit_macro_dlg var_resolver_dlg)
+  NCBI_uses_toolkit_libraries(w_data)
+  NCBI_requires(wxWidgets)
+NCBI_end_lib()

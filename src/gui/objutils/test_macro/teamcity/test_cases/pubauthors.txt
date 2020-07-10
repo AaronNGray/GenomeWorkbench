@@ -1,0 +1,4 @@
+accession	authors	journal	volume	issue	pages	publication date	title
+KX290926	Daniel L. Lindner, Anne E. Ballmann, Kyle G. George, Kathryn Griffin, Susan Maria Knowles, Jeffrey T. Foster, David S. Blehert	Nature	1	4	e00148-16	2017	First detection of bat white-nose syndrome in western North America
+KX290927	Anne E. Ballmann, Kyle G. George, Kathryn Griffin, Susan Knowles	Nature	1	4	e00148-17	2018	First detection of bat white-nose syndrome in western North America
+KX463942	Kyle G. George, Kathryn Griffin, Susan Knowles, John R. Huckabee 	Nature	1	4	e00148-18	2019	First detection of bat white-nose syndrome in western North America

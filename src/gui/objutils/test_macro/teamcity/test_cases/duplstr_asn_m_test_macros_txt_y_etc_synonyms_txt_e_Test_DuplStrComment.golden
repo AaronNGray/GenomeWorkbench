@@ -1,0 +1,242 @@
+Seq-entry ::= set {
+  class genbank,
+  descr {
+    user {
+      type str "StructuredComment",
+      data {
+        {
+          label str "StructuredCommentPrefix",
+          data str "##Assembly-Data-START##"
+        },
+        {
+          label str "Assembly Method",
+          data str "bioeditor v. v. 7.0.9.0"
+        },
+        {
+          label str "Sequencing Technology",
+          data str "Sanger dideoxy sequencing"
+        },
+        {
+          label str "StructuredCommentSuffix",
+          data str "##Assembly-Data-END##"
+        }
+      }
+    }
+  },
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Cherax quadricarinatus",
+            orgname {
+              name binomial {
+                genus "Cherax",
+                species "quadricarinatus"
+              },
+              gcode 1,
+              mgcode 5
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Cq-Dynamin",
+            genbank {
+              accession "KP782023"
+            }
+          },
+          descr {
+            molinfo {
+              biomol mRNA
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 84,
+            seq-data iupacna "GGAGGCGCAGTCTTCGCAGCTCGGGCATAGTGTACACCTAACCTGCCA
+CAATGTCGGGCAACGTGGGGATGGAACAGCTCATCA"
+          }
+        },
+        seq {
+          id {
+            local str "Cq-Dynamin_1",
+            general {
+              db "NCBIFILE",
+              tag str "dynamin sub/Cq-Dynamin_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 52572800
+            }
+          },
+          descr {
+            title "Dynamin superfamily [Cherax quadricarinatus]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 27,
+            seq-data iupacaa "EAQSSQLGHSVHLTCHNVGQRGDGTAH"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Dynamin superfamily",
+                      "protein name"
+                    },
+                    desc "ATPase superfamily"
+                  },
+                  location int {
+                    from 0,
+                    to 26,
+                    id local str "Cq-Dynamin_1"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Cq-Dynamin_1",
+              location int {
+                from 0,
+                to 83,
+                strand plus,
+                id genbank {
+                  accession "KP782023"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "Cq-Dynamin-like",
+        general {
+          db "NCBIFILE",
+          tag str "dynamin sub/Cq-Dynamin-like"
+        },
+        general {
+          db "TMSMART",
+          tag id 52572801
+        },
+        genbank {
+          accession "KP782024"
+        }
+      },
+      descr {
+        molinfo {
+          biomol mRNA
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            },
+            {
+              label str "Assembly Method",
+              data str "bioeditor v. v. 7.0.1"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            }
+          }
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Test-START##"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Test-END##"
+            },
+            {
+              label str "Habitat",
+              data str "hillside"
+            },
+            {
+              label str "Temperature",
+              data str "21C"
+            }
+          }
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Cq-Dynamin-like"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Cherax quadricarinatus",
+            db {
+              {
+                db "taxon",
+                tag id 27406
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Cherax",
+                species "quadricarinatus"
+              },
+              lineage "Eukaryota; Metazoa; Ecdysozoa; Arthropoda; Crustacea;
+ Malacostraca; Eumalacostraca; Eucarida; Decapoda; Pleocyemata; Astacidea;
+ Parastacoidea; Parastacidae; Cherax",
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol rna,
+        length 106,
+        seq-data iupacna "CGGAGAGCTTGGTGGGACGCTCATTTCTTCCTCGAGGGATTGGCATTGTTAC
+CCGTCGACCATTAGTTCTGTAGTATACACATCACGCGATGACAACCAACATCGC"
+      }
+    }
+  }
+}

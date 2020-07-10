@@ -1,0 +1,14 @@
+# $Id: Makefile.in 44412 2019-12-16 19:04:30Z katargir $
+# Author:  Mike DiCuccio
+
+# Meta-makefile for GBENCH installation
+#######################################
+
+USR_PROJ   = gbench_install
+MSVC_PROJ  = gbench_install
+XCODE_PROJ = gbench_install_xcode
+
+REQUIRES = gbench wxWidgets OpenGL DLL MT
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

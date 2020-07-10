@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_math.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_math)
+  NCBI_sources(test_math)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_project_watchers(dicuccio)
+NCBI_end_app()
+

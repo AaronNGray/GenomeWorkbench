@@ -1,0 +1,85 @@
+Seq-entry ::= seq {
+  id {
+    local str "Seq1",
+    general {
+      db "DFG",
+      tag str "3456/Seq1"
+    },
+    general {
+      db "test",
+      tag id 2356
+    },
+    genbank {
+      accession "AA123456"
+    }
+  },
+  descr {
+    title "Phoma sp. J08NF7.",
+    source {
+      genome genomic,
+      org {
+        taxname "Phoma sp. J08NF7",
+        db {
+          {
+            db "taxon",
+            tag id 1768664
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Phoma",
+            species "sp. J08NF7"
+          },
+          mod {
+            {
+              subtype nat-host,
+              subname "jellyfish"
+            }
+          },
+          lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Dothideomycetes; Pleosporomycetidae; Pleosporales; Pleosporineae;
+ Didymellaceae; Phoma",
+          gcode 1,
+          mgcode 4,
+          div "PLN"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic,
+      completeness partial
+    },
+    user {
+      type str "OriginalID",
+      data {
+        {
+          label str "LocalId",
+          data str "Seq1"
+        }
+      }
+    },
+    update-date std {
+      year 2015,
+      month 12,
+      day 14
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 842,
+    strand ds,
+    seq-data iupacna "TGGTGTCCGATCGTCGGGCGGACCCCCCGCGTAAAGAAGGTACTCAAGGAGACATG
+GTCGTAGATTGCCGGCAAACGCCCCACCAAACTCTAGGAATGGATTTGCGTTGCTAGATATTTTGCCTGCGGAAGGAT
+CATTACCTAGAGTTTGTAGGCTTTGCCTGCTATCTCTTACCCATGTCTTTTGAGTACCTTCGTTTCCTCGGCGGGTCC
+GCCCGCCGATTGGACAACCATAAACCATTTGCAGTTGCAATCAGCGTCTGAAAAAACTATAATAGTTACAACTTTCAA
+CAACGGATCTCTTGGTTCTGGCATCGATGAAGAACGCAGCGAAATGCGATAAGTAGTGTGAATTGCAGAATTCAGTGA
+ATCATCGAATCTTTGAACGCACATTGCGCCCCTTGGTATTCCATGGGGCATGCCTGTTCGAGCGTCATTTGTACCTTC
+AAGCTCTGCTTGGTGTTGGGTGTTTGTCTCGCCTCTGCGCGTAGACTCGCCTCAAAACAATTGGCAGCCGGCGTATTG
+ATTTCGGAGCGCAGTACATCTCGCGCTTTGCACTCATAACGACGACGTCCAAAAGTACATTTTTACACTCTTGACCTC
+GGATCAGGTAGGGATACCCGCTGAACTTAAGCATATCAATAAGCCGGAGGAAAATCATTACCTAGAGTTTGTAGGCTT
+TGCCTGCTATCTCTTACCCATGTCTTTTGAGTACCTTCGTTTCCTCGGCGGGTCCGCCCGCCGATTGGACAACCATAA
+ACCATTTGCAGTTGCAATCAGCGTCTGAAAAAACTATAATAGTTACAACTTTCACAACGGATCTCTTGGTTCTGGCAT
+CGATGA"
+  }
+}

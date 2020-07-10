@@ -1,0 +1,269 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class genbank,
+      seq-set {
+        set {
+          class nuc-prot,
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Melastoma beccarianum",
+                db {
+                  {
+                    db "taxon",
+                    tag id 130509
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Melastoma",
+                    species "beccarianum"
+                  },
+                  attrib "specified",
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "Mb1"
+                    }
+                  },
+                  lineage "Eukaryota; Viridiplantae; Streptophyta;
+ Embryophyta; Tracheophyta; Spermatophyta; Magnoliopsida; eudicotyledons;
+ Gunneridae; Pentapetalae; rosids; malvids; Myrtales; Melastomataceae;
+ Melastoma",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              },
+              subtype {
+                {
+                  subtype country,
+                  name "Malaysia: Miri,Sarawak"
+                },
+                {
+                  subtype isolation-source,
+                  name "leaf"
+                }
+              }
+            }
+          },
+          seq-set {
+            seq {
+              id {
+                local str "Mb1_M.beccarianum_tpi",
+                general {
+                  db "NCBIFILE",
+                  tag str "tpi.sqn/Mb1_M.beccarianum_tpi"
+                },
+                general {
+                  db "TMSMART",
+                  tag id 98202479
+                },
+                genbank {
+                  accession "MH910470"
+                }
+              },
+              descr {
+                molinfo {
+                  biomol genomic
+                }
+              },
+              inst {
+                repr raw,
+                mol dna,
+                length 698,
+                seq-data ncbi2na 'AC119F5FFEF8D032F6CAE30AF9F395FAD0AFE0AE325E
+EFAA215F8926209EB007FA3BEF9E5407224364AC843BD2DDF4FF0E524C3FED8680FFF4943BDAEA
+F5BBF8FE02C60C3ED30F9FFCC5FF6F9D5FFD31BF7ED86975F02F152F1C7BE793FFDFA534304B28
+A2B8139E38F1D0FFCFBA6CBD12FD1F17B40FC7B43389C0900FDEE14EA9E8706DFEC74EBEBE3BEC
+F206AF24BEA20CFBFE973897BBA94FA07A82B641D49D29D28AEED017FECF324BFF78B7F0'H
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      id local id 2,
+                      data gene {
+                        locus "tpi"
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 697,
+                        strand plus,
+                        id genbank {
+                          accession "MH910470"
+                        },
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    },
+                    {
+                      id local id 3,
+                      data rna {
+                        type mRNA,
+                        ext name "triose phosphate isomerase"
+                      },
+                      partial TRUE,
+                      location mix {
+                        int {
+                          from 33,
+                          to 164,
+                          strand plus,
+                          id genbank {
+                            accession "MH910470"
+                          },
+                          fuzz-from lim lt
+                        },
+                        int {
+                          from 560,
+                          to 656,
+                          strand plus,
+                          id genbank {
+                            accession "MH910470"
+                          },
+                          fuzz-to lim gt
+                        }
+                      }
+                    },
+                    {
+                      data imp {
+                        key "exon"
+                      },
+                      partial TRUE,
+                      location int {
+                        from 33,
+                        to 164,
+                        strand plus,
+                        id genbank {
+                          accession "MH910470"
+                        },
+                        fuzz-from lim lt
+                      },
+                      qual {
+                        {
+                          qual "number",
+                          val "1"
+                        }
+                      }
+                    },
+                    {
+                      data imp {
+                        key "exon"
+                      },
+                      partial TRUE,
+                      location int {
+                        from 560,
+                        to 656,
+                        strand plus,
+                        id genbank {
+                          accession "MH910470"
+                        },
+                        fuzz-to lim gt
+                      },
+                      qual {
+                        {
+                          qual "number",
+                          val "2"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            seq {
+              id {
+                local str "MH910470_1"
+              },
+              descr {
+                molinfo {
+                  biomol peptide,
+                  completeness no-ends
+                }
+              },
+              inst {
+                repr raw,
+                mol aa,
+                length 76,
+                seq-data ncbieaa "VGDKVAYALGQGLKVIACVGETLEQREAGKTLDVVAAQTRAIAE
+RVSSWENIVLAYEPVWAIGTGKVATPAQAQEV"
+              },
+              annot {
+                {
+                  data ftable {
+                    {
+                      id local id 4,
+                      data prot {
+                        name {
+                          "triose phosphate isomerase"
+                        },
+                        ec {
+                          "5.3.1.1"
+                        },
+                        activity {
+                          "catalyzes the reversible interconversion of the
+ triose phosphate isomers dihydroxyacetone phosphate and D-glyceraldehyde
+ 3-phosphate"
+                        }
+                      },
+                      partial TRUE,
+                      location int {
+                        from 0,
+                        to 75,
+                        id local str "MH910470_1",
+                        fuzz-from lim lt,
+                        fuzz-to lim gt
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 1,
+                  data cdregion {
+                    frame three,
+                    code {
+                      id 1
+                    }
+                  },
+                  partial TRUE,
+                  product whole local str "MH910470_1",
+                  location mix {
+                    int {
+                      from 33,
+                      to 164,
+                      strand plus,
+                      id genbank {
+                        accession "MH910470"
+                      },
+                      fuzz-from lim lt
+                    },
+                    int {
+                      from 560,
+                      to 656,
+                      strand plus,
+                      id genbank {
+                        accession "MH910470"
+                      },
+                      fuzz-to lim gt
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

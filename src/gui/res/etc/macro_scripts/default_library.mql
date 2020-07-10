@@ -1,0 +1,144 @@
+MACRO Macro_name "Apply 'new value' to taxname (overwrite existing text) where taxname equals 'old value' (case-sensitive)"
+VAR
+new_value = %new value%
+existing_text = "eReplace"
+equals1 = %old value%
+FOR EACH BioSource
+WHERE EQUALS("org.taxname",equals1,true,false,false,false,false)
+DO
+SetStringQual("org.taxname", new_value, existing_text);
+DONE
+---------------------------------------------------
+MACRO Macro_name "Fix altitude format"
+FOR EACH BioSource
+DO
+obj = Resolve("subtype") WHERE obj.subtype = "altitude";
+FixFormat(obj);
+DONE
+---------------------------------------------------
+MACRO Macro_name "Fix collection-date format"
+FOR EACH BioSource
+DO
+obj = Resolve("subtype") WHERE obj.subtype = "collection-date";
+FixFormat(obj);
+DONE
+---------------------------------------------------
+MACRO Macro_name "Fix lat-lon format"
+FOR EACH BioSource
+DO
+obj = Resolve("subtype") WHERE obj.subtype = "lat-lon";
+FixFormat(obj);
+DONE
+---------------------------------------------------
+MACRO Macro_name "Remove biosource features"
+FOR EACH BioSource
+DO
+RemoveFeature();
+DONE
+---------------------------------------------------
+MACRO Macro_name "Remove lineage source notes"
+FOR EACH BioSource
+DO
+RemoveLineageSourceNotes();
+DONE
+---------------------------------------------------
+MACRO Macro_name "Fix i in primer (forward and reverse) sequences"
+FOR EACH BioSource
+DO
+FixIInPrimerSeq("pcr-primers..forward..seq");
+FixIInPrimerSeq("pcr-primers..reverse..seq");
+DONE
+---------------------------------------------------
+MACRO Macro_name "Trim junk from primer (forward and reverse) sequences"
+FOR EACH BioSource
+DO
+TrimJunkFromPrimerSeq("pcr-primers..forward..seq");
+TrimJunkFromPrimerSeq("pcr-primers..reverse..seq");
+DONE
+---------------------------------------------------
+MACRO Macro_name "Lookup ISOJTA titles in articles"
+FOR EACH Pubdesc
+DO
+ISOJTALookup();
+DONE
+---------------------------------------------------
+MACRO Macro_name "Fix USA and state abbreviations in publications"
+FOR EACH Pubdesc
+DO
+FixUSAAndStateAbbreviations();
+DONE
+---------------------------------------------------
+MACRO Macro_name "Move middle name to first name"
+FOR EACH Pubdesc
+DO
+MoveMiddleToFirstName();
+DONE
+---------------------------------------------------
+MACRO Macro_name "Remove author suffix where author suffix equals 'old value' (case-sensitive)"
+VAR
+equals2 = %old value%
+FOR EACH Pubdesc
+WHERE EQUALS(PUB_AUTHORS("suffix"),equals2,true,false,false,false,false)
+DO
+RemoveAuthorSuffix();
+DONE
+---------------------------------------------------
+MACRO Macro_name "Truncate middle initials"
+FOR EACH Pubdesc
+DO
+TruncateMiddleInitials();
+DONE
+---------------------------------------------------
+MACRO Macro_name "Remove publication features"
+FOR EACH Pubdesc
+DO
+RemoveFeature();
+DONE
+---------------------------------------------------
+MACRO Macro_name "Reorder structured comments"
+FOR EACH StructComment
+DO
+ReorderStructuredComment();
+DONE
+---------------------------------------------------
+MACRO Macro_name "Apply 'new value' to CDS comment (overwrite existing text) where CDS note equals 'old value' (case-sensitive)"
+VAR
+new_value = %new value%
+existing_text = "eReplace"
+equals1 = %old value%
+FOR EACH Cdregion
+WHERE EQUALS("comment",equals1,true,false,false,false,false)
+DO
+SetStringQual("comment", new_value, existing_text);
+DONE
+---------------------------------------------------
+MACRO Macro_name "Retranslate coding regions"
+VAR
+obey_stop_codon = true
+FOR EACH Cdregion
+DO
+RetranslateCDS(obey_stop_codon);
+DONE
+---------------------------------------------------
+MACRO Macro_name "Apply 'new value' to gene locus (overwrite existing text) where Gene locus equals 'old value' (case-sensitive)"
+VAR
+new_value = %new value%
+existing_text = "eReplace"
+equals1 = %old value%
+FOR EACH Gene
+WHERE EQUALS("data.gene.locus",equals1,true,false,false,false,false)
+DO
+SetStringQual("data.gene.locus", new_value, existing_text);
+DONE
+---------------------------------------------------
+MACRO Macro_name "Apply 'new value' to gene description (overwrite existing text) where Gene description equals 'old value' (case-sensitive)"
+VAR
+new_value = %new value%
+existing_text = "eReplace"
+equals1 = %old value%
+FOR EACH Gene
+WHERE EQUALS("data.gene.desc",equals1,true,false,false,false,false)
+DO
+SetStringQual("data.gene.desc", new_value, existing_text);
+DONE
+---------------------------------------------------

@@ -1,0 +1,238 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Fenneropenaeus chinensis",
+            db {
+              {
+                db "taxon",
+                tag id 139456
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        },
+        user {
+          type str "Submission",
+          data {
+            {
+              label str "SmartComment",
+              data str "TOTAL # OF SEQS:2"
+            },
+            {
+              label str "AdditionalComment",
+              data str "BankIt1657039"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq2"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787265
+            },
+            genbank {
+              accession "KF591394"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            },
+            user {
+              type str "Submission",
+              data {
+                {
+                  label str "AdditionalComment",
+                  data str "LocalID:Seq2"
+                }
+              }
+            },
+            user {
+              type str "OrginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 405,
+            strand ds,
+            seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGA
+ATTCCCCTAAGTGGGGATTAAGTAGTTATAAATTAAAGTTTAGGGTTAAATAATAAAAAAAAGATGGGAGAATGATAT
+ATATGGTATTGAGAAAAGATGACATATAAAGGGGATGAAGCAAAAGAGATAGAGAAATTTCCTGAAGACGGATGAGGG
+GCGTGGAATATCAAATGGTAGATTCTGCAATCCAAGCCGTCACAGGATGGGTAAATGCTTTCCTATCATTTTTACCAC
+AGATCCCCGGTATGATTGCCTTTTATTTAGGCTTTGCAATTGGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCC
+TCATATACGATCTTGGAGTGCAACTGATAACATGGGTCATTAACA"
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_2",
+            general {
+              db "TMSMART",
+              tag id 39787266
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            user {
+              type str "OrginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2_prot_2"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 11,
+            seq-data ncbieaa "MIYMVLRKDDI"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 10,
+                    id local str "Seq2_prot_2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_3",
+            general {
+              db "TMSMART",
+              tag id 39787267
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide
+            },
+            user {
+              type str "OrginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2_prot_3"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 11,
+            seq-data ncbieaa "LSYHFYHRSPV"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "putative tape measure protein"
+                    },
+                    desc "tape measure protein"
+                  },
+                  location int {
+                    from 0,
+                    to 10,
+                    id local str "Seq2_prot_3"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq2_prot_2",
+              location int {
+                from 119,
+                to 154,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            },
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              comment "[intronless gene]",
+              product whole local str "Seq2_prot_3",
+              location int {
+                from 260,
+                to 296,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

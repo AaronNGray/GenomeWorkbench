@@ -1,0 +1,8 @@
+#############################################################################
+# $Id: CMakeLists.test_sqlite_cache.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_sqlite_cache)
+  NCBI_sources(test_sqlite_cache)
+  NCBI_uses_toolkit_libraries(ncbi_xloader_genbank)
+NCBI_end_app()

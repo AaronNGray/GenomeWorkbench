@@ -1,0 +1,50 @@
+Pubdesc ::= {
+  pub {
+    article {
+      title {
+        name "Anaeramoebidae fam. nov., a Novel Lineage of Anaerobic Amoebae
+ and Amoeboflagellates of Uncertain Phylogenetic Position"
+      },
+      authors {
+        names std {
+          {
+            name name {
+              last "Taborsky",
+              first "Petr"
+            }
+          },
+          {
+            name name {
+              last "Panek",
+              first "Tomas"
+            }
+          },
+          {
+            name name {
+              last "Cepicka",
+              first "Ivan"
+            }
+          }
+        }
+      },
+      from journal {
+        title {
+          iso-jta "Protist"
+        },
+        imp {
+          date std {
+            year 2017,
+            month 11
+          },
+          volume "168",
+          issue "5",
+          pages "495-526",
+          pubstatus ppublish
+        }
+      },
+      ids {
+        doi "10.1016/j.protis.2017.07.005"
+      }
+    }
+  }
+}

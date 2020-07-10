@@ -1,0 +1,19 @@
+# $Id: Makefile.gbench_install.msvcproj 41258 2018-06-25 20:38:15Z katargir $
+
+MSVC_PROJ = gbench_install
+
+APP_DEP   = gbench-bin gbench_monitor gbench_feedback_agent \
+            windowmasker blastn blastp blastx tblastn tblastx \
+			gbenchmacro macroflow ini2reg demo_widgets_gl_wx
+
+DLL_DEP   = ncbi_align_format ncbi_dbapi ncbi_dbapi_driver ncbi_lds2 \
+			ncbi_mmdb ncbi_validator ncbi_web ncbi_xcache_netcache \
+			ncbi_xcache_sqlite3 ncbi_xdbapi_ftds \
+# ncbi_xdbapi_msdblib ncbi_xdbapi_ctlib ncbi_xdbapi_dblib ncbi_xdbapi_mysql \
+			ncbi_xdbapi_odbc ncbi_xloader_blastdb ncbi_xloader_lds2 \
+			pkg_alignment pkg_sequence pkg_sequence_edit pkg_snp
+
+VCPROJ    = $(msvc_prj)/dll/build/gbench/gbench_install/gbench-install.vcproj
+VCXPROJ    = $(msvc_prj)/dll/build/gbench/gbench_install/gbench-install.vcxproj
+
+

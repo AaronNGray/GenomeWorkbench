@@ -1,0 +1,12 @@
+# $Id: Makefile.in 487476 2015-12-17 19:48:39Z ucko $
+#################################
+
+# TDS library
+#################################
+
+LIB_PROJ = tds95
+SUB_PROJ = unittests
+
+srcdir = @srcdir@
+
+include @builddir@/Makefile.meta

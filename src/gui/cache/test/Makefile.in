@@ -1,0 +1,8 @@
+# $Id: Makefile.in 21388 2010-05-14 01:24:08Z dicuccio $
+
+APP_PROJ = test_sqlite_cache
+
+REQUIRES = objects
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

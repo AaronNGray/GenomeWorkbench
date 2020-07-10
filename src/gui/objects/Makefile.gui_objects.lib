@@ -1,0 +1,18 @@
+# $Id: Makefile.gui_objects.lib 44950 2020-04-23 20:49:10Z asztalos $
+
+ASN_DEP = seq submit entrezgene gbproj
+
+SRC = gui_objects__ gui_objects___ gbench_svc_cli gbench_svc_cli_ \
+      assembly_info tms_utils gbench_version
+
+LIB = gui_objects
+
+DLL_LIB = gencoll_client genome_collection sqlitewrapp $(SEQ_LIBS) \
+          pub medline biblio general eutils_client xmlwrapp xconnect
+
+CXXFLAGS = $(ORIG_CXXFLAGS) $(OBJCXX_CXXFLAGS)
+
+LIBS = $(OBJCXX_LIBS) $(FOUNDATION_LIBS) $(LIBXSLT_LIBS) $(LIBXML_LIBS) $(SQLITE3_LIBS) $(NETWORK_LIBS) \
+       $(ORIG_LIBS)
+
+LIB_OR_DLL = both

@@ -1,0 +1,18 @@
+# $Id: Makefile.w_seq_desktop.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# Seq Desktop Widget lib
+
+# ASN_DEP = seq seqset
+
+SRC = seq_desktop_panel desktop_canvas desktop_ds \
+      desktop_item desktop_typed_items desktop_view_context
+ 
+
+LIB = w_seq_desktop
+
+DLL_LIB = w_wx gui_utils gui_objutils gui_config \
+          submit tables $(SOBJMGR_LIBS)
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(WXWIDGETS_INCLUDE)
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) $(ORIG_LIBS)

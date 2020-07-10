@@ -1,0 +1,117 @@
+Seq-entry ::= set {
+  class genbank,
+  descr {
+    pub {
+      pub {
+        gen {
+          cit "Unpublished",
+          authors {
+            names std {
+              {
+                name name {
+                  last "Kalmar",
+                  first "Arin",
+                  initials "A."
+                }
+              },
+              {
+                name name {
+                  last "Kiss",
+                  first "Adam",
+                  initials "A."
+                }
+              }
+            }
+          },
+          title "none"
+        }
+      }
+    },
+    update-date std {
+      year 2013,
+      month 7,
+      day 22
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Catharanthus roseus",
+            common "Madagascar periwinkle",
+            db {
+              {
+                db "taxon",
+                tag id 4058
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Viridiplantae;
+ Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta;
+ Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae;
+ Pentapetalae; asterids; lamiids; Gentianales; Apocynaceae; Rauvolfioideae;
+ Vinceae; Catharanthinae; Catharanthus",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 35,
+        strand ds,
+        seq-data iupacna "CCGTAATCCCTGCCTCTGAAGCCCTAAAAACCCTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Caenorhabditis elegans",
+            db {
+              {
+                db "taxon",
+                tag id 6239
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Protostomia; Ecdysozoa; Nematoda; Chromadorea;
+ Rhabditida; Rhabditoidea; Rhabditidae; Peloderinae; Caenorhabditis",
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 37,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGGCAATGAGCGCT"
+      }
+    }
+  }
+}

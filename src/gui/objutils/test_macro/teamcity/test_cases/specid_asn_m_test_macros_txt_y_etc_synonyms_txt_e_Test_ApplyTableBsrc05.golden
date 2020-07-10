@@ -1,0 +1,325 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class phy-set,
+      descr {
+        update-date std {
+          year 2017,
+          month 2,
+          day 2,
+          hour 15,
+          minute 34,
+          second 26
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            general {
+              db "BankIt",
+              tag str "1987844/Seq1"
+            },
+            general {
+              db "TMSMART",
+              tag id 76470076
+            },
+            genbank {
+              accession "KY569556"
+            }
+          },
+          descr {
+            title "PstI probes (A1341) sequence tagged site",
+            source {
+              genome plastid,
+              org {
+                taxname "Kokia cookei",
+                orgname {
+                  mod {
+                    {
+                      subtype specimen-voucher,
+                      subname "WABG:75C238"
+                    }
+                  }
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 218,
+            strand ds,
+            seq-data iupacna "AGCCGAAACAACTGCATTGGGAGGAAGAACATTGAGCTTTTTTGTTCC
+ACAGGCAACTTTGACAATAGTTTCCCCAGAAAGAGTAGCTATAACTCTAGGGCGAGGTTGAGGTTCATAGACAAGCCT
+CACCGAGCTATCCTTGGCATTATACTGCAAGGTGTAGGTATTATGCAAACACCCATTGAGAAAAGCAAGTCAATAGCA
+ACTACGTTAGAGAA"
+          }
+        },
+        seq {
+          id {
+            local str "seq2",
+            general {
+              db "BankIt",
+              tag str "1987844/seq2"
+            },
+            general {
+              db "TMSMART",
+              tag id 76470077
+            },
+            genbank {
+              accession "KY569557"
+            }
+          },
+          descr {
+            title "PstI probes (A1341) sequence tagged site",
+            source {
+              genome plastid,
+              org {
+                taxname "Kokia kauaiensis",
+                orgname {
+                  name binomial {
+                    genus "Kokia",
+                    species "kauaiensis"
+                  },
+                  mod {
+                    {
+                      subtype specimen-voucher,
+                      subname "LYON:L93.0403"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 49,
+            strand ds,
+            seq-data iupacna "GGAATGACAGAACCAGCCGAAACAACTGCATAGGATTTAAGCCGTGAGA"
+          }
+        },
+        seq {
+          id {
+            local str "seq3",
+            general {
+              db "BankIt",
+              tag str "1987844/seq3"
+            },
+            general {
+              db "TMSMART",
+              tag id 76470078
+            },
+            genbank {
+              accession "KY569558"
+            }
+          },
+          descr {
+            title "PstI probes (A1341) sequence tagged site",
+            source {
+              genome plastid,
+              org {
+                taxname "Kokia drynarioides",
+                orgname {
+                  name binomial {
+                    genus "Kokia",
+                    species "drynarioides"
+                  },
+                  mod {
+                    {
+                      subtype specimen-voucher,
+                      subname "HAW:Morden1196"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 165,
+            strand ds,
+            seq-data iupacna "TGACAGAACCAGCCGAAACAACTGCATTGGGAGGAAGAACATTGAGCT
+TTTGGAATACTTCAACACGACAAGGAAACCACTCATCCTTCTGCTCTCTGTGCCCAAGCCTGCATAAGTGATGAAGGA
+TTGCATCAAGGAAACAAAAGGAAAAACAAATAAGTAGAA"
+          }
+        },
+        seq {
+          id {
+            local str "Seq4",
+            general {
+              db "BankIt",
+              tag str "1987844/Seq4"
+            },
+            general {
+              db "TMSMART",
+              tag id 76470079
+            },
+            genbank {
+              accession "KY569559"
+            }
+          },
+          descr {
+            title "sequence tagged site locus (A1713)",
+            source {
+              genome plastid,
+              org {
+                taxname "Kokia cookei",
+                orgname {
+                  mod {
+                    {
+                      subtype specimen-voucher,
+                      subname "WABG:75C238"
+                    }
+                  }
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 92,
+            strand ds,
+            seq-data iupacna "CAACCCCTGAATATACAGTAAGGCGGTAAGGGAATACATCAACAATCA
+AAAGGGGCTTAAAAATAAACTCCAAAAAATAAACATGCACCTGT"
+          }
+        },
+        seq {
+          id {
+            local str "seq5",
+            general {
+              db "BankIt",
+              tag str "1987844/seq5"
+            },
+            general {
+              db "TMSMART",
+              tag id 76470080
+            },
+            genbank {
+              accession "KY569560"
+            }
+          },
+          descr {
+            title "sequence tagged site locus (A1713)",
+            source {
+              genome plastid,
+              org {
+                taxname "Kokia kauaiensis",
+                orgname {
+                  name binomial {
+                    genus "Kokia",
+                    species "kauaiensis"
+                  },
+                  mod {
+                    {
+                      subtype specimen-voucher,
+                      subname "LYON:L93.0403"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 175,
+            strand ds,
+            seq-data iupacna "CAACCCCTGAATATACAGTAAGGCGGTAAGGGAATACAAAAATGATAT
+CCTAGATATCAAATAACACATATAAAAGTGGTGTAAAATCAAAAACTCAGGATCTAAGAAAAGAAATTGTCTTGATCA
+ATTTGAACTTGGAGAAAATAAGGTAAAAGAAATGCAAAAGATACAAAAC"
+          }
+        },
+        seq {
+          id {
+            local str "seq6",
+            general {
+              db "BankIt",
+              tag str "1987844/seq6"
+            },
+            general {
+              db "TMSMART",
+              tag id 76470081
+            },
+            genbank {
+              accession "KY569561"
+            }
+          },
+          descr {
+            title "sequence tagged site locus (A1713)",
+            source {
+              genome plastid,
+              org {
+                taxname "Kokia drynarioides",
+                orgname {
+                  name binomial {
+                    genus "Kokia",
+                    species "drynarioides"
+                  },
+                  mod {
+                    {
+                      subtype specimen-voucher,
+                      subname "HAW:Morden1196"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 106,
+            strand ds,
+            seq-data iupacna "CAACCCCTGAATATACAGTAAGGCGGTAAGGGAATACAAAAATAGTAG
+GAAACCAACAATCAAAAGGGGCTTAAAAATAAACTCCAAAAAATAAACATGCACCTGT"
+          }
+        }
+      }
+    }
+  }
+}

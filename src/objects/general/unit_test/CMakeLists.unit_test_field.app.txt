@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_field.app.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_app(unit_test_field)
+  NCBI_sources(unit_test_field)
+  NCBI_uses_toolkit_libraries(general test_boost)
+  NCBI_project_watchers(vasilche)
+NCBI_end_app()
+

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Name=NCBI Genome Workbench
+GenericName=Sequence Viewer
+Comment=NCBI Genome Workbench Sequence Viewer
+Exec=$PATH/bin/gbench
+TryExec=$PATH/bin/gbench
+Icon=$PATH/share/gbench/ncbilogo.svg
+Terminal=false
+Categories=Biology;MedicalSoftware;DataVisualization;GTK
+MimeType=application/x-gbench-project;application/x-gbench-workspace;application/x-gbench;application/x-gbench-asntext;application/x-gbench-asnbin;application/x-gbench-xml;application/x-gbench-fasta;application/x-gbench-newick;application/x-gbench-newick;

@@ -1,0 +1,16 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbiargs_sample.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbiargs_sample)
+  NCBI_sources(test_ncbiargs_sample)
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_project_watchers(vakatov)
+
+  NCBI_add_test(test_ncbiargs_sample -k a -f1 -ko true foo - B False t f)
+  NCBI_add_test(test_ncbiargs_sample -ko false -k 100 bar)
+  NCBI_add_test(test_ncbiargs_sample -h)
+  NCBI_add_test(test_ncbiargs_sample -help)
+
+NCBI_end_app()
+

@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_bdb.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_bdb SHARED)
+  NCBI_hosts_projects(
+    db/bdb/bdb
+  )
+  NCBI_add_definitions(NCBI_BDB_EXPORTS)
+NCBI_end_lib()

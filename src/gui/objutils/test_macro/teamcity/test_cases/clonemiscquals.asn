@@ -1,0 +1,337 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class eco-set,
+      descr {
+        title "Pezizomycotina sequence."
+      },
+      seq-set {
+        seq {
+          id {
+            local str "OTU_1737"
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Hypocreales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 209465
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Hypocreales"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_1737"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            title "Uncultured Hypocreales clone OTU_1737 sequence.",
+            comment "Old comment",
+            genbank {
+              keywords {
+                "OldKey1", 
+				"OldKey2"
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 62,
+            seq-data iupacna "GTGAGTCATCGAATCTTTGAACGCATATTGCGCTCTTTGGTATTCCTA
+TCAATAAGCGGAGG"
+          }
+        },
+        seq {
+          id {
+            local str "OTU_1757"
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Hypocreales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 209465
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Hypocreales"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_1757"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            title "Uncultured Hypocreales clone OTU_1757 sequence.",
+            genbank {
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 82,
+            seq-data iupacna "GTGAGTCATCGAATCTTTGAACGCATATTGCGCTCTTTGGTATTATCA
+AGTAAGACTACCCGCTGAACTTAAGCATATCAAT"
+          }
+        },
+        seq {
+          id {
+            local str "OTU_942"
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Helotiales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 292464
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Helotiales"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_942"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            title "Uncultured Helotiales clone OTU_942 sequence.",
+            comment "Old comment",
+            genbank {
+              keywords {
+                "old_key"
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 31,
+            seq-data iupacna "CGCTGAACTTAAGCATATCAATAAGCGGAGG"
+          }
+        },
+        seq {
+          id {
+            local str "OTU_12525",
+            genbank {
+              accession "KM673301"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Peltigerales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 587034
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Peltigerales"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_12525"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            title "Uncultured Peltigerales clone OTU_12525 sequence."
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 85,
+            seq-data iupacna "GTGATGATCATCGAATCTTTGAACGCATATTGCGCGTGTTCCAACGTA
+GGGATACCCGCTGAATTTAAGCTATAATAAGCGGAGG"
+          }
+        },
+        seq {
+          id {
+            local str "OTU_3797",
+            genbank {
+              accession "KM673306"
+            }
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Pezizales",
+                db {
+                  {
+                    db "taxon",
+                    tag id 299475
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Pezizales"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_3797"
+                },
+                {
+                  subtype environmental-sample,
+                  name ""
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            title "Uncultured Pezizales clone OTU_3797 sequence.",
+            comment "Old comment",
+			genbank {
+              keywords {
+                "old keyword"
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 337,
+            seq-data ncbi2na 'B8B4D837F81913E65FDACF5A0A4E5EF622D3E1053F6355FC
+3BFC2AA9FACFAE8228BA804D4D4245D54500F48A6B591539BC29BEC02735247FD96C1EEA2FCDC9
+4FE0415534340AF85DA34ACA8C56781F09334309A280'H
+          }
+        },
+        seq {
+          id {
+            local str "OTU_2380"
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "uncultured Sordariomycetes",
+                db {
+                  {
+                    db "taxon",
+                    tag id 586223
+                  }
+                },
+                orgname {
+                  name partial {
+                    {
+                      fixed-level other,
+                      level "species",
+                      name "uncultured Sordariomycetes"
+                    }
+                  },
+                  gcode 1,
+                  mgcode 4,
+                  div "ENV"
+                }
+              },
+              subtype {
+                {
+                  subtype clone,
+                  name "OTU_2380"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            genbank {
+              keywords {
+                "old keyword"
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 336,
+            seq-data ncbi2na 'B8B4D837F81913E654F2CF73EA4E5EF626D3F415F09D27CB
+BEA0DC5B89AEF15AC5054FDAA2BC57B2715ECBD740D41A68B4CB4DDE264B0FFCD19FF8239CC95F
+96701550FFF0EBE1768D2B283159E07C24CD0C268A'H
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,361 @@
+Seq-entry ::= set {
+  class eco-set,
+  descr {
+    create-date std {
+      year 2016,
+      month 2,
+      day 27
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "A02-0-3",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_A02-0-3"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/A02-0-3"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726335
+        },
+        genbank {
+          accession "KU820887"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "bacteria",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "uncultured Ruequria1"
+            },
+            {
+              subtype isolation-source,
+              name "sendiment"
+            },
+            {
+              subtype other,
+              name "[BankIt_uncultured16S_wizard]; [universal primers]"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 177,
+        seq-data iupacna "GATCTTCGGATCTAGCGGCGGACGGGTTAGTAACGCGTGGGAACGTACCCAA
+AGGTAGGGAATAGCCACTGGAAACGGTGAGTAATACCCTATGTGCCCTTCGGGGGAAAGATTTATCGCCCACACCATG
+GGAGTTGGTTCTACCCGACGACGCTGCGCTAACCTTCGGGGGCAGGC"
+      }
+    },
+    seq {
+      id {
+        local str "A08-0-2",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_A08-0-2"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/A08-0-2"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726336
+        },
+        genbank {
+          accession "KU820888"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "uncultured type I methanotroph",
+            db {
+              {
+                db "taxon",
+                tag id 192503
+              }
+            },
+            orgname {
+              name partial {
+                {
+                  fixed-level other,
+                  level "species",
+                  name "uncultured type I methanotroph"
+                }
+              },
+              lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Methylococcales; Methylococcaceae; environmental samples",
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "[uncultured (using universal primers)]"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 124,
+        seq-data iupacna "TGCAAGTCGAGGGGTAACAGGGAGAGCGCAACCCCTGTGGTTAGTTGCCAGC
+GAGTAATGTCGGGAACTCTAGCCAGACTGCCGGTGCAAACCGTGAGGAAGGTGGGGATGACGTCAAATCATC"
+      }
+    },
+    seq {
+      id {
+        local str "B06-0",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_B06-0"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/B06-0"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726337
+        },
+        genbank {
+          accession "KU820889"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "Candidatus_Planktophila limnetica",
+            db {
+              {
+                db "taxon",
+                tag id 573600
+              }
+            },
+            syn {
+              "Planktophila limnetica"
+            },
+            orgname {
+              name binomial {
+                genus "Planktophila",
+                species "limnetica"
+              },
+              mod {
+                {
+                  subtype isolate,
+                  subname "DGGE gel band w1"
+                }
+              },
+              lineage "Bacteria; Actinobacteria; Candidatus Planktophila",
+              div "BCT"
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "uncultured Ruequria3"
+            },
+            {
+              subtype other,
+              name "[BankIt_uncultured16S_wizard]; [species_specific primers];
+ [dgge]"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 193,
+        seq-data iupacna "AGGCGGTAACAGGAGAAGCTTGCTTCTCGCTGACGAGCGGCGGACGGGTGAG
+TAATACTTAGGAATCTACCTAGTAGTGGGGGATAGCTCGGGGAAACTCGAATTAATACCGCATACGACCTACACCGCC
+CGTCACACCATGGGAGTTGATTGCACCAGAAGTGGTTAGCCTAACCTTTAGGAAGGCGATCAC"
+      }
+    },
+    seq {
+      id {
+        local str "C02-500",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_C02-500"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/C02-500"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726338
+        },
+        genbank {
+          accession "KU820890"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "Clonothrix fusca",
+            db {
+              {
+                db "taxon",
+                tag id 415611
+              }
+            },
+            syn {
+              """Clonothrix fusca"" Roze 1896"
+            },
+            orgname {
+              name binomial {
+                genus "Clonothrix",
+                species "fusca"
+              },
+              lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Methylococcales; Methylococcaceae; Clonothrix",
+              div "BCT"
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "[uncultured (with species-specific primers)]"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 103,
+        seq-data iupacna "TAACAGGGGGAGCTTGCTCCCCGCTGACGAGCACACCGCCCGTCACACCATG
+GGAGTGGATTGCACCAGAAGTGGTTAGTCTAACCTTCGGGAGGACGATCAC"
+      }
+    },
+    seq {
+      id {
+        local str "D05-50-2",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_D05-50-2"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/D05-50-2"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726339
+        },
+        genbank {
+          accession "KU820891"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "Pandoraea pnomenusa",
+            orgname {
+            }
+          },
+          subtype {
+            {
+              subtype other,
+              name "[uncultured (with species-specific primers)]"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 117,
+        seq-data iupacna "TGCAAGTCGAGCGGATCGATGGGAGCTTGCTCCCTCCCGGGCCTTGTACACA
+CCGCCCGTCACACCACGAGAGTTTGTAACACCCGAAGTCGGTGAGGTAACCTTTTGAGCCAGCCG"
+      }
+    },
+    seq {
+      id {
+        local str "E03-50",
+        general {
+          db "BankIt",
+          tag str "SUB1362154_E03-50"
+        },
+        general {
+          db "NCBIFILE",
+          tag str "SUB1362154/E03-50"
+        },
+        general {
+          db "TMSMART",
+          tag id 63726340
+        },
+        genbank {
+          accession "KU820892"
+        }
+      },
+      descr {
+        source {
+          org {
+            taxname "Bacillus sp.",
+            orgname {
+             mod {
+               {
+                  subtype isolate,
+                  subname "Drs3"
+               }
+             }
+            }
+          },
+          subtype {
+            {
+              subtype clone,
+              name "testing clone"
+            },
+            {
+              subtype other,
+              name "amplified with species-specific primers"
+            }
+          }
+        },
+        molinfo {
+          biomol genomic
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 204,
+        seq-data iupacna "GCAAGTCGAGCGGTAACAGAGAGTAGCTTGCAAGTGCGTCGTAGTCCGGATT
+GGAGTCTGCAACTCGACTCCATGAAGTCGGAATCGCTAGTAATCGCGTATCAGAATGACGCGGTGAATACGTTCCCGG
+GCCTTGTACACACCGCCCGTCACACCATGGGAGTGGGTTGCTCCAGAAGTGGATAGTCTAACCTTCGGGAGGAC"
+      }
+    }
+  }
+}

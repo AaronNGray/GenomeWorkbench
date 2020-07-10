@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_row_reader_ncbi_tsv.app.txt 568555 2018-08-07 16:43:28Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_row_reader_ncbi_tsv)
+  NCBI_sources(test_row_reader_ncbi_tsv)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_project_watchers(satskyse)
+  NCBI_add_test()
+NCBI_end_app()

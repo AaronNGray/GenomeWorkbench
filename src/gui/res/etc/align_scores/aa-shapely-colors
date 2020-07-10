@@ -1,0 +1,31 @@
+[Info]
+Name        = Shapely Amino Acid Colors
+Description = The \"shapely\" amino acid colors are used by the application RasMol to group amino acids with similar shapes using a standard color table.
+; Type = Protein | DNA
+Type = Protein
+; Method = Coloration | ColumnScore | MatrixScore
+Method = Coloration
+Id = shapely
+
+
+[TableRowsBackground]
+A = 140 255 140
+R = 0 0 124
+N = 255 124 112
+D = 160 0 66
+C = 55 55 112
+Q = 255 76 76
+T = 160 0 66
+G = 255 255 255
+H = 112 112 255
+I = 0 76 0
+L = 69 94 69
+K = 71 71 184
+M = 184 160 66
+F = 83 76 66
+P = 83 76 66
+S = 255 76 76
+E = 102 0 0
+W = 83 76 66
+Y = 184 160 66
+V = 255 255 255

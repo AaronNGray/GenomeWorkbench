@@ -1,0 +1,59 @@
+# $Id: Makefile.pkg_alignment.lib 44436 2019-12-18 17:13:59Z katargir $
+
+ASN_DEP = biotree
+
+SRC = blast_db_dialog blast_jobs blast_search_options_panel \
+	  blast_search_params blast_search_params_panel blast_search_task \
+	  blast_tool_manager blast_seq_tool_job cleanup_alignments_params_panel \
+	  cleanup_alignments_tool_manager create_gene_model_params_panel \
+	  create_gene_model_tool_manager dll_register find_overlap_panel \
+	  find_overlap_params find_overlap_tool group_alignments_params_panel \
+	  group_alignments_tool_manager merge_alignments_params_panel \
+	  merge_alignments_tool_manager net_blast_dm_search_form_panel \
+	  net_blast_dm_search_tool net_blast_job_descr net_blast_load_option_panel \
+	  net_blast_ui_data_source net_blast_ui_load_manager splign_panel \
+	  splign_params splign_tool \
+	  rm_load_manager phy_loader \
+	  tree_builder_params tree_builder_panel tree_builder_tool \
+	  create_needleman_wunsch_panel create_needleman_wunsch_tool_manager \
+      needlemanwunsch_tool_params msa_tool_job\
+      kalign_tool kalign_tool_panel kalign_tool_params kalign_tool_job \
+      mafft_tool mafft_tool_panel mafft_tool_params mafft_tool_job \
+      muscle_tool muscle_tool_panel muscle_tool_params muscle_tool_job \
+      clustal_omega_tool clustal_omega_tool_panel clustal_omega_tool_params clustal_omega_tool_job \
+      clustalw_tool clustalw_tool_panel clustalw_tool_params clustalw_tool_job \
+      taxtree_tool taxtree_tool_panel taxtree_tool_params taxtree_tool_job \
+      ngalign_tool ngalign_panel ngalign_blast_panel ngalign_params ngalign_job \
+      text_align_load_manager aln_summary_view \
+      align_tab_exporter align_tab_export_params align_tab_export_job \
+      align_tab_export_page align_tab_export_page2 \
+      align_project_item_extension lblast_ui_data_source \
+      prosplign_params prosplign_panel prosplign_tool \
+      fasta_align_exporter fasta_align_export_page fasta_align_export_params fasta_align_export_job \
+      advanced_cleanup_params advanced_cleanup_params_panel advanced_cleanup_tool \
+      psl_load_manager
+      
+
+LIB = pkg_alignment
+
+DLL_LIB = gui_view_align gui_core \
+          w_aln_crossaln w_hit_matrix w_data w_aln_table w_phylo_tree \
+          w_object_list w_gl w_wx \
+          gui_objects gui_config gui_graph gui_opengl snputil gui_objutils gui_utils \
+          xaligncleanup xngalign blastinput $(BLAST_LIBS) $(BLAST_DB_DATA_LOADER_LIBS) \
+          align_format xcgi xhtml blastdb gene_info \
+          xalgoalignsplign xalgoalignutil xalgoalignnw xalgocontig_assembly prosplign\
+          xalgoseq xalnmgr xobjreadex $(OBJREAD_LIBS) xobjutil ximage xregexp \
+          xalgophytree xmergetree fastme taxon1 \
+          $(PCRE_LIB) tables $(COMPRESS_LIBS) $(SOBJMGR_LIBS)
+
+LIBS = $(SRA_SDK_SYSLIBS) $(WXWIDGETS_GL_LIBS)  $(GLEW_LIBS)  $(WXWIDGETS_LIBS) \
+       $(IMAGE_LIBS) $(CMPRS_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+REQUIRES = gbench objects wxWidgets OpenGL
+
+LIB_OR_DLL = dll
+DLL_TYPE = plugin

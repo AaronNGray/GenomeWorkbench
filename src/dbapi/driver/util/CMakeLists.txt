@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+
+NCBI_add_library(dbapi_util_blobstore)
+NCBI_add_app(blobreader blobwriter)
+NCBI_add_subdirectory(samples)
+
+

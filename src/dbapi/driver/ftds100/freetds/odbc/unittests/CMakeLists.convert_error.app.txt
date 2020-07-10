@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.convert_error.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(odbc100_convert_error)
+  NCBI_sources(convert_error common)
+  NCBI_add_test(test-odbc100 odbc100_convert_error)
+NCBI_end_app()
+

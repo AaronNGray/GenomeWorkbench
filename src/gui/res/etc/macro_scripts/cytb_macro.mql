@@ -1,0 +1,55 @@
+MACRO Cytbmacro_01 "Edit gene locus replace 'CytB' with 'CYTB'"
+VAR
+    find_text = "CytB"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO Cytbmacro_02 "Edit gene locus replace 'Cytb' with 'CYTB'"
+VAR
+    find_text = "Cytb"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO Cytbmacro_03 "Edit gene locus replace 'cytb' with 'CYTB'"
+VAR
+    find_text = "cytb"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO Cytbmacro_04 "Edit gene locus replace 'ATPase ' with 'ATP'"
+VAR
+    find_text = "ATPase "
+    repl_text = "ATP"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO Cytbmacro_05 "Edit gene locus replace 'Cyt b' (case insensitive) with 'CYTB'"
+VAR
+    find_text = "Cyt b"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------

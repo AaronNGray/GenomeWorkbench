@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource version="2.3.0.1" xmlns="http://www.wxwidgets.org/wxxrc">
+    <object class="wxPanel" name="SetModifier">
+        <style>wxTAB_TRAVERSAL</style>
+        <size>400,300</size>
+        <title>Apply Source Qual Panel</title>
+        <centered>1</centered>
+        <object class="wxBoxSizer">
+            <orient>wxVERTICAL</orient>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <object class="wxFlexGridSizer">
+                    <cols>2</cols>
+                    <rows>0</rows>
+                    <vgap>0</vgap>
+                    <hgap>0</hgap>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>0</border>
+                        <object class="wxBoxSizer">
+                            <orient>wxVERTICAL</orient>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALL</flag>
+                                <border>5</border>
+                                <object class="wxRadioButton" name="text_qualifier">
+                                    <style>wxRB_GROUP</style>
+                                    <label>Text qualifier</label>
+                                    <value>1</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALL</flag>
+                                <border>5</border>
+                                <object class="wxRadioButton" name="taxonomy">
+                                    <label>Taxonomy</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALL</flag>
+                                <border>5</border>
+                                <object class="wxRadioButton" name="bsrclocation">
+                                    <label>Location</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                            <object class="sizeritem">
+                                <flag>wxALIGN_LEFT|wxALL</flag>
+                                <border>5</border>
+                                <object class="wxRadioButton" name="origin">
+                                    <label>Origin</label>
+                                    <value>0</value>
+                                </object>
+                            </object>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <option>1</option>
+                        <object class="wxListBox" name="field">
+                            <size>200,109</size>
+                            <style>wxLB_SINGLE</style>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxALIGN_LEFT|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxStaticText" name="wxID_STATIC">
+                            <label>New value</label>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALIGN_CENTER_VERTICAL|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxComboBox" name="new_value">
+                            <style>wxCB_DROPDOWN</style>
+                        </object>
+                    </object>
+                </object>
+            </object>
+            <object class="spacer">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>0</border>
+                <option>1</option>
+                <size>5,0</size>
+            </object>
+            <object class="sizeritem">
+                <flag>wxALIGN_CENTER_HORIZONTAL|wxALL</flag>
+                <border>5</border>
+                <object class="wxBoxSizer">
+                    <orient>wxHORIZONTAL</orient>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALL</flag>
+                        <border>5</border>
+                        <object class="wxRadioBox" name="existing_text">
+                            <style>wxRA_SPECIFY_ROWS</style>
+                            <label>Ways to add new value</label>
+                            <dimension>0</dimension>
+                            <selection>0</selection>
+                            <content>
+                                <item>&amp;Overwrite</item>
+                                <item>&amp;Append</item>
+                                <item>&amp;Prefix</item>
+                                <item>&amp;Ignore new value</item>
+                            </content>
+                        </object>
+                    </object>
+                    <object class="sizeritem">
+                        <flag>wxGROW|wxALL|wxRESERVE_SPACE_EVEN_IF_HIDDEN</flag>
+                        <border>5</border>
+                        <object class="wxRadioBox" name="delimiter">
+                            <style>wxRA_SPECIFY_ROWS</style>
+                            <enabled>0</enabled>
+                            <label>Delimiters</label>
+                            <dimension>0</dimension>
+                            <selection>0</selection>
+                            <content>
+                                <item>&amp;Semicolon</item>
+                                <item>&amp;Space</item>
+                                <item>&amp;Colon</item>
+                                <item>&amp;Comma</item>
+                                <item>&amp;No separation</item>
+                            </content>
+                        </object>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>

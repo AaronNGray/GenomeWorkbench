@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.seq_c_compat_unit_test.app.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_app(seq_c_compat_unit_test)
+  NCBI_requires(NCBI_C)
+  NCBI_sources(seq_c_compat_unit_test)
+  NCBI_uses_toolkit_libraries(seq test_boost xxconnect)
+  NCBI_project_watchers(ucko)
+  NCBI_add_test()
+NCBI_end_app()
+

@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.psg_diag.lib.txt 594157 2019-09-30 18:28:48Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(psg_diag)
+  NCBI_sources(AppLog AppPerf IdLogUtl AppLogWrap)
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_requires(Linux)
+  NCBI_project_watchers(satskyse dmitrie1)
+NCBI_end_lib()

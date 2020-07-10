@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.test_csra_loader.app.txt 593524 2019-09-19 18:47:29Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_csra_loader)
+  NCBI_sources(test_csra_loader)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(ncbi_xloader_csra ncbi_xloader_genbank xobjreadex)
+  NCBI_project_watchers(vasilche ucko)
+  NCBI_set_test_assets(mapfile)
+  NCBI_add_test()
+NCBI_end_app()
+

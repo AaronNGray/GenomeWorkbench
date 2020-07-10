@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.variation.asn.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(variation)
+  NCBI_dataspecs(variation.asn)
+  NCBI_uses_toolkit_libraries(seq)
+NCBI_end_lib()
+

@@ -1,0 +1,9 @@
+# $Id: Makefile.in 40895 2018-04-26 20:16:15Z katargir $
+
+# Meta-makefile("test_bm" project)
+#################################
+
+EXPENDABLE_APP_PROJ = test_bm
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

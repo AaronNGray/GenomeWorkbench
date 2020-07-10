@@ -1,0 +1,10 @@
+# $Id: Makefile.in 487476 2015-12-17 19:48:39Z ucko $
+#
+# FreeTDS DBLIB library
+
+LIB_PROJ = dblib95
+SUB_PROJ = unittests
+
+srcdir = @srcdir@
+
+include @builddir@/Makefile.meta

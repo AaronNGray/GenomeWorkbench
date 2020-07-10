@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_xloader_patcher.lib.txt 594157 2019-09-30 18:28:48Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_xloader_patcher)
+  NCBI_sources(loaderpatcher)
+  NCBI_uses_toolkit_libraries(xobjmgr)
+  NCBI_project_watchers(vasilche)
+NCBI_end_lib()
+

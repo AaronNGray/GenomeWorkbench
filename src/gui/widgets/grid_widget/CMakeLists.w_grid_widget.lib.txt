@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.w_grid_widget.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_grid_widget)
+  NCBI_sources(
+    grid wxgrid_table_adapter grid_widget
+    str_url_parser str_url_renderer cell_hyperlink
+    assign_column_value_dlg copy_column_dlg filter_columns_dlg
+  )
+  NCBI_uses_toolkit_libraries(w_data)
+  NCBI_requires(wxWidgets)
+NCBI_end_lib()

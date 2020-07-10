@@ -1,0 +1,301 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Catla catla",
+            orgname {
+              name binomial {
+                genus "Catla",
+                species "catla"
+              },
+              gcode 1,
+              mgcode 2
+            }
+          }
+        },
+        update-date std {
+          year 2015,
+          month 3,
+          day 28,
+          hour 3,
+          minute 29,
+          second 5
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1"
+          },
+          descr {
+            title "Arylalkylamine-N-Acetyltransferase-1 (AANAT1) mRNA, Complete",
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 293,
+            strand ss,
+            seq-data iupacna "CTTTCGACCAGCAGAAATGTCAGTAGTGAGCACACTGCCTTTCCTAAA
+GCCCATCCACATGAGAGCTCCGATCTCCCCCGGCCGCCAGCGCCGGCACACGCTCCCCGCCAGCGAGTTCCGGTCACT
+CAACACTGAGGACGCCATCAGTGTATTCGAAATAGAGAGAGCCAGAAGTCTGGCTTTAAGGGACAAGGTCCTTCTGAA
+ATCACTGTTGGGTCACTTACCTTCATCGAGATGTATTATCCTATAAGAGGACATGCATTCATGCGCCGTAACAGTGGT
+TGTTAAGGGAT"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "aanat1"
+                  },
+                  location int {
+                    from 0,
+                    to 292,
+                    strand plus,
+                    id local str "Seq1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_9",
+            general {
+              db "TMSMART",
+              tag id 53696590
+            }
+          },
+          descr {
+            title "Arylalkylamine-N-Acetyltransferase-1 [Catla catla]",
+            molinfo {
+              biomol peptide,
+              completeness complete
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq1_prot_9"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 90,
+            seq-data ncbieaa "MSVVSTLPFLKPIHMRAPISPGRQRRHTLPASEFRSLNTEDAISVFEI
+ERARSLALRDKVLLKSLLGHLPSSRCIIL*EDMHSCAVTVVV"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Arylalkylamine-N-Acetyltransferase-1"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 89,
+                    id local str "Seq1_prot_9"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq1_prot_9",
+              location int {
+                from 16,
+                to 287,
+                strand plus,
+                id local str "Seq1"
+              },
+              dbxref {
+                {
+                  db "TestDB",
+                  tag id 12345
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Catla catla",
+            orgname {
+              name binomial {
+                genus "Catla",
+                species "catla"
+              },
+              gcode 1,
+              mgcode 2
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2"
+          },
+          descr {
+            title "Arylalkylamine-N-Acetyltransferase-2 (AANAT2) mRNA, Complete",
+            molinfo {
+              biomol mRNA,
+              completeness complete
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 526,
+            strand ss,
+            seq-data iupacna "AACACATCAGACCGTAGAAGAGAGCAAGTGTGCGCGTGTCAGATGATG
+GCACCGCAGGTCGTCAGCTCACCCTTCCTGAAGCCATTCTTCCTGAAGACGCCGATAAGCGTCGCCAGTCCTCGGCGG
+CAGCGACGACACACGTTACCTGCTAGCGAGTTCCGTAATCTCACCCCACAGGATGCCATTAGCGTGTTTGAGATTGAG
+AGAGAAGCGTTTATCTCCGTTTCCGGAGAATGTCCACTCACCCTTGATGAGGTGCTTAGTTTCCTTGGCCAGTGTCCT
+GAGCTCTCGATGGGATGGTTTGAAGAGGGCCAGCTGGTGGCCTTCATCATTGGATCTGGCTGGGACAAGAGAAGGGTG
+CCTCGGCCATCAGTGTGGGGGCATTGGCCTTCACAGAGATGGAGTATCCGCTTGGAGGCCTGGCTTATGCACGACGAA
+ACAGCGGATGTTAGTTTCCTTCTACTGGTCAGAAAACAGTGGTTGTTTTAACCTAAGCAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "aanat2"
+                  },
+                  location int {
+                    from 0,
+                    to 525,
+                    strand plus,
+                    id local str "Seq2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_10",
+            general {
+              db "TMSMART",
+              tag id 53696592
+            }
+          },
+          descr {
+            title "Arylalkylamine-N-Acetyltransferase-2 [Catla catla]",
+            molinfo {
+              biomol peptide,
+              completeness complete
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2_prot_10"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 136,
+            seq-data ncbieaa "MMAPQVVSSPFLKPFFLKTPISVASPRRQRRHTLPASEFRNLTPQDAI
+SVFEIEREAFISVSGECPLTLDEVLSFLGQCPELSMGWFEEGQLVAFIIGSGWDKRRVPRPSVWGHWPSQRWSIRLEA
+WLMHDETADV"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Arylalkylamine-N-Acetyltransferase-2"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 135,
+                    id local str "Seq2_prot_10"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq2_prot_10",
+              location int {
+                from 42,
+                to 451,
+                strand plus,
+                id local str "Seq2"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

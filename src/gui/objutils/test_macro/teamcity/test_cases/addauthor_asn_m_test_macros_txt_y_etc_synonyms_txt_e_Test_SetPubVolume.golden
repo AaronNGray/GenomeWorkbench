@@ -1,0 +1,213 @@
+Seq-entry ::= seq {
+  id {
+    other {
+      accession "NR_134356",
+      version 1
+    },
+    gi 966624310
+  },
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Trichoderma lacuwombatense",
+        db {
+          {
+            db "taxon",
+            tag id 1490993
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Trichoderma",
+            species "lacuwombatense"
+          },
+          attrib "specified",
+          mod {
+            {
+              subtype type-material,
+              subname "culture from holotype of Trichoderma lacuwombatense",
+              attrib "(2)strain=GJS 99-198"
+            }
+          },
+          lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Hypocreomycetidae; Hypocreales; Hypocreaceae; Trichoderma",
+          gcode 1,
+          mgcode 4,
+          div "PLN"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic,
+      completeness no-ends
+    },
+    pub {
+      pub {
+        gen {
+          cit "Unpublished",
+          authors {
+            names std {
+              {
+                name name {
+                  last "Samuels",
+                  first "Gary",
+                  initials "G.J."
+                }
+              }
+            },
+            affil std {
+              affil "USDA, Agricultural Research Service",
+              div "Systematic Botany and Mycology Laboratory",
+              city "Beltsville",
+              sub "Maryland",
+              country "USA",
+              street "10300 Baltimore Avenue, Building 011A",
+              postal-code "20705"
+            }
+          },
+          title "Changes in taxonomy, occurrence of the sexual stage and
+ ecology of Trichoderma sp.."
+        }
+      }
+    },
+    pub {
+      pub {
+        pmid 21148857,
+        article {
+          title {
+            name "Hypocrea/Trichoderma species with pachybasium-like
+ conidiophores: teleomorphs for T. minutisporum and T. polysporum and their
+ newly discovered relatives."
+          },
+          authors {
+            names std {
+              {
+                name name {
+                  last "Lu",
+                  first "B",
+                  initials "B."
+                }
+              },
+              {
+                name name {
+                  last "Druzhinina",
+                  first "I",
+                  initials "I.S."
+                }
+              },
+              {
+                name name {
+                  last "Fallah",
+                  first "P",
+                  initials "P."
+                }
+              },
+              {
+                name name {
+                  last "Chaverri",
+                  first "P",
+                  initials "P."
+                }
+              },
+              {
+                name name {
+                  last "Gradinger",
+                  first "C",
+                  initials "C."
+                }
+              },
+              {
+                name name {
+                  last "Kubicek",
+                  first "C",
+                  initials "C.P."
+                }
+              },
+              {
+                name name {
+                  last "Samuels",
+                  first "G",
+                  initials "G.J."
+                }
+              }
+            }
+          },
+          from journal {
+            title {
+              iso-jta "Mycologia",
+              ml-jta "Mycologia",
+              issn "0027-5514",
+              name "Mycologia"
+            },
+            imp {
+              date std {
+                year 2004,
+                month 3
+              },
+              volume "new vol",
+              issue "2",
+              pages "310-342",
+              language "eng",
+              pubstatus ppublish,
+              history {
+                {
+                  pubstatus other,
+                  date std {
+                    year 2010,
+                    month 12,
+                    day 15,
+                    hour 6,
+                    minute 0
+                  }
+                },
+                {
+                  pubstatus pubmed,
+                  date std {
+                    year 2004,
+                    month 3,
+                    day 1,
+                    hour 0,
+                    minute 0
+                  }
+                },
+                {
+                  pubstatus medline,
+                  date std {
+                    year 2004,
+                    month 3,
+                    day 1,
+                    hour 0,
+                    minute 1
+                  }
+                }
+              }
+            }
+          },
+          ids {
+            pubmed 21148857,
+            pii "96/2/310"
+          }
+        }
+      }
+    },
+    user {
+      type str "OriginalID",
+      data {
+        {
+          label str "RefSeq",
+          data str "ref|NR_134356.1|"
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 288,
+    seq-data iupacna "CTCGGAGGGATCATTACCGAGTTTACAACTCCCAAACCCCTATGTGAACGTTACCA
+AAAACCCCCTGTCCGAGCGTCATTTCAACCCTCGAACCCCTCCGGGGGTCCGGCGTTGGGGATCGGCCCTTTACCGGC
+CGGCCCCGAAATACAGTGGCGGTCTCGCCGCAGCCTCTCCTGCGCAGTAGTTTGCACACTCGCACCGGGAGCGCGGCG
+CGTCCACGTCCGTAAAACACCCAACTTCTGAAAGGTTGACCTCGGATCAGGTAGGAATACCCGCTGAACTTAAGCA"
+  }
+}

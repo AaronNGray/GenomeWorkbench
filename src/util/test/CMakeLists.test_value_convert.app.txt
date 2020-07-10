@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.test_value_convert.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_value_convert)
+  NCBI_sources(test_value_convert)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_project_watchers(ucko)
+  NCBI_add_test()
+NCBI_end_app()
+

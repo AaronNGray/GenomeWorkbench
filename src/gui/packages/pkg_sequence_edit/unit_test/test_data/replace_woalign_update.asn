@@ -1,0 +1,82 @@
+Seq-entry ::= set {
+  seq-set {
+    seq {
+      id {
+        local str "KJ841043"
+      },
+      descr {
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "KJ841043"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol na,
+        length 709,
+        seq-data ncbi2na '07FA3431CF24E74DCC42CF04A3DF5C96C47112504F05C93DD373
+6C44D1588ED531A3830C401F1194DA64D0CF7D3793F1351364668731CEAD31703002178734A041
+5CF8D33C324167FFFAF3B5F538A10334F7896416D34705F74494D5317281043041787BAA68FE53
+418D415C159F7D93C47F3DF53DA0D374774D1C44F33CF11821AF424151CA050F484D840354FD15
+31445C4085EF8C77470C3FC33C70C12CD3D79484FF41857801FF402505472D11441100'H
+      }
+    },
+    seq {
+      id {
+        local str "KJ841044"
+      },
+      descr {
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "KJ841044"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol na,
+        length 709,
+        seq-data ncbi2na '07FA3431CF24E74DCC42CF04A3DF5C96C47112504F05C93DD373
+6C44D1588ED531A3830C401F1194DA64D0CF7D3793F1351364668731CEAD31703002178734A041
+5CF0D33C324167FFFAF3B5F538A10334F789E416D3470DF74494D5313281043041787BAA68FE53
+418D415C159F7D91C47F3DF53DA0D374774D1C44F33CF11823AF424151CA050F484D840354FD15
+31445C4085CF8C77470C3FC33C70C12CD3D79484FF41857801FF402505472D11441100'H
+      }
+    },
+    seq {
+      id {
+        local str "KJ841045"
+      },
+      descr {
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "KJ841045"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol na,
+        length 709,
+        seq-data ncbi2na '07DA3431CF24E74DCC42CF04A3DF5C96C47112504F05C93DD373
+6C44D1588ED531A3830C401F1194DA64D0CF7D3793F1351364668731CEAD31703002178734A041
+5CF8D33C324167FFFAF3B5F538A10334F7896416D34705F74494D5337281043041787B8A68FE53
+418D415C159F7D93C47F3DF53DA0D374774D1C44F33CF11821AF424151CA050F484D840354FD15
+31445C4085EF8C77470C3FC33C70C12CD3D79484FF41857801FF402505472D11441100'H
+      }
+    }
+  }
+}

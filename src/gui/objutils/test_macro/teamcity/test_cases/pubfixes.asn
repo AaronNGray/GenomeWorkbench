@@ -1,0 +1,120 @@
+Seq-entry ::= seq {
+  id {
+    local str "Seq_1"
+  },
+  descr {
+    source {
+      org {
+        taxname "Cajanus cajan",
+        common "pigeon pea",
+        db {
+          {
+            db "taxon",
+            tag id 3821
+          }
+        },
+        orgname {
+          lineage "cellular organisms; Eukaryota; Viridiplantae; Streptophyta;
+ Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta; Spermatophyta;
+ Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae; Pentapetalae;
+ rosids; fabids; Fabales; Fabaceae; Papilionoideae; Phaseoleae; Cajanus",
+          gcode 1,
+          mgcode 1,
+          div "PLN"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic
+    },
+    pub {
+      pub {
+        gen {
+          cit "Unpublished",
+          authors {
+            names std {
+              {
+                name name {
+                  last "PADDER",
+                  first "SHAHID",
+                  middle "A.",
+                  initials "S.A."
+                }
+              },
+              {
+                name name {
+                  last "DAR",
+                  first "G",
+                  middle "H.",
+                  initials "G.H."
+                }
+              }
+            }
+          },
+          title "Testing title"
+        }
+      }
+    },
+    pub {
+      pub {
+        sub {
+          authors {
+            names std {
+              {
+                name name {
+                  last "Padder",
+                  first "Shahid",
+                  middle "A.",
+                  initials "S.A."
+                }
+              },
+              {
+                name name {
+                  last "Dar",
+                  first "G",
+                  middle "H.",
+                  initials "G.H."
+                }
+              }
+            },
+            affil std {
+              affil "GUTT-FG",
+              div "microbiology",
+              city "Berlin",
+              sub "J&K",
+              country "GERMANY",
+              street "TESTADDRESS",
+              postal-code "18856"
+            }
+          },
+          date std {
+            year 2017,
+            month 2,
+            day 15
+          },
+          descr "some title"
+        }
+      }
+    },
+    create-date std {
+      year 2016,
+      month 1,
+      day 22
+    },
+    user {
+      type str "OriginalID",
+      data {
+        {
+          label str "LocalId",
+          data str "Seq_1"
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 49,
+    seq-data iupacna "CATGCAAGTCGAGCGGTATCCCANAAAACCGATCGTAGTCCGGATCGCA"
+  }
+}

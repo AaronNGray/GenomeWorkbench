@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.blastinput_demo.app.txt 593585 2019-09-20 13:57:47Z gouriano $
+#############################################################################
+
+NCBI_begin_app(blastinput_demo)
+  NCBI_sources(blastinput_demo)
+  NCBI_uses_toolkit_libraries(blastinput)
+  NCBI_project_watchers(madden camacho)
+NCBI_end_app()
+

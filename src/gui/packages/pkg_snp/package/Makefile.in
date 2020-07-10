@@ -1,0 +1,10 @@
+# $Id: Makefile.in 19268 2009-05-13 14:28:25Z quintosm $
+# Author:  Mike DiCuccio
+
+# Meta-makefile for alignment views
+#################################
+
+LIB_PROJ = pkg_snp
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

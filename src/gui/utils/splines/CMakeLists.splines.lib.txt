@@ -1,0 +1,8 @@
+#############################################################################
+# $Id: CMakeLists.splines.lib.txt 43727 2019-08-23 17:03:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(splines)
+  NCBI_sources(Splines SplineCubicBase SplineHermite SplinePchip)
+NCBI_end_lib()
+

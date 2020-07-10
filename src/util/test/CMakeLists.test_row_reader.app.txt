@@ -1,0 +1,11 @@
+#############################################################################
+#  $Id: CMakeLists.test_row_reader.app.txt 594373 2019-10-03 13:30:50Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_row_reader)
+  NCBI_sources(test_row_reader)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_set_test_assets(test_row_reader.txt)
+  NCBI_add_test()
+  NCBI_project_watchers(satskyse)
+NCBI_end_app()

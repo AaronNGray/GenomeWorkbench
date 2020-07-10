@@ -1,0 +1,70 @@
+Seq-entry ::= seq {
+  id {
+    local str "update_seq"
+  },
+  descr {
+    user {
+      type str "CFastaReader",
+      data {
+        {
+          label str "DefLine",
+          data str ">update_seq"
+        }
+      }
+    },
+    user {
+      type str "OriginalID",
+      data {
+        {
+          label str "LocalId",
+          data str "update_seq"
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol na,
+    length 1563,
+    seq-data ncbi2na 'AAAAAAAABFFFFFFFFFFFFFFFFFD55555555555555555555555400000
+00000000002D8981E3C827E7DCE1BC9A686AE2C11BA905E5EC21EA307DA8058270C5A328DF75F4
+EA238F808EBF69CD1F123A959AE4F272FAE2B069D1429063932585E22AE369447A8788469521D7
+1A8A492CA837D643A180B786890659B8B8E0A7F6ADB0077BEF2A0810B108B079FB17E1AC5C1480
+9469C1C6E524966B0C6CAE909BCD683CFA9B026664A6BF7C2DE3B80951A7416E8AB4FA01EA81F8
+B9208802683D46EC9AE039B223BA28114BA60A69FFEB7B078678A66026EA890128F2315EB2D465
+B018E2E70BBC8ABF595FCB9E49C193C247597AA2C6B6421E01D0283E1AA959109AE893BAFC3D82
+4198205F14ADF84D77841DC88C89BD57DAA848B84AEB93AFB6D276EDB88EFABC2D590626415F8D
+F2F9493F2FA91DC2B8796B8405A282BAA386D034D3957CE17A9C446E710E8EB102A7908598AD09
+4354C014F74BDA3ECA790765C4E09E83672C3668D24E59AE0C6F56A5FB111656D114622FEC1158
+2DAE8B05B0A2725901C2B854'H
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data region "lowercase in FASTA file",
+          location int {
+            from 0,
+            to 132,
+            strand plus,
+            id local str "update_seq"
+          }
+        },
+        {
+          data rna {
+            type rRNA,
+            ext name "12S ribosomal RNA (update)"
+          },
+          partial TRUE,
+          location int {
+            from 0,
+            to 1562,
+            strand plus,
+            id local str "update_seq",
+            fuzz-from lim lt
+          }
+        }
+      }
+    }
+  }
+}

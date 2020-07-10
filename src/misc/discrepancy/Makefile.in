@@ -1,0 +1,15 @@
+# $Id: Makefile.in 566220 2018-06-26 21:17:26Z kachalos $
+
+# Meta-makefile (object utilities)
+##################################
+
+LIB_PROJ = discrepancy
+SUB_PROJ = unit_test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+
+REQUIRES = LIBXSLT 
+
+WATCHERS = kachalos
+

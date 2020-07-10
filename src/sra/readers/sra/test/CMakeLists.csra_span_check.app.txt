@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.csra_span_check.app.txt 593432 2019-09-18 17:36:33Z gouriano $
+#############################################################################
+
+NCBI_begin_app(csra_span_check)
+  NCBI_sources(csra_span_check)
+  NCBI_uses_toolkit_libraries(sraread)
+  NCBI_project_watchers(vasilche)
+NCBI_end_app()

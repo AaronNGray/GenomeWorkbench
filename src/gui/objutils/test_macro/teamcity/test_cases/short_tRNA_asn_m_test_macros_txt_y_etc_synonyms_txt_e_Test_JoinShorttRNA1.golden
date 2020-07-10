@@ -1,0 +1,158 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq1"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 530,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAATTAATCATACCCTTCTGGATAAGGGGGAGCG
+TGTACGGGATTATGATTTGAAGAACCTTGGGGATGCTTTGAAAAGTGCTCAGGATGTTGTTAAAACAGCTCAGGGCGA
+GGCGGCTACTATCACTAAAAATGATCATAGAGTGGAAGGGTTGGATAAATCTATTTTAAACCCTGATTTAATGCAGGC
+TGAGATCGATTATGCTCTTAAATTGATTGAAGCTAAGGAATCCCGTTAAAAAAAAGAAAAAGGGGGCAACACGCACCC
+CTCCATTTTTCTTTCCTTTTTTTGAATTTATTATAAAAATATGCAGTGATTTACCATGAATAGCCACGGCATTCTAGG
+ATTAGCCCGCTGGAGTGTACTGATCAATGAAGGGGCATGGAAACCCCGGAACTTTGACGTGTTAATCATTGAAGAAAC
+TGACCTACTA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "Putative terminase large subunit gene",
+                desc "terminase large subunit gene"
+              },
+              partial TRUE,
+              location int {
+                from 419,
+                to 529,
+                strand plus,
+                id local str "Seq1",
+                fuzz-to lim gt
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 65
+                }
+              },
+              comment "Ala1 comment; Ala2 comment",
+              location mix {
+                int {
+                  from 9,
+                  to 34,
+                  strand plus,
+                  id local str "Seq1"
+                },
+                int {
+                  from 37,
+                  to 43,
+                  strand plus,
+                  id local str "Seq1"
+                }
+              }
+            },
+            {
+              data gene {
+                locus "trnA-GAT"
+              },
+              location int {
+                from 9,
+                to 43,
+                strand plus,
+                id local str "Seq1"
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 67
+                }
+              },
+              comment "Cyst3 comment; Cyst1 comment",
+              location mix {
+                int {
+                  from 119,
+                  to 149,
+                  strand minus,
+                  id local str "Seq1"
+                },
+                int {
+                  from 89,
+                  to 109,
+                  strand minus,
+                  id local str "Seq1",
+                  fuzz-to lim gt
+                },
+                int {
+                  from 44,
+                  to 79,
+                  strand minus,
+                  id local str "Seq1"
+                }
+              }
+            },
+            {
+              data gene {
+                locus "trna-GYH",
+                desc "gene descr"
+              },
+              location int {
+                from 44,
+                to 149,
+                strand minus,
+                id local str "Seq1"
+              }
+            },
+            {
+              data rna {
+                type tRNA,
+                ext tRNA {
+                  aa ncbieaa 67
+                }
+              },
+              location int {
+                from 79,
+                to 119,
+                strand plus,
+                id local str "Seq1"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

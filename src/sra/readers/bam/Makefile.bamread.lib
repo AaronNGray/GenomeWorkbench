@@ -1,0 +1,21 @@
+# $Id: Makefile.bamread.lib 519282 2016-11-14 20:36:00Z vasilche $
+
+LIB = bamread
+SRC = bamread bamgraph bgzf bamindex vdbfile
+
+ASN_DEP = seq seqset
+
+REQUIRES = objects
+
+LIB_OR_DLL = both
+DLL_LIB = $(SOBJMGR_LDEP) $(BAM_LIBS) xcompress $(CMPRS_LIB)
+LIBS = $(SRA_SDK_SYSLIBS) $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(SRA_INCLUDE) -DNCBI_BAMREAD_EXPORTS
+
+WATCHERS = vasilche
+
+
+USES_LIBRARIES =  \
+    $(SRA_LIBS) $(SRA_SDK_SYSLIBS) seqset

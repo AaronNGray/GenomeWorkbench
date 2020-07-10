@@ -1,0 +1,1088 @@
+MACRO GB_mitomacro_001 "Edit CDS product replace 'NADH dehydrogenase 1' with 'NADH dehydrogenase subunit 1'"
+VAR
+    find_text = "NADH dehydrogenase 1"
+    repl_text = "NADH dehydrogenase subunit 1"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_002 "Edit CDS product replace 'NADH dehydrogenase 2' with 'NADH dehydrogenase subunit 2'"
+VAR
+    find_text = "NADH dehydrogenase 2"
+    repl_text = "NADH dehydrogenase subunit 2"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_003 "Edit CDS product replace 'NADH dehydrogenase 3' with 'NADH dehydrogenase subunit 3'"
+VAR
+    find_text = "NADH dehydrogenase 3"
+    repl_text = "NADH dehydrogenase subunit 3"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_004 "Edit CDS product replace 'NADH dehydrogenase 4' with 'NADH dehydrogenase subunit 4'"
+VAR
+    find_text = "NADH dehydrogenase 4"
+    repl_text = "NADH dehydrogenase subunit 4"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_005 "Edit protein name replace 'NADH dehydrogenase 4L' with 'NADH dehydrogenase subunit 4L'"
+VAR
+    find_text = "NADH dehydrogenase 4L"
+    repl_text = "NADH dehydrogenase subunit 4L"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_006 "Edit protein name replace 'NADH dehydrogenase 5' with 'NADH dehydrogenase subunit 5'"
+VAR
+    find_text = "NADH dehydrogenase 5"
+    repl_text = "NADH dehydrogenase subunit 5"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_007 "Edit CDS product replace 'NADH dehydrogenase 6' with 'NADH dehydrogenase subunit 6'"
+VAR
+    find_text = "NADH dehydrogenase 6"
+    repl_text = "NADH dehydrogenase subunit 6"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_008 "Edit protein name replace 'ND' with 'NADH dehydrogenase subunit '"
+VAR
+    find_text = "ND"
+    repl_text = "NADH dehydrogenase subunit "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_009 "Edit gene locus replace 'NADH dehydrogenase subunit ' with 'ND'"
+VAR
+    find_text = "NADH dehydrogenase subunit "
+    repl_text = "ND"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_010 "Edit gene locus replace 'nad' with 'ND'"
+VAR
+    find_text = "nad"
+    repl_text = "ND"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_011 "Edit gene locus replace 'NADH' with 'ND'"
+VAR
+    find_text = "NADH"
+    repl_text = "ND"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_012 "Edit gene locus replace 'NAD' with 'ND'"
+VAR
+    find_text = "NAD"
+    repl_text = "ND"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_013 "Edit gene locus replace 'ND4l' with 'ND4L'"
+VAR
+    find_text = "ND4l"
+    repl_text = "ND4L"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_014 "Edit protein name replace 'cytochrome oxidase' with 'cytochrome c oxidase'"
+VAR
+    find_text = "cytochrome oxidase"
+    repl_text = "cytochrome c oxidase"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_015 "Edit CDS product replace 'Cytochrome' with 'cytochrome'"
+VAR
+    find_text = "Cytochrome"
+    repl_text = "cytochrome"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_016 "Edit CDS product replace 'oxydase' with 'oxidase'"
+VAR
+    find_text = "oxydase"
+    repl_text = "oxidase"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_017 "Edit CDS product replace 'cytochrome C' with 'cytochrome c'"
+VAR
+    find_text = "cytochrome C"
+    repl_text = "cytochrome c"
+    location = "at the beginning"
+    case_sensitive = false
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_018 "Edit CDS product replace 'cytochrome c oxidase subunit 1' with 'cytochrome c oxidase subunit I'"
+VAR
+    find_text = "cytochrome c oxidase subunit 1"
+    repl_text = "cytochrome c oxidase subunit I"
+    location = "at the end"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_019 "Edit CDS product replace 'cytochrome c oxidase subunit 2' with 'cytochrome c oxidase subunit II'"
+VAR
+    find_text = "cytochrome c oxidase subunit 2"
+    repl_text = "cytochrome c oxidase subunit II"
+    location = "at the end"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_020 "Edit gene locus replace 'cytochrome c oxidase subunit ' (case insensitive) with 'COX'"
+VAR
+    find_text = "cytochrome c oxidase subunit "
+    repl_text = "COX"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_021 "Edit gene locus replace 'cytochrome c oxidase subunit ' with 'COX'"
+VAR
+    find_text = "cytochrome c oxidase subunit "
+    repl_text = "COX"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_022 "Edit CDS product replace 'cytochrome c oxidase subunit 3' with 'cytochrome c oxidase subunit III'"
+VAR
+    find_text = "cytochrome c oxidase subunit 3"
+    repl_text = "cytochrome c oxidase subunit III"
+    location = "at the end"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_023 "Edit gene locus replace 'cox' with 'COX'"
+VAR
+    find_text = "cox"
+    repl_text = "COX"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_024 "Edit gene locus replace 'CO1' with 'COX1'"
+VAR
+    find_text = "CO1"
+    repl_text = "COX1"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_025 "Edit gene locus replace 'CO2' with 'COX2'"
+VAR
+    find_text = "CO2"
+    repl_text = "COX2"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_026 "Edit gene locus replace 'CO3' with 'COX3'"
+VAR
+    find_text = "CO3"
+    repl_text = "COX3"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_027 "Edit gene locus replace 'COXiii' with 'COX3'"
+VAR
+    find_text = "COXiii"
+    repl_text = "COX3"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_028 "Edit gene locus replace 'COXi' with 'COX1'"
+VAR
+    find_text = "COXi"
+    repl_text = "COX1"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_029 "Edit gene locus replace 'COXii' with 'COX2'"
+VAR
+    find_text = "COXii"
+    repl_text = "COX2"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_030 "Edit gene locus replace 'COXIII' with 'COX3'"
+VAR
+    find_text = "COXIII"
+    repl_text = "COX3"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_031 "Edit gene locus replace 'COXII' with 'COX2'"
+VAR
+    find_text = "COXII"
+    repl_text = "COX2"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_032 "Edit gene locus replace 'cox1' with 'COX1'"
+VAR
+    find_text = "cox1"
+    repl_text = "COX1"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_033 "Apply COI to gene synonym (overwrite existing text) where gene locus equals 'COI' (case-sensitive)"
+VAR
+    case_sensitive = true
+FOR EACH Gene
+WHERE EQUALS("data.gene.locus", "COI", case_sensitive)
+DO
+    SetStringQual("data.gene.syn", "COI", "eReplace");
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_034 "Edit gene locus replace 'coxI' with 'COX1'"
+VAR
+    find_text = "coxI"
+    repl_text = "COX1"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_035 "Apply COX1 to gene locus (overwrite existing text) where gene locus equals 'COI' (case-sensitive)"
+VAR
+    case_sensitive = true
+FOR EACH Gene
+WHERE EQUALS("data.gene.locus", "COI", case_sensitive)
+DO
+    SetStringQual("data.gene.locus", "COX1", "eReplace");
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_036 "Apply COII to gene synonym (overwrite existing text) where gene locus equals 'COII' (case-sensitive)"
+VAR
+    case_sensitive = true
+FOR EACH Gene
+WHERE EQUALS("data.gene.locus", "COII", case_sensitive)
+DO
+    SetStringQual("data.gene.syn", "COII", "eReplace");
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_037 "Apply COIII to gene synonym (overwrite existing text) where gene locus equals 'COIII' (case-sensitive)"
+VAR
+    case_sensitive = true
+FOR EACH Gene
+WHERE EQUALS("data.gene.locus", "COIII", case_sensitive)
+DO
+    SetStringQual("data.gene.syn", "COIII", "eReplace");
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_038 "Apply COX3 to gene locus (overwrite existing text) where gene locus equals 'COIII' (case-sensitive)"
+VAR
+    case_sensitive = true
+FOR EACH Gene
+WHERE EQUALS("data.gene.locus", "COIII", case_sensitive)
+DO
+    SetStringQual("data.gene.locus", "COX3", "eReplace");
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_039 "Apply COX2 to gene locus (overwrite existing text) where gene locus equals 'COII' (case-sensitive)"
+VAR
+    case_sensitive = true
+FOR EACH Gene
+WHERE EQUALS("data.gene.locus", "COII", case_sensitive)
+DO
+    SetStringQual("data.gene.locus", "COX2", "eReplace");
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_040 "Edit protein name replace 'COIII' with 'cytochrome c oxidase subunit 3'"
+VAR
+    find_text = "COIII"
+    repl_text = "cytochrome c oxidase subunit 3"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_041 "Edit protein name replace 'COII' with 'cytochrome c oxidase subunit 2'"
+VAR
+    find_text = "COII"
+    repl_text = "cytochrome c oxidase subunit 2"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_042 "Edit protein name replace 'COX1' with 'cytochrome c oxidase subunit I'"
+VAR
+    find_text = "COX1"
+    repl_text = "cytochrome c oxidase subunit I"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_043 "Edit protein name replace 'COX2' with 'cytochrome c oxidase subunit II'"
+VAR
+    find_text = "COX2"
+    repl_text = "cytochrome c oxidase subunit II"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_044 "Edit protein name replace 'COX3' with 'cytochrome c oxidase subunit III'"
+VAR
+    find_text = "COX3"
+    repl_text = "cytochrome c oxidase subunit III"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_045 "Edit protein name replace 'cox' with 'cytochrome c oxidase subunit '"
+VAR
+    find_text = "cox"
+    repl_text = "cytochrome c oxidase subunit "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_046 "Edit protein name replace 'Cox' with 'cytochrome c oxidase subunit '"
+VAR
+    find_text = "Cox"
+    repl_text = "cytochrome c oxidase subunit "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_047 "Edit protein name replace 'COI' with 'cytochrome c oxidase subunit 1'"
+VAR
+    find_text = "COI"
+    repl_text = "cytochrome c oxidase subunit 1"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_048 "Edit gene locus replace 'COXI' with 'COX1'"
+VAR
+    find_text = "COXI"
+    repl_text = "COX1"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_049 "Edit gene locus replace 'cytb' with 'CYTB'"
+VAR
+    find_text = "cytb"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_050 "Edit gene locus replace 'COB' with 'CYTB'"
+VAR
+    find_text = "COB"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_051 "Edit gene locus replace 'cob' with 'CYTB'"
+VAR
+    find_text = "cob"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_052 "Edit gene locus replace 'nad' with 'ND'"
+VAR
+    find_text = "nad"
+    repl_text = "ND"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_053 "Edit gene locus replace 'Cox' with 'COX'"
+VAR
+    find_text = "Cox"
+    repl_text = "COX"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_054 "Edit gene locus replace 'Nad' with 'ND'"
+VAR
+    find_text = "Nad"
+    repl_text = "ND"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_055 "Edit gene locus replace 'Cox' with 'COX'"
+VAR
+    find_text = "Cox"
+    repl_text = "COX"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_056 "Edit gene locus replace 'cyt b' with 'CYTB'"
+VAR
+    find_text = "cyt b"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_057 "Edit gene locus replace 'cox' with 'COX'"
+VAR
+    find_text = "cox"
+    repl_text = "COX"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_058 "Edit gene locus replace 'nad' with 'ND'"
+VAR
+    find_text = "nad"
+    repl_text = "ND"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_059 "Edit gene locus replace 'cytochrome b' (case insensitive) with 'CYTB'"
+VAR
+    find_text = "cytochrome b"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_060 "Edit gene locus replace 'Cytb' (case insensitive) with 'CYTB'"
+VAR
+    find_text = "Cytb"
+    repl_text = "CYTB"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_061 "Edit protein name replace 'COB' with 'cytochrome b'"
+VAR
+    find_text = "COB"
+    repl_text = "cytochrome b"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_062 "Edit CDS product replace 'cytochrome B' with 'cytochrome b'"
+VAR
+    find_text = "cytochrome B"
+    repl_text = "cytochrome b"
+    location = "at the beginning"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_063 "Edit protein name replace 'apocytochrome b' with 'cytochrome b'"
+VAR
+    find_text = "apocytochrome b"
+    repl_text = "cytochrome b"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_064 "Edit protein name replace 'Cytb' with 'cytochrome b'"
+VAR
+    find_text = "Cytb"
+    repl_text = "cytochrome b"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_065 "Edit protein name replace 'cytB' with 'cytochrome b'"
+VAR
+    find_text = "cytB"
+    repl_text = "cytochrome b"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_066 "Edit gene locus replace 'ATP synthase F0 subunit' with 'ATP'"
+VAR
+    find_text = "ATP synthase F0 subunit"
+    repl_text = "ATP"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_067 "Edit gene locus replace 'atp' with 'ATP'"
+VAR
+    find_text = "atp"
+    repl_text = "ATP"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_068 "Edit protein name replace 'atp' with 'ATP synthase F0 subunit '"
+VAR
+    find_text = "atp"
+    repl_text = "ATP synthase F0 subunit "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_069 "Edit protein name replace 'cytb' with 'cytochrome b'"
+VAR
+    find_text = "cytb"
+    repl_text = "cytochrome b"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_070 "Edit protein name replace 'ATPase subunit 6' with 'ATP synthase F0 subunit 6'"
+VAR
+    find_text = "ATPase subunit 6"
+    repl_text = "ATP synthase F0 subunit 6"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_071 "Edit gene locus replace 'ATP ' with 'ATP'"
+VAR
+    find_text = "ATP "
+    repl_text = "ATP"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_072 "Edit gene locus replace 'ATPase' with 'ATP'"
+VAR
+    find_text = "ATPase"
+    repl_text = "ATP"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_073 "Edit protein name replace 'ATP8' with 'ATP synthase F0 subunit 8'"
+VAR
+    find_text = "ATP8"
+    repl_text = "ATP synthase F0 subunit 8"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_074 "Edit protein name replace 'ATP6' with 'ATP synthase F0 subunit 6'"
+VAR
+    find_text = "ATP6"
+    repl_text = "ATP synthase F0 subunit 6"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_075 "Edit protein name replace 'CYTB' with 'cytochrome b'"
+VAR
+    find_text = "CYTB"
+    repl_text = "cytochrome b"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_076 "Edit protein name replace 'ATPase subunit 8' with 'ATP synthase F0 subunit 8'"
+VAR
+    find_text = "ATPase subunit 8"
+    repl_text = "ATP synthase F0 subunit 8"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_077 "Edit CDS product replace 'ATP synthase subunit 6' with 'ATP synthase F0 subunit 6'"
+VAR
+    find_text = "ATP synthase subunit 6"
+    repl_text = "ATP synthase F0 subunit 6"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_078 "Edit protein name replace 'Nad' with 'NADH dehydrogenase subunit '"
+VAR
+    find_text = "Nad"
+    repl_text = "NADH dehydrogenase subunit "
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_079 "Edit CDS product replace 'ATP synthase subunit 8' with 'ATP synthase F0 subunit 8'"
+VAR
+    find_text = "ATP synthase subunit 8"
+    repl_text = "ATP synthase F0 subunit 8"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Protein
+DO
+    EditStringQual("data.prot.name", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_080 "Edit gene locus replace 'tRNA-Ile' with 'trnI'"
+VAR
+    find_text = "tRNA-Ile"
+    repl_text = "trnI"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_081 "Edit gene locus replace 'tRNA-Lys' with 'trnK'"
+VAR
+    find_text = "tRNA-Lys"
+    repl_text = "trnK"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_082 "Edit gene locus replace 'tRNA-Leu' with 'trnL'"
+VAR
+    find_text = "tRNA-Leu"
+    repl_text = "trnL"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_083 "Edit gene locus replace 'tRNA-Ser' with 'trnS'"
+VAR
+    find_text = "tRNA-Ser"
+    repl_text = "trnS"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_084 "Edit gene locus replace 'tRNA-Trp' with 'trnW'"
+VAR
+    find_text = "tRNA-Trp"
+    repl_text = "trnW"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_085 "Edit gene locus replace 'tRNA-Cys' with 'trnC'"
+VAR
+    find_text = "tRNA-Cys"
+    repl_text = "trnC"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_086 "Edit gene locus replace 'tRNA-Gly' with 'trnG'"
+VAR
+    find_text = "tRNA-Gly"
+    repl_text = "trnG"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_087 "Edit gene locus replace 'tRNA-Asn' with 'trnN'"
+VAR
+    find_text = "tRNA-Asn"
+    repl_text = "trnN"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_088 "Edit gene locus replace 'tRNA-Asp' with 'trnD'"
+VAR
+    find_text = "tRNA-Asp"
+    repl_text = "trnD"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_089 "Edit gene locus replace 'tRNA-Thr' with 'trnT'"
+VAR
+    find_text = "tRNA-Thr"
+    repl_text = "trnT"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_090 "Edit gene locus replace 'tRNA-Pro' with 'trnP'"
+VAR
+    find_text = "tRNA-Pro"
+    repl_text = "trnP"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_091 "Edit gene locus replace 'tRNA-Arg' with 'trnR'"
+VAR
+    find_text = "tRNA-Arg"
+    repl_text = "trnR"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_092 "Edit gene locus replace 'tRNA-Gln' with 'trnQ'"
+VAR
+    find_text = "tRNA-Gln"
+    repl_text = "trnQ"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_093 "Edit gene locus replace 'tRNA-Tyr' with 'trnY'"
+VAR
+    find_text = "tRNA-Tyr"
+    repl_text = "trnY"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_094 "Edit gene locus replace 'tRNA-Glu' with 'trnE'"
+VAR
+    find_text = "tRNA-Glu"
+    repl_text = "trnE"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_095 "Edit gene locus replace 'tRNA-Val' with 'trnV'"
+VAR
+    find_text = "tRNA-Val"
+    repl_text = "trnV"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_096 "Edit gene locus replace 'tRNA-Ala' with 'trnA'"
+VAR
+    find_text = "tRNA-Ala"
+    repl_text = "trnA"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_097 "Edit gene locus replace 'tRNA-His' with 'trnH'"
+VAR
+    find_text = "tRNA-His"
+    repl_text = "trnH"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_098 "Edit gene locus replace 'tRNA-Met' with 'trnM'"
+VAR
+    find_text = "tRNA-Met"
+    repl_text = "trnM"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO GB_mitomacro_099 "Edit gene locus replace 'tRNA-Phe' with 'trnF'"
+VAR
+    find_text = "tRNA-Phe"
+    repl_text = "trnF"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------
+MACRO GB_mitomacro_100 "Edit gene locus replace ' ' with ''"
+VAR
+    find_text = " "
+    repl_text = ""
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH Gene
+DO
+    EditStringQual("data.gene.locus", find_text, repl_text, location, case_sensitive);
+DONE
+--------------------------------------------------------------

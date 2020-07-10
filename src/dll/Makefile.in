@@ -1,0 +1,22 @@
+# $Id: Makefile.in 42821 2019-04-18 19:32:56Z joukovv $
+
+SUB_PROJ =  \
+    _ncbi \
+    algo \
+    bdb \
+    connect \
+    dbapi \
+    gbench \
+    internal \
+    misc \
+    ncbi_core \
+    ncbi_sqlite \
+    ncbi_web \
+    ncbi_xgrid2cgi \
+    objects \
+    objtools \
+    util
+
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

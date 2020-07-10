@@ -1,0 +1,78 @@
+# $Id: Makefile.w_edit.lib 44787 2020-03-13 19:03:59Z asztalos $
+# Default edit dialogs and edit handler support
+
+ASN_DEP = seqset valid
+
+SRC = init generic_props_panel gene_panel \
+      comment_panel synonyms_panel string_list_ctrl \
+      serial_member_validator serial_member_primitive_validators \
+      serial_member_stringlist_validator citsub_updater\
+      rna_panel mrna_subpanel rrna_subpanel trna_subpanel \
+      trna_product_panel trna_recognized_codons_panel codons_stringlist_validator \
+      ncrna_subpanel tmrna_subpanel featuregenepanel \
+      importfeature_panel gbqual_panel singlegbqual_subpanel \
+      gbqualtext_panel twopartqual_panel gbqual_semicontrolled rptunitrange_panel gbqualdirection_panel rpttype_panel \
+      cds_protein_panel cds_translation_panel cds_exception_panel single_cds_exception_panel \
+      protein_panel protein_activities_panel ec_numbers_panel \
+      identifiers_panel citations_panel \
+      locationl_list_ctrl location_panel \
+      dbxref_panel singledbxref_subpanel experiments_panel gbqual_stringlist_validator \
+      inference_list_panel inference_panel \
+      author_affiliation_panel authornames_panel author_names_container \
+      citsub_panel consortium_panel \
+      flexibledate_panel journal_panel isojta_lookup_dlg relaxed_lookup_dlg \
+      locale_panel patent_panel proceedings_panel \
+      proceedingschapter_panel publisher_panel \
+      remarksandserialnumber_panel singleauthor_panel \
+      unpublished_panel publicationtype_panel titlepanel \
+      descriptortext_panel molinfo_panel structuredcomment_panel dblinkpanel userfield_stringlist_validator \
+      sequencingtechnologypanel singleassemblyprogrampanel multipleassemblyprogrampanel \
+      contactpanel submitblockpanel release_date_panel submitter_panel_depr \
+      loc_gcode_panel biosourcepanel srcmod_panel srcmod_list_panel src_desc_editor_panel \
+      srcmod_edit_panel voucher_panel srcmod_text_panel srcmod_checkbox_panel altitude_panel latlon_panel \
+      src_other_pnl \
+      edit_object_seq_feat edit_object_seq_desc edit_object_submit_block \
+      edit_object_set set_class_panel \
+      bioseq_editor deletefrombioseq_setdlg vectortrimpanel vectorscreen \
+      edit_object_feature_propagate \
+      biosource_autocomplete region_panel bond_panel site_panel pcr_primers_panel \
+      unverified_panel ref_gene_tracking_panel single_ref_gene_track_loc_panel ref_gene_track_loc_list_panel \
+      secondary_structure_panel user_object_util \
+      assembly_tracking_panel assembly_tracking_list_panel single_assembly_tracking_panel \
+      authorized_access_panel desc_placement_panel utilities edit_obj_view_dlg \
+      experiment_list_panel single_experiment_panel \
+      table_data_validate table_data_validate_job table_data_validate_params \
+      suc_data table_data_suc table_data_suc_job suc_data_generator crossref_feats_dlg \
+      edit_sequence paint_sequence non_ascii_replacement_dlg alignment_assistant paint_alignment \
+      smart_save_to_client generic_report_dlg generic_panel feat_comment large_spin_ctrl rearrange_list \
+      protein_properties macrofloweditor scriptpanel macro_constraint_panel macro_add_constraint_panel macro_loc_constraint_panel \
+      field_name_panel source_field_name_panel pub_field_name_panel struct_comm_field_panel struct_fieldvalue_panel \
+      molinfo_fieldtype pub_fieldtype dblink_fieldtype misc_fieldtype cds_gene_prot_field_name_panel \
+      rna_field_name_panel feature_field_name_panel feature_type_panel \
+      pmid_validator submit_remarks_panel rawseqtodeltabyn_panel \
+      edit_text_options_panel macro_editor macro_editor_context macro_edit_action_panel macro_action_tree macro_treeitemdata \
+      macro_apply_itemdata macro_edit_itemdata macro_convert_itemdata macro_copy_itemdata \
+      macro_rmv_itemdata macro_general_itemdata macro_swap_itemdata \
+      macro_featloc_itemdata macro_parse_itemdata macro_authors_panel macro_rmvoutside_itemdata \
+      word_substitute_dlg macro_feats_on_seq_constraint_panel macro_choicetype_constraint_panel macro_simple \
+      macro_argument macro_panel_loader macro_panel_args simple_text_edit_dlg work_dir \
+      submitter_panel submitter_name_panel submitter_affil_panel \
+      general_panel gassembly_panel single_assemblymethod genomeinfo_panel gassembly_other_panel \
+      orggeneral_panel orgadvanced_panel seqsub_chrm_panel seqsub_plasmid_panel \
+      seqsub_molinfo_panel single_sequence_panel reference_panel pubauthor_panel \
+      pubstatus_panel unpublishedref_panel inpressref_panel publishedref_panel \
+      submission_page_interface seqsub_organelle_panel field_type_constants \
+      propagate_descriptors macro_applysrc_table macro_applytbl_itemdata singlequal_panel macro_selectqual_dlg
+
+LIB = w_edit
+
+CPPFLAGS = $(WXWIDGETS_INCLUDE) $(ORIG_CPPFLAGS)
+
+DLL_LIB = gui_objutils xvalidate xdiscrepancy  macro $(BLAST_INPUT_LIBS) $(BLAST_LIBS) eutils_client hydra_client \
+          pmcidconv_client xmlwrapp xconnect valid seq xncbi
+          
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) \
+       $(LIBXSLT_LIBS) $(LIBXML_LIBS) $(NETWORK_LIBS) $(ORIG_LIBS)
+
+REQUIRES = wxWidgets

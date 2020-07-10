@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.id2cli.lib.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(id2cli)
+  NCBI_generated_sources(id2_client.cpp id2_client_.cpp)
+  NCBI_uses_toolkit_libraries(id2 xconnect)
+  NCBI_project_watchers(vasilche)
+NCBI_end_lib()
+

@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.cgi_io_test.app.txt 593495 2019-09-19 15:40:36Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(cgi_io_test)
+  NCBI_sources(cgi_io_test)
+  NCBI_uses_toolkit_libraries(xcgi)
+  NCBI_project_watchers(grichenk)
+NCBI_end_app()
+

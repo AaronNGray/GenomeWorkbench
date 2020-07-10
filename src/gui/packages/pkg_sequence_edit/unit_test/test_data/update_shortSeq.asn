@@ -1,0 +1,188 @@
+Seq-entry ::= set {
+  class nuc-prot,
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Salinicola sp. SOil-1",
+        orgname {
+          gcode 1
+        }
+      }
+    }
+  },
+  seq-set {
+    seq {
+      id {
+        local str "Untitled_Seq_#1",
+        general {
+          db "NCBIFILE",
+          tag str "salinicola sp/Untitled_Seq_#1"
+        },
+        general {
+          db "TMSMART",
+          tag id 48938773
+        },
+        genbank {
+          accession "KM986631"
+        }
+      },
+      descr {
+        molinfo {
+          biomol rRNA
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Untitled_Seq_#1"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol rna,
+        length 985,
+        seq-data ncbi2na 'E4B6269246A89F9D5EBA6269A1AB8B0ECA0DE56B2EAA306EA805
+4670C5931B5C6A20268A37DA1F667368E25CEDA3C9CBEB0AC1A7C50A618D6C9EB788A38D2511EA
+1E211A54875C6A2924BAA0CFA10EA6025F8D494E59BBB820A7F6AFB0247F498A08097AEBC09169
+C1D6E524966B0C68AB989BC3683C7A9B02666CAE9FA465AFB80956A7417A81A4D681A529C8B928
+8A0AC83D5AEC9AE039B2236A28314BA60A697DE978478478AE6026EAC90128F2315EB2D465B018
+ED8725BEA17F0A1F2E992F06630B6165EAA2C69642BC01D0383E1AA959109AE893BAFC3D8E4198
+205F1715F84D7983FAC88C5F2E5F6A264B84AE793A7B6D276640'H
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "16S rDNA"
+              },
+              comment "partial sequence",
+              location int {
+                from 0,
+                to 983,
+                strand plus,
+                id local str "Untitled_Seq_#1"
+              }
+            },
+            {
+              data rna {
+                type mRNA,
+                ext name "update mRNA"
+              },
+              comment "mRNA comment",
+              location int {
+                from 199,
+                to 399,
+                strand plus,
+                id genbank {
+                  accession "KM986631"
+                }
+              }
+            },
+            {
+              data imp {
+                key "misc_feature"
+              },
+              comment "between boundaries on the left",
+              location int {
+                from 449,
+                to 599,
+                strand plus,
+                id genbank {
+                  accession "KM986631"
+                }
+              }
+            },
+            {
+              data imp {
+                key "misc_feature"
+              },
+              comment "on the negative strand",
+              location int {
+                from 99,
+                to 199,
+                strand minus,
+                id genbank {
+                  accession "KM986631"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "KM986631_1"
+      },
+      descr {
+        molinfo {
+          biomol peptide,
+          completeness complete
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "KM986631_1"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol aa,
+        length 50,
+        seq-data iupacaa "EMRRDREEYQWRRRPSGLTLTLRCESVGSKQD*IPW*STP*TMSTSRWDL"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data prot {
+                name {
+                  "new protein"
+                }
+              },
+              location int {
+                from 0,
+                to 49,
+                id local str "KM986631_1"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data cdregion {
+            frame three,
+            code {
+              id 1
+            }
+          },
+          partial TRUE,
+          comment "between boundaries on the right",
+          product whole local str "KM986631_1",
+          location int {
+            from 599,
+            to 749,
+            strand plus,
+            id genbank {
+              accession "KM986631"
+            }
+          }
+        }
+      }
+    }
+  }
+}

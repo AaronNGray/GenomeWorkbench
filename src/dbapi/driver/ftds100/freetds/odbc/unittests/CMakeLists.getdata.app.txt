@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.getdata.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(odbc100_getdata)
+  NCBI_sources(getdata common)
+  NCBI_add_test(test-odbc100 odbc100_getdata)
+NCBI_end_app()
+

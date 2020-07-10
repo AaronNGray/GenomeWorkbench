@@ -1,0 +1,759 @@
+MACRO Flu_segment_macro_01 "Remove note-orgmod where source note-orgmod equals '[BankIt_influenza_api]' (case-sensitive)"
+VAR
+    match = "[BankIt_influenza_api]"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other" AND EQUALS("obj.subname", match, case_sensitive);
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_02 "Remove note-subsrc where source note-subsrc equals '[BankIt_influenza_api]' (case-sensitive)"
+VAR
+    match = "[BankIt_influenza_api]"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "other" AND EQUALS("obj.name", match, case_sensitive);
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_03 "Remove note-orgmod where source note-orgmod equals '[BankIt_influenza_wizard]' (case-sensitive)"
+VAR
+    match = "[BankIt_influenza_wizard]"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    obj = Resolve("org.orgname.mod") WHERE obj.subtype = "other" AND EQUALS("obj.subname", match, case_sensitive);
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_04 "Remove note-subsrc where source note-subsrc equals '[BankIt_influenza_wizard]' (case-sensitive)"
+VAR
+    match = "[BankIt_influenza_wizard]"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "other" AND EQUALS("obj.name", match, case_sensitive);
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_05 "Apply 1 to segment (overwrite existing text) where source taxname contains 'Influenza A virus' (case-sensitive) and where gene locus contains 'PB2' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "1"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza A virus"
+    match = "PB2"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_06 "Apply 2 to segment (overwrite existing text) where source taxname contains 'Influenza A virus' (case-sensitive) and where gene locus contains 'PB1' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "2"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza A virus"
+    match = "PB1"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_07 "Apply 3 to segment (overwrite existing text) where source taxname contains 'Influenza A virus' (case-sensitive) and where gene locus contains 'PA' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "3"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza A virus"
+    match = "PA"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_08 "Apply 4 to segment (overwrite existing text) where source taxname contains 'Influenza A virus' (case-sensitive) and where gene locus contains 'HA' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "4"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza A virus"
+    match = "HA"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_09 "Apply 5 to segment (overwrite existing text) where source taxname contains 'Influenza A virus' (case-sensitive) and where gene locus contains 'NP' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "5"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza A virus"
+    match = "NP"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_10 "Apply 6 to segment (overwrite existing text) where source taxname contains 'Influenza A virus' (case-sensitive) and where gene locus contains 'NA' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "6"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza A virus"
+    match = "NA"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_11 "Apply 7 to segment (overwrite existing text) where source taxname contains 'Influenza A virus' (case-sensitive) and where gene locus contains 'M' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "7"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza A virus"
+    match = "M"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_12 "Apply 8 to segment (overwrite existing text) where source taxname contains 'Influenza A virus' (case-sensitive) and where gene locus contains 'NS' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "8"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza A virus"
+    match = "NS"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_13 "Apply 1 to segment (overwrite existing text) where source taxname contains 'Influenza B virus' (case-sensitive) and where gene locus contains 'PB1' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "1"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza B virus"
+    match = "PB1"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_14 "Apply 2 to segment (overwrite existing text) where source taxname contains 'Influenza B virus' (case-sensitive) and where gene locus contains 'PB2' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "2"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza B virus"
+    match = "PB2"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_15 "Apply 3 to segment (overwrite existing text) where source taxname contains 'Influenza B virus' (case-sensitive) and where gene locus contains 'PA' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "3"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza B virus"
+    match = "PA"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_16 "Apply 4 to segment (overwrite existing text) where source taxname contains 'Influenza B virus' (case-sensitive) and where gene locus contains 'HA' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "4"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza B virus"
+    match = "HA"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_17 "Apply 5 to segment (overwrite existing text) where source taxname contains 'Influenza B virus' (case-sensitive) and where gene locus contains 'NP' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "5"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza B virus"
+    match = "NP"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_18 "Apply 6 to segment (overwrite existing text) where source taxname contains 'Influenza B virus' (case-sensitive) and where gene locus contains 'NA' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "6"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza B virus"
+    match = "NA"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_19 "Apply 7 to segment (overwrite existing text) where source taxname contains 'Influenza B virus' (case-sensitive) and where gene locus contains 'M' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "7"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza B virus"
+    match = "M"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_20 "Apply 8 to segment (overwrite existing text) where source taxname contains 'Influenza B virus' (case-sensitive) and where gene locus contains 'NS' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "8"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza B virus"
+    match = "NS"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_21 "Apply 1 to segment (overwrite existing text) where source taxname contains 'Influenza C virus' (case-sensitive) and where gene locus contains 'PB2' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "1"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza C virus"
+    match = "PB2"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_22 "Apply 2 to segment (overwrite existing text) where source taxname contains 'Influenza C virus' (case-sensitive) and where gene locus contains 'PB1' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "2"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza C virus"
+    match = "PB1"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_23 "Apply 3 to segment (overwrite existing text) where source taxname contains 'Influenza C virus' (case-sensitive) and where gene locus contains 'P3' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "3"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza C virus"
+    match = "P3"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_24 "Apply 4 to segment (overwrite existing text) where source taxname contains 'Influenza C virus' (case-sensitive) and where gene locus contains 'HE' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "4"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza C virus"
+    match = "HE"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_25 "Apply 5 to segment (overwrite existing text) where source taxname contains 'Influenza C virus' (case-sensitive) and where gene locus contains 'NP' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "5"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza C virus"
+    match = "NP"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_26 "Apply 6 to segment (overwrite existing text) where source taxname contains 'Influenza C virus' (case-sensitive) and where gene locus contains 'M' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "6"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza C virus"
+    match = "M"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_27 "Apply 7 to segment (overwrite existing text) where source taxname contains 'Influenza C virus' (case-sensitive) and where gene locus contains 'NS' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "7"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza C virus"
+    match = "NS"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_28 "Apply 1 to segment (overwrite existing text) where source taxname contains 'Influenza D virus' (case-sensitive) and where gene locus contains 'PB2' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "1"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza D virus"
+    match = "PB2"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_29 "Apply 2 to segment (overwrite existing text) where source taxname contains 'Influenza D virus' (case-sensitive) and where gene locus contains 'PB1' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "2"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza D virus"
+    match = "PB1"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_30 "Apply 3 to segment (overwrite existing text) where source taxname contains 'Influenza D virus' (case-sensitive) and where gene locus contains 'P3' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "3"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza D virus"
+    match = "P3"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_31 "Apply 4 to segment (overwrite existing text) where source taxname contains 'Influenza D virus' (case-sensitive) and where gene locus contains 'HE' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "4"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza D virus"
+    match = "HE"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_32 "Apply 5 to segment (overwrite existing text) where source taxname contains 'Influenza D virus' (case-sensitive) and where gene locus contains 'NP' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "5"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza D virus"
+    match = "NP"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_33 "Apply 6 to segment (overwrite existing text) where source taxname contains 'Influenza D virus' (case-sensitive) and where gene locus contains 'M' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "6"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza D virus"
+    match = "M"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_34 "Apply 7 to segment (overwrite existing text) where source taxname contains 'Influenza D virus' (case-sensitive) and where gene locus contains 'NS' (case-sensitive)"
+VAR
+    qual_name = "subtype"
+    modifier = "segment" 
+    new_value = "7"
+    existing_text = "eReplace"
+    case_sensitive = true
+    taxname = "Influenza D virus"
+    match = "NS"
+FOR EACH BioSource
+WHERE CONTAINS("org.taxname", taxname, case_sensitive) AND CONTAINS(FEATURES("gene", "data.gene.locus"), match, case_sensitive)
+DO
+    obj = Resolve(qual_name) WHERE obj.subtype = modifier;
+    SetModifier(obj, qual_name, modifier, new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_35 "Remove host where host equals 'environment' (case-sensitive)"
+VAR
+    match = "environment"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") Where o.subtype = "nat-host" AND EQUALS("o.subname", match, case_sensitive);
+    RemoveModifier(o);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_36 "Convert serotype to type (overwrite existing text) where source taxname does not contain 'Influenza A virus' (case-sensitive)"
+VAR
+    strip_name = false
+    cap_change = "none"
+    existing_text = "eReplace"
+    match = "Influenza A virus"
+    case_sensitive = true
+FOR EACH BioSource
+WHERE NOT CONTAINS("org.taxname", match, case_sensitive)
+DO
+    src = Resolve("org.orgname.mod") WHERE src.subtype = "serotype";
+    ConvertStringQual("src.subname", "type", cap_change, strip_name, existing_text);
+    RemoveModifier(src);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_37 "Edit strain replace 'Swine' with 'swine'"
+VAR
+    find_text = "Swine"
+    repl_text = "swine"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_38 "Edit strain replace 'Canine' with 'canine'"
+VAR
+    find_text = "Canine"
+    repl_text = "canine"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_39 "Edit strain replace '/Cat/' with '/cat/'"
+VAR
+    find_text = "/Cat/"
+    repl_text = "/cat/"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_40 "Edit strain replace 'Cattle' with 'cattle'"
+VAR
+    find_text = "Cattle"
+    repl_text = "cattle"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_41 "Edit strain replace 'Chicken' with 'chicken'"
+VAR
+    find_text = "Chicken"
+    repl_text = "chicken"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_42 "Edit strain replace '/Dog/' with '/dog/'"
+VAR
+    find_text = "/Dog/"
+    repl_text = "/dog/"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_43 "Edit strain replace 'Equine' with 'equine'"
+VAR
+    find_text = "Equine"
+    repl_text = "equine"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_44 "Edit strain replace 'Feline' with 'feline'"
+VAR
+    find_text = "Feline"
+    repl_text = "feline"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_45 "Edit strain replace '/Goat/' with '/goat/'"
+VAR
+    find_text = "/Goat/"
+    repl_text = "/goat/"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+
+MACRO Flu_segment_macro_46 "Edit strain replace '/Goose/' with '/goose/'"
+VAR
+    find_text = "/Goose/"
+    repl_text = "/goose/"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_47 "Edit strain replace '/Horse/' with '/horse/'"
+VAR
+    find_text = "/Horse/"
+    repl_text = "/horse/"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_48 "Edit strain replace '/Pig/' with '/pig/'"
+VAR
+    find_text = "/Pig/"
+    repl_text = "/pig/"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_49 "Edit strain replace 'Porcine' with 'porcine'"
+VAR
+    find_text = "Porcine"
+    repl_text = "porcine"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_50 "Edit strain replace '/Sheep/' with '/sheep/'"
+VAR
+    find_text = "/Sheep/"
+    repl_text = "/sheep/"
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "strain";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_51 "Remove isolation-source where source isolation-source equals 'unknown' (case sensitive)"
+VAR
+    match_text = "unknown"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "isolation-source" 
+                             AND EQUALS("obj.name", match_text, case_sensitive);
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_52 "Remove isolation-source where source isolation-source equals 'unk' (case sensitive)"
+VAR
+    match_text = "unk"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "isolation-source" 
+                             AND EQUALS("obj.name", match_text, case_sensitive);
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_53 "Extend 5' end of feature to end of sequence for gene features only objects that are 5' partial"
+FOR EACH Gene
+WHERE ISPARTIALSTART()
+DO
+    ExtendFeatToSeqStart();
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_54 "Extend 3' end of feature to end of sequence for gene features only objects that are 3' partial"
+FOR EACH Gene
+WHERE ISPARTIALSTOP()
+DO
+    ExtendFeatToSeqStop();
+DONE
+------------------------------------------------------------------------------
+MACRO Flu_segment_macro_55 "Autodef list features, look for non-coding product in misc-feat clone"
+VAR
+    list_feat_rule = "List All Features"
+    misc_feat_rule = "NoncodingProductFeat"
+FOR EACH TSEntry
+Do
+    Autodef(list_feat_rule, misc_feat_rule, "clone");
+Done
+------------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_flatfile_widget.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_flatfile_widget GUI)
+  NCBI_sources(flatfile_demo_app flat_file_demo_dlg)
+  NCBI_uses_toolkit_libraries(w_seq w_data ncbi_xloader_genbank)
+  NCBI_requires(wxWidgets)
+NCBI_end_app()

@@ -1,0 +1,124 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "uncultured bacterium",
+            db {
+              {
+                db "taxon",
+                tag id 77133
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Bacteria; environmental samples",
+              gcode 11,
+              mgcode 0,
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Germany"
+            },
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype isolation-source,
+              name "homosapiens"
+            }
+          }
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq1"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 94,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGGGACACCATAGACCCCAACACATGGGTGGACTTA
+AACCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2"
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "uncultured bacterium",
+            db {
+              {
+                db "taxon",
+                tag id 77133
+              }
+            },
+            orgname {
+              mod {
+                {
+                  subtype nat-host,
+                  subname "some organism"
+                }
+              },
+              lineage "cellular organisms; Bacteria; environmental samples",
+              gcode 11,
+              mgcode 0,
+              div "ENV"
+            }
+          },
+          subtype {
+            {
+              subtype environmental-sample,
+              name ""
+            },
+            {
+              subtype isolation-source,
+              name "homosapiens"
+            }
+          }
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq2"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 185,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGACAGGATGGGTAAATGCTTTCCTATCA
+TTTTTACCACAGATCCCCGGTATGATTGCCTTTTATTTAGGCTTTGCAATTGGGCAATTCATCAGTTTCAGCATGTCC
+CTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATAACATGGGTCATTAACA"
+      }
+    }
+  }
+}

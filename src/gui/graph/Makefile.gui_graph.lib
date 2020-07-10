@@ -1,0 +1,12 @@
+# $Id: Makefile.gui_graph.lib 42527 2019-03-19 16:01:16Z katargir $
+
+SRC = axis igraph igraph_data legend pie_graph \
+      regular_grid scatter_graph graph_panel
+
+CPPFLAGS = $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(ORIG_CPPFLAGS)
+
+LIB      = gui_graph
+
+DLL_LIB  = gui_opengl gui_utils ximage xncbi
+LIBS     = $(GLEW_LIBS) $(OPENGL_LIBS) $(ORIG_LIBS)
+

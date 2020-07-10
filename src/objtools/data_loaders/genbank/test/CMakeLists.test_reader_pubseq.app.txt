@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.test_reader_pubseq.app.txt 593577 2019-09-20 12:22:42Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_reader_pubseq)
+  NCBI_sources(test_reader_pubseq)
+  NCBI_uses_toolkit_libraries(ncbi_xreader_pubseqos)
+  NCBI_project_watchers(vasilche)
+NCBI_end_app()
+

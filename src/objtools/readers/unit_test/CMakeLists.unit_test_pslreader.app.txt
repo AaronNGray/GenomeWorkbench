@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_pslreader.app.txt 608250 2020-05-13 17:49:57Z ivanov $
+#############################################################################
+
+NCBI_begin_app(unit_test_pslreader)
+  NCBI_sources(unit_test_pslreader)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(xobjread)
+  NCBI_project_watchers(ludwigf)
+  NCBI_set_test_assets( pslreader_test_cases )
+  NCBI_add_test()
+NCBI_end_app()
+

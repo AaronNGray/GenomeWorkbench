@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.test_userfield.app.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+
+NCBI_begin_app(test_userfield)
+  NCBI_sources(test_userfield)
+  NCBI_requires(NCBI_C)
+  NCBI_uses_toolkit_libraries(general)
+  NCBI_project_watchers(gouriano)
+NCBI_end_app()
+

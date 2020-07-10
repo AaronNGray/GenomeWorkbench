@@ -1,0 +1,14 @@
+#############################################################################
+# $Id: CMakeLists.psg_cassandra_test.app.txt 594195 2019-10-01 12:26:35Z gouriano $
+#############################################################################
+
+NCBI_begin_app(psg_cassandra_test)
+  NCBI_sources(
+    psg_cassandra_test unit/blob_record unit/cluster_meta unit/fullscan_plan
+    unit/fullscan_runner unit/cassandra_query unit/nannot_fetch unit/fetch_split_history
+    unit/cassandra_connection unit/bioseq_info_task
+  )
+  NCBI_uses_toolkit_libraries(psg_cassandra psg_diag)
+  NCBI_requires(CASSANDRA GMOCK)
+  NCBI_project_watchers(saprykin)
+NCBI_end_app()

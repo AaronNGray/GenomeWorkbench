@@ -1,0 +1,27 @@
+#############################################################################
+# $Id: CMakeLists.gui_print.lib.txt 43843 2019-09-10 13:48:42Z evgeniev $
+#############################################################################
+
+NCBI_begin_lib( gui_print)
+  NCBI_sources(
+    page_buffers page_handler panel_grid pdf pdf_font_handler
+    pdf_element pdf_object pdf_object_writer print_buffer
+    print_media print_options vector_printer glrenderpdf
+    svg_renderer
+  )
+  NCBI_uses_toolkit_libraries(gui_opengl)
+  NCBI_requires(GLEW)
+NCBI_end_lib()
+
+if(OFF)
+add_library(gui_print
+    page_buffers page_handler panel_grid pdf pdf_font_handler pdf_element
+    pdf_object pdf_object_writer print_buffer print_media print_options
+    vector_printer glrenderpdf
+)
+include_directories(SYSTEM ${GLEW_INCLUDE} ${OPENGL_INCLUDE})
+
+target_link_libraries(gui_print
+    gui_opengl
+)
+endif()

@@ -1,0 +1,571 @@
+Seq-entry ::= seq {
+  id {
+    local str "seq1"
+  },
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Canis lupus",
+        common "gray wolf",
+        db {
+          {
+            db "taxon",
+            tag id 9612
+          }
+        },
+        orgname {
+          gcode 1,
+          mgcode 2,
+          div "MAM"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic
+    },
+    update-date std {
+      year 2016,
+      month 3,
+      day 23
+    }
+  },
+  inst {
+    repr delta,
+    mol dna,
+    length 1314068,
+    ext delta {
+      loc int {
+        from 2665,
+        to 22789,
+        strand plus,
+        id gi 148151556
+      },
+      loc int {
+        from 129889,
+        to 211675,
+        strand minus,
+        id gi 353731117
+      },
+      loc int {
+        from 49238,
+        to 193363,
+        strand minus,
+        id gi 410025500
+      },
+      loc int {
+        from 22460,
+        to 238509,
+        strand minus,
+        id gi 339895973
+      },
+      loc int {
+        from 0,
+        to 207684,
+        strand plus,
+        id gi 350606478
+      },
+      loc int {
+        from 0,
+        to 128484,
+        strand plus,
+        id gi 410176097
+      },
+      loc int {
+        from 0,
+        to 91170,
+        strand plus,
+        id gi 332688280
+      },
+      loc int {
+        from 0,
+        to 204547,
+        strand minus,
+        id gi 380862409
+      },
+      loc int {
+        from 1,
+        to 56400,
+        strand minus,
+        id gi 17026193
+      },
+      loc int {
+        from 13167,
+        to 34977,
+        strand plus,
+        id gi 22535402
+      },
+      loc int {
+        from 0,
+        to 8824,
+        strand plus,
+        id gi 23304125
+      },
+      loc int {
+        from 13,
+        to 2394,
+        strand plus,
+        id gi 23304120
+      },
+      loc int {
+        from 24,
+        to 10608,
+        strand plus,
+        id gi 23304124
+      },
+      loc int {
+        from 1,
+        to 7339,
+        strand plus,
+        id gi 23304122
+      },
+      loc int {
+        from 1500,
+        to 11356,
+        strand plus,
+        id gi 23304126
+      },
+      loc int {
+        from 0,
+        to 12039,
+        strand plus,
+        id gi 23304119
+      },
+      loc int {
+        from 573,
+        to 91424,
+        strand plus,
+        id gi 23306225
+      }
+    },
+    hist {
+      assembly {
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 148151556
+            },
+            starts {
+              0,
+              2665
+            },
+            lens {
+              20125
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 353731117
+            },
+            starts {
+              20125,
+              129889
+            },
+            lens {
+              81787
+            },
+            strands {
+              plus,
+              minus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 410025500
+            },
+            starts {
+              101912,
+              49238
+            },
+            lens {
+              144126
+            },
+            strands {
+              plus,
+              minus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 339895973
+            },
+            starts {
+              246038,
+              22460
+            },
+            lens {
+              216050
+            },
+            strands {
+              plus,
+              minus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 350606478
+            },
+            starts {
+              462088,
+              0
+            },
+            lens {
+              207685
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 410176097
+            },
+            starts {
+              669773,
+              0
+            },
+            lens {
+              128485
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 332688280
+            },
+            starts {
+              798258,
+              0
+            },
+            lens {
+              91171
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 380862409
+            },
+            starts {
+              889429,
+              0
+            },
+            lens {
+              204548
+            },
+            strands {
+              plus,
+              minus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 17026193
+            },
+            starts {
+              1093977,
+              1
+            },
+            lens {
+              56400
+            },
+            strands {
+              plus,
+              minus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 22535402
+            },
+            starts {
+              1150377,
+              13167
+            },
+            lens {
+              21811
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 23304125
+            },
+            starts {
+              1172188,
+              0
+            },
+            lens {
+              8825
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 23304120
+            },
+            starts {
+              1181013,
+              13
+            },
+            lens {
+              2382
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 23304124
+            },
+            starts {
+              1183395,
+              24
+            },
+            lens {
+              10585
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 23304122
+            },
+            starts {
+              1193980,
+              1
+            },
+            lens {
+              7339
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 23304126
+            },
+            starts {
+              1201319,
+              1500
+            },
+            lens {
+              9857
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 23304119
+            },
+            starts {
+              1211176,
+              0
+            },
+            lens {
+              12040
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        },
+        {
+          type partial,
+          dim 2,
+          segs denseg {
+            dim 2,
+            numseg 1,
+            ids {
+              other {
+                accession "NG_001019"
+              },
+              gi 23306225
+            },
+            starts {
+              1223216,
+              573
+            },
+            lens {
+              90852
+            },
+            strands {
+              plus,
+              plus
+            }
+          }
+        }
+      }
+    }
+  }
+}

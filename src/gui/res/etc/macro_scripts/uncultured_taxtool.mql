@@ -1,0 +1,31 @@
+MACRO TaxLookup "Perform tax lookup"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO Uncultured_Tax_Tool "Looks up uncultured taxnames"
+FOR EACH BioSource
+Do
+    DoUnculturedTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO TaxLookup "Perform tax lookup"
+FOR EACH TSEntry
+Do
+    DoTaxLookup();
+Done
+------------------------------------------------------------------------------
+MACRO Uncultured_NoteCleanup "Remove subsource note where subsource note contains '[uncultured (using universal primers)]', '[uncultured (using universal primers)]' to be replaced by '[BankIt_uncultured16S_wizard]; [universal primers]; [tgge]', '[BankIt_uncultured16S_wizard]; [universal primers]; [dgge]', '[BankIt_uncultured16S_wizard]; [universal primers]', '[universal primers]; [uncultured; wizard]', '[uncultured (using universal primers) bacterial source]' and '[uncultured]; [universal primers]', where source dbxref starts with 'taxon:' and taxname starts with 'uncultured'"
+VAR
+    match_text = "[uncultured (using universal primers)]"
+    case_sensitiveA = true
+    case_sensitiveB = false
+FOR EACH BioSource
+WHERE STARTS("org.taxname", "uncultured") AND STARTS("org.db.db", "taxon", case_sensitiveA)
+DO
+    obj = Resolve("subtype") WHERE obj.subtype = "other" 
+                             AND CONTAINS("obj.name", match_text, case_sensitiveB, "synonyms.txt", match_text);
+    RemoveModifier(obj);
+DONE
+------------------------------------------------------------------------------

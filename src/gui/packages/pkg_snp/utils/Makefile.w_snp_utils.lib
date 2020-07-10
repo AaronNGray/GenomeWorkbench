@@ -1,0 +1,18 @@
+# $Id: Makefile.w_snp_utils.lib 28039 2013-05-06 21:01:53Z rafanovi $
+
+# SNP Track library (SNP Tracks in Graphical View)
+
+LIB = w_snp_utils
+
+SRC = utils
+
+CPPFLAGS = $(WXWIDGETS_INCLUDE) $(ORIG_CPPFLAGS)
+
+LIBS = $(WXWIDGETS_GL_LIBS) $(WXWIDGETS_LIBS) \
+       $(IMAGE_LIBS) $(CMPRS_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+
+DLL_LIB = $(SOBJMGR_LIBS)
+
+REQUIRES = objects wxWidgets OpenGL
+
+ASN_DEP = seqset

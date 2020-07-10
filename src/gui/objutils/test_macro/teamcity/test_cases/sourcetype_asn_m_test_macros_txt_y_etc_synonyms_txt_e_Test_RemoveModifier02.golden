@@ -1,0 +1,76 @@
+Seq-entry ::= seq {
+  id {
+    local str "Seq1",
+    general {
+      db "BankIt",
+      tag str "1898442/Seq1"
+    },
+    general {
+      db "TMSMART",
+      tag id 63755966
+    }
+  },
+  descr {
+    title "MFLU 15-3885 small subunit ribosomal RNA, partial sequence",
+    source {
+      genome genomic,
+      org {
+        taxname "Ophiocordyceps karstii",
+        orgname {
+          mod {
+            {
+              subtype type,
+              subname "fungi something else"
+            },
+            {
+              subtype nat-host,
+              subname "Hepialus jianchuanensis"
+            },
+            {
+              subtype specimen-voucher,
+              subname "FUNGUS"
+            }
+          }
+        }
+      },
+      subtype {
+        {
+          subtype country,
+          name "China"
+        },
+        {
+          subtype collection-date,
+          name "23-Oct-2014"
+        },
+        {
+          subtype collected-by,
+          name "Tingchi Wen"
+        },
+        {
+          subtype identified-by,
+          name "Yuanpin Xiao"
+        }
+      }
+    },
+    molinfo {
+      biomol genomic,
+      completeness partial
+    },
+    update-date std {
+      year 2016,
+      month 3,
+      day 1,
+      hour 2,
+      minute 13,
+      second 36
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 108,
+    strand ds,
+    seq-data iupacna "CTGCCGGCACTGGTGAGTTCGAGGCTGGTATCTCCAAGGATGGCCAGACTAGGGAG
+CACGCCCTGCTTGCCTACACCCTGGGTGTGAAGCAGCTCATCGTTGCCATCA"
+  }
+}

@@ -1,0 +1,8 @@
+# $Id: Makefile.in 26096 2012-07-20 13:30:15Z falkrb $
+
+# DEMO::  Table Reader
+
+APP_PROJ = test_table_reader
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

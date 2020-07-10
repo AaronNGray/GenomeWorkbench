@@ -1,0 +1,319 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "Morovic",
+          first "Wesley",
+          middle "",
+          initials "W",
+          title ""
+        },
+        affil std {
+          affil "DuPont Nutrition & Health",
+          div "Genomics & Microbiome Science",
+          city "Madison",
+          sub "W",
+          country "USA",
+          street "3329 Agriculture Dr.",
+          email "wesley.morovic@danisco.com",
+          postal-code "53716"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Morovic",
+              first "Wesley",
+              initials "W."
+            }
+          },
+          {
+            name name {
+              last "Mukeriji",
+              first "Pushkor",
+              initials "P."
+            }
+          },
+          {
+            name name {
+              last "Roper",
+              first "Jason",
+              initials "J.M."
+            }
+          },
+          {
+            name name {
+              last "Smith",
+              first "Amy",
+              initials "A.B."
+            }
+          },
+          {
+            name name {
+              last "Stahl",
+              first "Buffy",
+              initials "B."
+            }
+          },
+          {
+            name name {
+              last "Rae",
+              first "Jessica",
+              initials "J.C."
+            }
+          },
+          {
+            name name {
+              last "Ouwehand",
+              first "Arthur",
+              initials "A.C."
+            }
+          }
+        },
+        affil std {
+          affil "DuPont Nutrition & Health",
+          div "Genomics & Microbiome Science",
+          city "Madison",
+          sub "Ohio",
+          country "USA",
+          street "3329 Agriculture Dr. ",
+          postal-code "53716"
+        }
+      },
+      date std {
+        year 2017,
+        month 7,
+        day 24
+      },
+      descr ""
+    },
+    hup FALSE,
+    subtype new,
+    tool "table2asn 1.19.161",
+    comment "SUB2856485"
+  },
+  data entrys {
+    set {
+      class genbank,
+      descr {
+        pub {
+          pub {
+            article {
+              title {
+                name "Safety evaluation of HOWARU(R) Restore (Lactobacillus
+ acidophilus NCFM, Lactobacillus paracasei Lpc-37, Bifidobacterium animalis
+ subsp. lactis Bl-04 and B. lactis Bi-07) for antibiotic resistance, genomic
+ risk factors, and acute toxicity."
+              },
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Morovic",
+                      first "W",
+                      initials "W."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Roper",
+                      first "J",
+                      initials "J.M.",
+                      suffix "IV"
+                    }
+                  },
+                  {
+                    name name {
+                      last "Smith",
+                      first "A",
+                      initials "A.B."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Mukerji",
+                      first "P",
+                      initials "P."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Stahl",
+                      first "B",
+                      initials "B."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Rae",
+                      first "J",
+                      initials "J.C."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Ouwehand",
+                      first "A",
+                      initials "A.C."
+                    }
+                  },
+                  {
+                    name consortium "some name"
+                  }
+                },
+                affil std {
+                  affil "DuPont Nutrition & Health",
+                  div "Genomics & Microbiome Science",
+                  city "Madison",
+                  sub "WI",
+                  country "USA",
+                  street "3329 Agriculture Dr. ddddd",
+                  postal-code "53716"
+                }
+              },
+              from journal {
+                title {
+                  iso-jta "Food Chem. Toxicol.",
+                  ml-jta "Food Chem Toxicol",
+                  issn "1873-6351",
+                  name "Food and chemical toxicology : an international
+ journal published for the British Industrial Biological Research Association"
+                },
+                imp {
+                  date std {
+                    year 2017,
+                    month 11,
+                    day 1
+                  },
+                  volume "110",
+                  pages "316-324",
+                  language "eng",
+                  prepub in-press,
+                  pubstatus aheadofprint,
+                  history {
+                    {
+                      pubstatus received,
+                      date std {
+                        year 2017,
+                        month 10,
+                        day 4
+                      }
+                    },
+                    {
+                      pubstatus revised,
+                      date std {
+                        year 2017,
+                        month 10,
+                        day 17
+                      }
+                    },
+                    {
+                      pubstatus accepted,
+                      date std {
+                        year 2017,
+                        month 10,
+                        day 21
+                      }
+                    },
+                    {
+                      pubstatus pubmed,
+                      date std {
+                        year 2017,
+                        month 10,
+                        day 31,
+                        hour 6,
+                        minute 0
+                      }
+                    },
+                    {
+                      pubstatus medline,
+                      date std {
+                        year 2017,
+                        month 10,
+                        day 31,
+                        hour 6,
+                        minute 0
+                      }
+                    },
+                    {
+                      pubstatus other,
+                      date std {
+                        year 2017,
+                        month 10,
+                        day 30,
+                        hour 6,
+                        minute 0
+                      }
+                    }
+                  }
+                }
+              },
+              ids {
+                pubmed 29080807,
+                pii "S0278-6915(17)30635-X",
+                doi "10.1016/j.fct.2017.10.037",
+                other {
+                  db "ELocationID pii",
+                  tag str "S0278-6915(17)30635-X"
+                },
+                other {
+                  db "ELocationID doi",
+                  tag str "10.1016/j.fct.2017.10.037"
+                }
+              }
+            },
+            pmid 29080807
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Lpc37_putative_plasmid_region"
+          },
+          descr {
+            source {
+              org {
+                taxname "Gadus morhua",
+                common "Atlantic cod",
+                db {
+                  {
+                    db "taxon",
+                    tag id 8049
+                  }
+                },
+                orgname {
+                  gcode 1,
+                  mgcode 2,
+                  div "VRT"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            comment "Bacteria and source DNA available from DuPont Global
+ Culture Collection.",
+            create-date std {
+              year 2017,
+              month 7,
+              day 24
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 166,
+            seq-data iupacna "AAATGAATTTAACATTATGCATTATATATAGTGGTTGCCATAAAGTAC
+CGCCCCCTTTTTCGTTAAGCCTACAATGGTATTAACACAATGTCAATAATTAAATAAATGCCGAAAATCAGTAATTCG
+CACTATTGTGTTAAATGTATAATGTTATTAACATAGTGGT"
+          }
+        }
+      }
+    }
+  }
+}

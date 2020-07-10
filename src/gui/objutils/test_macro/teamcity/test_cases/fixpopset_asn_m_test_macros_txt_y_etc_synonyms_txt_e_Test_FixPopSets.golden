@@ -1,0 +1,170 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "q",
+          first "q",
+          initials "qq"
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "q",
+              first "q",
+              initials "qq."
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2013,
+        month 6,
+        day 4
+      }
+    },
+    subtype new,
+    tool "Sequin 12.60 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class phy-set,
+      descr {
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "q",
+                      first "q",
+                      initials "qq."
+                    }
+                  }
+                },
+                affil str "q"
+              },
+              title "q"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "seq_1"
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 42,
+            seq-data iupacna "TGTCTTCACTAAGCCACAGATAACTCTGTACCTTTTATTTCC"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data biosrc {
+                    genome genomic,
+                    org {
+                      taxname "Celuca pugilator",
+                      common "Atlantic sand fiddler crab",
+                      orgname {
+                        gcode 1,
+                        mgcode 5,
+                        div "INV"
+                      }
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 41,
+                    strand plus,
+                    id local str "seq_1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "seq_2"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Odocoileus hemionus",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "JEW01"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 15,
+            seq-data iupacna "TGTCYTCACTTCCGC"
+          }
+        },
+        seq {
+          id {
+            local str "seq_3"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Influenza B virus",
+                orgname {
+                  mod {
+                    {
+                      subtype isolate,
+                      subname "FRG-09"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 34,
+            seq-data iupacna "TGTCYTCAGATAACTTTGTACCTTTTATTTCCGC"
+          }
+        }
+      }
+    }
+  }
+}

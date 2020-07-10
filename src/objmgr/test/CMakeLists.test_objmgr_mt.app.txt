@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.test_objmgr_mt.app.txt 593493 2019-09-19 15:37:14Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_objmgr_mt)
+  NCBI_sources(test_objmgr_mt test_helper)
+  NCBI_uses_toolkit_libraries(test_mt xobjmgr)
+  NCBI_project_watchers(vasilche)
+  NCBI_set_test_timeout(600)
+  NCBI_add_test()
+NCBI_end_app()
+

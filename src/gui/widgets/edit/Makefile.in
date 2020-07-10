@@ -1,0 +1,9 @@
+# $Id: Makefile.in 26768 2012-11-05 18:16:10Z katargir $
+
+LIB_PROJ = w_edit
+
+REQUIRES = objects
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+

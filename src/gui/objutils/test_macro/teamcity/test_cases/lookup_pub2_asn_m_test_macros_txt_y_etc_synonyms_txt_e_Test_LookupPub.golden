@@ -1,0 +1,308 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Vibrio cholerae",
+            db {
+              {
+                db "taxon",
+                tag id 666
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Bacteria; Proteobacteria;
+ Gammaproteobacteria; Vibrionales; Vibrionaceae; Vibrio",
+              gcode 11,
+              mgcode 0,
+              div "BCT"
+            }
+          }
+        },
+        pub {
+          pub {
+            pmid 235689,
+            article {
+              title {
+                name "[Inhibition of uterine activity by means of adrenergic
+ beta receptor stimulators].",
+                trans "Hamning av uterusaktivitet med adrenerga
+ betareceptorstimulerare"
+              },
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Andersson",
+                      first "K",
+                      initials "K.E."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Ingemarsson",
+                      first "I",
+                      initials "I."
+                    }
+                  }
+                }
+              },
+              from journal {
+                title {
+                  iso-jta "Lakartidningen",
+                  ml-jta "Lakartidningen",
+                  issn "0023-7205",
+                  name "Lakartidningen"
+                },
+                imp {
+                  date std {
+                    year 1975,
+                    month 1,
+                    day 15
+                  },
+                  volume "72",
+                  issue "3",
+                  pages "138-141",
+                  language "swe",
+                  pubstatus ppublish,
+                  history {
+                    {
+                      pubstatus pubmed,
+                      date std {
+                        year 1975,
+                        month 1,
+                        day 15
+                      }
+                    },
+                    {
+                      pubstatus medline,
+                      date std {
+                        year 1975,
+                        month 1,
+                        day 15,
+                        hour 0,
+                        minute 1
+                      }
+                    },
+                    {
+                      pubstatus other,
+                      date std {
+                        year 1975,
+                        month 1,
+                        day 15,
+                        hour 0,
+                        minute 0
+                      }
+                    }
+                  }
+                }
+              },
+              ids {
+                pubmed 235689
+              }
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Technische Universitat Dresden",
+                  div "Biology / Institute of Microbiology",
+                  city "Dresden",
+                  sub "Saxony",
+                  country "Germany",
+                  street "Zellescher Weg 20b",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 159,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAATTAATCATACCCTTCTGGATAAGGGGGACTA
+TCTGTGAAAACCCCGAAACTGACCTACTA"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2"
+      },
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Falco cherrug",
+            common "Saker falcon",
+            db {
+              {
+                db "taxon",
+                tag id 345164
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Opisthokonta; Metazoa;
+ Eumetazoa; Bilateria; Deuterostomia; Chordata; Craniata; Vertebrata;
+ Gnathostomata; Teleostomi; Euteleostomi; Sarcopterygii; Dipnotetrapodomorpha;
+ Tetrapoda; Amniota; Sauropsida; Sauria; Archelosauria; Archosauria;
+ Dinosauria; Saurischia; Theropoda; Coelurosauria; Aves; Neognathae;
+ Falconiformes; Falconidae; Falco",
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        },
+        pub {
+          pub {
+            pmid 142688,
+            article {
+              title {
+                name "[Physical development of preschool children from
+ different areas of Leningrad].",
+                trans "Fizicheskoe razvitie detei doshkol'nogo vozrasta
+ razlichnykh raionov Leningrada."
+              },
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Bushanskaia",
+                      first "N",
+                      initials "N.B."
+                    }
+                  }
+                }
+              },
+              from journal {
+                title {
+                  iso-jta "Gig Sanit",
+                  ml-jta "Gig Sanit",
+                  issn "0016-9900",
+                  name "Gigiena i sanitariia"
+                },
+                imp {
+                  date std {
+                    year 1977,
+                    month 4
+                  },
+                  issue "4",
+                  pages "109-110",
+                  language "rus",
+                  pubstatus ppublish,
+                  history {
+                    {
+                      pubstatus pubmed,
+                      date std {
+                        year 1977,
+                        month 4,
+                        day 1
+                      }
+                    },
+                    {
+                      pubstatus medline,
+                      date std {
+                        year 1977,
+                        month 4,
+                        day 1,
+                        hour 0,
+                        minute 1
+                      }
+                    },
+                    {
+                      pubstatus other,
+                      date std {
+                        year 1977,
+                        month 4,
+                        day 1,
+                        hour 0,
+                        minute 0
+                      }
+                    }
+                  }
+                }
+              },
+              ids {
+                pubmed 142688
+              }
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Technische Universitat Dresden",
+                  div "Biology / Institute of Microbiology",
+                  city "Dresden",
+                  sub "Saxony",
+                  country "Germany",
+                  street "Zellescher Weg 20b",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 287,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGAATTC
+CAAGTCATAGGTGCCATTTTAAGTGGTATTGGGGAGTTTGTGTATAAAATGGTAGATTCTGCAATCCAAGCCGTCACA
+GGATGGGTAAATGCTTTCCTATCATTTTTACCACAGATCCCCGGTATGATTGCCTTTTATTTAGGCTTTGCAATTGGG
+CAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATAACATGGGTCATTAACA"
+      }
+    }
+  }
+}

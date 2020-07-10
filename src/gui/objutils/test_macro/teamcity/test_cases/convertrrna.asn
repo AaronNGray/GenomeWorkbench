@@ -1,0 +1,102 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "CBS117406"
+    },
+      descr {
+        title "Scedosporium dehoogii strain CBS 117406 18S ribosomal RNA gene,
+ internal transcribed spacer 1, 5.8S ribosomal RNA gene, and internal
+ transcribed spacer 2, complete sequence.",
+        source {
+          genome genomic,
+          org {
+            taxname "Scedosporium dehoogii",
+            orgname {
+              name binomial {
+                genus "Scedosporium",
+                species "dehoogii"
+              },
+              mod {
+                {
+                  subtype strain,
+                  subname "CBS 117406"
+                }
+              },
+              gcode 1,
+              mgcode 4
+            }
+          }
+        },
+        molinfo {
+          biomol genomic,
+          completeness partial
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 147,
+        strand ds,
+        seq-data iupacna "ATCATTACAGAGTTACTACTCCAAACCCATTGTGAACCTTACCTATGTTCTG
+TTGCCTCGGCGGCGCGGTCAGCGCCCCAAAGGACGACGGCCCCCGCCGGCCGGATTACAGTTAAAAAACAAGTTAAAA
+CTTTCAACAACGGATCT"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type rRNA,
+                ext name "18S ribosomal RNA"
+              },
+              location int {
+                from 0,
+                to 6,
+                strand plus,
+                id local str "CBS117406"
+              }
+            },
+            {
+              data rna {
+                type rRNA,
+                ext name "5.8S ribosomal RNA"
+              },
+              location int {
+                from 68,
+                to 85,
+                strand plus,
+                id local str "CBS117406"
+              }
+            },
+            {
+              data rna {
+                type rRNA,
+                ext name "internal transcribed spacer 1"
+              },
+              location int {
+                from 7,
+                to 19,
+                strand plus,
+                id local str "CBS117406"
+              }
+            },
+            {
+              data rna {
+                type rRNA,
+                ext name "internal transcribed spacer 2"
+              },
+              location int {
+                from 133,
+                to 146,
+                strand plus,
+                id local str "CBS117406"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

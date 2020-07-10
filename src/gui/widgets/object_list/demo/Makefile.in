@@ -1,0 +1,8 @@
+# $Id: Makefile.in 15721 2008-01-18 01:25:35Z voronov $
+
+# DEMO::  Object List Widget
+
+APP_PROJ = demo_feature_table
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,25 @@
+# $Id: Makefile.pkg_snp.lib 42488 2019-03-08 17:00:00Z rudnev $
+
+
+SRC = dll_register
+
+LIB = pkg_snp
+
+DLL_LIB = w_snp_filter w_snp_track w_snp_bins w_hapmap \
+          w_snp_ld muparser \
+          gui_core w_data w_gl w_wx w_grid_widget \
+          gui_objects gui_config gui_graph gui_opengl snputil gui_objutils gui_utils \
+          xobjutil ximage xregexp \
+		  general xser xutil xncbi \
+          $(PCRE_LIB) tables $(COMPRESS_LIBS) $(SOBJMGR_LIBS)
+
+LIBS = $(SRA_SDK_SYSLIBS) $(WXWIDGETS_GL_LIBS) $(GLEW_LIBS)  $(WXWIDGETS_LIBS) \
+       $(IMAGE_LIBS) $(CMPRS_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+REQUIRES = gbench objects wxWidgets OpenGL
+
+LIB_OR_DLL = dll
+DLL_TYPE = plugin

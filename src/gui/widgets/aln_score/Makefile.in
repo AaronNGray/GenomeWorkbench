@@ -1,0 +1,6 @@
+# $Id: Makefile.in 25736 2012-04-27 16:57:39Z voronov $
+
+LIB_PROJ = w_aln_score
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

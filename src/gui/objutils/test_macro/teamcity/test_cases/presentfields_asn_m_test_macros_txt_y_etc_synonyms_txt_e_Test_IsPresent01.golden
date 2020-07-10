@@ -1,0 +1,281 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza A virus",
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "testing isolate"
+                },
+                {
+                  subtype nat-host,
+                  subname "dog"
+                }
+              },
+              gcode 1
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Germany"
+            }
+          }
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Reetz",
+                      first "Jochen",
+                      initials "J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Hoffmann",
+                      first "Kathrin",
+                      initials "K."
+                    }
+                  }
+                }
+              },
+              title "ISOLATION OF THE VIRUS"
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "WOLF",
+                      first "SANDOR",
+                      initials "S."
+                    }
+                  }
+                },
+                affil std {
+                  affil "TECHNISCHE UNIVERSITAE",
+                  city "DRESDEN",
+                  country "GERMANY",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 22,
+        strand ds,
+        seq-data iupacna "AAAAAAGGAAACTGACCTACTA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "Putative terminase large subunit gene",
+                desc "terminase large subunit gene"
+              },
+              partial TRUE,
+              location int {
+                from 5,
+                to 21,
+                strand plus,
+                id local str "Seq1",
+                fuzz-to lim gt
+              },
+              qual {
+                {
+                  qual "standard_name",
+                  val "test gene name"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "Seq2"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              mod {
+                {
+                  subtype nat-host,
+                  subname "cat"
+                }
+              },
+              gcode 1
+            }
+          },
+          subtype {
+            {
+              subtype isolation-source,
+              name "Anaerobic digester"
+            }
+          }
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Reetz",
+                      first "Jochen",
+                      initials "J."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Rother",
+                      first "Michael",
+                      initials "M."
+                    }
+                  }
+                }
+              },
+              title "ISOLAtion of the lytic archeophage Drs3 infecting
+ Methanobacterium formicicum"
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                },
+                affil std {
+                  div "BIOLOGY",
+                  city "DRESDEN",
+                  country "Germany",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 224,
+        strand ds,
+        seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGAATTC
+CCCTATTCCTTGGTAGTGTGTTCGGTGCTCTGAAGAGTATGTTAGGTTTATTATGGAATGCTTTACAACAGGTTTTCG
+GTGACTGGTTCACAGCTAAGGCTCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACTGATA
+ACATGGGTCATTAACA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "Hypothetical protein gene",
+                desc "Hypothetical protein gene"
+              },
+              location int {
+                from 5,
+                to 163,
+                strand plus,
+                id local str "Seq2"
+              },
+              qual {
+                {
+                  qual "standard_name",
+                  val "test gene name2"
+                }
+              }
+            },
+            {
+              data gene {
+                locus "putative tape measure protein gene",
+                desc "tape measure protein gene"
+              },
+              partial TRUE,
+              location int {
+                from 192,
+                to 223,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                },
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

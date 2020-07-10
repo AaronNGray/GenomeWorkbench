@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.variation_utils.lib.txt 594157 2019-09-30 18:28:48Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(variation_utils)
+  NCBI_sources(variation_utils)
+  NCBI_uses_toolkit_libraries(variation xobjutil blastdb genome_collection)
+  NCBI_project_watchers(grichenk)
+NCBI_end_lib()
+

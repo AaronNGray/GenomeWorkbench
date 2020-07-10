@@ -1,0 +1,20 @@
+# $Id: Makefile.dbapi_util_blobstore.lib 553128 2017-12-13 16:54:04Z satskyse $
+
+SRC = blobstore
+
+LIB = dbapi_util_blobstore
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(CMPRS_INCLUDE)
+
+# Build shared version when possible
+LIB_OR_DLL = both
+
+# Dependencies for shared library
+DLL_LIB = dbapi_driver$(DLL) xcompress $(CMPRS_LIB) xutil xncbi
+LIBS    = $(CMPRS_LIBS) $(ORIG_LIBS)
+
+WATCHERS = ucko satskyse
+
+
+USES_LIBRARIES =  \
+    $(COMPRESS_LIBS) dbapi_driver xutil

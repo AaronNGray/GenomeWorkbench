@@ -1,0 +1,183 @@
+Seq-entry ::= seq {
+  id {
+    local str "Seq2",
+    general {
+      db "BankIt",
+      tag str "1657039/Seq2"
+    },
+    general {
+      db "TMSMART",
+      tag id 39787265
+    },
+    genbank {
+      accession "KF591394"
+    }
+  },
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Methanobacterium formicicum phage",
+        orgname {
+          gcode 1
+        }
+      }
+    },
+    molinfo {
+      biomol genomic,
+      completeness partial
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 3275,
+    strand ds,
+    seq-data ncbi2na '5AAACF84E7CF897BE39BD2E83D570BAA3C2CBCC0F02FCABC0C300008
+EA20E3333ACF8802384CF02A8F0E15A072F80F027F2AAA035771B5DFD00BE0E8B08F8023E09409
+31ACFF629C38079C02A901941D6E1A8E3A015AAC03C17E0090940962FE0A40F2295FCDDD0E0411
+D34E0EE38BA1C02E131027E0AF867FE388FF6202C6E1F34AAE0CF02A8E090088C880FD7821A38A
+A6E030DE9F873EEBC51F3B8CA4268FC115750D73F4F240A5AF217B30E03830AD03013D7F1FFFF7
+FECF7FCFFCC30CFF313DFFD1BF11CD18C3EDCFFA2FA0B24E926F0E80D30C226BA30A5260B67840
+B90A00F4BA4EAA102F2C0D1C840BC94351E201CD509734803A81C1A8E2E7CE54BC1E50104104F3
+4B438B0096A539E891FA42CBAC568EAC174C012A5C1479E30E438900CD43127D12F191C2F20045
+18DA8B01CBF4A3C83790BB00B05DFD11003F868BC09C036582EA8B08DA8B98DA43A7E8DB9C0D00
+BA095F06203CA473AA4AD3072E7B6B90CA0EAAB3F385D16DADCACE9DB81238D1FE385905128DA5
+AA49C807CB8141E8D2307058D2EBAA7F789FAC390E0433423491E838514249CD5C3655C7BA30AF
+A529E73FE3AB0211441E74A030E165DFD6EAF83A60FE135F2370FFACC1C0405F8E8E7AFA2EB926
+8E3BE0A3306793CDC0BDF8E205F8FC2E8B8E8F5145A003E200F082DFD2879EB00F3EA812BEF5F1
+3E00259E333DF0AF04410F56A1D146A8F32532592AF4EF3FF0691D5CD7EB2EEF6B9DE08B3A7B3F
+F283EF02B9E0867F077F708E0349E6BA39A51CE9F31DB90292691E9ED7E89E5148BF30FD32F9E0
+AC53241C2F241E5950E9FE819E57279C15CDA8CBACBA530C95D325B1C9F1F330CB0E21EF28390C
+07AF3A06AF0043CAAAC4FCEAA1F3E493A065789A247E9EAFE8335CBD0BA8ABD36CA077CCA27E83
+D7F90392E2553054A7F2BF3CE839FC412BFDAE1EBD1270A52E09C3A2F3929DCA22BFF2E5326A25
+92BA3EE819CFD52BE526E7E888EF275B3BD00AEF1CA3C41FF3ADFD7EAAA7FC592CE9016DAA9B9E
+827F4F2713E41FD3C4FBC9A178D2E80CD1BD1E2F4E2E23BABA7FD241C36B82D32B94FF0BACFAA2
+FEECC03AC8F790D425B44A3AB039FD734FFC512355ACE3E5FF3F29FE43EA43D34BF493B575C75D
+3318DFA2E41E304EAD3C10'H
+  },
+  annot {
+    {
+      data ftable {
+        {
+          data gene {
+            locus "Hypothetical protein gene",
+            desc "Hypothetical protein gene"
+          },
+          location int {
+            from 0,
+            to 77,
+            strand plus,
+            id genbank {
+              accession "KF591394"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "putative tape measure protein gene",
+            desc "tape measure protein gene"
+          },
+          partial TRUE,
+          location int {
+            from 69,
+            to 344,
+            strand plus,
+            id genbank {
+              accession "KF591394"
+            },
+            fuzz-to lim gt
+          }
+        },
+        {
+          data rna {
+            type tRNA,
+            ext tRNA {
+              aa ncbieaa 65
+            }
+          },
+          comment "Hypothetical protein",
+          product whole local str "Seq2_prot_2",
+          location int {
+            from 0,
+            to 77,
+            strand plus,
+            id genbank {
+              accession "KF591394"
+            }
+          }
+        },
+        {
+          data rna {
+            type mRNA,
+            ext name "putative tape measure protein"
+          },
+          partial TRUE,
+          comment "[intronless gene]",
+          product whole local str "Seq2_prot_3",
+          location int {
+            from 77,
+            to 299,
+            strand plus,
+            id genbank {
+              accession "KF591394"
+            },
+            fuzz-to lim gt
+          }
+        },
+        {
+          data gene {
+            locus "locus3"
+          },
+          location int {
+            from 0,
+            to 233,
+            strand minus,
+            id genbank {
+              accession "KF591394"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "locus4"
+          },
+          location int {
+            from 1233,
+            to 2344,
+            strand minus,
+            id genbank {
+              accession "KF591394"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "locus5"
+          },
+          location int {
+            from 1499,
+            to 2676,
+            strand plus,
+            id genbank {
+              accession "KF591394"
+            }
+          }
+        },
+        {
+          data gene {
+            locus "locus6"
+          },
+          location int {
+            from 2799,
+            to 3199,
+            strand plus,
+            id genbank {
+              accession "KF591394"
+            }
+          }
+        }
+      }
+    }
+  }
+}

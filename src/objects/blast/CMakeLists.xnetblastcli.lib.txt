@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.xnetblastcli.lib.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(xnetblastcli)
+  NCBI_generated_sources(blastclient.cpp blastclient_.cpp)
+  NCBI_uses_toolkit_libraries(xconnect xnetblast)
+NCBI_end_lib()
+

@@ -1,0 +1,207 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "q",
+          first "q",
+          initials "qq"
+        },
+        affil str "q"
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "q",
+              first "q",
+              initials "qq."
+            }
+          }
+        },
+        affil str "q"
+      },
+      date std {
+        year 2013,
+        month 6,
+        day 4
+      }
+    },
+    subtype new,
+    tool "Sequin 12.60 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class phy-set,
+      seq-set {
+        seq {
+          id {
+            local str "seq_1"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Influenza A virus",
+                db {
+                  {
+                    db "taxon",
+                    tag id 11320
+                  }
+                },
+                orgname {
+                  mod {
+                    {
+                      subtype strain,
+                      subname "this is my strain"
+                    },
+                    {
+                      subtype specimen-voucher,
+                      subname "YTu89:TY67:"
+                    },
+                    {
+                      subtype culture-collection,
+                      subname ":YU876:IUYYju8"
+                    },
+                    {
+                      subtype bio-material,
+                      subname "INST67:HU89"
+                    }
+                  },
+                  lineage "Viruses; ssRNA viruses; ssRNA negative-strand
+ viruses; Negarnaviricota; Polyploviricotina; Insthoviricetes;
+ Articulavirales; Orthomyxoviridae; Alphainfluenzavirus",
+                  gcode 1,
+                  div "VRL"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 151,
+            seq-data iupacna "GTCTTCACTNNNNNNNNNNCTCCCTTCTTCTCCATAGGATCATGGAAG
+AAAGACAGTRCTATTCAGCTGCAAAATGTAACCACCATCTCCTAGGCAAAGGAGCAGTTTCCACTTATCGCAAGCCAC
+AGATAACTCTGTACCTTTTATTTCC"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "repeat_region"
+                  },
+                  location int {
+                    from 0,
+                    to 150,
+                    strand plus,
+                    id local str "seq_1"
+                  },
+                  qual {
+                    {
+                      qual "satellite",
+                      val "microsatellite:SAT678"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "seq_4"
+          },
+          descr {
+            title "toll-like receptor 5 (TLR5) gene, complete cds",
+            source {
+              genome genomic,
+              org {
+                taxname "Giraffa camelopardalis",
+                orgname {
+                  mod {
+                    {
+                      subtype specimen-voucher,
+                      subname ":UY765:RT543"
+                    },
+                    {
+                      subtype specimen-voucher,
+                      subname "YU765:"
+                    },
+                    {
+                      subtype culture-collection,
+                      subname ":IU67:"
+                    },
+                    {
+                      subtype culture-collection,
+                      subname "TY789:U89:I90"
+                    }
+                  },
+                  gcode 1
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "seq_4"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 101,
+            seq-data iupacna "TGTCTTCACTCTCTCTTCTTCTCCATAGGATCATGAGAGACTGCCTTC
+TTATCACAAGCTACAGATAACTCTGTACCTTTTATTTCCGCCAGTTTACCCAA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data imp {
+                    key "repeat_region"
+                  },
+                  location int {
+                    from 0,
+                    to 100,
+                    strand plus,
+                    id local str "seq_4"
+                  },
+                  qual {
+                    {
+                      qual "satellite",
+                      val "minisatellite:UHy67J"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

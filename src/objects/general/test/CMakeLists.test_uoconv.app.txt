@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_uoconv.app.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_uoconv)
+  NCBI_sources(test_uoconv)
+  NCBI_uses_toolkit_libraries(general)
+  NCBI_project_watchers(ucko)
+  NCBI_add_test()
+NCBI_end_app()
+

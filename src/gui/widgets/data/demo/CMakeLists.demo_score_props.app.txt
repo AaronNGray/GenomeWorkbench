@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_score_props.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_score_props GUI)
+  NCBI_sources(demo_score_props_app score_methods_dlg)
+  NCBI_uses_toolkit_libraries(w_data w_aln_score)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_app()

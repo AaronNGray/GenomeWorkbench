@@ -1,0 +1,17 @@
+# $Id: Makefile.ncbi_xcache_sqlite3.lib 28039 2013-05-06 21:01:53Z rafanovi $
+
+SRC = sqlite_cache sqlite_cache_factory
+
+LIB = ncbi_xcache_sqlite3
+
+CPPFLAGS = -DNCBI_SHOW_FUNCTION_NAME $(SQLITE3_INCLUDE) $(ORIG_CPPFLAGS)
+
+# Build shared version when possible
+LIB_OR_DLL = both
+
+# Dependencies for shared library
+DLL_LIB = xutil xncbi
+LIBS    = $(SQLITE3_LIBS) $(ORIG_LIBS)
+
+REQUIRES = SQLITE3
+

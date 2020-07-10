@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.demo_feature_table.app.txt 42608 2019-03-26 14:01:31Z gouriano $
+#############################################################################
+
+NCBI_begin_app(demo_feature_table GUI)
+  NCBI_sources(app_demo_feat_table demo_feat_table_frame)
+  NCBI_uses_toolkit_libraries(w_feat_table w_data ncbi_xloader_genbank)
+  NCBI_requires(wxWidgets)
+NCBI_end_app()

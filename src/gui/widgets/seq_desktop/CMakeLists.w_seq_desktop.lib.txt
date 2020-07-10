@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.w_seq_desktop.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_seq_desktop)
+  NCBI_sources(
+    seq_desktop_panel desktop_canvas desktop_ds
+    desktop_item desktop_typed_items desktop_view_context
+  )
+  NCBI_uses_toolkit_libraries(w_wx)
+  NCBI_requires(wxWidgets)
+NCBI_end_lib()

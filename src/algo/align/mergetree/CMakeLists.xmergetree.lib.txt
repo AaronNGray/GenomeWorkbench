@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.xmergetree.lib.txt 594157 2019-09-30 18:28:48Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(xmergetree)
+  NCBI_sources(merge_tree merge_tree_core equiv_range)
+  NCBI_uses_toolkit_libraries(xobjmgr seqset)
+  NCBI_project_watchers(boukn)
+NCBI_end_lib()
+

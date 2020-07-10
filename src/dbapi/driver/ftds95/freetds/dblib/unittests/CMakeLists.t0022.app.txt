@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.t0022.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db95_t0022)
+  NCBI_sources(t0022 common)
+  NCBI_set_test_assets(t0022.sql)
+  NCBI_add_test(test-db95 --ms-ver 4.2 --no-auto db95_t0022)
+NCBI_end_app()
+

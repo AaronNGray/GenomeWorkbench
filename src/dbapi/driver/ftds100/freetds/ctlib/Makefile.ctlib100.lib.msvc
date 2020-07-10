@@ -1,0 +1,5 @@
+; $Id: Makefile.ctlib100.lib.msvc 554130 2017-12-28 17:20:38Z ucko $
+
+[AddToProject]
+HeadersInInclude = ../*.h
+; SourceFiles      = winmain

@@ -1,0 +1,7 @@
+# $Id: Makefile.in 21810 2010-07-22 15:58:23Z didenkom $
+
+LIB_PROJ = w_seq
+EXPENDABLE_SUB_PROJ = demo
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

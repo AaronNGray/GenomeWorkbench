@@ -1,0 +1,6 @@
+# $Id: Makefile.in 36146 2016-08-16 20:09:58Z asztalos $
+
+LIB_PROJ = w_seq_desktop
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

@@ -1,0 +1,363 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Escherichia virus AAPEc6",
+            db {
+              {
+                db "taxon",
+                tag id 1873778
+              }
+            },
+            orgname {
+              name virus "Escherichia virus AAPEc6",
+              lineage "Viruses; dsDNA viruses, no RNA stage; Caudovirales;
+ Podoviridae; Autographivirinae; unclassified Sp6likevirus",
+              gcode 11,
+              div "PHG"
+            }
+          }
+        },
+        user {
+          class "SMART_V1.0",
+          type id 1,
+          data {
+            {
+              label id 1,
+              data int 2
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            genbank {
+              accession "KX279892",
+              version 1
+            },
+            gi 1043842058
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness complete
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "GenBank",
+                  data str "gb|KX279892.1|"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 2137,
+            seq-data iupacna "TCTGTTCGTTTCGTTCACTCCGCTTGCGCTACGTTCACTCGCTCACGT
+GTACCTTAGGTTATTCCTTGATGGATGGCTTAGGTTAGCCTTAGTGGACTACCTTAGTTAAAGCCTTAGTGCTTCACT
+TAGTATCAGCTTAGTAGTGTACCTTAGTAAGTCTTAGTGTCTTCTCTTAGTGATTGCACATGCAAGCATGTGAGATGC
+CATTAGGTCGCGGTCGGTAGACCGCTAAAGAAGGGGAATAGTAATAAGATGCAGTAGGAGGAACACCAGAAACCTAGC
+CAACCTAGCCTATCCTAGCTCTGTATCTATTGCTTTTCCTTAGTCTCACATGTTAGACAACCTATCTTATTCTTAGTG
+ATGATAACTTAGTGTTGACAAGGTAATCTTAGTGTAATACTATGCATCACGTAGGCGGTGCTGAGGCACCTAGTAGCC
+AGCTAGTAAGGCATACGAAGAGACTAGCGCTTACATTGCTCTTTAACAATTTGCTTAGTGTAACCTATGTATGCCGTG
+GTCAATTACTTATTGAATGAGGAATTAACTATGACATTAAACAACCGTGAACTGTCCGTTCTCTTCACTCTGTTGTGC
+TACATGATTCGTAACAACGAATTACTTACAGACGATGAGTTAGCCTTGTATCACCGCTTTCTTAACGAAGGTTGGATC
+GATACAGTTAATCAATACCGTAACATGATAGATGAGTTGAGGGAGGGTAAATAATGTATCAACATGAGGTATTCTTTG
+AATCAGCTAGCGAAGCTATTCGCTTCCGTGATGATATGATGCAAGCTGGTGTAGGCGTTGATGTGTATCACTATTTGA
+TAGATTACGACACTGAATATCACCGAGTTACCTTAGTATCTGAGTATGACAACCAAGTCATTACTGAGTACCTAGGCA
+GTGAAGATTACGATTACGATGAAGTAATCACGACAAATCTCTAAATTAACTGTTGACAGCCACGGCATACAAGGTTAC
+ATTAAGCATCAAGACGGCGACGTCTTTAAACATCCCGCTCTTTAACAATACGGTTTGTGTCTTGATAGGCTAACTAAC
+TAACTAAGGTAATTATCATGAAAGGTTTAATTTGTGTAGAACGTATGGTCAATGGTAAACTTGAAATATTACCACTGG
+AAAACCAATCTAGCTTCAAAGAGTGGTATGGCTGTTTCTCACTGATTTAAGGTAAAGGCTGGCACTAGTCAGCCTATC
+AAGGCGCAAACCAAGCTCTTTAACAATTTGGATAAAGCTTCTTAGTCTGGATAGGTTAAACCTAGGAGATTCTCTTGA
+GTCTCCTATAATGTAACCTAACTAACTAAATGAGGATTAATAACATGGCTATGTCTAATATGACTTACTCTCAGGTTT
+ACAACACCGCTCATGCTGCATTAGTTGAACGCGTATGGGATGATGCCATTGATTGTATCGATAACGCACATGATGCAA
+TCCATGAGGTGGCGGATAGTGCTGTACCAATCTATTATGCTGACATCTTCTCGGTGATGGCCAGTGAAGGAATCGACC
+ACTTCTTCGAGGATTCTGGCTTAATGCCAGACACTAAGGATGTGACGGTCGTACTACAAGCCCGTATTTATGAACAAC
+TCACCATTGATTTATGGGAACGTGTTCAAGATATGATTGATGCGTACATCGATTCCGCTGAGGATTCAGAAGAAGAGG
+AAGAATAAGGATGGAAAAGCAATATAACTTTATCTTTTCAGACGGTGTAACCCTGAAGTGTTCCCTACGATTCGCACA
+AATTCGTGAGGAAGTACTAGGCACTACATACAAACTATTTAGCTGACACTATAAGAGAAGGCTTAACAAGGCGTTGCT
+ACGGTAGCGCCTGATTAAACTTTCACTTACTAGGAGTTAAGATTATGGATTTAGATAGCATCATTATGGCGTTTGCTC
+TTATTGGCTTAAGCTGGTGCTCCTATCACCTTTACCGTGAGTTCTTATTTGATAAAGCTAAACGCAAACTAAGAAAGG
+AAGGCGGTAATTACCTTTGTGTAAGAGGTGGGCTTGTAGAATACATTGCACCTAACGGCACGGAATGCGCCATTAGCA
+AAGATGCATTTATAGAGACGTGGCATTACATCAAGTAACTAGCCTATAGCCTGCCTGAGTG"
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "ANT40817",
+              version 1
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 59,
+            seq-data iupacaa "MTLNNRELSVLFTLLCYMIRNNELLTDDELALYHRFLNEGWIDTVNQY
+RNMIDELREGK"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 5,
+                  data prot {
+                    name {
+                      "hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 58,
+                    id genbank {
+                      accession "ANT40817",
+                      version 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "ANT40813",
+              version 1
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 74,
+            seq-data iupacaa "MYQHEVFFESASEAIRFRDDMMQAGVGVDVYHYLIDYDTEYHRVTLVS
+EYDNQVITEYLGSEDYDYDEVITTNL"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 6,
+                  data prot {
+                    name {
+                      "hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 73,
+                    id genbank {
+                      accession "ANT40813",
+                      version 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "ANT40804",
+              version 1
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 117,
+            seq-data iupacaa "MAMSNMTYSQVYNTAHAALVERVWDDAIDCIDNAHDAIHEVADSAVPI
+YYADIFSVMASEGIDHFFEDSGLMPDTKDVTVVLQARIYEQLTIDLWERVQDMIDAYIDSAEDSEEEEE"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 7,
+                  data prot {
+                    name {
+                      "hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 116,
+                    id genbank {
+                      accession "ANT40804",
+                      version 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            genbank {
+              accession "ANT40826",
+              version 1
+            }
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 37,
+            seq-data iupacaa "MEKQYNFIFSDGVTLKCSLRFAQIREEVLGTTYKLFS"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 8,
+                  data prot {
+                    name {
+                      "hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 36,
+                    id genbank {
+                      accession "ANT40826",
+                      version 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              id local id 1,
+              data cdregion {
+                frame one,
+                code {
+                  id 11
+                }
+              },
+              product whole genbank {
+                accession "ANT40817",
+                version 1
+              },
+              location int {
+                from 546,
+                to 725,
+                strand plus,
+                id genbank {
+                  accession "KX279892",
+                  version 1
+                }
+              }
+            },
+            {
+              id local id 2,
+              data cdregion {
+                frame one,
+                code {
+                  id 11
+                }
+              },
+              product whole genbank {
+                accession "ANT40813",
+                version 1
+              },
+              location int {
+                from 725,
+                to 949,
+                strand plus,
+                id genbank {
+                  accession "KX279892",
+                  version 1
+                }
+              }
+            },
+            {
+              id local id 3,
+              data cdregion {
+                frame one,
+                code {
+                  id 11
+                }
+              },
+              product whole genbank {
+                accession "ANT40804",
+                version 1
+              },
+              location int {
+                from 1340,
+                to 1693,
+                strand plus,
+                id genbank {
+                  accession "KX279892",
+                  version 1
+                }
+              }
+            },
+            {
+              id local id 4,
+              data cdregion {
+                frame one,
+                code {
+                  id 11
+                }
+              },
+              product whole genbank {
+                accession "ANT40826",
+                version 1
+              },
+              location int {
+                from 1696,
+                to 1809,
+                strand plus,
+                id genbank {
+                  accession "KX279892",
+                  version 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

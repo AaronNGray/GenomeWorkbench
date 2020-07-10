@@ -1,0 +1,3 @@
+[Linker]
+OutputFile          = $(OutDir)/gbench/bin/gbench_feedback_agent.exe
+ProgramDatabaseFile = $(OutDir)/gbench/bin/gbench_feedback_agent.pdb

@@ -1,0 +1,109 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq1"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Gallus gallus",
+            common "chicken",
+            db {
+              {
+                db "taxon",
+                tag id 9031
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 2,
+              div "VRT"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 328,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACATTCATCATAGATGACCCTATCAAAAGCGTAGCTGAAGCT
+GAAAGTAAAGCTTTACAAAGAAAATTAAGAGAATGGATAGGGGGAACAGCTAAAACCCGACTAGAAAAACGAAAAAAC
+GGGTTACCTCCTATAATGATAGTAATAGCTCAAAGACTTCACATTAATGACCTACACGGCATAATCAAAGAAACAGAA
+CCCGTAATCCCTGCCTCTGAAGCCCTAAAAACCCTAAGACAAGGGGACACCATAGACCCCAACACATGGGTGGACTTA
+AACCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type rRNA,
+                ext name "small subunit ribosomal RNA"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 68,
+                strand plus,
+                id local str "Seq1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            },
+            {
+              data rna {
+                type rRNA,
+                ext name "12S ribosomal RNA"
+              },
+              location int {
+                from 80,
+                to 124,
+                strand plus,
+                id local str "Seq1"
+              }
+            },
+            {
+              data gene {
+                locus "testing gene"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 79,
+                strand plus,
+                id local str "Seq1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

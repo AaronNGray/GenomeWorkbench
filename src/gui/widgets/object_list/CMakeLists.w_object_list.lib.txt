@@ -1,0 +1,13 @@
+#############################################################################
+# $Id: CMakeLists.w_object_list.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_object_list)
+  NCBI_sources(
+    object_list_widget object_list_widget_sel
+    object_text_item
+    text_item_default text_item_seq_align text_item_seq_feat text_item_seq_loc
+  )
+  NCBI_uses_toolkit_libraries(w_text_widget)
+  NCBI_requires(wxWidgets)
+NCBI_end_lib()

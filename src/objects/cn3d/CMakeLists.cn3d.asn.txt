@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.cn3d.asn.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(cn3d)
+  NCBI_dataspecs(cn3d.asn)
+  NCBI_uses_toolkit_libraries(mmdb)
+NCBI_end_lib()
+

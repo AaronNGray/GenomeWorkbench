@@ -1,0 +1,813 @@
+/*  $Id: table_column_id_panel.cpp 43698 2019-08-14 20:00:53Z katargir $
+ * ===========================================================================
+ *
+ *                            PUBLIC DOMAIN NOTICE
+ *               National Center for Biotechnology Information
+ *
+ *  This software/database is a "United States Government Work" under the
+ *  terms of the United States Copyright Act.  It was written as part of
+ *  the author's official duties as a United States Government employee and
+ *  thus cannot be copyrighted.  This software/database is freely available
+ *  to the public for use. The National Library of Medicine and the U.S.
+ *  Government have not placed any restriction on its use or reproduction.
+ *
+ *  Although all reasonable efforts have been taken to ensure the accuracy
+ *  and reliability of the software and data, the NLM and the U.S.
+ *  Government do not and cannot warrant the performance or results that
+ *  may be obtained by using this software or data. The NLM and the U.S.
+ *  Government disclaim all warranties, express or implied, including
+ *  warranties of performance, merchantability or fitness for any particular
+ *  purpose.
+ *
+ *  Please cite the author in any work or product based on this material.
+ *
+ * ===========================================================================
+ *
+ * Authors: Bob Falk
+ *
+ * File Description:
+ *
+ */
+
+#include <ncbi_pch.hpp>
+
+////@begin includes
+////@end includes
+
+#include "table_column_id_panel.hpp"
+
+#include <gui/widgets/loaders/table_column_type_guesser.hpp>
+#include <gui/widgets/wx/taxon_text_completer.hpp>
+#include <gui/widgets/loaders/select_assembly_dialog.hpp>
+#include <gui/widgets/loaders/assembly_sel_panel.hpp>
+#include <gui/widgets/loaders/assembly_term_completer.hpp>
+
+#include <gui/objutils/registry.hpp>
+
+#include <wx/sizer.h>
+#include <wx/stattext.h>
+#include <wx/statbox.h>
+#include <wx/icon.h>
+#include <wx/bitmap.h>
+#include <wx/msgdlg.h>
+#include <wx/radiobut.h>
+#include <wx/listctrl.h>
+#include "wx/imaglist.h"
+
+BEGIN_NCBI_SCOPE
+
+////@begin XPM images
+////@end XPM images
+
+IMPLEMENT_DYNAMIC_CLASS( CTableColumnIdPanel, wxPanel )
+
+BEGIN_EVENT_TABLE( CTableColumnIdPanel, wxPanel )
+
+////@begin CTableColumnIdPanel event table entries
+    EVT_TEXT( ID_COLUMNNAMETXT, CTableColumnIdPanel::OnColumnNametxtTextUpdated )
+    EVT_RADIOBUTTON( ID_SEQIDFORMATBTN, CTableColumnIdPanel::OnSeqidFormatBtnSelected )
+    EVT_RADIOBUTTON( ID_TEXTFORMATBTN, CTableColumnIdPanel::OnTextFmtBtnSelected )
+    EVT_RADIOBUTTON( ID_NUMBERFORMATBTN, CTableColumnIdPanel::OnNumberFmtBtnSelected )
+    EVT_CHECKBOX( ID_ONEBASEDINTCHECK, CTableColumnIdPanel::OnOneBasedIntCheckClick )
+    EVT_RADIOBUTTON( ID_REALNUMBERFORMATBTN, CTableColumnIdPanel::OnRealNumberFormatBtnSelected )
+    EVT_RADIOBUTTON( ID_SKIPBTN, CTableColumnIdPanel::OnSkipBtnSelected )
+    EVT_LISTBOX( ID_DATATYPECOMBO, CTableColumnIdPanel::OnDataTypePropertySelected )
+////@end CTableColumnIdPanel event table entries
+
+    EVT_LIST_COL_CLICK( ID_CTABLEIMPORTLISTCTRL2, CTableColumnIdPanel::OnCtableImportListctrlColLeftClick )
+    EVT_LIST_COL_DRAGGING( ID_CTABLEIMPORTLISTCTRL2, CTableColumnIdPanel::OnCtableImportListctrlColDragging )
+
+    EVT_COMMAND( wxID_ANY, wxEVT_ASSEMBLY_CHANGED_EVENT, CTableColumnIdPanel::OnAssemblyChanged )
+
+END_EVENT_TABLE()
+
+CTableColumnIdPanel::CTableColumnIdPanel()
+{
+    Init();
+}
+
+CTableColumnIdPanel::CTableColumnIdPanel( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
+{
+    Init();
+    Create(parent, id, caption, pos, size, style);
+}
+
+bool CTableColumnIdPanel::Create( wxWindow* parent, wxWindowID id, const wxString& caption, const wxPoint& pos, const wxSize& size, long style )
+{
+////@begin CTableColumnIdPanel creation
+    SetExtraStyle(wxWS_EX_VALIDATE_RECURSIVELY|wxWS_EX_BLOCK_EVENTS);
+    wxPanel::Create( parent, id, pos, size, style );
+
+    CreateControls();
+    if (GetSizer())
+    {
+        GetSizer()->SetSizeHints(this);
+    }
+    Centre();
+////@end CTableColumnIdPanel creation
+    return true;
+}
+
+CTableColumnIdPanel::~CTableColumnIdPanel()
+{
+////@begin CTableColumnIdPanel destruction
+////@end CTableColumnIdPanel destruction
+}
+
+void CTableColumnIdPanel::Init()
+{
+////@begin CTableColumnIdPanel member initialisation
+    m_ColumnPropertiesSizer = NULL;
+    m_ColumnNameStaticTxt = NULL;
+    m_ColumnNameTxtCtrl = NULL;
+    m_SeqIdFormatBtn = NULL;
+    m_TextFormatBtn = NULL;
+    m_NumberFormatBtn = NULL;
+    m_OneBasedIntCheck = NULL;
+    m_RealNumberFormatBtn = NULL;
+    m_SkipFormatBtn = NULL;
+    m_DataTypeList = NULL;
+    m_AssemblyPanel = NULL;
+    m_ColumnIdPanel = NULL;
+    m_ColumnIdList = NULL;
+////@end CTableColumnIdPanel member initialisation
+
+    m_CurrentColumnIdx = -1;
+}
+
+void CTableColumnIdPanel::CreateControls()
+{    
+////@begin CTableColumnIdPanel content construction
+    // Generated by DialogBlocks, 14/08/2019 15:53:33 (unregistered)
+
+    CTableColumnIdPanel* itemPanel1 = this;
+
+    wxBoxSizer* itemBoxSizer2 = new wxBoxSizer(wxVERTICAL);
+    itemPanel1->SetSizer(itemBoxSizer2);
+
+    wxStaticText* itemStaticText3 = new wxStaticText( itemPanel1, wxID_STATIC, _("Set or Verify Type Information for each Table Column"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemStaticText3->SetFont(wxFont(10, wxFONTFAMILY_SWISS, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL, false, wxT("Tahoma")));
+    itemBoxSizer2->Add(itemStaticText3, 0, wxALIGN_CENTER_HORIZONTAL|wxLEFT|wxRIGHT|wxTOP, 5);
+
+    wxBoxSizer* itemBoxSizer4 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer2->Add(itemBoxSizer4, 0, wxGROW|wxLEFT|wxRIGHT, 5);
+
+    m_ColumnPropertiesSizer = new wxStaticBox(itemPanel1, wxID_ANY, _("Column Properties"));
+    wxStaticBoxSizer* itemStaticBoxSizer5 = new wxStaticBoxSizer(m_ColumnPropertiesSizer, wxHORIZONTAL);
+    itemBoxSizer4->Add(itemStaticBoxSizer5, 1, wxALIGN_CENTER_VERTICAL|wxLEFT|wxRIGHT|wxBOTTOM, 5);
+
+    wxBoxSizer* itemBoxSizer6 = new wxBoxSizer(wxVERTICAL);
+    itemStaticBoxSizer5->Add(itemBoxSizer6, 0, wxALIGN_TOP|wxLEFT|wxRIGHT, 5);
+
+    wxBoxSizer* itemBoxSizer7 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer6->Add(itemBoxSizer7, 0, wxALIGN_LEFT|wxLEFT|wxRIGHT, 5);
+
+    m_ColumnNameStaticTxt = new wxStaticText( itemStaticBoxSizer5->GetStaticBox(), wxID_STATIC, _("Name:"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_ColumnNameStaticTxt->Enable(false);
+    itemBoxSizer7->Add(m_ColumnNameStaticTxt, 0, wxALIGN_CENTER_VERTICAL|wxRIGHT|wxTOP|wxBOTTOM, 5);
+
+    m_ColumnNameTxtCtrl = new wxTextCtrl( itemStaticBoxSizer5->GetStaticBox(), ID_COLUMNNAMETXT, wxEmptyString, wxDefaultPosition, wxSize(110, -1), 0 );
+    m_ColumnNameTxtCtrl->Enable(false);
+    itemBoxSizer7->Add(m_ColumnNameTxtCtrl, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    wxStaticBox* itemStaticBoxSizer10Static = new wxStaticBox(itemStaticBoxSizer5->GetStaticBox(), wxID_ANY, _("Data Type"));
+    wxStaticBoxSizer* itemStaticBoxSizer10 = new wxStaticBoxSizer(itemStaticBoxSizer10Static, wxVERTICAL);
+    itemBoxSizer6->Add(itemStaticBoxSizer10, 0, wxALIGN_LEFT|wxALL, 5);
+
+    wxBoxSizer* itemBoxSizer11 = new wxBoxSizer(wxHORIZONTAL);
+    itemStaticBoxSizer10->Add(itemBoxSizer11, 0, wxALIGN_LEFT|wxALL, 0);
+
+    wxBoxSizer* itemBoxSizer12 = new wxBoxSizer(wxVERTICAL);
+    itemBoxSizer11->Add(itemBoxSizer12, 0, wxALIGN_CENTER_VERTICAL|wxALL, 0);
+
+    m_SeqIdFormatBtn = new wxRadioButton( itemStaticBoxSizer10->GetStaticBox(), ID_SEQIDFORMATBTN, _("Sequence ID"), wxDefaultPosition, wxDefaultSize, wxRB_GROUP );
+    m_SeqIdFormatBtn->SetValue(false);
+    m_SeqIdFormatBtn->Enable(false);
+    itemBoxSizer12->Add(m_SeqIdFormatBtn, 0, wxALIGN_LEFT|wxALL, 5);
+
+    m_TextFormatBtn = new wxRadioButton( itemStaticBoxSizer10->GetStaticBox(), ID_TEXTFORMATBTN, _("Text"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_TextFormatBtn->SetValue(false);
+    m_TextFormatBtn->Enable(false);
+    itemBoxSizer12->Add(m_TextFormatBtn, 0, wxALIGN_LEFT|wxALL, 5);
+
+    wxBoxSizer* itemBoxSizer15 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer12->Add(itemBoxSizer15, 0, wxALIGN_LEFT|wxRIGHT, 5);
+
+    m_NumberFormatBtn = new wxRadioButton( itemStaticBoxSizer10->GetStaticBox(), ID_NUMBERFORMATBTN, _("Integer"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_NumberFormatBtn->SetValue(false);
+    m_NumberFormatBtn->Enable(false);
+    itemBoxSizer15->Add(m_NumberFormatBtn, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    m_OneBasedIntCheck = new wxCheckBox( itemStaticBoxSizer10->GetStaticBox(), ID_ONEBASEDINTCHECK, _("One-Based"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_OneBasedIntCheck->SetValue(true);
+    itemBoxSizer15->Add(m_OneBasedIntCheck, 0, wxALIGN_CENTER_VERTICAL|wxALL, 5);
+
+    m_RealNumberFormatBtn = new wxRadioButton( itemStaticBoxSizer10->GetStaticBox(), ID_REALNUMBERFORMATBTN, _("Real Number"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_RealNumberFormatBtn->SetValue(false);
+    itemBoxSizer12->Add(m_RealNumberFormatBtn, 0, wxALIGN_LEFT|wxALL, 5);
+
+    m_SkipFormatBtn = new wxRadioButton( itemStaticBoxSizer10->GetStaticBox(), ID_SKIPBTN, _("Skip (Do not import)"), wxDefaultPosition, wxDefaultSize, 0 );
+    m_SkipFormatBtn->SetValue(false);
+    m_SkipFormatBtn->Enable(false);
+    itemBoxSizer12->Add(m_SkipFormatBtn, 0, wxALIGN_LEFT|wxALL, 5);
+
+    wxBoxSizer* itemBoxSizer20 = new wxBoxSizer(wxVERTICAL);
+    itemBoxSizer11->Add(itemBoxSizer20, 0, wxGROW, 5);
+
+    wxStaticText* itemStaticText21 = new wxStaticText( itemStaticBoxSizer10->GetStaticBox(), wxID_STATIC, _("Properties:"), wxDefaultPosition, wxDefaultSize, 0 );
+    itemBoxSizer20->Add(itemStaticText21, 0, wxALIGN_LEFT|wxLEFT|wxRIGHT, 5);
+
+    wxArrayString m_DataTypeListStrings;
+    m_DataTypeList = new wxListBox( itemStaticBoxSizer10->GetStaticBox(), ID_DATATYPECOMBO, wxDefaultPosition, wxSize(140, -1), m_DataTypeListStrings, wxLB_SINGLE );
+    m_DataTypeList->SetStringSelection(_("Undefined"));
+    m_DataTypeList->Enable(false);
+    itemBoxSizer20->Add(m_DataTypeList, 1, wxALIGN_CENTER_HORIZONTAL|wxALL, 5);
+
+    m_AssemblyPanel = new CAssemblySelPanel( itemStaticBoxSizer5->GetStaticBox(), ID_PANEL5, wxDefaultPosition, wxDefaultSize, wxNO_BORDER|wxTAB_TRAVERSAL );
+    itemStaticBoxSizer5->Add(m_AssemblyPanel, 1, wxALIGN_TOP|wxLEFT|wxRIGHT, 5);
+
+    wxBoxSizer* itemBoxSizer24 = new wxBoxSizer(wxHORIZONTAL);
+    itemBoxSizer4->Add(itemBoxSizer24, 0, wxALIGN_TOP|wxALL, 5);
+
+    wxStaticBox* itemStaticBoxSizer25Static = new wxStaticBox(itemPanel1, wxID_ANY, _("Click on Table Columns to Set Properties"));
+    wxStaticBoxSizer* itemStaticBoxSizer25 = new wxStaticBoxSizer(itemStaticBoxSizer25Static, wxHORIZONTAL);
+    itemBoxSizer2->Add(itemStaticBoxSizer25, 1, wxGROW|wxLEFT, 5);
+
+    m_ColumnIdPanel = new wxPanel( itemStaticBoxSizer25->GetStaticBox(), ID_COLUMNIDLISTPANEL, wxDefaultPosition, wxDefaultSize, wxSUNKEN_BORDER|wxTAB_TRAVERSAL );
+    itemStaticBoxSizer25->Add(m_ColumnIdPanel, 1, wxGROW, 5);
+
+    wxBoxSizer* itemBoxSizer27 = new wxBoxSizer(wxHORIZONTAL);
+    m_ColumnIdPanel->SetSizer(itemBoxSizer27);
+
+    m_ColumnIdList = new CTableImportListCtrl( m_ColumnIdPanel, ID_CTABLEIMPORTLISTCTRL2, wxDefaultPosition, wxSize(100, 100), wxLC_REPORT|wxLC_VIRTUAL|wxLC_ALIGN_LEFT|wxLC_HRULES|wxLC_VRULES );
+    itemBoxSizer27->Add(m_ColumnIdList, 1, wxGROW|wxALL, 5);
+
+////@end CTableColumnIdPanel content construction
+
+    m_ColumnIdList->SetFixedWidthUseFields(true);
+    m_ColumnIdList->SetDisplayTypeHeader(true);
+}
+
+bool CTableColumnIdPanel::Show(bool show)
+{
+    if (show) {
+        x_EnableColumnEditControls(false);
+
+        if (!m_ImportedTableData.IsNull()) {
+            m_ColumnIdList->SetViewType(CTableImportListCtrl::eMultiColumn);
+            m_ColumnIdList->SetDataSource(m_ImportedTableData); 
+
+            // Set x mark for any skipped columns
+            for (size_t col=1; col<m_ImportedTableData->GetColumns().size(); ++col) {
+                if (m_ImportedTableData->GetColumns()[col].GetSkipped()) {
+                    wxListItem item;
+                    m_ColumnIdList->GetColumn(col, item);
+                    int img_idx = m_ColumnIdList->GetColumnImageID(col); 
+
+                    // Set the image to indicate column status (skipped or not)
+                    item.SetImage(img_idx);
+                    item.SetWidth(24);  // wide enough to show the X
+                    item.SetText(m_ImportedTableData->GetColumns()[col].GetNameEx());
+                    m_ColumnIdList->SetColumn(col, item);
+                }
+            }
+
+            // Is there a currently selected column?  If so make sure the fields
+            // for editing column info are up-to-date. (This only happens if the
+            // users was previously on this page and is returning)
+            if (m_CurrentColumnIdx >= 0 && 
+                m_CurrentColumnIdx < (int)m_ImportedTableData->GetColumns().size()) {
+
+                    wxListEvent dummy_event;
+                    dummy_event.m_col = m_CurrentColumnIdx;
+
+                    OnCtableImportListctrlColLeftClick(dummy_event);
+            }
+            // Set the first column to the one being edited even though it hasn't been
+            // clicked on yet.
+            else {
+                wxListEvent dummy_event;
+                dummy_event.m_col = 1;
+
+                OnCtableImportListctrlColLeftClick(dummy_event);
+            }
+        }
+    }
+
+    return wxPanel::Show(show);
+}
+
+void CTableColumnIdPanel::SetMainTitle(const wxString& title)
+{
+}
+
+bool CTableColumnIdPanel::IsInputValid()
+{
+    return true;
+}
+
+
+void CTableColumnIdPanel::SetRegistryPath( const string& path )
+{
+    m_RegPath = path;
+}
+
+static const string kTableAssmSearchPath = "TableAssmSearch";
+static const string kSearchTermTag = "SearchTerm";
+static const string kTermHistoryTag = "TermHistory";
+
+void CTableColumnIdPanel::LoadSettings()
+{
+    string search_term;
+
+    if ( !m_RegPath.empty() ) {
+        CGuiRegistry& gui_reg = CGuiRegistry::GetInstance();
+        CRegistryReadView view = gui_reg.GetReadView(m_RegPath);
+
+        search_term = view.GetString(kSearchTermTag, search_term);
+        view.GetStringList(kTermHistoryTag, m_TermHistory);        
+    }
+}
+
+
+void CTableColumnIdPanel::SaveSettings() const
+{
+    if ( !m_RegPath.empty() ) {
+        CGuiRegistry& gui_reg = CGuiRegistry::GetInstance();
+        CRegistryWriteView view = gui_reg.GetWriteView(m_RegPath);
+        view.Set(kTermHistoryTag, m_TermHistory);
+    }
+}
+
+void CTableColumnIdPanel::x_EnableColumnEditControls(bool b)
+{
+    m_SeqIdFormatBtn->Enable(b);
+    m_TextFormatBtn->Enable(b);
+    m_NumberFormatBtn->Enable(b);
+    m_RealNumberFormatBtn->Enable(b);
+    m_SkipFormatBtn->Enable(b);   
+    
+    x_EnableNonFormatEditControls(b);
+}
+
+void CTableColumnIdPanel::x_InitializePropertyList()
+{
+    /// Get correct list for list box selection based on column type
+    vector<CTableImportColumn::eDataType>  property_list_options;
+
+    if (m_SeqIdFormatBtn->GetValue() == true) {
+        property_list_options = CTableImportColumn::GetMatchingDataTypes(
+            CTableImportColumn::eSeqIdColumn);
+    }
+    else if (m_TextFormatBtn->GetValue() == true) {
+        property_list_options = CTableImportColumn::GetMatchingDataTypes(
+            CTableImportColumn::eTextColumn);
+    }
+    else if (m_NumberFormatBtn->GetValue() == true) {
+        property_list_options = CTableImportColumn::GetMatchingDataTypes(
+            CTableImportColumn::eNumberColumn);
+    }
+    else if (m_RealNumberFormatBtn->GetValue() == true) {
+        property_list_options = CTableImportColumn::GetMatchingDataTypes(
+            CTableImportColumn::eRealNumberColumn);
+    }
+    else if (m_SkipFormatBtn->GetValue() == true) {
+        property_list_options = CTableImportColumn::GetMatchingDataTypes(
+            CTableImportColumn::eSkippedColumn);
+    }
+
+    m_DataTypeList->Clear();
+
+    for (size_t i=0; i<property_list_options.size(); ++i) {
+        m_DataTypeList->AppendString(ToWxString( 
+            CTableImportColumn::GetStringFromDataType(property_list_options[i])));
+    };
+
+    // Should always have some elements in the list
+    if (property_list_options.size() > 0) {
+        // Set the default item to be the last item in the list.
+        m_DataTypeList->SetSelection(m_DataTypeList->GetCount()-1);
+    }
+}
+
+void CTableColumnIdPanel::x_EnableNonFormatEditControls(bool b)
+{
+    m_ColumnNameTxtCtrl->Enable(b);
+    m_ColumnPropertiesSizer->Enable(b);
+    m_ColumnNameStaticTxt->Enable(b); 
+    m_ColumnPropertiesSizer->Enable(b);
+
+    x_InitializePropertyList();
+    m_DataTypeList->Enable(b);
+}
+
+bool CTableColumnIdPanel::ShowToolTips()
+{
+    return true;
+}
+wxBitmap CTableColumnIdPanel::GetBitmapResource( const wxString& name )
+{
+    // Bitmap retrieval
+////@begin CTableColumnIdPanel bitmap retrieval
+    wxUnusedVar(name);
+    return wxNullBitmap;
+////@end CTableColumnIdPanel bitmap retrieval
+}
+wxIcon CTableColumnIdPanel::GetIconResource( const wxString& name )
+{
+    // Icon retrieval
+////@begin CTableColumnIdPanel icon retrieval
+    wxUnusedVar(name);
+    return wxNullIcon;
+////@end CTableColumnIdPanel icon retrieval
+}
+
+void CTableColumnIdPanel::OnCtableImportListctrlColLeftClick( wxListEvent& event )
+{
+    if (!m_ImportedTableData.IsNull()) {
+        int col = event.GetColumn();
+        
+        // First column is the row number column and has no attributes.
+        if (col == 0) {
+            event.Veto();
+            return;
+        }
+
+        if ((size_t)col < m_ImportedTableData->GetColumns().size()) {
+    
+            /// if there is another current column, remove the checkmark from it:
+            if (m_CurrentColumnIdx != -1  &&
+                m_CurrentColumnIdx != col &&        
+                (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+                    wxListItem item;
+                    m_ColumnIdList->GetColumn(m_CurrentColumnIdx, item);
+                    m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetIsCurrent(false);
+
+                    // Reset the image from the (previous selected) column:
+                    int img_idx = m_ColumnIdList->GetColumnImageID(m_CurrentColumnIdx);  
+                    item.SetImage(img_idx);
+                    m_ColumnIdList->SetColumn(m_CurrentColumnIdx, item);
+            }
+
+            m_CurrentColumnIdx = col;
+
+            m_SeqIdFormatBtn->SetValue(false);
+            m_TextFormatBtn->SetValue(false);
+            m_NumberFormatBtn->SetValue(false);
+            m_RealNumberFormatBtn->SetValue(false);
+            m_SkipFormatBtn->SetValue(false);
+
+            // If m_OneBasedIntCheck and then gets disable, a bug occurs when
+            // using current version of wxwidgets (2.9.4):
+            // http://trac.wxwidgets.org/ticket/15065
+            // If the current field is the one-based check-box and you then
+            // switch to a new column, the next radio button (real-number) will
+            // be selected. This is because the disabling forces navigation to 
+            // the next control in tab order (which is fine) when the check box
+            // is deselected.  But it also then selects that radiobutton (not good)
+            //m_OneBasedIntCheck->SetValue(false);
+            //m_OneBasedIntCheck->Enable(false);    
+
+            CTableImportColumn::eColumnType t = 
+                m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetType();
+
+            switch (t) {
+                case CTableImportColumn::eSeqIdColumn:
+                    m_SeqIdFormatBtn->SetValue(true);
+                    if (m_OneBasedIntCheck->HasFocus()) {
+                        m_SeqIdFormatBtn->SetFocus();
+                    }
+                    m_OneBasedIntCheck->SetValue(false);
+                    m_OneBasedIntCheck->Enable(false);   
+                    break;
+                case CTableImportColumn::eTextColumn:
+                    m_TextFormatBtn->SetValue(true);
+                    if (m_OneBasedIntCheck->HasFocus()) {
+                        m_TextFormatBtn->SetFocus();
+                    }
+                    m_OneBasedIntCheck->SetValue(false);
+                    m_OneBasedIntCheck->Enable(false);  
+                    break;
+                case CTableImportColumn::eNumberColumn:
+                    m_NumberFormatBtn->SetValue(true);
+                    m_OneBasedIntCheck->Enable(true);
+                    m_OneBasedIntCheck->SetValue(
+                        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetOneBased());
+                    break;
+                case CTableImportColumn::eRealNumberColumn:
+                    m_RealNumberFormatBtn->SetValue(true);
+                    if (m_OneBasedIntCheck->HasFocus()) {
+                        m_RealNumberFormatBtn->SetFocus();
+                    }
+                    m_OneBasedIntCheck->SetValue(false);
+                    m_OneBasedIntCheck->Enable(false);  
+                    break;
+                case CTableImportColumn::eSkippedColumn:
+                    m_SkipFormatBtn->SetValue(true);
+                    if (m_OneBasedIntCheck->HasFocus()) {
+                        m_SkipFormatBtn->SetFocus();
+                    }
+                    m_OneBasedIntCheck->SetValue(false);
+                    m_OneBasedIntCheck->Enable(false);  
+                    break;
+                default:
+                    break;
+            };
+
+            // Controls initially default to not being enabled, since no column is
+            // selected.  Enable all controls for idnetifying column info here.
+            x_EnableColumnEditControls(true);
+
+            /// Update controls to represent current column choice:
+            m_ColumnNameTxtCtrl->SetValue(
+                m_ImportedTableData->GetColumnName((size_t)m_CurrentColumnIdx));
+
+            x_UpdateAssemblyPanel();
+             
+            m_DataTypeList->SetStringSelection(CTableImportColumn::GetStringFromDataType(
+                m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetDataType()));
+
+            /// Set column to be 'current'
+            m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetIsCurrent(true);
+
+            // Disable column attributes field if column is currently skipped
+            if (t == CTableImportColumn::eSkippedColumn)
+                x_EnableNonFormatEditControls(false);
+
+            // Put a check mark in selected column (I would highlight the column, 
+            // but I can't find a way to do that in wx - Changing colors and fonts
+            // here seems to have no effect).
+            wxListItem colinfo;
+            m_ColumnIdList->GetColumn(col, colinfo);                      
+            colinfo.SetText(m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetNameEx());
+            int img_idx = m_ColumnIdList->GetColumnImageID(col);  
+            colinfo.SetImage(img_idx);
+            m_ColumnIdList->SetColumn(col, colinfo);
+        }
+    }    
+}
+
+void CTableColumnIdPanel::OnColumnNametxtTextUpdated( wxCommandEvent& event )
+{
+    wxString colname = m_ColumnNameTxtCtrl->GetValue();
+
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+
+            wxListItem item;
+            m_ColumnIdList->GetColumn(m_CurrentColumnIdx, item);      
+
+            // Set the updated name in both the listwidget here and the
+            // data source
+            m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetName(colname.c_str().AsChar());
+            item.SetText(m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetNameEx());   
+            m_ColumnIdList->SetColumn(m_CurrentColumnIdx, item);
+    }
+}
+
+
+void CTableColumnIdPanel::x_OnColumnTypeUpdate()
+{
+    bool skipped = m_ImportedTableData->
+        GetColumns()[m_CurrentColumnIdx].GetSkipped();
+  
+    // Enable all column controls if column is not skipped
+    x_EnableNonFormatEditControls(!skipped);
+
+    // Get list of all valid bio (property) types for the current column
+    // based on the columns underlying type (id, int, real, or text)
+    vector<CTableImportColumn::eDataType>  drop_down_options;    
+    drop_down_options = CTableImportColumn::GetMatchingDataTypes(
+        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetType());
+
+    // Get current DataType (which may not be compatible with underlying type
+    // since that just changed)
+    CTableImportColumn::eDataType bio_type = 
+        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetDataType();
+
+    // Find if current data-type is compatible with new basic type. If it isn't
+    // pick the 'undefined' data-type to go with the new underlying type
+    if (std::find(drop_down_options.begin(), drop_down_options.end(), bio_type) ==
+        drop_down_options.end()) {
+            m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetDataType(
+                drop_down_options[drop_down_options.size()-1]);
+    }
+
+    // Update the combo box with the current data-type.
+    m_DataTypeList->SetStringSelection(CTableImportColumn::GetStringFromDataType(
+        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetDataType()));
+
+    // Set the checked or 'x' (skipped) column image as appropriate
+    wxListItem item;
+    m_ColumnIdList->GetColumn(m_CurrentColumnIdx, item);
+    int img_idx = m_ColumnIdList->GetColumnImageID(m_CurrentColumnIdx); 
+    item.SetImage(img_idx);
+    item.SetText(m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetNameEx());
+    m_ColumnIdList->SetColumn(m_CurrentColumnIdx, item);  
+
+    // Update first row which holds type information
+    m_ColumnIdList->RefreshItem(0);
+
+    // Check if the (newly updated) column(s) require an assembly to look up ids
+    // (e.g. chromosome numbers).  If so enable the assmebly selection widgets, otherwise
+    // disable them.
+    x_UpdateAssemblyPanel();
+}
+
+
+void CTableColumnIdPanel::OnSeqidFormatBtnSelected( wxCommandEvent& event )
+{
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+
+        /// Set column type based on user selection
+        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetType(
+            CTableImportColumn::eSeqIdColumn);
+       
+        x_OnColumnTypeUpdate();
+        m_OneBasedIntCheck->SetValue(false);
+        m_OneBasedIntCheck->Enable(false);        
+    }
+}
+
+void CTableColumnIdPanel::OnTextFmtBtnSelected( wxCommandEvent& event )
+{
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+
+        /// Set column type based on user selection
+        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetType(
+            CTableImportColumn::eTextColumn);
+
+        x_OnColumnTypeUpdate();
+        m_OneBasedIntCheck->SetValue(false);
+        m_OneBasedIntCheck->Enable(false);
+    }
+}
+
+void CTableColumnIdPanel::OnNumberFmtBtnSelected( wxCommandEvent& event )
+{
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+
+        /// Set column type based on user selection
+        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetType(
+            CTableImportColumn::eNumberColumn);
+
+        x_OnColumnTypeUpdate();
+        m_OneBasedIntCheck->Enable(true);
+        m_OneBasedIntCheck->SetValue(
+            m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetOneBased());
+    }
+}
+
+void CTableColumnIdPanel::OnRealNumberFormatBtnSelected( wxCommandEvent& event )
+{
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+
+        /// Set column type based on user selection
+        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetType(
+            CTableImportColumn::eRealNumberColumn);
+            
+        x_OnColumnTypeUpdate();
+        m_OneBasedIntCheck->SetValue(false);
+        m_OneBasedIntCheck->Enable(false);
+    }
+}
+
+void CTableColumnIdPanel::OnSkipBtnSelected( wxCommandEvent& event )
+{
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+
+        /// Set column type based on user selection
+        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetType(
+            CTableImportColumn::eSkippedColumn);
+            
+        // Disable column controls other than format (which allows skipped/not skipped
+        // to be set)
+        x_EnableNonFormatEditControls(false);
+
+        wxListItem item;
+        m_ColumnIdList->GetColumn(m_CurrentColumnIdx, item);
+        int img_idx = m_ColumnIdList->GetColumnImageID(m_CurrentColumnIdx); 
+
+        // Set the image to indicate column status (skipped or not)
+        item.SetImage(img_idx);
+        item.SetText(m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetNameEx());
+        m_ColumnIdList->SetColumn(m_CurrentColumnIdx, item);
+       
+        // Update first row which holds type information
+        m_ColumnIdList->RefreshItem(0);
+    }
+
+    x_UpdateAssemblyPanel();
+
+    m_OneBasedIntCheck->SetValue(false);
+    m_OneBasedIntCheck->Enable(false);
+}
+
+void CTableColumnIdPanel::OnCtableImportListctrlColDragging( wxListEvent& event )
+{
+    // Update the whole control when dragging.  This is needed because there
+    // may be header rows where distrubtion across columns is based on width
+    // of each column (basically they are left-justified into row irrespective
+    // of column boundaries)
+    m_ColumnIdList->Refresh();
+    event.Skip();
+}
+
+void CTableColumnIdPanel::OnOneBasedIntCheckClick( wxCommandEvent& event )
+{
+    wxString colname = m_ColumnNameTxtCtrl->GetValue();
+
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+            // Set the updated property in the data source
+            m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].
+                SetOneBased(m_OneBasedIntCheck->GetValue());
+    }
+}
+
+bool CTableColumnIdPanel::NeedsAssemblyMapping() 
+{
+    // Look at column and see if it needs an assembly in order
+    // to generate proper ids, e.g. if one of the columns is a chromosome
+    // number, we need an assembly to map that to an ID.
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+
+            if (m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetType() != 
+                CTableImportColumn::eSeqIdColumn)
+                return false;
+
+            /// Currently a chromosome number is the only id type that needs mapping, but rsids
+            /// may also have (optional) assembly mapping to determine from what assembly we
+            /// will query the location information.
+            if (m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetDataType() ==  CTableImportColumn::eChromosomeNumber  ||
+                m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetDataType() ==  CTableImportColumn::eChromosome ||
+                m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetDataType() ==  CTableImportColumn::eRsid) {
+                    return true;
+            }
+    }
+
+    return false;
+}
+
+void CTableColumnIdPanel::OnDataTypePropertySelected( wxCommandEvent& event )
+{
+    CTableImportColumn::eDataType t = 
+        CTableImportColumn::GetDataTypeFromString(ToStdString(m_DataTypeList->GetStringSelection()));
+
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {
+
+        /// Set column type based on user selection
+        m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].SetDataType(t);
+
+        x_UpdateAssemblyPanel();
+
+        // Update first row which holds type information
+        m_ColumnIdList->RefreshItem(0);
+    }
+}
+
+void CTableColumnIdPanel::x_UpdateAssemblyPanel()
+{
+    if (NeedsAssemblyMapping()) {
+        CMapAssemblyParams assm_info =  m_ImportedTableData->GetColumns()[m_CurrentColumnIdx].GetAssembly();
+        m_AssemblyPanel->SetData(assm_info);
+        m_AssemblyPanel->Enable(true);
+    } else {
+        CMapAssemblyParams assm_info;
+        m_AssemblyPanel->SetData(assm_info);
+        m_AssemblyPanel->Enable(false);
+    }
+    m_AssemblyPanel->TransferDataToWindow();
+}
+
+void CTableColumnIdPanel::OnAssemblyChanged ( wxCommandEvent& evt )
+{
+    m_AssemblyPanel->TransferDataFromWindow();
+
+    CMapAssemblyParams assm_info = m_AssemblyPanel->GetData();
+
+    if (m_CurrentColumnIdx != -1 &&
+        !m_ImportedTableData.IsNull() &&
+        (size_t)m_CurrentColumnIdx < m_ImportedTableData->GetColumns().size()) {    
+            m_ImportedTableData->GetColumns()[
+                m_CurrentColumnIdx].SetAssembly(assm_info);
+    }
+}
+
+END_NCBI_SCOPE

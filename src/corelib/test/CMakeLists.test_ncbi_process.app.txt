@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_ncbi_process.app.txt 593481 2019-09-19 14:00:01Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_ncbi_process)
+  NCBI_sources(test_ncbi_process)
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_add_test()
+  NCBI_project_watchers(ivanov)
+NCBI_end_app()
+

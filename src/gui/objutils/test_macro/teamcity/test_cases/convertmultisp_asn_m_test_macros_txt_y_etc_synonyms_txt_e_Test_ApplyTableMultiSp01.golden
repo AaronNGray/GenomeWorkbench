@@ -1,0 +1,122 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1744698/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 46783826
+        }
+      },
+      descr {
+        title "[Penicillium dipodomyicola MERO-A4]",
+        source {
+          genome genomic,
+          org {
+            taxname "Bacillus subtilis"
+          },
+          subtype {
+            {
+              subtype isolation-source,
+              name "soil around roots"
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness complete
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 159,
+        topology circular,
+        seq-data iupacna "GGGAACTGGGGATCCTACCTGATCCGAGGTCACCTGGATAAAAATTTGTGGT
+TGATCGGCAAGCGCCGGCCGGGCCTACAGAGCGGGTGACAAAGCCCCATACGCTCGAGGACCGGACGCGGTGCCGCCG
+CTGCCTTTCGGGCCCGTCCCCCGGGATCG"
+      }
+    },
+    seq {
+      id {
+        local str "Seq2",
+        general {
+          db "BankIt",
+          tag str "1744698/Seq2"
+        },
+        general {
+          db "TMSMART",
+          tag id 46783827
+        }
+      },
+      descr {
+        title "[Aspergillus niger SAF8-EGY ]",
+        source {
+          genome genomic,
+          org {
+            taxname "Pseudomonas aerignosa"
+          },
+          subtype {
+            {
+              subtype isolation-source,
+              name "dirt under rock near stream"
+            }
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness complete
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 191,
+        topology circular,
+        seq-data iupacna "GAACTCGGGGATCCCTACCTGATCCGAGGTCACCTGGGAAAGAATGGTTGGA
+AAACGTCGGCAGGCGCCGGCCAATCCTACAGAGCATGTGACAAAGCCCCATACGCTCGAGGATCGGACGCGGTGCCGC
+CGCTGCCTTTCGGGCCCGTCCCCCCGGAGAGGGGGACGGCGACCCAACACACAAGCCGGAT"
+      }
+    },
+    seq {
+      id {
+        local str "Seq3",
+        general {
+          db "BankIt",
+          tag str "1744698/Seq3"
+        },
+        general {
+          db "TMSMART",
+          tag id 46783828
+        }
+      },
+      descr {
+        title "[Penicillium sp. SAF6-EGY]",
+        source {
+          genome genomic,
+          org {
+            taxname "3"
+          }
+        },
+        molinfo {
+          biomol other-genetic,
+          completeness complete
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 203,
+        topology circular,
+        seq-data iupacna "GGAACTGGGAACTCCTACCTGATCCGAGGTAACCGTGGTAAAAAAACATGGT
+GGTGACCAACCCCCGCAGGTCCCTCCCGAGCGAGTGACAGAGCCCCATACGCTCGAGGACCAGACGGACGTCGCCGCT
+GCCTTTCGGGCAGGTCCCCGGGGGGACCACACCCAACACACAAGCCGTGTATACACCTGTTGCTGAACTCTGA"
+      }
+    }
+  }
+}

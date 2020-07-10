@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.logging.lib.txt 578860 2019-01-28 14:03:08Z dicuccio $
+#############################################################################
+
+NCBI_begin_lib(xlogging)
+  NCBI_sources(
+    message listener
+  )
+  NCBI_uses_toolkit_libraries(xncbi)
+  NCBI_project_watchers(foleyjp)
+NCBI_end_lib()

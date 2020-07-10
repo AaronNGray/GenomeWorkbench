@@ -1,0 +1,18 @@
+# $Id: Makefile.w_aln_table.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# Alignment table view lib
+
+ASN_DEP = seq seqset
+
+SRC = aln_table aln_table_ds alnspan_vertmodel alnspan_widget alnspan_settings_dlg \
+	  annot_compare annot_compare_ds
+
+LIB = w_aln_table
+
+DLL_LIB = w_wx gui_utils xalgoseq xalnmgr ximage submit tables $(SOBJMGR_LIBS)
+
+CPPFLAGS = $(WXWIDGETS_INCLUDE) $(ORIG_CPPFLAGS)
+
+LIBS = $(WXWIDGETS_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(DL_LIBS) $(ORIG_LIBS)
+
+REQUIRES = algo

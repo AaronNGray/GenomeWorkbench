@@ -1,0 +1,513 @@
+Seq-entry ::= set {
+  class phy-set,
+  descr {
+    create-date std {
+      year 2018,
+      month 9,
+      day 28
+    }
+  },
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Fusarium oxysporium",
+            orgname {
+              mod {
+                {
+                  subtype isolate,
+                  subname "N9054"
+                },
+                {
+                  subtype nat-host,
+                  subname "strawberry"
+                }
+              }
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Australia"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "KY657508"
+          },
+          descr {
+            molinfo {
+              biomol genomic
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "KY657508"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 671,
+            seq-data ncbi2na '8745F06DB6D36946D877A42D851EE2C775D8438933794DB4
+35614217A6AB3F740B4131E136FD1216B47E3714B9AEB36109814D882F620AF2D1FD5F43666D7F
+95363F55C61D806E5671567621400FF90CE16C3FFFAEA91F15651F8986A26FE577C53DD105D0E2
+E6DB46ED092D1C14F410CA096789DAC2AF5F42C65EAF7E109D0A589B89BACD14D8CF9DDE82F621
+D7671CED16D3EB3BED9D39F4F71F77DB1C13345486756B45B8FD34'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 2,
+                  data gene {
+                    locus "EF1a"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 670,
+                    strand plus,
+                    id local str "KY657508",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                },
+                {
+                  id local id 3,
+                  data rna {
+                    type mRNA,
+                    ext name "translation elongation factor 1 alpha"
+                  },
+                  partial TRUE,
+                  location mix {
+                    int {
+                      from 0,
+                      to 54,
+                      strand plus,
+                      id local str "KY657508",
+                      fuzz-from lim lt
+                    },
+                    int {
+                      from 156,
+                      to 218,
+                      strand plus,
+                      id local str "KY657508"
+                    },
+                    int {
+                      from 451,
+                      to 589,
+                      strand plus,
+                      id local str "KY657508"
+                    },
+                    int {
+                      from 645,
+                      to 670,
+                      strand plus,
+                      id local str "KY657508",
+                      fuzz-to lim gt
+                    }
+                  },
+                  xref {
+                    {
+                      id local id 1
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "KY657508_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness no-ends
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "KY657508_1"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 94,
+            seq-data iupacaa "THLNVVVIGHVDSGKSTTTGHLIYQCGGIDKRTIEKFEKEAAELGKGS
+FKYAWVLDKLKAERERGITIDIALWKFETPRYYVTVIDAPGHRDFI"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  id local id 4,
+                  data prot {
+                    name {
+                      "translation elongation factor 1 alpha"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 93,
+                    id local str "KY657508_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              id local id 1,
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              product whole local str "KY657508_1",
+              location mix {
+                int {
+                  from 0,
+                  to 54,
+                  strand plus,
+                  id local str "KY657508",
+                  fuzz-from lim lt
+                },
+                int {
+                  from 156,
+                  to 218,
+                  strand plus,
+                  id local str "KY657508"
+                },
+                int {
+                  from 451,
+                  to 589,
+                  strand plus,
+                  id local str "KY657508"
+                },
+                int {
+                  from 645,
+                  to 670,
+                  strand plus,
+                  id local str "KY657508",
+                  fuzz-to lim gt
+                }
+              },
+              xref {
+                {
+                  id local id 3
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    seq {
+      id {
+        local str "KY657509"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Fusarium oxysporum",
+            db {
+              {
+                db "taxon",
+                tag id 5507
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Fusarium",
+                species "oxysporum"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype isolate,
+                  subname "N9055"
+                },
+                {
+                  subtype nat-host,
+                  subname "strawberry"
+                }
+              },
+              lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Hypocreomycetidae; Hypocreales; Nectriaceae; Fusarium;
+ Fusarium oxysporum species complex",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Australia"
+            }
+          }
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "KY657509"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 671,
+        seq-data ncbi2na '8745F06DB6D36946D877A42D851EE2C775D8438933794DB43561
+4217A6AB3F740B4131E136FD1216B47E3714B9AEB36109814D882F620AF2D1FD5F43666D7F9536
+3F55C61D806E5671567621400FF90CE16C3FFFAEA91F15651F8986A26FE577C53DD105D0E2E6DB
+46ED092D1C14F410CA096789DAC2AF5F42C65EAF7E109D0A589B89BACD14D8CF9DDE82F621D767
+1CED16D3EB3BED9D39F4F71F77DB1C13345486756B45B8FD34'H
+      }
+    },
+    seq {
+      id {
+        local str "KY657510"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Fusarium oxysporum",
+            db {
+              {
+                db "taxon",
+                tag id 5507
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Fusarium",
+                species "oxysporum"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype isolate,
+                  subname "N9103"
+                },
+                {
+                  subtype nat-host,
+                  subname "strawberry"
+                }
+              },
+              lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Hypocreomycetidae; Hypocreales; Nectriaceae; Fusarium;
+ Fusarium oxysporum species complex",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Australia"
+            }
+          }
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "KY657510"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 671,
+        seq-data ncbi2na '8745F06DB6D36946D877A42D851EE2C775D8438933794DB43561
+4217A6AB3F740B4131E136FD1216B47E3714B9AEB36109814D882F620AF2D1FD5F43666D7F9536
+3F55C61D806E5671567621400FF90CE16C3FFFAEA91F15651F8986A26FE577C53DD205D0E2E6DB
+46ED092D1C14F410CA096789DAC2AF5F42C65EAF7E109D0A589B89BACD14D8CF9DDE82F621D767
+1CED16D3EB3BED9D39F4F71F77DB1C13347486756B45B8FD34'H
+      }
+    },
+    seq {
+      id {
+        local str "KY657511"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Fusarium oxysporum",
+            db {
+              {
+                db "taxon",
+                tag id 5507
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Fusarium",
+                species "oxysporum"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype isolate,
+                  subname "N10010"
+                },
+                {
+                  subtype nat-host,
+                  subname "strawberry"
+                }
+              },
+              lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Hypocreomycetidae; Hypocreales; Nectriaceae; Fusarium;
+ Fusarium oxysporum species complex",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Australia"
+            }
+          }
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "KY657511"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 671,
+        seq-data ncbi2na '8745F06DB6D36946D877A42D851EE2C775D8438933794DB43561
+4217A6AB3F740B4131E136FD1216B47E3714B9AEB36109814D882F620AF2D1FD5F43666D7F9536
+3F55C61D806E5671567621400FF90CE16C3FFFAEA91F15651F8986A26FE577C53DD105D0E2E6DB
+46ED092D1C147410CA096789DAC2AF5F42C65EAF7E109D0A589B89BACD14D8CF9DDE82F621D767
+1CED16D3EB3BED9D39F4F71F77DB1C13345486756B45B8FD34'H
+      }
+    },
+    seq {
+      id {
+        local str "KY657512"
+      },
+      descr {
+        molinfo {
+          biomol genomic
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Fusarium oxysporum",
+            db {
+              {
+                db "taxon",
+                tag id 5507
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Fusarium",
+                species "oxysporum"
+              },
+              attrib "specified",
+              mod {
+                {
+                  subtype isolate,
+                  subname "N10226"
+                },
+                {
+                  subtype nat-host,
+                  subname "strawberry"
+                }
+              },
+              lineage "Eukaryota; Fungi; Dikarya; Ascomycota; Pezizomycotina;
+ Sordariomycetes; Hypocreomycetidae; Hypocreales; Nectriaceae; Fusarium;
+ Fusarium oxysporum species complex",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          },
+          subtype {
+            {
+              subtype country,
+              name "Australia"
+            }
+          }
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "KY657512"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 671,
+        seq-data ncbi2na '8745F06DB6D36946D877A42D851EE2C775D8438933794DB43561
+4217A6AB3F740B4131E136FD1216B47E3714B9AEB36109814D882F620AF2D1FD5F43666D7F9536
+3F55C61D806E5671567621400FF90CE16C3FFFAEA91F15651F8986A26FE577C53DD205D0E2E6DB
+46ED092D1C14F410CA096789DAC2AF5F42C65EAF7E109D0A589B89BACD14D8CF9DDE82F621D767
+1CED16D3EB3BED9D39F4F71F77DB1C13347486756B45B8FD34'H
+      }
+    }
+  }
+}

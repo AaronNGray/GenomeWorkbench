@@ -1,0 +1,144 @@
+Seq-annot ::= {
+  data ftable {
+    {
+      data cdregion {
+        code {
+          id 11
+        }
+      },
+      product whole genbank {
+        accession "ANT40817",
+        version 1
+      },
+      location int {
+        from 546,
+        to 725,
+        strand plus,
+        id genbank {
+          accession "KX279892",
+          version 1
+        }
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "gb|ANT40817.1|"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "hypothetical protein"
+            }
+          }
+        }
+      }
+    },
+    {
+      data cdregion {
+        code {
+          id 11
+        }
+      },
+      product whole genbank {
+        accession "ANT40813",
+        version 1
+      },
+      location int {
+        from 725,
+        to 949,
+        strand plus,
+        id genbank {
+          accession "KX279892",
+          version 1
+        }
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "gb|ANT40813.1|"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "hypothetical protein"
+            }
+          }
+        }
+      }
+    },
+    {
+      data cdregion {
+        code {
+          id 11
+        }
+      },
+      product whole genbank {
+        accession "ANT40804",
+        version 1
+      },
+      location int {
+        from 1340,
+        to 1693,
+        strand plus,
+        id genbank {
+          accession "KX279892",
+          version 1
+        }
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "gb|ANT40804.1|"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "hypothetical protein"
+            }
+          }
+        }
+      }
+    },
+    {
+      data cdregion {
+        code {
+          id 11
+        }
+      },
+      product whole genbank {
+        accession "ANT40826",
+        version 1
+      },
+      location int {
+        from 1696,
+        to 1809,
+        strand plus,
+        id genbank {
+          accession "KX279892",
+          version 1
+        }
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "gb|ANT40826.1|"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "hypothetical protein"
+            }
+          }
+        }
+      }
+    }
+  }
+}

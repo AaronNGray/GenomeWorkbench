@@ -1,0 +1,12 @@
+# $Id: Makefile.in 592898 2019-09-09 18:21:10Z ucko $
+
+# Meta-makefile (algo/align)
+#################################
+
+SUB_PROJ = util nw splign contig_assembly prosplign mergetree ngalign \
+           advanced_cleanup
+
+REQUIRES = objects
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

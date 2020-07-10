@@ -1,0 +1,33 @@
+MACRO ExtendCDSgeneNearEnds_01 "Extend 5' end of feature to end of sequence for CDS features only objects  with 5' end no more than 3 from end of sequence and retranslate affected coding regions"
+VAR
+    retranslate = true
+FOR EACH Cdregion
+WHERE DISTFROMSTART() <= 3
+DO
+    ExtendFeatToSeqStart(retranslate);
+DONE
+------------------------------------------------------------------------------
+MACRO ExtendCDSgeneNearEnds_02 "Extend 3' end of feature to end of sequence for CDS features only objects with 3' end no more than 3 from end of sequence and retranslate affected coding regions"
+VAR
+    retranslate = true
+FOR EACH Cdregion
+WHERE DISTFROMSTOP() <= 3
+DO
+    ExtendFeatToSeqStop(retranslate);
+DONE
+------------------------------------------------------------------------------
+MACRO ExtendCDSgeneNearEnds_03 "Extend 5' end of feature to end of sequence for gene features only objects  with 5' end no more than 3 from end of sequence"
+FOR EACH Gene
+WHERE DISTFROMSTART() <= 3
+DO
+    ExtendFeatToSeqStart();
+DONE
+------------------------------------------------------------------------------
+MACRO ExtendCDSgeneNearEnds_04 "Extend 3' end of feature to end of sequence for gene features only objects with 3' end no more than 3 from end of sequence"
+FOR EACH Gene
+WHERE DISTFROMSTOP() <= 3
+DO
+    ExtendFeatToSeqStop();
+DONE
+------------------------------------------------------------------------------
+

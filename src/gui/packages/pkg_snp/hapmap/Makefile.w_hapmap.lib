@@ -1,0 +1,20 @@
+# $Id: Makefile.w_hapmap.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# Hapmap library (Hapmap in Graphical View)
+
+LIB = w_hapmap
+
+SRC = hapmap_ds hapmap_track
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+LIBS = $(WXWIDGETS_GL_LIBS) $(GLEW_LIBS) $(WXWIDGETS_LIBS) $(IMAGE_LIBS) \
+       $(VDB_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(CMPRS_LIBS) $(DL_LIBS) \
+       $(ORIG_LIBS)
+POST_LINK = $(VDB_POST_LINK)
+
+DLL_LIB = w_seq_graphic w_wx ximage $(COMPRESS_LIBS) xutil xncbi
+
+REQUIRES = objects wxWidgets OpenGL
+
+ASN_DEP = seqset

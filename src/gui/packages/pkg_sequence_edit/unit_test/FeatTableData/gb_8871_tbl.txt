@@ -1,0 +1,475 @@
+Seq-annot ::= {
+  data ftable {
+    {
+      data gene {
+        locus "orf1ab"
+      },
+      location int {
+        from 250,
+        to 21539,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data cdregion {
+      },
+      except TRUE,
+      product whole local str "T258377_1",
+      location mix {
+        int {
+          from 250,
+          to 13452,
+          strand plus,
+          id local str "T258377"
+        },
+        int {
+          from 13452,
+          to 21539,
+          strand plus,
+          id local str "T258377"
+        }
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "T258377_1"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "orf1ab polyprotein"
+            }
+          }
+        }
+      },
+      except-text "ribosomal slippage"
+    },
+    {
+      data cdregion {
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 250,
+        to 13467,
+        strand plus,
+        id local str "T258377"
+      },
+      qual {
+        {
+          qual "protein_id",
+          val "T258377_2"
+        }
+      },
+      xref {
+        {
+          data prot {
+            name {
+              "orf1a polyprotein"
+            }
+          }
+        }
+      }
+    },
+    {
+      data prot {
+        name {
+          "leader protein"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 250,
+        to 789,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp2"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 790,
+        to 2703,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp3"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 2704,
+        to 8538,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp4"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 8539,
+        to 10038,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "3C-like proteinase"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 10039,
+        to 10956,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp6"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 10957,
+        to 11826,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp7"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 11827,
+        to 12075,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp8"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 12076,
+        to 12669,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp9"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 12670,
+        to 13008,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp10"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 13009,
+        to 13425,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "RNA-dependent RNA polymerase"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location mix {
+        int {
+          from 13426,
+          to 13452,
+          strand plus,
+          id local str "T258377"
+        },
+        int {
+          from 13452,
+          to 16220,
+          strand plus,
+          id local str "T258377"
+        }
+      }
+    },
+    {
+      data prot {
+        name {
+          "leader protein"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 250,
+        to 789,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp2"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 790,
+        to 2703,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp3"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 2704,
+        to 8538,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp4"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 8539,
+        to 10038,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "3C-like proteinase"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 10039,
+        to 10956,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp6"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 10957,
+        to 11826,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp7"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 11827,
+        to 12075,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp8"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 12076,
+        to 12669,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp9"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 12670,
+        to 13008,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp10"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 13009,
+        to 13425,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "nsp11"
+        },
+        processed mature
+      },
+      product whole local str "T258377_2",
+      location int {
+        from 13426,
+        to 13464,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "helicase"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 16221,
+        to 18023,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "3'-to-5' exonuclease"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 18024,
+        to 19604,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "endoRNAse"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 19605,
+        to 20642,
+        strand plus,
+        id local str "T258377"
+      }
+    },
+    {
+      data prot {
+        name {
+          "2'-O-ribose methyltransferase"
+        },
+        processed mature
+      },
+      product whole local str "T258377_1",
+      location int {
+        from 20643,
+        to 21536,
+        strand plus,
+        id local str "T258377"
+      }
+    }
+  }
+}

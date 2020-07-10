@@ -1,0 +1,23 @@
+# $Id: Makefile.w_hit_matrix.lib 40089 2017-12-19 17:16:31Z katargir $
+
+# Hit Matrix Widget lib
+
+ASN_DEP = seq seqset
+
+SRC = align_seq_table wx_choose_seq_dlg dense_hit dense_ds density_map_ds \
+      diag_hit gradient_panel hit_matrix_renderer \
+      wx_histogram_dlg hit_coloring hit_matrix_ds_builder hit_matrix_graph \
+      hit_matrix_pane hit_matrix_widget seq_graph wx_score_dlg std_seg_hit save_hit_matrix_pdf_dlg
+
+LIB = w_hit_matrix
+
+CPPFLAGS = $(ORIG_CPPFLAGS) $(GLEW_INCLUDE) $(OPENGL_INCLUDE) $(WXWIDGETS_INCLUDE)
+
+DLL_LIB = w_wx w_gl w_data gui_graph gui_opengl gui_print gui_utils \
+          gui_objutils xalnmgr ximage submit tables \
+          $(COMPRESS_LIBS) $(SOBJMGR_LIBS)
+
+LIBS = $(WXWIDGETS_LIBS) $(GLEW_LIBS) $(BLAST_THIRD_PARTY_LIBS) $(CMPRS_LIBS) \
+       $(DL_LIBS) $(ORIG_LIBS)
+
+REQUIRES = OpenGL wxWidgets objects

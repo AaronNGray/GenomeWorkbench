@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.null2.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db95_null2)
+  NCBI_sources(null2 common)
+  NCBI_add_test(test-db95 db95_null2)
+NCBI_end_app()
+

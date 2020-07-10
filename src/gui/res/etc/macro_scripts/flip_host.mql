@@ -1,0 +1,66 @@
+MACRO FlipHost_01 "Apply # to host (prefix (no separator)) where source host contains '(' (case-sensitive)"
+VAR
+    new_value = "#"
+    existing_text = "ePrepend"
+    delimiter = ""
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "nat-host" AND CONTAINS("o.subname", "(");
+    SetStringQual("o.subname", new_value, existing_text);
+DONE
+------------------------------------------------------------------------------
+MACRO FlipHost_02 "Edit host replace ' (' with '$ ('"
+VAR
+    find_text = " ("
+    repl_text = "$ ("
+    location = "anywhere"
+    case_sensitive = true
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "nat-host";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO FlipHost_03 "Parse text just after '(', up to ')' from host to host(prefix separated by space)"
+VAR
+    include_left = false
+    include_right = false
+    case_sens_parse = true
+    whole_word = false
+    rmv_from_parsed = true
+    rmv_left = true
+    rmv_right = true
+    cap_change = "none"
+    existing_text = "ePrepend"
+    delimiter = " "
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "nat-host";
+    text = ParsedText("o.subname", "(", include_left, ")", include_right, case_sens_parse, whole_word, rmv_from_parsed, rmv_left, rmv_right);
+    AECRParseStringQual(text, "o.subname", cap_change, existing_text, delimiter);
+DONE
+------------------------------------------------------------------------------
+MACRO FlipHost_04 "Edit host replace '#' with '('"
+VAR
+    find_text = "#"
+    repl_text = "("
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "nat-host";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------
+MACRO FlipHost_05 "Edit host replace '$' with ')'"
+VAR
+    find_text = "$"
+    repl_text = ")"
+    location = "anywhere"
+    case_sensitive = false
+FOR EACH BioSource
+DO
+    o = Resolve("org.orgname.mod") WHERE o.subtype = "nat-host";
+    EditStringQual ("o.subname", find_text, repl_text, location, case_sensitive);
+DONE
+------------------------------------------------------------------------------

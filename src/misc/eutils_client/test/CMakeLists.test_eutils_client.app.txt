@@ -1,0 +1,11 @@
+#############################################################################
+# $Id: CMakeLists.test_eutils_client.app.txt 593581 2019-09-20 13:30:24Z gouriano $
+#############################################################################
+
+NCBI_begin_app(test_eutils_client)
+  NCBI_sources(test_eutils_client)
+  NCBI_uses_toolkit_libraries(eutils_client)
+  NCBI_project_watchers(grichenk)
+  NCBI_add_test(test_eutils_client -db pubmed -count dog)
+NCBI_end_app()
+

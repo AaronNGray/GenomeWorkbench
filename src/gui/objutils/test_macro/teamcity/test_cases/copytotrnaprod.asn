@@ -1,0 +1,140 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Fagopyrum esculentum",
+            common "common buckwheat",
+            db {
+              {
+                db "taxon",
+                tag id 3617
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Viridiplantae;
+ Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta;
+ Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae;
+ Pentapetalae; Caryophyllales; Polygonaceae; Polygonoideae; Fagopyreae;
+ Fagopyrum",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 184,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATCAGAAATTTGA
+AAGTACCGGGGAGGCTCTCCGTAAATTGATTGAACGTAAGATTAAAATTAATCATACCCCACCATAGACCCCAACACA
+TGGGTGGACTTAAACCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data gene {
+                locus "S",
+                desc "terminase large subunit gene"
+              },
+              partial TRUE,
+              location int {
+                from 1,
+                to 99,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                },
+                fuzz-to lim gt
+              }
+            },
+            {
+              data rna {
+                type tRNA
+              },
+              partial TRUE,
+              location packed-int {
+                {
+                  from 1,
+                  to 18,
+                  strand plus,
+                  id genbank {
+                    accession "KF591393"
+                  }
+                },
+                {
+                  from 24,
+                  to 99,
+                  strand plus,
+                  id genbank {
+                    accession "KF591393"
+                  },
+                  fuzz-to lim gt
+                }
+              }
+            },
+            {
+              data gene {
+                locus "R"
+              },
+              location int {
+                from 119,
+                to 183,
+                strand minus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            },
+            {
+              data rna {
+                type tRNA
+              },
+              location int {
+                from 119,
+                to 183,
+                strand minus,
+                id genbank {
+                  accession "KF591393"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+# $Id: Makefile.xaligncleanup.lib 592898 2019-09-09 18:21:10Z ucko $
+LIB	= xaligncleanup
+SRC	= advanced_cleanup
+DLL_LIB = xalgoalignsplign prosplign

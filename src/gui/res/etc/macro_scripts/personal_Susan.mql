@@ -1,0 +1,28 @@
+MACRO PersonalMacro_Susan_01 "Convert haplotype to haplogroup (overwrite existing text)"
+VAR
+    cap_change = "none"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH BioSource
+DO
+    src = Resolve("subtype") WHERE src.subtype = "haplotype";
+    ConvertStringQual("src.name", "haplogroup", cap_change, strip_name, existing_text);
+    RemoveModifier(src);
+DONE
+------------------------------------------------------------------------------
+MACRO PersonalMacro_Susan_02 "Autodef complete genome with modifier haplogroup, look for noncoding products in misc_feat with comments"
+VAR
+    list_feat_rule = "Complete Genome"
+    misc_feat_rule = "NoncodingProductFeat"
+FOR EACH TSEntry
+Do
+    Autodef(list_feat_rule, misc_feat_rule, "haplogroup");
+Done
+------------------------------------------------------------------------------
+MACRO PersonalMacro_Susan_03 "Remove Comment"
+FOR EACH Seqdesc
+WHERE CHOICETYPE() = "comment"
+DO
+    RemoveDescriptor();
+DONE
+------------------------------------------------------------------------------

@@ -1,0 +1,13 @@
+# $Id: Makefile.in 14974 2007-09-14 12:13:37Z dicuccio $
+# Author:  Mike DiCuccio
+
+# Meta-makefile for libgui_opengl
+#################################
+
+LIB_PROJ = gui_glmesa
+SUB_PROJ = demo
+
+REQUIRES = MESA
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

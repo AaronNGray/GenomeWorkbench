@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.ncbimime.asn.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbimime)
+  NCBI_dataspecs(ncbimime.asn)
+  NCBI_uses_toolkit_libraries(cdd)
+NCBI_end_lib()
+

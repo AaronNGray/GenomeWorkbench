@@ -1,0 +1,595 @@
+Seq-entry ::= set {
+  class nuc-prot ,
+  descr {
+    source {
+      genome genomic ,
+      org {
+        taxname "Oplegnathus fasciatus" ,
+        common "barred knifejaw" ,
+        db {
+          {
+            db "taxon" ,
+            tag
+              id 163134 } } ,
+        orgname {
+          name
+            binomial {
+              genus "Oplegnathus" ,
+              species "fasciatus" } ,
+          lineage "Eukaryota; Metazoa; Chordata; Craniata; Vertebrata;
+ Euteleostomi; Actinopterygii; Neopterygii; Teleostei; Neoteleostei;
+ Acanthomorphata; Eupercaria; Centrarchiformes; Terapontoidei; Oplegnathidae;
+ Oplegnathus" ,
+          gcode 1 ,
+          mgcode 2 ,
+          div "VRT" } } } ,
+    pub {
+      pub {
+        pmid 28111358 ,
+        article {
+          title {
+            name "Identification of a gene encoding a membrane-anchored
+ toll-like receptor 5 (TLR5M) in Oplegnathus fasciatus that responds to
+ flagellin challenge and activates NF-kappaB." } ,
+          authors {
+            names
+              std {
+                {
+                  name
+                    name {
+                      last "Umasuthan" ,
+                      first "N" ,
+                      initials "N." } } ,
+                {
+                  name
+                    name {
+                      last "Bathige" ,
+                      first "S" ,
+                      initials "S.D." } } ,
+                {
+                  name
+                    name {
+                      last "Thulasitha" ,
+                      first "W" ,
+                      initials "W.S." } } ,
+                {
+                  name
+                    name {
+                      last "Jayasooriya" ,
+                      first "R" ,
+                      initials "R.G." } } ,
+                {
+                  name
+                    name {
+                      last "Shin" ,
+                      first "Y" ,
+                      initials "Y." } } ,
+                {
+                  name
+                    name {
+                      last "Lee" ,
+                      first "J" ,
+                      initials "J." } } } } ,
+          from
+            journal {
+              title {
+                iso-jta "Fish Shellfish Immunol." ,
+                ml-jta "Fish Shellfish Immunol" ,
+                issn "1095-9947" ,
+                name "Fish & shellfish immunology" } ,
+              imp {
+                date
+                  std {
+                    year 2017 ,
+                    month 1 ,
+                    day 19 } ,
+                volume "62" ,
+                pages "276-290" ,
+                language "eng" ,
+                pubstatus aheadofprint ,
+                history {
+                  {
+                    pubstatus received ,
+                    date
+                      std {
+                        year 2016 ,
+                        month 7 ,
+                        day 21 } } ,
+                  {
+                    pubstatus revised ,
+                    date
+                      std {
+                        year 2016 ,
+                        month 12 ,
+                        day 12 } } ,
+                  {
+                    pubstatus accepted ,
+                    date
+                      std {
+                        year 2017 ,
+                        month 1 ,
+                        day 13 } } ,
+                  {
+                    pubstatus pubmed ,
+                    date
+                      std {
+                        year 2017 ,
+                        month 1 ,
+                        day 24 ,
+                        hour 6 ,
+                        minute 0 } } ,
+                  {
+                    pubstatus medline ,
+                    date
+                      std {
+                        year 2017 ,
+                        month 1 ,
+                        day 24 ,
+                        hour 6 ,
+                        minute 0 } } ,
+                  {
+                    pubstatus other ,
+                    date
+                      std {
+                        year 2017 ,
+                        month 1 ,
+                        day 24 ,
+                        hour 6 ,
+                        minute 0 } } } } } ,
+          ids {
+            pubmed 28111358 ,
+            pii "S1050-4648(17)30030-X" ,
+            doi "10.1016/j.fsi.2017.01.020" ,
+            other {
+              db "ELocationID pii" ,
+              tag
+                str "S1050-4648(17)30030-X" } ,
+            other {
+              db "ELocationID doi" ,
+              tag
+                str "10.1016/j.fsi.2017.01.020" } } } } } ,
+    pub {
+      pub {
+        sub {
+          authors {
+            names
+              std {
+                {
+                  name
+                    name {
+                      last "Umasuthan" ,
+                      first "Navaneethaiyer" ,
+                      initials "N." } } ,
+                {
+                  name
+                    name {
+                      last "Lee" ,
+                      first "Jehee" ,
+                      initials "J." } } } ,
+            affil
+              std {
+                affil "Jeju National University" ,
+                div "Dept. of Marine Life Sciences" ,
+                city "Jeju Si" ,
+                sub "Jeju" ,
+                country "Republic of Korea" ,
+                street "66 Jejudaehakno, Ara-Dong" ,
+                postal-code "690 756" } } ,
+          medium email ,
+          date
+            std {
+              year 2016 ,
+              month 10 ,
+              day 16 } } } } ,
+    user {
+      type
+        str "StructuredComment" ,
+      data {
+        {
+          label
+            str "StructuredCommentPrefix" ,
+          data
+            str "##Assembly-Data-START##" } ,
+        {
+          label
+            str "Assembly Method" ,
+          data
+            str "GS De Novo Assembler v. 2.9" } ,
+        {
+          label
+            str "Sequencing Technology" ,
+          data
+            str "454" } ,
+        {
+          label
+            str "StructuredCommentSuffix" ,
+          data
+            str "##Assembly-Data-END##" } } } ,
+    user {
+      type
+        str "Submission" ,
+      data {
+        {
+          label
+            str "SmartComment" ,
+          data
+            str "TOTAL # OF SEQS:2" } ,
+        {
+          label
+            str "AdditionalComment" ,
+          data
+            str "BankIt1960943" } } } ,
+    user {
+      type
+        str "Submission" ,
+      data {
+        {
+          label
+            str "AdditionalComment" ,
+          data
+            str "CORRECTIONS: Oplegnathus fasciatus myd88 and tlr5m" } } } ,
+    update-date
+      std {
+        year 2016 ,
+        month 10 ,
+        day 16 ,
+        hour 4 ,
+        minute 37 ,
+        second 35 } ,
+    user {
+      type
+        str "NcbiCleanup" ,
+      data {
+        {
+          label
+            str "method" ,
+          data
+            str "ExtendedSeqEntryCleanup" } ,
+        {
+          label
+            str "version" ,
+          data
+            int 1 } ,
+        {
+          label
+            str "month" ,
+          data
+            int 2 } ,
+        {
+          label
+            str "day" ,
+          data
+            int 27 } ,
+        {
+          label
+            str "year" ,
+          data
+            int 2017 } } } } ,
+  seq-set {
+    seq {
+      id {
+        local
+          str "Seq1" ,
+        general {
+          db "BankIt" ,
+          tag
+            str "1960943/Seq1" } ,
+        general {
+          db "TMSMART" ,
+          tag
+            id 73279453 } ,
+        genbank {
+          accession "KY014283" } } ,
+      descr {
+        title "Oplegnathus fasciatus myeloid differentiation factor 88 (myd88)
+ gene, complete cds." ,
+        molinfo {
+          biomol genomic } ,
+        user {
+          type
+            str "Submission" ,
+          data {
+            {
+              label
+                str "AdditionalComment" ,
+              data
+                str "LocalID:Seq1" } } } ,
+        user {
+          type
+            str "OriginalID" ,
+          data {
+            {
+              label
+                str "LocalId" ,
+              data
+                str "Seq1" } } } ,
+        user {
+          class "1.0" ,
+          type
+            str "AutodefOptions" ,
+          data {
+            {
+              label
+                str "UseLabels" ,
+              data
+                bool TRUE } ,
+            {
+              label
+                str "LeaveParenthetical" ,
+              data
+                bool TRUE } ,
+            {
+              label
+                str "SpecifyNuclearProduct" ,
+              data
+                bool TRUE } ,
+            {
+              label
+                str "MaxMods" ,
+              data
+                int 0 } ,
+            {
+              label
+                str "FeatureListType" ,
+              data
+                str "List All Features" } ,
+            {
+              label
+                str "MiscFeatRule" ,
+              data
+                str "Delete" } ,
+            {
+              label
+                str "HIVRule" ,
+              data
+                str "WantBoth" } } } } ,
+      inst {
+        repr raw ,
+        mol dna ,
+        length 6119 ,
+        topology not-set ,
+        strand ds ,
+        seq-data
+          ncbi2na '7A7B1265ACCA0385522004A0BD04E342429761C610C3B3BF8823BB83EF2
+FD3F57FC4FCD289FD0FBFB9C403B70B447FBF796D538EB8E014B103B82027B8CEC0FD2D3E3E2FB
+E5EBC54E6DE7F2AE1CEC692EAF5E2792A8D2AA9E1B91197E857491E7D9ED139D3BB5763885C55D
+5536D3265E0E89211B010805AEAEFE203282E84338FBB9E7BEFF35FCE9F40042EBA0EC2C2C4FC7
+42C3B1F0B10BFE2B43F08FF170041238C25EC0310EEFBC04F010BAF5405FF0EEF157C7C00926DC
+BEA153EDD3FC8EDC22EBE92F51518806F57701F740E9F3F830F9D0ED80A414102CFD100031200B
+1200BF083E0C0FDFFBE4ABCAB857FA2AB5615713EA051E8700707B3002CBC43C9F45FB527110B0
+0E71F313E3934370C3B4CCC30CED1DD3894FFDE4814B2FF1FF8C7F0B03F278C3DF7F1EF130828F
+F83A1FF1FB0EAACFACEFC7C2C0A37831F7D451E9010C3130001293E011ED1EDF7FC05344B0A903
+BF3FD7D7FF483A44A97514228280A54DD11D50104DA848A4C8FDCFDD4224005EE37175009109E0
+86E868E748A3A09D4B8E437E87BE7A00037BBE44586EF8F8A82F8FE280E4FB5A7C67C0C7E07D1E
+373394D2F7720030974C0817F4E078B9C6FD786E79809447BAFFCBFD192E0D2D12E37B7DEFBBFB
+0F7C43FDF3B7BF930127BEF1FFFF3D1F122BE5EFEE92F100C03E9D3A0BFF3BBFFEE390E4B03C45
+7FD493C47437E077EBF59FFCD333333333333333333333333309DE0CC84200A812011BC2353F31
+FF6504FF5FEB971ED9594E11C3430038DEFDBF5AF184B0F72C0D0C3F2E8040777695AA9B782B01
+2E61D75559B864B592784D1F5FBDDBB4AC17BA1978261D9C7503465B7B2F10EFD5B7AE3D07066B
+ADD6801FD813A6EF58D48AE87E84635574F91E0CE26E2800BEA1ECDE05528152E97687A3A6BE48
+A03A9F47C5E88C481CE09B5289545026BDE8A9E9299AD468661AEA827BED0D7864AE88802136E8
+A375B5FE32B9A03F7BD1FDC5FFC02DF3F4FD29138ECB07CC9F017BFD3656E3E07D280E3D139783
+D513E400B3F11138F48A3C2119F9D0332D3CF0ECB0C27883C4FDED49EF7213FF1D00CCFD032F4C
+07F75549F1EEC7BBBBBBBBBBBBBBEFE74CC4DEFD3148E28ED282C7B8834820829E2556BD2BD48A
+F849EED5D915488AFEB3457A28E15E0AD2CF4CCECCCCCCCCCCCCCCCCCCCCCCCCCC7B138F4910E7
+EC34F1777030B3382EBD0389D4D70507104700E79F13BC393BB0C105434EE3304F304E0FA94FF9
+30E2C7F07FC317C2C4FCDE300704C282C4F48C3BAFF1FF270B028DE2C4CF5146AC30802E04CD12
+F12CD01C47F89FFB3C830108C0393BCE3CBF3CAC22FBEC4CEF79C87E722AEDE452EF357D045088
+123FC2CE4C0E4EDA38042E00C805F4F0F20F9FF72B452434027FE5BF0437539C5E7BFDDD486C15
+703B443F241DC93840CF703BB93FB0E47CC1252EFFE742D013884BBF924F3FDEE30A4D91280275
+076D570DE10FCDE09DC344EDE451E453D47D5E4497EEBB1FBCEFF9F7BA0C4D12F7BA03F3EFB5EA
+F909E7990C7A1F00A30302FBBCF83E0D4AE75627BD8E5F4DE71E52261F62FED4E238D6E27A0486
+8B109E09EEEEF61223B5D5A9D7BBBA14D1CB89D3E208AC63BE1139C14ED4AD4F7B63FA7FF07F0F
+7072001E1028067A44EA94ADEB7F01D42CAD9C40404A9270240947EE7E35EE7FF2B36FE4E41107
+F33FB0F78E4E04487DE6E44B7D103B3009128EEC52979E7CF14B41D0ECFF1CDE09DCCEEE854003
+A02A02F44844021380BF4BCE9202701F9703F233202517EE2577DF00DF5C3F787744FF9041C433
+BB8537B92BB08A3AEBAE3F78E0C5F8498E5EE1FD2102FE774977B56B0BCCFFEF33C4491CFF5FFF
+DE1FB9FB9793BCFC5FFFFFD7FE7BF4A2760301A74F52EBB10B6384096F5524D719F5D14CEE1C45
+697E444A5EBDEAE69E9409DDD1E530D05292F1EC0AA33E843A5012C4AF42EEE73E7E635135E7A7
+DE0547E53F1EECCC6B333CC39C7BFBBF5CE085112E3F7833FF3CE05D0BE442F747919253CEC03F
+430C1323EC5E51CFE8FCE42F3EB8A2AEEFECFCA924EC7031DEC024BFFF91E947D77CE2D07DC8E2
+3E09F08A088CFB8C7D64EF4BFC4879E12797F7774FF7737B4538EDE13F8FFB1FF8CE37FF204BF7
+E40B83F3DC5F830BADE0CC3F5D00C0FE113FC'H } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  rna {
+                    type mRNA ,
+                    ext
+                      name "myeloid differentiation factor 88" } ,
+                location
+                  packed-int {
+                    {
+                      from 2358 ,
+                      to 2789 ,
+                      strand plus ,
+                      id
+                        genbank {
+                          accession "KY014283" } } ,
+                    {
+                      from 3169 ,
+                      to 3300 ,
+                      strand plus ,
+                      id
+                        genbank {
+                          accession "KY014283" } } ,
+                    {
+                      from 4397 ,
+                      to 4574 ,
+                      strand plus ,
+                      id
+                        genbank {
+                          accession "KY014283" } } ,
+                    {
+                      from 5128 ,
+                      to 5219 ,
+                      strand plus ,
+                      id
+                        genbank {
+                          accession "KY014283" } } ,
+                    {
+                      from 5327 ,
+                      to 6118 ,
+                      strand plus ,
+                      id
+                        genbank {
+                          accession "KY014283" } } } } ,
+              {
+                data
+                  gene {
+                    locus "myd88" } ,
+                location
+                  int {
+                    from 1600 ,
+                    to 6118 ,
+                    strand plus ,
+                    id
+                      genbank {
+                        accession "KY014283" } } } ,
+              {
+                data
+                  imp {
+                    key "regulatory" } ,
+                location
+                  int {
+                    from 2085 ,
+                    to 2091 ,
+                    strand plus ,
+                    id
+                      genbank {
+                        accession "KY014283" } } ,
+                qual {
+                  {
+                    qual "regulatory_class" ,
+                    val "TATA_box" } } ,
+                xref {
+                  {
+                    data
+                      gene {
+                        locus "myd88" } } } } ,
+              {
+                data
+                  imp {
+                    key "5'UTR" } ,
+                location
+                  int {
+                    from 2358 ,
+                    to 2479 ,
+                    strand plus ,
+                    id
+                      local
+                        str "Seq1" } } ,
+              {
+                data
+                  imp {
+                    key "3'UTR" } ,
+                location
+                  int {
+                    from 5482 ,
+                    to 6118 ,
+                    strand plus ,
+                    id
+                      local
+                        str "Seq1" } } } } } } ,
+    seq {
+      id {
+        local
+          str "Seq1_prot_1" ,
+        general {
+          db "TMSMART" ,
+          tag
+            id 73279454 } ,
+        genbank {
+          accession "AQT26514" } } ,
+      descr {
+        title "myeloid differentiation factor 88 [Oplegnathus fasciatus]" ,
+        molinfo {
+          biomol peptide } ,
+        user {
+          type
+            str "OriginalID" ,
+          data {
+            {
+              label
+                str "LocalId" ,
+              data
+                str "Seq1_prot_1" } } } } ,
+      inst {
+        repr raw ,
+        mol aa ,
+        length 288 ,
+        seq-data
+          ncbieaa "MACSDPEVDLDTIPLIALNMSVRKKLGLYLNPRNPVASDWMAVAEEMGFTYLEIQNYEA
+SRSPTKAVLEGWQARSTDATVGKLLSILTQVERKDIVEDLRPLIDEDVRKYCENQKKKAEPPVQVPEVDSCVPRTPER
+FGITLEDDPEGAPELFDAFICYCQSDFEFVHEMIRELEQTEYKLKLCVFDRDVLPGSCVWTITSELIEKRCKRMVVVI
+SDEYLDSDACDFQTKFALSLCPGARNKRLIPVVYKSMTKPFPSILRFLTICDYTRPCTQAWFWVRLAKALSLP" } ,
+      annot {
+        {
+          data
+            ftable {
+              {
+                data
+                  prot {
+                    name {
+                      "myeloid differentiation factor 88" } } ,
+                location
+                  int {
+                    from 0 ,
+                    to 287 ,
+                    id
+                      local
+                        str "Seq1_prot_1" } } } } } } } ,
+  annot {
+    {
+      data
+        ftable {
+          {
+            data
+              cdregion {
+                frame one ,
+                code {
+                  id 1 } } ,
+            product
+              whole
+                local
+                  str "Seq1_prot_1" ,
+            location
+              packed-int {
+                {
+                  from 2480 ,
+                  to 2789 ,
+                  strand plus ,
+                  id
+                    genbank {
+                      accession "KY014283" } } ,
+                {
+                  from 3169 ,
+                  to 3300 ,
+                  strand plus ,
+                  id
+                    genbank {
+                      accession "KY014283" } } ,
+                {
+                  from 4397 ,
+                  to 4574 ,
+                  strand plus ,
+                  id
+                    genbank {
+                      accession "KY014283" } } ,
+                {
+                  from 5128 ,
+                  to 5219 ,
+                  strand plus ,
+                  id
+                    genbank {
+                      accession "KY014283" } } ,
+                {
+                  from 5327 ,
+                  to 5481 ,
+                  strand plus ,
+                  id
+                    genbank {
+                      accession "KY014283" } } } } } } } }

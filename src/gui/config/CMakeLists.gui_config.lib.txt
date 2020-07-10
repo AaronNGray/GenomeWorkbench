@@ -1,0 +1,8 @@
+#############################################################################
+# $Id: CMakeLists.gui_config.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(gui_config)
+  NCBI_sources(settings_set)
+  NCBI_uses_toolkit_libraries(gui_objutils)
+NCBI_end_lib()

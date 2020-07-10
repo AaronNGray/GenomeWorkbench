@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.pcassay.asn.txt 594086 2019-09-30 12:19:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(pcassay)
+  NCBI_dataspecs(pcassay.asn)
+  NCBI_uses_toolkit_libraries(seq pcsubstance)
+NCBI_end_lib()
+

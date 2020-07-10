@@ -1,0 +1,10 @@
+# $Id: Makefile.in 24256 2011-08-28 01:14:45Z dicuccio $
+# Author:  Melvin Quintos
+
+#
+# Makefile.in for muparser
+
+LIB_PROJ = muparser
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

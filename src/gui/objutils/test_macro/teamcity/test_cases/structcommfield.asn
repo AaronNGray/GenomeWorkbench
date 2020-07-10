@@ -1,0 +1,119 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        user {
+          type str "OriginalID",
+          data {
+            {
+              label str "LocalId",
+              data str "Seq1"
+            },
+            {
+              label str "General",
+              data str "gnl|BankIt|1657039/Seq1"
+            },
+            {
+              label str "General",
+              data str "gnl|TMSMART|39787263"
+            },
+            {
+              label str "GenBank",
+              data str "gb|KF591393|"
+            }
+          }
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Assembly-Data-START##"
+            },
+            {
+              label str "Coverage",
+              data str "100%"
+            },
+            {
+              label str "Sequencing Technology",
+              data str "Sanger dideoxy sequencing"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Assembly-Data-END##"
+            }
+          }
+        },
+        update-date std {
+          year 2013,
+          month 8,
+          day 27,
+          hour 10,
+          minute 59,
+          second 58
+        },
+        user {
+          type str "StructuredComment",
+          data {
+            {
+              label str "StructuredCommentPrefix",
+              data str "##Evidence-For-Name-Assignment-START##"
+            },
+            {
+              label str "Evidence Accession",
+              data str "UI345"
+            },
+            {
+              label str "Coverage",
+              data str "34%"
+            },
+            {
+              label str "StructuredCommentSuffix",
+              data str "##Evidence-For-Name-Assignment-END##"
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 374,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACACGCACCCCTCCATTTTTCTTTCCTTTTTTTGAATTTATT
+ATAAAAATATGCAGTGATTTACCATGAATAGCCACGGCATTCTAGGATTAGCCCGCTGGAGTGTACTGATCAATGAAG
+GGGCATGGAAACCCCGGAACTTACCCGACTAGAAAAACGAAAAAACGGGTTACCTCCTATAATGATAGTAATAGCTCA
+AAGACTTCACATTAATGACCTACACGGCATAATCAAAGAAACAGAACCCGTAATCCCTGCCTCTGAAGCCCTAAAAAC
+CCTAAGACAAGGGGACACCATAGACCCCAACACATGGGTGGACTTAAACCTCCCCGCTATCTGTGAAAACCCCGAAAC
+TGACCTACTA"
+      }
+    }
+  }
+}

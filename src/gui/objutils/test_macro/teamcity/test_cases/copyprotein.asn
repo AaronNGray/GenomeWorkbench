@@ -1,0 +1,378 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Microbotryum violaceum",
+            db {
+              {
+                db "taxon",
+                tag id 5272
+              }
+            },
+            orgname {
+              name binomial {
+                genus "Microbotryum",
+                species "violaceum"
+              },
+              lineage "Eukaryota; Fungi; Dikarya; Pucciniomycotina;
+ Microbotryomycetes; Microbotryales; Microbotryaceae; Microbotryum",
+              gcode 1,
+              mgcode 4,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq1",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq1"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787263
+            },
+            genbank {
+              accession "KF591393"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 260,
+            strand ds,
+            seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAAAGTGATACCGTAC
+AATGTGAAATTAGCAGATGACAGTAAAGCAAACAACCGTTTTAACATTCAAAAACCATACAATGGCCGGATGCTTAGT
+GTAGGGGCAGCTGGAAGTATTCTAGGATTTGGAGCCGGTTAAAAACCCTAAGACAAGGGGACACCATAGACCCCAACA
+CATGGGTGGACTTAAACCTCCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data biosrc {
+                    org {
+                      taxname "Bubalus bubalis",
+                      orgname {
+                        mod {
+                          {
+                            subtype other,
+                            subname "some note"
+                          }
+                        }
+                      }
+                    },
+                    subtype {
+                      {
+                        subtype country,
+                        name "Denmark"
+                      },
+                      {
+                        subtype altitude,
+                        name "45 m"
+                      }
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 259,
+                    strand plus,
+                    id genbank {
+                      accession "KF591393"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq1_prot_1",
+            general {
+              db "TMSMART",
+              tag id 39787264
+            }
+          },
+          descr {
+            title "Putative terminase large subunit, partial [Methanobacterium
+ formicicum phage]",
+            molinfo {
+              biomol peptide,
+              completeness no-right
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 73,
+            seq-data ncbieaa "-VQCEISR*Q*SKQPF*HSKTIQWPDA*CRGSWKYSRIWSRLKTLRQG
+DTIDPNTWVDLNLPAICENPETDLL"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "interleucin 1 beta protein"
+                    },
+                    desc "terminase large subunit"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 72,
+                    strand plus,
+                    id local str "Seq1_prot_1",
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              comment "[intronless gene]",
+              product whole local str "Seq1_prot_1",
+              location int {
+                from 41,
+                to 259,
+                strand plus,
+                id genbank {
+                  accession "KF591393"
+                },
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq2"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787265
+            },
+            genbank {
+              accession "KF591394"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 614,
+            strand ds,
+            seq-data iupacna "CCGGGGGGTATTGACATGCTTATTGAGCCTGTTGATGCGTTCAGTGGA
+ATTCCCCTAAGTGGGGATTAAGTAGTTATAAATTAAAGTTTAGGGTTAAATAATAAAAAAAAGCCGGGCCATGCTGGA
+GCACTTGGCAAGTAGTGGTACCCGGATGGGTAACCTCATAAAACAGGGCCTAACCACTGCTGATAATGCAATGAGCAA
+AATATCCAATACAGCTTCACAGTTACGCACTAAGTTAGAAAACACCACGAGTATGGCTGTATTTTTAGGAATTGTTAA
+AGGTGCTGAAGACGCTTTAACTCTTTCTAAGATGAAATCAGCTGCGGTGGATGCGGCCACTATGGCTTATACTCGTGC
+AAAGGCAGCGGCACTGGCTGTAGTCATAGGTGCCATTTTAAGTGGTATTGGGGAGTTTGTGTATAAAATGGTAGATTC
+TGCAATCCAAGCCGTCACAGGATGGGTAAATGCTTTCCTATCATTTTTACCACAGATCCCCGGTATGATTGCCTTTTA
+TTTAGGCTTTGCAATTGGGCAATTCATCAGTTTCAGCATGTCCCTCCTACTCCTCATATACGATCTTGGAGTGCAACT
+GATAACATGGGTCATTAACA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Hypothetical protein gene",
+                    desc "Hypothetical protein gene"
+                  },
+                  location int {
+                    from 501,
+                    to 613,
+                    strand plus,
+                    id genbank {
+                      accession "KF591394"
+                    }
+                  }
+                },
+                {
+                  data gene {
+                    locus "putative tape measure protein gene",
+                    desc "tape measure protein gene"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 22,
+                    to 57,
+                    strand plus,
+                    id genbank {
+                      accession "KF591394"
+                    },
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "KF591394_1"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 11,
+            seq-data ncbieaa "MSLLMRSVEFP"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "some protein name"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 10,
+                    id local str "KF591394_1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "KF591394_2"
+          },
+          descr {
+            molinfo {
+              biomol peptide,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 37,
+            seq-data ncbieaa "MIAFYLGFAIGQFISFSMSLLLLIYDLGVQLITWVIN"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "some other protein name",
+                      "interleucin 1 beta"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 36,
+                    id local str "KF591394_2"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "KF591394_1",
+              location int {
+                from 22,
+                to 57,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            },
+            {
+              data cdregion {
+                frame two,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "KF591394_2",
+              location int {
+                from 501,
+                to 613,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+#############################################################################
+# $Id: CMakeLists.w_aln_table.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_aln_table)
+  NCBI_sources(
+    aln_table aln_table_ds alnspan_vertmodel alnspan_widget alnspan_settings_dlg
+    annot_compare annot_compare_ds
+  )
+  NCBI_uses_toolkit_libraries(w_wx)
+  NCBI_requires(wxWidgets)
+NCBI_end_lib()

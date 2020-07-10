@@ -1,0 +1,173 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "guha",
+          first "sohini"
+        },
+        affil std {
+          affil "University of calcutta"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "Guha",
+              first "Sohini",
+              initials "S.Ana."
+            }
+          },
+          {
+            name name {
+              last "Jorrin",
+              first "Beatriz",
+              initials "B."
+            }
+          },
+          {
+            name name {
+              last "Sarkar",
+              first "Monolina Lucia",
+              initials "M.L.Rd."
+            }
+          },
+          {
+            name name {
+              last "Poole",
+              first "Philip",
+              initials "P.S."
+            }
+          },
+          {
+            name name {
+              last "Dasgupta"
+            }
+          }
+        },
+        affil std {
+          affil "University of calcutta"
+        }
+      },
+      date std {
+        year 2018,
+        month 3,
+        day 19
+      }
+    }
+  },
+  data entrys {
+    set {
+      class genbank,
+      descr {
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Guha",
+                      first "Sohini",
+                      initials "S.Ana."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Jorrin",
+                      first "Beatriz",
+                      initials "B."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Sarkar",
+                      first "Monolina Lucia",
+                      initials "M.L.Rd."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Poole",
+                      first "Philip",
+                      initials "P.S."
+                    }
+                  },
+                  {
+                    name name {
+                      last "Dasgupta"
+                    }
+                  }
+                }
+              },
+              title "Genomes of Endosymbiotic and Endophytic Bradyrhizobium"
+            }
+          }
+        },
+        update-date std {
+          year 2018,
+          month 3,
+          day 19
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "NODE_1_length_1061560_cov_15.707_ID_3458"
+          },
+          descr {
+            source {
+              org {
+                taxname "Danio rerio",
+                common "zebrafish",
+                db {
+                  {
+                    db "taxon",
+                    tag id 7955
+                  }
+                },
+                orgname {
+                  gcode 1,
+                  mgcode 2,
+                  div "VRT"
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            },
+            comment "Bacteria and source DNA available from Prof.Maitrayee
+ DasGupta.",
+            create-date std {
+              year 2018,
+              month 3,
+              day 19
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "NODE_1_length_1061560_cov_15.707_ID_3458"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 231,
+            seq-data iupacna "AGATGTGTATAAGAGACAGGTACTTGATCTGGCGATACTCGGGATACC
+ACTTTGTGAAGTAGATCGCACTGTTGCGGGCGGCAAAGGCCACCGCAAGGCTCGACCAGAGCGGCAGCTCGATGCGGA
+CCTTGCCTTCCTTCTCCTCGGTAAGCCACATGCCGACCGGCGAATTGAGGTCGCGCGTCGGCGCAGCCGCCGGAGCAG
+GGGGCGCGACGGCAGCCTGAACGGGAG"
+          }
+        }
+      }
+    }
+  }
+}

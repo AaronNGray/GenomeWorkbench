@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.timeout.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db95_timeout)
+  NCBI_sources(timeout common)
+  NCBI_set_test_assets(timeout.sql)
+  NCBI_add_test(test-db95 db95_timeout)
+NCBI_end_app()
+

@@ -1,0 +1,9 @@
+# $Id: Makefile.in 36146 2016-08-16 20:09:58Z asztalos $
+# Author:  Roman Katargin
+# Meta-makefile for plugin testapp
+#################################
+
+APP_PROJ = demo_seq_desktop
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

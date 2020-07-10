@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.rpc.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(db95_rpc)
+  NCBI_sources(rpc common)
+  NCBI_set_test_assets(rpc.sql)
+  NCBI_add_test(test-db95 --no-auto db95_rpc)
+NCBI_end_app()
+

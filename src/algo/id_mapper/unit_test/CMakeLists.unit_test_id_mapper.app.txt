@@ -1,0 +1,15 @@
+#############################################################################
+# $Id: CMakeLists.unit_test_id_mapper.app.txt 603209 2020-03-09 14:58:12Z ivanov $
+#############################################################################
+
+NCBI_begin_app(unit_test_id_mapper)
+  NCBI_sources(unit_test_id_mapper)
+  NCBI_requires(Boost.Test.Included)
+  NCBI_uses_toolkit_libraries(gencoll_client xid_mapper)
+  NCBI_project_watchers(boukn meric)
+  NCBI_set_test_assets(unit_test_id_mapper.ini)
+  NCBI_set_test_timeout(1800)
+  NCBI_add_test()
+  NCBI_requires(-Cygwin)
+NCBI_end_app()
+

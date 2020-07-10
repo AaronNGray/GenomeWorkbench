@@ -1,0 +1,16 @@
+#############################################################################
+# $Id: CMakeLists.w_feedback.lib.txt 44795 2020-03-17 19:22:19Z evgeniev $
+#############################################################################
+
+if(XCODE)
+  set_source_files_properties(
+    ${NCBI_CURRENT_SOURCE_DIR}/dump_sysinfo.cpp
+    PROPERTIES XCODE_EXPLICIT_FILE_TYPE sourcecode.cpp.objcpp
+  )
+endif()
+
+NCBI_begin_lib(w_feedback)
+  NCBI_sources(dump_sysinfo feedback_wizard)
+  NCBI_uses_toolkit_libraries(gui_objects w_wx)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

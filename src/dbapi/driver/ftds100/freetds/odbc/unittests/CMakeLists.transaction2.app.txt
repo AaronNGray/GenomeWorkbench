@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.transaction2.app.txt 593523 2019-09-19 18:41:09Z gouriano $
+#############################################################################
+
+NCBI_begin_app(odbc100_transaction2)
+  NCBI_sources(transaction2 common)
+  NCBI_add_test(test-odbc100 --no-auto odbc100_transaction2)
+NCBI_end_app()
+

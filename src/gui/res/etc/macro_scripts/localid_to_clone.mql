@@ -1,0 +1,10 @@
+MACRO ParseLocalId_Clone "Parse entire text from local ID to clone (overwrite existing text)"
+VAR
+    existing_text = "eReplace"
+    cap_change = "none"
+FOR EACH BioSource
+DO
+    id = LocalID();
+    ParseStringQual(id, "clone", cap_change, existing_text);
+DONE
+------------------------------------------------------------------------------

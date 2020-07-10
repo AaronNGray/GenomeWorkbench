@@ -1,0 +1,10 @@
+#############################################################################
+# $Id: CMakeLists.ncbi_xdbapi_mysql.lib.txt 567527 2018-07-19 17:51:07Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(ncbi_xdbapi_mysql SHARED)
+  NCBI_hosts_projects(
+    dbapi/driver/mysql/ncbi_xdbapi_mysql
+  )
+  NCBI_add_definitions(NCBI_DBAPIDRIVER_MYSQL_EXPORTS)
+NCBI_end_lib()

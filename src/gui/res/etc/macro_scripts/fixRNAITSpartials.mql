@@ -1,0 +1,78 @@
+MACRO FixRNAITSPartials_01 "Set 5' partial when 5' end of location is at end of sequence for rRNA features"
+VAR
+extend = %false%
+retranslate = %false%
+adjustgene = %false%
+FOR EACH rRNA
+DO
+SetPartialStart("at-end", extend, retranslate, adjustgene);
+DONE
+---------------------------------------------------
+MACRO FixRNAITSPartials_02 "Clear 5' partial when 5' end of feature is not at end of sequence for rRNA features"
+VAR
+retranslate = %false%
+adjustgene = %false%
+FOR EACH rRNA
+DO
+ClearPartialStart("not-at-end", retranslate, adjustgene);
+DONE
+---------------------------------------------------
+MACRO FixRNAITSPartials_03 "Set 3' partial when 3' end of location is at end of sequence for rRNA features"
+VAR
+extend = %false%
+retranslate = %false%
+adjustgene = %false%
+FOR EACH rRNA
+DO
+SetPartialStop("at-end", extend, retranslate, adjustgene);
+DONE
+---------------------------------------------------
+MACRO FixRNAITSPartials_04 "Clear 3' partial when 3' end of feature is not at end of sequence for rRNA features"
+VAR
+retranslate = %false%
+adjustgene = %false%
+FOR EACH rRNA
+DO
+ClearPartialStop("not-at-end", retranslate, adjustgene);
+DONE
+---------------------------------------------------
+MACRO FixRNAITSPartials_05 "Set 5' partial when 5' end of location is at end of sequence for misc_RNA features"
+VAR
+extend = %false%
+retranslate = %false%
+adjustgene = %false%
+FOR EACH MiscRNA
+DO
+SetPartialStart("at-end", extend, retranslate, adjustgene);
+DONE
+---------------------------------------------------
+MACRO FixRNAITSPartials_06 "Clear 5' partial when 5' end of feature is not at end of sequence for misc_RNA features"
+VAR
+retranslate = %false%
+adjustgene = %false%
+FOR EACH MiscRNA
+DO
+ClearPartialStart("not-at-end", retranslate, adjustgene);
+DONE
+---------------------------------------------------
+MACRO FixRNAITSPartials_07 "Set 3' partial when 3' end of location is at end of sequence for misc_RNA features"
+VAR
+extend = %false%
+retranslate = %false%
+adjustgene = %false%
+FOR EACH MiscRNA
+DO
+SetPartialStop("at-end", extend, retranslate, adjustgene);
+DONE
+---------------------------------------------------
+MACRO FixRNAITSPartials_08 "Clear 3' partial when 3' end of feature is not at end of sequence for misc_RNA features"
+VAR
+retranslate = %false%
+adjustgene = %false%
+FOR EACH MiscRNA
+DO
+ClearPartialStop("not-at-end", retranslate, adjustgene);
+DONE
+---------------------------------------------------
+
+

@@ -1,0 +1,362 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1",
+        general {
+          db "BankIt",
+          tag str "1657039/Seq1"
+        },
+        general {
+          db "TMSMART",
+          tag id 39787263
+        },
+        genbank {
+          accession "KF591393"
+        }
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Gammarus pulex",
+            db {
+              {
+                db "taxon",
+                tag id 52641
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 5,
+              div "INV"
+            }
+          }
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                }
+              },
+              title "Isolation of the lytic archeophage Drs3 infecting
+ Methanobacterium formicicum"
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                },
+                affil std {
+                  affil "Technische Universitat Dresden",
+                  div "Biology / Institute of Microbiology",
+                  city "Dresden",
+                  sub "Saxony",
+                  country "Germany",
+                  street "Zellescher Weg 20b",
+                  postal-code "01217"
+                }
+              },
+              medium email,
+              date std {
+                year 2013,
+                month 8,
+                day 28
+              }
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name consortium "NCBI RefSeq Targeted Loci Project"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 43,
+        strand ds,
+        seq-data iupacna "AAAAAACCGAACTTGAGGCCATTGATATAGTTGAGACCTACTA"
+      }
+    },
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Rosa hybrid cultivar",
+            db {
+              {
+                db "taxon",
+                tag id 128735
+              }
+            },
+            orgname {
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        },
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "Wolf",
+                      first "Sandro",
+                      initials "S."
+                    }
+                  }
+                }
+              },
+              title "Isolation of the lytic archeophage Drs3 infecting
+ Methanobacterium formicicum"
+            }
+          }
+        },
+        pub {
+          pub {
+            sub {
+              authors {
+                names std {
+                  {
+                    name consortium "NCBI RefSeq Targeted Loci Project"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq2",
+            general {
+              db "BankIt",
+              tag str "1657039/Seq2"
+            },
+            general {
+              db "TMSMART",
+              tag id 39787265
+            },
+            genbank {
+              accession "KF591394"
+            }
+          },
+          descr {
+            molinfo {
+              biomol genomic,
+              completeness partial
+            },
+            user {
+              type str "Submission",
+              data {
+                {
+                  label str "AdditionalComment",
+                  data str "LocalID:Seq2"
+                }
+              }
+            },
+            user {
+              type str "OriginalID",
+              data {
+                {
+                  label str "LocalId",
+                  data str "Seq2"
+                }
+              }
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 248,
+            strand ds,
+            seq-data iupacna "CCGGGGGGTATTGAGGGAGAATGATAATAGAGAAATTTCCTGAAGACG
+GATGAGGGGCGTGTGCAAGGAAAATTCAGTGGCATGGGGGACAAAGTTAGTAAATCACTAGACAAAGTTAGCCAATCC
+ACTGAGAAACATGCTGGAGCACTTGGCAAGTAGTGGTACCCGGATGGGTAACCTCATAAAACAGGGCCTAACCACTGC
+TGATAATGCAATGAGCAAAATACTGATAACATGGGTCATTAACA"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "Hypothetical protein gene",
+                    desc "Hypothetical protein gene"
+                  },
+                  location int {
+                    from 20,
+                    to 52,
+                    strand plus,
+                    id local str "Seq2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_2",
+            general {
+              db "TMSMART",
+              tag id 39787266
+            }
+          },
+          descr {
+            title "Hypothetical protein [Methanobacterium formicicum phage]",
+            molinfo {
+              biomol peptide
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 10,
+            seq-data ncbieaa "MIIEKFPEDG"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "Hypothetical protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 9,
+                    id local str "Seq2_prot_2"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq2_prot_3",
+            general {
+              db "TMSMART",
+              tag id 39787267
+            }
+          },
+          descr {
+            title "putative tape measure protein, partial [Methanobacterium
+ formicicum phage]",
+            molinfo {
+              biomol peptide
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 5,
+            seq-data ncbieaa "MLIMQ"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "putative tape measure protein"
+                    },
+                    desc "tape measure protein"
+                  },
+                  location int {
+                    from 0,
+                    to 4,
+                    id local str "Seq2_prot_3"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq2_prot_2",
+              location int {
+                from 20,
+                to 52,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            },
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              comment "[intronless gene]",
+              product whole local str "Seq2_prot_3",
+              location int {
+                from 200,
+                to 217,
+                strand plus,
+                id genbank {
+                  accession "KF591394"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

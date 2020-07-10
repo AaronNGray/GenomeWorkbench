@@ -1,0 +1,8 @@
+# $Id: Makefile.in 38133 2017-04-02 03:39:38Z ucko $
+
+LIB_PROJ = w_seq_graphic
+
+REQUIRES = VDB
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta

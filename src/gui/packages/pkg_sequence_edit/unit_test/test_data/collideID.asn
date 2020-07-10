@@ -1,0 +1,55 @@
+Seq-entry ::= seq {
+  id {
+    local str "ER1821R_chromosome",
+    general {
+      db "NCBIFILE",
+      tag str "ER1821Rv5-1.sqn/ER1821R_chromosome"
+    },
+    general {
+      db "TMSMART",
+      tag id 304188994
+    },
+    genbank {
+      accession "CP016018"
+    }
+  },
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Salinicola sp. SOil-1",
+        db {
+          {
+            db "taxon",
+            tag id 1603297
+          }
+        },
+        orgname {
+          name binomial {
+            genus "Salinicola",
+            species "sp. SOil-1"
+          },
+          lineage "Bacteria; Proteobacteria; Gammaproteobacteria;
+ Oceanospirillales; Halomonadaceae; Salinicola",
+          gcode 11,
+          div "BCT"
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol rna,
+    length 1387,
+    seq-data ncbi2na 'E4B6269246A89F9D5EBA6269A1AB8B0ECA0DE56B2EAA306EA8054670
+C5931B5C6A20268A37DA1F667368E25CEDA3C9CBEB0AC1A7C50A618D6C9EB788A38D2511EA1E21
+1A54875C6A2924BAA0CFA10EA6025F8D494E59BBB820A7F6AFB0247F498A08097AEBC31534A0A1
+347648209169C1D6E524966B0C68AB989BC3683C7A9B02666CAE9FA465AFB80956A7417A81A4D6
+81A529C8B9288A0AC83D5AEC9AE039B2236A28314BA60A697DE978478478AE6026EAC90128F231
+5EB2D465B018ED8725BEA17F0A1F2E992F06630B6165EAA2C69642BC01D0383E1AA959109AE893
+BAFC3D8E4198205F1715F84D7983FAC88C5F2E5F6A264B84AE793A7B6D276EFB80EFABC2D5B062
+6415FED7CFE5246C3AEA0770A21E5AE10168A0AEA861B42D34E95F1AB2A7111B9C43A5AC40ABE6
+21662BA260D52025A5D2D68DA2DE41D875B82DA0D9CB0DB83483B46B831BD5A97EC44595B4453A
+8BA1E4520BAF24'H
+  }
+}

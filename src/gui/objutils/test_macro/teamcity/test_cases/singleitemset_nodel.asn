@@ -1,0 +1,210 @@
+Seq-submit ::= {
+  sub {
+    contact {
+      contact {
+        name name {
+          last "test",
+          first "test",
+          initials "t"
+        },
+        affil std {
+          affil "test",
+          sub "MD",
+          country "USA",
+          postal-code "12345"
+        }
+      }
+    },
+    cit {
+      authors {
+        names std {
+          {
+            name name {
+              last "test",
+              first "test",
+              initials "t."
+            }
+          }
+        },
+        affil std {
+          affil "test",
+          sub "MD",
+          country "USA",
+          postal-code "12345"
+        }
+      },
+      date std {
+        year 2015,
+        month 9,
+        day 18
+      }
+    },
+    subtype new,
+    tool "Sequin 14.00 - MS WINDOWS VISTA"
+  },
+  data entrys {
+    set {
+      class pop-set,
+      descr {
+        pub {
+          pub {
+            gen {
+              cit "Unpublished",
+              authors {
+                names std {
+                  {
+                    name name {
+                      last "test",
+                      first "test",
+                      initials "t."
+                    }
+                  }
+                },
+                affil std {
+                  affil "test",
+                  sub "MD",
+                  country "USA",
+                  postal-code "12345"
+                }
+              },
+              title "Testing"
+            }
+          }
+        },
+        user {
+          type str "NcbiCleanup",
+          data {
+            {
+              label str "method",
+              data str "SequinCleanup"
+            },
+            {
+              label str "version",
+              data int 8
+            },
+            {
+              label str "month",
+              data int 9
+            },
+            {
+              label str "day",
+              data int 18
+            },
+            {
+              label str "year",
+              data int 2015
+            }
+          }
+        },
+        create-date std {
+          year 2015,
+          month 9,
+          day 18
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "seq1"
+          },
+          descr {
+            source {
+              genome genomic,
+              org {
+                taxname "Dicentra cucullaria",
+                db {
+                  {
+                    db "taxon",
+                    tag id 417911
+                  }
+                },
+                orgname {
+                  name binomial {
+                    genus "Dicentra",
+                    species "cucullaria"
+                  },
+                  lineage "Eukaryota; Viridiplantae; Streptophyta;
+ Embryophyta; Tracheophyta; Spermatophyta; Magnoliophyta; eudicotyledons;
+ Ranunculales; Papaveraceae; Fumarioideae; Dicentra",
+                  gcode 1,
+                  mgcode 1,
+                  div "PLN",
+                  pgcode 11
+                }
+              }
+            },
+            molinfo {
+              biomol genomic
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 1293,
+            seq-data ncbi2na '33D14727BB8DFAEC909CB834CCF3A1B6742E75B383AEB8A8
+8F3273D410F77DC4880AF33638401730C8219FE1017B3EEB381F54405F053A68DFA39D37A15067
+F9EBE4DA27AD0B43E108D61203CA490438245603103B15C385D5130E3F4114CFD1DAF540FD0041
+7CE28E541DF7EF45D2FF3BFBA6D5E9D3DCC529DFDF20024F4FFB71D75CC974EE9DD52BD48CE10B
+10102A04CC4ED049095D40E73009F3CE243F40287F78EFDD0BB6E78223AE5A8A933AFF8631DA88
+4098635FB24083BEF1B7A8DDF259B47018CEBF78A87EC820880F21D3D04F510C475CB5C082D680
+82D88082ADBDD0F079B62B4782E0FA864E44D23AA38D0A310CEA40ECE627BE6895F9DF8B47FAE2
+F8D3628AEFE22B11834CD08F24E9828821427ED0ED1AED8E15800CE37FCE3343AF28141CFEBFAB
+E7FBF0F083B0C97FEC23F0300EFEB6DF3067340000000000000000'H
+          }
+        }
+      },
+      annot {
+        {
+          data align {
+            {
+              type partial,
+              dim 2,
+              segs denseg {
+                dim 2,
+                numseg 5,
+                ids {
+                  local str "seq1",
+                  genbank {
+                    accession "FJ869889",
+                    version 0
+                  }
+                },
+                starts {
+                  0,
+                  0,
+                  -1,
+                  6,
+                  6,
+                  9,
+                  -1,
+                  43,
+                  40,
+                  46
+                },
+                lens {
+                  6,
+                  3,
+                  34,
+                  3,
+                  1253
+                },
+                strands {
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus,
+                  plus
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

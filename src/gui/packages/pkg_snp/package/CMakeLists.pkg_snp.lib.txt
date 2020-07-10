@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.pkg_snp.lib.txt 43727 2019-08-23 17:03:30Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(pkg_snp)
+  NCBI_sources(dll_register)
+  NCBI_uses_toolkit_libraries(gui_core w_snp_track w_snp_ld w_hapmap w_snp_bins)
+  NCBI_requires(wxWidgets GLEW)
+NCBI_end_lib()

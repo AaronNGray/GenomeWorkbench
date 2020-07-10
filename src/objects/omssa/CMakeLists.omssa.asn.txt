@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.omssa.asn.txt 593488 2019-09-19 14:56:53Z gouriano $
+#############################################################################
+
+NCBI_begin_lib(omssa)
+  NCBI_dataspecs(omssa.asn)
+  NCBI_uses_toolkit_libraries(seq)
+NCBI_end_lib()
+

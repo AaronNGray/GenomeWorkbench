@@ -1,0 +1,54 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    seq {
+      id {
+        local str "Seq1"
+      },
+      descr {
+        molinfo {
+          biomol genomic,
+          completeness partial
+        },
+        source {
+          genome genomic,
+          org {
+            taxname "Methanobacterium formicicum phage",
+            orgname {
+              gcode 1
+            }
+          }
+        }
+      },
+      inst {
+        repr raw,
+        mol dna,
+        length 42,
+        topology not-set,
+        strand ds,
+        seq-data iupacna "AAAAACCCCGCTATCTGTGAAAACCCCGAAACTGACCTACTA"
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data rna {
+                type rRNA,
+                ext name "16S ribosomal RNA"
+              },
+              partial TRUE,
+              location int {
+                from 0,
+                to 41,
+                strand plus,
+                id local str "Seq1",
+                fuzz-from lim lt,
+                fuzz-to lim gt
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

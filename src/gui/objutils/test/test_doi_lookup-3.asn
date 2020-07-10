@@ -1,0 +1,43 @@
+Pubdesc ::= {
+  pub {
+    article {
+      title {
+        name "Pacific false kelpfish, Sebastiscus marmoratus (Cuvier, 1829)
+ (Scorpaeniformes, Sebastidae) found in Norwegian waters"
+      },
+      authors {
+        names std {
+          {
+            name name {
+              last "Hansen",
+              first "Haakon"
+            }
+          },
+          {
+            name name {
+              last "Karlsbakk",
+              first "Egil"
+            }
+          }
+        }
+      },
+      from journal {
+        title {
+          iso-jta "Bioinvasions Rec"
+        },
+        imp {
+          date std {
+            year 2018
+          },
+          volume "7",
+          issue "1",
+          pages "73-78",
+          pubstatus ppublish
+        }
+      },
+      ids {
+        doi "10.3391/bir.2018.7.1.11"
+      }
+    }
+  }
+}

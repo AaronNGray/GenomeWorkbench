@@ -1,0 +1,203 @@
+Seq-entry ::= set {
+  class genbank,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          org {
+            taxname "Influenza A virus",
+            db {
+              {
+                db "taxon",
+                tag id 11320
+              }
+            },
+            orgname {
+              name virus "Influenza A virus",
+              attrib "specified",
+              lineage "Viruses; ssRNA viruses; ssRNA negative-strand viruses;
+ Orthomyxoviridae; Alphainfluenzavirus",
+              gcode 1,
+              div "VRL"
+            }
+          }
+        },
+        update-date std {
+          year 2018,
+          month 3,
+          day 6,
+          hour 9,
+          minute 39,
+          second 43
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "Seq4",
+            general {
+              db "BankIt",
+              tag str "2075751/Seq4"
+            },
+            general {
+              db "TMSMART",
+              tag id 90976403
+            },
+            genbank {
+              accession "MH022716"
+            }
+          },
+          descr {
+            title "Influenza A virus (A/greenwing
+ duck/Shanghai/SH1/2016(H5N6)) segment 4 hemagglutinin (HA) gene, complete cds.",
+            molinfo {
+              biomol cRNA,
+              completeness complete
+            }
+          },
+          inst {
+            repr raw,
+            mol rna,
+            length 1766,
+            seq-data ncbi2na '92ABD0DED00E80032E7DF7E4BAF25FBC02E348FE4FAF14E4
+041D84892BE118C3A0001B47BC44E542131E80211106A29DE63783A2E01778FF028FB2EC9E8E9F
+7E80543B9860F4D22E5A0EB7C4CBA228705494385DEF152A05D0E1CE081E01173E2483034FF882
+1DE34D5422F7E950D3804D2AB89924E54C52A2E575FFD203BACE9F1420818E4C5410C0822710C3
+143AA08DFF8C7BAA8F4D3D410E49224840DDCC0054145CEFD6FA84D04F01488FAE5003271C8D50
+B01A9042820E8FDF7A10FF005838E4351FE22C3A03FCF9D483393100CB4202A87410F3802E03A0
+CE947904503B40750CAA6301DCB394F510CC4557453EA8B9540C6E034040F2D7E61E87480CB5FC
+22020820022873FA27324ABD322A28E90A0EB23AFACEAC514C90E04AA2EAC67921220D4540290C
+8E8BC50C2B41D8C36100E04743F8A5BE82A2FC307C81A20C883F030803A0868F5C8EDE87C439E0
+7FCBDD3A00E2207F23FD18F40EC0017F3840B587127CA8C390289CAC3AFBF62F734C0EE30E0ECE
+80BB080EA1B3873552CF4820908F002A080C268B80FA0D0CA07C5031ED0FCF412E98BD5C91E90D
+3EE9EB737F3A3B9D43AB6F10E483F93F03FB89D03E43C00457EFDC70'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "HA"
+                  },
+                  location int {
+                    from 21,
+                    to 1721,
+                    strand plus,
+                    id local str "Seq4"
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "Seq4_prot_6",
+            general {
+              db "TMSMART",
+              tag id 90976404
+            }
+          },
+          descr {
+            title "hemagglutinin [Influenza A virus]",
+            molinfo {
+              biomol peptide
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 566,
+            seq-data ncbieaa "MEKIVLLLAVVSLVKSDQICIGYHANNSTEQVDTIMEKNVTVTHAQDI
+LEKTHNGRLCDLNGVKPLILKDCSVAGWLLGNPMCDEFIRVPEWSYIVERTNPANDLCYPGNLNDYEELKHLLSRINH
+FEKTLIIPKSSWPNHETSGVSAACPYQGVPSFFRNVVWLTKKNDAYPTIKKSYNNTNGEDLLILWGIHHSNNAAEQTN
+LYKNPTTYVSVGTSTLNQRLVPKIATRSQVNGQQGRMDFFWTILKPNDAIHFESNGNFIAPEYAYKIVKKGDSTIMKS
+EMEYGHCNTKCQTPIGAINSSMPFHNIHPLTIGECPKYVKSNKLVLATGLRNSPLRERRRKRGLFGAIAGFIEGGWQG
+MVDGWYGYHHSNEQGSGYAADRESTQKAIDGVTNKVNSIIDKMNTQFEAVGREFNNLERRIENLNKKMEDGFLDVWTY
+NAELLVLMENERTLDFHDSNVKNLYDKVRLQLRDNAKELGNGCFEFYHKCDNECMESVRNGTYDYPQYSEEARLKREE
+ISGVKLESIGTYQILSIYSTVASSLALAIIVAGLSLWMCSNGSLQCRICI"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    name {
+                      "hemagglutinin"
+                    },
+                    activity {
+                      "receptor binding and fusion protein"
+                    }
+                  },
+                  location int {
+                    from 0,
+                    to 565,
+                    id local str "Seq4_prot_6"
+                  }
+                },
+                {
+                  data prot {
+                    processed signal-peptide
+                  },
+                  location int {
+                    from 0,
+                    to 15,
+                    id local str "Seq4_prot_6"
+                  }
+                },
+                {
+                  data prot {
+                    name {
+                      "HA1"
+                    },
+                    processed mature
+                  },
+                  location int {
+                    from 16,
+                    to 343,
+                    id local str "Seq4_prot_6"
+                  }
+                },
+                {
+                  data prot {
+                    name {
+                      "HA2"
+                    },
+                    processed mature
+                  },
+                  location int {
+                    from 344,
+                    to 565,
+                    id local str "Seq4_prot_6"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                code {
+                  id 1
+                }
+              },
+              product whole local str "Seq4_prot_6",
+              location int {
+                from 21,
+                to 1721,
+                strand plus,
+                id local str "Seq4"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

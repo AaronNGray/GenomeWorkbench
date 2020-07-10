@@ -1,0 +1,9 @@
+#############################################################################
+# $Id: CMakeLists.w_taxtree.lib.txt 42471 2019-03-05 16:05:34Z ucko $
+#############################################################################
+
+NCBI_begin_lib(w_taxtree)
+  NCBI_sources(tax_tree tax_tree_ds)
+  NCBI_uses_toolkit_libraries(gui_objutils)
+  NCBI_requires(wxWidgets)
+NCBI_end_lib()

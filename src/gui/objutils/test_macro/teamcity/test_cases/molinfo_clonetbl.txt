@@ -1,0 +1,6 @@
+accession;technique;clone
+KM673298;standard;clone_298
+KM673299;est;clone_299
+KM673300;sts;clone_300
+KM673306;derived;clone_306
+KM673307;htgs-0;clone_307

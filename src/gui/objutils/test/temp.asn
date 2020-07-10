@@ -1,0 +1,43 @@
+User-object ::= {
+  class "NCBI",
+  type str "GUI-App-Registry",
+  data {
+    {
+      label str "first",
+      data fields {
+        {
+          label str "item2",
+          data str "temp string"
+        }
+      }
+    },
+    {
+      label str "section",
+      data fields {
+        {
+          label str "local",
+          data fields {
+            {
+              label str "subkey",
+              data real { 2356, 10, -2 }
+            }
+          }
+        }
+      }
+    },
+    {
+      label str "temp",
+      data fields {
+        {
+          label str "stuff",
+          data fields {
+            {
+              label str "key1",
+              data str "temp value"
+            }
+          }
+        }
+      }
+    }
+  }
+}

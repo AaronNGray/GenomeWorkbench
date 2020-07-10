@@ -1,0 +1,177 @@
+Seq-entry ::= set {
+  class pop-set,
+  seq-set {
+    set {
+      class nuc-prot,
+      descr {
+        source {
+          genome genomic,
+          origin natural,
+          org {
+            taxname "Karelinia caspia",
+            db {
+              {
+                db "taxon",
+                tag id 313960
+              }
+            },
+            orgname {
+              lineage "cellular organisms; Eukaryota; Viridiplantae;
+ Streptophyta; Streptophytina; Embryophyta; Tracheophyta; Euphyllophyta;
+ Spermatophyta; Magnoliophyta; Mesangiospermae; eudicotyledons; Gunneridae;
+ Pentapetalae; asterids; campanulids; Asterales; Asteraceae; Asteroideae;
+ Inuleae; Plucheinae; Karelinia",
+              gcode 1,
+              mgcode 1,
+              div "PLN"
+            }
+          }
+        }
+      },
+      seq-set {
+        seq {
+          id {
+            local str "FMAN01",
+            general {
+              db "NCBIFILE",
+              tag str "submission sequence.sqn/FMAN01"
+            },
+            general {
+              db "TMSMART",
+              tag id 58028517
+            },
+            genbank {
+              accession "KT722623"
+            }
+          },
+          descr {
+            molinfo {
+              tech standard,
+              completeness partial
+            }
+          },
+          inst {
+            repr raw,
+            mol dna,
+            length 484,
+            strand ds,
+            seq-data ncbi2na 'C48FDFBD30E9A733C47601E0EB527FBC35BAD8A41E8BFBCF
+A334D8B9C62B00340F1E007C492021F0C6CF8FF2B5350D742FFE49C6BC3492FD58213CD2E39420
+034A008FF39F9F1A252ED028CF8C4B82490BF5008E5F93E937FCE805F8E8E0B076178DF09C87C5
+D28048BC10CDE2223D6E39EAE03375914E3C71'H
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data gene {
+                    locus "testing comment1",
+                    syn {
+                      "comment1"
+                    }
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 483,
+                    strand plus,
+                    id genbank {
+                      accession "KT722623"
+                    },
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        },
+        seq {
+          id {
+            local str "FMAN01_1",
+            general {
+              db "NCBIFILE",
+              tag str "submission sequence.sqn/FMAN01_1"
+            },
+            general {
+              db "TMSMART",
+              tag id 58028518
+            }
+          },
+          descr {
+            title "Per gene product, partial [Nyssomyia umbratilis]",
+            molinfo {
+              biomol peptide,
+              tech concept-trans-a,
+              completeness no-ends
+            }
+          },
+          inst {
+            repr raw,
+            mol aa,
+            length 142,
+            seq-data ncbieaa "YRFLVHNGGYITLETEWSSFVNPWSRQLEFVIGYHRVLRGPSNPQVFA
+ATVNQQFPEDIISDAKKNQEKILCLLTEPVSKDIDTVKQQVSKRCLALASFMETLMDEVTRPDLKLDLPQETELTISE
+RDSVMLGEISPHHDYY"
+          },
+          annot {
+            {
+              data ftable {
+                {
+                  data prot {
+                    desc "some protein descr"
+                  },
+                  partial TRUE,
+                  location int {
+                    from 0,
+                    to 141,
+                    id local str "FMAN01_1",
+                    fuzz-from lim lt,
+                    fuzz-to lim gt
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      annot {
+        {
+          data ftable {
+            {
+              data cdregion {
+                frame one,
+                code {
+                  id 1
+                }
+              },
+              partial TRUE,
+              comment "testing comment1",
+              product whole local str "FMAN01_1",
+              location packed-int {
+                {
+                  from 0,
+                  to 117,
+                  strand plus,
+                  id genbank {
+                    accession "KT722623"
+                  },
+                  fuzz-from lim lt
+                },
+                {
+                  from 176,
+                  to 483,
+                  strand plus,
+                  id genbank {
+                    accession "KT722623"
+                  },
+                  fuzz-to lim gt
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

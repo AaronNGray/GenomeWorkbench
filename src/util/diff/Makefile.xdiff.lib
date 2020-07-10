@@ -1,0 +1,12 @@
+# $Id: Makefile.xdiff.lib 420252 2013-12-03 17:28:05Z gouriano $
+
+SRC = diff
+LIB = xdiff
+
+CPPFLAGS = $(ORIG_CPPFLAGS)
+
+WATCHERS = ivanov
+
+
+USES_LIBRARIES =  \
+    xncbi

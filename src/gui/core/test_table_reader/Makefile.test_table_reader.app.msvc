@@ -1,0 +1,5 @@
+[Linker]
+subSystem 			= 1
+OutputFile          = $(OutDir)/gbench/bin/test_table_reader.exe
+ProgramDatabaseFile = $(OutDir)/gbench/bin/test_table_reader.pdb
+

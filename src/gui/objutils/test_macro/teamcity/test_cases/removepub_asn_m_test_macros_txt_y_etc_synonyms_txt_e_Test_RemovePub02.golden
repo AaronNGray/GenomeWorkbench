@@ -1,0 +1,87 @@
+Seq-entry ::= seq {
+  id {
+    local str "MU"
+  },
+  descr {
+    source {
+      genome genomic,
+      org {
+        taxname "Enterococcus faecalis",
+        orgname {
+          name binomial {
+            genus "Enterococcus",
+            species "faecalis"
+          }
+        }
+      }
+    },
+    pub {
+      pub {
+        gen {
+          cit "Unpublished",
+          authors {
+            names std {
+              {
+                name name {
+                  last "Chen",
+                  first "Muya",
+                  initials "M."
+                }
+              }
+            }
+          },
+          title "none"
+        }
+      }
+    },
+    pub {
+      pub {
+        sub {
+          authors {
+            names std {
+              {
+                name name {
+                  last "Chen",
+                  first "Muya",
+                  initials "M."
+                }
+              }
+            },
+            affil std {
+              div "Agricultural University",
+              city "Chisinau",
+              country "Moldova, Republic of"
+            }
+          },
+          medium email,
+          date std {
+            year 2015,
+            month 9,
+            day 21
+          }
+        }
+      }
+    },
+    update-date std {
+      year 2015,
+      month 9,
+      day 21
+    },
+    user {
+      type str "OriginalID",
+      data {
+        {
+          label str "LocalId",
+          data str "MU"
+        }
+      }
+    }
+  },
+  inst {
+    repr raw,
+    mol dna,
+    length 20,
+    strand ds,
+    seq-data iupacna "ATGACAGAATCCCTGCTTAA"
+  }
+}

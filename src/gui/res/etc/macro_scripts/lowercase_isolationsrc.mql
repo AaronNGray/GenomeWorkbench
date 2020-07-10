@@ -1,0 +1,11 @@
+MACRO Lowercase_IsolationSource "Convert isolation-source to isolation-source (overwrite existing text)"
+VAR
+    cap_change = "tolower"
+    strip_name = false
+    existing_text = "eReplace"
+FOR EACH BioSource
+DO
+    src = Resolve("subtype") WHERE src.subtype = "isolation-source";
+    ConvertStringQual("src.name", "src.name", cap_change, strip_name, existing_text);
+DONE
+------------------------------------------------------------------------------

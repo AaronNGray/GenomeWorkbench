@@ -1,0 +1,9 @@
+# $Id: Makefile.in 562364 2018-04-20 17:53:34Z boukn $
+
+LIB_PROJ = id_mapper
+
+EXPENDABLE_SUB_PROJ = app unit_test
+
+srcdir = @srcdir@
+include @builddir@/Makefile.meta
+
